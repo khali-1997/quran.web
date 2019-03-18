@@ -5273,7 +5273,14 @@ html[lang="ar"] #soreha .c7 span {
   padding: 0; }
 
 .suraTitle {
-  position: relative; }
+  position: relative;
+  height: 60px;
+  overflow: hidden;
+  background-color: #f7f7f7; }
+
+.suraTitle img {
+  height: 100%;
+  max-width: 400px; }
 
 .suraTitle h3 {
   position: absolute;
@@ -5283,7 +5290,9 @@ html[lang="ar"] #soreha .c7 span {
   text-align: center;
   font-family: IRANSans;
   font-size: 25px;
-  line-height: 60px; }
+  line-height: 60px;
+  margin: 0;
+  color: #a07a50; }
 
 .preload .Quran i {
   opacity: 0; }
