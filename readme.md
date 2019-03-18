@@ -3,24 +3,31 @@
 # SalamQuran
 > Quran Anywhere Anytime
 
-Say hello to Quran! Quran is calling you. Access to Quran in your language. Free and Easy.
+Say hello to Quran! Quran is calling you.
+Access to Quran in your language. Free and Easy.
 
 
-
-# Installation
-Soon
-
-
-# Support
-Soon
+## Installation
+You need to setup project? call us to help you run it eaisly or read dash documentaion
 
 
-# Roadmap
-Soon
+## Mission
+ - Collect all original and valid information about Quran like Qiraats, translations and ...
+ - Helping Quranic activists to better publish the Quran in the electronic world
+ - Facilitate Muslim access to the main source of Islam
+ - Helping Quran educators and distributing valid Quranic educational resources
 
 
-# Contributing
-Soon
+## Roadmap
+ - Covering all Quranic information of Muslims
 
-# Licence
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Contributing
+1. Fork it (<https://github.com/salamquran/SalamQuran-website/fork>)
+3. Commit your changes (`git commit -am 'Add some changes'`)
+4. Push to the branch (`git push origin master`)
+5. Create a new Pull Request
+
+
+## License
+This project is licensed under the MIT License - see the [license.md](license.md) file for details.
