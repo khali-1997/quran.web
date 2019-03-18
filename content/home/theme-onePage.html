@@ -5,8 +5,7 @@
 {%for page_number, page_line in value%}
 
 {%if page_line.detail.char_type == 'besmellah'%}
-  <div class='bismillah'>﷽</div>
-  <div class='ayeSimple'>بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+{%include 'content/home/blocks/block-besmellah.html'%}
 {%elseif page_line.detail.char_type == 'start_sura'%}
 	<div>{{page_line.detail.name}}</div>
 {%else%}
