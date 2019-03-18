@@ -5272,6 +5272,19 @@ html[lang="ar"] #soreha .c7 span {
   font-size: 50px;
   padding: 0; }
 
+.suraTitle {
+  position: relative; }
+
+.suraTitle h2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+  font-family: IRANSans;
+  font-size: 25px;
+  line-height: 60px; }
+
 .preload .Quran i {
   opacity: 0; }
 

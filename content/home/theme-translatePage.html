@@ -9,7 +9,7 @@
 		{%if page_line.detail.char_type == 'besmellah'%}
 			{%include 'content/home/blocks/block-besmellah.html'%}
 		{%elseif page_line.detail.char_type == 'start_sura'%}
-			<div>{{page_line.detail.name}}</div>
+			{%include 'content/home/blocks/block-sura-header.html'%}
 		{%else%}
 		    <div class='ayeLine'>
 			{%for myWord in page_line.word%}
