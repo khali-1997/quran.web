@@ -28,11 +28,8 @@
     font-size: 40px;
 }
 // normal and aye mode
-.Quran .ayeBox .aye{
-    // font-size: 30px;
-}
-.Quran .ayeBox .p1 i, .Quran .ayeBox .p2 i{
-    // font-size: 1.3em;
+.Quran[data-style='iransans'] i{
+    font-size: 22px;
 }
 // reader mode
 .Quran[data-style='iransans'] .ayeNum{
@@ -42,8 +39,6 @@
 }
 .Quran[data-style='noorehuda'] i{
     font-family: Noorehuda;
-    direction: rtl;
     word-wrap: break-word;
-    font-size: 4rem;
     word-break: keep-all
 }

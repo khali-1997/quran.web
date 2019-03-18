@@ -5312,6 +5312,9 @@ html[lang="ar"] #soreha .c7 span {
 .Quran .p1 i, .Quran .p2 i {
   font-size: 40px; }
 
+.Quran[data-style='iransans'] i {
+  font-size: 22px; }
+
 .Quran[data-style='iransans'] .ayeNum {
   font-family: "Traditional Arabic", "Times New Roman";
   letter-spacing: 2px;
@@ -5319,9 +5322,7 @@ html[lang="ar"] #soreha .c7 span {
 
 .Quran[data-style='noorehuda'] i {
   font-family: Noorehuda;
-  direction: rtl;
   word-wrap: break-word;
-  font-size: 4rem;
   word-break: keep-all; }
 
 .fullCommand {
