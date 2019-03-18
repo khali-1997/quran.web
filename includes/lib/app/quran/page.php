@@ -275,7 +275,11 @@ class page
 
 		}
 
-		$count_page1 = count($quran['page1']['line']);
+		$count_page1 = 0;
+		if(isset($quran['page1']['line']))
+		{
+			$count_page1 = count($quran['page1']['line']);
+		}
 		if($count_page1 === 13)
 		{
 			$end_sura_key  = end($quran['page1']['line']);
