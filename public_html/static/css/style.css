@@ -5674,7 +5674,8 @@ html[lang="ar"] #soreha .c7 span {
   margin: 10px 0;
   padding: 0 10px;
   transition: 0.3s;
-  overflow: hidden; }
+  overflow: hidden;
+  outline: none; }
 
 @media (max-width: 767px) {
   .ltr #page {
