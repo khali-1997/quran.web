@@ -5727,18 +5727,14 @@ html[lang="ar"] #soreha .c7 span {
   .Quran .bismillah {
     font-size: 45px; }
 
+  .Quran i {
+    font-size: 20px; }
+
   .Quran .ui.dropdown {
     padding: 0 10px 0 40px; }
 
-  .Quran .readerMode {
-    font-size: 1.4em; }
-
   .ayeBox {
     padding: 0.5em; }
-
-  .Quran .ayeBox .aye {
-    font-size: 1.7em;
-    line-height: 2.5em; }
 
   .ayeBox .meta {
     width: 100%; }
