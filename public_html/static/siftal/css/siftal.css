@@ -20256,6 +20256,10 @@ body .we500 {
   -webkit-touch-callout: none;
   cursor: default;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-user-select: none;
+  cursor: default;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none; }
@@ -20332,6 +20336,12 @@ body .we500 {
   height: 100%;
   position: relative;
   background-color: #302b2b;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-user-select: none;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
   user-select: none;
   position: fixed;
   top: 0;
@@ -20528,8 +20538,10 @@ body.siftal .full .middle {
   background-color: #333;
   color: #eee;
   padding: 1em;
-  user-select: text;
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  user-select: text; }
 
 .siftal[data-in="api"] code {
   background-color: rgba(0, 0, 0, 0.4);
@@ -20541,6 +20553,8 @@ body.siftal .full .middle {
   font-family: monospace, sans-serif; }
 
 .siftal[data-in="api"] .msg.url span {
+  -webkit-user-select: text;
+  -moz-user-select: text;
   user-select: text; }
 
 .siftal[data-in="api"] .cbox ol {
