@@ -5253,8 +5253,6 @@ html[lang="ar"] #soreha .c7 span {
   background-color: initial; }
 
 .Quran .readerMode {
-  font-size: 2em;
-  line-height: 1.7em;
   direction: rtl;
   text-align: center;
   max-width: 600px;
@@ -5727,17 +5725,22 @@ html[lang="ar"] #soreha .c7 span {
   .Quran .bismillah {
     font-size: 45px; }
 
+  .ayeLine {
+    min-height: 40px; }
+
   .Quran i {
-    font-size: 20px; }
+    font-size: 20px;
+    line-height: 29px;
+    height: 30px; }
 
   .Quran .p1 i, .Quran .p2 i {
     font-size: 28px; }
 
   .Quran[data-style='iransans'] i {
-    font-size: 11px; }
+    font-size: 12px; }
 
   .Quran[data-style='noorehuda'] i {
-    font-size: 16px; }
+    font-size: 18px; }
 
   .Quran .ui.dropdown {
     padding: 0 10px 0 40px; }
