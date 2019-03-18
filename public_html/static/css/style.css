@@ -5292,39 +5292,25 @@ html[lang="ar"] #soreha .c7 span {
   font-weight: 400;
   font-style: normal;
   display: inline-block;
-  padding: 0 1px;
   transition: 0.3s;
   border-bottom: 1px solid transparent;
-  opacity: 1; }
-
-.Quran i[title], .Quran i[data-tippy-title] {
-  cursor: help; }
+  opacity: 1;
+  line-height: 49px;
+  height: 50px;
+  font-size: 30px; }
 
 .Quran i:hover {
   color: #07b7dd;
   border-bottom-color: #999; }
 
+.Quran i[title], .Quran i[data-tippy-title] {
+  cursor: help; }
+
 .Quran i.h {
   color: #0770dd; }
 
-.Quran[data-style='uthmani'] .ayeBox .aye {
-  font-size: 2.5em; }
-
-.Quran[data-style='uthmani'] .p1 i {
-  font-size: 1.3em; }
-
-.Quran[data-style='uthmani'] .p2 i {
-  font-size: 1.3em; }
-
-.Quran[data-style='uthmani'] .reader i {
-  padding: 0;
-  font-size: 1.3em; }
-
-.Quran[data-style='uthmani'] .reader .p1 i {
-  font-size: 1.6em; }
-
-.Quran[data-style='uthmani'] .reader .p2 i {
-  font-size: 1.6em; }
+.Quran .p1 i, .Quran .p2 i {
+  font-size: 40px; }
 
 .Quran[data-style='iransans'] .ayeNum {
   font-family: "Traditional Arabic", "Times New Roman";
@@ -5334,7 +5320,6 @@ html[lang="ar"] #soreha .c7 span {
 .Quran[data-style='noorehuda'] i {
   font-family: Noorehuda;
   direction: rtl;
-  line-height: 1.8;
   word-wrap: break-word;
   font-size: 4rem;
   word-break: keep-all; }
@@ -5494,10 +5479,8 @@ html[lang="ar"] #soreha .c7 span {
   border-color: #2080d0; }
 
 .ayeBox .aye {
-  font-size: 1.4em;
   direction: rtl;
   text-align: right;
-  line-height: 2em;
   transition: 0.3s;
   cursor: default;
   margin: 0.5rem 0; }
@@ -5608,7 +5591,6 @@ html[lang="ar"] #soreha .c7 span {
   border: 1px solid transparent;
   border-radius: 0.25rem;
   min-height: 1em;
-  line-height: 1.5;
   background-color: #f7f7f7;
   color: #000; }
 
