@@ -5734,13 +5734,17 @@ html[lang="ar"] #soreha .c7 span {
   .Quran .bismillah {
     font-size: 45px; }
 
-  .ayeLine {
+  .Quran .ayeLine {
     min-height: 40px; }
 
   .Quran i {
     font-size: 20px;
     line-height: 29px;
     height: 30px; }
+
+  .Quran .ayeBox i {
+    line-height: 39px;
+    height: 40px; }
 
   .Quran .p1 i, .Quran .p2 i {
     font-size: 28px; }
