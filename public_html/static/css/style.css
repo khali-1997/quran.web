@@ -5262,15 +5262,14 @@ html[lang="ar"] #soreha .c7 span {
 
 .Quran .bismillah {
   font-family: bismillah;
-  font-size: 70px;
+  font-size: 60px;
   line-height: 50px;
+  padding: 5px 0;
+  height: 60px;
   text-align: center;
   color: #333;
-  padding: 25px 0; }
-
-.Quran .readerMode .bismillah {
-  font-size: 50px;
-  padding: 0; }
+  background-color: #f7f7f7;
+  overflow: hidden; }
 
 .suraTitle {
   position: relative;
