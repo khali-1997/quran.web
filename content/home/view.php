@@ -135,7 +135,7 @@ class view
 			default:
 				if(!\dash\url::directory())
 				{
-					$title = \dash\data::site_title();
+					$title = T_('Quran');
 					$desc  = \dash\data::site_desc();
 				}
 				else
