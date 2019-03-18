@@ -5279,7 +5279,8 @@ html[lang="ar"] #soreha .c7 span {
 
 .suraTitle img {
   height: 100%;
-  max-width: 400px; }
+  max-width: 100%;
+  width: 400px; }
 
 .suraTitle h3 {
   position: absolute;
@@ -5288,7 +5289,7 @@ html[lang="ar"] #soreha .c7 span {
   left: 0;
   text-align: center;
   font-family: IRANSans;
-  font-size: 25px;
+  font-size: 20px;
   line-height: 60px;
   margin: 0;
   color: #a07a50; }
@@ -5723,11 +5724,11 @@ html[lang="ar"] #soreha .c7 span {
   #soreha .c7 abbr {
     display: inline-block; }
 
+  .Quran .bismillah {
+    font-size: 45px; }
+
   .Quran .ui.dropdown {
     padding: 0 10px 0 40px; }
-
-  .Quran .bismillah {
-    font-size: 3.3em; }
 
   .Quran .readerMode {
     font-size: 1.4em; }
@@ -5735,10 +5736,7 @@ html[lang="ar"] #soreha .c7 span {
   .ayeBox {
     padding: 0.5em; }
 
-  .ayeBox .aye {
-    font-size: 1.2em; }
-
-  .Quran[data-style='uthmani'] .ayeBox .aye {
+  .Quran .ayeBox .aye {
     font-size: 1.7em;
     line-height: 2.5em; }
 
