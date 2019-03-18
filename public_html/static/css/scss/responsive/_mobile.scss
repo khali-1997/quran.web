@@ -34,7 +34,15 @@
 	.Quran i{
 		font-size: 20px;
 	}
-
+	.Quran .p1 i, .Quran .p2 i{
+	    font-size: 28px;
+	}
+	.Quran[data-style='iransans'] i{
+	    font-size: 11px;
+	}
+	.Quran[data-style='noorehuda'] i{
+	    font-size: 16px;
+	}
 	// quran
 	.Quran .ui.dropdown{
 		padding: 0 10px 0 40px;
