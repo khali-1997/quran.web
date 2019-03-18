@@ -204,8 +204,12 @@ function handlePlayWbw()
       var soreID  = wbwAddr.substr(0,3);
       if(soreID)
       {
-        wbwAudio.src = "https://dl.salamquran.com/wbw/" + soreID + '/' + wbwAddr + '.mp3';
-        wbwAudio.play();
+      	var fullWUrl = "https://dl.salamquran.com/wbw/" + soreID + '/' + wbwAddr + '.mp3'
+        wbwAudio.src = fullWUrl;
+        wbwAudio.play().catch(function()
+        {
+					console.log('error on play word by word ' + fullWUrl );
+				});;
       }
     }
     else if($(this).attr('data-qiraat'))
