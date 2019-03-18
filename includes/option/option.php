@@ -22,6 +22,9 @@ self::$config['site']['desc']          = "Say hello to Quran! Quran is calling y
 self::$config['site']['slogan']        = "Quran Anywhere Anytime";
 
 
+self::$config['site']['googleAnalytics'] = "UA-130942533-12";
+
+
 self::$config['enter']['force_verify'] = false;
 
 // self::$config['coming'] = true;
