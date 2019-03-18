@@ -5,12 +5,12 @@
 */
 self::$social['status']                       = true;
 
-self::$social['list']['telegram']             = 'salamquran-init';
-self::$social['list']['facebook']             = 'salamquran-init';
-self::$social['list']['twitter']              = 'salamquran-init';
-self::$social['list']['github']               = 'salamquran-init';
-self::$social['list']['linkedin']             = null;
-self::$social['list']['aparat']               = 'salamquran-init';
+self::$social['list']['telegram']             = 'salamquran00';
+self::$social['list']['facebook']             = 'salamquran00';
+self::$social['list']['twitter']              = 'salamquran00';
+self::$social['list']['github']               = 'salamquran';
+// self::$social['list']['linkedin']             = null;
+// self::$social['list']['aparat']               = 'salamquran-init';
 
 /**
 * TELEGRAM
