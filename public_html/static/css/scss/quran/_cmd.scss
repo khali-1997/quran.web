@@ -108,6 +108,12 @@
     min-height: 200px;
     min-width: 200px;
 }
+.fullCommand #chooseReadMode .text i{
+    display: none;
+}
+.fullCommand #chooseStyle .text i{
+    display: none;
+}
 .rtl .fullCommand .ui.dropdown .menu > .item > .flag{
     margin-right: 0;
     margin-left: 1rem;

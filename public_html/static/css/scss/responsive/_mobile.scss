@@ -27,6 +27,10 @@
 		display: inline-block;
 	}
 
+	// quran commands
+	.fullCommand .ui.dropdown{
+		padding: 0 10px 0 45px;
+	}
 	// Quran Mobile styles
 	.Quran .bismillah{
 		font-size: 45px;
@@ -49,9 +53,6 @@
 		font-size: 18px;
 	}
 	// quran
-	.Quran .ui.dropdown{
-		padding: 0 10px 0 40px;
-	}
 	.ayeBox{
 		padding: 0.5em;
 	}

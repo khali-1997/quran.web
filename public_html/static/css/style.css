@@ -5437,6 +5437,12 @@ html[lang="ar"] #soreha .c7 span {
   min-height: 200px;
   min-width: 200px; }
 
+.fullCommand #chooseReadMode .text i {
+  display: none; }
+
+.fullCommand #chooseStyle .text i {
+  display: none; }
+
 .rtl .fullCommand .ui.dropdown .menu > .item > .flag {
   margin-right: 0;
   margin-left: 1rem; }
@@ -5722,6 +5728,9 @@ html[lang="ar"] #soreha .c7 span {
   #soreha .c7 abbr {
     display: inline-block; }
 
+  .fullCommand .ui.dropdown {
+    padding: 0 10px 0 45px; }
+
   .Quran .bismillah {
     font-size: 45px; }
 
@@ -5741,9 +5750,6 @@ html[lang="ar"] #soreha .c7 span {
 
   .Quran[data-style='noorehuda'] i {
     font-size: 18px; }
-
-  .Quran .ui.dropdown {
-    padding: 0 10px 0 40px; }
 
   .ayeBox {
     padding: 0.5em; }
