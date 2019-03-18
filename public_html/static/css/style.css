@@ -4241,14 +4241,6 @@ Version       1.0.0
   src: url(../fonts/bismillah/bismillah.eot) format("embedded-opentype"), url(../fonts/bismillah/bismillah.ttf) format("truetype"), url(../fonts/bismillah/bismillah.woff) format("woff"), url(../images/bismillah/bismillah.svg) format("svg");
   font-weight: 400;
   font-display: block; }
-.bismillah {
-  font-family: bismillah;
-  font-size: 6em;
-  text-align: center;
-  color: #333;
-  padding: 25px 0;
-  margin-bottom: 2rem; }
-
 /* homepage surah_names*/
 @font-face {
   font-family: surah_names;
@@ -5266,6 +5258,14 @@ html[lang="ar"] #soreha .c7 span {
   direction: rtl;
   text-align: center; }
 
+.Quran .bismillah {
+  font-family: bismillah;
+  font-size: 6em;
+  text-align: center;
+  color: #333;
+  padding: 25px 0;
+  margin-bottom: 2rem; }
+
 .Quran .readerMode .bismillah {
   font-size: 50px;
   line-height: 50px; }
@@ -5727,7 +5727,7 @@ html[lang="ar"] #soreha .c7 span {
   .Quran .ui.dropdown {
     padding: 0 10px 0 40px; }
 
-  .bismillah {
+  .Quran .bismillah {
     font-size: 3.3em; }
 
   .ayeBox {

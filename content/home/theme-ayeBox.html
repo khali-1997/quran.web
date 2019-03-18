@@ -1,6 +1,13 @@
 
 {%for myAyeKey, myAye in quranLoaded.text.aya%}
-      {%include 'content/home/blocks/block-besmellah.html'%}
+
+{%if loop.index == 1%}
+{%if myAye.detail.sura == 1%}
+{%else%}
+{%include 'content/home/blocks/block-besmellah.html'%}
+{%endif%}
+{%endif%}
+
   <div class='ayeBox f fix' id='{{myAye.detail.index}}'>
     <div class="cauto s12 pR10">
 {%include 'content/home/blocks/block-ayeActions.html'%}
