@@ -2,6 +2,11 @@
       <i class="sf-language"></i>
       <span class="text"><span>{%trans "Add Translations"%}</span></span>
       <div class="menu">
+        <div class="search input">
+          <input type="text" placeholder='{%trans "Search translation"%}'>
+        </div>
+        <div class="divider"></div>
+
         <div class="header">{%trans "Add new translation"%}</div>
 {%for key, myTrans in translationList%}
         <div class="header lang"><i class="compact mRa5-f flag {{myTrans.detail.flag}}"></i><span>{{myTrans.detail.language_name}}</span></div>

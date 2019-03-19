@@ -3,7 +3,10 @@
       <span class="text"><img src="{{qariLoaded.image}}" class="avatar" alt="{{qariLoaded.name}}"><span>{{qariLoaded.name}}</span><span class="type">{{qariLoaded.type}}</span>
       </span>
       <div class="menu">
-        <div class="header">{%trans "Change Qari"%}</div>
+        <div class="search input">
+          <input type="text" placeholder='{%trans "Search Qari"%}'>
+        </div>
+        <div class="divider"></div>
 {%for key, value in qariList%}
           <a class="item" href="{{value.url}}"><img src="{{value.image}}" class="avatar" alt="{{value.type}}"><span>{{value.name}}</span><span class="type">{{value.type}}</span></a>
 {%endfor%}
