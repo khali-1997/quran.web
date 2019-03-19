@@ -1,9 +1,9 @@
 
-<nav class="f align-center fix quranNav">
-  <div class="c sauto os txtL">
+<nav class="f align-center quranNav">
+  <div class="c sauto os txtR">
 {%if quranLoaded.detail.prev%}
     <a class="btn outline" href="{{quranLoaded.detail.prev.url}}">
-      <i class="compact floatL mR10 sf-chevron-left"></i>
+      <i class="compact mL5 sf-chevron-right"></i>
       <span class="s0">{{quranLoaded.detail.prev.title}}</span>
       <span class="badge mLR5">{{quranLoaded.detail.prev.index | fitNumber}}</span>
       <span class="s0">{{quranLoaded.detail.prev.subtitle}}</span>
@@ -27,13 +27,13 @@
 {%endif%}
   </div>
 
-  <div class="c sauto txtR">
+  <div class="c sauto txtL">
 {%if quranLoaded.detail.next%}
     <a class="btn outline" href="{{quranLoaded.detail.next.url}}">
       <span class="s0">{{quranLoaded.detail.next.title}}</span>
       <span class="badge mLR5">{{quranLoaded.detail.next.index | fitNumber}}</span>
       <span class="s0">{{quranLoaded.detail.next.subtitle}}</span>
-      <i class="compact floatR mL10 sf-chevron-right"></i>
+      <i class="compact mL5 sf-chevron-left"></i>
     </a>
 {%endif%}
   </div>

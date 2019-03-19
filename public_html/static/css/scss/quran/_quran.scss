@@ -3,15 +3,16 @@
 .Quran{
 	direction: rtl;
 }
+.quranNav{
+	direction: rtl;
+	text-align: center;
+	margin: 25px 0;
+	user-select: none;
+}
 .ayeSimple{
     direction: rtl;
     text-align: right;
     display: none;
-}
-.quranNav{
-	text-align: center;
-	margin: 25px 0;
-	user-select: none;
 }
 // Quran design like book
 .Quran.bookTxt{
