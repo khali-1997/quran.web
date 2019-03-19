@@ -5405,26 +5405,14 @@ html[lang="ar"] #soreha .c7 span {
   top: 0;
   left: 0; }
 
-.fullCommand .ui.dropdown .menu {
-  max-height: 400px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-overflow-scrolling: touch; }
-
 .rtl .fullCommand .ui.dropdown .menu {
   right: 0;
   left: auto; }
 
-.fullCommand .ui.dropdown#chooseQari .menu {
-  height: 50vh;
-  min-height: 200px; }
-
-.fullCommand .ui.dropdown#chooseTranslate .menu {
-  height: 50vh;
+.fullCommand .ui.dropdown .scrolling.menu {
+  max-height: 400px;
   min-height: 200px;
-  min-width: 200px; }
+  height: 50vh; }
 
 .fullCommand #chooseReadMode .text i {
   display: none; }
