@@ -5257,10 +5257,19 @@ html[lang="ar"] #soreha .c7 span {
   background-color: initial; }
 
 .Quran .readerMode {
-  direction: rtl;
   text-align: center;
   max-width: 600px;
   margin: 0 auto; }
+
+.Quran .readerMode.translate {
+  background-color: #f7f7f7;
+  color: #333;
+  position: relative;
+  padding: 20px 5%;
+  line-height: 35px; }
+
+body.ltr .Quran .readerMode.translate {
+  direction: ltr; }
 
 .Quran .bismillah {
   font-family: bismillah;
@@ -5598,8 +5607,7 @@ html[lang="ar"] #soreha .c7 span {
   border-radius: 0.25rem;
   background-color: #f7f7f7;
   color: #000;
-  min-height: 60px;
-  direction: rtl; }
+  min-height: 60px; }
 
 .ayeLine:hover {
   background-color: rgba(0, 200, 255, 0.05);
