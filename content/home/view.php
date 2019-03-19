@@ -10,11 +10,6 @@ class view
 
 		self::set_best_title();
 
-		if(\dash\url::module() === null)
-		{
-			\dash\data::page_special(true);
-		}
-
 
 		if(\dash\data::sureLoaded())
 		{
