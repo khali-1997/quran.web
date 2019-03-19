@@ -5242,16 +5242,6 @@ html[lang="ar"] #soreha .c7 span {
   max-width: 600px;
   margin: 0 auto; }
 
-.Quran .readerMode.translate {
-  background-color: #f7f7f7;
-  color: #333;
-  position: relative;
-  padding: 20px 5%;
-  line-height: 35px; }
-
-body.ltr .Quran .readerMode.translate {
-  direction: ltr; }
-
 .Quran .bismillah {
   font-family: bismillah;
   font-size: 60px;
@@ -5606,6 +5596,26 @@ body.ltr .Quran .readerMode.translate {
 .ayeBox .ayeLine {
   text-align: right;
   padding-right: 0.5em; }
+
+.Quran .readerMode.translate {
+  background-color: #f7f7f7;
+  color: #333;
+  position: relative;
+  padding: 20px 5%;
+  line-height: 30px; }
+
+body.ltr .Quran .readerMode.translate {
+  direction: ltr; }
+
+.Quran .readerMode.translate div {
+  display: block; }
+
+.Quran .readerMode.translate div span {
+  display: inline-block;
+  direction: rtl;
+  font-family: "Traditional Arabic", "Times New Roman";
+  letter-spacing: 2px;
+  color: #777; }
 
 .player {
   position: fixed;

@@ -30,7 +30,7 @@
 		{%for key, value in quranLoaded.translatepage%}
 
 			{%for k, myTrans in value.data%}
-				<span>{{myTrans.text}} {{k  | fitNumber}}</span>
+				<div data-id='{{k}}'>{{myTrans.text}} <span>﴿{{k  | fitNumber}}﴾</span></div>
 			{%endfor%}
 
 		{%endfor%}
