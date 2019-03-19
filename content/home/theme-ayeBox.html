@@ -8,10 +8,7 @@
 {%endif%}
 {%endif%}
 
-  <div class='ayeBox f fix' id='{{myAye.detail.index}}'>
-    <div class="cauto s12 pR10">
-{%include 'content/home/blocks/block-ayeActions.html'%}
-    </div>
+  <div class='ayeBox f' id='{{myAye.detail.index}}'>
     <div class="c s12">
      <div class='ayeLine {%if pageStyle == "uthmani"%}{{myAye.detail.class_name}}{%endif%}'>
 {%for myWord in myAye.word%}
@@ -22,6 +19,9 @@
      {%include 'content/home/blocks/block-ayeSimple.html'%}
 
 {%include 'content/home/blocks/block-ayeTranslation.html'%}
+    </div>
+    <div class="cauto s12 pR10">
+{%include 'content/home/blocks/block-ayeActions.html'%}
     </div>
 
   </div>

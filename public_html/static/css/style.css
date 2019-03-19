@@ -5228,6 +5228,9 @@ html[lang="ar"] #soreha .c7 span {
   display: block;
   font-size: 0.8em; }
 
+.Quran {
+  direction: rtl; }
+
 .ayeSimple {
   direction: rtl;
   text-align: right;
