@@ -21,23 +21,22 @@
 {%include 'content/home/blocks/block-cmd-extra.html'%}
   </div>
 
-{%if quranLoaded.translatelist%}
+{%if quranLoaded.translatelist | length > 1%}
 <div class="c12">
-<div class="f">
-
+  <div class="f">
 {%for key, value in quranLoaded.translatelist%}
-<div class="cauto mRa10 badge light">
-
-  <a href="{{value.remove_url}}"><span class="sf-times fc-red"></span></a>
-  <i class="flag {{value.flag}}"></i>
-  <abbr>{{value.localname}}</abbr>
-  {%if value.image%}
-  <img src="{{value.image}}" alt="{{value.localname}}" class="avatar">
-  {%endif%}
-</div>
-
+    <div class="cauto pA5">
+      <a class="btn outline" href="{{value.remove_url}}" title='{%trans "Click to remove tranlation"%}'>
+        <span class="sf-times fc-red"></span>
+        <i class="flag {{value.flag}}"></i>
+        <abbr>{{value.localname}}</abbr>
+{%if value.image%}
+        <img src="{{value.image}}" alt="{{value.localname}}" class="avatar">
+{%endif%}
+      </a>
+    </div>
 {%endfor%}
-</div>
+  </div>
 </div>
 {%endif%}
 
