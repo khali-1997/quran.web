@@ -5237,25 +5237,6 @@ html[lang="ar"] #soreha .c7 span {
   margin: 25px 0;
   user-select: none; }
 
-.ayeSimple {
-  direction: rtl;
-  text-align: right;
-  display: none; }
-
-.Quran.bookTxt {
-  max-width: 412px;
-  margin: 0 auto;
-  text-align: justify; }
-
-.Quran.bookTxt .ayeBox {
-  display: inline; }
-
-.Quran.bookTxt .ayeBox .aye {
-  display: inline; }
-
-.Quran.bookTxt .ayeBox .aye:hover {
-  background-color: initial; }
-
 .Quran .readerMode {
   text-align: center;
   max-width: 600px;
@@ -5344,6 +5325,11 @@ body.ltr .Quran .readerMode.translate {
   font-family: Noorehuda;
   word-wrap: break-word;
   word-break: keep-all; }
+
+.ayeSimple {
+  direction: rtl;
+  text-align: right;
+  display: none; }
 
 .fullCommand {
   user-select: none; }
