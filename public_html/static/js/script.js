@@ -185,6 +185,11 @@ function checkFPS()
 
 
 var wbwAudio = new Audio();
+wbwAudio.addEventListener("ended", function()
+{
+  // bind end event to play the player again
+  playerTogglePlay('play');
+});
 
 function handlePlayWbw()
 {
@@ -204,12 +209,13 @@ function handlePlayWbw()
       var soreID  = wbwAddr.substr(0,3);
       if(soreID)
       {
-      	var fullWUrl = "https://dl.salamquran.com/wbw/" + soreID + '/' + wbwAddr + '.mp3'
+        playerTogglePlay('pause');
+        var fullWUrl = "https://dl.salamquran.com/wbw/" + soreID + '/' + wbwAddr + '.mp3'
         wbwAudio.src = fullWUrl;
         wbwAudio.play().catch(function()
         {
-					console.log('error on play word by word ' + fullWUrl );
-				});;
+          console.log('error on play word by word ' + fullWUrl );
+        });
       }
     }
     else if($(this).attr('data-qiraat'))
@@ -500,7 +506,7 @@ function highlightAye(_mode)
 }
 
 
-function playerTogglePlay()
+function playerTogglePlay(_forcePlayer)
 {
   var talavatEl = document.getElementById('talavat');
   var myPlayer  = $('.player');
@@ -512,19 +518,37 @@ function playerTogglePlay()
   {
     return false;
   }
-  // change icon
-  if (talavatEl.paused)
+  if(_forcePlayer)
   {
-    talavatEl.play();
-  }
-  else if(talavatEl.readyState == 1)
-  {
-    talavatEl.currentTime = 0;
-    talavatEl.play();
+    if(_forcePlayer === 'play')
+    {
+      // if(talavatEl.readyState == 1)
+      // {
+      //   talavatEl.currentTime = 0;
+      // }
+      talavatEl.play();
+    }
+    else if(_forcePlayer === 'pause')
+    {
+      talavatEl.pause();
+    }
   }
   else
   {
-    talavatEl.pause();
+    // change icon
+    if (talavatEl.paused)
+    {
+      talavatEl.play();
+    }
+    else if(talavatEl.readyState == 1)
+    {
+      talavatEl.currentTime = 0;
+      talavatEl.play();
+    }
+    else
+    {
+      talavatEl.pause();
+    }
   }
 }
 
