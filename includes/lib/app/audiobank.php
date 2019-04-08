@@ -283,10 +283,6 @@ class audiobank
 	public static function list($_string = null, $_args = [])
 	{
 
-		if(!\dash\user::id())
-		{
-			return false;
-		}
 
 		$default_args =
 		[
