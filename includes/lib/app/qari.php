@@ -5,6 +5,49 @@ namespace lib\app;
 class qari
 {
 
+	public static function get_by_slug($_slug, $_key = null)
+	{
+		$list =
+		[
+			'abdulbaset'  => ['name'  => T_('AbdulBaset AbdulSamad'), 		'country' => null],
+			'afasy'       => ['name'  => T_('Mishary Rashid Alafasy'), 		'country' => null],
+			'husary'      => ['name'  => T_('Mahmoud Khalil Al-Husary'), 	'country' => null],
+			'minshawi'    => ['name'  => T_('Mohamed Siddiq al-Minshawi'), 	'country' => null],
+			'rifai'       => ['name'  => T_('Hani ar-Rifai'), 				'country' => null],
+			'shatri'      => ['name'  => T_('Abu Bakr al-Shatri'), 			'country' => null],
+			'shuraym'     => ['name'  => T_('Sa`ud ash-Shuraym'), 			'country' => null],
+			'sudais'      => ['name'  => T_('Abdur-Rahman as-Sudais'), 		'country' => null],
+			'balayev'     => ['name'  => T_('Rasim Balayev'), 				'country' => null],
+			'ibrahimwalk' => ['name'  => T_('Ibrahim Walk'), 				'country' => null],
+			'parhizgar'   => ['name'  => T_('Shahriyar parhizgar'), 		'country' => 'IR'],
+			'mansouri'    => ['name'  => T_('Karim mansouri'), 				'country' => 'IR'],
+			'qaraati'     => ['name'  => T_('Mohsen Qaraati'), 				'country' => 'IR'],
+			'fouladvand'  => ['name'  => T_('Mohammad mahdi fouladvand'), 	'country' => 'IR'],
+			'makarem'     => ['name'  => T_('Naser makarem shirazi'), 		'country' => 'IR'],
+		];
+
+		if(isset($list[$_slug]))
+		{
+			if($_key)
+			{
+				if(isset($list[$_slug][$_key]))
+				{
+					return $list[$_slug][$_key];
+				}
+				else
+				{
+					return null;
+				}
+			}
+			else
+			{
+				return $list[$_slug];
+			}
+		}
+		return null;
+	}
+
+
 	public static function get_aya_audio($_sura, $_aya, $_meta = [], $_get_key = false)
 	{
 		if(!isset($_meta['qari']))
@@ -22,14 +65,10 @@ class qari
 	}
 
 
-	private static function qari_image($_slug = null)
+	public static function qari_image($_slug)
 	{
 		$url = \dash\url::site(). '/static/images/qariyan/';
-		if($_slug)
-		{
-			$url .= $_slug. '.png';
-		}
-
+		$url .= $_slug. '.png';
 		return $url;
 	}
 
@@ -40,56 +79,62 @@ class qari
 
 	public static function list()
 	{
+		$Mujawwad   =	T_('Mujawwad');
+		$Murattal   = T_('Murattal');
+		$Translate  = T_('Translate');
+		$Commentary = T_('Commentary');
+		$Muallim    = T_('Muallim');
+
 		$list =
 		[
 			// ----------------- abdoabaset
-			['index' => 1000, 'lang' => 'ar', 'type' => T_('Mujawwad'), 'addr'  => 'abdulbasit-mujawwad-128/', 'slug'  => 'abdulbaset', 'name'  => T_('AbdulBaset AbdulSamad'), 'default' => false],
-			['index' => 1001, 'lang' => 'ar', 'type' => T_('Murattal'), 'addr'  => 'abdulbasit-murattal-192/', 'slug'  => 'abdulbaset', 'name'  => T_('AbdulBaset AbdulSamad'),],
+			['index' => 1000, 'lang' => 'ar', 'type' => $Mujawwad, 'addr'  => 'abdulbasit-mujawwad-128/', 'slug'  => 'abdulbaset', 'name' => self::get_by_slug('abdulbaset', 'name'), 'default' => false],
+			['index' => 1001, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'abdulbasit-murattal-192/', 'slug'  => 'abdulbaset', 'name' => self::get_by_slug('abdulbaset', 'name'), ],
 
 			// ----------------- afasy
-			['index' => 1020, 'lang' => 'ar', 'type' => T_('Murattal'), 'addr'  => 'afasy-murattal-192/', 'slug'  => 'afasy', 'name'  => T_('Mishary Rashid Alafasy'), 'default' => true],
+			['index' => 1020, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'afasy-murattal-192/', 'slug'  => 'afasy', 'name' => self::get_by_slug('afasy', 'name'), 'default' => true],
 
 			// ----------------- husary
-			['index' => 1030, 'lang' => 'ar', 'type' => T_('Murattal'), 'addr'  => 'husary-murattal-128/', 'slug'  => 'husary', 'name'  => T_('Mahmoud Khalil Al-Husary'),],
-			['index' => 1031, 'lang' => 'ar', 'type' => T_('Mujawwad'), 'addr'  => 'husary-mujawwad-128/', 'slug'  => 'husary', 'name'  => T_('Mahmoud Khalil Al-Husary'),],
-			['index' => 1032, 'lang' => 'ar', 'type' => T_('Muallim'), 'addr'  => 'husary-muallim-128/', 'slug'  => 'husary', 'name'  => T_('Mahmoud Khalil Al-Husary'),],
+			['index' => 1030, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'husary-murattal-128/', 'slug'  => 'husary', 'name' => self::get_by_slug('husary', 'name'),],
+			['index' => 1031, 'lang' => 'ar', 'type' => $Mujawwad, 'addr'  => 'husary-mujawwad-128/', 'slug'  => 'husary', 'name' => self::get_by_slug('husary', 'name'),],
+			['index' => 1032, 'lang' => 'ar', 'type' => $Muallim, 'addr'  => 'husary-muallim-128/', 'slug'  => 'husary', 'name' => self::get_by_slug('husary', 'name'), ],
 
 			// ----------------- minshawi
-			['index' => 1040, 'lang' => 'ar', 'type' => T_('Murattal'), 'addr'  => 'minshawi-murattal-128/', 'slug'  => 'minshawi', 'name'  => T_('Mohamed Siddiq al-Minshawi'),],
-			['index' => 1041, 'lang' => 'ar', 'type' => T_('Mujawwad'), 'addr'  => 'minshawi-mujawwad-128/', 'slug'  => 'minshawi', 'name'  => T_('Mohamed Siddiq al-Minshawi'),],
+			['index' => 1040, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'minshawi-murattal-128/', 'slug'  => 'minshawi', 'name' => self::get_by_slug('minshawi', 'name'),],
+			['index' => 1041, 'lang' => 'ar', 'type' => $Mujawwad, 'addr'  => 'minshawi-mujawwad-128/', 'slug'  => 'minshawi', 'name' => self::get_by_slug('minshawi', 'name'),],
 
 			// ----------------- rifai
-			['index' => 1050, 'lang' => 'ar', 'type' => T_('Murattal'), 'addr'  => 'rifai-murattal-192/', 'slug'  => 'rifai', 'name'  => T_('Hani ar-Rifai'),],
+			['index' => 1050, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'rifai-murattal-192/', 'slug'  => 'rifai', 'name' => self::get_by_slug('rifai', 'name'),],
 
 			// ----------------- shatri
-			['index' => 1060, 'lang' => 'ar', 'type' => T_('Murattal'), 'addr'  => 'shatri-murattal-128/', 'slug'  => 'shatri', 'name'  => T_('Abu Bakr al-Shatri'),],
+			['index' => 1060, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'shatri-murattal-128/', 'slug'  => 'shatri', 'name' => self::get_by_slug('shatri', 'name'),],
 
 			// ----------------- shuraym
-			['index' => 1070, 'lang' => 'ar', 'type' => T_('Murattal'), 'addr'  => 'shuraym-murattal-128/', 'slug'  => 'shuraym', 'name'  => T_('Sa`ud ash-Shuraym'),],
+			['index' => 1070, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'shuraym-murattal-128/', 'slug'  => 'shuraym', 'name' => self::get_by_slug('shuraym', 'name'),],
 
 			// ----------------- sudais
-			['index' => 1080, 'lang' => 'ar', 'type' => T_('Murattal'), 'addr'  => 'sudais-murattal-192/', 'slug'  => 'sudais', 'name'  => T_('Abdur-Rahman as-Sudais'),],
+			['index' => 1080, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'sudais-murattal-192/', 'slug'  => 'sudais', 'name' => self::get_by_slug('sudais', 'name'),],
 
 			// ----------------- trnaslate - az - balayev
-			['index' => 1081, 'lang' => 'az', 'type' => T_('Translate'), 'addr'  => 'translation-az-azerbaijani-128/', 'slug'  => 'balayev', 'name'  => T_('Rasim Balayev'),],
+			['index' => 1081, 'lang' => 'az', 'type' => $Translate, 'addr'  => 'translation-az-azerbaijani-128/', 'slug'  => 'balayev', 'name' => self::get_by_slug('balayev', 'name'),],
 
 			// ----------------- trnaslate - en - ibrahimwalk
-			['index' => 1082, 'lang' => 'en', 'type' => T_('Translate'), 'addr'  => 'translation-en-sahih_international-32/', 'slug'  => 'ibrahimwalk', 'name'  => T_('Ibrahim Walk'),],
+			['index' => 1082, 'lang' => 'en', 'type' => $Translate, 'addr'  => 'translation-en-sahih_international-32/', 'slug'  => 'ibrahimwalk', 'name' => self::get_by_slug('ibrahimwalk', 'name'),],
 
 			// ----------------- parhizgar
-			['index' => 1090, 'lang' => 'fa', 'type' => T_('Murattal'), 'addr'  => 'parhizgar-murattal-48/', 'slug'  => 'parhizgar', 'name'  => T_('Shahriyar parhizgar'), 'default_lang' => true],
+			['index' => 1090, 'lang' => 'fa', 'type' => $Murattal, 'addr'  => 'parhizgar-murattal-48/', 'slug'  => 'parhizgar', 'name' => self::get_by_slug('parhizgar', 'name'), 'default_lang' => true],
 
 			// ----------------- mansouri
-			['index' => 1091, 'lang' => 'fa', 'type' => T_('Murattal'), 'addr'  => 'mansouri-murattal-40/', 'slug'  => 'mansouri', 'name'  => T_('Karim mansouri'),],
+			['index' => 1091, 'lang' => 'fa', 'type' => $Murattal, 'addr'  => 'mansouri-murattal-40/', 'slug'  => 'mansouri', 'name' => self::get_by_slug('mansouri', 'name'), ],
 
 			// ----------------- trnaslate - fa - qeraati
-			['index' => 1086, 'lang' => 'fa', 'type' => T_('Commentary'), 'addr'  => 'translation-fa-qaraati-16/', 'slug'  => 'qaraati', 'name'  => T_('Mohsen Qaraati'), 'default_lang' => false],
+			['index' => 1086, 'lang' => 'fa', 'type' => $Commentary, 'addr'  => 'translation-fa-qaraati-16/', 'slug'  => 'qaraati', 'name' => self::get_by_slug('qaraati', 'name'), 'default_lang' => false],
 
 			// ----------------- trnaslate - fa - fouladvand
-			['index' => 1083, 'lang' => 'fa', 'type' => T_('Translate'), 'addr'  => 'translation-fa-foladvand-40/', 'slug'  => 'fouladvand', 'name'  => T_('Mohammad mahdi fouladvand'),],
+			['index' => 1083, 'lang' => 'fa', 'type' => $Translate, 'addr'  => 'translation-fa-foladvand-40/', 'slug'  => 'fouladvand', 'name' => self::get_by_slug('fouladvand', 'name'), ],
 
 			// ----------------- trnaslate - fa - makarem
-			['index' => 1084, 'lang' => 'fa', 'type' => T_('Translate'), 'addr'  => 'translation-fa-makarem-16/', 'slug'  => 'makarem', 'name'  => T_('Naser makarem shirazi'),],
+			['index' => 1084, 'lang' => 'fa', 'type' => $Translate, 'addr'  => 'translation-fa-makarem-16/', 'slug'  => 'makarem', 'name' => self::get_by_slug('makarem', 'name'), ],
 
 
 		];

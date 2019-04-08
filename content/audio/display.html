@@ -42,14 +42,12 @@
       <tr>
         <th class="collapsing">#</th>
         <th class="collapsing">&nbsp;</th>
-        <th data-sort="{{sortLink.qari.order}}"><a href="{{sortLink.qari.link}}">{%trans "Qari"%}</a></th>
-        <th data-sort="{{sortLink.type.order}}"><a href="{{sortLink.type.link}}">{%trans "Type"%}</a></th>
-        <th data-sort="{{sortLink.readtype.order}}"><a href="{{sortLink.readtype.link}}">{%trans "Read type"%}</a></th>
-        <th data-sort="{{sortLink.filetype.order}}"><a href="{{sortLink.filetype.link}}">{%trans "file type"%}</a></th>
-        <th data-sort="{{sortLink.country.order}}"><a href="{{sortLink.country.link}}">{%trans "Country"%}</a></th>
-        <th data-sort="{{sortLink.quality.order}}"><a href="{{sortLink.quality.link}}">{%trans "Quality"%}</a></th>
-        <th data-sort="{{sortLink.addr.order}}"><a href="{{sortLink.addr.link}}">{%trans "Addr"%}</a></th>
-
+        <th>{%trans "Qari"%}</th>
+        <th>{%trans "Type"%}</th>
+        <th>{%trans "Read type"%}</th>
+        <th>{%trans "Country"%}</th>
+        <th>{%trans "Quality"%}</th>
+        <th>{%trans "Show"%}</th>
       </tr>
     </thead>
 
@@ -57,15 +55,13 @@
       {%for key, value in dataTable%}
       <tr>
         <td>{{(key + 1) | fitNumber}}</td>
-        <td><img src="{{value.avatar}}" class="avatar"></td>
-        <td><a href="{{url.this}}?qari={{value.qari}}">{%set myqari = value.qari%}{%trans myqari%}</a></td>
+        <td><img src="{{value.image}}" class="avatar"></td>
+        <td><a href="{{url.this}}?qari={{value.qari}}">{%set myqari = value.name%}{%trans myqari%}</a></td>
         <td><a href="{{url.this}}?type={{value.type}}">{%set mytype = value.type%}{%trans mytype%}</a></td>
-        <td><a href="{{url.this}}?readtype={{value.readtype}}">{%set myreadtype = value.readtype%}{%trans myreadtype%}</a></td>
-        <td><a href="{{url.this}}?filetype={{value.filetype}}">{{value.filetype}}</a></td>
-        <td><a href="{{url.this}}?country={{value.country}}">{{value.location_string}}</a></td>
+        <td><a href="{{url.this}}?style={{value.style}}">{%set mystyle = value.style%}{%trans mystyle%}</a></td>
+        <td><a href="{{url.this}}?country={{value.country}}">{{value.country_name}}</a></td>
         <td><a href="{{url.this}}?quality={{value.quality}}">{{value.quality | fitNumber}}</a></td>
-        <td>{{value.addr}}</td>
-
+        <td><a href="#" class="badge primary">{%trans "Show"%}</a></td>
       </tr>
       {%endfor%}
     </tbody>
