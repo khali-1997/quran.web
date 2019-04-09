@@ -71,8 +71,10 @@ class audiobank
 			}
 
 
-			$temp            = [];
-			$temp['qari']    = isset($split[0]) ? $split[0] : null;
+			$temp              = [];
+			$temp['folder']    = self::$folder;
+			$temp['subfolder'] = $folder_name;
+			$temp['qari']      = isset($split[0]) ? $split[0] : null;
 
 			if(isset($meta[0]))
 			{

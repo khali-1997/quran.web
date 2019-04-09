@@ -29,6 +29,12 @@ class audiobank
 		return \dash\db\config::public_get('audiobank', ...func_get_args());
 	}
 
+
+	public static function delete_all()
+	{
+		return \dash\db::query("DELETE FROM audiobank WHERE 1");
+	}
+
 	public static function get_count()
 	{
 		return \dash\db\config::public_get_count('audiobank', ...func_get_args());

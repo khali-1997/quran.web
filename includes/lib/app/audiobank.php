@@ -175,8 +175,9 @@ class audiobank
 	public static function ready($_data)
 	{
 		$_data = \dash\app::fix_avatar($_data);
+
 		$result = [];
-		$result['location_string'] = [];
+
 		foreach ($_data as $key => $value)
 		{
 
@@ -186,23 +187,12 @@ class audiobank
 					$result[$key] = \dash\coding::encode($value);
 					break;
 
-				case 'country':
-					$result[$key] = $value;
-					$result['country_name'] = \dash\utility\location\countres::get_localname($value, true);
-					$result['location_string'][1] = $result['country_name'];
-					break;
-
-
-				case 'province':
-					$result[$key] = $value;
-					$result['province_name'] = \dash\utility\location\provinces::get_localname($value);
-					$result['location_string'][2] = $result['province_name'];
-					break;
-
-				case 'city':
-					$result[$key] = $value;
-					$result['city_name'] = \dash\utility\location\cites::get_localname($value);
-					$result['location_string'][3] = $result['city_name'];
+				case 'qari':
+					$result[$key]           = $value;
+					$result['image']        = \lib\app\qari::qari_image($value);
+					$result['name']         = \lib\app\qari::get_by_slug($value, 'name');
+					$result['country']      = $country = \lib\app\qari::get_by_slug($value, 'country');
+					$result['country_name'] = \dash\utility\location\countres::get_localname($country, true);
 					break;
 
 
@@ -211,12 +201,10 @@ class audiobank
 					break;
 			}
 		}
-		ksort($result['location_string']);
-		$result['location_string'] = array_filter($result['location_string']);
-		$result['location_string'] = implode(T_(","). " ", $result['location_string']);
 
 		return $result;
 	}
+
 
 
 	/**
