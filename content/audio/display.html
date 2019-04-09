@@ -47,7 +47,6 @@
         <th class="collapsing">&nbsp;</th>
         <th>{%trans "Qari"%}</th>
         <th>{%trans "Type"%}</th>
-        <th>{%trans "Read type"%}</th>
         <th>{%trans "Country"%}</th>
         <th>{%trans "Quality"%}</th>
         <th>{%trans "Show"%}</th>
@@ -61,7 +60,7 @@
         <td><img src="{{value.image}}" class="avatar"></td>
         <td><a href="{{url.this}}?qari={{value.qari}}">{%set myqari = value.name%}{%trans myqari%}</a></td>
         <td><a href="{{url.this}}?type={{value.type}}">{%set mytype = value.type%}{%trans mytype%}</a></td>
-        <td><a href="{{url.this}}?style={{value.style}}">{%set mystyle = value.style%}{%trans mystyle%}</a></td>
+
         <td><a href="{{url.this}}?country={{value.country}}">{{value.country_name}}</a></td>
         <td><a href="{{url.this}}?quality={{value.quality}}">{{value.quality | fitNumber}}</a></td>
         <td><a href="#" class="badge primary">{%trans "Show"%}</a></td>
