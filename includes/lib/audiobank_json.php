@@ -95,11 +95,29 @@ class audiobank
 
 			$temp['quality'] = isset($split[2]) ? $split[2] : null;
 
+			$temp['files']   = self::files($value);
+
 			$result[]        = $temp;
 
 		}
 
 		return $result;
+	}
+
+	private static function files($_addr)
+	{
+		$file_list = array_filter(glob($_addr. '/*'), 'is_file');
+		$new_list = [];
+		foreach ($file_list as $key => $value)
+		{
+			$new_list[] =
+			[
+				'name' => basename($value),
+				'size' => filesize($value),
+			];
+		}
+		return $new_list;
+
 	}
 
 
