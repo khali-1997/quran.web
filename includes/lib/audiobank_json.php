@@ -192,14 +192,11 @@ class audiobank
 		if(self::check_last_update())
 		{
 			self::save_json();
-
 			self::end('The operation successfully completed');
-			self::end(self::load());
 		}
 		else
 		{
 			self::end('Too many tries');
-			self::end(self::load());
 		}
 	}
 
