@@ -41,9 +41,11 @@ class model
 				$data = [];
 			}
 		}
+		\lib\db\audiobank::delete_all();
 
 
 		$multi_insert = [];
+		$count        = 0;
 
 		foreach ($data['list'] as $key => $value)
 		{
@@ -63,7 +65,7 @@ class model
 			$myKey   = array_map(function ($_a){return str_replace('.mp3', '', $_a);}, $myKey);
 			$myFiles = array_combine($myKey, $value['files']);
 
-			$multi_insert[] =
+			$insert =
 			[
 				'qari'     => $value['qari'],
 				'country'  => \lib\app\qari::get_by_slug($value['qari'], 'country'),
@@ -75,21 +77,11 @@ class model
 				'status'   => 'enable',
 				'meta'     => json_encode($myFiles, JSON_UNESCAPED_UNICODE),
 			];
-		}
 
-		if(empty($multi_insert))
-		{
-			\dash\notif::error(T_("No data founded"));
-			return false;
+			$count += intval(\lib\db\audiobank::insert($insert) !== 0);
 		}
-		else
-		{
-			\lib\db\audiobank::delete_all();
-
-			\lib\db\audiobank::multi_insert($multi_insert);
-
-			return true;
-		}
+		\dash\notif::ok($count. " Record inserted");
+		return true;
 	}
 
 }

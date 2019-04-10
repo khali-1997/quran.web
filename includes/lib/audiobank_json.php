@@ -62,14 +62,20 @@ class audiobank
 				$split       = explode('-', $folder_name);
 				$meta        = [];
 
+				if(count($split) !== 3)
+				{
+					continue;
+				}
+
 				foreach ($split as $k => $v)
 				{
-					if(strpos($v, '[') !== false && strpos($v, ']') !== false)
+					if(strpos($v, '.') !== false)
 					{
-						$myMeta   = substr($v, strpos($v, '[') + 1, (strpos($v, ']') - strpos($v, '[')) - 1);
-						$meta[$k] = explode('_', $myMeta);
+						$myMeta   = substr($v, strpos($v, '.') + 1);
+						$meta[$k] = explode('.', $myMeta);
 					}
-					$split[$k] = preg_replace("/\[.*\]/", "", $v);
+
+					$split[$k] = substr($v, 0, strpos($v, '.'));
 				}
 
 
@@ -80,11 +86,11 @@ class audiobank
 
 				if(isset($meta[0]))
 				{
-					$temp['qari_detail'] =
+					$temp['detail'] =
 					[
-						'lang'       => isset($meta[0][0]) ? $meta[0][0] : null,
-						'translater' => isset($meta[0][1]) ? $meta[0][1] : null,
-						'reader'     => isset($meta[0][2]) ? $meta[0][2] : null,
+						'lang'           => isset($meta[0][0]) ? $meta[0][0] : null,
+						'reader'         => isset($meta[0][1]) ? $meta[0][1] : null,
+						'translate_qari' => isset($meta[0][2]) ? $meta[0][2] : null,
 					];
 				}
 
@@ -98,6 +104,7 @@ class audiobank
 				}
 
 				$temp['quality']  = isset($split[2]) ? $split[2] : null;
+
 				$temp['size']     = self::child_size($folder_addr);
 				$temp['readtype'] = $folder;
 				$temp['files']    = self::files($value);
