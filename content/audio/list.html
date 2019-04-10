@@ -30,7 +30,11 @@
 {%endif%}
 
   {%if perm_su()%}
-  <div data-confirm data-data='{"updatedatabase" : 1}'  class="btn danger outline">{%trans "Update database"%}</div>
+  <div class="f">
+    <div class="cauto os">
+      <div data-confirm data-data='{"updatedatabase" : 1}' class="btn warn">{%trans "Update database"%}</div>
+    </div>
+  </div>
   {%endif%}
 
 {%endblock%}
@@ -41,9 +45,9 @@
 
 {%block htmlTable%}
 
-  <table class="tbl1 v9 ">
+  <table class="tbl1 v6">
     <thead>
-      <tr>
+      <tr class="fs08">
         <th class="collapsing">#</th>
         <th class="collapsing">&nbsp;</th>
         <th>{%trans "Qari"%}</th>
@@ -62,8 +66,8 @@
         <td><a href="{{url.this}}?qari={{value.qari}}">{%set myqari = value.name%}{%trans myqari%}</a></td>
         <td><a href="{{url.this}}?type={{value.type}}">{%set mytype = value.type%}{%trans mytype%}</a></td>
 
-        <td><a href="{{url.this}}?country={{value.country}}">{{value.country_name}}</a></td>
-        <td><a href="{{url.this}}?quality={{value.quality}}">{{value.quality | fitNumber}}</a></td>
+        <td><a href="{{url.this}}?country={{value.country}}"><span class="mRa5 flag {{value.flag}}"></span><span>{{value.country_name}}</span></a></td>
+        <td><a href="{{url.this}}?quality={{value.quality}}" class="ltr block">{{value.quality | fitNumber}} kbps</a></td>
         <td><a href="{{url.this}}/{{value.addr}}" class="badge primary">{%trans "Show"%}</a></td>
       </tr>
       {%endfor%}
@@ -75,7 +79,7 @@
 
 
 {%block htmlFilter%}
-<p class="f fs14 msg info2">
+<p class="f msg info2">
   <span class="c">{{dataFilter | raw}}</span>
   <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
 </p>
@@ -83,7 +87,7 @@
 
 
 {%block htmlFilterNoResult%}
-<p class="f fs14 msg warn2">
+<p class="f msg warn2">
   <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
   <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
 </p>
@@ -94,7 +98,7 @@
 
 {%block topQari%}
 
-<div class="f txtC fs08">
+<div class="f txtC fs07 mB25">
   <div class="c2 s6">
     <a href="{{url.this}}?qari=parhizgar">
       <img src="{{url.static}}/images/qariyan/parhizgar.png" alt='{%trans "Quran Qari"%} {%trans "parhizgar"%}'>
