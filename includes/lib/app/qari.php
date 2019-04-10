@@ -10,23 +10,23 @@ class qari
 		$list =
 		[
 
-			'muhammad_jibreel' => ['name'  => T_('Muhammad jibreel'), 		'country' => null],
-			'mustafa_ismail'   => ['name'  => T_('Mustafa Ismail'), 		'country' => 'EG'],
-			'abdulbasit'       => ['name'  => T_('AbdulBaset AbdulSamad'), 		'country' => null],
-			'afasy'            => ['name'  => T_('Mishary Rashid Alafasy'), 		'country' => null],
-			'husary'           => ['name'  => T_('Mahmoud Khalil Al-Husary'), 	'country' => null],
-			'minshawi'         => ['name'  => T_('Mohamed Siddiq al-Minshawi'), 	'country' => null],
-			'rifai'            => ['name'  => T_('Hani ar-Rifai'), 				'country' => null],
-			'shatri'           => ['name'  => T_('Abu Bakr al-Shatri'), 			'country' => null],
-			'shuraym'          => ['name'  => T_('Sa`ud ash-Shuraym'), 			'country' => null],
-			'sudais'           => ['name'  => T_('Abdur-Rahman as-Sudais'), 		'country' => null],
-			'balayev'          => ['name'  => T_('Rasim Balayev'), 				'country' => null],
-			'ibrahimwalk'      => ['name'  => T_('Ibrahim Walk'), 				'country' => null],
-			'parhizgar'        => ['name'  => T_('Shahriyar parhizgar'), 		'country' => 'IR'],
+			'muhammad_jibreel' => ['name'  => T_('Muhammad jibreel'), 				'country' => 'EG'],
+			'mustafa_ismail'   => ['name'  => T_('Mustafa Ismail'), 				'country' => 'EG'],
+			'abdulbasit'       => ['name'  => T_('AbdulBaset AbdulSamad'), 			'country' => 'EG'],
+			'afasy'            => ['name'  => T_('Mishary Rashid Alafasy'), 		'country' => 'KW'],
+			'husary'           => ['name'  => T_('Mahmoud Khalil Al-Husary'), 		'country' => 'EG'],
+			'minshawi'         => ['name'  => T_('Mohamed Siddiq al-Minshawi'), 	'country' => 'EG'],
+			'rifai'            => ['name'  => T_('Hani ar-Rifai'), 					'country' => 'SA'],
+			'shatri'           => ['name'  => T_('Abu Bakr al-Shatri'), 			'country' => 'SA'],
+			'shuraym'          => ['name'  => T_('Sa`ud ash-Shuraym'), 				'country' => 'SA'],
+			'sudais'           => ['name'  => T_('Abdur-Rahman as-Sudais'), 		'country' => 'SA'],
+			'balayev'          => ['name'  => T_('Rasim Balayev'), 					'country' => null],
+			'ibrahimwalk'      => ['name'  => T_('Ibrahim Walk'), 					'country' => null],
+			'parhizgar'        => ['name'  => T_('Shahriyar parhizgar'), 			'country' => 'IR'],
 			'mansouri'         => ['name'  => T_('Karim mansouri'), 				'country' => 'IR'],
 			'qaraati'          => ['name'  => T_('Mohsen Qaraati'), 				'country' => 'IR'],
-			'fouladvand'       => ['name'  => T_('Mohammad mahdi fouladvand'), 	'country' => 'IR'],
-			'makarem'          => ['name'  => T_('Naser makarem shirazi'), 		'country' => 'IR'],
+			'fouladvand'       => ['name'  => T_('Mohammad mahdi fouladvand'), 		'country' => 'IR'],
+			'makarem'          => ['name'  => T_('Naser makarem shirazi'), 			'country' => 'IR'],
 		];
 
 		if(isset($list[$_slug]))
