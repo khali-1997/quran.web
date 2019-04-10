@@ -437,7 +437,7 @@ class twigTransTerms
 	echo T_("View your current location and navigate to parent of it");               // Line 179
 
 	//----------------------------------------------addons/includes/html/inc_spay.html
-	echo T_("Please choose you pos");                                                 // Line 4
+	echo T_("Please choose bank");                                                    // Line 4
 	echo T_("Saderat");                                                               // Line 9
 	echo T_("Mellat");                                                                // Line 15
 	echo T_("Tejarat");                                                               // Line 21

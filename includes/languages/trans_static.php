@@ -56,6 +56,19 @@ class TransStatic
 	echo T_("Uzbek");
 	echo T_("Chinese");
 
+
+
+	echo T_("Mujawwad");
+	echo T_("mujawwad");
+	echo T_("Murattal");
+	echo T_("murattal");
+	echo T_("Translate");
+	echo T_("translate");
+	echo T_("Commentary");
+	echo T_("commentary");
+	echo T_("Muallim");
+	echo T_("muallim");
+
 	}
 }
 ?>
