@@ -3,33 +3,32 @@
 
 
 {%block page%}
+
+	<div class="tblBox">
+		<table class="tbl1 v5">
+			<tbody>
+	{%for itemIndex, itemDetail in audioList%}
+	{%set myDownloadLink%}{{dlLink}}/{{loadAudioFolder.addr}}/{{itemIndex}}.mp3{%endset%}
+
+				<tr>
+					<td class="collapsing">{{itemDetail.index | fitNumber}}</td>
+					<td>{{itemDetail.name}}</td>
+					<td class="player">
+						<audio controls controlsList="nodownload">
+							<source src="{{myDownloadLink}}" type="audio/mpeg">
+						</audio>
+					</td>
+					<td>{{"12.4" | fitNumber}} Mb</td>
+					<td class="collapsing"><a href="{{myDownloadLink}}" download><i class="sf-cloud-download mRa5"></i> {%trans "Download"%}</a></td>
+				</tr>
+	{%endfor%}
+			</tbody>
+		</table>
+	</div>
+
+
 	<div><img src="{{loadAudioFolder.image}}"></div>
 	<div>{{loadAudioFolder.name}}</div>
-
-	{%for sura_index, sura_detail in audioList%}
-
-	{%set myDownloadLink%}{{dlLink}}/{{loadAudioFolder.addr}}/{{sura_index}}.mp3{%endset%}
-	<div class="msg">
-
-		<div class="f">
-			<div class="c txtB">
-				<a href="{{myDownloadLink}}">{{sura_detail.index | fitNumber}} | {{sura_detail.name}}</a>
-			</div>
-
-			<div class="cauto">
-				<audio controls preload id="talavat" controlsList="nodownload">
-			        <source src="{{myDownloadLink}}" type="audio/mpeg">
-			    </audio>
-			</div>
-
-			<div class="cauto">
-				<a href="{{myDownloadLink}}" download><i class="sf-cloud-download"></i></a>
-			</div>
-
-		</div>
-
-	</div>
-	{%endfor%}
 
 {%endblock%}
 
