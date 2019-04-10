@@ -201,7 +201,14 @@ class audiobank
 					break;
 
 				case 'meta':
-					$result['meta'] = json_decode($value, true);
+					if(is_string($value))
+					{
+						$result['meta'] = json_decode($value, true);
+					}
+					else
+					{
+						$result['meta'] = $value;
+					}
 					break;
 
 				default:
