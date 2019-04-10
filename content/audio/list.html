@@ -44,6 +44,7 @@
 
 
 {%block htmlTable%}
+<div class="tblBox">
 
   <table class="tbl1 v6">
     <thead>
@@ -51,11 +52,11 @@
         <th class="collapsing">#</th>
         <th class="collapsing">&nbsp;</th>
         <th data-sort='{{sortLink.qari.order}}'><a href="{{sortLink.qari.link}}">{%trans "Qari"%}</a></th>
-        <th data-sort='{{sortLink.type.order}}'><a href="{{sortLink.type.link}}">{%trans "Type"%}</a></th>
-        <th data-sort='{{sortLink.country.order}}'><a href="{{sortLink.country.link}}">{%trans "Country"%}</a></th>
+        <th data-sort='{{sortLink.type.order}}'><a href="{{sortLink.type.link}}">{%trans "Style"%}</a></th>
+        <th data-sort='{{sortLink.readtype.order}}'><a href="{{sortLink.readtype.link}}">{%trans "type"%}</a></th>
         <th data-sort='{{sortLink.quality.order}}'><a href="{{sortLink.quality.link}}">{%trans "Quality"%}</a></th>
+        <th data-sort='{{sortLink.country.order}}'><a href="{{sortLink.country.link}}">{%trans "Country"%}</a></th>
         <th data-sort='{{sortLink.size.order}}'><a href="{{sortLink.size.link}}">{%trans "Size"%}</a></th>
-        <th>{%trans "Show"%}</a></th>
       </tr>
     </thead>
 
@@ -63,18 +64,20 @@
       {%for key, value in dataTable%}
       <tr>
         <td>{{(key + 1) | fitNumber}}</td>
-        <td><img src="{{value.image}}" class="avatar"></td>
-        <td><a href="{{url.this}}?qari={{value.qari}}">{%set myqari = value.name%}{%trans myqari%}</a></td>
+        <td><a href="{{url.this}}?qari={{value.qari}}"><img src="{{value.image}}" class="avatar"></a></td>
+        <td>{%set myQari = value.name%}
+          <a href="{{url.this}}/{{value.addr}}">{%trans myQari%}</a>
+        </td>
+        <td><a href="{{url.this}}?type={{value.type}}">{%set readtype = value.readtype%}{%trans readtype%}</a></td>
         <td><a href="{{url.this}}?type={{value.type}}">{%set mytype = value.type%}{%trans mytype%}</a></td>
-
-        <td><a href="{{url.this}}?country={{value.country}}"><i class="compact flag {{value.flag}}"></i> <span>{{value.country_name}}</span></a></td>
         <td><a href="{{url.this}}?quality={{value.quality}}" class="ltr block">{{value.quality | fitNumber}} kbps</a></td>
+        <td class="fs08"><a href="{{url.this}}?country={{value.country}}"><i class="compact flag {{value.flag}}"></i> <span>{{value.country_name}}</span></a></td>
         <td>{{value.size | fitNumber}}</td>
-        <td><a href="{{url.this}}/{{value.addr}}" class="badge primary">{%trans "Show"%}</a></td>
       </tr>
       {%endfor%}
     </tbody>
   </table>
+</div>
   {%include display.pagination%}
 
 {%endblock%}
