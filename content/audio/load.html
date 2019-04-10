@@ -13,8 +13,8 @@
 				<tr>
 					<td class="collapsing">{{itemDetail.index | fitNumber}}</td>
 					<td>{{itemDetail.name}}</td>
-					<td class="player">
-						<audio controls controlsList="nodownload">
+					<td class="playerCell">
+						<audio controls controlsList="nodownload" preload="none">
 							<source src="{{myDownloadLink}}" type="audio/mpeg">
 						</audio>
 					</td>
