@@ -41,6 +41,20 @@ class view
 
 		\dash\data::audioList($audio_list);
 		\dash\data::dlLink('https://dl.salamquran.com');
+
+		$myTitle  = \dash\data::loadAudioFolder_name();
+		$myTitle .= ' ';
+		// $myTitle .= \dash\data::loadAudioFolder_type();
+		\dash\data::page_title($myTitle);
+
+		$myDesc = \dash\data::loadAudioFolder_name();
+		$myDesc .= ' - ';
+		$myDesc .= \dash\data::loadAudioFolder_type();
+		$myDesc .= ' - ';
+		$myDesc .= \dash\data::loadAudioFolder_quality();
+		$myDesc .= 'kbps';
+
+		\dash\data::page_desc($myDesc);
 	}
 
 
