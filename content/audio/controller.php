@@ -9,7 +9,7 @@ class controller
 		$child = \dash\url::child();
 		$subchild = \dash\url::subchild();
 
-		if(in_array($child, ['qari']))
+		if(in_array($child, ['surah']))
 		{
 			$get = \lib\db\audiobank::get(['addr' => $child. '/'. $subchild, 'limit' => 1]);
 			if(isset($get['id']))
