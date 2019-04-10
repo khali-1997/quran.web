@@ -17,13 +17,13 @@
 
 				<tr>
 					<td class="s0 collapsing">{{itemDetail.index | fitNumber}}</td>
-					<td>{{itemDetail.name}}</td>
+					<td class="pLa5">{{itemDetail.name}}</td>
 					<td class="playerCell">
 						<audio controls controlsList="nodownload" preload="none">
 							<source src="{{myDownloadLink}}" type="audio/mpeg">
 						</audio>
 					</td>
-					<td class="s0">{{"12.4" | fitNumber(false)}} {%trans "Mb"%}</td>
+					<td>{{((loadAudioFolder.meta[itemIndex]['size']) / (1024 * 1024)) | fitNumber}} {%trans "Mb"%}</td>
 					<td class="collapsing"><a href="{{url.kingdom}}/s{{itemDetail.index}}"><i class="sf-book mRa5"></i><span class="s0">{%trans "Read"%}</span></a></td>
 					<td class="collapsing"><a href="{{myDownloadLink}}" download><i class="sf-cloud-download mRa5"></i><span class="s0">{%trans "Download"%}</span></a></td>
 				</tr>
