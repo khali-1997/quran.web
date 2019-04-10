@@ -195,6 +195,9 @@ class audiobank
 					$result['country_name'] = \dash\utility\location\countres::get_localname($country, true);
 					break;
 
+				case 'meta':
+					$result['meta'] = json_decode($value, true);
+					break;
 
 				default:
 					$result[$key] = $value;
