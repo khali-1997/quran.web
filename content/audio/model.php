@@ -76,7 +76,7 @@ class model
 				'countfile' => $value['countfile'],
 				'size'      => $value['size'],
 				'status'    => 'enable',
-
+				'typedesc'  => isset($value['style_detail']['desc']) ? $value['style_detail']['desc'] : null,
 				'qari2'     => isset($value['detail']['translate_qari']) ? $value['detail']['translate_qari'] : null,
 				'language'  => isset($value['detail']['lang']) ? $value['detail']['lang'] : null,
 				'reader'    => isset($value['detail']['reader']) ? $value['detail']['reader'] : null,
