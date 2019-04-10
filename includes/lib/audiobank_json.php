@@ -131,7 +131,11 @@ class audiobank
 
 				list($temp['size'], $temp['countfile'])   = self::child_size($value);
 				$temp['readtype'] = $folder;
-				$temp['files']    = self::files($value);
+
+				if($folder !== 'ayat')
+				{
+					$temp['files']    = self::files($value);
+				}
 
 				$result[]        = $temp;
 
@@ -199,12 +203,12 @@ class audiobank
 			self::save_json();
 
 			self::end('The operation successfully completed');
-			self::end(self::load());
+			// self::end(self::load());
 		}
 		else
 		{
 			self::end('Too many tries');
-			self::end(self::load());
+			// self::end(self::load());
 		}
 	}
 
