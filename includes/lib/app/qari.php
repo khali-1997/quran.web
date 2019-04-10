@@ -9,21 +9,24 @@ class qari
 	{
 		$list =
 		[
-			'abdulbaset'  => ['name'  => T_('AbdulBaset AbdulSamad'), 		'country' => null],
-			'afasy'       => ['name'  => T_('Mishary Rashid Alafasy'), 		'country' => null],
-			'husary'      => ['name'  => T_('Mahmoud Khalil Al-Husary'), 	'country' => null],
-			'minshawi'    => ['name'  => T_('Mohamed Siddiq al-Minshawi'), 	'country' => null],
-			'rifai'       => ['name'  => T_('Hani ar-Rifai'), 				'country' => null],
-			'shatri'      => ['name'  => T_('Abu Bakr al-Shatri'), 			'country' => null],
-			'shuraym'     => ['name'  => T_('Sa`ud ash-Shuraym'), 			'country' => null],
-			'sudais'      => ['name'  => T_('Abdur-Rahman as-Sudais'), 		'country' => null],
-			'balayev'     => ['name'  => T_('Rasim Balayev'), 				'country' => null],
-			'ibrahimwalk' => ['name'  => T_('Ibrahim Walk'), 				'country' => null],
-			'parhizgar'   => ['name'  => T_('Shahriyar parhizgar'), 		'country' => 'IR'],
-			'mansouri'    => ['name'  => T_('Karim mansouri'), 				'country' => 'IR'],
-			'qaraati'     => ['name'  => T_('Mohsen Qaraati'), 				'country' => 'IR'],
-			'fouladvand'  => ['name'  => T_('Mohammad mahdi fouladvand'), 	'country' => 'IR'],
-			'makarem'     => ['name'  => T_('Naser makarem shirazi'), 		'country' => 'IR'],
+
+			'muhammad_jibreel' => ['name'  => T_('Muhammad jibreel'), 		'country' => null],
+			'mustafa_ismail'   => ['name'  => T_('Mustafa Ismail'), 		'country' => 'EG'],
+			'abdulbasit'       => ['name'  => T_('AbdulBaset AbdulSamad'), 		'country' => null],
+			'afasy'            => ['name'  => T_('Mishary Rashid Alafasy'), 		'country' => null],
+			'husary'           => ['name'  => T_('Mahmoud Khalil Al-Husary'), 	'country' => null],
+			'minshawi'         => ['name'  => T_('Mohamed Siddiq al-Minshawi'), 	'country' => null],
+			'rifai'            => ['name'  => T_('Hani ar-Rifai'), 				'country' => null],
+			'shatri'           => ['name'  => T_('Abu Bakr al-Shatri'), 			'country' => null],
+			'shuraym'          => ['name'  => T_('Sa`ud ash-Shuraym'), 			'country' => null],
+			'sudais'           => ['name'  => T_('Abdur-Rahman as-Sudais'), 		'country' => null],
+			'balayev'          => ['name'  => T_('Rasim Balayev'), 				'country' => null],
+			'ibrahimwalk'      => ['name'  => T_('Ibrahim Walk'), 				'country' => null],
+			'parhizgar'        => ['name'  => T_('Shahriyar parhizgar'), 		'country' => 'IR'],
+			'mansouri'         => ['name'  => T_('Karim mansouri'), 				'country' => 'IR'],
+			'qaraati'          => ['name'  => T_('Mohsen Qaraati'), 				'country' => 'IR'],
+			'fouladvand'       => ['name'  => T_('Mohammad mahdi fouladvand'), 	'country' => 'IR'],
+			'makarem'          => ['name'  => T_('Naser makarem shirazi'), 		'country' => 'IR'],
 		];
 
 		if(isset($list[$_slug]))
@@ -88,8 +91,8 @@ class qari
 		$list =
 		[
 			// ----------------- abdoabaset
-			['index' => 1000, 'lang' => 'ar', 'type' => $Mujawwad, 'addr'  => 'abdulbasit-mujawwad-128/', 'slug'  => 'abdulbaset', 'name' => self::get_by_slug('abdulbaset', 'name'), 'default' => false],
-			['index' => 1001, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'abdulbasit-murattal-192/', 'slug'  => 'abdulbaset', 'name' => self::get_by_slug('abdulbaset', 'name'), ],
+			['index' => 1000, 'lang' => 'ar', 'type' => $Mujawwad, 'addr'  => 'abdulbasit-mujawwad-128/', 'slug'  => 'abdulbasit', 'name' => self::get_by_slug('abdulbasit', 'name'), 'default' => false],
+			['index' => 1001, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'abdulbasit-murattal-192/', 'slug'  => 'abdulbasit', 'name' => self::get_by_slug('abdulbasit', 'name'), ],
 
 			// ----------------- afasy
 			['index' => 1020, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'afasy-murattal-192/', 'slug'  => 'afasy', 'name' => self::get_by_slug('afasy', 'name'), 'default' => true],
