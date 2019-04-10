@@ -44,40 +44,37 @@
 
 
 {%block htmlTable%}
-<div class="tblBox">
-
   <table class="tbl1 v6">
     <thead>
       <tr class="fs08">
-        <th class="collapsing">#</th>
-        <th class="collapsing">&nbsp;</th>
+        <th class="s0 collapsing">#</th>
+        <th class="s0 collapsing">&nbsp;</th>
         <th data-sort='{{sortLink.qari.order}}'><a href="{{sortLink.qari.link}}">{%trans "Qari"%}</a></th>
         <th data-sort='{{sortLink.type.order}}'><a href="{{sortLink.type.link}}">{%trans "Style"%}</a></th>
         <th data-sort='{{sortLink.readtype.order}}'><a href="{{sortLink.readtype.link}}">{%trans "type"%}</a></th>
         <th data-sort='{{sortLink.quality.order}}'><a href="{{sortLink.quality.link}}">{%trans "Quality"%}</a></th>
-        <th data-sort='{{sortLink.country.order}}'><a href="{{sortLink.country.link}}">{%trans "Country"%}</a></th>
-        <th data-sort='{{sortLink.size.order}}'><a href="{{sortLink.size.link}}">{%trans "Size"%}</a></th>
+        <th class="s0" data-sort='{{sortLink.country.order}}'><a href="{{sortLink.country.link}}">{%trans "Country"%}</a></th>
+        <th class="s0" data-sort='{{sortLink.size.order}}'><a href="{{sortLink.size.link}}">{%trans "Size"%}</a></th>
       </tr>
     </thead>
 
     <tbody>
       {%for key, value in dataTable%}
       <tr>
-        <td>{{(key + 1) | fitNumber}}</td>
-        <td><a href="{{url.this}}?qari={{value.qari}}"><img src="{{value.image}}" class="avatar"></a></td>
+        <td class="s0">{{(key + 1) | fitNumber}}</td>
+        <td class="s0"><a href="{{url.this}}?qari={{value.qari}}"><img src="{{value.image}}" class="avatar"></a></td>
         <td>{%set myQari = value.name%}
-          <a href="{{url.this}}/{{value.addr}}">{%trans myQari%}</a>
+          <a class="block pLa5" href="{{url.this}}/{{value.addr}}">{%trans myQari%}</a>
         </td>
         <td><a href="{{url.this}}?type={{value.type}}">{%set readtype = value.readtype%}{%trans readtype%}</a></td>
         <td><a href="{{url.this}}?type={{value.type}}">{%set mytype = value.type%}{%trans mytype%}</a></td>
-        <td><a href="{{url.this}}?quality={{value.quality}}" class="ltr block">{{value.quality | fitNumber}} kbps</a></td>
-        <td class="fs08"><a href="{{url.this}}?country={{value.country}}"><i class="compact flag {{value.flag}}"></i> <span>{{value.country_name}}</span></a></td>
-        <td>{{value.size | fitNumber}}</td>
+        <td><a href="{{url.this}}?quality={{value.quality}}" class="ltr block">{{value.quality | fitNumber}} <span class="s0">kbps</span></a></td>
+        <td class="s0 fs08"><a href="{{url.this}}?country={{value.country}}"><i class="compact flag {{value.flag}}"></i> <span>{{value.country_name}}</span></a></td>
+        <td class="s0">{{value.size | fitNumber}}</td>
       </tr>
       {%endfor%}
     </tbody>
   </table>
-</div>
   {%include display.pagination%}
 
 {%endblock%}
@@ -104,42 +101,42 @@
 {%block topQari%}
 
 <div class="f txtC fs07 mB25">
-  <div class="c2 s6">
+  <div class="c2 s4">
     <a href="{{url.this}}?qari=parhizgar">
       <img src="{{url.static}}/images/qariyan/parhizgar.png" alt='{%trans "Quran Qari"%} {%trans "parhizgar"%}'>
       <h3>{%trans "parhizgar"%}</h3>
     </a>
   </div>
 
-  <div class="c2 s6">
+  <div class="c2 s4">
     <a href="{{url.this}}?qari=mansouri">
       <img src="{{url.static}}/images/qariyan/mansouri.png" alt='{%trans "Quran Qari"%} {%trans "mansouri"%}'>
       <h3>{%trans "mansouri"%}</h3>
     </a>
   </div>
 
-  <div class="c2 s6">
+  <div class="c2 s4">
     <a href="{{url.this}}?qari=minshawi">
       <img src="{{url.static}}/images/qariyan/minshawi.png" alt='{%trans "Quran Qari"%} {%trans "minshawi"%}'>
       <h3>{%trans "minshawi"%}</h3>
     </a>
   </div>
 
-  <div class="c2 s6">
+  <div class="c2 s4">
     <a href="{{url.this}}?qari=afasy">
       <img src="{{url.static}}/images/qariyan/afasy.png" alt='{%trans "Quran Qari"%} {%trans "afasy"%}'>
       <h3>{%trans "afasy"%}</h3>
     </a>
   </div>
 
-  <div class="c2 s6">
+  <div class="c2 s4">
     <a href="{{url.this}}?qari=husary">
       <img src="{{url.static}}/images/qariyan/husary.png" alt='{%trans "Quran Qari"%} {%trans "husary"%}'>
       <h3>{%trans "husary"%}</h3>
     </a>
   </div>
 
-  <div class="c2 s6">
+  <div class="c2 s4">
     <a href="{{url.this}}?qari=basit">
       <img src="{{url.static}}/images/qariyan/abdulbasit.png" alt='{%trans "Quran Qari"%} {%trans "abdulbasit"%}'>
       <h3>{%trans "abdulbasit"%}</h3>
