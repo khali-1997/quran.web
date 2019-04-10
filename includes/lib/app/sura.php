@@ -15,7 +15,7 @@ class sura
 	}
 
 
-	public static function detail($_id, $_field = null)
+	public static function list()
 	{
 		$addr = root. '/content_api/v6/sura/sura.json';
 		if(is_file($addr))
@@ -24,23 +24,35 @@ class sura
 			$get = json_decode($get, true);
 			if(is_array($get))
 			{
-				if(isset($get[$_id]))
+				return $get;
+			}
+		}
+		return null;
+	}
+
+
+	public static function detail($_id, $_field = null)
+	{
+		$get = self::list();
+		if(is_array($get))
+		{
+			if(isset($get[$_id]))
+			{
+				if(!$_field)
 				{
-					if(!$_field)
-					{
-						return $get[$_id];
-					}
-					elseif(isset($get[$_id][$_field]))
-					{
-						return $get[$_id][$_field];
-					}
-					else
-					{
-						return null;
-					}
+					return $get[$_id];
+				}
+				elseif(isset($get[$_id][$_field]))
+				{
+					return $get[$_id][$_field];
+				}
+				else
+				{
+					return null;
 				}
 			}
 		}
+
 		return null;
 	}
 }

@@ -3,12 +3,33 @@
 
 
 {%block page%}
-<div><img src="{{loadAudioFolder.image}}"></div>
-<div>{{loadAudioFolder.name}}</div>
-<div class="f">
-	{%for i in 1..114%}
-	<span class="c3 msg "><a href="https://dl.salamquran.com/{{loadAudioFolder.addr}}/{{i}}.mp3">{%trans "Sura"%} {{i | fitNumber}}</a></span>
+	<div><img src="{{loadAudioFolder.image}}"></div>
+	<div>{{loadAudioFolder.name}}</div>
+
+	{%for sura_index, sura_detail in audioList%}
+
+	{%set myDownloadLink%}{{dlLink}}/{{loadAudioFolder.addr}}/{{sura_index}}.mp3{%endset%}
+	<div class="msg">
+
+		<div class="f">
+			<div class="c txtB">
+				<a href="{{myDownloadLink}}">{{sura_detail.index | fitNumber}} | {{sura_detail.name}}</a>
+			</div>
+
+			<div class="cauto">
+				<audio controls preload id="talavat" controlsList="nodownload">
+			        <source src="{{myDownloadLink}}" type="audio/mpeg">
+			    </audio>
+			</div>
+
+			<div class="cauto">
+				<a href="{{myDownloadLink}}"><i class="sf-file"></i></a>
+			</div>
+
+		</div>
+
+	</div>
 	{%endfor%}
-</div>
+
 {%endblock%}
 

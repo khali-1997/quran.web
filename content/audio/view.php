@@ -21,8 +21,29 @@ class view
 
 	private static function audiobank_load()
 	{
+		$audio_list = [];
+		$sura = \lib\app\sura::list();
+		foreach ($sura as $key => $value)
+		{
+			$sura_index = intval($value['index']);
 
+			if($sura_index < 10)
+			{
+				$sura_index = '00'. $sura_index;
+			}
+			elseif($sura_index < 100)
+			{
+				$sura_index = '0'. $sura_index;
+			}
+
+			$audio_list[$sura_index] = $value;
+		}
+
+		\dash\data::audioList($audio_list);
+		\dash\data::dlLink('https://dl.salamquran.com');
 	}
+
+
 
 	private static function audiobank_list()
 	{
