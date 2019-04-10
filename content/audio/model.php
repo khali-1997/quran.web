@@ -59,14 +59,19 @@ class model
 				continue;
 			}
 
+			$myKey   = array_column($value['files'], 'name');
+			$myKey   = array_map(function ($_a){return str_replace('.mp3', '', $_a);}, $myKey);
+			$myFiles = array_combine($myKey, $value['files']);
+
 			$multi_insert[] =
 			[
 				'qari'    => $value['qari'],
 				'type'    => $value['style'],
 				'addr'    => $value['folder']. '/'. $value['subfolder'],
 				'quality' => $value['quality'],
-				// 'size'    => array_sum(array_column($value['files'], 'size')),
+				// 'size' => array_sum(array_column($value['files'], 'size')),
 				'status'  => 'enable',
+				'meta'    => json_encode($myFiles, JSON_UNESCAPED_UNICODE),
 			];
 		}
 
