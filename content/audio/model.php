@@ -66,6 +66,7 @@ class model
 			$multi_insert[] =
 			[
 				'qari'    => $value['qari'],
+				'country' => \lib\app\qari::get_by_slug($value['qari'], 'country'),
 				'type'    => $value['style'],
 				'addr'    => $value['folder']. '/'. $value['subfolder'],
 				'quality' => $value['quality'],
