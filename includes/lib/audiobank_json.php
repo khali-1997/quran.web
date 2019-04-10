@@ -6,7 +6,31 @@ class audiobank
 {
 	private static $json_addr         = __DIR__.'/audiobank.json';
 	private static $audio_folder_addr = __DIR__;
-	private static $folder            = ['surah', 'ayat'];
+	private static $folder            = ['ayat'];
+
+	private static function config()
+	{
+		if(is_file(__DIR__. '/audioconfig.me.json'))
+		{
+			$get = file_get_contents(__DIR__. '/audioconfig.me.json');
+			$get = json_decode($get, true);
+
+			if(isset($get['json_addr']))
+			{
+				self::$json_addr = $get['json_addr'];
+			}
+
+			if(isset($get['audio_folder_addr']))
+			{
+				self::$audio_folder_addr = $get['audio_folder_addr'];
+			}
+
+			if(isset($get['folder']))
+			{
+				self::$folder = $get['folder'];
+			}
+		}
+	}
 
 	private static function load()
 	{
@@ -73,9 +97,9 @@ class audiobank
 					{
 						$myMeta   = substr($v, strpos($v, '.') + 1);
 						$meta[$k] = explode('.', $myMeta);
+						$split[$k] = substr($v, 0, strpos($v, '.'));
 					}
 
-					$split[$k] = substr($v, 0, strpos($v, '.'));
 				}
 
 
@@ -105,7 +129,7 @@ class audiobank
 
 				$temp['quality']  = isset($split[2]) ? $split[2] : null;
 
-				$temp['size']     = self::child_size($folder_addr);
+				$temp['size']     = self::child_size($value);
 				$temp['readtype'] = $folder;
 				$temp['files']    = self::files($value);
 
@@ -125,6 +149,7 @@ class audiobank
 		if(is_dir($_addr))
 		{
 			$list = glob($_addr. '/*');
+
 			foreach ($list as $key => $value)
 			{
 				if(is_dir($value))
@@ -161,9 +186,9 @@ class audiobank
 
 	}
 
-
 	public static function run()
 	{
+		self::config();
 		if(self::check_last_update())
 		{
 			self::save_json();
