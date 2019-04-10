@@ -5181,6 +5181,17 @@ body[data-sidebar="dada"].rtl #sidebar .menu {
 .vcard .adr span {
   display: inline-block; }
 
+.tbl1.v5 tbody td.playerCell {
+  padding-top: 3px;
+  padding-bottom: 3px; }
+
+.tbl1.v5 tbody td.playerCell audio {
+  display: block;
+  min-width: 100px;
+  width: 100%;
+  height: 35px;
+  max-height: 35px; }
+
 #soreha {
   padding: 0; }
 
