@@ -35,6 +35,11 @@ class translate
 					unset($thisGetTrans[array_search($myKey, $thisGetTrans)]);
 				}
 
+				if(!isset($get['mode']) || (isset($get['mode']) && $get['mode'] !== 'aye'))
+				{
+					$get['mode'] = 'aye';
+				}
+
 				$get['t']        = implode('-', $thisGetTrans);
 
 				$url             = \dash\url::that(). '?'. http_build_query($get);
@@ -135,6 +140,11 @@ class translate
 			if(!in_array($thisTransKey, $getTrans))
 			{
 				$getTrans[] = $thisTransKey;
+			}
+
+			if(!isset($get['mode']) || (isset($get['mode']) && $get['mode'] !== 'aye'))
+			{
+				$get['mode'] = 'aye';
 			}
 
 			$get['t']                       = implode('-', $getTrans);

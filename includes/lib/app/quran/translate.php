@@ -87,6 +87,11 @@ class translate
 						unset($getTrans[array_search($thisTransKey, $getTrans)]);
 					}
 
+					if(!isset($get['mode']) || (isset($get['mode']) && $get['mode'] !== 'aye'))
+					{
+						$get['mode'] = 'aye';
+					}
+
 					$get['t']        = implode('-', $getTrans);
 					$url             = \dash\url::that(). '?'. http_build_query($get);
 					$translate['remove_url'] = $url;
