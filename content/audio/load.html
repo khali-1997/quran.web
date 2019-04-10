@@ -4,12 +4,20 @@
 
 {%block page%}
 
-	<div class="f">
-		<div><img src="{{loadAudioFolder.image}}"></div>
-		<div>{{loadAudioFolder.name}}</div>
+	<div class="f align-center mB10">
+		<div class="cauto"><img src="{{loadAudioFolder.image}}"></div>
+		<div class="cauto pLa10">
+			<h3><a href="{{url.this}}?qari={{loadAudioFolder.qari}}">{{loadAudioFolder.name}}</a></h3>
+
+			<div>{%trans "Country"%}
+				<a href="{{url.this}}?country={{loadAudioFolder.flag}}"><span class="flag {{loadAudioFolder.flag}}"></span> {{loadAudioFolder.country_name}}</a>
+			</div>
+			<div>{%trans "Audio Quality"%} <a href="{{url.this}}?quality={{loadAudioFolder.quality}}" class="txtB">{{loadAudioFolder.quality}} kbps</a></div>
+			<div>{%trans "Qiraat type"%} <a href="{{url.this}}?type={{loadAudioFolder.type}}" class="txtB">{{loadAudioFolder.type}}</a></div>
+		</div>
 	</div>
 
-	<div class="tblBox">
+	<div class="tblBox audioList">
 		<table class="tbl1 v5">
 			<tbody>
 	{%for itemIndex, itemDetail in audioList%}
