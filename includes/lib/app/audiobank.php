@@ -191,8 +191,13 @@ class audiobank
 					$result[$key]           = $value;
 					$result['image']        = \lib\app\qari::qari_image($value);
 					$result['name']         = \lib\app\qari::get_by_slug($value, 'name');
-					$result['country']      = $country = \lib\app\qari::get_by_slug($value, 'country');
+					$country                = \lib\app\qari::get_by_slug($value, 'country');
+					$result['country']      = $country;
+					$result['flag']         = strtolower($country);
 					$result['country_name'] = \dash\utility\location\countres::get_localname($country, true);
+					break;
+
+				case 'country':
 					break;
 
 				case 'meta':
