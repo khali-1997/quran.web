@@ -9,10 +9,9 @@
         </div>
         <div class="c os links txtRa">
           {{langList({'html':true, 'class': 'compact'}) | raw}}
-          <a href="{{url.kingdom}}/mag">{%trans "Magazine"%}</a>
+          <!-- <a href="{{url.kingdom}}/mag">{%trans "Magazine"%}</a> -->
           <a href="{{url.kingdom}}/about">{%trans "About"%}</a>
-          <!-- <a href="{{url.kingdom}}/audio">{%trans "Audio"%}</a> -->
-          <!-- <a href="{{url.kingdom}}/namaz">{%trans "Namaz"%}</a> -->
+          <a href="{{url.kingdom}}/audio">{%trans "Audio"%}</a>
 {%if login.id%}
           <a class="special" data-direct href="{{url.kingdom}}/a">{%trans "Panel"%}</a>
 {%else%}
