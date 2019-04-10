@@ -61,15 +61,14 @@ class view
 
 	private static function audiobank_list()
 	{
-		\dash\data::page_title(T_("Audio bank list"));
+		\dash\data::page_title(T_("Audio Database"));
+		\dash\data::page_desc(T_('Free audio bank of quran qiraat of famous qari around the world'));
 
-		\dash\data::page_pictogram('music');
 
-
-		$search_string            = \dash\request::get('q');
+		$search_string            = \dash\request::get('qari');
 		if($search_string)
 		{
-			\dash\data::page_title(\dash\data::page_title(). ' | '. T_('Search for :search', ['search' => $search_string]));
+			\dash\data::page_title(\dash\data::page_title(). ' | '. $search_string);
 		}
 
 		$filterArgs = [];
