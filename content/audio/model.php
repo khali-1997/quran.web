@@ -65,14 +65,15 @@ class model
 
 			$multi_insert[] =
 			[
-				'qari'    => $value['qari'],
-				'country' => \lib\app\qari::get_by_slug($value['qari'], 'country'),
-				'type'    => $value['style'],
-				'addr'    => $value['folder']. '/'. $value['subfolder'],
-				'quality' => $value['quality'],
-				'size'    => array_sum(array_column($value['files'], 'size')),
-				'status'  => 'enable',
-				'meta'    => json_encode($myFiles, JSON_UNESCAPED_UNICODE),
+				'qari'     => $value['qari'],
+				'country'  => \lib\app\qari::get_by_slug($value['qari'], 'country'),
+				'type'     => $value['style'],
+				'readtype' => $value['folder'],
+				'addr'     => $value['folder']. '/'. $value['subfolder'],
+				'quality'  => $value['quality'],
+				'size'     => $value['size'],
+				'status'   => 'enable',
+				'meta'     => json_encode($myFiles, JSON_UNESCAPED_UNICODE),
 			];
 		}
 
