@@ -129,7 +129,7 @@ class audiobank
 
 				$temp['quality']  = isset($split[2]) ? $split[2] : null;
 
-				$temp['size']     = self::child_size($value);
+				list($temp['size'], $temp['countfile'])   = self::child_size($value);
 				$temp['readtype'] = $folder;
 				$temp['files']    = self::files($value);
 
@@ -146,6 +146,7 @@ class audiobank
 	private static function child_size($_addr)
 	{
 		$size = 0;
+		$count = 0;
 		if(is_dir($_addr))
 		{
 			$list = glob($_addr. '/*');
@@ -154,20 +155,24 @@ class audiobank
 			{
 				if(is_dir($value))
 				{
-					$size += self::child_size($value);
+					$temp  = self::child_size($value);
+					$size  += $temp[0];
+					$count += $temp[1];
 				}
 				elseif(is_file($value))
 				{
 					$size += filesize($value);
+					$count++;
 				}
 			}
 		}
 		elseif(is_file($_addr))
 		{
 			$size += filesize($_addr);
+			$count++;
 		}
 
-		return $size;
+		return [$size, $count];
 	}
 
 	private static function files($_addr)
@@ -192,11 +197,14 @@ class audiobank
 		if(self::check_last_update())
 		{
 			self::save_json();
+
 			self::end('The operation successfully completed');
+			self::end(self::load());
 		}
 		else
 		{
 			self::end('Too many tries');
+			self::end(self::load());
 		}
 	}
 

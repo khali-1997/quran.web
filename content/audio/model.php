@@ -67,19 +67,20 @@ class model
 
 			$insert =
 			[
-				'qari'       => $value['qari'],
-				'country'    => \lib\app\qari::get_by_slug($value['qari'], 'country'),
-				'type'       => $value['style'],
-				'readtype'   => $value['folder'],
-				'addr'       => $value['folder']. '/'. $value['subfolder'],
-				'quality'    => $value['quality'],
-				'size'       => $value['size'],
-				'status'     => 'enable',
+				'qari'      => $value['qari'],
+				'country'   => \lib\app\qari::get_by_slug($value['qari'], 'country'),
+				'type'      => $value['style'],
+				'readtype'  => $value['folder'],
+				'addr'      => $value['folder']. '/'. $value['subfolder'],
+				'quality'   => $value['quality'],
+				'countfile' => $value['countfile'],
+				'size'      => $value['size'],
+				'status'    => 'enable',
 
-				'qari2'    => isset($value['detail']['translate_qari']) ? $value['detail']['translate_qari'] : null,
-				'language' => isset($value['detail']['lang']) ? $value['detail']['lang'] : null,
-				'reader'   => isset($value['detail']['reader']) ? $value['detail']['reader'] : null,
-				'meta'     => json_encode($myFiles, JSON_UNESCAPED_UNICODE),
+				'qari2'     => isset($value['detail']['translate_qari']) ? $value['detail']['translate_qari'] : null,
+				'language'  => isset($value['detail']['lang']) ? $value['detail']['lang'] : null,
+				'reader'    => isset($value['detail']['reader']) ? $value['detail']['reader'] : null,
+				'meta'      => json_encode($myFiles, JSON_UNESCAPED_UNICODE),
 			];
 
 			$count += intval(\lib\db\audiobank::insert($insert) !== 0);
