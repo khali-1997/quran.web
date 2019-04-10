@@ -65,14 +65,18 @@
         <td class="s0">{{(key + 1) | fitNumber}}</td>
         <td class="s0"><a href="{{url.this}}?qari={{value.qari}}"><img src="{{value.image}}" class="avatar"></a></td>
         <td>{%set myQari = value.name%}
+          {%if value.readtype == 'surah'%}
           <a class="block pLa5" href="{{url.this}}/{{value.addr}}">{%trans myQari%}</a>
+          {%else%}
+          <a class="block pLa5" href="{{dlLink}}/{{value.addr}}">{%trans myQari%}</a>
+          {%endif%}
           {%if value.qari2%}<span class="badge ligth">{{value.qari2}}</span>{%endif%}
           {%if value.language%}<span class="badge ligth">{{value.language}}</span>{%endif%}
           {%if value.reader%}<span class="badge ligth">{{value.reader}}</span>{%endif%}
         </td>
         <td>
 
-          <a href="{{url.this}}?type={{value.type}}">
+          <a href="{{url.this}}?readtype={{value.readtype}}">
             {%set readtype = value.readtype%}{%trans readtype%}
           </a>
           {%if value.typedesc%}<span class="badge ligth">{{value.typedesc}}</span>{%endif%}

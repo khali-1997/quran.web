@@ -6,6 +6,8 @@ class view
 
 	public static function config()
 	{
+		\dash\data::dlLink('https://dl.salamquran.com');
+
 		if(\dash\data::loadAudioFolder())
 		{
 			\dash\data::myDisplayName('content/audio/load.html');
@@ -21,26 +23,43 @@ class view
 
 	private static function audiobank_load()
 	{
-		$audio_list = [];
-		$sura = \lib\app\sura::list();
-		foreach ($sura as $key => $value)
+		$audio_list      = [];
+		$file_list       = [];
+		$sura            = \lib\app\sura::list();
+		$loadAudioFolder = \dash\data::loadAudioFolder();
+
+		if(isset($loadAudioFolder['readtype']) && $loadAudioFolder['readtype'] === 'surah' && isset($loadAudioFolder['meta']) && is_array($loadAudioFolder['meta']))
 		{
-			$sura_index = intval($value['index']);
+			$file_list = $loadAudioFolder['meta'];
+		}
+		if($loadAudioFolder['readtype'] === 'surah')
+		{
 
-			if($sura_index < 10)
+			foreach ($file_list as $key => $value)
 			{
-				$sura_index = '00'. $sura_index;
-			}
-			elseif($sura_index < 100)
-			{
-				$sura_index = '0'. $sura_index;
+				$temp             = [];
+
+				$sura_index = intval($key);
+				$sura_detail = \lib\app\sura::detail($sura_index);
+
+				if($sura_index < 10)
+				{
+					$sura_index = '00'. $sura_index;
+				}
+				elseif($sura_index < 100)
+				{
+					$sura_index = '0'. $sura_index;
+				}
+
+				$temp               = array_merge($temp, $value, $sura_detail);
+				$temp['sura_index'] = $sura_index;
+				$audio_list[]       = $temp;
+
 			}
 
-			$audio_list[$sura_index] = $value;
 		}
 
 		\dash\data::audioList($audio_list);
-		\dash\data::dlLink('https://dl.salamquran.com');
 
 		$myTitle  = \dash\data::loadAudioFolder_name();
 		$myTitle .= ' ';

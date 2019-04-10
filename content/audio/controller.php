@@ -6,10 +6,10 @@ class controller
 
 	public static function routing()
 	{
-		$child = \dash\url::child();
+		$child    = \dash\url::child();
 		$subchild = \dash\url::subchild();
+		$get      = \lib\db\audiobank::get(['addr' => $child. '/'. $subchild, 'limit' => 1]);
 
-		$get = \lib\db\audiobank::get(['addr' => $child. '/'. $subchild, 'limit' => 1]);
 		if(isset($get['id']))
 		{
 			$get = \lib\app\audiobank::ready($get);

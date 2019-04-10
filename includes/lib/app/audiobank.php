@@ -194,9 +194,17 @@ class audiobank
 					break;
 
 				case 'qari':
-					$result[$key]           = $value;
-					$result['image']        = \lib\app\qari::qari_image($value);
-					$result['name']         = \lib\app\qari::get_by_slug($value, 'name');
+					$result[$key]    = $value;
+					$result['image'] = \lib\app\qari::qari_image($value);
+					$name            = \lib\app\qari::get_by_slug($value, 'name');
+
+					if(!$name)
+					{
+						$name = T_("Without name");
+					}
+
+					$result['name']         = $name;
+
 					$country                = \lib\app\qari::get_by_slug($value, 'country');
 					$result['country']      = $country;
 					$result['flag']         = strtolower($country);
