@@ -4,15 +4,15 @@
  */
 class audiobank
 {
-	private static $file_addr = __DIR__.'/audiobank.json';
-	private static $addr      = __DIR__;
-	private static $folder    = 'qari';
+	private static $json_addr         = __DIR__.'/audiobank.json';
+	private static $audio_folder_addr = __DIR__;
+	private static $folder            = 'qari';
 
 	private static function load()
 	{
-		if(is_file(self::$file_addr))
+		if(is_file(self::$json_addr))
 		{
-			$load = @file_get_contents(self::$file_addr);
+			$load = @file_get_contents(self::$json_addr);
 			$load = json_decode($load, true);
 			return $load;
 		}
@@ -39,7 +39,7 @@ class audiobank
 		$json['lastupdate'] = date("Y-m-d H:i:s");
 		$json['list']       = self::make_json();
 		$json               = json_encode($json, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
-		$save_addr          = self::$file_addr;
+		$save_addr          = self::$json_addr;
 		@file_put_contents($save_addr, $json);
 		return true;
 	}
@@ -48,7 +48,7 @@ class audiobank
 	private static function make_json()
 	{
 		// the addr
-		$addr        = self::$addr;
+		$addr        = self::$audio_folder_addr;
 		$folder      = self::$folder;
 		$folder_addr = $addr .'/'. $folder;
 		$list        = glob($folder_addr. '/*', GLOB_ONLYDIR);
