@@ -6,7 +6,7 @@ class audiobank
 {
 	private static $json_addr         = __DIR__.'/audiobank.json';
 	private static $audio_folder_addr = __DIR__;
-	private static $folder            = 'qari';
+	private static $folder            = ['surah', 'ayat'];
 
 	private static function load()
 	{
@@ -24,7 +24,7 @@ class audiobank
 		$load = self::load();
 		if(isset($load['lastupdate']))
 		{
-			if(time() - strtotime($load['lastupdate']) < 60)
+			if(time() - strtotime($load['lastupdate']) < 1)
 			{
 				return false;
 			}
@@ -49,61 +49,93 @@ class audiobank
 	{
 		// the addr
 		$addr        = self::$audio_folder_addr;
-		$folder      = self::$folder;
-		$folder_addr = $addr .'/'. $folder;
-		$list        = glob($folder_addr. '/*', GLOB_ONLYDIR);
 		$result      = [];
 
-		foreach ($list as $key => $value)
+		foreach (self::$folder as $folder)
 		{
-			$folder_name = str_replace($folder_addr. '/', '', $value);
-			$split       = explode('-', $folder_name);
-			$meta        = [];
+			$folder_addr = $addr .'/'. $folder;
+			$list        = glob($folder_addr. '/*', GLOB_ONLYDIR);
 
-			foreach ($split as $k => $v)
+			foreach ($list as $key => $value)
 			{
-				if(strpos($v, '[') !== false && strpos($v, ']') !== false)
+				$folder_name = str_replace($folder_addr. '/', '', $value);
+				$split       = explode('-', $folder_name);
+				$meta        = [];
+
+				foreach ($split as $k => $v)
 				{
-					$myMeta   = substr($v, strpos($v, '[') + 1, (strpos($v, ']') - strpos($v, '[')) - 1);
-					$meta[$k] = explode('_', $myMeta);
+					if(strpos($v, '[') !== false && strpos($v, ']') !== false)
+					{
+						$myMeta   = substr($v, strpos($v, '[') + 1, (strpos($v, ']') - strpos($v, '[')) - 1);
+						$meta[$k] = explode('_', $myMeta);
+					}
+					$split[$k] = preg_replace("/\[.*\]/", "", $v);
 				}
-				$split[$k] = preg_replace("/\[.*\]/", "", $v);
+
+
+				$temp              = [];
+				$temp['folder']    = $folder;
+				$temp['subfolder'] = $folder_name;
+				$temp['qari']      = isset($split[0]) ? $split[0] : null;
+
+				if(isset($meta[0]))
+				{
+					$temp['qari_detail'] =
+					[
+						'lang'       => isset($meta[0][0]) ? $meta[0][0] : null,
+						'translater' => isset($meta[0][1]) ? $meta[0][1] : null,
+						'reader'     => isset($meta[0][2]) ? $meta[0][2] : null,
+					];
+				}
+
+				$temp['style']   = isset($split[1]) ? $split[1] : null;
+				if(isset($meta[1]))
+				{
+					$temp['style_detail'] =
+					[
+						'desc'       => isset($meta[1][0]) ? $meta[1][0] : null,
+					];
+				}
+
+				$temp['quality']  = isset($split[2]) ? $split[2] : null;
+				$temp['size']     = self::child_size($folder_addr);
+				$temp['readtype'] = $folder;
+				$temp['files']    = self::files($value);
+
+				$result[]        = $temp;
+
 			}
-
-
-			$temp              = [];
-			$temp['folder']    = self::$folder;
-			$temp['subfolder'] = $folder_name;
-			$temp['qari']      = isset($split[0]) ? $split[0] : null;
-
-			if(isset($meta[0]))
-			{
-				$temp['qari_detail'] =
-				[
-					'lang'       => isset($meta[0][0]) ? $meta[0][0] : null,
-					'translater' => isset($meta[0][1]) ? $meta[0][1] : null,
-					'reader'     => isset($meta[0][2]) ? $meta[0][2] : null,
-				];
-			}
-
-			$temp['style']   = isset($split[1]) ? $split[1] : null;
-			if(isset($meta[1]))
-			{
-				$temp['style_detail'] =
-				[
-					'desc'       => isset($meta[1][0]) ? $meta[1][0] : null,
-				];
-			}
-
-			$temp['quality'] = isset($split[2]) ? $split[2] : null;
-
-			$temp['files']   = self::files($value);
-
-			$result[]        = $temp;
 
 		}
 
 		return $result;
+	}
+
+
+	private static function child_size($_addr)
+	{
+		$size = 0;
+		if(is_dir($_addr))
+		{
+			$list = glob($_addr. '/*');
+			foreach ($list as $key => $value)
+			{
+				if(is_dir($value))
+				{
+					$size += self::child_size($value);
+				}
+				elseif(is_file($value))
+				{
+					$size += filesize($value);
+				}
+			}
+		}
+		elseif(is_file($_addr))
+		{
+			$size += filesize($_addr);
+		}
+
+		return $size;
 	}
 
 	private static function files($_addr)
