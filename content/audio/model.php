@@ -65,7 +65,7 @@ class model
 				'type'    => $value['style'],
 				'addr'    => $value['folder']. '/'. $value['subfolder'],
 				'quality' => $value['quality'],
-				'size'    => array_sum(array_column($value['files'], 'size')),
+				// 'size'    => array_sum(array_column($value['files'], 'size')),
 				'status'  => 'enable',
 			];
 		}
