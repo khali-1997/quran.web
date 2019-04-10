@@ -55,6 +55,7 @@
         <th data-sort='{{sortLink.quality.order}}'><a href="{{sortLink.quality.link}}">{%trans "Quality"%}</a></th>
         <th class="s0" data-sort='{{sortLink.country.order}}'><a href="{{sortLink.country.link}}">{%trans "Country"%}</a></th>
         <th class="s0" data-sort='{{sortLink.size.order}}'><a href="{{sortLink.size.link}}">{%trans "Size"%}</a></th>
+        <th class="s0" data-sort='{{sortLink.countfile.order}}'><a href="{{sortLink.countfile.link}}">{%trans "Count file"%}</a></th>
       </tr>
     </thead>
 
@@ -65,12 +66,23 @@
         <td class="s0"><a href="{{url.this}}?qari={{value.qari}}"><img src="{{value.image}}" class="avatar"></a></td>
         <td>{%set myQari = value.name%}
           <a class="block pLa5" href="{{url.this}}/{{value.addr}}">{%trans myQari%}</a>
+          {%if value.qari2%}<span class="badge ligth">{{value.qari2}}</span>{%endif%}
+          {%if value.language%}<span class="badge ligth">{{value.language}}</span>{%endif%}
+          {%if value.reader%}<span class="badge ligth">{{value.reader}}</span>{%endif%}
         </td>
-        <td><a href="{{url.this}}?type={{value.type}}">{%set readtype = value.readtype%}{%trans readtype%}</a></td>
+        <td>
+
+          <a href="{{url.this}}?type={{value.type}}">
+            {%set readtype = value.readtype%}{%trans readtype%}
+          </a>
+          {%if value.typedesc%}<span class="badge ligth">{{value.typedesc}}</span>{%endif%}
+        </td>
+
         <td><a href="{{url.this}}?type={{value.type}}">{%set mytype = value.type%}{%trans mytype%}</a></td>
         <td><a href="{{url.this}}?quality={{value.quality}}" class="ltr block">{{value.quality | fitNumber}} <span class="s0">kbps</span></a></td>
         <td class="s0 fs08"><a href="{{url.this}}?country={{value.country}}"><i class="compact flag {{value.flag}}"></i> <span>{{value.country_name}}</span></a></td>
         <td class="s0">{{value.size | fitNumber}}</td>
+        <td class="s0">{{value.countfile | fitNumber}}</td>
       </tr>
       {%endfor%}
     </tbody>

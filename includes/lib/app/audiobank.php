@@ -16,6 +16,11 @@ class audiobank
 		'country',
 		'quality',
 		'size',
+		'reader',
+		'language',
+		'qari2',
+		'countfile',
+		'typedesc',
 	];
 
 	public static function qari_list()
