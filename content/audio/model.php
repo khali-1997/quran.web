@@ -54,16 +54,20 @@ class model
 				!array_key_exists('style', $value) ||
 				!array_key_exists('folder', $value) ||
 				!array_key_exists('subfolder', $value) ||
-				!array_key_exists('quality', $value) ||
-				!array_key_exists('files', $value)
+				!array_key_exists('quality', $value)
 			  )
 			{
 				continue;
 			}
 
-			$myKey   = array_column($value['files'], 'name');
-			$myKey   = array_map(function ($_a){return str_replace('.mp3', '', $_a);}, $myKey);
-			$myFiles = array_combine($myKey, $value['files']);
+			$myFiles = [];
+
+			if(isset($value['files']))
+			{
+				$myKey   = array_column($value['files'], 'name');
+				$myKey   = array_map(function ($_a){return str_replace('.mp3', '', $_a);}, $myKey);
+				$myFiles = array_combine($myKey, $value['files']);
+			}
 
 			$insert =
 			[
