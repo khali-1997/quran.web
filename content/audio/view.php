@@ -6,6 +6,26 @@ class view
 
 	public static function config()
 	{
+		if(\dash\data::loadAudioFolder())
+		{
+			\dash\data::myDisplayName('content/audio/load.html');
+			self::audiobank_load();
+		}
+		else
+		{
+			\dash\data::myDisplayName('content/audio/list.html');
+			self::audiobank_list();
+		}
+	}
+
+
+	private static function audiobank_load()
+	{
+
+	}
+
+	private static function audiobank_list()
+	{
 		\dash\data::page_title(T_("Audio bank list"));
 
 		\dash\data::page_pictogram('music');

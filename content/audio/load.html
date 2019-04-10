@@ -1,0 +1,14 @@
+{%extends display.main%}
+
+
+
+{%block page%}
+<div><img src="{{loadAudioFolder.image}}"></div>
+<div>{{loadAudioFolder.name}}</div>
+<div class="f">
+	{%for i in 1..114%}
+	<span class="c3 msg "><a href="https://dl.salamquran.com/{{loadAudioFolder.addr}}/{{i}}.mp3">{%trans "Sura"%} {{i | fitNumber}}</a></span>
+	{%endfor%}
+</div>
+{%endblock%}
+
