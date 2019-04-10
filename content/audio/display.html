@@ -3,9 +3,6 @@
 
 
 {%block page%}
-  {%if perm_su()%}
-  <div data-confirm data-data='{"updatedatabase" : 1}'  class="btn danger outline">{%trans "Update database"%}</div>
-  {%endif%}
   {{block('topQari')}}
 
 
@@ -31,6 +28,10 @@
 
  {%endif%}
 {%endif%}
+
+  {%if perm_su()%}
+  <div data-confirm data-data='{"updatedatabase" : 1}'  class="btn danger outline">{%trans "Update database"%}</div>
+  {%endif%}
 
 {%endblock%}
 

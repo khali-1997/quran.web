@@ -6,7 +6,7 @@ class model
 
 	public static function post()
 	{
-		if(\dash\permission::supervisor() && \dash\request::post('updatedatabase'))
+		if(\dash\request::post('updatedatabase') && \dash\permission::supervisor())
 		{
 			if(self::updatedatabase())
 			{
@@ -47,6 +47,18 @@ class model
 
 		foreach ($data['list'] as $key => $value)
 		{
+			if(
+				!array_key_exists('qari', $value) ||
+				!array_key_exists('style', $value) ||
+				!array_key_exists('folder', $value) ||
+				!array_key_exists('subfolder', $value) ||
+				!array_key_exists('quality', $value) ||
+				!array_key_exists('files', $value)
+			  )
+			{
+				continue;
+			}
+
 			$multi_insert[] =
 			[
 				'qari'    => $value['qari'],
@@ -58,11 +70,19 @@ class model
 			];
 		}
 
-		\lib\db\audiobank::delete_all();
+		if(empty($multi_insert))
+		{
+			\dash\notif::error(T_("No data founded"));
+			return false;
+		}
+		else
+		{
+			\lib\db\audiobank::delete_all();
 
-		\lib\db\audiobank::multi_insert($multi_insert);
+			\lib\db\audiobank::multi_insert($multi_insert);
 
-		return true;
+			return true;
+		}
 	}
 
 }
