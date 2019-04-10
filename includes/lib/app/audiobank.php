@@ -15,6 +15,7 @@ class audiobank
 		'filetype',
 		'country',
 		'quality',
+		'size',
 	];
 
 	public static function qari_list()
@@ -198,6 +199,10 @@ class audiobank
 					break;
 
 				case 'country':
+					break;
+
+				case 'size':
+					$result[$key] = \dash\utility\human::humanFilesize($value);
 					break;
 
 				case 'meta':

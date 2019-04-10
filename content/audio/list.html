@@ -50,11 +50,12 @@
       <tr class="fs08">
         <th class="collapsing">#</th>
         <th class="collapsing">&nbsp;</th>
-        <th>{%trans "Qari"%}</th>
-        <th>{%trans "Type"%}</th>
-        <th>{%trans "Country"%}</th>
-        <th>{%trans "Quality"%}</th>
-        <th>{%trans "Show"%}</th>
+        <th data-sort='{{sortLink.qari.order}}'><a href="{{sortLink.qari.link}}">{%trans "Qari"%}</a></th>
+        <th data-sort='{{sortLink.type.order}}'><a href="{{sortLink.type.link}}">{%trans "Type"%}</a></th>
+        <th data-sort='{{sortLink.country.order}}'><a href="{{sortLink.country.link}}">{%trans "Country"%}</a></th>
+        <th data-sort='{{sortLink.quality.order}}'><a href="{{sortLink.quality.link}}">{%trans "Quality"%}</a></th>
+        <th data-sort='{{sortLink.size.order}}'><a href="{{sortLink.size.link}}">{%trans "Size"%}</a></th>
+        <th>{%trans "Show"%}</a></th>
       </tr>
     </thead>
 
@@ -68,6 +69,7 @@
 
         <td><a href="{{url.this}}?country={{value.country}}"><i class="compact flag {{value.flag}}"></i> <span>{{value.country_name}}</span></a></td>
         <td><a href="{{url.this}}?quality={{value.quality}}" class="ltr block">{{value.quality | fitNumber}} kbps</a></td>
+        <td>{{value.size | fitNumber}}</td>
         <td><a href="{{url.this}}/{{value.addr}}" class="badge primary">{%trans "Show"%}</a></td>
       </tr>
       {%endfor%}
