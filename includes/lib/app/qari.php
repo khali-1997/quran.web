@@ -16,10 +16,10 @@ class qari
 			'azerbaijani'         => ['name' => T_("Azerbaijani"), 					'country' => 'AZ'],
 			'ansarian'            => ['name' => T_("Hossein Ansarian"), 			'country' => 'IR'],
 
-			'ibrahim_walk'        => ['name' => T_("Ibrahim Walk"), 'country' => null],
-			'kabiri'              => ['name' => T_("kabiri"), 'country' => null],
-			'hedayatfar'          => ['name' => T_("hedayatfar"), 'country' => null],
-			'salimi'              => ['name' => T_("salimi"), 'country' => null],
+			'ibrahim_walk'        => ['name' => T_("Ibrahim Walk"), 'country' => 'US'],
+			'kabiri'              => ['name' => T_("kabiri"), 'country' => 'IR'],
+			'hedayatfar'          => ['name' => T_("hedayatfar"), 'country' => 'IR'],
+			'salimi'              => ['name' => T_("salimi"), 'country' => 'IR'],
 
 			'muhammad_jibreel'    => ['name' => T_('Muhammad jibreel'), 			'country' => 'EG'],
 			'mustafa_ismail'      => ['name' => T_('Mustafa Ismail'), 				'country' => 'EG'],
