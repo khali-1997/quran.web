@@ -9,7 +9,7 @@ class twigTransTerms
 	echo T_("Get list of aya from one page word by word");                            // Line 8
 	echo T_("Parameters");                                                            // Line 16
 	echo T_("Name");                                                                  // Line 17
-	echo T_("type");                                                                  // Line 20
+	echo T_("type");                                                                  // Line 54
 	echo T_("Description");                                                           // Line 10
 	echo T_("example");                                                               // Line 20
 	echo T_("Constraints");                                                           // Line 22
@@ -66,22 +66,33 @@ class twigTransTerms
 	echo T_("Covering all Quranic information of Muslims");                           // Line 6
 
 	//-------------------------------------projects/SalamQuran/content/audio/list.html
-	echo T_("Update database");                                                       // Line 33
+	echo T_("Update database");                                                       // Line 35
 	echo T_("Qari");                                                                  // Line 78
-	echo T_("Type");                                                                  // Line 79
-	echo T_("Country");                                                               // Line 82
+	echo T_("Style");                                                                 // Line 53
 	echo T_("Quality");                                                               // Line 83
-	echo T_("Show");                                                                  // Line 67
+	echo T_("Country");                                                               // Line 82
+	echo T_("Size");                                                                  // Line 57
+	echo T_("Count file");                                                            // Line 58
+	echo T_("Language");                                                              // Line 118
+	echo T_("Reader");                                                                // Line 75
 	echo T_("Clear filters");                                                         // Line 122
 	echo T_("Result not found!");                                                     // Line 121
 	echo T_("Search with new keywords.");                                             // Line 121
-	echo T_("Quran Qari");                                                            // Line 135
-	echo T_("parhizgar");                                                             // Line 101
-	echo T_("mansouri");                                                              // Line 108
-	echo T_("minshawi");                                                              // Line 115
-	echo T_("afasy");                                                                 // Line 122
-	echo T_("husary");                                                                // Line 129
-	echo T_("abdulbasit");                                                            // Line 136
+	echo T_("Quran Qari");                                                            // Line 157
+	echo T_("parhizgar");                                                             // Line 123
+	echo T_("mansouri");                                                              // Line 130
+	echo T_("minshawi");                                                              // Line 137
+	echo T_("afasy");                                                                 // Line 144
+	echo T_("husary");                                                                // Line 151
+	echo T_("abdulbasit");                                                            // Line 158
+
+	//-------------------------------------projects/SalamQuran/content/audio/load.html
+	echo T_("Audio Quality");                                                         // Line 15
+	echo T_("Qiraat type");                                                           // Line 16
+	echo T_("Return to audio center");                                                // Line 18
+	echo T_("Mb");                                                                    // Line 38
+	echo T_("Read");                                                                  // Line 39
+	echo T_("Download");                                                              // Line 78
 
 	//--------------------------------projects/SalamQuran/content/mission/display.html
 	echo T_("We are define below missions for SalamQuran on start of project and extend it later.");// Line 6
@@ -96,7 +107,6 @@ class twigTransTerms
 	//-------------------------------projects/SalamQuran/content/template/dafault.html
 	echo T_("For share via social networks");                                         // Line 41
 	echo T_("News Code");                                                             // Line 41
-	echo T_("Download");                                                              // Line 78
 	echo T_("PDF");                                                                   // Line 244
 	echo T_("Comment");                                                               // Line 111
 	echo T_("Full Name");                                                             // Line 18
@@ -533,7 +543,6 @@ class twigTransTerms
 	echo T_("Draft");                                                                 // Line 138
 	echo T_("Deleted");                                                               // Line 147
 	echo T_("You can publish in another language");                                   // Line 117
-	echo T_("Language");                                                              // Line 118
 	echo T_("Please select one item");                                                // Line 56
 	echo T_("Choose parent for this page to create related url as tree");             // Line 133
 	echo T_("Parent");                                                                // Line 76
@@ -579,6 +588,7 @@ class twigTransTerms
 	echo T_("Avatar");                                                                // Line 24
 	echo T_("Read Type");                                                             // Line 33
 	echo T_("filetype");                                                              // Line 43
+	echo T_("Type");                                                                  // Line 79
 	echo T_("Choose country");                                                        // Line 71
 	echo T_("addr");                                                                  // Line 86
 	echo T_("quality");                                                               // Line 95

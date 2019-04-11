@@ -69,6 +69,17 @@ class TransStatic
 	echo T_("Muallim");
 	echo T_("muallim");
 
+	echo T_("ayat");
+	echo T_("Ayat");
+	echo T_("translation");
+	echo T_("Translation");
+	echo T_("kbps");
+	echo T_("Kbps");
+	echo T_("withchild");
+	echo T_("Withchild");
+	echo T_("tafsir");
+	echo T_("Tafsir");
+
 	}
 }
 ?>

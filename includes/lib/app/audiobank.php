@@ -214,6 +214,40 @@ class audiobank
 				case 'country':
 					break;
 
+				case 'qari2':
+				case 'reader':
+					if($value)
+					{
+						$result[$key] = \lib\app\qari::get_by_slug($value, 'name');
+					}
+					break;
+
+				case 'language':
+					$newValue = null;
+					switch ($value)
+					{
+						case 'fa':
+							$newValue = T_('Farsi');
+							break;
+
+						case 'en':
+							$newValue = T_('English');
+							break;
+
+						case 'az':
+							$newValue = T_('Azerbaijani');
+							break;
+					}
+
+					if($newValue)
+					{
+						$result[$key] = $newValue;
+					}
+					break;
+
+				// case 'typedesc':
+					// break;
+
 				case 'size':
 					$result[$key] = \dash\utility\human::humanFilesize($value);
 					break;

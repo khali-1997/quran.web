@@ -84,11 +84,11 @@ class view
 		\dash\data::page_desc(T_('Free audio bank of quran qiraat of famous qari around the world'));
 
 
-		$search_string            = \dash\request::get('qari');
-		if($search_string)
-		{
-			\dash\data::page_title(\dash\data::page_title(). ' | '. $search_string);
-		}
+		$search_string            = \dash\request::get('q');
+		// if($search_string)
+		// {
+		// 	\dash\data::page_title(\dash\data::page_title(). ' | '. $search_string);
+		// }
 
 		$filterArgs = [];
 
@@ -125,13 +125,13 @@ class view
 		if(\dash\request::get('qari'))
 		{
 			$args['qari']       = \dash\request::get('qari');
-			$filterArgs['qari'] = \dash\request::get('qari');
+			$filterArgs[T_('qari')] = \lib\app\qari::get_by_slug(\dash\request::get('qari'), 'name');
 		}
 
 		if(\dash\request::get('readtype'))
 		{
 			$args['readtype']       = \dash\request::get('readtype');
-			$filterArgs['readtype'] = \dash\request::get('readtype');
+			$filterArgs[T_("Style")] = \dash\request::get('readtype');
 		}
 
 		if(\dash\request::get('filetype'))
@@ -143,7 +143,7 @@ class view
 		if(\dash\request::get('country'))
 		{
 			$args['country']       = \dash\request::get('country');
-			$filterArgs['country'] = \dash\request::get('country');
+			$filterArgs[T_('country')] = \dash\utility\location\countres::get_localname(\dash\request::get('country'), true);
 		}
 
 		if(\dash\request::get('quality'))
