@@ -12,7 +12,7 @@ class qari
 			'sahih_international' => ['name' => T_("Sahih international"), 			'country' => 'US'],
 			'saeediyan'           => ['name' => T_("Hossein Saeediyan"), 			'country' => 'IR'],
 			'sabzali'             => ['name' => T_("Mohammad Hossein Sabzali"), 	'country' => 'IR'],
-			'foladvand'           => ['name' => T_('Mohammad mahdi fouladvand'), 	'country' => 'IR'],
+			'foladvand'           => ['name' => T_('Mohammad mahdi foladvand'), 	'country' => 'IR'],
 			'azerbaijani'         => ['name' => T_("Azerbaijani"), 					'country' => 'AZ'],
 			'ansarian'            => ['name' => T_("Hossein Ansarian"), 			'country' => 'IR'],
 
@@ -36,7 +36,7 @@ class qari
 			'parhizgar'           => ['name' => T_('Shahriyar parhizgar'), 			'country' => 'IR'],
 			'mansouri'            => ['name' => T_('Karim mansouri'), 				'country' => 'IR'],
 			'qaraati'             => ['name' => T_('Mohsen Qaraati'), 				'country' => 'IR'],
-			'fouladvand'          => ['name' => T_('Mohammad mahdi fouladvand'), 	'country' => 'IR'],
+
 			'makarem'             => ['name' => T_('Naser makarem shirazi'), 		'country' => 'IR'],
 		];
 
@@ -130,10 +130,10 @@ class qari
 			['index' => 1080, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'sudais-murattal-192/', 'slug'  => 'sudais', 'name' => self::get_by_slug('sudais', 'name'),],
 
 			// ----------------- trnaslate - az - balayev
-			['index' => 1081, 'lang' => 'az', 'type' => $Translate, 'addr'  => 'translation-az-azerbaijani-128/', 'slug'  => 'balayev', 'name' => self::get_by_slug('balayev', 'name'),],
+			['index' => 1081, 'lang' => 'az', 'type' => $Translate, 'addr'  => 'azerbaijani.az.balayev-translation-128/', 'slug'  => 'balayev', 'name' => self::get_by_slug('balayev', 'name'),],
 
 			// ----------------- trnaslate - en - ibrahimwalk
-			['index' => 1082, 'lang' => 'en', 'type' => $Translate, 'addr'  => 'translation-en-sahih_international-32/', 'slug'  => 'ibrahimwalk', 'name' => self::get_by_slug('ibrahimwalk', 'name'),],
+			['index' => 1082, 'lang' => 'en', 'type' => $Translate, 'addr'  => 'sahih_international.en.ibrahim_walk-translation-32/', 'slug'  => 'ibrahimwalk', 'name' => self::get_by_slug('ibrahimwalk', 'name'),],
 
 			// ----------------- parhizgar
 			['index' => 1090, 'lang' => 'fa', 'type' => $Murattal, 'addr'  => 'parhizgar-murattal-48/', 'slug'  => 'parhizgar', 'name' => self::get_by_slug('parhizgar', 'name'), 'default_lang' => true],
@@ -142,13 +142,13 @@ class qari
 			['index' => 1091, 'lang' => 'fa', 'type' => $Murattal, 'addr'  => 'mansouri-murattal-40/', 'slug'  => 'mansouri', 'name' => self::get_by_slug('mansouri', 'name'), ],
 
 			// ----------------- trnaslate - fa - qeraati
-			['index' => 1086, 'lang' => 'fa', 'type' => $Commentary, 'addr'  => 'translation-fa-qaraati-16/', 'slug'  => 'qaraati', 'name' => self::get_by_slug('qaraati', 'name'), 'default_lang' => false],
+			['index' => 1086, 'lang' => 'fa', 'type' => $Commentary, 'addr'  => 'qaraati.fa.qaraati-tafsir-16/', 'slug'  => 'qaraati', 'name' => self::get_by_slug('qaraati', 'name'), 'default_lang' => false],
 
-			// ----------------- trnaslate - fa - fouladvand
-			['index' => 1083, 'lang' => 'fa', 'type' => $Translate, 'addr'  => 'translation-fa-foladvand-40/', 'slug'  => 'fouladvand', 'name' => self::get_by_slug('fouladvand', 'name'), ],
+			// ----------------- trnaslate - fa - foladvand
+			['index' => 1083, 'lang' => 'fa', 'type' => $Translate, 'addr'  => 'foladvand.fa.hedayatfar-translation-40/', 'slug'  => 'foladvand', 'name' => self::get_by_slug('foladvand', 'name'), ],
 
 			// ----------------- trnaslate - fa - makarem
-			['index' => 1084, 'lang' => 'fa', 'type' => $Translate, 'addr'  => 'translation-fa-makarem-16/', 'slug'  => 'makarem', 'name' => self::get_by_slug('makarem', 'name'), ],
+			['index' => 1084, 'lang' => 'fa', 'type' => $Translate, 'addr'  => 'makarem.fa.kabiri-translation-16/', 'slug'  => 'makarem', 'name' => self::get_by_slug('makarem', 'name'), ],
 
 
 		];
