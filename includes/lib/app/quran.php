@@ -34,7 +34,7 @@ class quran
 		$get = \lib\db\quran::get(['1.1' => 1.1, 'limit' => 1], ['order' => ' ORDER BY RAND() ']);
 		if(isset($get['sura']) && isset($get['aya']))
 		{
-			$get['url'] = \dash\url::kingdom(). '/s'. $get['sura']. '/'. $get['aya'];
+			$get['url'] = \dash\url::kingdom(). '/s'. $get['sura']. '/'. $get['aya']. '?mode=aye';
 			return $get;
 		}
 
@@ -65,7 +65,7 @@ class quran
 
 		$verse_url             = \dash\url::kingdom();
 		$verse_url             .= '/s'. $_value['sura'];
-		$verse_url             .= '/'. $_value['aya'];
+		$verse_url             .= '/'. $_value['aya']. '?mode=aye';
 
 		$_value['verse_title'] = $verse_title;
 		$_value['verse_url']   = $verse_url;
