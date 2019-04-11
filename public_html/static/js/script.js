@@ -188,7 +188,7 @@ var wbwAudio = new Audio();
 wbwAudio.addEventListener("ended", function()
 {
   // bind end event to play the player again
-  playerTogglePlay('play');
+  playerTogglePlay('play', true);
 });
 
 function handlePlayWbw()
@@ -209,7 +209,7 @@ function handlePlayWbw()
       var soreID  = wbwAddr.substr(0,3);
       if(soreID)
       {
-        playerTogglePlay('pause');
+        playerTogglePlay('pause', true);
         var fullWUrl = "https://dl.salamquran.com/wbw/" + soreID + '/' + wbwAddr + '.mp3'
         wbwAudio.src = fullWUrl;
         wbwAudio.play().catch(function()
@@ -506,7 +506,7 @@ function highlightAye(_mode)
 }
 
 
-function playerTogglePlay(_forcePlayer)
+function playerTogglePlay(_forcePlayer, _forWbw)
 {
   var talavatEl = document.getElementById('talavat');
   var myPlayer  = $('.player');
@@ -526,17 +526,35 @@ function playerTogglePlay(_forcePlayer)
       // {
       //   talavatEl.currentTime = 0;
       // }
-      talavatEl.play();
+      if(_forWbw)
+      {
+        if(myPlayer.attr('data-wbwBreak') !== undefined)
+        {
+          myPlayer.attr('data-wbwBreak', null);
+          talavatEl.play();
+        }
+      }
+      else
+      {
+        talavatEl.play();
+      }
     }
     else if(_forcePlayer === 'pause')
     {
+      if(_forWbw)
+      {
+        if(!talavatEl.paused)
+        {
+          myPlayer.attr('data-wbwBreak', '');
+        }
+      }
       talavatEl.pause();
     }
   }
   else
   {
     // change icon
-    if (talavatEl.paused)
+    if(talavatEl.paused)
     {
       talavatEl.play();
     }
