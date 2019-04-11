@@ -101,13 +101,13 @@ class view
 
 		if(!$args['order'])
 		{
-			$args['order'] = 'ASC';
+			$args['order'] = 'desc';
 		}
 
 
 		if(!$args['sort'])
 		{
-			$args['sort'] = 'id';
+			$args['sort'] = 'readtype';
 		}
 
 		if(\dash\request::get('status'))
