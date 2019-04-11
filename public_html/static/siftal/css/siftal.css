@@ -20674,6 +20674,9 @@ body.siftal .full .middle {
 .rtl .ck.ck-tooltip .ck-tooltip__text {
   font-family: IRANSans, tahoma; }
 
+.rtl .ck.ck-labeled-input .ck-labeled-input__status {
+  font-family: IRANSans, tahoma; }
+
 /* header */
 .siftal .dashHead {
   height: 50px;
