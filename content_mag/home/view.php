@@ -11,8 +11,17 @@ class view
 		\dash\data::page_pictogram('book');
 
 
-		\dash\data::display_magAdmin('content_mag/home/article.html');
-		self::magazine();
+		if(\dash\data::isMag())
+		{
+			\dash\data::display_magAdmin('content_mag/home/article.html');
+			self::magazine();
+		}
+		else
+		{
+			\dash\data::display_magAdmin('content_mag/home/dashboard.html');
+			self::magDashboard();
+		}
+
 
 
 	}
@@ -36,7 +45,7 @@ class view
 
 
 		// set back link
-		\dash\data::badge_text(T_('Return to help center'));
+		\dash\data::badge_text(T_('Return to magazine list'));
 		\dash\data::badge_link(\dash\url::here());
 
 		// set page title
@@ -60,6 +69,51 @@ class view
 	}
 
 
+	public static function magDashboard()
+	{
+
+		$get_posts_term =
+		[
+			'type'     => 'mag',
+			'parent'   => null,
+			'language' => \dash\language::current(),
+		];
+
+		if(\dash\permission::check('cpMagEditForOthers'))
+		{
+			$get_posts_term['status']   = ["NOT IN", "('deleted')"];
+		}
+		else
+		{
+			$get_posts_term['status']   = 'publish';
+		}
+
+		$search = \dash\request::get('q');
+
+		if($search)
+		{
+
+			$get_search = $get_posts_term;
+			unset($get_search['parent']);
+			$dataTable = \dash\app\posts::list($search, $get_search);
+			\dash\data::dataTable($dataTable);
+		}
+
+		$pageList = \dash\db\posts::get($get_posts_term);
+		$pageList = array_map(['\dash\app\posts', 'ready'], $pageList);
+
+		\dash\data::listCats($pageList);
+
+		$randomArticles = \dash\app\posts::random_post(['type' => 'mag', 'limit' => 5, 'status' => 'publish', 'parent' => ["IS", "NOT NULL"]]);
+
+		\dash\data::randomArticles($randomArticles);
+
+		$randomFAQ = \dash\db\posts::get_posts_term(['type' => 'mag', 'limit' => 5, 'tag' => 'faq', 'random' => true], 'mag_tag');
+		\dash\data::randomFAQ($randomFAQ);
+
+	}
+
 
 }
 ?>
+

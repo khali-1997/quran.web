@@ -5,7 +5,7 @@ class controller
 {
 	public static function routing()
 	{
-		\dash\data::isHelpCenter(false);
+		\dash\data::isMag(false);
 
 		$module = \dash\url::module();
 
@@ -29,7 +29,7 @@ class controller
 		$check = \dash\db\posts::get($check_arg);
 		if($check)
 		{
-			\dash\data::isHelpCenter(true);
+			\dash\data::isMag(true);
 			\dash\data::moduelRow($check);
 			\dash\open::get();
 		}
