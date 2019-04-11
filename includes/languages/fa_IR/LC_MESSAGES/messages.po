@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SalamQuran - Persian\n"
-"POT-Creation-Date: 2019-04-11 18:15+0430\n"
-"PO-Revision-Date: 2019-04-11 18:16+0430\n"
+"POT-Creation-Date: 2019-04-11 18:42+0430\n"
+"PO-Revision-Date: 2019-04-11 18:42+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -8259,7 +8259,7 @@ msgstr "محمد حسین سبزعلی"
 
 #: SalamQuran/includes/lib/app/qari.php:15
 msgid "Mohammad mahdi foladvand"
-msgstr ""
+msgstr "محمد مهدی فولادوند"
 
 #: SalamQuran/includes/lib/app/qari.php:17
 msgid "Hossein Ansarian"
