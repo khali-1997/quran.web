@@ -35,7 +35,7 @@ self::$config['api_v6']['appkey'][] = null;
 // ----- allow magazine type of post
 self::$config['allow_post_type'] =
 [
-	'magazine',
+	'mag',
 ];
 
 
