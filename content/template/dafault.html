@@ -4,7 +4,7 @@
 {%block page%}
 
 
-{%if datarow.type == 'post' or datarow.type == 'page'%}
+{%if datarow.type == 'post' or datarow.type == 'page' or datarow.type == 'mag'%}
   {{block('posts')}}
 {%else%}
   {{block('terms')}}
@@ -18,7 +18,7 @@
   <div class="postPreview">
     <div class="postMainContent">
 
-{%if datarow.type == 'post'%}
+{%if datarow.type == 'post' or datarow.type == 'mag'%}
 {%if datarow.meta.thumb%}
      <img src="{{datarow.meta.thumb}}" alt="{{datarow.title | raw}}" class="floatRa thumb">
 {%endif%}
