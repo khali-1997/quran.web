@@ -140,15 +140,22 @@ class qari
 
 			// ----------------- mansouri
 			['index' => 1091, 'lang' => 'fa', 'type' => $Murattal, 'addr'  => 'mansouri-murattal-40/', 'slug'  => 'mansouri', 'name' => self::get_by_slug('mansouri', 'name'), ],
+			['index' => 1092, 'lang' => 'fa', 'type' => $Murattal, 'addr' => 'sabzali-murattal-32/', 'slug' => 'sabzali', 'name' => self::get_by_slug('sabzali', 'name'),],
 
 			// ----------------- trnaslate - fa - qeraati
 			['index' => 1086, 'lang' => 'fa', 'type' => $Commentary, 'addr'  => 'qaraati.fa.qaraati-tafsir-16/', 'slug'  => 'qaraati', 'name' => self::get_by_slug('qaraati', 'name'), 'default_lang' => false],
+			['index' => 1087, 'lang' => 'fa', 'type' => $Translate, 'addr' => 'ansarian.fa.salimi-translation-16/', 'slug' => 'ansarian', 'name' => self::get_by_slug('ansarian', 'name'),],
 
 			// ----------------- trnaslate - fa - foladvand
 			['index' => 1083, 'lang' => 'fa', 'type' => $Translate, 'addr'  => 'foladvand.fa.hedayatfar-translation-40/', 'slug'  => 'foladvand', 'name' => self::get_by_slug('foladvand', 'name'), ],
 
+
 			// ----------------- trnaslate - fa - makarem
 			['index' => 1084, 'lang' => 'fa', 'type' => $Translate, 'addr'  => 'makarem.fa.kabiri-translation-16/', 'slug'  => 'makarem', 'name' => self::get_by_slug('makarem', 'name'), ],
+
+			['index' => 1101, 'lang' => 'ar', 'type' => $Murattal, 'addr' => 'muhammad_jibreel-murattal-32/', 'slug' => 'muhammad_jibreel', 'name' => self::get_by_slug('muhammad_jibreel', 'name'),],
+			['index' => 1102, 'lang' => 'ar', 'type' => $Murattal, 'addr' => 'mustafa_ismail-murattal-32/', 'slug' => 'mustafa_ismail', 'name' => self::get_by_slug('mustafa_ismail', 'name'),],
+			['index' => 1103, 'lang' => 'ar', 'type' => $Murattal, 'addr' => 'saeediyan-murattal-16/', 'slug' => 'saeediyan', 'name' => self::get_by_slug('saeediyan', 'name'),],
 
 
 		];
