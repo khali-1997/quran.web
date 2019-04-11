@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SalamQuran - Persian\n"
-"POT-Creation-Date: 2019-04-11 12:27+0430\n"
-"PO-Revision-Date: 2019-04-11 12:29+0430\n"
+"POT-Creation-Date: 2019-04-11 18:15+0430\n"
+"PO-Revision-Date: 2019-04-11 18:16+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 1.8.7.1\n"
 "X-Poedit-Basepath: ../../../../..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -351,10 +351,9 @@ msgid "Add new audio"
 msgstr "افزودن صوت جدید"
 
 #: SalamQuran/content_m/audiobank/home/view.php:21
-#: SalamQuran/content_m/magazine/home/view.php:28
 #: dash/addons/content_cp/attachment/home/view.php:67
 #: dash/addons/content_cp/comments/home/view.php:23
-#: dash/addons/content_cp/posts/home/view.php:71
+#: dash/addons/content_cp/posts/home/view.php:79
 #: dash/addons/content_cp/visitor/log/view.php:23
 #: dash/addons/content_crm/android/home/view.php:24
 #: dash/addons/content_crm/log/home/view.php:34
@@ -367,144 +366,15 @@ msgstr "افزودن صوت جدید"
 msgid "Search for :search"
 msgstr "جستجوی :search"
 
-#: SalamQuran/content_m/magazine/add/view.php:8
-#: SalamQuran/content_m/magazine/home/view.php:21
-msgid "Add new magazine"
-msgstr "افزودن مجله جدید"
+#: SalamQuran/content_mag/home/view.php:9
+#: SalamQuran/includes/languages/trans_project.php:366
+#: dash/addons/content_cp/posts/home/view.php:48
+msgid "Magazine"
+msgstr "مجله"
 
-#: SalamQuran/content_m/magazine/add/view.php:9
-#: dash/addons/content_cp/posts/add/view.php:23
-msgid "Posts can contain keyword and category with title and descriptions."
-msgstr "پست‌ها می توانند شامل کلیدی و دسته بندی با عنوان و شرح باشند."
-
-#: SalamQuran/content_m/magazine/add/view.php:12
-msgid "Back to list of magazine"
-msgstr "بازگشت به لیست مجلات"
-
-#: SalamQuran/content_m/magazine/edit/controller.php:12
-#: SalamQuran/content_m/magazine/edit/view.php:13
-#: dash/addons/content_cp/comments/edit/controller.php:15
-#: dash/addons/content_cp/comments/edit/view.php:14
-#: dash/addons/content_cp/contact/edit/view.php:14
-#: dash/addons/content_cp/posts/edit/controller.php:12
-#: dash/addons/content_cp/posts/edit/view.php:13
-#: dash/addons/content_support/message/edit/view.php:23
-#: dash/addons/content_support/ticket/show/view.php:47 dash/lib/app/posts.php:250
-msgid "Invalid id"
-msgstr "شناسه نامعتبر"
-
-#: SalamQuran/content_m/magazine/edit/view.php:34
-#: SalamQuran/content_m/magazine/edit/view.php:74
-#: dash/addons/content_cp/posts/edit/view.php:34
-#: dash/addons/content_cp/posts/edit/view.php:74
-msgid "Edit post"
-msgstr "ویرایش نوشته"
-
-#: SalamQuran/content_m/magazine/edit/view.php:35
-#: dash/addons/content_cp/posts/edit/view.php:35
-msgid "You can change everything, change url and add gallery or some other change"
+#: SalamQuran/content_mag/home/view.php:48
+msgid "Return to magazine list"
 msgstr ""
-"شما می توانید همه چیز را تغییر دهید، تغییر آدرس و اضافه کردن گالری و یا برخی از "
-"تغییرات دیگر"
-
-#: SalamQuran/content_m/magazine/edit/view.php:38
-#: SalamQuran/content_m/magazine/edit/view.php:75
-#: dash/addons/content_cp/posts/add/view.php:26
-#: dash/addons/content_cp/posts/edit/view.php:38
-#: dash/addons/content_cp/posts/edit/view.php:75
-msgid "Back to list of posts"
-msgstr "بازگشت به لیست نوشته‌ها"
-
-#: SalamQuran/content_m/magazine/edit/view.php:49
-#: dash/addons/content_cp/posts/edit/view.php:49
-msgid "Edit page"
-msgstr "ویرایش برگه"
-
-#: SalamQuran/content_m/magazine/edit/view.php:50
-#: dash/addons/content_cp/posts/add/view.php:40
-#: dash/addons/content_cp/posts/edit/view.php:50
-msgid "Back to list of pages"
-msgstr "بازگشت به لیست برگه‌ها"
-
-#: SalamQuran/content_m/magazine/edit/view.php:60
-#: dash/addons/content_cp/posts/edit/view.php:60
-msgid "Edit help"
-msgstr "ویرایش مرکز راهنمایی"
-
-#: SalamQuran/content_m/magazine/edit/view.php:61
-#: dash/addons/content_cp/attachment/home/view.php:38
-#: dash/addons/content_cp/posts/add/view.php:51
-#: dash/addons/content_cp/posts/edit/view.php:61
-#: dash/addons/content_cp/posts/home/view.php:42
-msgid "Back to list of helps"
-msgstr "بازگشت به لیست مرکز راهنمایی"
-
-#: SalamQuran/content_m/magazine/edit/view.php:62
-#: dash/addons/content_cp/posts/edit/view.php:62
-msgid "Helps can contain keyword and category with title and descriptions."
-msgstr ""
-"مقالات مرکز راهنمایی می‌توانند شامل کلیدواژه و دسته‌بندی همراه با عنوان و شرح باشند."
-
-#: SalamQuran/content_m/magazine/home/view.php:9
-#: SalamQuran/includes/languages/trans_dash.php:463
-#: dash/addons/content_cp/attachment/home/view.php:19
-#: dash/addons/content_cp/posts/home/view.php:23
-#: dash/addons/includes/languages/trans_dash.php:106
-#: dash/addons/includes/languages/trans_static.php:94
-#: dash/addons/includes/languages/trans_static.php:977
-msgid "Posts"
-msgstr "نوشته‌ها"
-
-#: SalamQuran/content_m/magazine/home/view.php:10
-#: dash/addons/content_cp/attachment/home/view.php:20
-#: dash/addons/content_cp/posts/home/view.php:24
-msgid "Check list of posts and search or filter in them to find your posts."
-msgstr ""
-"چک کردن لیست پست‌ها و جستجو یا فیلتر کردن در آنها برای پیدا کردن پست های خود."
-
-#: SalamQuran/content_m/magazine/home/view.php:10
-#: dash/addons/content_cp/attachment/home/view.php:20
-#: dash/addons/content_cp/posts/home/view.php:24
-msgid "Also add or edit specefic post."
-msgstr "همچنین افزودن یا ویرایش پست خاص"
-
-#: SalamQuran/content_m/magazine/home/view.php:15
-#: dash/addons/content_cp/attachment/home/view.php:54
-#: dash/addons/content_cp/comments/home/view.php:16
-#: dash/addons/content_cp/dayevent/view.php:13
-#: dash/addons/content_cp/posts/home/view.php:58
-#: dash/addons/content_cp/terms/view.php:61
-#: dash/addons/content_crm/log/caller/view.php:13
-#: dash/addons/content_crm/log/home/view.php:13
-#: dash/addons/content_crm/log/show/view.php:13
-#: dash/addons/content_crm/sms/template/view.php:15
-#: dash/addons/content_su/android/view.php:11
-#: dash/addons/content_su/tg/log/view.php:14
-#: dash/addons/content_su/tg/system/view.php:14
-#: dash/addons/content_su/tg/users/view.php:14
-msgid "Back to dashboard"
-msgstr "بازگشت به داشبورد"
-
-#: SalamQuran/content_m/magazine/home/view.php:91
-#: SalamQuran/includes/languages/trans_dash.php:33
-#: SalamQuran/includes/languages/trans_project.php:515
-#: dash/addons/content_cp/attachment/home/view.php:121
-#: dash/addons/content_cp/posts/home/view.php:141
-#: dash/addons/includes/languages/trans_dash.php:43
-msgid "Status"
-msgstr "وضعیت"
-
-#: SalamQuran/content_m/magazine/main/model.php:21
-#: dash/addons/content_cp/attachment/add/model.php:17
-#: dash/addons/content_cp/posts/main/model.php:21
-msgid "Can not upload file"
-msgstr "ناتوان در آپلود فایل"
-
-#: SalamQuran/content_m/magazine/main/model.php:25
-#: dash/addons/content_cp/attachment/add/model.php:21
-#: dash/addons/content_cp/posts/main/model.php:25
-msgid "File successfully uploaded"
-msgstr "فایل با موفقیت آپلود شد"
 
 #: SalamQuran/includes/languages/trans_dash.php:8
 #: dash/addons/includes/languages/trans_dash.php:1102
@@ -648,6 +518,14 @@ msgstr "این آدرس شرکت است؟"
 #: dash/addons/includes/languages/trans_dash.php:1118
 msgid "Company name"
 msgstr "نام شرکت"
+
+#: SalamQuran/includes/languages/trans_dash.php:33
+#: SalamQuran/includes/languages/trans_project.php:515
+#: dash/addons/content_cp/attachment/home/view.php:121
+#: dash/addons/content_cp/posts/home/view.php:149
+#: dash/addons/includes/languages/trans_dash.php:43
+msgid "Status"
+msgstr "وضعیت"
 
 #: SalamQuran/includes/languages/trans_dash.php:34
 #: dash/addons/includes/languages/trans_dash.php:747
@@ -2670,6 +2548,15 @@ msgstr "دیدگاه‌ها"
 msgid "Help center"
 msgstr "مرکز راهنما"
 
+#: SalamQuran/includes/languages/trans_dash.php:463
+#: dash/addons/content_cp/attachment/home/view.php:19
+#: dash/addons/content_cp/posts/home/view.php:23
+#: dash/addons/includes/languages/trans_dash.php:106
+#: dash/addons/includes/languages/trans_static.php:94
+#: dash/addons/includes/languages/trans_static.php:977
+msgid "Posts"
+msgstr "نوشته‌ها"
+
 #: SalamQuran/includes/languages/trans_dash.php:465
 #: dash/addons/content_support/tag/view.php:10
 #: dash/addons/includes/languages/trans_dash.php:108
@@ -4513,7 +4400,8 @@ msgstr "پشتیبان گیری خودکار"
 
 #: SalamQuran/includes/languages/trans_dash.php:969
 #: dash/addons/includes/languages/trans_dash.php:1243
-#: dash/addons/includes/languages/trans_static.php:49 dash/lib/utility/upload.php:92
+#: dash/addons/includes/languages/trans_static.php:49 dash/lib/utility/human.php:104
+#: dash/lib/utility/upload.php:92
 msgid "MB"
 msgstr "مگابایت"
 
@@ -4546,7 +4434,7 @@ msgstr "روز"
 #: SalamQuran/includes/languages/trans_dash.php:975
 #: dash/addons/includes/languages/trans_dash.php:1249
 #: dash/addons/includes/languages/trans_static.php:33 dash/lib/utility/human.php:31
-#: dash/lib/utility/human.php:140
+#: dash/lib/utility/human.php:145
 msgid "hour"
 msgstr "ساعت"
 
@@ -6316,7 +6204,7 @@ msgstr "کیفیت صوت"
 #: SalamQuran/includes/languages/trans_project.php:43
 #: SalamQuran/includes/languages/trans_static.php:76
 msgid "kbps"
-msgstr "کیلوبایت بر ثانیه"
+msgstr "کیلوبیت بر ثانیه"
 
 #: SalamQuran/includes/languages/trans_project.php:44
 msgid "Qiraat type"
@@ -7420,10 +7308,6 @@ msgstr "لوگو"
 msgid "Audio"
 msgstr "صوتی"
 
-#: SalamQuran/includes/languages/trans_project.php:366
-msgid "Magazine"
-msgstr "مجله"
-
 #: SalamQuran/includes/languages/trans_project.php:367
 msgid "Blog"
 msgstr "بلاگ"
@@ -8276,7 +8160,6 @@ msgid "Mohsen Qaraati"
 msgstr "محسن قرائتی"
 
 #: SalamQuran/includes/lib/app/audiobank.php:42
-#: SalamQuran/includes/lib/app/qari.php:15 SalamQuran/includes/lib/app/qari.php:39
 msgid "Mohammad mahdi fouladvand"
 msgstr "محمد مهدی فولادوند"
 
@@ -8373,6 +8256,10 @@ msgstr "حسین سعیدیان"
 #: SalamQuran/includes/lib/app/qari.php:14
 msgid "Mohammad Hossein Sabzali"
 msgstr "محمد حسین سبزعلی"
+
+#: SalamQuran/includes/lib/app/qari.php:15
+msgid "Mohammad mahdi foladvand"
+msgstr ""
 
 #: SalamQuran/includes/lib/app/qari.php:17
 msgid "Hossein Ansarian"
@@ -8984,6 +8871,16 @@ msgstr "کد اعتبارسنجی قبلا برای این کاربر ارسال
 msgid "Code is ok"
 msgstr "کد صحیح است"
 
+#: dash/addons/content_cp/attachment/add/model.php:17
+#: dash/addons/content_cp/posts/main/model.php:21
+msgid "Can not upload file"
+msgstr "ناتوان در آپلود فایل"
+
+#: dash/addons/content_cp/attachment/add/model.php:21
+#: dash/addons/content_cp/posts/main/model.php:25
+msgid "File successfully uploaded"
+msgstr "فایل با موفقیت آپلود شد"
+
 #: dash/addons/content_cp/attachment/add/view.php:19
 msgid "Add new attachemnt"
 msgstr "افزودن فایل جدید"
@@ -8991,6 +8888,17 @@ msgstr "افزودن فایل جدید"
 #: dash/addons/content_cp/attachment/add/view.php:23
 msgid "Back to list of attachemnt"
 msgstr "بازگشت به لیست فایل‌ها"
+
+#: dash/addons/content_cp/attachment/home/view.php:20
+#: dash/addons/content_cp/posts/home/view.php:24
+msgid "Check list of posts and search or filter in them to find your posts."
+msgstr ""
+"چک کردن لیست پست‌ها و جستجو یا فیلتر کردن در آنها برای پیدا کردن پست های خود."
+
+#: dash/addons/content_cp/attachment/home/view.php:20
+#: dash/addons/content_cp/posts/home/view.php:24
+msgid "Also add or edit specefic post."
+msgstr "همچنین افزودن یا ویرایش پست خاص"
 
 #: dash/addons/content_cp/attachment/home/view.php:30
 #: dash/addons/content_cp/posts/home/view.php:34
@@ -9009,11 +8917,35 @@ msgstr "بررسی لیست مقالات موجود در مرکز راهنمای
 
 #: dash/addons/content_cp/attachment/home/view.php:37
 #: dash/addons/content_cp/posts/home/view.php:41
+#: dash/addons/content_cp/posts/home/view.php:49
 msgid "Also add or edit specefic article."
 msgstr "هم‌چنین افزودن یا ویرایش مقاله خاص."
 
+#: dash/addons/content_cp/attachment/home/view.php:38
+#: dash/addons/content_cp/posts/add/view.php:51
+#: dash/addons/content_cp/posts/edit/view.php:61
+#: dash/addons/content_cp/posts/home/view.php:42
+msgid "Back to list of helps"
+msgstr "بازگشت به لیست مرکز راهنمایی"
+
+#: dash/addons/content_cp/attachment/home/view.php:54
+#: dash/addons/content_cp/comments/home/view.php:16
+#: dash/addons/content_cp/dayevent/view.php:13
+#: dash/addons/content_cp/posts/home/view.php:66
+#: dash/addons/content_cp/terms/view.php:61
+#: dash/addons/content_crm/log/caller/view.php:13
+#: dash/addons/content_crm/log/home/view.php:13
+#: dash/addons/content_crm/log/show/view.php:13
+#: dash/addons/content_crm/sms/template/view.php:15
+#: dash/addons/content_su/android/view.php:11
+#: dash/addons/content_su/tg/log/view.php:14
+#: dash/addons/content_su/tg/system/view.php:14
+#: dash/addons/content_su/tg/users/view.php:14
+msgid "Back to dashboard"
+msgstr "بازگشت به داشبورد"
+
 #: dash/addons/content_cp/attachment/home/view.php:60
-#: dash/addons/content_cp/posts/home/view.php:64
+#: dash/addons/content_cp/posts/home/view.php:72
 msgid "Add new :val"
 msgstr "افزودن :val جدید"
 
@@ -9034,6 +8966,16 @@ msgstr "عملیات پشتیبان گیری کامل شد"
 #: dash/addons/content_cp/cms/view.php:9 dash/addons/content_cp/cms/view.php:10
 msgid "CMS Dashboard"
 msgstr "داشبورد سیستم مدیریت محتوا"
+
+#: dash/addons/content_cp/comments/edit/controller.php:15
+#: dash/addons/content_cp/comments/edit/view.php:14
+#: dash/addons/content_cp/contact/edit/view.php:14
+#: dash/addons/content_cp/posts/edit/controller.php:12
+#: dash/addons/content_cp/posts/edit/view.php:13
+#: dash/addons/content_support/message/edit/view.php:23
+#: dash/addons/content_support/ticket/show/view.php:47 dash/lib/app/posts.php:250
+msgid "Invalid id"
+msgstr "شناسه نامعتبر"
 
 #: dash/addons/content_cp/comments/edit/model.php:34
 #: dash/addons/content_cp/contact/edit/model.php:34
@@ -9103,6 +9045,16 @@ msgstr "داشبورد دیدگاه‌ها"
 msgid "Add new post"
 msgstr "افزودن نوشته جدید"
 
+#: dash/addons/content_cp/posts/add/view.php:23
+msgid "Posts can contain keyword and category with title and descriptions."
+msgstr "پست‌ها می توانند شامل کلیدی و دسته بندی با عنوان و شرح باشند."
+
+#: dash/addons/content_cp/posts/add/view.php:26
+#: dash/addons/content_cp/posts/edit/view.php:38
+#: dash/addons/content_cp/posts/edit/view.php:88
+msgid "Back to list of posts"
+msgstr "بازگشت به لیست نوشته‌ها"
+
 #: dash/addons/content_cp/posts/add/view.php:37
 msgid "Add new page"
 msgstr "افزودن برگه جدید"
@@ -9111,6 +9063,11 @@ msgstr "افزودن برگه جدید"
 msgid "Add new static page like about or honors"
 msgstr "اضافه کردن صفحه استاتیک جدید مانند درباره ما یا افتخارات"
 
+#: dash/addons/content_cp/posts/add/view.php:40
+#: dash/addons/content_cp/posts/edit/view.php:50
+msgid "Back to list of pages"
+msgstr "بازگشت به لیست برگه‌ها"
+
 #: dash/addons/content_cp/posts/add/view.php:49
 msgid "Add new help"
 msgstr "افزودن راهنمایی جدید"
@@ -9118,6 +9075,62 @@ msgstr "افزودن راهنمایی جدید"
 #: dash/addons/content_cp/posts/add/view.php:50
 msgid "Add new article to help center or new faq."
 msgstr "افزودن سوال متداول یا مقاله‌ای جدید به مرکز راهنمایی."
+
+#: dash/addons/content_cp/posts/add/view.php:61
+msgid "Add new maganize"
+msgstr ""
+
+#: dash/addons/content_cp/posts/add/view.php:62
+msgid "Add new article maganize."
+msgstr ""
+
+#: dash/addons/content_cp/posts/add/view.php:63
+msgid "Back to list of maganizes"
+msgstr ""
+
+#: dash/addons/content_cp/posts/edit/view.php:34
+#: dash/addons/content_cp/posts/edit/view.php:87
+msgid "Edit post"
+msgstr "ویرایش نوشته"
+
+#: dash/addons/content_cp/posts/edit/view.php:35
+msgid "You can change everything, change url and add gallery or some other change"
+msgstr ""
+"شما می توانید همه چیز را تغییر دهید، تغییر آدرس و اضافه کردن گالری و یا برخی از "
+"تغییرات دیگر"
+
+#: dash/addons/content_cp/posts/edit/view.php:49
+msgid "Edit page"
+msgstr "ویرایش برگه"
+
+#: dash/addons/content_cp/posts/edit/view.php:60
+msgid "Edit help"
+msgstr "ویرایش مرکز راهنمایی"
+
+#: dash/addons/content_cp/posts/edit/view.php:62
+msgid "Helps can contain keyword and category with title and descriptions."
+msgstr ""
+"مقالات مرکز راهنمایی می‌توانند شامل کلیدواژه و دسته‌بندی همراه با عنوان و شرح باشند."
+
+#: dash/addons/content_cp/posts/edit/view.php:72
+msgid "Edit magazine"
+msgstr ""
+
+#: dash/addons/content_cp/posts/edit/view.php:73
+msgid "Back to list of magazine"
+msgstr "بازگشت به لیست مجلات"
+
+#: dash/addons/content_cp/posts/edit/view.php:74
+msgid "Magazine can contain keyword and category with title and descriptions."
+msgstr ""
+
+#: dash/addons/content_cp/posts/home/view.php:49
+msgid "Check list of article in magazine."
+msgstr ""
+
+#: dash/addons/content_cp/posts/home/view.php:50
+msgid "Back to list of magazines"
+msgstr ""
 
 #: dash/addons/content_cp/sitemap/view.php:8
 msgid "Sitemap"
@@ -10333,7 +10346,7 @@ msgstr "موبایل نمی‌تواند خالی باشد"
 msgid "Please select one of the type items"
 msgstr "لطفا یک نوع را انتخاب کنید"
 
-#: dash/addons/content_su/transactions/add/model.php:80 dash/lib/app/posts.php:620
+#: dash/addons/content_su/transactions/add/model.php:80 dash/lib/app/posts.php:660
 msgid "Invalid type"
 msgstr "نوع نامعتبر"
 
@@ -10759,7 +10772,7 @@ msgid "day"
 msgstr "روز"
 
 #: dash/addons/includes/languages/trans_static.php:34 dash/lib/utility/human.php:32
-#: dash/lib/utility/human.php:148
+#: dash/lib/utility/human.php:153
 msgid "minute"
 msgstr "دقیقه"
 
@@ -10801,11 +10814,13 @@ msgstr "-"
 msgid "Byte"
 msgstr "بایت"
 
-#: dash/addons/includes/languages/trans_static.php:48 dash/lib/utility/upload.php:92
+#: dash/addons/includes/languages/trans_static.php:48 dash/lib/utility/human.php:103
+#: dash/lib/utility/upload.php:92
 msgid "KB"
 msgstr "کیلوبایت"
 
-#: dash/addons/includes/languages/trans_static.php:50 dash/lib/utility/upload.php:92
+#: dash/addons/includes/languages/trans_static.php:50 dash/lib/utility/human.php:105
+#: dash/lib/utility/upload.php:92
 msgid "GB"
 msgstr "گیگابایت"
 
@@ -14842,108 +14857,124 @@ msgstr "شناسه گالری تصاویر اشتباه است"
 msgid "This help center is published. And you can not edit it!"
 msgstr "این مقاله مرکز راهنمایی منتشر شده و شما نمی‌توانید آن را حذف کنید!"
 
-#: dash/lib/app/posts.php:271
+#: dash/lib/app/posts.php:269
+msgid "This magazine is published. And you can not edit it!"
+msgstr ""
+
+#: dash/lib/app/posts.php:279
 msgid "This post is published. And you can not edit it!"
 msgstr "این خبر منتشر شده و شما نمی‌توانید آن را حذف کنید!"
 
-#: dash/lib/app/posts.php:287 dash/lib/app/posts.php:297
+#: dash/lib/app/posts.php:295 dash/lib/app/posts.php:313
 msgid "This is not your post. And you can not edit it!"
 msgstr "این خبر شما نیست و شما نمی‌توانید آن را حذف کنید!"
 
-#: dash/lib/app/posts.php:308 dash/lib/app/posts.php:314 dash/lib/app/term.php:110
+#: dash/lib/app/posts.php:303
+msgid "This is not your magazine. And you can not edit it!"
+msgstr ""
+
+#: dash/lib/app/posts.php:324 dash/lib/app/posts.php:330 dash/lib/app/term.php:110
 #: dash/lib/app/term.php:116
 msgid "Invalid parameter language"
 msgstr "پارامتر زبان نامعتبر است"
 
-#: dash/lib/app/posts.php:321
+#: dash/lib/app/posts.php:337
 msgid "Title of posts can not be null"
 msgstr "عنوان پست نمی تواند خالی باشد"
 
-#: dash/lib/app/posts.php:327
+#: dash/lib/app/posts.php:343
 msgid "Please set the title less than 100 character"
 msgstr "لطفا عنوان پست را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:334
+#: dash/lib/app/posts.php:350
 msgid "Please set the excerpt less than 300 character"
 msgstr "لطفا چکیده متن را کمتر از ۳۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:341
+#: dash/lib/app/posts.php:357
 msgid "Please set the subtitle less than 300 character"
 msgstr "لطفا زیر عنوان را کمتر از ۳۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:348
+#: dash/lib/app/posts.php:364
 msgid "Please set the slug less than 100 character"
 msgstr "لطفا نامک را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:370
+#: dash/lib/app/posts.php:386
 msgid "Duplicate slug"
 msgstr "نامک تکراری است"
 
-#: dash/lib/app/posts.php:378
+#: dash/lib/app/posts.php:394
 msgid "Please set the url less than 100 character"
 msgstr "لطفا آدرس را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:390
+#: dash/lib/app/posts.php:406
 msgid "This text is too large!"
 msgstr "متن خیلی طولانی است!"
 
-#: dash/lib/app/posts.php:396
+#: dash/lib/app/posts.php:412
 msgid "Please set the type less than 100 character"
 msgstr "لطفا نوع را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:414
+#: dash/lib/app/posts.php:430
 msgid "Invalid parameter status"
 msgstr "پارامتر وضعیت نامعتبر است"
 
-#: dash/lib/app/posts.php:425
+#: dash/lib/app/posts.php:441
 msgid "You can not delete help center"
 msgstr "شما نمی‌توانید این مقاله مرکز راهنمایی را حذف کنید"
 
-#: dash/lib/app/posts.php:433
+#: dash/lib/app/posts.php:449
+msgid "You can not delete magazine"
+msgstr ""
+
+#: dash/lib/app/posts.php:457
 msgid "You can not delete page"
 msgstr "شما نمی‌توانید این صفحه را حذف کنید"
 
-#: dash/lib/app/posts.php:442
+#: dash/lib/app/posts.php:466
 msgid "You can not delete post"
 msgstr "شما نمی توانید خبر را حذف کنید"
 
-#: dash/lib/app/posts.php:456
+#: dash/lib/app/posts.php:480
 msgid "This is not your help center. And you can not delete it!"
 msgstr "این مقاله شما نیست و شما نمی‌توانید آن را ویرایش کنید!"
 
-#: dash/lib/app/posts.php:466
+#: dash/lib/app/posts.php:488
+msgid "This is not your magazine. And you can not delete it!"
+msgstr ""
+
+#: dash/lib/app/posts.php:498
 msgid "This is not your post. And you can not delete it!"
 msgstr "این خبر شما نیست و شما نمی‌توانید آن را حذف کنید!"
 
-#: dash/lib/app/posts.php:485
+#: dash/lib/app/posts.php:517
 msgid "Invalid parameter parent"
 msgstr "پارامتر والد نامعتبر است"
 
-#: dash/lib/app/posts.php:492
+#: dash/lib/app/posts.php:524
 msgid "Parent post not found"
 msgstr "پست والد یافت نشد"
 
-#: dash/lib/app/posts.php:500
+#: dash/lib/app/posts.php:532
 msgid "Can not set page as parent of self!"
 msgstr "نمی‌توانید صفحه‌ای را به‌عنوان والد خودش ثبت کنید!"
 
-#: dash/lib/app/posts.php:548
+#: dash/lib/app/posts.php:580
 msgid "Invalid parameter publishdate"
 msgstr "تاریخ انتشار پست اشتباه است"
 
-#: dash/lib/app/posts.php:569
+#: dash/lib/app/posts.php:601
 msgid "Invalid publish time"
 msgstr "تاریخ انتشار نادرست"
 
-#: dash/lib/app/posts.php:599
+#: dash/lib/app/posts.php:631
 msgid "Category setting for better access is suggested"
 msgstr "تنظیم دسته‌بندی برای دسترسی مناسب‌تر توصیه می‌شود"
 
-#: dash/lib/app/posts.php:614
+#: dash/lib/app/posts.php:646
 msgid "Invalid slug"
 msgstr "نامک اشتباه است"
 
-#: dash/lib/app/posts.php:751
+#: dash/lib/app/posts.php:798
 msgid "Some :type is wrong"
 msgstr "برخی از :type اشتباه هستند"
 
@@ -14951,7 +14982,7 @@ msgstr "برخی از :type اشتباه هستند"
 msgid "No way to insert post"
 msgstr "هیچ راهی برای افزودن پست وجود ندارد"
 
-#: dash/lib/app/posts/add.php:122
+#: dash/lib/app/posts/add.php:129
 msgid "Post successfuly added"
 msgstr "پست با موفقیت اضافه شد"
 
@@ -14963,7 +14994,7 @@ msgstr "شما دسترسی لازم را برای ویرایش این پست ن
 msgid "Invalid posts id"
 msgstr "شناسه پست اشتباه است"
 
-#: dash/lib/app/posts/edit.php:134
+#: dash/lib/app/posts/edit.php:141
 msgid "Post successfully updated"
 msgstr "پست با موفقیت به روز رسانی شد"
 
@@ -16166,7 +16197,11 @@ msgstr "شما در یک دخمه پرپیچ‌وخم سرگردانید!"
 msgid "In the future"
 msgstr "در آینده"
 
-#: dash/lib/utility/human.php:143
+#: dash/lib/utility/human.php:102
+msgid "bytes"
+msgstr "بایت"
+
+#: dash/lib/utility/human.php:148
 msgid ", :min minute"
 msgstr " و :min دقیقه"
 
@@ -16680,11 +16715,11 @@ msgstr "نام فایل غیرمجاز"
 msgid "Exceeded file extension limit"
 msgstr "نوع فایل غیرمجاز"
 
+#~ msgid "Add new magazine"
+#~ msgstr "افزودن مجله جدید"
+
 #~ msgid "Reader"
 #~ msgstr "خواننده"
-
-#~ msgid "bytes"
-#~ msgstr "بایت"
 
 #~ msgid "No data founded"
 #~ msgstr "هیچ اطلاعاتی یافت نشد"
