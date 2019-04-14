@@ -6,11 +6,6 @@ class view
 
 	public static function config()
 	{
-		\dash\data::page_title(T_("Magazine"));
-		// \dash\data::page_desc(T_("Easily manage your tickets and monitor or track them to get best answer until fix your problem"));
-		\dash\data::page_pictogram('book');
-
-
 		if(\dash\data::isMag())
 		{
 			\dash\data::display_magAdmin('content_mag/home/article.html');
@@ -21,13 +16,13 @@ class view
 			\dash\data::display_magAdmin('content_mag/home/dashboard.html');
 			self::magDashboard();
 		}
-
-
-
 	}
+
 
 	public static function magazine()
 	{
+		\dash\data::page_title(T_("Magazine"));
+
 		$master = \dash\data::moduelRow();
 		if(!isset($master['id']))
 		{
