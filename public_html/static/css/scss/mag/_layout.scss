@@ -3,11 +3,16 @@
 .topNews img{
     width: 100%;
     display: block;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+.topNews img:hover{
+    border-color: #fff;
 }
 
 // main news
-.topNews .mainNews{
-
+.topNews .mainNews img{
+    margin-bottom: 0.5em;
 }
 .topNews .mainNews h2{
     font-weight: 900;
@@ -44,7 +49,7 @@
     transition: 0.3s;
 }
 .topNews .lastNews a:hover{
-    background-color: #eee;
+    background-color: #efefef;
 }
 .topNews .lastNews a:first-child{
     padding: 0;
