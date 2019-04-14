@@ -5872,6 +5872,20 @@ body[data-in='mag'] #header .topTitle {
   right: 10px;
   left: auto; }
 
+.newsCollection {
+  margin: 5rem 0 10rem; }
+
+.newsCollection .newsCover {
+  display: block;
+  overflow: hidden;
+  max-height: 300px; }
+
+.newsCollection h2 a {
+  font-size: 0.6em; }
+
+.newsCollection .vcard {
+  background-color: #fff; }
+
 body[data-in='mag'] .wrapper {
   padding-top: 2em; }
 
