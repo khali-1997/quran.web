@@ -13,32 +13,32 @@
 	color: #fff;
 	min-height: 400px;
 }
-.topnav{
+#header .topnav{
 	padding-top: 60px;
 }
-.topnav h1{
+#header .topnav h1{
 	margin:0;
 }
-.topnav h1 a{
+#header .topnav h1 a{
 	display: block;
 	line-height: 40px;
 	margin: 0 10px;
 	color: rgba(255,255,255,0.8);
 	transition: color 0.3s;
 }
-.topnav h1 a:hover{
+#header .topnav h1 a:hover{
 	color: rgba(255,255,255,1);
 }
-.topnav h1 a:focus{
+#header .topnav h1 a:focus{
 	color: rgba(255,255,255,0.9);
 }
-.topnav h1 a img{
+#header .topnav h1 a img{
 	width: 40px;
 	height: 40px;
 	margin: 0 10px;
 	vertical-align: middle;
 }
-.topnav .links a{
+#header .topnav .links a{
 	display: inline-block;
 	line-height: 40px;
 	padding: 0 2em;
@@ -47,42 +47,55 @@
 	color: rgba(255,255,255,0.8);
 	border-radius: 3px;
 }
-.topnav .links a.special{
+#header .topnav .links a.special{
 	background-color: rgba(255, 255, 255, 0.07);
 	border: 1px solid #fff;
 	font-weight: 900;
 	line-height: 38px;
 }
-.topnav .links a:hover{
+#header .topnav .links a:hover{
 	background-color: rgba(255, 255, 255, 0.1);
 	color: rgba(255,255,255,1);
 }
-.topnav h1 a:focus{
+#header .topnav h1 a:focus{
 	color: rgba(255,255,255,0.9);
 }
 
-.topTitle{
+#header .topTitle{
 	padding: 100px 1.5rem 40px;
 	text-align: center;
 	overflow:hidden;
 }
-.topTitle h2{
+#header .topTitle h2{
 	font-weight: 900;
 	font-size: 4em;
 	line-height: 100px;
 	margin: 0;
 }
-body[data-page="home"] .topTitle h2{
+body[data-page="home"] #header .topTitle h2{
 	font-size: 6em;
 }
-.topTitle h3{
+#header .topTitle h3{
 	font-size: 1.4em;
 	line-height: 30px;
 	font-weight: 100;
 	margin: 0;
 }
-body[data-page="home"] .topTitle h3{
+body[data-page="home"] #header .topTitle h3{
 	font-size: 1.7em;
+}
+
+
+// mag design for header
+body[data-in='mag'] #header{
+	min-height: initial;
+	height: 80px;
+}
+body[data-in='mag'] #header .topnav{
+	padding-top: 20px;
+}
+body[data-in='mag'] #header .topTitle{
+	display: none;
 }
 
 
