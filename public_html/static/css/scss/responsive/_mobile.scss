@@ -5,7 +5,8 @@
 	.rtl #sidebar{right: -51px;}
 	#header {min-height: auto;}
 	#header .sidenavHandler{display: inline-block;}
-	#header .links a{display: none;}
+	#header .topnav .links a{display: none;}
+	body[data-in='mag'] #header .topnav h1{font-size: 1.1em;}
 
 	.topTitle{padding:50px 10px 40px; }
 	.topTitle h2{font-size: 2em!important;line-height:2em;}

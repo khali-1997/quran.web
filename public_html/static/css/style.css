@@ -5908,8 +5908,11 @@ body[data-in='mag'] .wrapper {
   #header .sidenavHandler {
     display: inline-block; }
 
-  #header .links a {
+  #header .topnav .links a {
     display: none; }
+
+  body[data-in='mag'] #header .topnav h1 {
+    font-size: 1.1em; }
 
   .topTitle {
     padding: 50px 10px 40px; }
