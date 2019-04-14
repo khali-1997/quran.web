@@ -7,7 +7,9 @@
    <div class="cn">
     <div class="wrapper" data-xhr='wrapper'>
 {{block ('topNews')}}
+{{block ('newsCollection')}}
 {{block ('introVideo')}}
+
 
     </div>
    </div>
@@ -112,11 +114,36 @@
 <div class="cn">
   <div class="introVideo">
     <video controls>
-      <source src="{{url.static}}/video/intro-salam.mp4" type="video/mp4">
+      <source src="{{url.static}}/images/mag/sample/namaz-zan-va-mard.mp4" type="video/mp4">
     </video>
   </div>
 </div>
 {%endblock%}
 
+
+{%block newsCollection%}
+{%set homePagePost = posts({"limit" : 4})%}
+{%if homePagePost%}
+<div class="newsCollection">
+    <div class="f">
+      {%for key, value in homePagePost%}
+      <div class="c3 s6 pA10">
+        <div class="vcard shadow">
+          <a class="newsCover" href="{{url.here}}/{{value.url}}"><img alt='siftal' src="{%if value.meta.thumb%}{{value.meta.thumb}}{%else%}{{url.static}}/images/hi.jpg{%endif%}"></a>
+          <div class="content">
+            <a class="header">{{value.title}}</a>
+            <div class="desc">{{value.excerpt}}</div>
+          </div>
+          <div class="footer f">
+            <div class="c"><a href="{{url.site}}/n/{{value.id}}">{%trans "News Link"%}</a></div>
+            <div class="cauto os"><i class="compact mRa10 sf-calendar"></i>{{value.publishdate | dt(true, 'date')}}</div>
+          </div>
+        </div>
+      </div>
+      {%endfor%}
+    </div>
+</div>
+{%endif%}
+{%endblock%}
 
 
