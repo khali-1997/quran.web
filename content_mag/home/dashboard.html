@@ -7,6 +7,7 @@
    <div class="cn">
     <div class="wrapper" data-xhr='wrapper'>
 {{block ('topNews')}}
+{{block ('introVideo')}}
 
     </div>
    </div>
@@ -105,3 +106,17 @@
  </div>
 </section>
 {%endblock%}
+
+
+{%block introVideo%}
+<div class="cn">
+  <div class="introVideo">
+    <video controls>
+      <source src="{{url.static}}/video/intro-salam.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+{%endblock%}
+
+
+
