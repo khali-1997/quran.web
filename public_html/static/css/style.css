@@ -4755,7 +4755,7 @@ body {
 #header .topnav .links a {
   display: inline-block;
   line-height: 40px;
-  padding: 0 2em;
+  padding: 0 1.5em;
   margin: 0 0.5em;
   transition: 0.3s;
   color: rgba(255, 255, 255, 0.8);
@@ -5706,6 +5706,22 @@ body.ltr .Quran .readerMode.translate {
   overflow: hidden;
   outline: none; }
 
+body[data-in='mag'] #header {
+  min-height: initial;
+  height: 80px; }
+
+body[data-in='mag'] #header .topnav {
+  padding-top: 20px; }
+
+body[data-in='mag'] #header .topnav h1 {
+  font-size: 2em; }
+
+body[data-in='mag'] #header .topnav .links a {
+  padding: 0 1em; }
+
+body[data-in='mag'] #header .topTitle {
+  display: none; }
+
 .topNews img {
   width: 100%;
   display: block;
@@ -5751,6 +5767,9 @@ body.ltr .Quran .readerMode.translate {
 
 .topNews .lastNews a:last-child {
   border-bottom: none; }
+
+body[data-in='mag'] .wrapper {
+  padding-top: 2em; }
 
 @media (max-width: 767px) {
   .ltr #page {
