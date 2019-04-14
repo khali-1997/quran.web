@@ -5768,6 +5768,33 @@ body[data-in='mag'] #header .topTitle {
 .topNews .lastNews a:last-child {
   border-bottom: none; }
 
+.mustReads {
+  background-color: #333;
+  color: #fff;
+  padding: 5em 1em; }
+
+.mustReads img {
+  width: 100%;
+  display: block;
+  border: 1px solid transparent;
+  transition: 0.3s;
+  margin-bottom: 1em; }
+
+.mustReads a:hover img {
+  border-color: #fff; }
+
+.mustReads a {
+  display: block;
+  color: #eee; }
+
+.mustReads a:hover {
+  color: #fff; }
+
+.mustReads h2 {
+  font-weight: 900;
+  font-size: 4em;
+  margin-bottom: 1em; }
+
 body[data-in='mag'] .wrapper {
   padding-top: 2em; }
 

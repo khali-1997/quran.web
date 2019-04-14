@@ -1,8 +1,23 @@
 {%extends display.main%}
 
 
+{%block content%}
 
-{%block page%}
+  <main id="main">
+   <div class="cn">
+    <div class="wrapper" data-xhr='wrapper'>
+{{block ('topNews')}}
+    </div>
+   </div>
+{{block ('mustReads')}}
+  </main>
+
+
+{%endblock%}
+
+
+
+{%block topNews%}
 <section class="f topNews">
   <div class="c3 sideNews pRa10">
       <a href="sample">
@@ -31,11 +46,11 @@
       <img src="{{url.static}}/images/mag/sample/hadith1.jpg" alt="{{site.title}}">
     </a>
 
-    <a href="#">توسعه معانی و تدقیق مفاهیم با مطالعه دست‌نوشته‌های قرآنی</a>
-    <a href="#">خودشناسی کلید دردهای بشر است</a>
-    <a href="#">دیدگاه قرآن درباره شیوه‌های انتقال ارزش‌های اجتماعی</a>
-    <a href="#">بررسی دیدگاه قرآن درباره روند شکل‌گیری هنجارها در جامعه</a>
-    <a href="#">عفت؛ قیام علیه زشتی و کراهت فقر</a>
+    <a href="sample">توسعه معانی و تدقیق مفاهیم با مطالعه دست‌نوشته‌های قرآنی</a>
+    <a href="sample">خودشناسی کلید دردهای بشر است</a>
+    <a href="sample">دیدگاه قرآن درباره شیوه‌های انتقال ارزش‌های اجتماعی</a>
+    <a href="sample">بررسی دیدگاه قرآن درباره روند شکل‌گیری هنجارها در جامعه</a>
+    <a href="sample">عفت؛ قیام علیه زشتی و کراهت فقر</a>
   </nav>
 
 </section>
@@ -43,3 +58,33 @@
 {%endblock%}
 
 
+
+{%block mustReads%}
+<section class="f mustReads txtC">
+  <div class="c12">
+    <h2>{%trans "Must Reads"%}</h2>
+  </div>
+
+  <div class="c pRa10">
+    <a href="sample">
+     <img src="{{url.static}}/images/mag/sample/banner-tollab-competition.jpg" alt="{{site.title}}">
+     <h3>مرحله نهایی مسابقات بین‌المللی قرآن طلاب</h3>
+    </a>
+  </div>
+
+  <div class="c pRa10">
+    <a href="sample">
+     <img src="{{url.static}}/images/mag/sample/banner-tollab-competition.jpg" alt="{{site.title}}">
+     <h3>مرحله نهایی مسابقات بین‌المللی قرآن طلاب</h3>
+    </a>
+  </div>
+
+  <div class="c">
+    <a href="sample">
+     <img src="{{url.static}}/images/mag/sample/banner-tollab-competition.jpg" alt="{{site.title}}">
+     <h3>مرحله نهایی مسابقات بین‌المللی قرآن طلاب</h3>
+    </a>
+  </div>
+
+</section>
+{%endblock%}
