@@ -1,0 +1,11 @@
+
+// quranQuote
+/*quote design*/
+.quoteTile{position: relative;overflow: hidden;}
+.quote-person{max-width:500px;position:relative;margin:5em auto;min-height:150px;font-size:2rem;color: #333;}
+.quote-person p{font-weight:100}
+/*.quote-person:before{position:absolute;top:0;font-size:350px;font-size:17em;color:#2fbfdf;font-family:Arial;font-weight:700;line-height:300px;right:-200px;content:'\201d'}*/
+.quote-person:after{position:absolute;top:0;font-size:350px;color:#2fbfdf;font-family:Arial;font-weight:700;line-height:300px;left:-200px;content:'\201c'}
+.quote-person h4{display:block;color:#2fbfdf;font-weight:700;font-size:.9em}
+.quote-person abbr{font-size:.7em;color:#b6b6b6;font-weight:700}
+
