@@ -8,7 +8,7 @@ class controller
 	{
 		$wbw = false;
 
-		if(\dash\url::subchild() === 'wbw')
+		if(\dash\url::subchild() === 'wbw' || \dash\url::subchild() === 'wbw-raw')
 		{
 			if(\dash\url::dir(3))
 			{
@@ -39,7 +39,18 @@ class controller
 
 		if($wbw)
 		{
-			$page = \lib\db\quran_word::get(['page' => $index]);
+			if(\dash\url::subchild() === 'wbw-raw')
+			{
+				$page = \lib\db\quran_word::get(['page' => $index]);
+			}
+			else
+			{
+				$page = \lib\app\quran\page::load('page', $index, null, null);
+				if(isset($page['text']['page1']['line']))
+				{
+					$page = $page['text']['page1']['line'];
+				}
+			}
 		}
 		else
 		{
