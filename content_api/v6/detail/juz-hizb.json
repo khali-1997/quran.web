@@ -1,25 +1,3 @@
-<div class="cbox" id='juz-hizb'>
-
-  <h2 class="f" data-kerkere='#juz-hizb-detail' data-kerkere-icon='open'>
-    <div class="cauto pRa10"><span class="badge primary">GET</span></div>
-    <div>{%trans "Get juz detail per hizb detail"%}</div>
-  </h2>
-  <div id="juz-hizb-detail">
-    <p>{%trans "Get all juz detail per hizb detail"%}</p>
-    <div class="msg url">
-      <i class="method">GET</i>
-      <span>{{apiURL}}<b>detail/juz-hizb</b></span>
-    </div>
-
-
-
-    <h3>{%trans "cURL"%} <small>{%trans "example"%}</small></h3>
-<pre>
-curl -X GET {{apiURL}}detail/juz-hizb
-</pre>
-
-<h3>{%trans "Response"%} <small>{%trans "example"%}</small></h3>
-<pre>
 {
   "ok": true,
   "result": {
@@ -7645,7 +7623,3 @@ curl -X GET {{apiURL}}detail/juz-hizb
     }
   }
 }
-</pre>
-
-  </div>
-</div>
