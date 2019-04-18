@@ -129,20 +129,20 @@ class page
 				{
 					// load besmellah and next sura detail
 					$sura_detail = \lib\app\sura::detail($check_sura);
-					$quran[$myPageKey][$myKey][$check_sura. '_14']['detail'] = array_merge(['char_type' => 'start_sura', ], $sura_detail);
-					$quran[$myPageKey][$myKey][$check_sura. '_15']['detail'] = ['char_type' => 'besmellah'];
+					$quran[$myPageKey][$myKey][$check_sura. '_14']['detail'] = array_merge(['line_type' => 'start_sura', ], $sura_detail);
+					$quran[$myPageKey][$myKey][$check_sura. '_15']['detail'] = self::besmellah();
 				}
 				elseif($check_line === 14)
 				{
 					// load next sura detail
 					$sura_detail = \lib\app\sura::detail($check_sura);
-					$quran[$myPageKey][$myKey][$check_sura. '_15']['detail'] = array_merge(['char_type' => 'start_sura', ], $sura_detail);
+					$quran[$myPageKey][$myKey][$check_sura. '_15']['detail'] = array_merge(['line_type' => 'start_sura', ], $sura_detail);
 				}
 				else
 				{
 					$sura_detail = \lib\app\sura::detail($check_sura);
-					$quran[$myPageKey][$myKey][$check_sura. '_'. (string) ($check_line + 1)]['detail'] = array_merge(['char_type' => 'start_sura', ], $sura_detail);
-					$quran[$myPageKey][$myKey][$check_sura. '_'. (string) ($check_line + 2)]['detail'] = ['char_type' => 'besmellah'];
+					$quran[$myPageKey][$myKey][$check_sura. '_'. (string) ($check_line + 1)]['detail'] = array_merge(['line_type' => 'start_sura', ], $sura_detail);
+					$quran[$myPageKey][$myKey][$check_sura. '_'. (string) ($check_line + 2)]['detail'] = self::besmellah();
 				}
 			}
 
@@ -160,13 +160,13 @@ class page
 					if($check_sura !== 1)
 					{
 						// load besmellah
-						$quran[$myPageKey][$myKey][$value['sura']. '_1']['detail'] = ['char_type' => 'besmellah'];
+						$quran[$myPageKey][$myKey][$value['sura']. '_1']['detail'] = self::besmellah(1);
 					}
 					else
 					{
 						// load fatiha sura detail
 						$sura_detail = \lib\app\sura::detail(1);
-						$quran[$myPageKey][$myKey][$value['sura']. '_1']['detail'] = array_merge(['char_type' => 'start_sura', ], $sura_detail);
+						$quran[$myPageKey][$myKey][$value['sura']. '_1']['detail'] = array_merge(['line_type' => 'start_sura', 'line' => 1 ], $sura_detail);
 					}
 
 				}
@@ -174,8 +174,8 @@ class page
 				{
 					// load sura title and besmellah
 					$sura_detail = \lib\app\sura::detail($value['sura']);
-					$quran[$myPageKey][$myKey][$value['sura']. '_1']['detail'] = array_merge(['char_type' => 'start_sura', ], $sura_detail);
-					$quran[$myPageKey][$myKey][$value['sura']. '_2']['detail'] = ['char_type' => 'besmellah'];
+					$quran[$myPageKey][$myKey][$value['sura']. '_1']['detail'] = array_merge(['line_type' => 'start_sura', 'line' => 1 ], $sura_detail);
+					$quran[$myPageKey][$myKey][$value['sura']. '_2']['detail'] = self::besmellah(2);
 				}
 			}
 			else
@@ -229,6 +229,8 @@ class page
 					'verse_title'   => $verse_title,
 					'verse_url'     => $verse_url,
 					'page'          => $value['page'],
+					'line_type'     => 'line',
+					'line'          => intval($value['line']),
 					'audio'         => \lib\app\qari::get_aya_audio($value['sura'], $value['aya'], $_meta),
 					'translate'     => \lib\app\quran\translate::get_translation($value['sura'], $value['aya'], $_meta),
 				];
@@ -287,8 +289,8 @@ class page
 			$next_sura_key = intval($end_sura_key) + 1;
 			// load sura title and besmellah
 			$sura_detail = \lib\app\sura::detail($next_sura_key);
-			$quran['page1']['line']["{$next_sura_key}_14"]['detail'] = array_merge(['char_type' => 'start_sura', ], $sura_detail);
-			$quran['page1']['line']["{$next_sura_key}_15"]['detail'] = ['char_type' => 'besmellah', ];
+			$quran['page1']['line']["{$next_sura_key}_14"]['detail'] = array_merge(['line_type' => 'start_sura', 'line' => 14], $sura_detail);
+			$quran['page1']['line']["{$next_sura_key}_15"]['detail'] = self::besmellah();
 
 		}
 		elseif($count_page1 === 14)
@@ -298,7 +300,7 @@ class page
 			$next_sura_key = intval($end_sura_key) + 1;
 			// load sura title and besmellah
 			$sura_detail = \lib\app\sura::detail($next_sura_key);
-			$quran['page1']['line']["{$next_sura_key}_15"]['detail'] = array_merge(['char_type' => 'start_sura', ], $sura_detail);
+			$quran['page1']['line']["{$next_sura_key}_15"]['detail'] = array_merge(['line_type' => 'start_sura', 'line' => 15], $sura_detail);
 
 		}
 
@@ -312,8 +314,8 @@ class page
 				$next_sura_key = intval($end_sura_key) + 1;
 				// load sura title and besmellah
 				$sura_detail = \lib\app\sura::detail($next_sura_key);
-				$quran['page2']['line']["{$next_sura_key}_14"]['detail'] = array_merge(['char_type' => 'start_sura', ], $sura_detail);
-				$quran['page2']['line']["{$next_sura_key}_15"]['detail'] = ['char_type' => 'besmellah', ];
+				$quran['page2']['line']["{$next_sura_key}_14"]['detail'] = array_merge(['line_type' => 'start_sura', 'line' => 14 ], $sura_detail);
+				$quran['page2']['line']["{$next_sura_key}_15"]['detail'] = self::besmellah(15);
 
 			}
 			elseif($count_page2 === 14)
@@ -323,12 +325,21 @@ class page
 				$next_sura_key = intval($end_sura_key) + 1;
 				// load sura title and besmellah
 				$sura_detail = \lib\app\sura::detail($next_sura_key);
-				$quran['page2']['line']["{$next_sura_key}_15"]['detail'] = array_merge(['char_type' => 'start_sura', ], $sura_detail);
+				$quran['page2']['line']["{$next_sura_key}_15"]['detail'] = array_merge(['line_type' => 'start_sura', 'line' => 15], $sura_detail);
 
 			}
 		}
 
 		$result['translatepage'] = $translatePage;
+		if(isset($quran['page1']['line']) && is_array($quran['page1']['line']))
+		{
+			$quran['page1']['line'] = array_values($quran['page1']['line']);
+		}
+
+		if(isset($quran['page2']['line']) && is_array($quran['page2']['line']))
+		{
+			$quran['page2']['line'] = array_values($quran['page2']['line']);
+		}
 		$result['text']    = $quran;
 
 		if($mode === 'onepage' || $mode === 'translatepage' || !$mode)
@@ -422,12 +433,17 @@ class page
 		$result['find_by']           = $mode;
 		$result['find_id']           = ['page1' => substr($page1_classname, 1), 'page2' => substr($page2_classname, 1)];
 		$result['translatelist']     = \lib\app\translate::current_list();
+
+
 		// \dash\notif::api($result);
 
 		return $result;
 	}
 
-
+	private static function besmellah($_line = null)
+	{
+		return	['line_type' => 'besmellah', 'line' => $_line];
+	}
 
 
 
