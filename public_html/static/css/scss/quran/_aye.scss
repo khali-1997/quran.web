@@ -42,7 +42,12 @@
     word-wrap: break-word;
     word-break: keep-all
 }
-
+.Quran[data-style='noorehuda'] .ayeNum{
+    font-family: "Traditional Arabic", "Times New Roman";
+    letter-spacing: 2px;
+    color: #777;
+    font-size: 1.7em;
+}
 
 .ayeSimple{
     direction: rtl;
