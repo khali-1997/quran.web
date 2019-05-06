@@ -3,7 +3,45 @@
 
 {%block page%}
 
-<p>{%trans "Soon"%}</p>
+<p class="msg">{%trans "Donating to SalamQuran is an investment in multiple causes including education, research, server cost, improve design, development of mobile apps and desktop version."%} {%trans "With the right support and resources we have the potential to make lasting strides for share Quran sound."%} {%trans "Quran is calling you!"%}</p>
+
+
+<form class="f justify-center" method="post" autocomplete="off">
+  <div class="c6 msg info2">
+
+    <label for='person'>{%trans "Name"%}</label>
+    <div class="input">
+      <input type="text" name="person" id='person' class="input" maxlength="50">
+    </div>
+
+    <label for='amount'>{%trans "Amount"%}</label>
+    <div class="input">
+      <input type="number" name="amount" id='amount' class="input" max="99999999999" required data-response-realtime>
+      <span class="addon">{%trans "Toman"%}</span>
+    </div>
+
+{%if lang.current == 'fa'%}
+    <div class="msg success txtB fs09" data-response="amount" data-response-call="wordifyResponse"></div>
+{%endif%}
+
+    <button class="btn primary block mT20">{%trans "Pay Donate"%}</button>
+  </div>
+</form>
+
+<hr>
+<h3>{%trans "Thank You"%}</h3>
+<p>{%trans "Also you can share our project to everyone and we are say thank you."%}</p>
+
+
+<hr>
+<h3>{%trans "Have Question?"%}</h3>
+<p>{%trans "If you have any questions, please do not hesitate to <a href='contact'>contact us</a>."%} {%trans "In <a href='support'>help center</a> we are answer some frequent questions."%}</p>
+
+
+<hr>
+<h3>{%trans "Doners"%}</h3>
+<p>{%trans "Thanks to the generous support of donors like you. see our doners"%}</p>
+{%trans "Your ongoing support is helping share Quran via SalamQuran around the world in cyberspace."%}
 
 {%endblock%}
 
