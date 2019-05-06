@@ -89,6 +89,20 @@ class twigTransTerms
 	//------------------------docs\Projects\SalamQuran\content\developers\display.html
 
 	//----------------------------docs\Projects\SalamQuran\content\donate\display.html
+	echo T_("Donating to SalamQuran is an investment in multiple causes including education, research, server cost, improve design, development of mobile apps and desktop version.");// Line 6
+	echo T_("With the right support and resources we have the potential to make lasting strides for share Quran sound.");// Line 6
+	echo T_("Quran is calling you!");                                                 // Line 6
+	echo T_("Amount");                                                                // Line 17
+	echo T_("Toman");                                                                 // Line 20
+	echo T_("Pay Donate");                                                            // Line 27
+	echo T_("Thank You");                                                             // Line 32
+	echo T_("Also you can share our project to everyone and we are say thank you.");  // Line 33
+	echo T_("Have Question?");                                                        // Line 37
+	echo T_("If you have any questions, please do not hesitate to <a href='contact'>contact us</a>.");// Line 38
+	echo T_("In <a href='support'>help center</a> we are answer some frequent questions.");// Line 38
+	echo T_("Doners");                                                                // Line 42
+	echo T_("Thanks to the generous support of donors like you. see our doners");     // Line 43
+	echo T_("Your ongoing support is helping share Quran via SalamQuran around the world in cyberspace.");// Line 44
 
 	//---------------docs\Projects\SalamQuran\content\home\blocks\block-aye-words.html
 
