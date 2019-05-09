@@ -3,24 +3,37 @@
 
 {%block page%}
 
+{%if 0%}
 <div class="msg">
   <p>{%trans "Donating to SalamQuran is an investment in multiple causes including education, research, server cost, improve design, development of mobile apps and desktop version."%}</p>
   <p>{%trans "With the right support and resources we have the potential to make lasting strides for share Quran sound."%} {%trans "Quran is calling you!"%}</p>
 </div>
+{%endif%}
 
-
+<div class="msg success txtC txtB fs20">
+  برای خرید اپلیکیشن فرم زیر را پر  کنید.<br>
+  پس از خرید لینک اپ برای دانلود شما نمایش داده می‌شود.
+</div>
+<div class="msg warn txtC fs20">
+هزینه اپلیکیشن  سلام قرآن ۱۰۰۰ تومان
+</div>
 <form class="f justify-center" method="post" autocomplete="off">
   <div class="c6 s12">
 
     <div class="msg info2">
       <label for='person'>{%trans "Name"%}</label>
       <div class="input">
-        <input type="text" name="person" id='person' class="input" maxlength="50">
+        <input type="text" name="person" id='person' maxlength="50">
+      </div>
+
+      <label for='personMob'>{%trans "Mobile"%}</label>
+      <div class="input">
+        <input type="tel" name="personMob" id='personMob' maxlength="12">
       </div>
 
       <label for='amount'>{%trans "Amount"%}</label>
       <div class="input">
-        <input type="number" name="amount" id='amount' class="input" max="99999999" required data-response-realtime>
+        <input type="number" name="amount" id='amount' max="99999999" required data-response-realtime value="1000" readonly>
         <span class="addon">{%trans "Toman"%}</span>
       </div>
 
@@ -28,7 +41,10 @@
       <div class="msg success txtB fs09" data-response="amount" data-response-call="wordifyResponse"></div>
   {%endif%}
 
+{%if 0%}
       <button class="btn primary block mT20">{%trans "Pay Donate"%}</button>
+{%endif%}
+      <button class="btn primary block mT20">پرداخت هزینه اپلیکیشن</button>
     </div>
 
   </div>
@@ -44,10 +60,12 @@
 <p>{%trans "If you have any questions, please do not hesitate to <a href='contact'>contact us</a>."%} {%trans "In <a href='support'>help center</a> we are answer some frequent questions."%}</p>
 
 
+{%if false%}
 <hr>
 <h3>{%trans "Doners"%}</h3>
 <p>{%trans "Thanks to the generous support of donors like you. see our doners"%}</p>
 {%trans "Your ongoing support is helping share Quran via SalamQuran around the world in cyberspace."%}
+{%endif%}
 
 {%endblock%}
 
