@@ -74,6 +74,22 @@
       </div>
     </div>
 
+{%if lang.current =='fa'%}
+      <nav class="c12 txtC">
+        <div class="certification" title='{%trans "Certifications"%}'>
+{%if false%}
+          <div><img src="{{url.static}}/images/cert/enamad2.png" alt='{%trans "Enamad"%} {{site.title}}' onclick='window.open("https://trustseal.enamad.ir/Verify.aspx?id=77836&p=JOoynuxYPaV1q5Zq", "Popup","toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30")'></div>
+{%endif%}
+
+          <div><img src="{{url.static}}/images/cert/samandehi.png" alt='{%trans "Samandehi"%} {{site.title}}' onclick='window.open("https://logo.samandehi.ir/Verify.aspx?id=145576&p=rfthaodsdshwdshwjyoegvka", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630")'></div>
+
+          <div><img src="{{url.static}}/images/cert/shamad.png" alt='{%trans "Shamad"%} {{site.title}}' onclick='window.open("https://logo.saramad.ir/verify.aspx?CodeShamad=1-2-709257-65-0-5", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=500, height=700, top=0")'></div>
+
+        </div>
+     </nav>
+{%endif%}
+
+
     <div class="f" id='copyright'>
       <div class="c">
         {{page.copyright | raw}}

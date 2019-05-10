@@ -74,6 +74,16 @@
   background-color: rgba(255,255,255,0.3);
 }
 
+/* footer certificate*/
+#footer .certification{padding:0 10px;margin:5px 0;height: 75px;background-color:#eee;display: inline-block;position:relative;margin:0 auto;z-index:5;opacity:0.5;transition: 0.3s}
+#footer .certification:hover{opacity:0.8}
+#footer .certification:before{content:"";position:absolute;top:35px;left:-39px;height:4px;width:75px;background-image:url(../images/cert/footer-box.svg);background-repeat:repeat-x;-webkit-transform:rotate(-90deg);transform:rotate(-90deg)}
+#footer .certification:after{content:"";position:absolute;top:35px;right:-39px;height:4px;width:75px;background-image:url(../images/cert/footer-box.svg);background-repeat:repeat-x;-webkit-transform:rotate(90deg);transform:rotate(90deg)}
+#footer .certification div{float:right;display:inline-block;height:100%;padding:0;position:relative;margin:0 auto;}
+#footer .certification img{display:block;width:75px;height:75px;padding:5px;margin:0 5px; cursor:pointer;transition:0.3s;}
+#footer .certification img:hover{background-color:rgba(0,0,0,0.05);}
+
+
 #footer #copyright{
   /*border-top: 1px dotted #444;*/
   padding: 2rem 0 7rem;
