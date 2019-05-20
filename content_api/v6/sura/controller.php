@@ -7,6 +7,8 @@ class controller
 
 	public static function routing()
 	{
+		\content_api\v6\access::check();
+
 		$wbw = false;
 
 		if(\dash\url::subchild() === 'list')

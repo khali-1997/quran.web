@@ -6,6 +6,8 @@ class quran
 {
 	public static function check_limit()
 	{
+		\content_api\v6\access::check();
+
 		$limit = \dash\request::get('limit');
 		if($limit && !ctype_digit($limit))
 		{

@@ -7,6 +7,8 @@ class controller
 
 	public static function routing()
 	{
+		\content_api\v6\access::check();
+
 		$subchild = \dash\url::subchild();
 		if(!$subchild)
 		{
