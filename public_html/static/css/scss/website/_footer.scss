@@ -77,8 +77,8 @@
 /* footer certificate*/
 #footer .certification{padding:0 7px;background-color:#eee;display: inline-block;position:relative;margin:5px auto;z-index:5;opacity:0.5;transition: 0.3s}
 #footer .certification:hover{opacity:0.8}
-#footer .certification:before{content:"";position:absolute;top:-4px;left:0;right:0;height:4px;background-image:url(../images/cert/footer-box.svg);background-repeat:repeat-x;}
-#footer .certification:after{content:"";position:absolute;bottom:-4px;left:0;right:0;height:4px;background-image:url(../images/cert/footer-box.svg);background-repeat:repeat-x;-webkit-transform:rotate(180deg);transform:rotate(180deg)}
+#footer .certification:before{content:"";position:absolute;top:-4px;left:0;right:0;height:4px;background-image:url(../siftal/images/cert/footer-box.svg);background-repeat:repeat-x;}
+#footer .certification:after{content:"";position:absolute;bottom:-4px;left:0;right:0;height:4px;background-image:url(../siftal/images/cert/footer-box.svg);background-repeat:repeat-x;-webkit-transform:rotate(180deg);transform:rotate(180deg)}
 #footer .certification div{height:75px;padding:0;position:relative;margin:0 auto;}
 #footer .certification a{display:block;}
 #footer .certification img{display:block;width:75px;height:75px;padding:5px;margin:0 5px; cursor:pointer;transition:0.3s;}

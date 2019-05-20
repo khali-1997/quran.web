@@ -5088,7 +5088,7 @@ body[data-sidebar="dada"].rtl #sidebar .menu {
   left: 0;
   right: 0;
   height: 4px;
-  background-image: url(../images/cert/footer-box.svg);
+  background-image: url(../siftal/images/cert/footer-box.svg);
   background-repeat: repeat-x; }
 
 #footer .certification:after {
@@ -5098,7 +5098,7 @@ body[data-sidebar="dada"].rtl #sidebar .menu {
   left: 0;
   right: 0;
   height: 4px;
-  background-image: url(../images/cert/footer-box.svg);
+  background-image: url(../siftal/images/cert/footer-box.svg);
   background-repeat: repeat-x;
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg); }
