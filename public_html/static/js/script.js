@@ -734,9 +734,9 @@ function runQuickAccess()
 
 function pushState()
 {
+  runQuickAccess();
   handlePlayWbw();
   bindAudioTools();
-  runQuickAccess();
 }
 
 CreateBubbles();
