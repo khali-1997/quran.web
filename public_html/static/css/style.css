@@ -4886,6 +4886,19 @@ body[data-in='mag'] #header .topTitle {
   font-size: 1em;
   color: #eee; }
 
+#nprogress .bar {
+  background: #d22; }
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #d22, 0 0 5px #d22; }
+
+#nprogress .spinner-icon {
+  border-top-color: #d22;
+  border-left-color: #d22; }
+
+.rtl #nprogress .spinner-icon {
+  border-right-color: #d22; }
+
 #sidebar {
   max-width: 400px;
   position: fixed;

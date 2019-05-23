@@ -9,7 +9,7 @@ class view
 		$desc  = T_("Say hello to Quran!"). ' '. T_("Quran is calling you.");
 
 		self::set_best_title();
-
+// sleep(25);
 
 		if(\dash\data::sureLoaded())
 		{
