@@ -597,6 +597,82 @@ function detectNextAye(_check)
 }
 
 
+function bindBTN()
+{
+  $('.QuickAccess [data-connect]').on('click', function()
+  {
+    if($('body').hasClass('loading-form'))
+    {
+      return false;
+    }
+    var myInput = $(this).parent().find('input');
+    var extra   = parseInt($(this).attr('data-val')) || 0;
+    // add this value to target
+    setExtra(myInput, extra);
+  });
+}
+
+
+/**
+ * [setExtra description]
+ * @param {[type]} _target [description]
+ * @param {[type]} _extra  [description]
+ * @param {[type]} _exact  [description]
+ */
+function setExtra(_target, _extra, _exact)
+{
+  var newVal  = parseInt(_target.val()) || 0;
+  if(_extra === true)
+  {
+    _extra = 5;
+  }
+  else if(_extra === false)
+  {
+    _extra = -5;
+  }
+  else if(_extra === null)
+  {
+    _extra = 0;
+    _exact = true;
+  }
+  //  if exact copy value else plus it
+  if(_exact)
+  {
+    newVal = parseInt(_extra);
+  }
+  else
+  {
+    newVal += parseInt(_extra);
+  }
+  if(_target.attr('min') && newVal < parseInt(_target.attr('min')))
+  {
+    // do nothing
+    setExtraInvalid(_target);
+  }
+  else if(_target.attr('max') && newVal > parseInt(_target.attr('max')))
+  {
+    // do nothing
+    setExtraInvalid(_target);
+  }
+  else
+  {
+    _target.val(newVal);
+  }
+
+  /**
+   * [setExtraInvalid description]
+   * @param {[type]} _target [description]
+   */
+  function setExtraInvalid(_target)
+  {
+    $(_target).addClass('error');
+    setTimeout(function()
+    {
+      $(_target).removeClass('error');
+    }, 300);
+  }
+}
+
 
 function pushState()
 {
@@ -605,6 +681,7 @@ function pushState()
 }
 
 CreateBubbles();
+bindBTN();
 
 
 
