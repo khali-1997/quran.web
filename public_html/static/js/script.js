@@ -674,6 +674,12 @@ function setExtra(_target, _extra, _exact)
 }
 
 
+function runQuickAccess()
+{
+
+}
+
+
 function pushState()
 {
   handlePlayWbw();
@@ -682,6 +688,6 @@ function pushState()
 
 CreateBubbles();
 bindBTN();
-
+runQuickAccess();
 
 

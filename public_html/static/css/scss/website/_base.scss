@@ -21,6 +21,7 @@ body{
 	z-index: 10;
 	position: relative;
 	background-color: #fff;
+	overflow: hidden;
 }
 #page{
 	min-height: 100%;
@@ -29,7 +30,7 @@ body{
 	overflow: hidden;
 }
 .wrapper{
-	padding: 5rem 0;
+	padding: 0 0 5rem;
 	font-size: 1.4em;
 	line-height: 1.7em;
 }
@@ -67,4 +68,10 @@ body{
 .quoteBox1 h4{display:block;color:#2fbfdf;font-weight:700;font-size:.9em}
 .quoteBox1 abbr{font-size:.7em;color:#b6b6b6;font-weight:700}
 
+
+.quickAccess{
+	overflow: hidden;
+	font-size: 1.2em;
+	padding: 2rem 0 0;
+}
 
