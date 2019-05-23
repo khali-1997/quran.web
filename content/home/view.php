@@ -97,7 +97,7 @@ class view
 
 			case 'page':
 				$title = T_('Page'). ' '. \dash\utility\human::fitNumber($find_id);
-				$desc  = T_('Quran'). ' #'. \dash\utility\human::fitNumber($find_id). ' '. T_('page');
+				$desc  = T_('Quran'). ' #'. T_('page'). \dash\utility\human::fitNumber($find_id);
 				break;
 
 			case 'twopage':
@@ -144,7 +144,7 @@ class view
 					}
 
 					$title = T_('Page'). ' '. \dash\utility\human::fitNumber($page1);
-					$desc  = T_('Quran'). ' #'. \dash\utility\human::fitNumber($page1). ' '. T_('page');
+					$desc  = T_('Quran'). ' #'. T_('page'). \dash\utility\human::fitNumber($page1);
 				}
 
 				break;
