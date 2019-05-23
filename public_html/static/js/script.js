@@ -657,6 +657,7 @@ function setExtra(_target, _extra, _exact)
   else
   {
     _target.val(newVal);
+    _target.trigger('change');
   }
 
   /**
