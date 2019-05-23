@@ -599,7 +599,7 @@ function detectNextAye(_check)
 
 function bindBTN()
 {
-  $('.QuickAccess [data-connect]').on('click', function()
+  $('.quickAccess [data-connect]').on('click', function()
   {
     if($('body').hasClass('loading-form'))
     {
@@ -674,8 +674,36 @@ function setExtra(_target, _extra, _exact)
 }
 
 
+function siteKingdom()
+{
+	var myKingdom = '';
+  if($('html').attr('lang') !== undefined)
+  {
+    myKingdom = $('html').attr('lang')+ myKingdom;
+  }
+  return myKingdom;
+}
+
+
+
 function runQuickAccess()
 {
+	$('.quickAccess select[name="surah"]').on('change', function()
+	{
+
+		var navTo = siteKingdom();
+    // if surah choosed, go to selected surah
+		if(this.value)
+		{
+			navTo += '/s' + this.value;
+		}
+		else
+		{
+			// navTo += '/surahs';
+		}
+
+		Navigate({ url: navTo });
+	});
 
 }
 
