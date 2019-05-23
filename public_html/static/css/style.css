@@ -4716,8 +4716,9 @@ body {
 
 .quickAccess {
   overflow: hidden;
-  font-size: 1.2em;
-  padding: 2rem 0 0; }
+  font-size: 1.3em;
+  padding: 2rem 0 0;
+  outline: none; }
 
 #header {
   -webkit-touch-callout: none;
@@ -4848,6 +4849,26 @@ body[data-in='mag'] #header .topTitle {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 0.25rem;
   margin-top: -10px; }
+
+[data-in="site"]:not([data-page="home"]) #header {
+  min-height: auto; }
+
+[data-in="site"]:not([data-page="home"]) #header .topTitle {
+  padding: 0 1.5rem 1rem;
+  text-align: initial; }
+
+[data-in="site"]:not([data-page="home"]) #header .topTitle h2 {
+  display: inline-block;
+  line-height: 40px;
+  font-size: 1.5em;
+  padding: 0 1rem;
+  color: #eee; }
+
+[data-in="site"]:not([data-page="home"]) #header .topTitle h3 {
+  display: inline-block;
+  line-height: 40px;
+  font-size: 1em;
+  color: #eee; }
 
 #sidebar {
   max-width: 400px;
