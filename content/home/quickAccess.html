@@ -1,66 +1,93 @@
 
-<section class="quickAccess" title='{%trans "Quick Access to Quran"%}'>
+<section class="quickAccess">
   <div class="f">
-    <div class="c3 s12">
+    <div class="c3 s12" title='{%trans "Quick navigate to special sura"%}'>
       <label>{%trans "Sura"%}</label>
       <select class="select" name="sura">
+        <option value="" readonly>{%trans "Sura list"%}</option>
+        <option disabled>{%trans "Juz"%} {{"1" | fitNumber}}</option>
         <option value="1">{{"1" | fitNumber}} - {% trans "Al-Fatihah"%}</option>
         <option value="2">{{"2" | fitNumber}} - {% trans "Al-Baqarah"%}</option>
+        <option disabled>{%trans "Juz"%} {{"3" | fitNumber}}</option>
         <option value="3">{{"3" | fitNumber}} - {% trans "Ali 'Imran"%}</option>
+        <option disabled>{%trans "Juz"%} {{"4" | fitNumber}}</option>
         <option value="4">{{"4" | fitNumber}} - {% trans "An-Nisa"%}</option>
+        <option disabled>{%trans "Juz"%} {{"6" | fitNumber}}</option>
         <option value="5">{{"5" | fitNumber}} - {% trans "Al-Ma'idah"%}</option>
+        <option disabled>{%trans "Juz"%} {{"7" | fitNumber}}</option>
         <option value="6">{{"6" | fitNumber}} - {% trans "Al-An'am"%}</option>
+        <option disabled>{%trans "Juz"%} {{"8" | fitNumber}}</option>
         <option value="7">{{"7" | fitNumber}} - {% trans "Al-A'raf"%}</option>
+        <option disabled>{%trans "Juz"%} {{"9" | fitNumber}}</option>
         <option value="8">{{"8" | fitNumber}} - {% trans "Al-Anfal"%}</option>
+        <option disabled>{%trans "Juz"%} {{"10" | fitNumber}}</option>
         <option value="9">{{"9" | fitNumber}} - {% trans "At-Tawbah"%}</option>
+        <option disabled>{%trans "Juz"%} {{"11" | fitNumber}}</option>
         <option value="10">{{"10" | fitNumber}} - {% trans "Yunus"%}</option>
         <option value="11">{{"11" | fitNumber}} - {% trans "Hud"%}</option>
+        <option disabled>{%trans "Juz"%} {{"12" | fitNumber}}</option>
         <option value="12">{{"12" | fitNumber}} - {% trans "Yusuf"%}</option>
+        <option disabled>{%trans "Juz"%} {{"13" | fitNumber}}</option>
         <option value="13">{{"13" | fitNumber}} - {% trans "Ar-Ra'd"%}</option>
         <option value="14">{{"14" | fitNumber}} - {% trans "Ibrahim"%}</option>
+        <option disabled>{%trans "Juz"%} {{"14" | fitNumber}}</option>
         <option value="15">{{"15" | fitNumber}} - {% trans "Al-Hijr"%}</option>
         <option value="16">{{"16" | fitNumber}} - {% trans "An-Nahl"%}</option>
+        <option disabled>{%trans "Juz"%} {{"15" | fitNumber}}</option>
         <option value="17">{{"17" | fitNumber}} - {% trans "Al-Isra"%}</option>
         <option value="18">{{"18" | fitNumber}} - {% trans "Al-Kahf"%}</option>
+        <option disabled>{%trans "Juz"%} {{"16" | fitNumber}}</option>
         <option value="19">{{"19" | fitNumber}} - {% trans "Maryam"%}</option>
         <option value="20">{{"20" | fitNumber}} - {% trans "Taha"%}</option>
+        <option disabled>{%trans "Juz"%} {{"17" | fitNumber}}</option>
         <option value="21">{{"21" | fitNumber}} - {% trans "Al-Anbya"%}</option>
         <option value="22">{{"22" | fitNumber}} - {% trans "Al-Haj"%}</option>
         <option value="23">{{"23" | fitNumber}} - {% trans "Al-Mu'minun"%}</option>
+        <option disabled>{%trans "Juz"%} {{"18" | fitNumber}}</option>
         <option value="24">{{"24" | fitNumber}} - {% trans "An-Nur"%}</option>
         <option value="25">{{"25" | fitNumber}} - {% trans "Al-Furqan"%}</option>
+        <option disabled>{%trans "Juz"%} {{"18" | fitNumber}}</option>
         <option value="26">{{"26" | fitNumber}} - {% trans "Ash-Shu'ara"%}</option>
         <option value="27">{{"27" | fitNumber}} - {% trans "An-Naml"%}</option>
+        <option disabled>{%trans "Juz"%} {{"20" | fitNumber}}</option>
         <option value="28">{{"28" | fitNumber}} - {% trans "Al-Qasas"%}</option>
         <option value="29">{{"29" | fitNumber}} - {% trans "Al-'Ankabut"%}</option>
+        <option disabled>{%trans "Juz"%} {{"21" | fitNumber}}</option>
         <option value="30">{{"30" | fitNumber}} - {% trans "Ar-Rum"%}</option>
         <option value="31">{{"31" | fitNumber}} - {% trans "Luqman"%}</option>
         <option value="32">{{"32" | fitNumber}} - {% trans "As-Sajdah"%}</option>
         <option value="33">{{"33" | fitNumber}} - {% trans "Al-Ahzab"%}</option>
+        <option disabled>{%trans "Juz"%} {{"22" | fitNumber}}</option>
         <option value="34">{{"34" | fitNumber}} - {% trans "Saba"%}</option>
         <option value="35">{{"35" | fitNumber}} - {% trans "Fatir"%}</option>
         <option value="36">{{"36" | fitNumber}} - {% trans "Ya-Sin"%}</option>
+        <option disabled>{%trans "Juz"%} {{"23" | fitNumber}}</option>
         <option value="37">{{"37" | fitNumber}} - {% trans "As-Saffat"%}</option>
         <option value="38">{{"38" | fitNumber}} - {% trans "Sad"%}</option>
         <option value="39">{{"39" | fitNumber}} - {% trans "Az-Zumar"%}</option>
+        <option disabled>{%trans "Juz"%} {{"24" | fitNumber}}</option>
         <option value="40">{{"40" | fitNumber}} - {% trans "Ghafir"%}</option>
         <option value="41">{{"41" | fitNumber}} - {% trans "Fussilat"%}</option>
+        <option disabled>{%trans "Juz"%} {{"25" | fitNumber}}</option>
         <option value="42">{{"42" | fitNumber}} - {% trans "Ash-Shuraa"%}</option>
         <option value="43">{{"43" | fitNumber}} - {% trans "Az-Zukhruf"%}</option>
         <option value="44">{{"44" | fitNumber}} - {% trans "Ad-Dukhan"%}</option>
         <option value="45">{{"45" | fitNumber}} - {% trans "Al-Jathiyah"%}</option>
+        <option disabled>{%trans "Juz"%} {{"26" | fitNumber}}</option>
         <option value="46">{{"46" | fitNumber}} - {% trans "Al-Ahqaf"%}</option>
         <option value="47">{{"47" | fitNumber}} - {% trans "Muhammad"%}</option>
         <option value="48">{{"48" | fitNumber}} - {% trans "Al-Fath"%}</option>
         <option value="49">{{"49" | fitNumber}} - {% trans "Al-Hujurat"%}</option>
         <option value="50">{{"50" | fitNumber}} - {% trans "Qaf"%}</option>
         <option value="51">{{"51" | fitNumber}} - {% trans "Adh-Dhariyat"%}</option>
+        <option disabled>{%trans "Juz"%} {{"27" | fitNumber}}</option>
         <option value="52">{{"52" | fitNumber}} - {% trans "At-Tur"%}</option>
         <option value="53">{{"53" | fitNumber}} - {% trans "An-Najm"%}</option>
         <option value="54">{{"54" | fitNumber}} - {% trans "Al-Qamar"%}</option>
         <option value="55">{{"55" | fitNumber}} - {% trans "Ar-Rahman"%}</option>
         <option value="56">{{"56" | fitNumber}} - {% trans "Al-Waqi'ah"%}</option>
         <option value="57">{{"57" | fitNumber}} - {% trans "Al-Hadid"%}</option>
+        <option disabled>{%trans "Juz"%} {{"28" | fitNumber}}</option>
         <option value="58">{{"58" | fitNumber}} - {% trans "Al-Mujadila"%}</option>
         <option value="59">{{"59" | fitNumber}} - {% trans "Al-Hashr"%}</option>
         <option value="60">{{"60" | fitNumber}} - {% trans "Al-Mumtahanah"%}</option>
@@ -70,6 +97,7 @@
         <option value="64">{{"64" | fitNumber}} - {% trans "At-Taghabun"%}</option>
         <option value="65">{{"65" | fitNumber}} - {% trans "At-Talaq"%}</option>
         <option value="66">{{"66" | fitNumber}} - {% trans "At-Tahrim"%}</option>
+        <option disabled>{%trans "Juz"%} {{"29" | fitNumber}}</option>
         <option value="67">{{"67" | fitNumber}} - {% trans "Al-Mulk"%}</option>
         <option value="68">{{"68" | fitNumber}} - {% trans "Al-Qalam"%}</option>
         <option value="69">{{"69" | fitNumber}} - {% trans "Al-Haqqah"%}</option>
@@ -81,6 +109,7 @@
         <option value="75">{{"75" | fitNumber}} - {% trans "Al-Qiyamah"%}</option>
         <option value="76">{{"76" | fitNumber}} - {% trans "Al-Insan"%}</option>
         <option value="77">{{"77" | fitNumber}} - {% trans "Al-Mursalat"%}</option>
+        <option disabled>{%trans "Juz"%} {{"30" | fitNumber}}</option>
         <option value="78">{{"78" | fitNumber}} - {% trans "An-Naba"%}</option>
         <option value="79">{{"79" | fitNumber}} - {% trans "An-Nazi'at"%}</option>
         <option value="80">{{"80" | fitNumber}} - {% trans "'Abasa"%}</option>
@@ -122,9 +151,10 @@
     </div>
 
   {%if false%}
-    <div class="c3 s12 pLa10">
+    <div class="c3 s12 pLa10"  title='{%trans "Quick navigate to special aya"%}'>
       <label>{%trans "Aya"%}</label>
       <select class="select" name="aya">
+        <option value="" readonly>{%trans "Aya list"%}</option>
         <option value="1">{{"1" | fitNumber}}</option>
         <option value="2">{{"2" | fitNumber}}</option>
         <option value="3">{{"3" | fitNumber}}</option>
@@ -133,9 +163,10 @@
     </div>
   {%endif%}
 
-    <div class="c3 s12 pLa10">
+    <div class="c3 s12 pLa10"  title='{%trans "Quick navigate to special juz"%}'>
       <label>{%trans "Juz"%}</label>
       <select class="select" name="juz">
+        <option value="" readonly>{%trans "Juz list"%}</option>
         <option value="1">{%trans "Juz"%} {{"1" | fitNumber}} - {%trans "Page"%} {{"1" | fitNumber}}</option>
         <option value="2">{%trans "Juz"%} {{"2" | fitNumber}} - {%trans "Page"%} {{"22" | fitNumber}}</option>
         <option value="3">{%trans "Juz"%} {{"3" | fitNumber}} - {%trans "Page"%} {{"42" | fitNumber}}</option>
@@ -169,7 +200,7 @@
       </select>
     </div>
 
-    <div class="c3 s12 pLa10">
+    <div class="c3 s12 pLa10"  title='{%trans "Quick navigate to special page"%}'>
       <label>{%trans "Page"%}</label>
       <div class="input">
         <button class="addon" data-connect='page' data-val='-1'><i class="sf-minus-circle"></i></button>
@@ -180,7 +211,7 @@
 
 
   {%if false%}
-    <div class="c3 s12 pLa10">
+    <div class="c3 s12 pLa10"  title='{%trans "Search in Quran"%}'>
       <form method="get" action="{{url.kingdom}}/search" autocomplete="off">
         <label>{%trans "Search"%}</label>
         <div class="input">
