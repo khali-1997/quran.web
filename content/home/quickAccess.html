@@ -173,12 +173,13 @@
       <label>{%trans "Page"%}</label>
       <div class="input">
         <button class="addon" data-connect='page' data-val='-1'><i class="sf-minus-circle"></i></button>
-        <input type="number" min="1" max="604" step="1" name="page" autocomplete="off" placeholder='{%trans "Page"%}'>
+        <input type="number" min="1" max="604" step="1" name="page" autocomplete="off" placeholder='{%trans "Page"%}'{%if quranLoaded.find_id.page1%} value="{{quranLoaded.find_id.page1}}"{%endif%}>
         <button class="addon" data-connect='page' data-val='1'><i class="sf-plus-circle"></i></button>
       </div>
     </div>
 
 
+  {%if false%}
     <div class="c3 s12 pLa10">
       <form method="get" action="{{url.kingdom}}/search" autocomplete="off">
         <label>{%trans "Search"%}</label>
@@ -188,6 +189,7 @@
         </div>
       </form>
     </div>
+  {%endif%}
 
   </div>
 </section>
