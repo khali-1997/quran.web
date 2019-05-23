@@ -597,22 +597,6 @@ function detectNextAye(_check)
 }
 
 
-function bindBTN()
-{
-  $('.quickAccess [data-connect]').on('click', function()
-  {
-    if($('body').hasClass('loading-form'))
-    {
-      return false;
-    }
-    var myInput = $(this).parent().find('input');
-    var extra   = parseInt($(this).attr('data-val')) || 0;
-    // add this value to target
-    setExtra(myInput, extra);
-  });
-}
-
-
 /**
  * [setExtra description]
  * @param {[type]} _target [description]
@@ -733,6 +717,18 @@ function runQuickAccess()
     }
     Navigate({ url: navTo });
   });
+
+  $('.quickAccess [data-connect]').on('click', function()
+  {
+    if($('body').hasClass('loading-form'))
+    {
+      return false;
+    }
+    var myInput = $(this).parent().find('input');
+    var extra   = parseInt($(this).attr('data-val')) || 0;
+    // add this value to target
+    setExtra(myInput, extra);
+  });
 }
 
 
@@ -740,10 +736,9 @@ function pushState()
 {
   handlePlayWbw();
   bindAudioTools();
+  runQuickAccess();
 }
 
 CreateBubbles();
-bindBTN();
-runQuickAccess();
 
 
