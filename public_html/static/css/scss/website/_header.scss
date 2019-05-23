@@ -142,11 +142,14 @@ body[data-in='mag'] #header .topTitle{
 
 
 // holy Quran header design
+[data-in="site"]:not([data-page="home"]) #header .topnav{
+	padding-top: 20px;
+}
 [data-in="site"]:not([data-page="home"]) #header{
 	min-height: auto;
 }
 [data-in="site"]:not([data-page="home"]) #header .topTitle{
-	padding: 0 1.5rem 1rem;
+	padding: 0 1.5rem 0;
 	text-align: initial;
 }
 [data-in="site"]:not([data-page="home"]) #header .topTitle h2{
