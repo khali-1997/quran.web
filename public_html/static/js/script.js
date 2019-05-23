@@ -676,7 +676,7 @@ function setExtra(_target, _extra, _exact)
 
 function siteKingdom()
 {
-	var myKingdom = '';
+  var myKingdom = '';
   if($('html').attr('lang') !== undefined)
   {
     myKingdom = $('html').attr('lang')+ myKingdom;
@@ -688,23 +688,50 @@ function siteKingdom()
 
 function runQuickAccess()
 {
-	$('.quickAccess select[name="surah"]').on('change', function()
-	{
-
-		var navTo = siteKingdom();
+  $('.quickAccess select[name="surah"]').on('change', function()
+  {
+    var navTo = siteKingdom();
     // if surah choosed, go to selected surah
-		if(this.value)
-		{
-			navTo += '/s' + this.value;
-		}
-		else
-		{
-			// navTo += '/surahs';
-		}
+    if(this.value)
+    {
+      navTo += '/s' + this.value;
+    }
+    else
+    {
+      // navTo += '/surahs';
+    }
+    Navigate({ url: navTo });
+  });
 
-		Navigate({ url: navTo });
-	});
+  $('.quickAccess select[name="juz"]').on('change', function()
+  {
+    var navTo = siteKingdom();
+    // if surah choosed, go to selected surah
+    if(this.value)
+    {
+      navTo += '/j' + this.value;
+    }
+    else
+    {
+      // navTo += '/surahs';
+    }
+    Navigate({ url: navTo });
+  });
 
+  $('.quickAccess input[name="page"]').on('change', function()
+  {
+    var navTo = siteKingdom();
+    // if surah choosed, go to selected surah
+    if(this.value)
+    {
+      navTo += '/p' + this.value;
+    }
+    else
+    {
+      // navTo += '/surahs';
+    }
+    Navigate({ url: navTo });
+  });
 }
 
 
