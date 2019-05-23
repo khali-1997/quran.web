@@ -72,7 +72,10 @@ body{
 .quickAccess{
 	overflow: hidden;
 	font-size: 1.3em;
-	padding: 2rem 0 0;
+	padding: 1rem 0 0;
 	outline: none;
+}
+.quickAccess .msg{
+	margin: 0;
 }
 
