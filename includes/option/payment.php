@@ -1,7 +1,7 @@
 <?php
 
 self::$config['zarinpal']['status']               = true;
-self::$config['zarinpal']['MerchantID']           = '669de6b4-f744-11e6-9180-005056a205be';
+self::$config['zarinpal']['MerchantID']           = 'd44c329c-7eba-11e9-ad9f-000c29344814';
 self::$config['zarinpal']['Description']          = "SalamQuran";
 self::$config['zarinpal']['CallbackURL']          = null;
 self::$config['zarinpal']['exchange']             = null;
