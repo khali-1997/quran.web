@@ -20,19 +20,19 @@
 
 {%if datarow.type == 'post' or datarow.type == 'mag'%}
 {%if datarow.meta.thumb%}
-     <img src="{{datarow.meta.thumb}}" alt="{{datarow.title | raw}}" class="floatRa thumb">
+     <img src="{{datarow.meta.thumb}}" alt="{{datarow.title | raw}}" class="">
 {%endif%}
 	<h2>{{datarow.title | raw}}</h2>
 {%if datarow.subtitle%}
     <div class="txtB mB10">{{datarow.subtitle}}</div>
 {%endif%}
-    <p class="msg">{{datarow.excerpt}}</p>
+    <p class="msg hide">{{datarow.excerpt}}</p>
 {%endif%}
 
     {{datarow.content | raw}}
     </div>
     {{block('imagegallery')}}
-    <hr>
+
     <div class="tagBox msg simple">{{tags({"format" : 'html'})}}</div>
 
 {%if datarow.type == 'post' and datarow.datemodified%}
