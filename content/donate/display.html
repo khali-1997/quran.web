@@ -3,6 +3,10 @@
 
 {%block page%}
 
+{%if  paymentVerifyMsg %}
+<div class="msg txtC {%if paymentVerifyMsgTrue %}success{%else%}danger{%endif%}">{{ paymentVerifyMsg}}</div>
+{%endif%}
+
 {%if 0%}
 <div class="msg">
   <p>{%trans "Donating to SalamQuran is an investment in multiple causes including education, research, server cost, improve design, development of mobile apps and desktop version."%}</p>
@@ -28,12 +32,12 @@
     <div class="msg info2">
       <label for='person'>{%trans "Name"%}</label>
       <div class="input">
-        <input type="text" name="person" id='person' maxlength="50">
+        <input type="text" name="name" id='person' maxlength="50">
       </div>
 
       <label for='personMob'>{%trans "Mobile"%}</label>
       <div class="input">
-        <input type="tel" name="personMob" id='personMob' maxlength="12">
+        <input type="tel" name="mobile" id='personMob' maxlength="12">
       </div>
 
       <label for='amount'>{%trans "Amount"%}</label>
