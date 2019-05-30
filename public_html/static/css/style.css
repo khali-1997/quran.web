@@ -6068,15 +6068,15 @@ body[data-in='mag'] .wrapper {
   body[data-in='mag'] #header .topnav h1 {
     font-size: 1.1em; }
 
-  .topTitle {
-    padding: 50px 10px 40px; }
+  #header .topTitle {
+    padding: 0 !important; }
 
-  .topTitle h2 {
-    font-size: 2em !important;
-    line-height: 2em; }
+  #header .topTitle h2 {
+    font-size: 1.4em !important;
+    line-height: 2em !important; }
 
-  .topTitle h3 {
-    font-size: 1.4em !important; }
+  #header .topTitle h3 {
+    font-size: 1.2em !important; }
 
   #soreha a {
     padding: 0.5rem 1rem; }
