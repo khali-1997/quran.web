@@ -140,6 +140,9 @@ class aya
 					$first_verse['title'] = $verse_title;
 					$first_verse['url']   = $verse_url;
 					$first_verse['audio'] = \lib\app\qari::get_aya_audio($value['sura'], $value['aya'], $_meta);
+					$first_verse['juz']   = $value['juz'];
+					$first_verse['page']  = $value['page'];
+					$first_verse['sura']  = $value['sura'];
 				}
 
 				$quran[$myKey][$myArrayKey]['detail'] =
