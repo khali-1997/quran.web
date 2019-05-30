@@ -31,6 +31,11 @@ class donate
 		}
 
 		$name   = \dash\app::request('name');
+		if($name && mb_strlen($name) > 100)
+		{
+			\dash\notif::error(T_("Name is too large"), 'name');
+			return false;
+		}
 
 		$user_id = null;
 		$mobile = \dash\app::request('mobile');
@@ -48,6 +53,11 @@ class donate
 			if(isset($user_detail['id']))
 			{
 				$user_id = $user_detail['id'];
+
+				if($name && array_key_exists('displayname', $user_detail) && !$user_detail['displayname'])
+				{
+					\dash\db\users::update(['displayname' => $name], $user_id);
+				}
 			}
 			else
 			{
