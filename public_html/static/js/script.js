@@ -629,54 +629,74 @@ function detectNextAye()
     // get next aye element
     var nextAyeNumEl = $('.Quran .ayeNum[data-i="' + idNext + '"]');
 
-    if(nextAyeNumEl.attr('data-qiraat') === undefined)
-    {
-      // this aye has not audio file, skip
-      console.log('Skip aye ' + idNext);
-      // fix for qiraati
-      var currentAyeNumEl = $('.Quran .ayeNum[data-qiraat][data-i="' + idCurrent + '"]');
-      var currentAyeIndex =  $('.Quran .ayeNum[data-qiraat]').index(currentAyeNumEl);
-      nextAyeNumEl = $('.Quran .ayeNum[data-qiraat]').eq(currentAyeIndex + 1);
-    }
-
-
+    // if next aye is exist, but dont have qiraat audio try to find next one
     if(nextAyeNumEl.length > 0)
     {
-      var delay = 0;
-      var AdjustedDelay = $('.player .sDelay').val();
-      if(AdjustedDelay === 'len')
+      if(nextAyeNumEl.attr('data-qiraat') === undefined)
       {
-        // get len of sura
-        delay = 10000;
-        var audioDuration = parseInt($('#talavat')[0].duration);
-        if(audioDuration)
-        {
-          delay = audioDuration * 1000;
-        }
-      }
-      else
-      {
-        AdjustedDelay = parseInt(AdjustedDelay);
-        // use as second
-        delay = AdjustedDelay * 1000;
+        // this aye has not audio file, skip
+        console.log('Skip aye ' + idNext);
+        // fix for qiraati
+        var currentAyeNumEl = $('.Quran .ayeNum[data-qiraat][data-i="' + idCurrent + '"]');
+        var currentAyeIndex =  $('.Quran .ayeNum[data-qiraat]').index(currentAyeNumEl);
+        nextAyeNumEl = $('.Quran .ayeNum[data-qiraat]').eq(currentAyeIndex + 1);
       }
 
-      if(delay)
+      // check again
+      if(nextAyeNumEl.length > 0)
       {
-        // show delay if exist
-        $('.player .lineDelay .badge').text(delay/1000 + 's');
-        setTimeout(function()
+
+        var delay = 0;
+        var AdjustedDelay = $('.player .sDelay').val();
+        if(AdjustedDelay === 'len')
+        {
+          // get len of sura
+          delay = 10000;
+          var audioDuration = parseInt($('#talavat')[0].duration);
+          if(audioDuration)
+          {
+            delay = audioDuration * 1000;
+          }
+        }
+        else
+        {
+          AdjustedDelay = parseInt(AdjustedDelay);
+          // use as second
+          delay = AdjustedDelay * 1000;
+        }
+
+        if(delay)
+        {
+          // show delay if exist
+          $('.player .lineDelay .badge').text(delay/1000 + 's');
+          setTimeout(function()
+          {
+            iqra(nextAyeNumEl);
+            $('.player .lineDelay .badge').text('');
+          }, delay);
+        }
+        else
         {
           iqra(nextAyeNumEl);
-          $('.player .lineDelay .badge').text('');
-        }, delay);
+        }
+
       }
       else
       {
-        iqra(nextAyeNumEl);
+        // next aye is exist but next audio in this page is not exist
+        // redirect to next page
+        var nextAudioPage = $('.audioNextPage').attr('data-autoNext');
+        Navigate({ url: nextAudioPage });
       }
 
     }
+    else
+    {
+      // page is end, go to next page
+      var nextAudioPage = $('.audioNextPage').attr('data-autoNext');
+      Navigate({ url: nextAudioPage });
+    }
+
     // currentAyeBox.removeClass('active');
   }
 }
