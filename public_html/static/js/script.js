@@ -621,6 +621,17 @@ function detectNextAye()
     // get next aye element
     var nextAyeNumEl = $('.Quran .ayeNum[data-i="' + idNext + '"]');
 
+    if(nextAyeNumEl.attr('data-qiraat') === undefined)
+    {
+      // this aye has not audio file, skip
+      console.log('Skip aye ' + idNext);
+      // fix for qiraati
+      var currentAyeNumEl = $('.Quran .ayeNum[data-qiraat][data-i="' + idCurrent + '"]');
+      var currentAyeIndex =  $('.Quran .ayeNum[data-qiraat]').index(currentAyeNumEl);
+      nextAyeNumEl = $('.Quran .ayeNum[data-qiraat]').eq(currentAyeIndex + 1);
+    }
+
+
     if(nextAyeNumEl.length > 0)
     {
       var delay = 0;
