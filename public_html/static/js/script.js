@@ -347,6 +347,10 @@ function getAyeData(_ayeNumEl, _playOneAye)
   {
     ayeResult.currentRepeat = 1;
   }
+  if(ayeResult.title === undefined)
+  {
+    ayeResult.title = myAyeNum[0]._tippy.props.content;
+  }
 
   // detect and preload next audio
   nextAudio = $('.Quran .ayeNum[data-i="' + parseInt(ayeResult.id) + 1 + '"]');
