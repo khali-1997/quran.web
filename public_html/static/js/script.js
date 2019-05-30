@@ -335,16 +335,22 @@ function getAyeData(_ayeNumEl, _playOneAye)
     nextAudio:  null
   }
 
-  // detect and preload next audio
-  var nextAudio = detectNextAye(true);
-  if(nextAudio)
-  {
-    nextAudio = nextAudio.attr('data-qiraat');
-    if(nextAudio)
-    {
-      ayeResult.nextAudio = nextAudio;
-    }
-  }
+
+	setTimeout(function()
+	{
+	  // detect and preload next audio
+	  var nextAudio = detectNextAye(true);
+	  console.log(nextAudio);
+	  if(nextAudio)
+	  {
+	    nextAudio = nextAudio.attr('data-qiraat');
+	    if(nextAudio)
+	    {
+	      ayeResult.nextAudio = nextAudio;
+	    }
+	  }
+	}, 100);
+
 
   // console.log(ayeResult);
   return ayeResult;
@@ -576,7 +582,6 @@ function detectNextAye(_check)
   var myPlayer  = $('.player');
   var oneAye    = myPlayer.attr('data-oneAye');
   var idCurrent = myPlayer.attr('data-aye');
-
   if(oneAye === undefined)
   {
     var idNext        = idCurrent = parseInt(idCurrent) + 1;
