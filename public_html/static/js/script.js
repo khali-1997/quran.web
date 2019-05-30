@@ -286,7 +286,8 @@ function iqra(_ayeNumEl, _playOneAye, _forceByPlayer)
   // get detail of aye
   var ayeDetail = getAyeData(_ayeNumEl, _playOneAye);
   // show current number of repeat in options
-  $('.player .lineRepeat .badge').text(ayeDetail.currentRepeat);
+  $('.player .lineRepeat .badge').text(ayeDetail.currentRepeat + 'x');
+
 
   // update player detail and if all thing is okay
   if(updatePlayer(ayeDetail))
@@ -418,16 +419,16 @@ function updatePlayer(_ayeData)
   // set player new audio
   if(talavatEl.src === _ayeData.audio)
   {
-    console.log('source is not new!');
+    // console.log('source is not new!');
     // do nothing, because it's exist before
   }
   else if(talavatInitSrc === _ayeData.audio)
   {
-    console.log('source is not new for the first time!');
+    // console.log('source is not new for the first time!');
   }
   else
   {
-    console.log('set new source');
+    // console.log('set new source');
     talavatEl.src = _ayeData.audio;
     // load new audio
     talavatEl.load();
@@ -641,10 +642,21 @@ function detectNextAye()
         delay = AdjustedDelay * 1000;
       }
 
-      setTimeout(function()
+      if(delay)
+      {
+        // show delay if exist
+        $('.player .lineDelay .badge').text(delay/1000 + 's');
+        setTimeout(function()
+        {
+          iqra(nextAyeNumEl);
+          $('.player .lineDelay .badge').text('');
+        }, delay);
+      }
+      else
       {
         iqra(nextAyeNumEl);
-      }, delay)
+      }
+
     }
     // currentAyeBox.removeClass('active');
   }
