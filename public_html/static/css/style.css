@@ -6040,6 +6040,9 @@ body[data-in='mag'] #header .topTitle {
 body[data-in='mag'] .wrapper {
   padding-top: 2em; }
 
+@media all and (max-height: 380px) {
+  #sidebar .always footer {
+    display: none; } }
 @media (max-width: 767px) {
   .ltr #page {
     margin-left: 0; }
