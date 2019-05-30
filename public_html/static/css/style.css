@@ -5430,7 +5430,8 @@ html[lang="ar"] #soreha .c7 span {
   opacity: 1;
   line-height: 49px;
   height: 50px;
-  font-size: 30px; }
+  font-size: 30px;
+  outline: none; }
 
 .Quran i:hover {
   color: #07b7dd;
