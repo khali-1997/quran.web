@@ -588,44 +588,65 @@ function detectNextAye()
   if(oneAye === undefined)
   {
     // get times el
-  var sTimesEl      = $('.player .sTimes');
+    var sTimesEl      = $('.player .sTimes');
     // get current aye as next for default
-  var idNext        = parseInt(idCurrent);
-  // get number of needed repeat
-  var repeatNeeded  = parseInt(sTimesEl.val());
+    var idNext        = parseInt(idCurrent);
+    // get number of needed repeat
+    var repeatNeeded  = parseInt(sTimesEl.val());
 
-  var currentRepeat = parseInt(sTimesEl.attr('data-current'));
-  if(isNaN(currentRepeat))
-  {
-    currentRepeat = 1;
-  }
-  else
-  {
-    currentRepeat += 1;
-  }
+    var currentRepeat = parseInt(sTimesEl.attr('data-current'));
+    if(isNaN(currentRepeat))
+    {
+      currentRepeat = 1;
+    }
+    else
+    {
+      currentRepeat += 1;
+    }
 
-  if(currentRepeat < repeatNeeded)
-  {
-    // do nothing and repeat aya
-    sTimesEl.attr('data-current', currentRepeat);
-  }
-  else
-  {
-    // plus one to get next aya
-    idNext += 1;
-    sTimesEl.attr('data-current', null);
-  }
+    if(currentRepeat < repeatNeeded)
+    {
+      // do nothing and repeat aya
+      sTimesEl.attr('data-current', currentRepeat);
+    }
+    else
+    {
+      // plus one to get next aya
+      idNext += 1;
+      sTimesEl.attr('data-current', null);
+    }
 
 
-  // get next aye element
-  var nextAyeNumEl = $('.Quran .ayeNum[data-i="' + idNext + '"]');
-
+    // get next aye element
+    var nextAyeNumEl = $('.Quran .ayeNum[data-i="' + idNext + '"]');
 
     if(nextAyeNumEl.length > 0)
     {
-      iqra(nextAyeNumEl);
+      var delay = 0;
+      var AdjustedDelay = $('.player .sDelay').val();
+      if(AdjustedDelay === 'len')
+      {
+        // get len of sura
+        delay = 10000;
+        var audioDuration = parseInt($('#talavat')[0].duration);
+        if(audioDuration)
+        {
+          delay = audioDuration * 1000;
+        }
+      }
+      else
+      {
+        AdjustedDelay = parseInt(AdjustedDelay);
+        // use as second
+        delay = AdjustedDelay * 1000;
+      }
+
+      setTimeout(function()
+      {
+        iqra(nextAyeNumEl);
+      }, delay)
     }
-  // currentAyeBox.removeClass('active');
+    // currentAyeBox.removeClass('active');
   }
 }
 
