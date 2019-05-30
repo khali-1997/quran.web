@@ -372,6 +372,29 @@ class page
 					'title'    => T_("Next page"),
 					'subtitle' => T_('page') . ' '. \dash\utility\human::fitNumber($next_page),
 				];
+
+				// next auto play url
+				$quran_detail['nextAuto'] = $quran_detail['next'];
+
+				$appendAutoPlay = '';
+
+				if(strpos($quran_detail['nextAuto']['url'], '?'))
+				{
+					if(strpos($quran_detail['nextAuto']['url'], 'autoplay=1'))
+					{
+						// do noting, have it.
+					}
+					else
+					{
+						$appendAutoPlay = 'autoplay=1';
+					}
+				}
+				else
+				{
+					$appendAutoPlay = '?autoplay=1';
+				}
+
+				$quran_detail['nextAuto']['url'] .= $appendAutoPlay;
 			}
 
 			if($prev_page)
