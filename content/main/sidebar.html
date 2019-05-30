@@ -2,7 +2,9 @@
 <aside id="sidebar">
   <nav class="always">
     <div class="top">
-      <a href="{{url.kingdom}}" title='{%trans "Homepage"%}'><span class="sf-home"></span><span class="hide">{%trans "Homepage"%}</span></a>
+      <a href="{{url.kingdom}}" title='{%trans "Homepage"%}'{%if url.pwd == url.kingdom ~ "/"%} class='active'{%endif%}><span class="sf-home"></span><span class="hide">{%trans "Homepage"%}</span></a>
+{{langList({'html':true, 'class':'compact', 'all':true}) | raw}}
+
     </div>
 
     <footer>

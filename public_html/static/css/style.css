@@ -4951,9 +4951,15 @@ body[data-in='mag'] #header .topTitle {
   color: #777;
   transition: 0.3s; }
 
+#sidebar a.active {
+  background-color: rgba(0, 0, 0, 0.3); }
+
 #sidebar .always a:hover {
   color: #aaa;
   background-color: rgba(0, 0, 0, 0.5); }
+
+#sidebar .langlist {
+  font-size: 0.7em; }
 
 #sidebar .always footer {
   position: absolute;
