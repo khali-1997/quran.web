@@ -6141,7 +6141,16 @@ body[data-in='mag'] .wrapper {
     padding: 0 3px;
     margin: 2px 0;
     height: 36px;
-    max-height: 36px; } }
+    max-height: 36px; }
+
+  .player .sf-cog {
+    padding: 7px; }
+
+  .player .pSettings {
+    width: 100%;
+    bottom: 40px;
+    right: 0;
+    left: 0; } }
 /* Design for print */
 
 /*# sourceMappingURL=style.css.map */

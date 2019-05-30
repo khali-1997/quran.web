@@ -583,8 +583,16 @@ function detectNextAye(_check, _currentAye)
 
   if(oneAye === undefined)
   {
-    var idNext        = idCurrent = parseInt(idCurrent) + 1;
-    var nextAyeNumEl  = $('.Quran .ayeNum[data-i="' + idNext + '"]');
+  	// get current aye as next for default
+	var idNext = parseInt(idCurrent) + 1;
+	// get next aya
+	console.log(idNext);
+
+
+	// get next aye element
+	var nextAyeNumEl = $('.Quran .ayeNum[data-i="' + idNext + '"]');
+
+
     if(nextAyeNumEl.length > 0)
     {
       if(_check)
