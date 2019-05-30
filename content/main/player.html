@@ -17,5 +17,53 @@
         <source src="{{quranLoaded.detail.first_verse.audio}}" type="audio/mpeg">
       </audio>
     </div>
+    <div class="cauto">
+      <span class="sf-cog pRa10" data-kerkere='.pSettings'></span>
+    </div>
+
+    <form class="pSettings show" data-kerkere-content="hide" method="post" action="{{url.kingdom}}/settings">
+      <div class="f mB5">
+        <div class="c3">{%trans "Repeat"%}</div>
+        <div class="c">
+          <select class="select">
+            <option value="1">{{1 | fitNumber}} {%trans "Times"%}</option>
+            <option value="2">{{2 | fitNumber}} {%trans "Times"%}</option>
+            <option value="3">{{3 | fitNumber}} {%trans "Times"%}</option>
+            <option value="4">{{4 | fitNumber}} {%trans "Times"%}</option>
+            <option value="5">{{5 | fitNumber}} {%trans "Times"%}</option>
+            <option value="6">{{6 | fitNumber}} {%trans "Times"%}</option>
+            <option value="7">{{7 | fitNumber}} {%trans "Times"%}</option>
+            <option value="8">{{8 | fitNumber}} {%trans "Times"%}</option>
+            <option value="9">{{9 | fitNumber}} {%trans "Times"%}</option>
+            <option value="100">∞</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="f mB5">
+        <div class="c3">{%trans "Delay"%}</div>
+        <div class="c">
+          <select class="select">
+            <option value="0">{{0 | fitNumber}} {%trans "Without delay"%}</option>
+            <option value="1">{{1 | fitNumber}} {%trans "Second"%}</option>
+            <option value="2">{{2 | fitNumber}} {%trans "Second"%}</option>
+            <option value="3">{{3 | fitNumber}} {%trans "Second"%}</option>
+            <option value="4">{{4 | fitNumber}} {%trans "Second"%}</option>
+            <option value="5">{{5 | fitNumber}} {%trans "Second"%}</option>
+            <option value="6">{{6 | fitNumber}} {%trans "Second"%}</option>
+            <option value="7">{{7 | fitNumber}} {%trans "Second"%}</option>
+            <option value="8">{{8 | fitNumber}} {%trans "Second"%}</option>
+            <option value="9">{{9 | fitNumber}} {%trans "Second"%}</option>
+            <option value="len">{%trans "Duration of Aya"%}</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button class="btn block dark">{%trans "Save"%}</button>
+      </div>
+
+    </form>
+
   </div>
 {%endif%}
