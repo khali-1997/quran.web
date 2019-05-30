@@ -335,22 +335,16 @@ function getAyeData(_ayeNumEl, _playOneAye)
     nextAudio:  null
   }
 
-
-	setTimeout(function()
-	{
-	  // detect and preload next audio
-	  var nextAudio = detectNextAye(true);
-	  console.log(nextAudio);
-	  if(nextAudio)
-	  {
-	    nextAudio = nextAudio.attr('data-qiraat');
-	    if(nextAudio)
-	    {
-	      ayeResult.nextAudio = nextAudio;
-	    }
-	  }
-	}, 100);
-
+  // detect and preload next audio
+  var nextAudio = detectNextAye(true, ayeResult.id);
+  if(nextAudio)
+  {
+    nextAudio = nextAudio.attr('data-qiraat');
+    if(nextAudio)
+    {
+      ayeResult.nextAudio = nextAudio;
+    }
+  }
 
   // console.log(ayeResult);
   return ayeResult;
@@ -577,11 +571,16 @@ function playerTogglePlay(_forcePlayer, _forWbw)
 }
 
 
-function detectNextAye(_check)
+function detectNextAye(_check, _currentAye)
 {
   var myPlayer  = $('.player');
   var oneAye    = myPlayer.attr('data-oneAye');
   var idCurrent = myPlayer.attr('data-aye');
+  if(_currentAye)
+  {
+  	idCurrent = _currentAye;
+  }
+
   if(oneAye === undefined)
   {
     var idNext        = idCurrent = parseInt(idCurrent) + 1;
