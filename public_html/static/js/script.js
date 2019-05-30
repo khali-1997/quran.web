@@ -285,7 +285,9 @@ function iqra(_ayeNumEl, _playOneAye, _forceByPlayer)
 {
   // get detail of aye
   var ayeDetail = getAyeData(_ayeNumEl, _playOneAye);
-  console.log(ayeDetail);
+  // show current number of repeat in options
+  $('.player .lineRepeat .badge').text(ayeDetail.currentRepeat);
+
   // update player detail and if all thing is okay
   if(updatePlayer(ayeDetail))
   {
@@ -325,18 +327,24 @@ function getAyeData(_ayeNumEl, _playOneAye)
   // define result variable
   var ayeResult =
   {
-    ayeNumEl:   myAyeNum,
-    id:         myAyeNum.attr('data-i'),
-    title:      myAyeNum.attr('data-original-title'),
-    audio:      myAyeNum.attr('data-qiraat'),
-    oneAye:     (_playOneAye? '': null),
-    fromPlayer: (_ayeNumEl === 'player'? true: false),
-    init:       ($('.player').attr('data-aye')? false: true),
-    nextAudio:  null
+    ayeNumEl:       myAyeNum,
+    id:             myAyeNum.attr('data-i'),
+    title:          myAyeNum.attr('data-original-title'),
+    audio:          myAyeNum.attr('data-qiraat'),
+    oneAye:         (_playOneAye? '': null),
+    fromPlayer:     (_ayeNumEl === 'player'? true: false),
+    init:           ($('.player').attr('data-aye')? false: true),
+    currentRepeat:  parseInt($('.player .sTimes').attr('data-current')) + 1,
+    nextAudio:      null
+  }
+
+  if(isNaN(ayeResult.currentRepeat))
+  {
+    ayeResult.currentRepeat = 1;
   }
 
   // detect and preload next audio
-  var nextAudio = detectNextAye(true, ayeResult.id);
+  nextAudio = $('.Quran .ayeNum[data-i="' + parseInt(ayeResult.id) + 1 + '"]');
   if(nextAudio)
   {
     nextAudio = nextAudio.attr('data-qiraat');
@@ -346,7 +354,7 @@ function getAyeData(_ayeNumEl, _playOneAye)
     }
   }
 
-  // console.log(ayeResult);
+  console.log(ayeResult);
   return ayeResult;
 }
 
@@ -571,38 +579,51 @@ function playerTogglePlay(_forcePlayer, _forWbw)
 }
 
 
-function detectNextAye(_check, _currentAye)
+function detectNextAye()
 {
   var myPlayer  = $('.player');
   var oneAye    = myPlayer.attr('data-oneAye');
   var idCurrent = myPlayer.attr('data-aye');
-  if(_currentAye)
-  {
-  	idCurrent = _currentAye;
-  }
 
   if(oneAye === undefined)
   {
-  	// get current aye as next for default
-	var idNext = parseInt(idCurrent) + 1;
-	// get next aya
-	console.log(idNext);
+    // get times el
+  var sTimesEl      = $('.player .sTimes');
+    // get current aye as next for default
+  var idNext        = parseInt(idCurrent);
+  // get number of needed repeat
+  var repeatNeeded  = parseInt(sTimesEl.val());
+
+  var currentRepeat = parseInt(sTimesEl.attr('data-current'));
+  if(isNaN(currentRepeat))
+  {
+    currentRepeat = 1;
+  }
+  else
+  {
+    currentRepeat += 1;
+  }
+
+  if(currentRepeat < repeatNeeded)
+  {
+    // do nothing and repeat aya
+    sTimesEl.attr('data-current', currentRepeat);
+  }
+  else
+  {
+    // plus one to get next aya
+    idNext += 1;
+    sTimesEl.attr('data-current', null);
+  }
 
 
-	// get next aye element
-	var nextAyeNumEl = $('.Quran .ayeNum[data-i="' + idNext + '"]');
+  // get next aye element
+  var nextAyeNumEl = $('.Quran .ayeNum[data-i="' + idNext + '"]');
 
 
     if(nextAyeNumEl.length > 0)
     {
-      if(_check)
-      {
-        return nextAyeNumEl;
-      }
-      else
-      {
-        iqra(nextAyeNumEl);
-      }
+      iqra(nextAyeNumEl);
     }
   // currentAyeBox.removeClass('active');
   }

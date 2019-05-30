@@ -23,7 +23,7 @@
 
     <form class="pSettings" data-kerkere-content="hide" method="post" action="{{url.kingdom}}/settings">
 
-      <div class="f mB5">
+      <div class="f mB5 lineMode">
         <div class="c3">{%trans "Play Mode"%}</div>
         <div class="c">
           <select class="select sMode" name="mode">
@@ -36,8 +36,8 @@
         </div>
       </div>
 
-      <div class="f mB5">
-        <div class="c3">{%trans "Repeat"%}</div>
+      <div class="f mB5 lineRepeat">
+        <div class="c3">{%trans "Repeat"%} <span class="badge"></span></div>
         <div class="c">
           <select class="select sTimes" name="repeat">
             <option value="1">{{1 | fitNumber}} {%trans "Times"%}</option>
@@ -54,7 +54,7 @@
         </div>
       </div>
 
-      <div class="f mB10">
+      <div class="f mB10 lineDelay">
         <div class="c3">{%trans "Delay"%}</div>
         <div class="c">
           <select class="select sDelay" name="delay">
