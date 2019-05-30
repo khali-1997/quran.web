@@ -22,10 +22,24 @@
     </div>
 
     <form class="pSettings show" data-kerkere-content="hide" method="post" action="{{url.kingdom}}/settings">
+
+      <div class="f mB5">
+        <div class="c3">{%trans "Play Mode"%}</div>
+        <div class="c">
+          <select class="select sMode" name="mode">
+            <option value="continuously">{%trans "Continuously"%}</option>
+            <option value="aya">{%trans "Aya"%}</option>
+            <option value="surah">{%trans "Surah"%}</option>
+            <option value="page">{%trans "Page"%}</option>
+            <option value="juz">{%trans "Juz"%}</option>
+          </select>
+        </div>
+      </div>
+
       <div class="f mB5">
         <div class="c3">{%trans "Repeat"%}</div>
         <div class="c">
-          <select class="select">
+          <select class="select sTimes" name="repeat">
             <option value="1">{{1 | fitNumber}} {%trans "Times"%}</option>
             <option value="2">{{2 | fitNumber}} {%trans "Times"%}</option>
             <option value="3">{{3 | fitNumber}} {%trans "Times"%}</option>
@@ -43,7 +57,7 @@
       <div class="f mB5">
         <div class="c3">{%trans "Delay"%}</div>
         <div class="c">
-          <select class="select">
+          <select class="select sDelay" name="delay">
             <option value="0">{{0 | fitNumber}} {%trans "Without delay"%}</option>
             <option value="1">{{1 | fitNumber}} {%trans "Second"%}</option>
             <option value="2">{{2 | fitNumber}} {%trans "Second"%}</option>
