@@ -1,6 +1,6 @@
 {%include 'content/home/blocks/block-cmd.html'%}
 
-<div class='Quran' id="iqra" data-style='{{pageStyle}}' data-mode='{{pageMode}}'>
+<div class='Quran' id="iqra" data-style='{{pageStyle}}' data-mode='{{pageMode}}'{%if requestGET.autoplay%} data-autoplay{%endif%}>
 
 {%if requestGET.mode == 'onepage' or not requestGET.mode %}
       {%include 'content/home/theme-onePage.html'%}

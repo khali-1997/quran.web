@@ -283,6 +283,10 @@ function bindAudioTools()
 
 function iqra(_ayeNumEl, _playOneAye, _forceByPlayer)
 {
+  if(!_ayeNumEl)
+  {
+    return false;
+  }
   // get detail of aye
   var ayeDetail = getAyeData(_ayeNumEl, _playOneAye);
   // show current number of repeat in options
@@ -809,11 +813,22 @@ function runQuickAccess()
 }
 
 
+function checkAutoplay()
+{
+  if($('.Quran').attr('data-autoplay') !== undefined)
+  {
+    notif('info', 'Autoplay Quran');
+    iqra('player');
+  }
+}
+
+
 function pushState()
 {
   runQuickAccess();
   handlePlayWbw();
   bindAudioTools();
+  checkAutoplay();
 }
 
 CreateBubbles();
