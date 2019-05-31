@@ -5891,13 +5891,14 @@ body.ltr .Quran .readerMode.translate {
   -moz-box-direction: normal !important;
   flex-direction: column !important; }
 
-.present::after {
+.present::before {
   content: "";
   position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
+  background-color: #070e1b;
   background-image: url("../images/bg/quran-1.jpg");
   background-position: center right;
   background-attachment: fixed;
@@ -5907,16 +5908,18 @@ body.ltr .Quran .readerMode.translate {
   opacity: 0;
   transition: 0.7s; }
 
-.present.cover::after {
+.present.cover::before {
   z-index: 100;
   opacity: 1; }
 
-.present #presentAye {
+.present .presentQuran {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   -webkit-flex: 1;
   -moz-box-flex: 1;
-  flex: 1;
+  flex: 1; }
+
+.present #presentAye {
   min-height: 200px;
   font-size: 3em;
   padding-top: 5rem; }
