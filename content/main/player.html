@@ -1,5 +1,5 @@
-{%if sureLoaded%}
-  <div class='player f align-center '>
+{%if sureLoaded or url.module == 'present'%}
+  <div class='player f align-center'>
     <figure class="cauto">
       <a class="qari" href="{{url.pwd}}#chooseQari">
         <img src="{{qariLoaded.image}}" alt="qari">
