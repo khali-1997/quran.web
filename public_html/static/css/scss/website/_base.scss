@@ -2,7 +2,10 @@ html{
 	min-height: 100%;
 	background-color: #0aa5dc;
 }
-html:before{
+body{
+	min-height: 100%;
+}
+body:before{
 	content: "";
 	position: fixed;
 	z-index: -1;
@@ -11,12 +14,9 @@ html:before{
 	right: 0;
 	left: 0;
 	background-size: cover;
-    will-change: transform;
+	will-change: transform;
 	background: #0aa5dc;
 	background: linear-gradient( 20deg, rgb(0,215,220) 0%, rgb(10,165,220) 100%);
-}
-body{
-	min-height: 100%;
 }
 #main{
 	z-index: 10;
