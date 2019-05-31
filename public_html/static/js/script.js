@@ -27,6 +27,10 @@ AnimatoriJS.load('particles-js', 'particles.json', function() {
 
 function CreateBubbles()
 {
+  if($('#nodes').length !== 1)
+  {
+    return false;
+  }
 
  var deviceWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
  if(deviceWidth > 600)
@@ -98,7 +102,7 @@ function CreateBubbles()
     }
     },
     "interactivity": {
-    "detect_on": "window",
+    "detect_on": "canvas",
     "events": {
       "onhover": {
       "enable": true,
