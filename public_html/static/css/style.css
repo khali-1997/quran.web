@@ -5921,13 +5921,17 @@ body.ltr .Quran .readerMode.translate {
   font-size: 3em;
   padding-top: 5rem; }
 
+.present #presentAye .ayeNum {
+  color: #000070; }
+
 .present #presentTranslation {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   -webkit-flex: 1;
   -moz-box-flex: 1;
   flex: 1;
-  min-height: 150px; }
+  min-height: 150px;
+  color: #000070; }
 
 .present #presentDetail {
   min-height: 50px;
