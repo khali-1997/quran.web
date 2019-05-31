@@ -10,7 +10,7 @@ class view
 		\dash\data::page_desc(T_('Present like TV'));
 
 		\dash\data::include_js(false);
-		\dash\data::bodyclass('present');
+		\dash\data::bodyclass('present cover');
 
 	}
 }
