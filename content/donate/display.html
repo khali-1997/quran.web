@@ -68,8 +68,8 @@
 <h3>{%trans "Have Question?"%}</h3>
 <p>{%trans "If you have any questions, please do not hesitate to <a href='contact'>contact us</a>."%} {%trans "In <a href='support'>help center</a> we are answer some frequent questions."%}</p>
 
-
 {%if false%}
+{{block('iDoners')}}
 <hr>
 <h3>{%trans "Doners"%}</h3>
 <p>{%trans "Thanks to the generous support of donors like you. see our doners"%}</p>
@@ -78,3 +78,72 @@
 
 {%endblock%}
 
+
+
+{%block iDoners%}
+{%if doners.up_to_10_milion%}
+<h3>{%trans "Donate up to 10 milion"%}</h3>
+<div class="f massive">
+  {%for key, value in doners.up_to_10_milion %}
+    <div class="vcard shadow mA10 s12">
+      <img alt="{{value.displayname}}" src="{{value.avatar}}">
+      <div class="content">
+        <a class="header">{{value.displayname}}</a>
+        <div class="meta"><span>{{value.mysum | fitNumber}}</span></div>
+      </div>
+    </div>
+  {%endfor%}
+</div>
+{%endif%}
+
+
+{%if doners.up_to_1_milion%}
+<h3>{%trans "Donate up to 1 milion"%}</h3>
+<div class="f large">
+  {%for key, value in doners.up_to_1_milion %}
+  <div class="vcard shadow mA10 s12">
+    <img alt="{{value.displayname}}" src="{{value.avatar}}">
+    <div class="content">
+      <a class="header">{{value.displayname}}</a>
+      <div class="meta"><span>{{value.mysum | fitNumber}}</span></div>
+    </div>
+  </div>
+  {%endfor%}
+</div>
+{%endif%}
+
+
+{%if doners.up_to_100_thousand%}
+<h3>{%trans "Donate up to 100 thousand"%}</h3>
+<div class="f small">
+  {%for key, value in doners.up_to_100_thousand %}
+  <div class="vcard shadow mA10 s12">
+    <img alt="{{value.displayname}}" src="{{value.avatar}}">
+    <div class="content">
+      <a class="header">{{value.displayname}}</a>
+      <div class="meta"><span>{{value.mysum | fitNumber}}</span></div>
+    </div>
+  </div>
+  {%endfor%}
+</div>
+{%endif%}
+
+
+
+{%if doners.other%}
+<h3>{%trans "Other doners"%}</h3>
+<div class="f mini">
+  {%for key, value in doners.other %}
+  <div class="vcard shadow mA10 s12">
+    <img alt="{{value.displayname}}" src="{{value.avatar}}">
+    <div class="content">
+      <a class="header">{{value.displayname}}</a>
+      <div class="meta"><span>{{value.mysum | fitNumber}}</span></div>
+    </div>
+  </div>
+  {%endfor%}
+</div>
+{%endif%}
+
+
+{%endblock%}

@@ -67,7 +67,14 @@ class donate
 
 		if(!$user_id)
 		{
-			$user_id = 'unverify';
+			if(\dash\user::id())
+			{
+				$user_id = \dash\user::id();
+			}
+			else
+			{
+				$user_id = 'unverify';
+			}
 		}
 
 		if(isset($_args['turn_back']))
@@ -100,6 +107,26 @@ class donate
 
 		\dash\utility\pay\start::site($meta);
 
+	}
+
+
+
+	public static function doners_list()
+	{
+		$result                       = [];
+		$result['up_to_10_milion']    = \lib\db\donate::sum_from_to(10000000, null);
+		$result['up_to_1_milion']     = \lib\db\donate::sum_from_to(1000000, 9999999);
+		$result['up_to_100_thousand'] = \lib\db\donate::sum_from_to(100000, 999999);
+		$result['other']              = \lib\db\donate::sum_from_to(null, 99999);
+
+		foreach ($result as $key => $value)
+		{
+			if($value)
+			{
+				$result[$key] = array_map(['\\dash\\app', 'fix_avatar'], $value);
+			}
+		}
+		return $result;
 	}
 
 

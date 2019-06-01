@@ -32,6 +32,11 @@ class view
 			}
 		}
 
+
+		$doners = \lib\app\donate::doners_list();
+		\dash\data::doners($doners);
+
+
 	}
 }
 ?>
