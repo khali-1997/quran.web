@@ -20,6 +20,7 @@ class view
 				{
 					\dash\data::paymentVerifyMsg(T_("Thanks for your holy payment, :amount sucsessfully recived", ['amount' => \dash\utility\human::fitNumber($get_msg['plus'])]));
 					\dash\data::paymentVerifyMsgTrue(true);
+					\dash\data::logoLink(true);
 				}
 				else
 				{

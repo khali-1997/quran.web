@@ -5,6 +5,11 @@
 
 {%if  paymentVerifyMsg %}
 <div class="msg txtC {%if paymentVerifyMsgTrue %}success{%else%}danger{%endif%}">{{ paymentVerifyMsg}}</div>
+  {%if logoLink%}
+    <div class="txtC">
+      <img  src="{{url.site}}/static/images/logo.png">
+    </div>
+  {%endif%}
 {%endif%}
 
 {%if 0%}
