@@ -210,17 +210,16 @@
     </div>
 
 
-  {%if false%}
     <div class="c3 s12 pLa10"  title='{%trans "Search in Quran"%}'>
       <form method="get" action="{{url.kingdom}}/search" autocomplete="off">
         <label>{%trans "Search"%}</label>
         <div class="input">
-          <input type="text" name="q" autocomplete="off" placeholder='{%trans "Search"%}'>
+          <input type="text" name="q" autocomplete="off" placeholder='{%trans "Search"%}' value="{{requestGET.q}}">
           <button class="addon"><i class="sf-search fc-blue"></i></button>
         </div>
       </form>
     </div>
-  {%endif%}
+
 
   </div>
 </section>
