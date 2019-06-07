@@ -40,6 +40,26 @@
 </div>
 
 {%endfor%}
+
+{%if requestGET.q and not dataTable%}
+<div class="msg warn2">
+  <div class="f">
+    <div class="c txtB">{%trans "No result found"%}</div>
+    <div class="cauto"><a class="txtB" href="{{url.this}}">{%trans "Clear filter"%}</a></div>
+  </div>
+</div>
+{%endif%}
+
+{%if not requestGET.q and not dataTable%}
+<div class="msg success2">
+  <div class="f">
+    <div class="c txtC txtB">{%trans "Please enter your keyword in the box above and press Enter"%}</div>
+
+  </div>
+</div>
+{%endif%}
+
 {%include display.pagination%}
+
 {%endblock%}
 
