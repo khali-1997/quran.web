@@ -9,7 +9,7 @@ class twigTransTerms
 	echo T_("Get list of aya from one page word by word");                            // Line 8
 	echo T_("Parameters");                                                            // Line 16
 	echo T_("Name");                                                                  // Line 144
-	echo T_("type");                                                                  // Line 54
+	echo T_("type");                                                                  // Line 64
 	echo T_("Description");                                                           // Line 10
 	echo T_("example");                                                               // Line 20
 	echo T_("Constraints");                                                           // Line 22
@@ -74,25 +74,28 @@ class twigTransTerms
 	echo T_("Covering all Quranic information of Muslims");                           // Line 6
 
 	//-------------------------------------projects/SalamQuran/content/audio/list.html
-	echo T_("Update database");                                                       // Line 35
+	echo T_("Update database");                                                       // Line 36
+	echo T_("Have a specific sound request?");                                        // Line 47
+	echo T_("request to upload audio");                                               // Line 48
+	echo T_("Contact the legendary support team right now.");                         // Line 48
 	echo T_("Qari");                                                                  // Line 78
-	echo T_("Style");                                                                 // Line 53
+	echo T_("Style");                                                                 // Line 63
 	echo T_("Quality");                                                               // Line 83
 	echo T_("Country");                                                               // Line 82
-	echo T_("Size");                                                                  // Line 57
-	echo T_("Count file");                                                            // Line 58
-	echo T_("Language");                                                              // Line 74
-	echo T_("Narrator");                                                              // Line 75
+	echo T_("Size");                                                                  // Line 67
+	echo T_("Count file");                                                            // Line 68
+	echo T_("Language");                                                              // Line 84
+	echo T_("Narrator");                                                              // Line 85
 	echo T_("Clear filters");                                                         // Line 122
 	echo T_("Result not found!");                                                     // Line 121
 	echo T_("Search with new keywords.");                                             // Line 121
-	echo T_("Quran Qari");                                                            // Line 157
-	echo T_("parhizgar");                                                             // Line 123
-	echo T_("mansouri");                                                              // Line 130
-	echo T_("minshawi");                                                              // Line 137
-	echo T_("afasy");                                                                 // Line 144
-	echo T_("husary");                                                                // Line 151
-	echo T_("abdulbasit");                                                            // Line 158
+	echo T_("Quran Qari");                                                            // Line 167
+	echo T_("parhizgar");                                                             // Line 133
+	echo T_("mansouri");                                                              // Line 140
+	echo T_("minshawi");                                                              // Line 147
+	echo T_("afasy");                                                                 // Line 154
+	echo T_("husary");                                                                // Line 161
+	echo T_("abdulbasit");                                                            // Line 168
 
 	//-------------------------------------projects/SalamQuran/content/audio/load.html
 	echo T_("Audio Quality");                                                         // Line 15
@@ -125,74 +128,92 @@ class twigTransTerms
 	echo T_("Send");                                                                  // Line 167
 
 	//------------------------------------projects/SalamQuran/content/main/footer.html
-	echo T_("About");                                                                 // Line 33
+	echo T_("About");                                                                 // Line 35
 	echo T_("Mission");                                                               // Line 17
 	echo T_("Vision");                                                                // Line 18
 	echo T_("Terms of Use");                                                          // Line 19
 	echo T_("Privacy Policy");                                                        // Line 20
 	echo T_("Change log");                                                            // Line 21
 	echo T_("Logo");                                                                  // Line 22
-	echo T_("Audio");                                                                 // Line 36
+	echo T_("Audio");                                                                 // Line 38
 	echo T_("Magazine");                                                              // Line 32
 	echo T_("Blog");                                                                  // Line 30
 	echo T_("Help Center");                                                           // Line 31
 	echo T_("FAQ");                                                                   // Line 32
 	echo T_("Contact");                                                               // Line 33
-	echo T_("Donate");                                                                // Line 34
-	echo T_("Aye of the day");                                                        // Line 38
-	echo T_("Random aye");                                                            // Line 39
-	echo T_("Page of the day");                                                       // Line 40
-	echo T_("Random Page");                                                           // Line 41
-	echo T_("API");                                                                   // Line 46
-	echo T_("Developers");                                                            // Line 47
-	echo T_("Telegram Bot");                                                          // Line 48
-	echo T_("Mobile Apps");                                                           // Line 49
+	echo T_("Donate");                                                                // Line 36
+	echo T_("Aye of the day");                                                        // Line 39
+	echo T_("Random aye");                                                            // Line 40
+	echo T_("Page of the day");                                                       // Line 41
+	echo T_("Random Page");                                                           // Line 42
+	echo T_("API");                                                                   // Line 47
+	echo T_("Developers");                                                            // Line 48
+	echo T_("Telegram Bot");                                                          // Line 49
+	echo T_("Mobile Apps");                                                           // Line 50
 	echo T_("Email");                                                                 // Line 25
-	echo T_("Tel");                                                                   // Line 62
-	echo T_("SMS");                                                                   // Line 58
-	echo T_("Website");                                                               // Line 60
-	echo T_("Enter to Panel");                                                        // Line 66
-	echo T_("Enter");                                                                 // Line 42
-	echo T_("Iran NSR Certification");                                                // Line 81
-	echo T_("Iran NSR");                                                              // Line 81
-	echo T_("Enamad Certification");                                                  // Line 83
-	echo T_("Enamad");                                                                // Line 83
-	echo T_("Samandehi Certification");                                               // Line 86
-	echo T_("Samandehi");                                                             // Line 86
-	echo T_("Shamad Certification");                                                  // Line 88
-	echo T_("Shamad");                                                                // Line 88
-	echo T_("Software Solution Designer");                                            // Line 99
-	echo T_("Developed by Ermile");                                                   // Line 99
+	echo T_("Tel");                                                                   // Line 63
+	echo T_("SMS");                                                                   // Line 59
+	echo T_("Website");                                                               // Line 61
+	echo T_("Enter to Panel");                                                        // Line 67
+	echo T_("Enter");                                                                 // Line 44
+	echo T_("Iran NSR Certification");                                                // Line 82
+	echo T_("Iran NSR");                                                              // Line 82
+	echo T_("Enamad Certification");                                                  // Line 84
+	echo T_("Enamad");                                                                // Line 84
+	echo T_("Samandehi Certification");                                               // Line 87
+	echo T_("Samandehi");                                                             // Line 87
+	echo T_("Shamad Certification");                                                  // Line 89
+	echo T_("Shamad");                                                                // Line 89
+	echo T_("Software Solution Designer");                                            // Line 100
+	echo T_("Developed by Ermile");                                                   // Line 100
+
+	//------------------------------------projects/SalamQuran/content/main/player.html
+	echo T_("Play Mode");                                                             // Line 27
+	echo T_("Continuously");                                                          // Line 30
+	echo T_("Aya");                                                                   // Line 155
+	echo T_("Surah");                                                                 // Line 32
+	echo T_("Juz");                                                                   // Line 199
+	echo T_("Aya Repeat");                                                            // Line 40
+	echo T_("Times");                                                                 // Line 51
+	echo T_("Delay");                                                                 // Line 58
+	echo T_("Without delay");                                                         // Line 61
+	echo T_("Second");                                                                // Line 70
+	echo T_("Duration of Aya");                                                       // Line 71
+	echo T_("Save");                                                                  // Line 107
 
 	//------------------------------------projects/SalamQuran/content/main/header.html
-	echo T_("Panel");                                                                 // Line 40
-	echo T_("Enter to your account and use SalamQuran account features");             // Line 19
+	echo T_("Panel");                                                                 // Line 42
+	echo T_("Enter to your account and use SalamQuran account features");             // Line 18
 
 	//-----------------------------------projects/SalamQuran/content/main/sidebar.html
 	echo T_("Homepage");                                                              // Line 5
-	echo T_("github");                                                                // Line 10
-	echo T_("Twitter");                                                               // Line 13
-	echo T_("Facebook");                                                              // Line 16
-	echo T_("Telegram");                                                              // Line 19
-	echo T_("Instagram");                                                             // Line 22
-	echo T_("Linkedin");                                                              // Line 25
-	echo T_("Namaz");                                                                 // Line 37
+	echo T_("github");                                                                // Line 12
+	echo T_("Twitter");                                                               // Line 15
+	echo T_("Facebook");                                                              // Line 18
+	echo T_("Telegram");                                                              // Line 21
+	echo T_("Instagram");                                                             // Line 24
+	echo T_("Linkedin");                                                              // Line 27
+	echo T_("Namaz");                                                                 // Line 39
 
 	//---------------------------------projects/SalamQuran/content/donate/display.html
-	echo T_("Donating to SalamQuran is an investment in multiple causes including education, research, server cost, improve design, development of mobile apps and desktop version.");// Line 8
-	echo T_("With the right support and resources we have the potential to make lasting strides for share Quran sound.");// Line 9
-	echo T_("Quran is calling you!");                                                 // Line 9
-	echo T_("Amount");                                                                // Line 39
-	echo T_("Toman");                                                                 // Line 42
-	echo T_("Pay Donate");                                                            // Line 50
-	echo T_("Thank You");                                                             // Line 59
-	echo T_("Also you can share our project to everyone and we are say thank you.");  // Line 60
-	echo T_("Have Question?");                                                        // Line 64
-	echo T_("If you have any questions, please do not hesitate to <a href='contact'>contact us</a>.");// Line 65
-	echo T_("In <a href='support'>help center</a> we are answer some frequent questions.");// Line 65
-	echo T_("Doners");                                                                // Line 70
-	echo T_("Thanks to the generous support of donors like you. see our doners");     // Line 71
-	echo T_("Your ongoing support is helping share Quran via SalamQuran around the world in cyberspace.");// Line 72
+	echo T_("Donating to SalamQuran is an investment in multiple causes including education, research, server cost, improve design, development of mobile apps and desktop version.");// Line 17
+	echo T_("With the right support and resources we have the potential to make lasting strides for share Quran sound.");// Line 18
+	echo T_("Quran is calling you!");                                                 // Line 18
+	echo T_("Amount");                                                                // Line 44
+	echo T_("Toman");                                                                 // Line 47
+	echo T_("Pay Donate");                                                            // Line 55
+	echo T_("Thank You");                                                             // Line 64
+	echo T_("Also you can share our project to everyone and we are say thank you.");  // Line 65
+	echo T_("Have Question?");                                                        // Line 69
+	echo T_("If you have any questions, please do not hesitate to <a href='contact'>contact us</a>.");// Line 70
+	echo T_("In <a href='support'>help center</a> we are answer some frequent questions.");// Line 70
+	echo T_("Doners");                                                                // Line 75
+	echo T_("Thanks to the generous support of donors like you. see our doners");     // Line 76
+	echo T_("Your ongoing support is helping share Quran via SalamQuran around the world in cyberspace.");// Line 77
+	echo T_("Donate up to 10 milion");                                                // Line 86
+	echo T_("Donate up to 1 milion");                                                 // Line 102
+	echo T_("Donate up to 100 thousand");                                             // Line 118
+	echo T_("Other doners");                                                          // Line 135
 
 	//--------------------------------projects/SalamQuran/content/contact/display.html
 	echo T_("We do our best to improve SalamQuran's quality. So, knowing your valuable comments about bugs and problems and more importantly your precious offers will help us in this way.");// Line 8
@@ -465,9 +486,7 @@ class twigTransTerms
 	//-------------------------------projects/SalamQuran/content/home/quickAccess.html
 	echo T_("Quick navigate to special surah");                                       // Line 4
 	echo T_("Surahs");                                                                // Line 7
-	echo T_("Juz");                                                                   // Line 199
 	echo T_("Quick navigate to special aya");                                         // Line 154
-	echo T_("Aya");                                                                   // Line 155
 	echo T_("Aya list");                                                              // Line 157
 	echo T_("Quick navigate to special juz");                                         // Line 166
 	echo T_("Juz list");                                                              // Line 169
@@ -573,7 +592,6 @@ class twigTransTerms
 	echo T_("addr");                                                                  // Line 86
 	echo T_("quality");                                                               // Line 95
 	echo T_("Add");                                                                   // Line 103
-	echo T_("Save");                                                                  // Line 107
 
 	//-----------------------projects/SalamQuran/content_m/audiobank/home/display.html
 	echo T_("List");                                                                  // Line 13
