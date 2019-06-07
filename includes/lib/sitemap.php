@@ -27,9 +27,9 @@ class sitemap
 			$sitemap->addItem($myUrl, '0.9', 'monthly', null);
 		}
 
-		$sitemap->createSitemapIndex();
+		$sitemap->endSitemap();
 
-		\dash\utility\sitemap::show_result('quransura', 114);
+		\dash\utility\sitemap::set_result('quransura', 114);
 	}
 
 
@@ -48,9 +48,9 @@ class sitemap
 			$sitemap->addItem($myUrl, '0.8', 'monthly', null);
 		}
 
-		$sitemap->createSitemapIndex();
+		$sitemap->endSitemap();
 
-		\dash\utility\sitemap::show_result('page', 604);
+		\dash\utility\sitemap::set_result('page', 604);
 	}
 
 
@@ -69,9 +69,9 @@ class sitemap
 			$sitemap->addItem($myUrl, '0.8', 'monthly', null);
 		}
 
-		$sitemap->createSitemapIndex();
+		$sitemap->endSitemap();
 
-		\dash\utility\sitemap::show_result('juz', 30);
+		\dash\utility\sitemap::set_result('juz', 30);
 	}
 }
 ?>
