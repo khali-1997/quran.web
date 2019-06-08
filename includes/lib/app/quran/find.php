@@ -75,6 +75,7 @@ class find
 			{
 				if(intval($number) >= 1 && intval($number) <= 6236 )
 				{
+					$_meta['mode'] = 'aye';
 					return \lib\app\quran::load('aya', $number, null, $_meta);
 				}
 				else

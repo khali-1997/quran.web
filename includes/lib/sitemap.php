@@ -6,72 +6,136 @@ class sitemap
 {
 	public static function create()
 	{
-		self::sura();
-		self::page();
-		self::juz();
+		$language = \dash\language::all();
+		foreach ($language as $lang => $detail)
+		{
+			$myLang = $lang;
+			if($myLang == \dash\language::primary())
+			{
+				$myLang = null;
+			}
+
+			self::sura($myLang);
+			self::page($myLang);
+			self::juz($myLang);
+			self::aya($myLang);
+		}
 	}
 
 
-	private static function sura()
+	private static function sura($_lang = null)
 	{
+		$filename = 'quransura';
+
+		$myLang = null;
+		if($_lang)
+		{
+			$myLang = $_lang. '/';
+			$filename .= '-'. $_lang;
+		}
+
 		$site_url = \dash\url::site().'/';
 
 		$sitemap  = new \dash\utility\sitemap_generator($site_url , root.'public_html/', 'sitemap' );
 
-		$sitemap->setFilename('quransura');
+		$sitemap->setFilename($filename);
 
 		for ($i=1; $i <= 114 ; $i++)
 		{
-			$myUrl = 's'.$i;
+			$myUrl = $myLang. 's'.$i;
 
 			$sitemap->addItem($myUrl, '0.9', 'monthly', null);
 		}
 
 		$sitemap->endSitemap();
 
-		\dash\utility\sitemap::set_result('quransura', 114);
+		\dash\utility\sitemap::set_result($filename, 114);
 	}
 
 
-	private static function page()
+	private static function page($_lang = null)
 	{
+		$filename = 'quranpage';
+		$myLang = null;
+		if($_lang)
+		{
+			$myLang = $_lang. '/';
+			$filename .= '-'. $_lang;
+		}
+
 		$site_url = \dash\url::site().'/';
 
 		$sitemap  = new \dash\utility\sitemap_generator($site_url , root.'public_html/', 'sitemap' );
 
-		$sitemap->setFilename('quranpage');
+		$sitemap->setFilename($filename);
 
 		for ($i=1; $i <= 604 ; $i++)
 		{
-			$myUrl = 'p'.$i;
+			$myUrl = $myLang. 'p'.$i;
 
 			$sitemap->addItem($myUrl, '0.8', 'monthly', null);
 		}
 
 		$sitemap->endSitemap();
 
-		\dash\utility\sitemap::set_result('page', 604);
+		\dash\utility\sitemap::set_result($filename, 604);
 	}
 
 
-	private static function juz()
+	private static function juz($_lang = null)
 	{
+		$filename = 'quranjuz';
+		$myLang = null;
+		if($_lang)
+		{
+			$myLang = $_lang. '/';
+			$filename .= '-'. $_lang;
+		}
+
 		$site_url = \dash\url::site().'/';
 
 		$sitemap  = new \dash\utility\sitemap_generator($site_url , root.'public_html/', 'sitemap' );
 
-		$sitemap->setFilename('quranjuz');
+		$sitemap->setFilename($filename);
 
 		for ($i=1; $i <= 30 ; $i++)
 		{
-			$myUrl = 'j'.$i;
+			$myUrl = $myLang. 'j'.$i;
 
 			$sitemap->addItem($myUrl, '0.8', 'monthly', null);
 		}
 
 		$sitemap->endSitemap();
 
-		\dash\utility\sitemap::set_result('juz', 30);
+		\dash\utility\sitemap::set_result($filename, 30);
+	}
+
+	private static function aya($_lang = null)
+	{
+		$filename = 'quranaya';
+		$myLang = null;
+		if($_lang)
+		{
+			$myLang = $_lang. '/';
+			$filename .= '-'. $_lang;
+		}
+
+		$site_url = \dash\url::site().'/';
+
+		$sitemap  = new \dash\utility\sitemap_generator($site_url , root.'public_html/', 'sitemap' );
+
+		$sitemap->setFilename($filename);
+
+		for ($i=1; $i <= 6236 ; $i++)
+		{
+			$myUrl = $myLang. 'a'.$i;
+
+			$sitemap->addItem($myUrl, '0.7', 'monthly', null);
+		}
+
+		$sitemap->endSitemap();
+
+		\dash\utility\sitemap::set_result($filename, 30);
 	}
 }
 ?>

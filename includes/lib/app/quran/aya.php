@@ -561,7 +561,7 @@ class aya
 		$result['pagination']        = $pagination;
 		$result['find_by']           = $_type;
 		$result['find_id']           = $_id;
-
+		$result['mode']              = $_meta['mode'];
 		$result['translatelist']     = \lib\app\translate::current_list();
 
 		// \dash\notif::api($result);
