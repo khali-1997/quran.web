@@ -25,12 +25,22 @@ class controller
 				$data = self::juz_hizb();
 				break;
 
+			case 'quick-access':
+				$data = self::quick_access();
+				break;
+
 			default:
 				\content_api\v6::no(404);
 				break;
 		}
 
 		\content_api\v6::bye($data);
+	}
+
+
+	private static function quick_access()
+	{
+		return \lib\app\quick_access::list();
 	}
 
 	private static function juz_sura()
