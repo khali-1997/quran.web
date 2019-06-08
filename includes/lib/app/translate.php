@@ -198,6 +198,22 @@ class translate
 
 	}
 
+	// get all url of language
+	// for example: fa1, ar2, en8, ...
+	// use in url https://salamquran.com/s1?t=fa1
+	public static function all_translate_url()
+	{
+		$list = self::translate_list();
+		$url = [];
+		foreach ($list as $key => $value)
+		{
+			$url[] = $value['language']. $value['index'];
+		}
+
+		return $url;
+	}
+
+
 	public static function translate_list()
 	{
 		$image_addr = \dash\url::site(). '/static/images/qariyan/';

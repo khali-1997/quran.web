@@ -18,8 +18,13 @@ class sitemap
 			self::sura($myLang);
 			self::page($myLang);
 			self::juz($myLang);
-			self::aya($myLang);
+			$translate_list = \lib\app\translate::all_translate_url();
+			foreach ($translate_list as $translate)
+			{
+				self::aya($myLang, $translate);
+			}
 		}
+
 	}
 
 
@@ -110,7 +115,7 @@ class sitemap
 		\dash\utility\sitemap::set_result($filename, 30);
 	}
 
-	private static function aya($_lang = null)
+	private static function aya($_lang = null, $_translate)
 	{
 		$filename = 'quranaya';
 		$myLang = null;
@@ -120,6 +125,8 @@ class sitemap
 			$filename .= '-'. $_lang;
 		}
 
+		$filename .= '-'. $_translate;
+
 		$site_url = \dash\url::site().'/';
 
 		$sitemap  = new \dash\utility\sitemap_generator($site_url , root.'public_html/', 'sitemap' );
@@ -128,7 +135,7 @@ class sitemap
 
 		for ($i=1; $i <= 6236 ; $i++)
 		{
-			$myUrl = $myLang. 'a'.$i;
+			$myUrl = $myLang. 'a'.$i. '?t='. $_translate;
 
 			$sitemap->addItem($myUrl, '0.7', 'monthly', null);
 		}
