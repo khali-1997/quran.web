@@ -24,7 +24,6 @@ class sitemap
 				self::aya($myLang, $translate);
 			}
 		}
-
 	}
 
 

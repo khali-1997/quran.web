@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SalamQuran - Persian\n"
-"POT-Creation-Date: 2019-06-09 08:14+0430\n"
-"PO-Revision-Date: 2019-06-09 08:16+0430\n"
+"POT-Creation-Date: 2019-06-09 08:36+0430\n"
+"PO-Revision-Date: 2019-06-09 08:36+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -17104,6 +17104,10 @@ msgstr "پرداخت با :bank"
 #: dash/lib/utility/sitemap.php:65
 msgid "File removed"
 msgstr "فایل حذف شد"
+
+#: dash/lib/utility/sitemap.php:105
+msgid "Link created"
+msgstr "لینک ساخته شد"
 
 #: dash/lib/utility/upload.php:262
 msgid "file successful uploaded"
