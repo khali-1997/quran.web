@@ -39,9 +39,7 @@ class sitemap
 			$filename .= '-'. $_lang;
 		}
 
-		$site_url = \dash\url::site().'/';
-
-		$sitemap  = new \dash\utility\sitemap_generator($site_url , root.'public_html/', 'sitemap' );
+		$sitemap  = \dash\utility\sitemap::new_sitemap();
 
 		$sitemap->setFilename($filename);
 
@@ -68,9 +66,7 @@ class sitemap
 			$filename .= '-'. $_lang;
 		}
 
-		$site_url = \dash\url::site().'/';
-
-		$sitemap  = new \dash\utility\sitemap_generator($site_url , root.'public_html/', 'sitemap' );
+		$sitemap  = \dash\utility\sitemap::new_sitemap();
 
 		$sitemap->setFilename($filename);
 
@@ -97,9 +93,7 @@ class sitemap
 			$filename .= '-'. $_lang;
 		}
 
-		$site_url = \dash\url::site().'/';
-
-		$sitemap  = new \dash\utility\sitemap_generator($site_url , root.'public_html/', 'sitemap' );
+		$sitemap  = \dash\utility\sitemap::new_sitemap();
 
 		$sitemap->setFilename($filename);
 
@@ -127,9 +121,7 @@ class sitemap
 
 		$filename .= '-'. $_translate;
 
-		$site_url = \dash\url::site().'/';
-
-		$sitemap  = new \dash\utility\sitemap_generator($site_url , root.'public_html/', 'sitemap' );
+		$sitemap  = \dash\utility\sitemap::new_sitemap();
 
 		$sitemap->setFilename($filename);
 
@@ -142,7 +134,7 @@ class sitemap
 
 		$sitemap->endSitemap();
 
-		\dash\utility\sitemap::set_result($filename, 30);
+		\dash\utility\sitemap::set_result($filename, 6236);
 	}
 }
 ?>
