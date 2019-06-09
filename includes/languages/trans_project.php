@@ -44,6 +44,10 @@ class twigTransTerms
 	echo T_("Get juz detail per sura detail");                                        // Line 5
 	echo T_("Get all juz detail per sura detail");                                    // Line 8
 
+	//--------------------projects/SalamQuran/content_api/v6/doc/130-quick-access.html
+	echo T_("Get quick access");                                                      // Line 5
+	echo T_("Get list of quick access of some aya or sura or something else");        // Line 8
+
 	//--------------------projects/SalamQuran/content_api/v6/doc/103-sure-aya-wbw.html
 	echo T_("Get aya of sura word by word");                                          // Line 5
 	echo T_("Get list of aya from one sura word by word");                            // Line 8
@@ -54,11 +58,12 @@ class twigTransTerms
 
 	//-----------------------------projects/SalamQuran/content_api/v6/doc/sidebar.html
 	echo T_("Sura list");                                                             // Line 3
-	echo T_("Sura");                                                                  // Line 4
+	echo T_("Sura");                                                                  // Line 34
 	echo T_("Page");                                                                  // Line 207
 	echo T_("Page word by word");                                                     // Line 6
 	echo T_("Juz per sura");                                                          // Line 7
 	echo T_("Juz per hizb");                                                          // Line 8
+	echo T_("Quick access");                                                          // Line 9
 
 	//-projects/SalamQuran/public_html/static/siftal/fonts/siftal/icons-reference.html
 
@@ -127,6 +132,13 @@ class twigTransTerms
 	echo T_("Your Message");                                                          // Line 161
 	echo T_("Send");                                                                  // Line 167
 
+	//---------------------------------projects/SalamQuran/content/search/display.html
+	echo T_("Search");                                                                // Line 65
+	echo T_("Aya");                                                                   // Line 155
+	echo T_("No result found");                                                       // Line 47
+	echo T_("Clear filter");                                                          // Line 48
+	echo T_("Please enter your keyword in the box above and press Enter");            // Line 56
+
 	//------------------------------------projects/SalamQuran/content/main/footer.html
 	echo T_("About");                                                                 // Line 35
 	echo T_("Mission");                                                               // Line 17
@@ -170,7 +182,6 @@ class twigTransTerms
 	//------------------------------------projects/SalamQuran/content/main/player.html
 	echo T_("Play Mode");                                                             // Line 27
 	echo T_("Continuously");                                                          // Line 30
-	echo T_("Aya");                                                                   // Line 155
 	echo T_("Surah");                                                                 // Line 32
 	echo T_("Juz");                                                                   // Line 199
 	echo T_("Aya Repeat");                                                            // Line 40
@@ -492,8 +503,7 @@ class twigTransTerms
 	echo T_("Juz list");                                                              // Line 169
 	echo T_("Quick navigate to special page");                                        // Line 203
 	echo T_("Type page number and press enter");                                      // Line 203
-	echo T_("Search in Quran");                                                       // Line 214
-	echo T_("Search");                                                                // Line 65
+	echo T_("Search in Quran");                                                       // Line 213
 
 	//-------------------------------------projects/SalamQuran/content/home/theme.html
 
