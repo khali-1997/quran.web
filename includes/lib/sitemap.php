@@ -31,7 +31,11 @@ class sitemap
 					$myMode = null;
 				}
 
-				self::quran_link('sura', 	's', 	114, 	'0.9', 	'monthly', 	null, 	$myLang, 	$myMode);
+				if($myMode === 'aya')
+				{
+					self::quran_link('sura', 	's', 	114, 	'0.9', 	'monthly', 	null, 	$myLang, 	$myMode);
+				}
+
 				self::quran_link('page',	'p', 	604, 	'0.8', 	'monthly', 	null, 	$myLang, 	$myMode);
 				self::quran_link('juz', 	'j', 	30, 	'0.8', 	'monthly', 	null, 	$myLang, 	$myMode);
 				self::quran_link('hizb', 	'h', 	60, 	'0.8', 	'monthly', 	null, 	$myLang, 	$myMode);
@@ -40,6 +44,21 @@ class sitemap
 
 			}
 		}
+	}
+
+
+	private static function conflict()
+	{
+		$sura = \dash\file::read(root. 'content_api/v6/sura/sura.json');
+		$sura = json_decode($sura, true);
+
+		$conflict = [];
+
+		foreach ($sura as $sura_index => $value)
+		{
+			$conflict['s'. $sura_index] = ['by' => 'p'. $value['startpage'], 'not_confilicat_in_mode' => ['aye']];
+		}
+
 	}
 
 
