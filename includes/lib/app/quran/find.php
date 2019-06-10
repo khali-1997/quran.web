@@ -19,7 +19,12 @@ class find
 			$_meta = [];
 		}
 
+
 		$_meta = array_merge($default_meta, $_meta);
+		if($_meta['mode'] && !\lib\app\read_mode::check_true($_meta['mode']))
+		{
+			$_meta['mode'] = \lib\app\read_mode::primary();
+		}
 
 		if(strpos($_url, '/') === false)
 		{

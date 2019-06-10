@@ -28,10 +28,31 @@
 
 		  <div class='readerMode translate'>
 		{%for key, value in quranLoaded.translatepage%}
+			{%if value.line_type == 'start_sura'%}
 
-			{%for k, myTrans in value.data%}
-				<div data-id='{{k}}'>{{myTrans.text}} <span>﴿{{k  | fitNumber}}﴾</span></div>
-			{%endfor%}
+			{%elseif value.line_type == 'besmellah'%}
+				{%include 'content/home/blocks/block-besmellah.html'%}
+			{%else%}
+				{%if value | length > 1%}
+					{%set loadTranslateDetail = true%}
+				{%endif%}
+
+				{%for k, myTrans in value%}
+					{%if loadTranslateDetail%}
+			            <!-- <a href="{{myTrans.detail.remove_url}}"><span class="sf-times fc-red"></span></a> -->
+			            <i class="flag {{myTrans.detail.flag}}"></i>
+				        <abbr>{{myTrans.detail.localname}}</abbr>
+						{%if myTrans.detail.image%}
+						    <img src="{{myTrans.detail.image}}" alt="{{myTrans.detail.localname}}" class="avatar">
+						{%endif%}
+					{%endif%}
+
+					{%set myAya = key | split('_')%}
+
+					<p data-id='{{myAya[1]}}'>{{myTrans.text}} <span>﴿{{myAya[1]  | fitNumber}}﴾</span></p>
+
+				{%endfor%}
+			{%endif%}
 
 		{%endfor%}
 		</div>

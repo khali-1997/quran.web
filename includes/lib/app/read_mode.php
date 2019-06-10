@@ -30,6 +30,34 @@ class read_mode
 		return $list[$_mode];
 	}
 
+
+	public static function check_true($_mode)
+	{
+		$list = self::list();
+		if($_mode && isset($list[$_mode]))
+		{
+			return true;
+		}
+
+		return false;
+	}
+
+
+	public static function primary()
+	{
+		$list = self::list();
+		foreach ($list as $key => $value)
+		{
+			if(isset($value['default']) && $value['default'])
+			{
+				return $key;
+			}
+		}
+		return null;
+	}
+
+
+
 	public static function list()
 	{
 		$get = \dash\request::get();
@@ -65,14 +93,14 @@ class read_mode
 				'url'     => $master. http_build_query(array_merge($get, ['mode' => 'twopage'])),
 			],
 
-			// 'translatepage' =>
-			// [
-			// 	'default' => false,
-			// 	'name'    => T_('Translate page'),
-			// 	'font'    => null,
-			// 	'class'   => 'book',
-			// 	'url'     => $master. http_build_query(array_merge($get, ['mode' => 'translatepage'])),
-			// ],
+			'translatepage' =>
+			[
+				'default' => false,
+				'name'    => T_('Translate page'),
+				'font'    => null,
+				'class'   => 'language',
+				'url'     => $master. http_build_query(array_merge($get, ['mode' => 'translatepage'])),
+			],
 		];
 		return $read_mode;
 	}
