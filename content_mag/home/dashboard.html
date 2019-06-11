@@ -14,7 +14,8 @@
 
     </div>
    </div>
-{{block ('mustReads')}}
+
+{%include 'content_mag/home/block-mustReads.html'%}
 {%include 'content/home/homepage-quoteQuran.html'%}
   </main>
 
@@ -71,40 +72,6 @@
 </section>
 
 {%endblock%}
-
-
-
-{%block mustReads%}
-<section class="f mustReads txtC">
-  <div class="c12">
-    <h2>{%trans "Must Reads"%}</h2>
-  </div>
-
-  <div class="c4 s12 pRa10">
-    <a href="sample">
-     <img src="{{url.static}}/images/mag/sample/banner-tollab-competition2.jpg" alt="{{site.title}}">
-     <h3>دقت مثال‌زدنی‌ داوری در مسابقات ایران</h3>
-    </a>
-  </div>
-
-  <div class="c4 s12 pRa10">
-    <a href="sample">
-     <img src="{{url.static}}/images/mag/sample/news-iran-flood-khozestan.jpg" alt="{{site.title}}">
-     <h3>اتحاد، امید و نشاط به وقت سیل</h3>
-    </a>
-  </div>
-
-  <div class="c4 s12">
-    <a href="sample">
-     <img src="{{url.static}}/images/mag/sample/36th-competition-day3-1.jpg" alt="{{site.title}}">
-     <h3>حضور خودجوش و مشتاقانه نسل امروز</h3>
-    </a>
-  </div>
-
-</section>
-{%endblock%}
-
-
 
 
 {%block introVideo%}
