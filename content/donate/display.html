@@ -12,12 +12,10 @@
   {%endif%}
 {%endif%}
 
-{%if 0%}
 <div class="msg">
   <p>{%trans "Donating to SalamQuran is an investment in multiple causes including education, research, server cost, improve design, development of mobile apps and desktop version."%}</p>
   <p>{%trans "With the right support and resources we have the potential to make lasting strides for share Quran sound."%} {%trans "Quran is calling you!"%}</p>
 </div>
-{%endif%}
 
 <form class="f justify-center" method="post" autocomplete="off">
   <div class="c6 s12">
@@ -35,7 +33,7 @@
 
       <label for='amount'>{%trans "Amount"%}</label>
       <div class="input">
-        <input type="number" name="amount" id='amount' max="99999999" required data-response-realtime value="1000">
+        <input type="number" name="amount" id='amount' min='1000' max="99999999" required data-response-realtime value="1000" step="1000">
         <span class="addon">{%trans "Toman"%}</span>
       </div>
 
