@@ -2,9 +2,9 @@
 <section class="quickAccess" data-xhr='quickAccess'>
   <div class="f">
     <div class="c3 s12" title='{%trans "Quick navigate to special surah"%}'>
-      <label>{%trans "Surahs"%}</label>
+      <h2 class="title"><a href="{{url.kingdom}}/surahs">{%trans "Surahs"%}</a></h2>
       <select class="select" name="surah">
-        <option value="" readonly>{%trans "Surahs"%}</option>
+        <option value="">{%trans "Surahs"%}</option>
         <option disabled>{%trans "Juz"%} {{"1" | fitNumber}}</option>
         <option value="1" {%if quranLoaded.detail.first_verse.sura == 1 %} selected {%endif%} >{{"1" | fitNumber}} - {% trans "Al-Fatihah"%}</option>
         <option value="2" {%if quranLoaded.detail.first_verse.sura == 2 %} selected {%endif%} >{{"2" | fitNumber}} - {% trans "Al-Baqarah"%}</option>
@@ -152,9 +152,9 @@
 
   {%if false%}
     <div class="c3 s12 pLa10"  title='{%trans "Quick navigate to special aya"%}'>
-      <label>{%trans "Aya"%}</label>
+      <h2 class="title">{%trans "Aya"%}</h2>
       <select class="select" name="aya">
-        <option value="" readonly>{%trans "Aya list"%}</option>
+        <option value="">{%trans "Aya list"%}</option>
         <option value="1">{{"1" | fitNumber}}</option>
         <option value="2">{{"2" | fitNumber}}</option>
         <option value="3">{{"3" | fitNumber}}</option>
@@ -164,9 +164,9 @@
   {%endif%}
 
     <div class="c3 s12 pLa10"  title='{%trans "Quick navigate to special juz"%}'>
-      <label>{%trans "Juz"%}</label>
+      <h2 class="title"><a href="{{url.kingdom}}/juz">{%trans "Juz"%}</a></h2>
       <select class="select" name="juz">
-        <option value="" readonly>{%trans "Juz list"%}</option>
+        <option value="">{%trans "Juz list"%}</option>
         <option value="1" {%if quranLoaded.detail.first_verse.juz == 1 %} selected {%endif%}>{%trans "Juz"%} {{"1" | fitNumber}} - {%trans "Page"%} {{"1" | fitNumber}}</option>
         <option value="2" {%if quranLoaded.detail.first_verse.juz == 2 %} selected {%endif%}>{%trans "Juz"%} {{"2" | fitNumber}} - {%trans "Page"%} {{"22" | fitNumber}}</option>
         <option value="3" {%if quranLoaded.detail.first_verse.juz == 3 %} selected {%endif%}>{%trans "Juz"%} {{"3" | fitNumber}} - {%trans "Page"%} {{"42" | fitNumber}}</option>
@@ -201,7 +201,7 @@
     </div>
 
     <div class="c3 s12 pLa10"  title='{%trans "Quick navigate to special page"%}<br>{%trans "Type page number and press enter"%}'>
-      <label>{%trans "Page"%}</label>
+      <h2 class="title"><a href="{{url.kingdom}}/page">{%trans "Page"%}</a></h2>
       <div class="input">
         <button class="addon" data-connect='page' data-val='-1'><i class="sf-minus-circle"></i></button>
         <input type="number" min="1" max="604" step="1" name="page" autocomplete="off" placeholder='{%trans "Page"%}'{%if quranLoaded.detail.first_verse.page%} value="{{quranLoaded.detail.first_verse.page}}"{%endif%}>
@@ -212,7 +212,7 @@
 
     <div class="c3 s12 pLa10"  title='{%trans "Search in Quran"%}'>
       <form method="get" action="{{url.kingdom}}/search" autocomplete="off">
-        <label>{%trans "Search"%}</label>
+        <h3 class="title"><a href="{{url.kingdom}}/search">{%trans "Search"%}</a></h3>
         <div class="input">
           <input type="text" name="q" autocomplete="off" placeholder='{%trans "Search"%}' value="{{requestGET.q}}">
           <button class="addon"><i class="sf-search fc-blue"></i></button>
