@@ -5843,9 +5843,6 @@ body.ltr .Quran .readerMode.translate {
   overflow: hidden;
   outline: none; }
 
-.player audio::-internal-media-controls-download-button {
-  display: none; }
-
 .player .sf-cog {
   color: #fff;
   font-size: 20px;

@@ -1,7 +1,7 @@
 {%if sureLoaded or url.module == 'present'%}
   <div class='player f align-center'>
-    <figure class="cauto">
-      <div class="qari">
+    <div class="cauto">
+      <figure class="qari">
         <img src="{{qariLoaded.image}}" alt="{{qariLoaded.name}}">
         <figcaption>
           <div class="title">{{quranLoaded.detail.first_verse.title}}</div>
@@ -10,8 +10,8 @@
             <span class="album">{{qariLoaded.type}}</span>
           </div>
         </figcaption>
-      </div>
-    </figure>
+      </figure>
+    </div>
     <div class="c">
       <audio controls preload id="talavat" controlsList="nodownload">
         <source src="{{quranLoaded.detail.first_verse.audio}}" type="audio/mpeg">
