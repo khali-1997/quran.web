@@ -19,14 +19,6 @@
 </div>
 {%endif%}
 
-<div class="msg success txtC txtB fs20">
-  برای خرید فایل  لوگو فرم زیر را پر  کنید.<br>
-  پس از خرید لینک دانلود لوگو برای دانلود شما نمایش داده می‌شود.
-</div>
-
-<div class="msg warn txtC fs20">
-هزینه فایل  لوگو  سلام قرآن ۱۰۰۰ تومان
-</div>
 <form class="f justify-center" method="post" autocomplete="off">
   <div class="c6 s12">
 
@@ -38,12 +30,12 @@
 
       <label for='personMob'>{%trans "Mobile"%}</label>
       <div class="input">
-        <input type="tel" name="mobile" id='personMob' maxlength="12">
+        <input type="tel" name="mn" id='personMob' maxlength="12">
       </div>
 
       <label for='amount'>{%trans "Amount"%}</label>
       <div class="input">
-        <input type="number" name="amount" id='amount' max="99999999" required data-response-realtime value="1000" readonly>
+        <input type="number" name="amount" id='amount' max="99999999" required data-response-realtime value="1000">
         <span class="addon">{%trans "Toman"%}</span>
       </div>
 
@@ -51,10 +43,7 @@
       <div class="msg success txtB fs09" data-response="amount" data-response-call="wordifyResponse"></div>
   {%endif%}
 
-{%if 0%}
       <button class="btn primary block mT20">{%trans "Pay Donate"%}</button>
-{%endif%}
-      <button class="btn primary block mT20">پرداخت هزینه فایل  لوگو</button>
     </div>
 
   </div>
