@@ -21,18 +21,46 @@
 
 {%if allPostList %}
 <article class="postListPreview">
-  {%for key, value in allPostList%}
-    <section class="f">
-{%if value.meta.thumb%}
+  {%for key, datarow in allPostList%}
+
+{%if loop.index == 1%}
+    <section class="firstPost">
+{%if datarow.meta.thumb%}
+      <a class="thumbLink" href="{{url.kingdom}}/{{datarow.url}}"><img src="{{datarow.meta.thumb}}" alt="{{datarow.title}}"></a>
+{%endif%}
+        <h2><a href="{{url.kingdom}}/{{datarow.url}}">{{datarow.title}}</a></h2>
+        <p>{{datarow.excerpt}}</p>
+        <div class="f align-center">
+          <div class="c">
+            <time datetime="{{datarow.datemodified}}">{{datarow.publishdate | dt(true, 'date')}}</time>
+          </div>
+          <div class="cauto os pRa10">
+            <a class="btn outline secondary" href="{{url.kingdom}}/{{datarow.url}}">{%trans "Read More"%}</a>
+          </div>
+        </div>
+    </section>
+
+{%else%}
+    <section class="f align-center">
+{%if datarow.meta.thumb%}
       <div class="cauto s12 pRa10 txtC">
-        <a href="{{url.here}}/{{value.url}}"><img src="{{value.meta.thumb}}" alt="{{value.title}}" width="150px"></a>
+        <a  class="thumbLink" href="{{url.kingdom}}/{{datarow.url}}"><img src="{{datarow.meta.thumb}}" alt="{{datarow.title}}"></a>
       </div>
 {%endif%}
       <div class="c s12">
-        <h3><a href="{{url.here}}/{{value.url}}">{{value.title}}</a></h3>
-        <p>{{value.excerpt}}</p>
+        <h2><a href="{{url.kingdom}}/{{datarow.url}}">{{datarow.title}}</a></h2>
+        <p>{{datarow.excerpt}}</p>
+        <div class="f align-center pT25">
+          <div class="c">
+            <time datetime="{{datarow.datemodified}}">{{datarow.publishdate | dt(true, 'date')}}</time>
+          </div>
+          <div class="cauto os pRa10">
+            <a class="btn outline secondary" href="{{url.kingdom}}/{{datarow.url}}">{%trans "Read More"%}</a>
+          </div>
+        </div>
       </div>
     </section>
+{%endif%}
   {%endfor%}
 </article>
 

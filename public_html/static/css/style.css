@@ -5255,14 +5255,27 @@ body[data-sidebar="dada"].rtl #sidebar .menu {
 .postListPreview {
   width: 70%;
   min-width: 280px;
-  margin: 0 auto; }
+  margin: 2rem auto; }
 
 .postListPreview section {
   border-bottom: 1px dashed #ccc;
-  margin-bottom: 3em; }
+  padding: 1em 1%;
+  overflow: hidden; }
+
+.postListPreview .thumbLink a {
+  display: block; }
+
+.postListPreview .thumbLink img {
+  display: block;
+  border-radius: 1rem;
+  width: 250px; }
 
 .postListPreview h3 {
   margin-top: 0; }
+
+.postListPreview .firstPost .thumbLink img {
+  width: 100%;
+  margin-bottom: 1rem; }
 
 .tagBox a {
   padding: 0.5em 0.5em;
