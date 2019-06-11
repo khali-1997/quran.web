@@ -392,8 +392,6 @@ class twigTransTerms
 
 	//------------------------------docs\Projects\SalamQuran\content\logo\display.html
 
-	//-------------------------------docs\Projects\SalamQuran\content\mag\display.html
-
 	//-------------------------------docs\Projects\SalamQuran\content\main\footer.html
 	echo T_("About");                                                                 // Line 35
 	echo T_("Mission");                                                               // Line 17
@@ -616,14 +614,15 @@ class twigTransTerms
 	echo T_("Short link");                                                            // Line 56
 
 	//------------------------docs\Projects\SalamQuran\content_mag\home\dashboard.html
-	echo T_("Must Reads");                                                            // Line 79
-	echo T_("The example of those who spend their wealth in the way of Allah is like a seed [of grain] which grows seven spikes;");// Line 111
-	echo T_("In each spike is a hundred grains.");                                    // Line 111
-	echo T_("And Allah multiplies [His reward] for whom He wills.");                  // Line 111
-	echo T_("And Allah is all-Encompassing and Knowing.");                            // Line 111
-	echo T_("Surah Al-Baqarah");                                                      // Line 113
-	echo T_("Ayah");                                                                  // Line 114
-	echo T_("News Link");                                                             // Line 145
+	echo T_("Under Contribution");                                                    // Line 9
+	echo T_("Must Reads");                                                            // Line 80
+	echo T_("The example of those who spend their wealth in the way of Allah is like a seed [of grain] which grows seven spikes;");// Line 112
+	echo T_("In each spike is a hundred grains.");                                    // Line 112
+	echo T_("And Allah multiplies [His reward] for whom He wills.");                  // Line 112
+	echo T_("And Allah is all-Encompassing and Knowing.");                            // Line 112
+	echo T_("Surah Al-Baqarah");                                                      // Line 114
+	echo T_("Ayah");                                                                  // Line 115
+	echo T_("News Link");                                                             // Line 146
 
 	//------------------------docs\Projects\SalamQuran\public_html\static\js\script.js
 
