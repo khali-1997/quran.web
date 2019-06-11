@@ -90,7 +90,7 @@ class donate
 
 		$auto_back = true;
 
-		$msg_go = T_("Pay donate :price toman", ['price' => \dash\utility\human::fitNumber($amount)]);
+		$msg_go = T_("Pay :price toman", ['price' => \dash\utility\human::fitNumber($amount)]);
 
 
 		$meta =
@@ -99,7 +99,7 @@ class donate
 			'amount'    => $amount,
 			'user_id'   => $user_id,
 			'auto_go'   => $auto_go,
-			'msg_go'    => $msg_go,
+			// 'msg_go'    => $msg_go,
 			'auto_back' => $auto_back,
 			'final_msg' => true,
 
