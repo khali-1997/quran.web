@@ -6,6 +6,6 @@
 .quote-person p{font-weight:100}
 /*.quote-person:before{position:absolute;top:0;font-size:350px;font-size:17em;color:#2fbfdf;font-family:Arial;font-weight:700;line-height:300px;right:-200px;content:'\201d'}*/
 .quote-person:after{position:absolute;top:0;font-size:350px;color:#2fbfdf;font-family:Arial;font-weight:700;line-height:300px;left:-200px;content:'\201c'}
-.quote-person h4{display:block;color:#2fbfdf;font-weight:700;font-size:.9em}
-.quote-person abbr{font-size:.7em;color:#b6b6b6;font-weight:700}
+.quote-person .cite{display:block;color:#2fbfdf;font-weight:700;font-size:.9em}
+.quote-person .citeRef{font-size:.7em;color:#b6b6b6;font-weight:700}
 

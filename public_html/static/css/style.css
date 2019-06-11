@@ -6057,13 +6057,13 @@ body[data-in='mag'] #header .topTitle {
   left: -200px;
   content: '\201c'; }
 
-.quote-person h4 {
+.quote-person .cite {
   display: block;
   color: #2fbfdf;
   font-weight: 700;
   font-size: .9em; }
 
-.quote-person abbr {
+.quote-person .citeRef {
   font-size: .7em;
   color: #b6b6b6;
   font-weight: 700; }

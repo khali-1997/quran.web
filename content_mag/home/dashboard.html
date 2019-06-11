@@ -15,7 +15,7 @@
     </div>
    </div>
 {{block ('mustReads')}}
-{{block ('quoteQuran')}}
+{%include 'content/home/homepage-quoteQuran.html'%}
   </main>
 
 
@@ -105,19 +105,6 @@
 {%endblock%}
 
 
-{%block quoteQuran%}
-<section class="quoteTile">
-  <div class="cn">
-   <article class="quote-person">
-    <p>{%trans "The example of those who spend their wealth in the way of Allah is like a seed [of grain] which grows seven spikes;"%}<br>{%trans "In each spike is a hundred grains."%}<br>{%trans "And Allah multiplies [His reward] for whom He wills."%}<br>{%trans "And Allah is all-Encompassing and Knowing."%}</p>
-    <div class="author f">
-     <h4 class="c">{%trans "Surah Al-Baqarah"%}</h4>
-     <abbr class="cauto os">{%trans "Ayah"%} {{261 | fitNumber}}</abbr>
-    </div>
-   </article>
- </div>
-</section>
-{%endblock%}
 
 
 {%block introVideo%}
