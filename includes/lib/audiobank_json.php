@@ -4,9 +4,9 @@
  */
 class audiobank
 {
-	private static $json_addr         = __DIR__.'/audiobank.json';
-	private static $audio_folder_addr = __DIR__;
-	private static $folder            = ['ayat'];
+	private static $json_addr         = null;
+	private static $audio_folder_addr = null;
+	private static $folder            = [];
 
 
 	// sample file by name audioconfig.me.json
@@ -20,6 +20,7 @@ class audiobank
 
 	private static function config()
 	{
+
 		if(is_file(__DIR__. '/audioconfig.me.json'))
 		{
 			$get = file_get_contents(__DIR__. '/audioconfig.me.json');
@@ -40,6 +41,12 @@ class audiobank
 				self::$folder = $get['folder'];
 			}
 		}
+		else
+		{
+			self::end('file audioconfig.me.json not exist');
+			exit();
+		}
+
 	}
 
 	private static function load()
