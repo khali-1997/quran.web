@@ -33,6 +33,10 @@ class controller
 				$data = self::aya_day();
 				break;
 
+			case 'page-day':
+				$data = self::page_day();
+				break;
+
 			default:
 				\content_api\v6::no(404);
 				break;
@@ -51,6 +55,11 @@ class controller
 	private static function aya_day()
 	{
 		return \lib\app\aya_day::get();
+	}
+
+	private static function page_day()
+	{
+		return \lib\app\page_day::get();
 	}
 
 

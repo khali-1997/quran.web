@@ -70,7 +70,7 @@ class aya_day
 		if(!isset($get_random['index']))
 		{
 			// all aya random is displayed
-			\dash\file::rename(__DIR__.  DIRECTORY_SEPARATOR. 'aya-day.me.json', __DIR__. DIRECTORY_SEPARATOR. 'aya-day.me.json.old.'.rand(1,200));
+			\dash\file::rename(\lib\app\json_folder::addr('aya-day.me.json') , \lib\app\json_folder::addr('aya-day.me.json.old.'.rand(1,200)));
 			$get_random = \lib\db\quran::get_day_aya_random([]);
 		}
 
@@ -84,7 +84,7 @@ class aya_day
 		];
 
 		$save_file[date("Y-m-d")] = $detail;
-		\dash\file::write(__DIR__.  DIRECTORY_SEPARATOR. 'current-aya-day.me.json', '');
+		\dash\file::write(\lib\app\json_folder::addr('current-aya-day.me.json'), '');
 		self::load_file($save_file);
 		return $detail;
 
@@ -93,7 +93,7 @@ class aya_day
 
 	private static function load_file($_save = null, $_fine_name = 'aya-day.me.json')
 	{
-		$addr = __DIR__.  DIRECTORY_SEPARATOR. ''. $_fine_name;
+		$addr = \lib\app\json_folder::addr($_fine_name);
 		$get  = [];
 
 		if(is_file($addr))
