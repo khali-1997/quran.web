@@ -1,0 +1,22 @@
+{%extends display.main%}
+
+
+{%block page%}
+<div class="mT10">
+
+  <div class="f">
+
+    {%for i in 1..604%}
+      <div class="c1 s2">
+        <div class="msg mLa5">
+          <a href="{{url.kingdom}}/p{{i}}">
+            {%trans "page"%}
+            <span class="txtB">{{i | fitNumber}}</span>
+          </a>
+        </div>
+      </div>
+    {%endfor%}
+  </div>
+</div>
+{%endblock%}
+
