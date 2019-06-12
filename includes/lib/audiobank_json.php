@@ -8,6 +8,16 @@ class audiobank
 	private static $audio_folder_addr = __DIR__;
 	private static $folder            = ['ayat'];
 
+
+	// sample file by name audioconfig.me.json
+	// to config this library
+	// {
+	//   "fileName": "audioconfig.me.json",
+	//   "json_addr": null,
+	//   "audio_folder_addr": null,
+	//   "folder": []
+	// }
+
 	private static function config()
 	{
 		if(is_file(__DIR__. '/audioconfig.me.json'))
@@ -48,7 +58,7 @@ class audiobank
 		$load = self::load();
 		if(isset($load['lastupdate']))
 		{
-			if(time() - strtotime($load['lastupdate']) < 1)
+			if(time() - strtotime($load['lastupdate']) < 10)
 			{
 				return false;
 			}
