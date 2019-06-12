@@ -10,13 +10,28 @@ class aya_day
 		$result = self::day_aya();
 		$load   = [];
 
-		if(isset($result['index']))
+		$temp_file = self::temp_file();
+
+		if(isset($temp_file['date']) && $temp_file['date'] == date("Y-m-d"))
 		{
-			$load = \lib\db\quran::get(['index' => $result['index']]);
-			if(isset($load[0]))
+			$load = $temp_file;
+		}
+		else
+		{
+
+			if(isset($result['index']))
 			{
-				$load = $load[0];
-				$load['sura_detail'] = \lib\app\sura::detail($load['sura']);
+				$load = \lib\db\quran::get(['index' => $result['index']]);
+				if(isset($load[0]))
+				{
+					$load                = $load[0];
+					$load['sura_detail'] = \lib\app\sura::detail($load['sura']);
+					$load_word           = \lib\db\quran_word::get(['index' => $result['index']]);
+					$load['words']       = $load_word;
+					$load['date']        = date("Y-m-d");
+
+					self::temp_file($load);
+				}
 			}
 		}
 
@@ -24,9 +39,15 @@ class aya_day
 	}
 
 
+	private static function temp_file($_save = null)
+	{
+		return self::load_file($_save, 'current-aya-day.me.json');
+	}
+
+
 	private static function day_aya()
 	{
-		$date = date("Y-m-d");
+		$date      = date("Y-m-d");
 		$saved_aya = self::load_file();
 
 		if(isset($saved_aya[$date]))
@@ -63,16 +84,16 @@ class aya_day
 		];
 
 		$save_file[date("Y-m-d")] = $detail;
-
+		\dash\file::write(__DIR__. '/current-aya-day.me.json', '');
 		self::load_file($save_file);
 		return $detail;
 
 	}
 
 
-	private static function load_file($_save = null)
+	private static function load_file($_save = null, $_fine_name = 'aya-day.me.json')
 	{
-		$addr = __DIR__. '/aya-day.me.json';
+		$addr = __DIR__. '/'. $_fine_name;
 		$get  = [];
 
 		if(is_file($addr))
@@ -89,8 +110,8 @@ class aya_day
 		if($_save && is_array($_save))
 		{
 			$get = array_merge($get, $_save);
-			$get = json_encode($get, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
-			\dash\file::write($addr, $get);
+			$get_json = json_encode($get, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+			\dash\file::write($addr, $get_json);
 		}
 
 		return $get;
