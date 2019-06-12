@@ -16,6 +16,21 @@ class quran
 	}
 
 
+	public static function get_day_aya_random($_loaded_before)
+	{
+		$not_in = null;
+		if(is_array($_loaded_before) && $_loaded_before)
+		{
+			$not_in = implode(',', $_loaded_before);
+			$not_in = " AND 1_quran_ayat.index NOT IN ($not_in)";
+		}
+
+		$query  = "SELECT * FROM 1_quran_ayat WHERE 1_quran_ayat.word > 10 $not_in ORDER BY RAND() LIMIT 1";
+		$result = \dash\db::get($query, null, true, \lib\db\db_data_name::get());
+		return $result;
+	}
+
+
 	public static function search($_string)
 	{
 

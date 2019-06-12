@@ -29,6 +29,10 @@ class controller
 				$data = self::quick_access();
 				break;
 
+			case 'aya-day':
+				$data = self::aya_day();
+				break;
+
 			default:
 				\content_api\v6::no(404);
 				break;
@@ -42,6 +46,13 @@ class controller
 	{
 		return \lib\app\quick_access::list();
 	}
+
+
+	private static function aya_day()
+	{
+		return \lib\app\aya_day::get();
+	}
+
 
 	private static function juz_sura()
 	{
