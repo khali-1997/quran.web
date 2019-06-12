@@ -57,6 +57,11 @@ class controller
 				\dash\data::translateList($quran['translate']);
 			}
 		}
+
+		if(!$url)
+		{
+			\dash\data::ayaDay(\lib\app\aya_day::get());
+		}
 	}
 
 

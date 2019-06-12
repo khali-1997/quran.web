@@ -16,6 +16,7 @@ class aya_day
 			if(isset($load[0]))
 			{
 				$load = $load[0];
+				$load['sura_detail'] = \lib\app\sura::detail($load['sura']);
 			}
 		}
 
