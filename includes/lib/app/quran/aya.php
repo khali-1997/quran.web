@@ -143,6 +143,7 @@ class aya
 					$first_verse['juz']   = $value['juz'];
 					$first_verse['page']  = $value['page'];
 					$first_verse['sura']  = $value['sura'];
+					$first_verse['index']  = $value['index'];
 				}
 
 				$quran[$myKey][$myArrayKey]['detail'] =

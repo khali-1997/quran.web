@@ -1,6 +1,7 @@
 
 {%for myAyeKey, myAye in quranLoaded.text.aya%}
 
+
 {%if loop.index == 1%}
 {%if myAye.detail.sura == 1%}
 {%else%}
@@ -26,3 +27,11 @@
 
   </div>
 {%endfor%}
+
+<div class="msg txtC">
+	{%trans "Aya index"%}
+	<span class="txtB">
+	{{quranLoaded.detail.first_verse.index | fitNumber}}
+	</span>
+	<span class="fc-mute">{%trans "The verse number in the entire Quran"%}</span>
+</div>
