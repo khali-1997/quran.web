@@ -5,6 +5,27 @@ namespace lib\app;
 class sura
 {
 
+	public static $sort_field =
+	[
+
+		'index',
+		'ayas',
+		'start',
+		'end',
+		'name',
+		'tname',
+		'ename',
+		'type',
+		'order',
+		'word',
+		'theletter',
+		'startjuz',
+		'endjuz',
+		'startpage',
+		'endpage',
+	];
+
+
 	public static function load($_id)
 	{
 		$load             = \lib\db\quran::get(['sura' => $_id]);
@@ -13,6 +34,46 @@ class sura
 		$result['detail'] = \lib\db\sura::get(['index' => $_id, 'limit' => 1]);
 		return $result;
 	}
+
+
+	public static function db_list($_string, $_args)
+	{
+
+		$default_args =
+		[
+			'order' => null,
+			'sort'  => 'index',
+		];
+
+		if(!is_array($_args))
+		{
+			$_args = [];
+		}
+
+		$_args = array_merge($default_args, $_args);
+
+		if($_args['order'])
+		{
+			if(!in_array($_args['order'], ['asc', 'desc']))
+			{
+				unset($_args['order']);
+			}
+		}
+
+		if($_args['sort'])
+		{
+			if(!in_array($_args['sort'], self::$sort_field))
+			{
+				unset($_args['sort']);
+			}
+		}
+
+
+		$result = \lib\db\sura::search($_string, $_args);
+
+		return $result;
+	}
+
 
 
 	public static function list()

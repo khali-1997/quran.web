@@ -2,6 +2,64 @@
 
 
 {%block page%}
-{%include 'content/home/list-sore.html'%}
-{%endblock%}
 
+
+  <table class="tbl1 v9 fs08">
+    <thead>
+      <tr>
+		<th data-sort="{{sortLink.index.order}}"><a href="{{sortLink.index.link}}">{%trans "Index"%}</a></th>
+		<th data-sort="{{sortLink.ayas.order}}"><a href="{{sortLink.ayas.link}}">{%trans "Ayas"%}</a></th>
+		<th data-sort="{{sortLink.start.order}}"><a href="{{sortLink.start.link}}">{%trans "Start aya"%}</a></th>
+		<th data-sort="{{sortLink.end.order}}"><a href="{{sortLink.end.link}}">{%trans "End aya"%}</a></th>
+		<th data-sort="{{sortLink.name.order}}"><a href="{{sortLink.name.link}}">{%trans "Name"%}</a></th>
+		<th data-sort="{{sortLink.tname.order}}"><a href="{{sortLink.tname.link}}">{%trans "Translate name"%}</a></th>
+		<th data-sort="{{sortLink.ename.order}}"><a href="{{sortLink.ename.link}}">{%trans "Name"%}</a></th>
+		<th data-sort="{{sortLink.type.order}}"><a href="{{sortLink.type.link}}">{%trans "Type"%}</a></th>
+		<th data-sort="{{sortLink.order.order}}"><a href="{{sortLink.order.link}}">{%trans "Order"%}</a></th>
+
+		<th data-sort="{{sortLink.word.order}}"><a href="{{sortLink.word.link}}">{%trans "Word"%}</a></th>
+		<th data-sort="{{sortLink.theletter.order}}"><a href="{{sortLink.theletter.link}}">{%trans "The letter"%}</a></th>
+		<th data-sort="{{sortLink.startjuz.order}}"><a href="{{sortLink.startjuz.link}}">{%trans "Start juz"%}</a></th>
+		<th data-sort="{{sortLink.endjuz.order}}"><a href="{{sortLink.endjuz.link}}">{%trans "End juz"%}</a></th>
+		<th data-sort="{{sortLink.startpage.order}}"><a href="{{sortLink.startpage.link}}">{%trans "Start page"%}</a></th>
+		<th data-sort="{{sortLink.endpage.order}}"><a href="{{sortLink.endpage.link}}">{%trans "End page"%}</a></th>
+
+
+      </tr>
+    </thead>
+
+    <tbody>
+      {%for key, value in dataTable%}
+      <tr>
+		<td><a href="{{url.kingdom}}/s{{value.index}}">{{value.index | fitNumber}}</a></td>
+		<td>{{value.ayas | fitNumber}}</td>
+		<td>{%if value.start%}<a href="{{url.kingdom}}/a{{value.start}}">{{value.start | fitNumber}}</a>{%else%}{{value.start |fitNumber}}{%endif%}</td>
+		<td><a href="{{url.kingdom}}/a{{value.end}}">{{value.end | fitNumber}}</a></td>
+		<td><a href="{{url.kingdom}}/s{{value.index}}">{{value.name}}</a></td>
+		<td><a href="{{url.kingdom}}/s{{value.index}}">
+			{{value.tname}}
+			<br>
+			{%set myName = value.tname%} <span class="">{%trans myName%}</span>
+			</a>
+		</td>
+		<td><a href="{{url.kingdom}}/s{{value.index}}">
+			{{value.ename}}
+			<br>
+			{%set myEName = value.ename%} <span class="">{%trans myEName%}</span>
+			</a>
+		</td>
+		<td>{%set myType = value.type%} <span class="">{%trans myType%}</span></td>
+		<td>{{value.order | fitNumber}}</td>
+		<td>{{value.word | fitNumber}}</td>
+		<td>{{value.theletter | fitNumber}}</td>
+		<td><a href="{{url.kingdom}}/j{{value.startjuz}}">{{value.startjuz | fitNumber}}</a></td>
+		<td><a href="{{url.kingdom}}/j{{value.endjuz}}">{{value.endjuz | fitNumber}}</a></td>
+		<td><a href="{{url.kingdom}}/p{{value.startpage}}">{{value.startpage | fitNumber}}</a></td>
+		<td><a href="{{url.kingdom}}/p{{value.endpage}}">{{value.endpage | fitNumber}}</a></td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  {%include display.pagination%}
+
+{%endblock%}

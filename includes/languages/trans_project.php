@@ -611,6 +611,21 @@ class twigTransTerms
 
 	//-------------------------------projects/SalamQuran/content/telegram/display.html
 
+	//----------------------------------projects/SalamQuran/content/surah/display.html
+	echo T_("Index");                                                                 // Line 10
+	echo T_("Ayas");                                                                  // Line 11
+	echo T_("Start aya");                                                             // Line 12
+	echo T_("End aya");                                                               // Line 13
+	echo T_("Translate name");                                                        // Line 15
+	echo T_("Type");                                                                  // Line 79
+	echo T_("Order");                                                                 // Line 18
+	echo T_("Word");                                                                  // Line 20
+	echo T_("The letter");                                                            // Line 21
+	echo T_("Start juz");                                                             // Line 22
+	echo T_("End juz");                                                               // Line 23
+	echo T_("Start page");                                                            // Line 24
+	echo T_("End page");                                                              // Line 25
+
 	//-----------------------------------projects/SalamQuran/content/logo/display.html
 
 	//------------------------------projects/SalamQuran/content/changelog/display.html
@@ -640,7 +655,6 @@ class twigTransTerms
 	echo T_("Avatar");                                                                // Line 24
 	echo T_("Read Type");                                                             // Line 33
 	echo T_("filetype");                                                              // Line 43
-	echo T_("Type");                                                                  // Line 79
 	echo T_("Choose country");                                                        // Line 71
 	echo T_("addr");                                                                  // Line 86
 	echo T_("quality");                                                               // Line 95
