@@ -73,7 +73,7 @@ class read_mode
 				'name'    => T_('Aye Block'),
 				'font'    => null,
 				'class'   => 'align-right',
-				'url'     => $master. http_build_query(array_merge($get, ['mode' => 'aye'])),
+				'url'     => \dash\url::that(),
 			],
 
 			'onepage' =>
