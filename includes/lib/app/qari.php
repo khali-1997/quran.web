@@ -136,7 +136,7 @@ class qari
 			['index' => 1082, 'lang' => 'en', 'type' => $Translate, 'addr'  => 'sahih_international.en.ibrahim_walk-translation-32/', 'slug'  => 'ibrahimwalk', 'name' => self::get_by_slug('ibrahimwalk', 'name'),],
 
 			// ----------------- parhizgar
-			['index' => 1090, 'lang' => 'fa', 'type' => $Murattal, 'addr'  => 'parhizgar-murattal-48/', 'slug'  => 'parhizgar', 'name' => self::get_by_slug('parhizgar', 'name'), 'default_lang' => true],
+			['index' => 1090, 'lang' => 'fa', 'type' => $Murattal, 'addr'  => 'parhizgar-murattal-48/', 'slug'  => 'parhizgar', 'name' => self::get_by_slug('parhizgar', 'name')],
 
 			// ----------------- mansouri
 			['index' => 1091, 'lang' => 'fa', 'type' => $Murattal, 'addr'  => 'mansouri-murattal-40/', 'slug'  => 'mansouri', 'name' => self::get_by_slug('mansouri', 'name'), ],
