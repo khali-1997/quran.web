@@ -1,8 +1,11 @@
 
 <section class="quickAccess" data-xhr='quickAccess'>
-  <a class="badge primary" href="{{url.kingdom}}/nav">{%trans "Quick navigation"%}</a>
-  <div class="f">
-    <div class="c3 s12" title='{%trans "Quick navigate to special surah"%}'>
+  <div class="f align-center">
+    <div class="cauto" title='{%trans "Quick navigation"%}'>
+      <h2 class="title txtC"><a href="{{url.kingdom}}//nav">{%trans "Nav"%}</a></h2>
+      <a href="{{url.kingdom}}/nav"><i class="sf-thumbnails fs25 fc-red"></i></a>
+    </div>
+    <div class="c3 s5 pLa10" title='{%trans "Quick navigate to special surah"%}'>
       <h2 class="title"><a href="{{url.kingdom}}/surah">{%trans "Surahs"%}</a></h2>
       <select class="select" name="surah">
         <option value="">{%trans "Surahs"%}</option>
@@ -164,7 +167,7 @@
     </div>
   {%endif%}
 
-    <div class="c3 s12 pLa10"  title='{%trans "Quick navigate to special juz"%}'>
+    <div class="c3 s5 pLa10"  title='{%trans "Quick navigate to special juz"%}'>
       <h2 class="title"><a href="{{url.kingdom}}/juz">{%trans "Juz"%}</a></h2>
       <select class="select" name="juz">
         <option value="">{%trans "Juz list"%}</option>
@@ -201,7 +204,7 @@
       </select>
     </div>
 
-    <div class="c3 s12 pLa10"  title='{%trans "Quick navigate to special page"%}<br>{%trans "Type page number and press enter"%}'>
+    <div class="c3 s6 pLa10"  title='{%trans "Quick navigate to special page"%}<br>{%trans "Type page number and press enter"%}'>
       <h2 class="title"><a href="{{url.kingdom}}/page">{%trans "Page"%}</a></h2>
       <div class="input">
         <button class="addon" data-connect='page' data-val='-1'><i class="sf-minus-circle"></i></button>
@@ -211,7 +214,7 @@
     </div>
 
 
-    <div class="c3 s12 pLa10"  title='{%trans "Search in Quran"%}'>
+    <div class="c s6 pLa10"  title='{%trans "Search in Quran"%}'>
       <form method="get" action="{{url.kingdom}}/search" autocomplete="off">
         <h3 class="title"><a href="{{url.kingdom}}/search">{%trans "Search"%}</a></h3>
         <div class="input">
