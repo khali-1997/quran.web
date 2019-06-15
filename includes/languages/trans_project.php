@@ -88,6 +88,9 @@ class twigTransTerms
 	//---------------------------------projects/SalamQuran/content/vision/display.html
 	echo T_("Covering all Quranic information of Muslims");                           // Line 6
 
+	//------------------------------------projects/SalamQuran/content/nim/display.html
+	echo T_("Half of hizb");                                                          // Line 53
+
 	//-------------------------------------projects/SalamQuran/content/audio/list.html
 	echo T_("Update database");                                                       // Line 36
 	echo T_("Have a specific sound request?");                                        // Line 47
@@ -193,7 +196,7 @@ class twigTransTerms
 	//------------------------------------projects/SalamQuran/content/main/player.html
 	echo T_("Play Mode");                                                             // Line 27
 	echo T_("Continuously");                                                          // Line 30
-	echo T_("Surah");                                                                 // Line 32
+	echo T_("Surah");                                                                 // Line 13
 	echo T_("Juz");                                                                   // Line 199
 	echo T_("Aya Repeat");                                                            // Line 40
 	echo T_("Times");                                                                 // Line 51
@@ -237,6 +240,9 @@ class twigTransTerms
 	echo T_("Donate up to 100 thousand");                                             // Line 104
 	echo T_("Other doners");                                                          // Line 121
 
+	//------------------------------------projects/SalamQuran/content/rub/display.html
+	echo T_("Rub");                                                                   // Line 63
+
 	//--------------------------------projects/SalamQuran/content/contact/display.html
 	echo T_("We do our best to improve SalamQuran's quality. So, knowing your valuable comments about bugs and problems and more importantly your precious offers will help us in this way.");// Line 8
 	echo T_("You can access the ticketing status through this link");                 // Line 10
@@ -248,6 +254,8 @@ class twigTransTerms
 	echo T_("Iran");                                                                  // Line 53
 	echo T_("Floor2, Yas Building");                                                  // Line 56
 	echo T_("Our location on map");                                                   // Line 70
+
+	//------------------------------------projects/SalamQuran/content/juz/display.html
 
 	//----------------------------------projects/SalamQuran/content/namaz/display.html
 	echo T_("FAJR5");                                                                 // Line 15
@@ -262,10 +270,20 @@ class twigTransTerms
 
 	//-----------------------------------projects/SalamQuran/content/apps/display.html
 
+	//------------------------------------projects/SalamQuran/content/nav/display.html
+	echo T_("Surah list");                                                            // Line 9
+	echo T_("Juz list");                                                              // Line 169
+	echo T_("Page list");                                                             // Line 29
+	echo T_("Hizb");                                                                  // Line 13
+	echo T_("Half of hizb list");                                                     // Line 49
+	echo T_("Rub list");                                                              // Line 59
+
 	//-----------------------------------projects/SalamQuran/content/blog/display.html
 	echo T_("View your current location and navigate to parent of it");               // Line 7
 	echo T_("Salam Quran Blog");                                                      // Line 24
 	echo T_("Read More");                                                             // Line 60
+
+	//-----------------------------------projects/SalamQuran/content/hizb/display.html
 
 	//----------------------------------projects/SalamQuran/content/about/display.html
 	echo T_("The Qur'ān (Arabic: القرآن) is the Muslim sacred scripture, believed to be revealed by God to Prophet Muhammad through Jibril (Gabriel) during 23 years;");// Line 7
@@ -275,10 +293,6 @@ class twigTransTerms
 	echo T_("Indeed I am leaving two things among you, to which if you hold yourself, you will never astray: the book of Allah –who is all mighty and great- and my ahl al-bayt (household), my 'itra (family). O people hear! And I have announced to you that: indeed you will enter my presence and I will ask you about what you did to the thaqalayn (two weighty things) and the thaqalayn are the book of Allah and my ahl al-bayt.");// Line 28
 	echo T_("Islamic prophet Muhammad");                                              // Line 30
 	echo T_("Hadith al-Thaqalayn");                                                   // Line 31
-
-	//------------------------------projects/SalamQuran/content/home/theme-ayeBox.html
-	echo T_("Aya index");                                                             // Line 32
-	echo T_("The verse number in the entire Quran");                                  // Line 36
 
 	//---------------------------------projects/SalamQuran/content/home/list-sore.html
 	echo T_("Surahs <span class='fs08'>Chapters</span>");                             // Line 3
@@ -515,12 +529,12 @@ class twigTransTerms
 	echo T_("Quick navigate to special aya");                                         // Line 154
 	echo T_("Aya list");                                                              // Line 157
 	echo T_("Quick navigate to special juz");                                         // Line 166
-	echo T_("Juz list");                                                              // Line 169
 	echo T_("Quick navigate to special page");                                        // Line 203
 	echo T_("Type page number and press enter");                                      // Line 203
 	echo T_("Search in Quran");                                                       // Line 213
 
 	//-------------------------------------projects/SalamQuran/content/home/theme.html
+	echo T_("Auto paly quran");                                                       // Line 3
 
 	//--------------------------projects/SalamQuran/content/home/blocks/block-cmd.html
 	echo T_("Click to remove tranlation");                                            // Line 29
@@ -544,9 +558,11 @@ class twigTransTerms
 	echo T_("Change Font of texts");                                                  // Line 5
 
 	//-------------------projects/SalamQuran/content/home/blocks/block-ayeActions.html
-	echo T_("Play");                                                                  // Line 6
-	echo T_("Pause");                                                                 // Line 6
-	echo T_("Copy");                                                                  // Line 9
+	echo T_("Sura number : Aya number");                                              // Line 3
+	echo T_("The verse number in the entire Quran");                                  // Line 6
+	echo T_("Play");                                                                  // Line 9
+	echo T_("Pause");                                                                 // Line 9
+	echo T_("Copy");                                                                  // Line 12
 
 	//-------------------projects/SalamQuran/content/home/blocks/block-navigation.html
 	echo T_("Back to list of suras");                                                 // Line 25
@@ -611,6 +627,9 @@ class twigTransTerms
 	echo T_("The project was initiated and the initial agreement was made.");         // Line 85
 	echo T_("Be patient...");                                                         // Line 92
 
+	//-----------------------------------projects/SalamQuran/content/page/display.html
+	echo T_("page");                                                                  // Line 13
+
 	//---------------------------------------projects/SalamQuran/content_m/layout.html
 	echo T_("Manage");                                                                // Line 6
 
@@ -625,6 +644,10 @@ class twigTransTerms
 	echo T_("quality");                                                               // Line 95
 	echo T_("Add");                                                                   // Line 103
 
+	//---------------------projects/SalamQuran/content_m/audiobank/manage/display.html
+	echo T_("Run again");                                                             // Line 20
+	echo T_("Audio bank");                                                            // Line 21
+
 	//-----------------------projects/SalamQuran/content_m/audiobank/home/display.html
 	echo T_("List");                                                                  // Line 13
 	echo T_("Check audio online");                                                    // Line 22
@@ -636,7 +659,6 @@ class twigTransTerms
 	echo T_("Try to start with add new audio!");                                      // Line 128
 
 	//---------------------------------projects/SalamQuran/content_m/home/display.html
-	echo T_("Audio bank");                                                            // Line 21
 
 	//-----------------------------projects/SalamQuran/content_mag/home/dashboard.html
 	echo T_("Under Contribution");                                                    // Line 9
