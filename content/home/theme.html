@@ -2,7 +2,7 @@
 
 <div class='Quran' id="iqra" data-style='{{pageStyle}}' data-mode='{{pageMode}}'{%if requestGET.autoplay%} data-autoplay{%endif%}>
 
-{%if quranLoaded.mode == 'onepage' or not quranLoaded.mode %}
+{%if quranLoaded.mode == 'onepage'  %}
       {%include 'content/home/theme-onePage.html'%}
 
 {%elseif quranLoaded.mode == 'twopage'%}
@@ -11,7 +11,7 @@
 {%elseif quranLoaded.mode == 'translatepage'%}
       {%include 'content/home/theme-translatePage.html'%}
 
-{%elseif quranLoaded.mode == 'aye'%}
+{%elseif quranLoaded.mode == 'aye' or not quranLoaded.mode%}
       {%include 'content/home/theme-ayeBox.html'%}
 
 {%endif%}

@@ -6,7 +6,7 @@ class quran
 {
 	public static function load($_type, $_id, $_aye = null, $_meta = [])
 	{
-		if(in_array($_meta['mode'], ['onepage', 'twopage', 'translatepage']) || !$_meta['mode'])
+		if(in_array($_meta['mode'], ['onepage', 'twopage', 'translatepage']))
 		{
 			return \lib\app\quran\page::load(...func_get_args());
 		}

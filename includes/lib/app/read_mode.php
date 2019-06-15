@@ -68,7 +68,7 @@ class read_mode
 		[
 			'aye' =>
 			[
-				'default' => false,
+				'default' => true,
 				'name'    => T_('Aye Block'),
 				'font'    => null,
 				'class'   => 'align-right',
@@ -77,7 +77,7 @@ class read_mode
 
 			'onepage' =>
 			[
-				'default' => true,
+				'default' => false,
 				'name'    => T_('One page'),
 				'font'    => null,
 				'class'   => 'book',

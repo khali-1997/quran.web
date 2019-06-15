@@ -6,7 +6,7 @@ class aya
 {
 	public static function load($_type, $_id, $_aye = null, $_meta = [])
 	{
-		if(in_array($_meta['mode'], ['onepage', 'twopage']) || !$_meta['mode'])
+		if(in_array($_meta['mode'], ['onepage', 'twopage']))
 		{
 			return \lib\app\quran\page::load(...func_get_args());
 		}
@@ -51,22 +51,22 @@ class aya
 		$pagination_current = null;
 		$pagination         = null;
 
-		if(!$_aye)
-		{
-			$pagination_current = \lib\app\quran\pagination::pagination_current($_type, $_id, $_meta);
-			$pagination         = \lib\app\quran\pagination::pagination($_type, $_id, $_meta);
-		}
+		// if(!$_aye)
+		// {
+		// 	$pagination_current = \lib\app\quran\pagination::pagination_current($_type, $_id, $_meta);
+		// 	$pagination         = \lib\app\quran\pagination::pagination($_type, $_id, $_meta);
+		// }
 
 		if($_type === 'sura')
 		{
 			if(!$_aye)
 			{
-				$get_quran['2.2'] = [' = 2.2 AND', " `aya` >= $pagination_current[0] AND `aya` <= $pagination_current[1] "];
+				// $get_quran['2.2'] = [' = 2.2 AND', " `aya` >= $pagination_current[0] AND `aya` <= $pagination_current[1] "];
 			}
 		}
 		elseif($_type === 'juz')
 		{
-			$get_quran['2.2'] = [' = 2.2 AND', " `page` >= $pagination_current[0] AND `page` <= $pagination_current[1] "];
+			// $get_quran['2.2'] = [' = 2.2 AND', " `page` >= $pagination_current[0] AND `page` <= $pagination_current[1] "];
 		}
 		elseif($_type === 'hizb')
 		{
