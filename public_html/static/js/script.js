@@ -483,8 +483,11 @@ function highlightAye(_mode)
   parentAyeBox = ayeNumEl.parents('.ayeBox');
   if(parentAyeBox.length > 0)
   {
-    // change scroll to start of this aye
-    scrollSmoothTo($('.ayeBox#'+ ayeNum))
+    if($('.ayeBox#'+ ayeNum).length > 0)
+    {
+      // change scroll to start of this aye
+      scrollSmoothTo($('.ayeBox#'+ ayeNum))
+    }
   }
   else
   {
@@ -577,7 +580,19 @@ function playerTogglePlay(_forcePlayer, _forWbw)
     // change icon
     if(talavatEl.paused)
     {
-      talavatEl.play();
+      thePromise = talavatEl.play();
+      if(thePromise !== undefined)
+      {
+        thePromise.then(_ =>
+        {
+          // Autoplay started!
+        }).catch(error =>
+        {
+          logy('error on autoplay Quran');
+          // Autoplay was prevented.
+          // Show a "Play" button so that user can start playback.
+        });
+      }
     }
     else if(talavatEl.readyState == 1)
     {
@@ -845,11 +860,11 @@ function checkAutoplay()
 {
   if($('.Quran').attr('data-autoplay') !== undefined)
   {
-  	var customMsg = $('.Quran').attr('data-autoplayTitle');
-  	if(customMsg)
-  	{
-    	notif('info', customMsg);
-  	}
+    var customMsg = $('.Quran').attr('data-autoplayTitle');
+    if(customMsg)
+    {
+      notif('info', customMsg);
+    }
     iqra('player');
   }
 }
