@@ -845,7 +845,11 @@ function checkAutoplay()
 {
   if($('.Quran').attr('data-autoplay') !== undefined)
   {
-    notif('info', 'Autoplay Quran');
+  	var customMsg = $('.Quran').attr('data-autoplayTitle');
+  	if(customMsg)
+  	{
+    	notif('info', customMsg);
+  	}
     iqra('player');
   }
 }
