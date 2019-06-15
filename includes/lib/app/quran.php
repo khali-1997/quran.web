@@ -78,6 +78,7 @@ class quran
 	public static function url_query()
 	{
 		$get = \dash\request::get();
+		unset($get['autoplay']);
 		if($get)
 		{
 			return '?'. http_build_query($get);

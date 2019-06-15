@@ -138,7 +138,7 @@ class aya
 				if(!$first_verse)
 				{
 					$first_verse['title'] = $verse_title;
-					$first_verse['url']   = $verse_url;
+					$first_verse['url']   = $verse_url. \lib\app\quran::url_query();
 					$first_verse['audio'] = \lib\app\qari::get_aya_audio($value['sura'], $value['aya'], $_meta);
 					$first_verse['juz']   = $value['juz'];
 					$first_verse['page']  = $value['page'];
