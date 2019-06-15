@@ -249,7 +249,7 @@ class aya
 							$quran_detail['next'] =
 							[
 								'index'    => $next_aya,
-								'url'      => \dash\url::kingdom(). '/s'. $next_sura. '/1?'. \dash\url::query(),
+								'url'      => \dash\url::kingdom(). '/s'. $next_sura. '/1?'. \lib\app\quran::url_query(true),
 								'title'    => T_("Next Surah"),
 								'subtitle' => T_(\lib\app\sura::detail($next_sura, 'tname')),
 							];
@@ -260,7 +260,7 @@ class aya
 						$quran_detail['next'] =
 						[
 							'index'    => $next_aya,
-							'url'      => \dash\url::kingdom(). '/s'. $_id. '/'. $next_aya. \lib\app\quran::url_query(),
+							'url'      => \dash\url::kingdom(). '/s'. $_id. '/'. $next_aya. \lib\app\quran::url_query(true),
 							'title'    => T_("Next aya"),
 							'subtitle' => \dash\utility\human::fitNumber($next_aya),
 						];
@@ -273,7 +273,7 @@ class aya
 							$quran_detail['prev'] =
 							[
 								'index' => $prev_sura,
-								'url'   => \dash\url::kingdom(). '/s'. $prev_sura. '/'. \lib\app\sura::detail($prev_sura, 'ayas') .\lib\app\quran::url_query(),
+								'url'   => \dash\url::kingdom(). '/s'. $prev_sura. '/'. \lib\app\sura::detail($prev_sura, 'ayas') .\lib\app\quran::url_query(true),
 								'title' => T_("Previous Surah"),
 								'subtitle' => T_(\lib\app\sura::detail($prev_sura, 'tname')),
 							];
@@ -284,7 +284,7 @@ class aya
 						$quran_detail['prev'] =
 						[
 							'index'    => $prev_aya,
-							'url'      => \dash\url::kingdom(). '/s'. $_id. '/'. $prev_aya .\lib\app\quran::url_query(),
+							'url'      => \dash\url::kingdom(). '/s'. $_id. '/'. $prev_aya .\lib\app\quran::url_query(true),
 							'title'    => T_("Previous aya"),
 							'subtitle' => \dash\utility\human::fitNumber($prev_aya),
 						];
@@ -297,7 +297,7 @@ class aya
 						$quran_detail['next'] =
 						[
 							'index'    => $next_sura,
-							'url'      => \dash\url::kingdom(). '/s'. $next_sura. \lib\app\quran::url_query(),
+							'url'      => \dash\url::kingdom(). '/s'. $next_sura. \lib\app\quran::url_query(true),
 							'title'    => T_("Next Surah"),
 							'subtitle' => T_(\lib\app\sura::detail($next_sura, 'tname')),
 						];
@@ -308,7 +308,7 @@ class aya
 						$quran_detail['prev'] =
 						[
 							'index' => $prev_sura,
-							'url'   => \dash\url::kingdom(). '/s'. $prev_sura. \lib\app\quran::url_query(),
+							'url'   => \dash\url::kingdom(). '/s'. $prev_sura. \lib\app\quran::url_query(true),
 							'title' => T_("Previous Surah"),
 							'subtitle' => T_(\lib\app\sura::detail($prev_sura, 'tname')),
 						];
@@ -388,7 +388,7 @@ class aya
 			$quran_detail['next'] =
 			[
 				'index'    => $next,
-				'url'      => \dash\url::kingdom(). '/'. $_url_key. $next. \lib\app\quran::url_query(),
+				'url'      => \dash\url::kingdom(). '/'. $_url_key. $next. \lib\app\quran::url_query(true),
 				'title'    => $_next_title,
 				'subtitle' => $_title . ' '. \dash\utility\human::fitNumber($next),
 			];

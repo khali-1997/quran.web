@@ -30,6 +30,9 @@ class font_style
 		{
 			$get['zoom'] = 6;
 		}
+
+		unset($get['autoplay']);
+
 		return \dash\url::that() . '?'. http_build_query($get);
 	}
 
@@ -52,6 +55,9 @@ class font_style
 		{
 			$get['zoom'] = 4;
 		}
+
+		unset($get['autoplay']);
+
 		return \dash\url::that() . '?'. http_build_query($get);
 	}
 
@@ -85,7 +91,7 @@ class font_style
 	public static function list()
 	{
 		$get = \dash\request::get();
-
+		unset($get['autoplay']);
 		$master = \dash\url::that(). '?';
 
 		$font_style =

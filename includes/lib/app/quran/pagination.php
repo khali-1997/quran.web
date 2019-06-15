@@ -30,6 +30,7 @@ trait pagination
 			$pagination = [];
 
 			$get       = \dash\request::get();
+			unset($get['autoplay']);
 			$currnet_get = isset($get['a']) ? intval($get['a']) : 1;
 			if($currnet_get > $ayas_split || $currnet_get < 1)
 			{

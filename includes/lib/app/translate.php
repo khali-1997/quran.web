@@ -8,6 +8,7 @@ class translate
 	public static function current_list()
 	{
 		$get       = \dash\request::get();
+		unset($get['autoplay']);
 		$getTrans  = isset($get['t']) ? $get['t'] : '';
 		$getTrans  = explode('-', $getTrans);
 		$getTrans  = array_filter($getTrans);
@@ -26,6 +27,7 @@ class translate
 			if(in_array($myKey, $getTrans))
 			{
 				$thisGet       = \dash\request::get();
+				unset($get['autoplay']);
 				$thisGetTrans  = isset($thisGet['t']) ? $thisGet['t'] : '';
 				$thisGetTrans  = explode('-', $thisGetTrans);
 				$thisGetTrans  = array_filter($thisGetTrans);
@@ -121,6 +123,7 @@ class translate
 		foreach ($list as $key => $value)
 		{
 			$get       = \dash\request::get();
+			unset($get['autoplay']);
 			$getTrans  = isset($get['t']) ? $get['t'] : '';
 			$getTrans  = explode('-', $getTrans);
 			$getTrans  = array_filter($getTrans);
@@ -161,6 +164,7 @@ class translate
 			if($count > 1)
 			{
 				$get       = \dash\request::get();
+				unset($get['autoplay']);
 				// in all link remove all trans
 				$getTrans  = '';
 				$getTrans  = explode('-', $getTrans);

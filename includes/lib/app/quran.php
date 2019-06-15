@@ -75,12 +75,20 @@ class quran
 		return $_value;
 	}
 
-	public static function url_query()
+	public static function url_query($_force_autoplay = false)
 	{
-		$query = \dash\url::query();
-		if($query)
+		$get = \dash\request::get();
+		if($get || $_force_autoplay)
 		{
-			return '?'. $query;
+			if($_force_autoplay)
+			{
+				$get['autoplay'] = 1;
+			}
+			else
+			{
+				unset($get['autoplay']);
+			}
+			return '?'. http_build_query($get);
 		}
 		else
 		{

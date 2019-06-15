@@ -61,6 +61,7 @@ class read_mode
 	public static function list()
 	{
 		$get = \dash\request::get();
+		unset($get['autoplay']);
 
 		$master = \dash\url::that(). '?';
 

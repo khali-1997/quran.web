@@ -129,7 +129,10 @@ class find
 					{
 						if(intval($number2) >= 1 && intval($number2) <= intval(\lib\app\sura::detail($number, 'ayas')))
 						{
-							$_meta['mode'] = 'aye';
+							if(!$_meta['mode'])
+							{
+								$_meta['mode'] = 'aye';
+							}
 							return \lib\app\quran::load('sura',$number, $number2, $_meta);
 						}
 					}

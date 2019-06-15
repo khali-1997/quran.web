@@ -397,7 +397,7 @@ class page
 				$quran_detail['next'] =
 				[
 					'index'    => $next_page,
-					'url'      => \dash\url::kingdom(). '/p'. $next_page. \lib\app\quran::url_query(),
+					'url'      => \dash\url::kingdom(). '/p'. $next_page. \lib\app\quran::url_query(true),
 					'title'    => T_("Next page"),
 					'subtitle' => T_('page') . ' '. \dash\utility\human::fitNumber($next_page),
 				];
@@ -460,7 +460,7 @@ class page
 				$quran_detail['next'] =
 				[
 					'index'    => $next_page,
-					'url'      => \dash\url::kingdom(). '/p'. $next_page. \lib\app\quran::url_query(),
+					'url'      => \dash\url::kingdom(). '/p'. $next_page. \lib\app\quran::url_query(true),
 					'title'    => T_("Next page"),
 					'subtitle' => T_('page') . ' '. \dash\utility\human::fitNumber($next_page),
 				];

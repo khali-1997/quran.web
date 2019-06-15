@@ -75,6 +75,7 @@ class translate
 				if(!\dash\url::content())
 				{
 					$get       = \dash\request::get();
+					unset($get['autoplay']);
 					$getTrans  = isset($get['t']) ? $get['t'] : '';
 					$getTrans  = explode('-', $getTrans);
 					$getTrans  = array_filter($getTrans);

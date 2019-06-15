@@ -166,6 +166,7 @@ class qari
 	private static function ready($_data)
 	{
 		$get                 = \dash\request::get();
+		unset($get['autoplay']);
 		$get['qari']         = $_data['index'];
 		$_data['url']        = \dash\url::that(). '?'. http_build_query($get);
 		$_data['addr']       = self::master_path(). $_data['addr'];
