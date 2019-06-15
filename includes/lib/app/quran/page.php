@@ -33,6 +33,11 @@ class page
 				$first_page = intval($_id);
 				break;
 
+			case 'aya':
+				$first_page = self::find_first_page($_type, $_id, $_aya);
+				break;
+
+
 			default:
 				return false;
 				break;

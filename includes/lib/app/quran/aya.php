@@ -346,7 +346,31 @@ class aya
 				break;
 		}
 
+		if(isset($quran_detail['next']))
+		{
+			// next auto play url
+			$quran_detail['nextAuto'] = $quran_detail['next'];
 
+			$appendAutoPlay = '';
+
+			if(strpos($quran_detail['nextAuto']['url'], '?'))
+			{
+				if(strpos($quran_detail['nextAuto']['url'], 'autoplay=1'))
+				{
+					// do noting, have it.
+				}
+				else
+				{
+					$appendAutoPlay = 'autoplay=1';
+				}
+			}
+			else
+			{
+				$appendAutoPlay = '?autoplay=1';
+			}
+
+			$quran_detail['nextAuto']['url'] .= $appendAutoPlay;
+		}
 
 
 		$quran_detail['first_verse'] = $first_verse;
