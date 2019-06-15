@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SalamQuran - Persian\n"
-"POT-Creation-Date: 2019-06-15 22:10+0430\n"
-"PO-Revision-Date: 2019-06-15 22:11+0430\n"
+"POT-Creation-Date: 2019-06-15 22:13+0430\n"
+"PO-Revision-Date: 2019-06-15 22:13+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -197,7 +197,7 @@ msgstr "صفحه"
 #: SalamQuran/content/home/view.php:100 SalamQuran/content/home/view.php:120
 #: SalamQuran/content/home/view.php:125 SalamQuran/content/home/view.php:147
 #: SalamQuran/includes/languages/trans_dash.php:538
-#: SalamQuran/includes/languages/trans_project.php:648
+#: SalamQuran/includes/languages/trans_project.php:649
 #: SalamQuran/includes/lib/app/quran/aya.php:328
 #: SalamQuran/includes/lib/app/quran/page.php:407
 #: SalamQuran/includes/lib/app/quran/page.php:441
@@ -308,7 +308,7 @@ msgid "Rub list"
 msgstr "لیست ربع حزب"
 
 #: SalamQuran/content/search/view.php:9
-#: SalamQuran/includes/languages/trans_project.php:536
+#: SalamQuran/includes/languages/trans_project.php:537
 msgid "Search in Quran"
 msgstr "جستجو در قرآن"
 
@@ -1117,7 +1117,7 @@ msgid "Code"
 msgstr "کد"
 
 #: SalamQuran/includes/languages/trans_dash.php:146
-#: SalamQuran/includes/languages/trans_project.php:673
+#: SalamQuran/includes/languages/trans_project.php:674
 #: dash/addons/content_cms/attachment/home/view.php:121
 #: dash/addons/content_cms/posts/home/view.php:150
 #: dash/addons/includes/languages/trans_dash.php:43
@@ -1883,7 +1883,7 @@ msgid "Track id"
 msgstr "کد رهگیری"
 
 #: SalamQuran/includes/languages/trans_dash.php:301
-#: SalamQuran/includes/languages/trans_project.php:632
+#: SalamQuran/includes/languages/trans_project.php:633
 #: dash/addons/includes/languages/trans_dash.php:113
 #: dash/addons/includes/languages/trans_static.php:199
 msgid "Date"
@@ -2127,7 +2127,7 @@ msgid "Language"
 msgstr "زبان"
 
 #: SalamQuran/includes/languages/trans_dash.php:351
-#: SalamQuran/includes/languages/trans_project.php:654
+#: SalamQuran/includes/languages/trans_project.php:655
 #: dash/addons/includes/languages/trans_dash.php:50
 msgid "Please select one item"
 msgstr "لطفا یک گزینه را انتخاب کنید"
@@ -2286,7 +2286,7 @@ msgid "Search with new keywords."
 msgstr "با کلیدواژه‌های بهتری جستجو کنید."
 
 #: SalamQuran/includes/languages/trans_dash.php:384
-#: SalamQuran/includes/languages/trans_project.php:674
+#: SalamQuran/includes/languages/trans_project.php:675
 #: dash/addons/includes/languages/trans_dash.php:84
 msgid "Hi!"
 msgstr "سلام!"
@@ -2619,7 +2619,7 @@ msgid "Pain"
 msgstr "درد"
 
 #: SalamQuran/includes/languages/trans_dash.php:468
-#: SalamQuran/includes/languages/trans_project.php:620
+#: SalamQuran/includes/languages/trans_project.php:621
 #: dash/addons/includes/languages/trans_dash.php:170
 msgid "Type"
 msgstr "نوع"
@@ -2630,7 +2630,7 @@ msgid "Used"
 msgstr "استفاده شده"
 
 #: SalamQuran/includes/languages/trans_dash.php:470
-#: SalamQuran/includes/languages/trans_project.php:661
+#: SalamQuran/includes/languages/trans_project.php:662
 #: dash/addons/includes/languages/trans_dash.php:173
 #: dash/addons/includes/languages/trans_static.php:147
 msgid "Add"
@@ -3448,7 +3448,7 @@ msgstr ""
 "کنید."
 
 #: SalamQuran/includes/languages/trans_dash.php:696
-#: SalamQuran/includes/languages/trans_project.php:688
+#: SalamQuran/includes/languages/trans_project.php:689
 #: dash/addons/includes/languages/trans_dash.php:681
 msgid "Short link"
 msgstr "لینک کوتاه"
@@ -3573,7 +3573,7 @@ msgid "Contact the legendary support team right now."
 msgstr "همین الان با تیم پشتیبانی افسانه‌ای ما تماس بگیرید"
 
 #: SalamQuran/includes/languages/trans_dash.php:732
-#: SalamQuran/includes/languages/trans_project.php:687
+#: SalamQuran/includes/languages/trans_project.php:688
 #: dash/addons/includes/languages/trans_dash.php:717
 msgid "In this section"
 msgstr "در این بخش"
@@ -5150,7 +5150,7 @@ msgid "Factor of team"
 msgstr "فاکتور تیم"
 
 #: SalamQuran/includes/languages/trans_dash.php:1112
-#: SalamQuran/includes/languages/trans_project.php:576
+#: SalamQuran/includes/languages/trans_project.php:577
 #: dash/addons/includes/languages/trans_dash.php:1099
 msgid "Price"
 msgstr "قیمت"
@@ -5858,6 +5858,7 @@ msgid "Inner system notification"
 msgstr "پیام داخل سیستمی"
 
 #: SalamQuran/includes/languages/trans_dash.php:1308
+#: SalamQuran/includes/languages/trans_project.php:620
 #: SalamQuran/includes/languages/trans_static.php:65
 #: SalamQuran/includes/lib/app/audiobank.php:55
 #: SalamQuran/includes/lib/app/qari.php:98
@@ -7805,99 +7806,103 @@ msgid "Quick navigation"
 msgstr "دسترسی سریع"
 
 #: SalamQuran/includes/languages/trans_project.php:529
+msgid "Nav"
+msgstr ""
+
+#: SalamQuran/includes/languages/trans_project.php:530
 msgid "Quick navigate to special surah"
 msgstr "انتقال سریع به سوره خاص"
 
-#: SalamQuran/includes/languages/trans_project.php:530
+#: SalamQuran/includes/languages/trans_project.php:531
 msgid "Surahs"
 msgstr "سوره‌ها"
 
-#: SalamQuran/includes/languages/trans_project.php:531
+#: SalamQuran/includes/languages/trans_project.php:532
 msgid "Quick navigate to special aya"
 msgstr "انتقال سریع به آیه خاص"
 
-#: SalamQuran/includes/languages/trans_project.php:532
+#: SalamQuran/includes/languages/trans_project.php:533
 msgid "Aya list"
 msgstr "لیست آیات"
 
-#: SalamQuran/includes/languages/trans_project.php:533
+#: SalamQuran/includes/languages/trans_project.php:534
 msgid "Quick navigate to special juz"
 msgstr "انتقال سریع به جزء خاص"
 
-#: SalamQuran/includes/languages/trans_project.php:534
+#: SalamQuran/includes/languages/trans_project.php:535
 msgid "Quick navigate to special page"
 msgstr "انتقال سریع به صفحه خاص"
 
-#: SalamQuran/includes/languages/trans_project.php:535
+#: SalamQuran/includes/languages/trans_project.php:536
 msgid "Type page number and press enter"
 msgstr "شمار صفحه را وارد کنید و کلید اینتر را بزنید"
 
-#: SalamQuran/includes/languages/trans_project.php:539
+#: SalamQuran/includes/languages/trans_project.php:540
 msgid "Auto play quran"
 msgstr "پخش خودکار صوت قرآن"
 
-#: SalamQuran/includes/languages/trans_project.php:542
+#: SalamQuran/includes/languages/trans_project.php:543
 msgid "Click to remove tranlation"
 msgstr "برای حذف ترجمه کلیک کنید"
 
-#: SalamQuran/includes/languages/trans_project.php:547
+#: SalamQuran/includes/languages/trans_project.php:548
 msgid "Add Translations"
 msgstr "افزودن ترجمه"
 
-#: SalamQuran/includes/languages/trans_project.php:548
+#: SalamQuran/includes/languages/trans_project.php:549
 msgid "Search translator"
 msgstr "جستجوی مترجم"
 
-#: SalamQuran/includes/languages/trans_project.php:549
+#: SalamQuran/includes/languages/trans_project.php:550
 msgid "All Translations"
 msgstr "تمامی ترجمه‌ها"
 
-#: SalamQuran/includes/languages/trans_project.php:552
+#: SalamQuran/includes/languages/trans_project.php:553
 msgid "Change Read Mode"
 msgstr "تغییر حالت خواندن"
 
-#: SalamQuran/includes/languages/trans_project.php:557
+#: SalamQuran/includes/languages/trans_project.php:558
 msgid "Search Qari"
 msgstr "جستجوی قاری"
 
-#: SalamQuran/includes/languages/trans_project.php:560
+#: SalamQuran/includes/languages/trans_project.php:561
 msgid "Change Font of texts"
 msgstr "تغییر فونت متن‌ها"
 
-#: SalamQuran/includes/languages/trans_project.php:563
+#: SalamQuran/includes/languages/trans_project.php:564
 msgid "Sura number : Aya number"
 msgstr "شماره سوره :‌ شماره آیه"
 
-#: SalamQuran/includes/languages/trans_project.php:564
+#: SalamQuran/includes/languages/trans_project.php:565
 msgid "The verse number in the entire Quran"
 msgstr "شماره آیه در کل قرآن"
 
-#: SalamQuran/includes/languages/trans_project.php:565
+#: SalamQuran/includes/languages/trans_project.php:566
 msgid "Play"
 msgstr "پخش"
 
-#: SalamQuran/includes/languages/trans_project.php:566
+#: SalamQuran/includes/languages/trans_project.php:567
 msgid "Pause"
 msgstr "مکث"
 
-#: SalamQuran/includes/languages/trans_project.php:567
+#: SalamQuran/includes/languages/trans_project.php:568
 #: dash/addons/includes/languages/trans_static.php:111
 msgid "Copy"
 msgstr "کپی"
 
-#: SalamQuran/includes/languages/trans_project.php:570
+#: SalamQuran/includes/languages/trans_project.php:571
 msgid "Back to list of suras"
 msgstr "بازگشت به لیست سوره‌ها"
 
-#: SalamQuran/includes/languages/trans_project.php:573
+#: SalamQuran/includes/languages/trans_project.php:574
 msgid "Ayah"
 msgstr "آیه"
 
-#: SalamQuran/includes/languages/trans_project.php:577
+#: SalamQuran/includes/languages/trans_project.php:578
 msgid "Request Advice"
 msgstr "درخواست مشاوره"
 
-#: SalamQuran/includes/languages/trans_project.php:580
+#: SalamQuran/includes/languages/trans_project.php:581
 msgid ""
 "Utilizing SalamQuran's services means the acceptance of and commitment to "
 "observing all the tenors of this agreement."
@@ -7905,7 +7910,7 @@ msgstr ""
 "استفاده از خدمات سلام قرآن به منزله‌ پذیرش و تعهد به رعایت تمام مفاد مندرج در این "
 "توافق‌نامه است."
 
-#: SalamQuran/includes/languages/trans_project.php:581
+#: SalamQuran/includes/languages/trans_project.php:582
 msgid ""
 "It is worth mentioning that due to the insecurity of cyberspace, you should never "
 "post your vital information on either SalamQuran or any other services!"
@@ -7913,7 +7918,7 @@ msgstr ""
 "لازم به یادآوری‌ست که با توجه به ناامن بودن فضای ‌مجازی، نه تنها در سلام قرآن بلکه "
 "در هیچ سرویس دیگری، اطلاعات حیاتی خود را منتشر نکنید!"
 
-#: SalamQuran/includes/languages/trans_project.php:582
+#: SalamQuran/includes/languages/trans_project.php:583
 msgid ""
 "User's personal information is strictly confidential in our service. SalamQuran "
 "preserves the information as encoded and will not under any conditions transfer "
@@ -7923,7 +7928,7 @@ msgstr ""
 "اطلاعات را به صورت کدشده نگه‌داری کرده و تحت هیچ شرایطی آن‌را به غیر واگذار نخواهد "
 "کرد."
 
-#: SalamQuran/includes/languages/trans_project.php:583
+#: SalamQuran/includes/languages/trans_project.php:584
 msgid ""
 "In case there is a request for receiving user's information by the competent "
 "authorities, according to the country the user lives in, SalamQuran will "
@@ -7934,7 +7939,7 @@ msgstr ""
 "اطلاعات‌کاربری، سلام قرآن تنها پس از دریافت حکم قضایی کشور درخواست کننده، توانایی "
 "همکاری با آنان را خواهد داشت."
 
-#: SalamQuran/includes/languages/trans_project.php:584
+#: SalamQuran/includes/languages/trans_project.php:585
 msgid ""
 "Users should assume responsibility for any harm, both material and immaterial, "
 "caused by direct, indirect or penal factors and due to their utilization of this "
@@ -7943,7 +7948,7 @@ msgstr ""
 "خسارت‌های‌ مادی و معنوی ناشی از عوامل مستقیم، غیرمستقیم و کیفری، در قبال استفاده از "
 "این سرویس برعهده کاربران بوده و سلام قرآن هیچ‌گونه مسئولیتی دراین‌باره ندارد."
 
-#: SalamQuran/includes/languages/trans_project.php:585
+#: SalamQuran/includes/languages/trans_project.php:586
 msgid ""
 "SalamQuran accepts no responsibility, under any conditions, for the harms caused "
 "by users' mutual trust in each other or by the disclosure of information by users."
@@ -7951,7 +7956,7 @@ msgstr ""
 "تحت هیچ شرایطی سلام قرآن مسئولیت خسارت‌های وارده در اثر اعتماد و اتکاء اعضا به "
 "یکدیگر و فاش‌شدن اطلاعات توسط کاربر را نمی‌پذیرد."
 
-#: SalamQuran/includes/languages/trans_project.php:586
+#: SalamQuran/includes/languages/trans_project.php:587
 msgid ""
 "SalamQuran will do its best to protect both the users' information and the "
 "service; however, regarding the lack of certainty within the cyberspace, it will "
@@ -7962,7 +7967,7 @@ msgstr ""
 "توجه به عدم قطعیت در فضای مجازی، مسئولیتی در مورد از بين رفتن اطلاعات قرارگرفته "
 "بر روی سرویس نخواهد پذیرفت."
 
-#: SalamQuran/includes/languages/trans_project.php:587
+#: SalamQuran/includes/languages/trans_project.php:588
 msgid ""
 "We will publicize our information and news only via SalamQuran's formal website. "
 "Accordingly, those who publicize any attributed news and claims, within social "
@@ -7973,7 +7978,7 @@ msgstr ""
 "خبر و ادعای نسبت‌داده‌شده در رسانه‌ها و شبکه‌های اجتماعی به عهده منتشرکننده آن بوده و "
 "سلام قرآن مسئولیتی در قبال آن ندارد."
 
-#: SalamQuran/includes/languages/trans_project.php:588
+#: SalamQuran/includes/languages/trans_project.php:589
 msgid ""
 "SalamQuran will bear no responsibility for whatsoever messages sent to users, "
 "including those indicating winning a lottery, and all our information "
@@ -7983,7 +7988,7 @@ msgstr ""
 "پیام دیگری نداشته و تمام اطلاع‌رسانی‌های ما از طریق روش‌های برقراری ارتباط کاربر با "
 "سلام قرآن خواهد بود."
 
-#: SalamQuran/includes/languages/trans_project.php:589
+#: SalamQuran/includes/languages/trans_project.php:590
 msgid ""
 "Any misuse of SalamQuran's trade name is prohibited and will be suable by making "
 "a complaint to the legal competent authorities."
@@ -7991,7 +7996,7 @@ msgstr ""
 "هرگونه سوءاستفاده از نام تجاری سلام قرآن ممنوع بوده و از طریق شکایت به مراجع "
 "قانونی دارای صلاحیت، قابل پیگرد خواهد بود."
 
-#: SalamQuran/includes/languages/trans_project.php:590
+#: SalamQuran/includes/languages/trans_project.php:591
 msgid ""
 "Furthermore, this agreement, under the name Terms and Conditions, will be "
 "available and observable, in all pages of the website. Users will be responsible "
@@ -8000,7 +8005,7 @@ msgstr ""
 "هم‌چنین این توافق‌نامه در تمام صفحات وب‌سایت با عنوان شرایط و قوانین موجود و قابل "
 "مشاهده است. مسئولیت عدم کسب اطلاع از آخرین تغییرات برعهده کاربر خواهد بود."
 
-#: SalamQuran/includes/languages/trans_project.php:591
+#: SalamQuran/includes/languages/trans_project.php:592
 msgid ""
 "It should be mentioned that in case there would be any modifications in the above-"
 "mentioned tenors, an updated version will be available for the public, and as "
@@ -8009,11 +8014,11 @@ msgstr ""
 "لازم به ذکر است که درصورت هرگونه تغییر در مفاد ذکر شده، نسخه به‌روزشده آن در دسترس "
 "عموم قرار خواهد گرفت و به اطلاع تمام کاربران خواهد رسید."
 
-#: SalamQuran/includes/languages/trans_project.php:594
+#: SalamQuran/includes/languages/trans_project.php:595
 msgid "What is Privacy?"
 msgstr "حریم‌خصوصی چیست؟"
 
-#: SalamQuran/includes/languages/trans_project.php:595
+#: SalamQuran/includes/languages/trans_project.php:596
 msgid ""
 "Privacy means that any individual is entitled to choose the information related "
 "to them, and selectively, share it with others."
@@ -8021,7 +8026,7 @@ msgstr ""
 "حریم‌خصوصی یعنی شخص بتواند اطلاعات مربوط به خود را مجزا کرده و به انتخاب خویش، در "
 "برابر دیگران آشکار کند."
 
-#: SalamQuran/includes/languages/trans_project.php:596
+#: SalamQuran/includes/languages/trans_project.php:597
 msgid ""
 "privacy is so important for mental peace as well as a peaceful personality that "
 "some experts have considered invasion of privacy disrespectful to human dignity."
@@ -8029,18 +8034,18 @@ msgstr ""
 "حریم‌خصوصی برای آرامش روانی و شخصیتی، بسیار مهم است تا جایی‌که بعضی از صاحب‌نظران "
 "نقض آن را به عنوان یک اقدام توهین‌آمیز نسبت به شرافت بشری قلمداد کرده‌اند."
 
-#: SalamQuran/includes/languages/trans_project.php:597
+#: SalamQuran/includes/languages/trans_project.php:598
 msgid "Controversies over the Invasion of Privacy"
 msgstr "جنجال‌های نقض حریم‌خصوصی"
 
-#: SalamQuran/includes/languages/trans_project.php:598
+#: SalamQuran/includes/languages/trans_project.php:599
 msgid ""
 "Within e-commerce, privacy has always been from among the most controversial "
 "topics and continues to be."
 msgstr ""
 "حریم‌خصوصی در کسب‌و‌کارهای الکترونیکی همیشه یکی از بحث‌برانگیزترین موضوعات بوده و هست."
 
-#: SalamQuran/includes/languages/trans_project.php:599
+#: SalamQuran/includes/languages/trans_project.php:600
 msgid ""
 "Accordingly, formulating privacy policies is regarded as one of the crucial "
 "concerns of technology companies."
@@ -8048,7 +8053,7 @@ msgstr ""
 "به همین دلیل، تعیین سیاست‌های حریم‌خصوصی جزء دغدغه‌های بسیار مهم شرکت‌های فناورانه "
 "محسوب می‌شود."
 
-#: SalamQuran/includes/languages/trans_project.php:600
+#: SalamQuran/includes/languages/trans_project.php:601
 msgid ""
 "Meanwhile, widespread controversies have been provoked over invasion of privacy "
 "in e-commerce so that, occasionally, the regulations have to be revised to "
@@ -8058,28 +8063,28 @@ msgstr ""
 "گرفته است؛ به‌گونه‌ای که هرچند وقت یک‌بار مجبور هستند قوانین را بازبینی نموده تا "
 "حفره‌های موجود را رفع نمایند."
 
-#: SalamQuran/includes/languages/trans_project.php:601
+#: SalamQuran/includes/languages/trans_project.php:602
 msgid "Privacy from Our Point of View"
 msgstr "حریم‌خصوصی از دیدگاه ما"
 
-#: SalamQuran/includes/languages/trans_project.php:602
+#: SalamQuran/includes/languages/trans_project.php:603
 msgid ""
 "Let us be straightforward! Cyberspace is not a safe location for personal "
 "information."
 msgstr "رو راست باشیم، فضای مجازی محل امنی برای اطلاعات خصوصی نیست."
 
-#: SalamQuran/includes/languages/trans_project.php:603
+#: SalamQuran/includes/languages/trans_project.php:604
 msgid ""
 "For that reason, SalamQuran makes no request for important information of yours."
 msgstr "به‌همین دلیل، سلام قرآن درخواستی برای ثبت اطلاعات حساس شما ندارد."
 
-#: SalamQuran/includes/languages/trans_project.php:604
+#: SalamQuran/includes/languages/trans_project.php:605
 msgid ""
 "It is worth mentioning that recording the aforementioned points is totally "
 "voluntary."
 msgstr "لازم به توضیح است که ثبت موارد ذکرشده نیز به‌صورت کاملا اختیاری است."
 
-#: SalamQuran/includes/languages/trans_project.php:605
+#: SalamQuran/includes/languages/trans_project.php:606
 msgid ""
 "However, taking the nature of cyberspace into account, we should remember that "
 "offering an absolute assurance might not be possible."
@@ -8087,7 +8092,7 @@ msgstr ""
 "این را در نظر داشته باشید که با توجه به ماهیت فضای مجازی، ارائه تضمین صددرصدی "
 "به‌طور کل ممکن نیست."
 
-#: SalamQuran/includes/languages/trans_project.php:606
+#: SalamQuran/includes/languages/trans_project.php:607
 msgid ""
 "Assuring privacy and security, with that ideal concept we bear in mind, does not "
 "exist; and if somebody gives you an assurance of securing your privacy, he has "
@@ -8097,7 +8102,7 @@ msgstr ""
 "اگر کسی در دنیای مجازی، تضمین امنیت حریم‌خصوصی شما را بدهد قطعا از اعتماد شما "
 "سوءاستفاده کرده است."
 
-#: SalamQuran/includes/languages/trans_project.php:607
+#: SalamQuran/includes/languages/trans_project.php:608
 msgid ""
 "Upon buying any digital or the so-called smart device, you have invaded your own "
 "privacy yourself."
@@ -8105,7 +8110,7 @@ msgstr ""
 "شما با خرید هر دستگاه دیجیتالی یا به اصطلاح هوشمند، با دست خود حریم‌خصوصی‌تان را "
 "نقض کرده‌اید."
 
-#: SalamQuran/includes/languages/trans_project.php:608
+#: SalamQuran/includes/languages/trans_project.php:609
 msgid ""
 "If you want your privacy not to be invaded, you should depart from technology and "
 "say goodbye to any digital and smart device."
@@ -8113,7 +8118,7 @@ msgstr ""
 "اگر می‌خواهید این حریم‌خصوصی نقض نشود باید به‌طور کل از دنیای تکنولوژی فاصله بگیرید "
 "و با هر دستگاه دیجیتالی و هوشمندی خداحافظی کنید."
 
-#: SalamQuran/includes/languages/trans_project.php:609
+#: SalamQuran/includes/languages/trans_project.php:610
 msgid ""
 "In fact, we have employed all updated technologies of the world to provide you "
 "with the maximum security."
@@ -8121,7 +8126,7 @@ msgstr ""
 "ما به‌لحاظ فنی تمام تکنولوژی‌های روز دنیا را به‌کار برده‌ایم تا امنیت حداکثری را برای "
 "شما به ارمغان بیاوریم."
 
-#: SalamQuran/includes/languages/trans_project.php:610
+#: SalamQuran/includes/languages/trans_project.php:611
 msgid ""
 "As the final remark, we wish to assure you that our main concern is to secure "
 "your privacy and protect your information against impermissible access."
@@ -8129,87 +8134,83 @@ msgstr ""
 "در پایان، این اطمینان را به شما می‌دهیم که دغدغه‌ی ما، حفظ حریم‌خصوصی و محافظت از "
 "اطلاعات شما در برابر دسترسی‌های غیرمجاز هست."
 
-#: SalamQuran/includes/languages/trans_project.php:615
+#: SalamQuran/includes/languages/trans_project.php:616
 msgid "Index"
 msgstr "ردیف"
 
-#: SalamQuran/includes/languages/trans_project.php:616
-msgid "Ayas"
-msgstr "آیات"
-
 #: SalamQuran/includes/languages/trans_project.php:617
-msgid "Start aya"
-msgstr "آیه شروع"
+msgid "Aya count"
+msgstr "تعداد آیات"
 
 #: SalamQuran/includes/languages/trans_project.php:618
-msgid "End aya"
-msgstr "آیه پایانی"
+msgid "Start aya"
+msgstr "آیه شروع"
 
 #: SalamQuran/includes/languages/trans_project.php:619
 msgid "Translate name"
 msgstr "نام ترجمه شده"
 
-#: SalamQuran/includes/languages/trans_project.php:621
+#: SalamQuran/includes/languages/trans_project.php:622
 msgid "Order"
 msgstr "ترتیب"
 
-#: SalamQuran/includes/languages/trans_project.php:622
-msgid "Word"
-msgstr "کلمات"
-
 #: SalamQuran/includes/languages/trans_project.php:623
+msgid "Word count"
+msgstr "تعداد کلمات"
+
+#: SalamQuran/includes/languages/trans_project.php:624
 msgid "The letter"
 msgstr "تعداد حروف"
 
-#: SalamQuran/includes/languages/trans_project.php:624
+#: SalamQuran/includes/languages/trans_project.php:625
 msgid "Start juz"
 msgstr "شروع در جزء"
 
-#: SalamQuran/includes/languages/trans_project.php:625
+#: SalamQuran/includes/languages/trans_project.php:626
 msgid "End juz"
 msgstr "جزء پایانی"
 
-#: SalamQuran/includes/languages/trans_project.php:626
+#: SalamQuran/includes/languages/trans_project.php:627
 msgid "Start page"
 msgstr "صفحه شروع"
 
-#: SalamQuran/includes/languages/trans_project.php:627
+#: SalamQuran/includes/languages/trans_project.php:628
 msgid "End page"
 msgstr "صفحه پایانی"
 
-#: SalamQuran/includes/languages/trans_project.php:633
+#: SalamQuran/includes/languages/trans_project.php:634
 msgid "Telegram bot"
 msgstr "ربات تلگرام"
 
-#: SalamQuran/includes/languages/trans_project.php:634
+#: SalamQuran/includes/languages/trans_project.php:635
 msgid "iOS app"
 msgstr "اپلیکیشن آی‌اواس"
 
-#: SalamQuran/includes/languages/trans_project.php:635
+#: SalamQuran/includes/languages/trans_project.php:636
 msgid "Learning Mechanism"
 msgstr "مکانیزم یادگیری"
 
-#: SalamQuran/includes/languages/trans_project.php:636
+#: SalamQuran/includes/languages/trans_project.php:637
 msgid "Exam"
 msgstr "آزمون"
 
-#: SalamQuran/includes/languages/trans_project.php:637
+#: SalamQuran/includes/languages/trans_project.php:638
 msgid "Android App"
 msgstr "اپلیکیشن اندروید"
 
-#: SalamQuran/includes/languages/trans_project.php:638
+#: SalamQuran/includes/languages/trans_project.php:639
 msgid "Quran Magazine"
 msgstr "مجله قرآنی"
 
-#: SalamQuran/includes/languages/trans_project.php:639
+#: SalamQuran/includes/languages/trans_project.php:640
 msgid "Quran Audio Database"
 msgstr "قرائت‌های قرآنی"
 
-#: SalamQuran/includes/languages/trans_project.php:640
+#: SalamQuran/includes/languages/trans_project.php:641
 msgid "Website of SalamQuran was Launched."
 msgstr "وب‌سایت سلام قرآن به‌صورت عمومی منتشر شد."
 
-#: SalamQuran/includes/languages/trans_project.php:641
+#: SalamQuran/includes/languages/trans_project.php:642
 msgid ""
 "The name of project selected as SalamQuran and <a href='https://SalamQuran."
 "com'>SalamQuran.com</a> domain are registered."
@@ -8217,91 +8218,91 @@ msgstr ""
 "سلام قرآن به‌عنوان نام پروژه انتخاب شد و نشانی اینترنتی آن به آدرس <a "
 "href='https://SalamQuran.com'>سلام قرآن دات کام</a> ثبت شد."
 
-#: SalamQuran/includes/languages/trans_project.php:642
+#: SalamQuran/includes/languages/trans_project.php:643
 msgid "Project officially started."
 msgstr "پروژه به‌صورت رسمی شروع شد."
 
-#: SalamQuran/includes/languages/trans_project.php:643
+#: SalamQuran/includes/languages/trans_project.php:644
 msgid "Primary studies were done."
 msgstr "مطالعات اولیه انجام شد."
 
-#: SalamQuran/includes/languages/trans_project.php:644
+#: SalamQuran/includes/languages/trans_project.php:645
 msgid "The project was initiated and the initial agreement was made."
 msgstr "پروژه تعریف و توافق اولیه برای انجام آن صورت گرفت."
 
-#: SalamQuran/includes/languages/trans_project.php:645
+#: SalamQuran/includes/languages/trans_project.php:646
 msgid "Be patient..."
 msgstr "صبور باشید..."
 
-#: SalamQuran/includes/languages/trans_project.php:651
+#: SalamQuran/includes/languages/trans_project.php:652
 msgid "Manage"
 msgstr "مدیریت"
 
-#: SalamQuran/includes/languages/trans_project.php:655
+#: SalamQuran/includes/languages/trans_project.php:656
 msgid "Avatar"
 msgstr "آواتار"
 
-#: SalamQuran/includes/languages/trans_project.php:656
+#: SalamQuran/includes/languages/trans_project.php:657
 msgid "Read Type"
 msgstr "نوع خواندن"
 
-#: SalamQuran/includes/languages/trans_project.php:657
+#: SalamQuran/includes/languages/trans_project.php:658
 msgid "filetype"
 msgstr "نوع فایل"
 
-#: SalamQuran/includes/languages/trans_project.php:658
+#: SalamQuran/includes/languages/trans_project.php:659
 msgid "Choose country"
 msgstr "کشور را انتخاب کنید"
 
-#: SalamQuran/includes/languages/trans_project.php:659
+#: SalamQuran/includes/languages/trans_project.php:660
 msgid "addr"
 msgstr "آدرس"
 
-#: SalamQuran/includes/languages/trans_project.php:660
+#: SalamQuran/includes/languages/trans_project.php:661
 msgid "quality"
 msgstr "کیفیت"
 
-#: SalamQuran/includes/languages/trans_project.php:664
+#: SalamQuran/includes/languages/trans_project.php:665
 msgid "Run again"
 msgstr "اجراء دوباره"
 
-#: SalamQuran/includes/languages/trans_project.php:665
+#: SalamQuran/includes/languages/trans_project.php:666
 msgid "Audio bank"
 msgstr "بانک صوت"
 
-#: SalamQuran/includes/languages/trans_project.php:668
+#: SalamQuran/includes/languages/trans_project.php:669
 msgid "List"
 msgstr "لیست"
 
-#: SalamQuran/includes/languages/trans_project.php:669
+#: SalamQuran/includes/languages/trans_project.php:670
 msgid "Check audio online"
 msgstr "بررسی بر خط صوت"
 
-#: SalamQuran/includes/languages/trans_project.php:670
+#: SalamQuran/includes/languages/trans_project.php:671
 msgid "Read type"
 msgstr "نوع خواندن"
 
-#: SalamQuran/includes/languages/trans_project.php:671
+#: SalamQuran/includes/languages/trans_project.php:672
 msgid "file type"
 msgstr "نوع فایل"
 
-#: SalamQuran/includes/languages/trans_project.php:672
+#: SalamQuran/includes/languages/trans_project.php:673
 msgid "Addr"
 msgstr "آدرس"
 
-#: SalamQuran/includes/languages/trans_project.php:675
+#: SalamQuran/includes/languages/trans_project.php:676
 msgid "Try to start with add new audio!"
 msgstr "با افزودن صوت جدید تلاشی برای شروع داشته باشید!"
 
-#: SalamQuran/includes/languages/trans_project.php:680
+#: SalamQuran/includes/languages/trans_project.php:681
 msgid "Under Contribution"
 msgstr "در دست ساخت"
 
-#: SalamQuran/includes/languages/trans_project.php:681
+#: SalamQuran/includes/languages/trans_project.php:682
 msgid "News Link"
 msgstr "لینک خبر"
 
-#: SalamQuran/includes/languages/trans_project.php:684
+#: SalamQuran/includes/languages/trans_project.php:685
 msgid "Must Reads"
 msgstr "باید بخوانید"
 
@@ -17295,6 +17296,15 @@ msgstr "نام فایل غیرمجاز"
 #: dash/lib/utility/upload/check.php:91
 msgid "Exceeded file extension limit"
 msgstr "نوع فایل غیرمجاز"
+
+#~ msgid "Ayas"
+#~ msgstr "آیات"
+
+#~ msgid "End aya"
+#~ msgstr "آیه پایانی"
+
+#~ msgid "Word"
+#~ msgstr "کلمات"
 
 #~ msgid "Aya index"
 #~ msgstr "ردیف آیه"
