@@ -24,7 +24,7 @@
 
 	</div>
 
-	<div class="c6 s12">
+	<div class="c6 s12 pR5">
 
 		  <div class='readerMode translate'>
 		{%for key, value in quranLoaded.translatepage%}
@@ -49,7 +49,7 @@
 
 					{%set myAya = key | split('_')%}
 
-					<p data-id='{{myAya[1]}}'>{{myTrans.text}} <span>﴿{{myAya[1]  | fitNumber}}﴾</span></p>
+					<p data-id='{{myAya[1]}}'>{{myTrans.text}} <span>({{myAya[1]  | fitNumber}})</span></p>
 
 				{%endfor%}
 			{%endif%}
