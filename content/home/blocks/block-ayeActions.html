@@ -1,6 +1,9 @@
 <div class="meta f">
   <div class="c12 s4">
-    <a class="opr ayeLink" href="{{myAye.detail.verse_url}}">{{myAye.detail.verse_key}}</a>
+    <a class="opr ayeLink" title='{%trans "Sura number : Aya number"%}' href="{{myAye.detail.verse_url}}">{{myAye.detail.verse_key}}</a>
+  </div>
+  <div class="c12 s4">
+    <a class="opr ayeLink" title='{%trans "The verse number in the entire Quran"%}' href="{{url.kingdom}}/a{{myAye.detail.index}}">{{myAye.detail.index}}</a>
   </div>
   <div class="c12 s4">
     <div class="opr play" data-play='{%trans "Play"%}' data-pause='{%trans "Pause"%}'></div>
