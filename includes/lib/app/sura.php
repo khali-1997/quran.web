@@ -63,7 +63,7 @@ class sura
 		{
 			if(!in_array($_args['sort'], self::$sort_field))
 			{
-				unset($_args['sort']);
+				$_args['sort'] = 'index';
 			}
 		}
 

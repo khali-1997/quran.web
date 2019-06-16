@@ -16,6 +16,13 @@ class quran
 	}
 
 
+	public static function search_detail($_string, $_option = [])
+	{
+		$_option['db_name'] = \lib\db\db_data_name::get();
+		return \dash\db\config::public_search('1_detail', $_string, $_option);
+	}
+
+
 	public static function get_day_aya_random($_loaded_before)
 	{
 		$not_in = null;
