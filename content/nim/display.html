@@ -2,21 +2,61 @@
 
 
 {%block page%}
-<div class="mT10">
 
-  <div class="f">
+<div class="tblBox fs08 mT25">
 
-    {%for i in 1..120%}
-      <div class="c4 s6">
-        <div class="msg mLa5">
-          <a href="{{url.kingdom}}/n{{i}}">
-            {%trans "Half of hizb"%}
-            <span class="txtB">{{i | fitNumber}}</span>
-          </a>
-        </div>
-      </div>
-    {%endfor%}
-  </div>
+
+  <table class="tbl1 v1">
+    <thead>
+      <tr class="fs08">
+        <th class="collapsing" data-sort="{{sortLink.index.order}}"><a href="{{sortLink.index.link}}">{%trans "Half of hizb"%}</a></th>
+        <th data-sort="{{sortLink.startaya.order}}"><a href="{{sortLink.startaya.link}}">{%trans "Ayas"%}</a></th>
+        <th data-sort="{{sortLink.ayacount.order}}"><a href="{{sortLink.ayacount.link}}">{%trans "Aya count"%}</a></th>
+        <th data-sort="{{sortLink.suracount.order}}"><a href="{{sortLink.suracount.link}}">{%trans "Sura count"%}</a></th>
+        <th data-sort="{{sortLink.startpage.order}}"><a href="{{sortLink.startpage.link}}">{%trans "Page"%}</a></th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      {%for key, value in dataTable%}
+      <tr>
+        <td><a href="{{url.kingdom}}/j{{value.index}}">{{value.index | fitNumber}}</a></td>
+        <td>
+          <a href="{{url.kingdom}}/a{{value.startaya}}">{{value.startaya | fitNumber}}</a>
+          -
+          <a href="{{url.kingdom}}/a{{value.endaya}}">{{value.endaya | fitNumber}}</a>
+        </td>
+
+        <td>{{value.ayacount | fitNumber}}</td>
+
+        <td>
+          <div data-kerkere=".showSuraCount{{value.index}}" data-kerkere-icon>{{value.suracount | fitNumber}}</div>
+        </td>
+        <td>
+          <a href="{{url.kingdom}}/j{{value.startpage}}">{{value.startpage | fitNumber}}</a>
+          -
+          <a href="{{url.kingdom}}/j{{value.endpage}}">{{value.endpage | fitNumber}}</a>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td colspan="6">
+
+        <div class="showSuraCount{{value.index}}" data-kerkere-content='hide'>
+            <div class="f">
+              {%for i in value.startsura..value.endsura%}
+                <a class="c2 s6" href="{{url.kingdom}}/s{{i}}"><span class="icon-surah{{i}}"></span></a>
+              {%endfor%}
+            </div>
+          </div>
+        </td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  {%include display.pagination%}
+
 </div>
 {%endblock%}
-
