@@ -67,7 +67,7 @@ class twigTransTerms
 	//-----------------------------projects/SalamQuran/content_api/v6/doc/sidebar.html
 	echo T_("Sura list");                                                             // Line 3
 	echo T_("Sura");                                                                  // Line 11
-	echo T_("Page");                                                                  // Line 211
+	echo T_("Page");                                                                  // Line 97
 	echo T_("Page word by word");                                                     // Line 6
 	echo T_("Juz per sura");                                                          // Line 7
 	echo T_("Juz per hizb");                                                          // Line 8
@@ -147,7 +147,7 @@ class twigTransTerms
 
 	//---------------------------------projects/SalamQuran/content/search/display.html
 	echo T_("Search");                                                                // Line 65
-	echo T_("Aya");                                                                   // Line 159
+	echo T_("Aya");                                                                   // Line 116
 	echo T_("No result found");                                                       // Line 47
 	echo T_("Clear filter");                                                          // Line 48
 	echo T_("Please enter your keyword in the box above and press Enter");            // Line 56
@@ -197,7 +197,7 @@ class twigTransTerms
 	echo T_("Play Mode");                                                             // Line 27
 	echo T_("Continuously");                                                          // Line 30
 	echo T_("Surah");                                                                 // Line 13
-	echo T_("Juz");                                                                   // Line 203
+	echo T_("Juz");                                                                   // Line 95
 	echo T_("Aya Repeat");                                                            // Line 40
 	echo T_("Times");                                                                 // Line 51
 	echo T_("Delay");                                                                 // Line 58
@@ -256,6 +256,11 @@ class twigTransTerms
 	echo T_("Our location on map");                                                   // Line 70
 
 	//------------------------------------projects/SalamQuran/content/juz/display.html
+	echo T_("Index");                                                                 // Line 84
+	echo T_("Ayas");                                                                  // Line 13
+	echo T_("Aya count");                                                             // Line 87
+	echo T_("Sura count");                                                            // Line 15
+	echo T_("Word count");                                                            // Line 93
 
 	//----------------------------------projects/SalamQuran/content/namaz/display.html
 	echo T_("FAJR5");                                                                 // Line 15
@@ -613,19 +618,12 @@ class twigTransTerms
 	//-------------------------------projects/SalamQuran/content/telegram/display.html
 
 	//----------------------------------projects/SalamQuran/content/surah/display.html
-	echo T_("Index");                                                                 // Line 10
-	echo T_("Aya count");                                                             // Line 11
-	echo T_("Start aya");                                                             // Line 12
-	echo T_("Translate name");                                                        // Line 15
-	echo T_("Translate");                                                             // Line 16
+	echo T_("List");                                                                  // Line 13
+	echo T_("Detail");                                                                // Line 20
 	echo T_("Type");                                                                  // Line 79
-	echo T_("Order");                                                                 // Line 18
-	echo T_("Word count");                                                            // Line 20
-	echo T_("The letter");                                                            // Line 21
-	echo T_("Start juz");                                                             // Line 22
-	echo T_("End juz");                                                               // Line 23
-	echo T_("Start page");                                                            // Line 24
-	echo T_("End page");                                                              // Line 25
+	echo T_("Start aya");                                                             // Line 88
+	echo T_("Order");                                                                 // Line 91
+	echo T_("The letter");                                                            // Line 94
 
 	//-----------------------------------projects/SalamQuran/content/logo/display.html
 
@@ -666,7 +664,6 @@ class twigTransTerms
 	echo T_("Audio bank");                                                            // Line 21
 
 	//-----------------------projects/SalamQuran/content_m/audiobank/home/display.html
-	echo T_("List");                                                                  // Line 13
 	echo T_("Check audio online");                                                    // Line 22
 	echo T_("Read type");                                                             // Line 80
 	echo T_("file type");                                                             // Line 81
