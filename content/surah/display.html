@@ -2,8 +2,80 @@
 
 
 {%block page%}
+<div class="f fs08 mT25">
 
-<div class="tblBox fs08 mT25">
+  <div class="c s6">
+    <a class="dcard {%if not requestGET.detail  %}active{%endif%}" href='{{url.this}}'>
+     <div class="statistic">
+      <div class="value"><i class="sf-list"></i></div>
+      <div class="label">{%trans "List"%}</div>
+     </div>
+    </a>
+   </div>
+
+  <div class="c s6">
+    <a class="dcard {%if requestGET.detail %}active{%endif%}" href='{{url.this}}?detail=1'>
+     <div class="statistic">
+      <div class="value"><i class="sf-indent"></i></div>
+      <div class="label">{%trans "Detail"%}</div>
+     </div>
+    </a>
+   </div>
+
+</div>
+{%if requestGET.detail%}
+{{block('iSurahListDetail')}}
+{%else%}
+{{block('iSurahList')}}
+{%endif%}
+
+{%endblock%}
+
+
+
+{%block iSurahList%}
+<div class="tblBox fs08 ">
+
+
+  <table class="tbl1 v1">
+    <thead>
+      <tr class="fs08">
+		<th class="collapsing" data-sort="{{sortLink.index.order}}"><a href="{{sortLink.index.link}}">{%trans "Index"%}</a></th>
+		<th data-sort="{{sortLink.name.order}}"><a href="{{sortLink.name.link}}">{%trans "Name"%}</a></th>
+		<th data-sort="{{sortLink.type.order}}"><a href="{{sortLink.type.link}}">{%trans "Type"%}</a></th>
+		<th data-sort="{{sortLink.ayas.order}}"><a href="{{sortLink.ayas.link}}">{%trans "Aya count"%}</a></th>
+
+
+
+      </tr>
+    </thead>
+
+    <tbody>
+      {%for key, value in dataTable%}
+      <tr>
+		<td><a href="{{url.kingdom}}/s{{value.index}}">{{value.index | fitNumber}}</a></td>
+		<td><a href="{{url.kingdom}}/s{{value.index}}">
+			<span class="icon-surah{{value.index}}"></span>
+			<br>
+			{%set myName = value.tname%} <span class="">{%trans myName%}</span>
+			</a>
+			{%set myEName = value.ename%} <small class="">{%trans myEName%}</small>
+		</td>
+		<td>{%set myType = value.type%} <span class="">{%trans myType%}</span></td>
+		<td>{{value.ayas | fitNumber}} <small>{%trans "Aya"%}</small></td>
+
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+
+
+</div>
+{%endblock%}
+
+
+{%block iSurahListDetail%}
+<div class="tblBox fs08">
 
 
   <table class="tbl1 v1">
@@ -34,14 +106,14 @@
       <tr>
 		<td><a href="{{url.kingdom}}/s{{value.index}}">{{value.index | fitNumber}}</a></td>
 		<td><a href="{{url.kingdom}}/s{{value.index}}">
-			{{value.name}}
+			<span class="icon-surah{{value.index}}"></span>
 			<br>
 			{%set myName = value.tname%} <span class="">{%trans myName%}</span>
 			</a>
-			{%set myEName = value.ename%} <span class="">{%trans myEName%}</span>
+			{%set myEName = value.ename%} <small class="">{%trans myEName%}</small>
 		</td>
 		<td>{%set myType = value.type%} <span class="">{%trans myType%}</span></td>
-		<td>{{value.ayas | fitNumber}}</td>
+		<td>{{value.ayas | fitNumber}} <small>{%trans "Aya"%}</small></td>
 		<td>{%if value.start%}<a href="{{url.kingdom}}/a{{value.start}}">{{value.start | fitNumber}}</a>{%else%}{{value.start |fitNumber}}{%endif%}</td>
 
 
