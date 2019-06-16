@@ -9,9 +9,9 @@
   <table class="tbl1 v1">
     <thead>
       <tr class="fs08">
-        <th class="collapsing" data-sort="{{sortLink.index.order}}"><a href="{{sortLink.index.link}}">{%trans "Index"%}</a></th>
+        <th class="collapsing" data-sort="{{sortLink.index.order}}"><a href="{{sortLink.index.link}}">{%trans "Juz"%}</a></th>
         <th data-sort="{{sortLink.startaya.order}}"><a href="{{sortLink.startaya.link}}">{%trans "Ayas"%}</a></th>
-        <th data-sort="{{sortLink.ayacount.order}}"><a href="{{sortLink.ayacount.link}}">{%trans "Aya count"%}</a></th>
+        <th class="s0" data-sort="{{sortLink.ayacount.order}}"><a href="{{sortLink.ayacount.link}}">{%trans "Aya count"%}</a></th>
         <th data-sort="{{sortLink.suracount.order}}"><a href="{{sortLink.suracount.link}}">{%trans "Sura count"%}</a></th>
         <th data-sort="{{sortLink.words.order}}"><a href="{{sortLink.words.link}}">{%trans "Word count"%}</a></th>
       </tr>
@@ -27,7 +27,7 @@
           <a href="{{url.kingdom}}/a{{value.endaya}}">{{value.endaya | fitNumber}}</a>
         </td>
 
-        <td>{{value.ayacount | fitNumber}}</td>
+        <td class="s0">{{value.ayacount | fitNumber}}</td>
 
         <td>
           <div data-kerkere=".showSuraCount{{value.index}}" data-kerkere-icon>{{value.suracount | fitNumber}}</div>
@@ -42,7 +42,7 @@
         <div class="showSuraCount{{value.index}}" data-kerkere-content='hide'>
             <div class="f">
               {%for i in value.startsura..value.endsura%}
-                <a class="c2" href="{{url.kingdom}}/s{{i}}"><span class="icon-surah{{i}}"></span></a>
+                <a class="c2 s6" href="{{url.kingdom}}/s{{i}}"><span class="icon-surah{{i}}"></span></a>
               {%endfor%}
             </div>
           </div>
