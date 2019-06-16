@@ -121,8 +121,14 @@
 		<td>{{value.order | fitNumber}}</td>
 		<td>{{value.word | fitNumber}}</td>
 		<td>{{value.theletter | fitNumber}}</td>
-		<td><a href="{{url.kingdom}}/j{{value.startjuz}}">{{value.startjuz | fitNumber}} {%if value.endjuz != value.startjuz%} - {{value.endjuz | fitNumber}} {%endif%}</a></td>
-		<td><a href="{{url.kingdom}}/p{{value.startpage}}">{{value.startpage | fitNumber}} {%if value.endpage != value.startpage%} - {{value.endpage | fitNumber}} {%endif%}</a></td>
+		<td>
+			<a href="{{url.kingdom}}/j{{value.startjuz}}">{{value.startjuz | fitNumber}} </a>
+			{%if value.endjuz != value.startjuz%} -  <a href="{{url.kingdom}}/j{{value.endjuz}}">{{value.endjuz | fitNumber}}</a>{%endif%}
+		</td>
+		<td>
+			<a href="{{url.kingdom}}/p{{value.startpage}}">{{value.startpage | fitNumber}}</a>
+			 {%if value.endpage != value.startpage%} - <a href="{{url.kingdom}}/p{{value.endpage}}">{{value.endpage | fitNumber}}</a>{%endif%}
+		</td>
 
 
       </tr>
