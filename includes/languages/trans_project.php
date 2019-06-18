@@ -67,7 +67,7 @@ class twigTransTerms
 	//-----------------------------projects/SalamQuran/content_api/v6/doc/sidebar.html
 	echo T_("Sura list");                                                             // Line 3
 	echo T_("Sura");                                                                  // Line 11
-	echo T_("Page");                                                                  // Line 97
+	echo T_("Page");                                                                  // Line 12
 	echo T_("Page word by word");                                                     // Line 6
 	echo T_("Juz per sura");                                                          // Line 7
 	echo T_("Juz per hizb");                                                          // Line 8
@@ -90,6 +90,9 @@ class twigTransTerms
 
 	//------------------------------------projects/SalamQuran/content/nim/display.html
 	echo T_("Half of hizb");                                                          // Line 53
+	echo T_("Ayas");                                                                  // Line 13
+	echo T_("Aya count");                                                             // Line 14
+	echo T_("Sura count");                                                            // Line 15
 
 	//-------------------------------------projects/SalamQuran/content/audio/list.html
 	echo T_("Update database");                                                       // Line 36
@@ -174,24 +177,25 @@ class twigTransTerms
 	echo T_("Random Page");                                                           // Line 42
 	echo T_("API");                                                                   // Line 47
 	echo T_("Developers");                                                            // Line 48
-	echo T_("Telegram Bot");                                                          // Line 49
-	echo T_("Mobile Apps");                                                           // Line 50
+	echo T_("System Status");                                                         // Line 49
+	echo T_("Telegram Bot");                                                          // Line 50
+	echo T_("Mobile Apps");                                                           // Line 51
 	echo T_("Email");                                                                 // Line 25
-	echo T_("Tel");                                                                   // Line 63
-	echo T_("SMS");                                                                   // Line 59
-	echo T_("Website");                                                               // Line 61
-	echo T_("Enter to Panel");                                                        // Line 67
+	echo T_("Tel");                                                                   // Line 64
+	echo T_("SMS");                                                                   // Line 60
+	echo T_("Website");                                                               // Line 62
+	echo T_("Enter to Panel");                                                        // Line 68
 	echo T_("Enter");                                                                 // Line 44
-	echo T_("Iran NSR Certification");                                                // Line 82
-	echo T_("Iran NSR");                                                              // Line 82
-	echo T_("Enamad Certification");                                                  // Line 84
-	echo T_("Enamad");                                                                // Line 84
-	echo T_("Samandehi Certification");                                               // Line 87
-	echo T_("Samandehi");                                                             // Line 87
-	echo T_("Shamad Certification");                                                  // Line 89
-	echo T_("Shamad");                                                                // Line 89
-	echo T_("Software Solution Designer");                                            // Line 100
-	echo T_("Developed by Ermile");                                                   // Line 100
+	echo T_("Iran NSR Certification");                                                // Line 83
+	echo T_("Iran NSR");                                                              // Line 83
+	echo T_("Enamad Certification");                                                  // Line 85
+	echo T_("Enamad");                                                                // Line 85
+	echo T_("Samandehi Certification");                                               // Line 88
+	echo T_("Samandehi");                                                             // Line 88
+	echo T_("Shamad Certification");                                                  // Line 90
+	echo T_("Shamad");                                                                // Line 90
+	echo T_("Software Solution Designer");                                            // Line 101
+	echo T_("Developed by Ermile");                                                   // Line 101
 
 	//------------------------------------projects/SalamQuran/content/main/player.html
 	echo T_("Play Mode");                                                             // Line 27
@@ -256,10 +260,6 @@ class twigTransTerms
 	echo T_("Our location on map");                                                   // Line 70
 
 	//------------------------------------projects/SalamQuran/content/juz/display.html
-	echo T_("Index");                                                                 // Line 84
-	echo T_("Ayas");                                                                  // Line 13
-	echo T_("Aya count");                                                             // Line 87
-	echo T_("Sura count");                                                            // Line 15
 	echo T_("Word count");                                                            // Line 93
 
 	//----------------------------------projects/SalamQuran/content/namaz/display.html
@@ -280,7 +280,7 @@ class twigTransTerms
 	echo T_("Juz list");                                                              // Line 173
 	echo T_("Page list");                                                             // Line 29
 	echo T_("Hizb list");                                                             // Line 39
-	echo T_("Hizb");                                                                  // Line 13
+	echo T_("Hizb");                                                                  // Line 12
 	echo T_("Half of hizb list");                                                     // Line 49
 	echo T_("Rub list");                                                              // Line 59
 
@@ -620,6 +620,7 @@ class twigTransTerms
 	//----------------------------------projects/SalamQuran/content/surah/display.html
 	echo T_("List");                                                                  // Line 13
 	echo T_("Detail");                                                                // Line 20
+	echo T_("Index");                                                                 // Line 84
 	echo T_("Type");                                                                  // Line 79
 	echo T_("Start aya");                                                             // Line 88
 	echo T_("Order");                                                                 // Line 91
@@ -644,7 +645,6 @@ class twigTransTerms
 	echo T_("Be patient...");                                                         // Line 92
 
 	//-----------------------------------projects/SalamQuran/content/page/display.html
-	echo T_("page");                                                                  // Line 13
 
 	//---------------------------------------projects/SalamQuran/content_m/layout.html
 	echo T_("Manage");                                                                // Line 6
