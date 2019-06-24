@@ -73,6 +73,10 @@ class aya_day
 			\dash\file::rename(\lib\app\json_folder::addr('aya-day.me.json') , \lib\app\json_folder::addr('aya-day.me.json.old.'.rand(1,200)));
 			$get_random = \lib\db\quran::get_day_aya_random([]);
 		}
+		if(!isset($get_random['index']))
+		{
+			return false;
+		}
 
 		$detail =
 		[
