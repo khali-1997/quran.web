@@ -8,7 +8,7 @@ class model
 	{
 		$post           = [];
 		$post['name']   = \dash\request::post('name');
-		$post['mobile'] = \dash\request::post('mobile');
+		$post['mobile'] = \dash\request::post('mn');
 		$post['amount'] = \dash\request::post('amount');
 
 		\lib\app\donate::add($post);

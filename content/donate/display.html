@@ -33,7 +33,7 @@
 
       <label for='amount'>{%trans "Amount"%}</label>
       <div class="input">
-        <input type="number" name="amount" id='amount' min='1000' max="99999999" required data-response-realtime value="1000" step="1000">
+        <input type="number" name="amount" id='amount' min='1000' max="900000000" required data-response-realtime value="1000" step="1000">
         <span class="addon">{%trans "Toman"%}</span>
       </div>
 
@@ -56,13 +56,13 @@
 <h3>{%trans "Have Question?"%}</h3>
 <p>{%trans "If you have any questions, please do not hesitate to <a href='contact'>contact us</a>."%} {%trans "In <a href='support'>help center</a> we are answer some frequent questions."%}</p>
 
-{%if false%}
+
 {{block('iDoners')}}
 <hr>
 <h3>{%trans "Doners"%}</h3>
 <p>{%trans "Thanks to the generous support of donors like you. see our doners"%}</p>
 {%trans "Your ongoing support is helping share Quran via SalamQuran around the world in cyberspace."%}
-{%endif%}
+
 
 {%endblock%}
 

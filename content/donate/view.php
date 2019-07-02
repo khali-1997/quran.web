@@ -17,7 +17,7 @@ class view
 			{
 				if(isset($get_msg['condition']) && $get_msg['condition'] === 'ok' && isset($get_msg['plus']))
 				{
-					\dash\data::paymentVerifyMsg(T_("Thanks for your holy payment, :amount sucsessfully recived", ['amount' => \dash\utility\human::fitNumber($get_msg['plus'])]));
+					\dash\data::paymentVerifyMsg(T_("Thanks for your payment, :amount sucsessfully recived", ['amount' => \dash\utility\human::fitNumber($get_msg['plus'])]));
 					\dash\data::paymentVerifyMsgTrue(true);
 					\dash\data::logoLink(true);
 				}
