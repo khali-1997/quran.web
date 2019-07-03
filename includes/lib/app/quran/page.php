@@ -492,6 +492,7 @@ class page
 
 		$result['detail']            = $quran_detail;
 		$result['find_by']           = $mode;
+		$result['find_type']         = ['by' => $_type, 'id' => $_id];
 		$result['mode']              = $_meta['mode'];
 		$result['find_id']           = ['page1' => substr($page1_classname, 1), 'page2' => substr($page2_classname, 1)];
 		$result['translatelist']     = \lib\app\translate::current_list();
