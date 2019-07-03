@@ -2,7 +2,9 @@
 
 
 {%block page%}
+  {{block('iQuickAccess')}}
 <div class="f justify-center">
+
 
   <a href='{{url.kingdom}}/surah' class="vcard shadow c3 mA10 s6">
     <div class="content title">
@@ -67,3 +69,12 @@
 </div>
 {%endblock%}
 
+{%block iQuickAccess%}
+{%if quranQuickAccess%}
+  <div class="msg">
+    {%for key, value in quranQuickAccess%}
+      <a class="btn primary outline mL10" href="{{value.url}}">{{value.title}}</a>
+    {%endfor%}
+  </div>
+{%endif%}
+{%endblock%}
