@@ -38,6 +38,8 @@ class controller
 			$meta['mode'] = \dash\request::get('mode');
 		}
 
+		// $meta = \lib\app\user_setting::get($meta);
+
 		$quran = \lib\app\quran\find::find($url, $meta);
 
 		if($quran)
@@ -45,6 +47,8 @@ class controller
 			\dash\data::sureLoaded(true);
 			\dash\data::quranLoaded($quran);
 			\dash\open::get();
+
+			// \lib\app\user_setting::save();
 
 			if(isset($quran['detail']))
 			{
