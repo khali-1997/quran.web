@@ -5191,10 +5191,16 @@ body[data-sidebar="dada"].rtl #sidebar .menu {
 
 /* dl app */
 #dlapp {
-  background-color: #f5f6ff;
   padding: 50px 0;
-  margin-top: 90px;
-  font-size: 1.7em; }
+  padding-top: 90px;
+  font-size: 1.7em;
+  background: linear-gradient(20deg, #00d7dc 0%, #0aa5dc 100%);
+  background: -webkit-linear-gradient(45deg, #02869b 0%, #333333 100%);
+  background: -o-linear-gradient(45deg, #02869b 0%, #333333 100%);
+  background: linear-gradient(45deg, #02869b 0%, #333333 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#02869b', endColorstr='#333333', GradientType=1);
+  color: #fff;
+  user-select: none; }
 
 #dlapp h2 {
   margin-top: 2em; }
@@ -5221,8 +5227,8 @@ body[data-sidebar="dada"].rtl #sidebar .menu {
   width: 100%; }
 
 #dlapp figure {
-  margin-top: -90px;
-  margin-bottom: -80px; }
+  margin-top: -80px;
+  margin-bottom: -100px; }
 
 #dlapp figure img {
   max-width: 425px; }
