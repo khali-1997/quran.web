@@ -1,7 +1,34 @@
 {%if xAppRequest%}
 {%else%}
 
-<div id="nodes"></div>
+
+<section id='dlapp'>
+  <div class="cn">
+    <div class="f">
+      <div class="c6 s12">
+        <h2>{%trans "Salam Quran App"%}</h2>
+        <p>{%trans "#1 Quran app on the plant"%}</p>
+        <span class="badge">{%trans "Coming Soon"%}</span>
+{%if false%}
+        <div class="dl">
+          <a href="https://play.google.com/store/apps/details?id=com.ermile.salamquran" title='{%trans "Download SalamQuran app from google play"%}' target="_blank">
+            <img src="{{url.siftal}}/images/dl/app-dl-fa-googleplay.png" alt='{%trans "SalamQuran app from Google play"%}'>
+          </a>
+          <a href="{{url.base}}/app/salamquran-v1.apk" title='{%trans "Direct download SalamQuran android app"%}' data-direct>
+            <img src="{{url.siftal}}/images/dl/app-dl-fa-direct.png" alt='{%trans "Direct download SalamQuran android app"%}'>
+          </a>
+        </div>
+{%endif%}
+      </div>
+      <div class="c6 s12">
+        <figure>
+          <img src="{{url.static}}/images/app/salamquran-app-v2.png" alt='{%trans "SalamQuran App"%}'>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer id="footer">
   <div class="cn">
     <a class="logo" href="{{url.kingdom}}">
@@ -22,9 +49,7 @@
         <a href="{{url.kingdom}}/logo">{%trans "Logo"%}</a>
       </nav>
 
-
       <nav class="c s6">
-
         <a href="{{url.kingdom}}/audio">{%trans "Audio"%}</a>
         <a href="{{url.kingdom}}/mag">{%trans "Magazine"%}</a>
         <a href="{{url.kingdom}}/blog">{%trans "Blog"%}</a>
@@ -42,16 +67,13 @@
         <a href="{{url.kingdom}}/randompage">{%trans "Random Page"%}</a>
       </nav>
 
-
       <nav class="c s6">
         <a href="{{url.kingdom}}/api/v6/doc" data-direct>{%trans "API"%}</a>
         <a href="{{url.kingdom}}/developers">{%trans "Developers"%}</a>
-        <a href="https://status.ermile.com" target="_blank">{%trans "System Status"%}</a>
+        <a href="https://status.ermile.com" target="_blank"> {%trans "System Status"%}</a>
         <a href="{{url.kingdom}}/telegram">{%trans "Telegram Bot"%}</a>
         <a href="{{url.kingdom}}/apps">{%trans "Mobile Apps"%}</a>
       </nav>
-
-
 
       <nav class="c3 s12">
 {%if lang.current == "fa"%}
@@ -103,4 +125,5 @@
 
   </div>
 </footer>
+<div id="nodes"></div>
 {%endif%}

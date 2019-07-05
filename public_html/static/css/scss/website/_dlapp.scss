@@ -1,0 +1,44 @@
+
+/* dl app */
+#dlapp{
+  background-color: #f5f6ff;
+  padding: 50px 0;
+  margin-top: 90px;
+  font-size: 1.7em;
+}
+
+#dlapp h2{
+  margin-top: 2em;
+}
+
+#dlapp .dl a{
+  display: inline-block;
+  background-color: #09a9dc;
+  border:1px solid #fff;
+  border-radius: 0.5rem;
+  min-width: 140px;
+  max-width: 180px;
+  width: 40%;
+  margin: 0.5em 5px;
+  transition: 0.3s;
+}
+#dlapp .dl a:hover{
+  background-color: #ceb26b;
+}
+#dlapp .dl a:focus{
+  background-color: #bda36d;
+}
+#dlapp .dl a img{
+  display: block;
+  width: 100%;
+}
+
+
+#dlapp figure{
+  margin-top: -90px;
+  margin-bottom: -80px;
+}
+#dlapp figure img{
+  max-width: 425px;
+}
+
