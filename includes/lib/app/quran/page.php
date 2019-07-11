@@ -66,7 +66,15 @@ class page
 		}
 		elseif($mode === 'twopage')
 		{
-			$get_db_record_quran['1.1'] = ['= 1.1 AND', " `page` IN ($page1, $page2)"];
+			if($page1 && $page2)
+			{
+				$get_db_record_quran['1.1'] = ['= 1.1 AND', " `page` IN ($page1, $page2)"];
+			}
+			else
+			{
+				// @check @reza
+				// /a1354?mode=twopage&t=fa6
+			}
 		}
 		else
 		{
