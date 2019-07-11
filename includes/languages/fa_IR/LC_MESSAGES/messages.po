@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SalamQuran - Persian\n"
-"POT-Creation-Date: 2019-07-11 13:09+0430\n"
-"PO-Revision-Date: 2019-07-11 13:10+0430\n"
+"POT-Creation-Date: 2019-07-11 13:14+0430\n"
+"PO-Revision-Date: 2019-07-11 13:14+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -2141,12 +2141,12 @@ msgid "Remove"
 msgstr "حذف"
 
 #: SalamQuran/includes/languages/trans_dash.php:371
-msgid "Special"
-msgstr "ویژه"
-
-#: SalamQuran/includes/languages/trans_dash.php:372
 msgid "Special mode"
 msgstr "حالت ویژه"
+
+#: SalamQuran/includes/languages/trans_dash.php:372
+msgid "Use Special mode"
+msgstr "استفاده از حالت ویژه نمایشی"
 
 #: SalamQuran/includes/languages/trans_dash.php:373
 #: SalamQuran/includes/languages/trans_project.php:660
@@ -15851,14 +15851,6 @@ msgstr "شناسه پست اشتباه است"
 msgid "Post successfully updated"
 msgstr "پست با موفقیت به روز رسانی شد"
 
-#: dash/lib/app/posts/special.php:11
-msgid "Slider"
-msgstr "اسلایدر"
-
-#: dash/lib/app/posts/special.php:12
-msgid "Must Read"
-msgstr "باید بخوانید"
-
 #: dash/lib/app/smsgroup.php:46
 msgid "All users"
 msgstr "تمام کاربران"
@@ -17628,6 +17620,15 @@ msgstr "نام فایل غیرمجاز"
 #: dash/lib/utility/upload/check.php:91
 msgid "Exceeded file extension limit"
 msgstr "نوع فایل غیرمجاز"
+
+#~ msgid "Special"
+#~ msgstr "ویژه"
+
+#~ msgid "Slider"
+#~ msgstr "اسلایدر"
+
+#~ msgid "Must Read"
+#~ msgstr "باید بخوانید"
 
 #~ msgid "The magazine manager for this system is not enable"
 #~ msgstr "مدیریت مجله برای این سیستم فعال نیست"

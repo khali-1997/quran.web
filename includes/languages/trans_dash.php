@@ -368,8 +368,8 @@ class twigTransTerms
 	echo T_("Write post ");                                                           // Line 39
 	echo T_("Featured Image");                                                        // Line 205
 	echo T_("Remove");                                                                // Line 43
-	echo T_("Special");                                                               // Line 58
-	echo T_("Special mode");                                                          // Line 60
+	echo T_("Special mode");                                                          // Line 58
+	echo T_("Use Special mode");                                                      // Line 60
 	echo T_("Please select one item");                                                // Line 28
 	echo T_("Non");                                                                   // Line 591
 	echo T_("Category");                                                              // Line 23
