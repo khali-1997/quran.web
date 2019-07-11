@@ -345,7 +345,7 @@ class twigTransTerms
 	echo T_("Website Contents");                                                      // Line 9
 	echo T_("News");                                                                  // Line 88
 	echo T_("Categories");                                                            // Line 62
-	echo T_("Keywords");                                                              // Line 123
+	echo T_("Keywords");                                                              // Line 119
 	echo T_("Static Pages");                                                          // Line 22
 	echo T_("Support");                                                               // Line 33
 	echo T_("Help Center Keywords");                                                  // Line 40
@@ -372,10 +372,10 @@ class twigTransTerms
 	echo T_("Add new category");                                                      // Line 165
 	echo T_("Click on special tags to use this depending on your website design");    // Line 183
 	echo T_("Tag");                                                                   // Line 365
-	echo T_("Add tag to link articles");                                              // Line 121
+	echo T_("Add tag to link articles");                                              // Line 117
 	echo T_("Add");                                                                   // Line 36
-	echo T_("Allow Comments");                                                        // Line 144
-	echo T_("Publish Date");                                                          // Line 156
+	echo T_("Allow Comments");                                                        // Line 140
+	echo T_("Publish Date");                                                          // Line 152
 	echo T_("Publish date");                                                          // Line 45
 	echo T_("Default is now");                                                        // Line 47
 	echo T_("Publish time");                                                          // Line 55
@@ -386,19 +386,19 @@ class twigTransTerms
 	echo T_("You can publish in another language");                                   // Line 117
 	echo T_("Please select one item");                                                // Line 28
 	echo T_("Add to gallery");                                                        // Line 61
-	echo T_("Choose or Drop file here");                                              // Line 229
+	echo T_("Choose or Drop file here");                                              // Line 225
 	echo T_("Maximum file size");                                                     // Line 17
-	echo T_("Google");                                                                // Line 268
-	echo T_("Customize for SEO");                                                     // Line 273
-	echo T_("SEO Title");                                                             // Line 279
+	echo T_("Google");                                                                // Line 262
+	echo T_("Customize for SEO");                                                     // Line 267
+	echo T_("SEO Title");                                                             // Line 273
 	echo T_("Recommended being more than 40 character and appear at the beginning of page content");// Line 4
 	echo T_("Parent");                                                                // Line 134
 	echo T_("Choose parent for this page to create related url as tree");             // Line 133
 	echo T_("Choose Parent");                                                         // Line 136
 	echo T_("Without Parent");                                                        // Line 137
 	echo T_("Slug");                                                                  // Line 8
-	echo T_("End part of your post url.");                                            // Line 303
-	echo T_("SEO Description");                                                       // Line 310
+	echo T_("End part of your post url.");                                            // Line 297
+	echo T_("SEO Description");                                                       // Line 304
 	echo T_("If leave it empty we are generate it automatically");                    // Line 19
 	echo T_("Excerpt used for social media and search engines");                      // Line 19
 	echo T_("Gallery");                                                               // Line 223
