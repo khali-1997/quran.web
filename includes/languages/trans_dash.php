@@ -344,7 +344,7 @@ class twigTransTerms
 	echo T_("CMS Dashboard");                                                         // Line 6
 	echo T_("Website Contents");                                                      // Line 9
 	echo T_("News");                                                                  // Line 88
-	echo T_("Categories");                                                            // Line 62
+	echo T_("Categories");                                                            // Line 87
 	echo T_("Keywords");                                                              // Line 145
 	echo T_("Static Pages");                                                          // Line 22
 	echo T_("Support");                                                               // Line 33
@@ -414,10 +414,13 @@ class twigTransTerms
 
 	//---------------------------------------addons/content_cms/posts/add/display.html
 	echo T_("First type main text and save as draft, then complete and publish it."); // Line 12
-	echo T_("Save as draft");                                                         // Line 23
+	echo T_("Save as draft");                                                         // Line 20
 
 	//--------------------------------------addons/content_cms/posts/home/display.html
+	echo T_("Advance search");                                                        // Line 50
 	echo T_("Search");                                                                // Line 58
+	echo T_("Clear filter");                                                          // Line 283
+	echo T_("Apply");                                                                 // Line 284
 	echo T_("Title");                                                                 // Line 12
 	echo T_("Clear filters");                                                         // Line 106
 	echo T_("Result not found!");                                                     // Line 105
@@ -432,7 +435,7 @@ class twigTransTerms
 	//--------------------------------------addons/content_cms/posts/edit/display.html
 	echo T_("Save");                                                                  // Line 13
 	echo T_("Icon");                                                                  // Line 45
-	echo T_("Choose icon");                                                           // Line 61
+	echo T_("Choose icon");                                                           // Line 62
 
 	//------------------------------------------addons/content_cms/backup/display.html
 	echo T_("Backup Project");                                                        // Line 6
@@ -965,8 +968,6 @@ class twigTransTerms
 	echo T_("Filter by permission");                                                  // Line 262
 	echo T_("Filter by language");                                                    // Line 267
 	echo T_("Filter by duplicate");                                                   // Line 274
-	echo T_("Clear filter");                                                          // Line 283
-	echo T_("Apply");                                                                 // Line 284
 	echo T_("Have duplicate mobile");                                                 // Line 297
 	echo T_("Have duplicate email");                                                  // Line 304
 	echo T_("Have duplicate username");                                               // Line 311
