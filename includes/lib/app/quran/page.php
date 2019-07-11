@@ -87,6 +87,11 @@ class page
 		$load             = \lib\db\quran_word::get($get_db_record_quran);
 		$load_quran_aya   = \lib\db\quran::get($get_db_record_quran);
 
+		if(!$load || !is_array($load))
+		{
+			$load = [];
+		}
+
 		$translatePage     = [];
 		$showTranslatePage = [];
 
