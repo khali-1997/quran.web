@@ -1,11 +1,8 @@
 <?php
-namespace content_mag;
+namespace content\mag;
 
 class controller
 {
-	/**
-	 * rout
-	 */
 	public static function routing()
 	{
 
