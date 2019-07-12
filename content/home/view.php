@@ -5,8 +5,8 @@ class view
 {
 	public static function config()
 	{
-		$title = T_('Quran');
-		$desc  = T_("Say hello to Quran!"). ' '. T_("Quran is calling you.");
+		// $title = T_('Quran');
+		// $desc  = T_("Say hello to Quran!"). ' '. T_("Quran is calling you.");
 
 		self::set_best_title();
 
@@ -130,7 +130,7 @@ class view
 			default:
 				if(!\dash\url::directory())
 				{
-					$title = T_('Quran');
+					$title = \dash\data::site_title();
 					$desc  = \dash\data::site_desc();
 				}
 				else
