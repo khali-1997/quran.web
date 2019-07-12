@@ -4726,11 +4726,10 @@ body:before {
   font-size: 1.3em;
   position: relative;
   z-index: 10;
-  color: #fff;
-  min-height: 400px; }
+  color: #fff; }
 
 #header .topnav {
-  padding-top: 60px; }
+  padding-top: 40px; }
 
 #header .topnav h1 {
   margin: 0; }
@@ -5082,6 +5081,9 @@ body[data-sidebar="dada"].rtl #sidebar .menu {
 
 #footer .logo:focus {
   color: #fff; }
+
+#footer .logo h1 {
+  font-weight: 900; }
 
 #footer .footerNav {
   position: relative;
