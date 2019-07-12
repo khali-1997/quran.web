@@ -5384,7 +5384,7 @@ body[data-sidebar="dada"].rtl #sidebar .menu {
   color: #4080c0; }
 
 #soreha {
-  padding: 0; }
+  padding: 1em 0 0; }
 
 #soreha h2 {
   color: #aaa;
@@ -6206,6 +6206,13 @@ body[data-in='mag'] .wrapper {
 
   #header .topnav .links a {
     display: none; }
+
+  #header .topTitle {
+    padding-top: 40px; }
+
+  #header .topTitle h2 {
+    font-size: 3em;
+    line-height: 2em; }
 
   #soreha a {
     padding: 0.5rem 1rem; }
