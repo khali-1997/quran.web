@@ -13,28 +13,38 @@
 	color: #fff;
 }
 #header .topnav{
-	padding-top: 40px;
+	padding-top: 30px;
 }
 #header .topnav h1{
-	margin:0;
-}
-#header .topnav h1 a{
-	display: block;
+	display: inline-block;
 	line-height: 40px;
 	margin: 0 10px;
 	font-weight: 900;
 	transition: color 0.3s;
+	color: #fff;
+	display: none;
 }
-#header .topnav h1 a:hover{
-	color: rgba(255,255,255,1);
+#header .topnav h2{
+	display: inline-block;
+	line-height: 40px;
+	margin: 0 10px;
+	font-weight: 900;
+	transition: color 0.3s;
+	color: #fff;
+	vertical-align: middle;
 }
-#header .topnav h1 a:focus{
-	color: rgba(255,255,255,0.9);
+#header .topnav h3{
+	display: inline-block;
+	line-height: 40px;
+	margin: 0 10px;
+	font-weight: 100;
+	transition: color 0.3s;
+	color: #fff;
 }
-#header .topnav h1 a img{
+#header .topnav a img{
 	width: 40px;
 	height: 40px;
-	margin: 0 10px;
+	margin: 0 5px;
 	vertical-align: middle;
 }
 #header .topnav .links a{
@@ -80,9 +90,6 @@ body[data-page="home"] #header .topTitle h2{
 	line-height: 30px;
 	font-weight: 100;
 	margin: 0;
-}
-body[data-page="home"] #header .topTitle h3{
-	font-size: 1.7em;
 }
 
 

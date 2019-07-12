@@ -5,11 +5,13 @@
     <div class="cn">
       <nav class="f topnav">
         <div class="cauto">
-          <h1>
-            <a href="{{url.kingdom}}" title='{{site.desc}}'><img src="{{url.static}}/images/logo/salamquran.png" alt="{{site.title}}">{{site.title}}</a>
-          </h1>
+          <a href="{{url.kingdom}}" title='{{site.desc}}'>
+            <img src="{{url.static}}/images/logo/salamquran.png" alt="{{site.title}}">
+            <h1>{{site.title}}</h1>
+            <h2>{{page.title}}</h2>
+          </a>
         </div>
-        <div class="c os links txtRa">
+        <div class="cauto os links txtRa">
           <a href="{{url.kingdom}}/mag" data-direct>{%trans "Magazine"%}</a>
           <a href="{{url.kingdom}}/audio">{%trans "Audio"%}</a>
 {%if login.id%}
@@ -22,7 +24,7 @@
       </nav>
 {%block pageTitle%}
       <section class='topTitle' data-xhr='topTitle'>
-        <h2>{{page.title}}</h2>
+        <h2>{%trans "The Holy Quran"%}</h2>
         <h3>{{page.desc}}</h3>
       </section>
 {%endblock%}
