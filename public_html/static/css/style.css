@@ -5493,7 +5493,7 @@ html[lang="ar"] #soreha .c7 span {
   line-height: 49px;
   height: 50px;
   font-size: 30px;
-  padding: 0 2px;
+  padding-left: 2px;
   outline: none; }
 
 .Quran i:hover {
@@ -6232,11 +6232,13 @@ body[data-in='mag'] .wrapper {
     min-height: 40px; }
 
   .Quran i {
-    font-size: 22px;
+    font-size: 20px;
+    padding-left: 2px;
     line-height: 29px;
     height: 30px; }
 
   .Quran .ayeBox i {
+    font-size: 24px;
     line-height: 39px;
     height: 40px; }
 
@@ -6300,6 +6302,9 @@ body[data-in='mag'] .wrapper {
 
   #dlapp figure {
     margin: 0; } }
+@media (max-width: 374px) {
+  .Quran i {
+    font-size: 17px; } }
 /* Design for print */
 
 /*# sourceMappingURL=style.css.map */

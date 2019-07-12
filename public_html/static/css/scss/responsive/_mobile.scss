@@ -36,11 +36,13 @@
 		min-height: 40px;
 	}
 	.Quran i{
-		font-size: 22px;
+		font-size: 20px;
+		padding-left: 2px;
 		line-height:29px;
 		height: 30px;
 	}
 	.Quran .ayeBox i{
+		font-size: 24px;
 		line-height:39px;
 		height: 40px;
 	}
@@ -105,4 +107,10 @@
 
 	#dlapp h2{margin:0;}
 	#dlapp figure{margin:0;}
+}
+
+@media (max-width: 374px) {
+	.Quran i{
+		font-size: 17px;
+	}
 }
