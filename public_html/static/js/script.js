@@ -367,7 +367,7 @@ function getAyeData(_ayeNumEl, _playOneAye)
     }
   }
 
-  console.log(ayeResult);
+  // console.log(ayeResult);
   return ayeResult;
 }
 
@@ -471,6 +471,23 @@ function loadNextAudio(_nextUrl)
   }
 }
 
+function isElementInView(_element, _fullyInView)
+{
+  var pageTop       = $(window).scrollTop();
+  var pageBottom    = pageTop + ($(window).height() * 0.9);
+  var elementTop    = $(_element).offset().top;
+  var elementBottom = elementTop + $(_element).height();
+
+  if (_fullyInView === true)
+  {
+      return ((pageTop < elementTop) && (pageBottom > elementBottom));
+  }
+  else
+  {
+      return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
+  }
+}
+
 
 function highlightAye(_mode)
 {
@@ -485,8 +502,15 @@ function highlightAye(_mode)
   {
     if($('.ayeBox#'+ ayeNum).length > 0)
     {
-      // change scroll to start of this aye
-      scrollSmoothTo($('.ayeBox#'+ ayeNum))
+      if(isElementInView(parentAyeBox, true))
+      {
+        // do nothing
+      }
+      else
+      {
+        // change scroll to start of this aye
+        scrollSmoothTo($('.ayeBox#'+ ayeNum))
+      }
     }
   }
   else
