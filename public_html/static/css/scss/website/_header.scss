@@ -27,11 +27,16 @@
 #header .topnav h2{
 	display: inline-block;
 	line-height: 40px;
+	height: 40px;
 	margin: 0 10px;
 	font-weight: 900;
 	transition: color 0.3s;
 	color: #fff;
+	max-width: 70%;
 	vertical-align: middle;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 #header .topnav h3{
 	display: inline-block;
@@ -105,14 +110,14 @@ body[data-in='mag'] #header .topnav{
 
 // sidenavHandler
 .sidenavHandler{
-	width: 50px;
-	min-width: 50px!important;
-	max-width: 50px!important;
-	height: 50px;
-	line-height: 50px;
+	width: 40px;
+	min-width: 40px!important;
+	max-width: 40px!important;
+	height: 40px;
+	line-height: 40px;
 	display: block;
 	color: #eee;
-	padding: 1.5rem 1rem;
+	padding: 1rem 1rem;
 	transition: 0.3s;
 	cursor: pointer !important;
 	vertical-align: middle;
@@ -139,7 +144,6 @@ body[data-in='mag'] #header .topnav{
 	display: none;
 	background-color: rgba(255,255,255,0.1);
 	border-radius: 0.25rem;
-	margin-top: -10px;
 }
 
 

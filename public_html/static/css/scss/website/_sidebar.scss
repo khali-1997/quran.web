@@ -51,7 +51,7 @@
 	transition: 0.3s;
 }
 #sidebar a.active{
-	background-color: rgba(0,0,0,0.3);
+	background-color: rgba(0,0,0,0.1);
 }
 #sidebar .always a:hover{
 	color: #aaa;
@@ -72,15 +72,15 @@
 }
 
 #sidebar .menu{
-	background-color: #f1f1f1;
+	background-color: #fff;
 	display: block;
-	width: 280px;
+	width: 250px;
 	min-width: 240px;
 	max-width: 350px;
 	height: 100%;
 	position: absolute;
 	z-index: 10;
-	transition: 0.3s ease-in-out;
+	transition: 0.2s ease;
 }
 .ltr #sidebar .menu{
 	left: -25rem;
@@ -109,6 +109,9 @@ body[data-sidebar="dada"].rtl #sidebar .menu{
 }
 #sidebar .menu nav.langlist{
 	margin-top: 3rem;
+}
+#sidebar .menu nav.langlist a{
+	display: inline-block;
 }
 
 #sidebar .menu nav a:before{
