@@ -508,8 +508,16 @@ function highlightAye(_mode)
       }
       else
       {
-        // change scroll to start of this aye
-        scrollSmoothTo($('.ayeBox#'+ ayeNum))
+        var autoAyeScroll = $('.player .sScroll').val();
+        if(autoAyeScroll === 'on')
+        {
+          // change scroll to start of this aye
+          scrollSmoothTo($('.ayeBox#'+ ayeNum))
+        }
+        else
+        {
+          // auto scroll is off
+        }
       }
     }
   }
