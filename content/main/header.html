@@ -8,7 +8,7 @@
           <a href="{{url.kingdom}}" title='{{site.desc}}'>
             <img src="{{url.static}}/images/logo/salamquran.png" alt="{{site.title}}">
             <h1>{{site.title}}</h1>
-            <h2>{{page.title}}</h2>
+            <h2 class="pageTitle" data-xhr='pageTitle'>{{page.title}}</h2>
           </a>
         </div>
         <div class="cauto os links txtRa">
@@ -23,9 +23,9 @@
         </div>
       </nav>
 {%block pageTitle%}
-      <section class='topTitle' data-xhr='topTitle'>
+      <section class='topTitle'>
         <h2>{%trans "The Holy Quran"%}</h2>
-        <h3>{{page.desc}}</h3>
+        <h3>{{site.desc}}</h3>
       </section>
 {%endblock%}
     </div>
