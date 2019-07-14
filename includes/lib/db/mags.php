@@ -31,26 +31,44 @@ class mags
 
 	public static function search($_string = null, $_option = [])
 	{
-		$default =
-		[
-			'search_field' =>
-			"
-				mags.qari LIKE ('%__string__%') OR
-				mags.type LIKE ('%__string__%') OR
-				mags.readtype LIKE ('%__string__%')
-			",
-		];
-
-		if(!is_array($_option))
+		$q = null;
+		if(isset($_string))
 		{
-			$_option = [];
+			$_string = \dash\db\safe::value($_string);
+			$q       = " WHERE posts.title LIKE '%$_string%' ";
 		}
 
-		$_option = array_merge($default, $_option);
+		$pagination_query =
+		"
+			SELECT
+				COUNT(*) AS `count`
+			FROM
+				mags
 
-		$result = \dash\db\config::public_search('mags', $_string, $_option);
+				$q
+		";
+
+		$limit = \dash\db::pagination_query($pagination_query);
+
+		$query =
+		"
+			SELECT
+				mags.id AS `mag_id`,
+				mags.*,
+				posts.title
+			FROM
+				mags
+			INNER JOIN posts ON posts.id = mags.post_id
+			$q
+			$limit
+		";
+		$result = \dash\db::get($query);
+
 		return $result;
 	}
+
+
+
 
 }
 ?>

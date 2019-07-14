@@ -123,5 +123,12 @@ class mag
 
 		}
 	}
+
+
+	public static function list($_string = null, $_args = [])
+	{
+		$list = \lib\db\mags::search($_string, $_args);
+		return $list;
+	}
 }
 ?>

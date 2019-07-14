@@ -11,6 +11,9 @@ class view
 		$post_list = \dash\app\posts::all_post_title($args);
 
 		\dash\data::postList($post_list);
+
+		\dash\data::badge_text(T_("Back"));
+		\dash\data::badge_link(\dash\url::this());
 	}
 }
 ?>

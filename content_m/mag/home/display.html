@@ -7,6 +7,7 @@
     <div class="c6 s12">{{block('BmagListPosts')}}</div>
     <div class="c6 s12">{{block('Bmagazine')}}</div>
   </div>
+  {{block('magList')}}
 {%endblock%}
 
 
@@ -30,3 +31,92 @@
  </div>
 </a>
 {%endblock%}
+
+
+
+
+
+{%block magList%}
+
+
+{%if dataTable%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+  {{block('htmlFilter')}}
+
+ {%else%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+
+ {%endif%}
+{%else%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlFilterNoResult')}}
+
+ {%else%}
+
+  {{block('htmlStartAddNew')}}
+
+ {%endif%}
+{%endif%}
+
+{%endblock%}
+
+
+
+
+{%block htmlTable%}
+  <table class="tbl1 v1 fs11">
+    <thead>
+      <tr>
+        <th data-sort="{{sortLink.title.order}}"><a href='{{sortLink.title.link}}'>{%trans "Title"%}</a></th>
+        <th>{%trans "type"%}</th>
+        <th>{%trans "page"%}</th>
+        <th>{%trans "sura"%}</th>
+        <th>{%trans "aya"%}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {%for key, value in dataTable%}
+      <tr>
+        <td>{{value.title}}</td>
+        <td>{{value.type}}</td>
+        <td>{{value.page | fitNumber}}</td>
+        <td>{{value.sura | fitNumber}}</td>
+        <td>{{value.aya | fitNumber}}</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  {%include display.pagination%}
+{%endblock%}
+
+
+{%block htmlFilter%}
+<p class="f fs14 msg info2">
+  <span class="c">{{dataFilter | raw}}</span>
+  <a class="cauto" href="{{url.here}}/posts{{moduleType}}">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlFilterNoResult%}
+<p class="f fs14 msg warn2">
+  <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
+  <a class="cauto" href="{{url.here}}/posts{{moduleType}}">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlStartAddNew%}
+<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} <a href="{{url.here}}/posts/add{{moduleType}}">{%trans "Try to start with add new record!"%}</a></p>
+{%endblock%}
+
+
+
