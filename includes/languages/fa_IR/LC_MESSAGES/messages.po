@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SalamQuran - Persian\n"
-"POT-Creation-Date: 2019-07-14 10:34+0430\n"
-"PO-Revision-Date: 2019-07-14 10:34+0430\n"
+"POT-Creation-Date: 2019-07-14 17:44+0430\n"
+"PO-Revision-Date: 2019-07-14 17:52+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -177,6 +177,7 @@ msgid "Aya"
 msgstr "آیه"
 
 #: SalamQuran/content/home/view.php:95
+#: SalamQuran/includes/languages/trans_project.php:696
 msgid "aya"
 msgstr "آیه"
 
@@ -192,6 +193,7 @@ msgstr "صفحه"
 #: SalamQuran/content/home/view.php:100 SalamQuran/content/home/view.php:120
 #: SalamQuran/content/home/view.php:125 SalamQuran/content/home/view.php:147
 #: SalamQuran/includes/languages/trans_dash.php:592
+#: SalamQuran/includes/languages/trans_project.php:694
 #: SalamQuran/includes/lib/app/quran/aya.php:328
 #: SalamQuran/includes/lib/app/quran/page.php:420
 #: SalamQuran/includes/lib/app/quran/page.php:454
@@ -442,6 +444,13 @@ msgstr "جستجوی :search"
 #: SalamQuran/content_m/audiobank/manage/model.php:13
 msgid "Ok, file created"
 msgstr "بسیار خوب. فایل ساخته شد"
+
+#: SalamQuran/content_m/mag/connect/view.php:15
+#: SalamQuran/includes/languages/trans_dash.php:333
+#: dash/addons/content_api/v6/app/controller.php:136
+#: dash/addons/includes/languages/trans_dash.php:540
+msgid "Back"
+msgstr "قبلی"
 
 #: SalamQuran/includes/languages/trans_dash.php:8
 msgid "Get profile detail"
@@ -1197,7 +1206,7 @@ msgid "Code"
 msgstr "کد"
 
 #: SalamQuran/includes/languages/trans_dash.php:181
-#: SalamQuran/includes/languages/trans_project.php:691
+#: SalamQuran/includes/languages/trans_project.php:711
 #: dash/addons/content_cms/attachment/home/view.php:121
 #: dash/addons/includes/languages/trans_dash.php:43
 msgid "Status"
@@ -1951,12 +1960,6 @@ msgstr "پرداخت"
 msgid "Cancel"
 msgstr "انصراف"
 
-#: SalamQuran/includes/languages/trans_dash.php:333
-#: dash/addons/content_api/v6/app/controller.php:136
-#: dash/addons/includes/languages/trans_dash.php:540
-msgid "Back"
-msgstr "قبلی"
-
 #: SalamQuran/includes/languages/trans_dash.php:334
 #: dash/addons/includes/languages/trans_dash.php:541
 msgid "Track id"
@@ -2130,7 +2133,7 @@ msgid "Use Special mode"
 msgstr "استفاده از حالت ویژه نمایشی"
 
 #: SalamQuran/includes/languages/trans_dash.php:373
-#: SalamQuran/includes/languages/trans_project.php:673
+#: SalamQuran/includes/languages/trans_project.php:675
 #: dash/addons/includes/languages/trans_dash.php:50
 msgid "Please select one item"
 msgstr "لطفا یک گزینه را انتخاب کنید"
@@ -2398,6 +2401,7 @@ msgid "Apply"
 msgstr "اعمال‌کردن"
 
 #: SalamQuran/includes/languages/trans_dash.php:429
+#: SalamQuran/includes/languages/trans_project.php:693
 #: dash/addons/includes/languages/trans_dash.php:79
 #: dash/addons/includes/languages/trans_static.php:198
 msgid "Title"
@@ -2422,12 +2426,13 @@ msgid "Search with new keywords."
 msgstr "با کلیدواژه‌های بهتری جستجو کنید."
 
 #: SalamQuran/includes/languages/trans_dash.php:433
-#: SalamQuran/includes/languages/trans_project.php:692
+#: SalamQuran/includes/languages/trans_project.php:697
 #: dash/addons/includes/languages/trans_dash.php:84
 msgid "Hi!"
 msgstr "سلام!"
 
 #: SalamQuran/includes/languages/trans_dash.php:434
+#: SalamQuran/includes/languages/trans_project.php:698
 #: dash/addons/includes/languages/trans_dash.php:85
 msgid "Try to start with add new record!"
 msgstr "با افزودن رکورد جدید تلاشی برای شروع داشته باشید!"
@@ -8491,11 +8496,11 @@ msgstr "صبور باشید..."
 msgid "Manage"
 msgstr "مدیریت"
 
-#: SalamQuran/includes/languages/trans_project.php:674
+#: SalamQuran/includes/languages/trans_project.php:673
 msgid "Avatar"
 msgstr "آواتار"
 
-#: SalamQuran/includes/languages/trans_project.php:675
+#: SalamQuran/includes/languages/trans_project.php:674
 msgid "Read Type"
 msgstr "نوع خواندن"
 
@@ -8516,30 +8521,66 @@ msgid "quality"
 msgstr "کیفیت"
 
 #: SalamQuran/includes/languages/trans_project.php:683
+msgid "Select magazine"
+msgstr "مقاله را انتخاب کنید"
+
+#: SalamQuran/includes/languages/trans_project.php:684
+msgid "Connect to"
+msgstr "اتصال به"
+
+#: SalamQuran/includes/languages/trans_project.php:685
+msgid "Connect to sura"
+msgstr "اتصال به سوره"
+
+#: SalamQuran/includes/languages/trans_project.php:686
+msgid "Connect to aya"
+msgstr "اتصال به آیه"
+
+#: SalamQuran/includes/languages/trans_project.php:687
+msgid "Connect to page"
+msgstr "اتصال به صفحه"
+
+#: SalamQuran/includes/languages/trans_project.php:688
+msgid "Select sura"
+msgstr "انتخاب سوره"
+
+#: SalamQuran/includes/languages/trans_project.php:691
+msgid "Magazine list"
+msgstr "لیست مجله"
+
+#: SalamQuran/includes/languages/trans_project.php:692
+msgid "Connect mag to quran"
+msgstr "اتصال مجله به قرآن"
+
+#: SalamQuran/includes/languages/trans_project.php:695
+msgid "sura"
+msgstr "سوره"
+
+#: SalamQuran/includes/languages/trans_project.php:703
 msgid "Run again"
 msgstr "اجراء دوباره"
 
-#: SalamQuran/includes/languages/trans_project.php:684
+#: SalamQuran/includes/languages/trans_project.php:704
 msgid "Audio bank"
 msgstr "بانک صوت"
 
-#: SalamQuran/includes/languages/trans_project.php:687
+#: SalamQuran/includes/languages/trans_project.php:707
 msgid "Check audio online"
 msgstr "بررسی بر خط صوت"
 
-#: SalamQuran/includes/languages/trans_project.php:688
+#: SalamQuran/includes/languages/trans_project.php:708
 msgid "Read type"
 msgstr "نوع خواندن"
 
-#: SalamQuran/includes/languages/trans_project.php:689
+#: SalamQuran/includes/languages/trans_project.php:709
 msgid "file type"
 msgstr "نوع فایل"
 
-#: SalamQuran/includes/languages/trans_project.php:690
+#: SalamQuran/includes/languages/trans_project.php:710
 msgid "Addr"
 msgstr "آدرس"
 
-#: SalamQuran/includes/languages/trans_project.php:693
+#: SalamQuran/includes/languages/trans_project.php:712
 msgid "Try to start with add new audio!"
 msgstr "با افزودن صوت جدید تلاشی برای شروع داشته باشید!"
 
@@ -8944,6 +8985,7 @@ msgid "Farsi"
 msgstr "فارسی"
 
 #: SalamQuran/includes/lib/app/audiobank.php:304
+#: SalamQuran/includes/lib/app/mag.php:14
 #: dash/addons/content_enter/home/model.php:45
 #: dash/addons/content_su/sendnotify/model.php:30 dash/lib/app/address.php:324
 #: dash/lib/app/parent/add.php:50 dash/lib/app/parent/add.php:59
@@ -8994,6 +9036,44 @@ msgstr "عثمان طه"
 #: SalamQuran/includes/lib/app/font_style.php:118
 msgid "IRANSans"
 msgstr "ایران‌سنز"
+
+#: SalamQuran/includes/lib/app/mag.php:21
+#: dash/addons/content_api/v6/session/controller.php:138
+#: dash/addons/content_su/transactions/add/model.php:80 dash/lib/app/posts.php:741
+msgid "Invalid type"
+msgstr "نوع نامعتبر"
+
+#: SalamQuran/includes/lib/app/mag.php:30
+msgid "Plese choose one magazine"
+msgstr "لطفا یکی از محتواها را انتخاب کنید"
+
+#: SalamQuran/includes/lib/app/mag.php:37
+msgid "Invalid post"
+msgstr "شناسه پست اشتباه است"
+
+#: SalamQuran/includes/lib/app/mag.php:56 SalamQuran/includes/lib/app/mag.php:68
+msgid "Invalid sura id"
+msgstr "شناسه سوره اشتباه است"
+
+#: SalamQuran/includes/lib/app/mag.php:78
+msgid "This sura have :val aya"
+msgstr "این سوره :val آیه دارد"
+
+#: SalamQuran/includes/lib/app/mag.php:93
+msgid "Invalid page number"
+msgstr "شماره صفحه اشتباه است"
+
+#: SalamQuran/includes/lib/app/mag.php:102
+msgid "This method is not supported"
+msgstr "این متود پشتیبانی نمی‌شود"
+
+#: SalamQuran/includes/lib/app/mag.php:113
+msgid "Duplicate connection mags to quran"
+msgstr "این اتصال قبلا صورت گرفته است"
+
+#: SalamQuran/includes/lib/app/mag.php:120
+msgid "The magazine connect to quran"
+msgstr "این مقاله به قرآن متصل شد"
 
 #: SalamQuran/includes/lib/app/qari.php:12
 msgid "Sahih international"
@@ -9742,11 +9822,6 @@ msgstr "این نشست متعلق به شما نیست"
 msgid "Session id not send or invalid"
 msgstr "شناسه نشست ارسال نشده است یا نادرست است"
 
-#: dash/addons/content_api/v6/session/controller.php:138
-#: dash/addons/content_su/transactions/add/model.php:80 dash/lib/app/posts.php:724
-msgid "Invalid type"
-msgstr "نوع نامعتبر"
-
 #: dash/addons/content_cms/attachment/add/model.php:17
 #: dash/addons/content_cms/posts/main/model.php:21
 msgid "Can not upload file"
@@ -9843,7 +9918,7 @@ msgstr "عملیات پشتیبان گیری کامل شد"
 #: dash/addons/content_cms/contact/edit/view.php:14
 #: dash/addons/content_cms/posts/edit/controller.php:14
 #: dash/addons/content_support/message/edit/view.php:23
-#: dash/addons/content_support/ticket/show/view.php:47 dash/lib/app/posts.php:327
+#: dash/addons/content_support/ticket/show/view.php:47 dash/lib/app/posts.php:344
 msgid "Invalid id"
 msgstr "شناسه نامعتبر"
 
@@ -15356,7 +15431,7 @@ msgid "Invalid via"
 msgstr "پارامتر via اشتباه است"
 
 #: dash/lib/app/comment.php:269 dash/lib/app/comment.php:276
-#: dash/lib/app/posts.php:228 dash/lib/app/posts.php:236
+#: dash/lib/app/posts.php:245 dash/lib/app/posts.php:253
 msgid "Invalid post id"
 msgstr "شناسه پست اشتباه است"
 
@@ -15711,140 +15786,140 @@ msgstr "والد حذف شد"
 msgid "Waiting to user accept this request"
 msgstr "در انتظار تایید درخواست توسط کاربر"
 
-#: dash/lib/app/posts.php:261
+#: dash/lib/app/posts.php:278
 msgid "Duplicate file in this gallery"
 msgstr "این فایل در گالری تصاویر فعلی موجود است"
 
-#: dash/lib/app/posts.php:277
+#: dash/lib/app/posts.php:294
 msgid "Invalid gallery id"
 msgstr "شناسه گالری تصاویر اشتباه است"
 
-#: dash/lib/app/posts.php:338
+#: dash/lib/app/posts.php:355
 msgid "This help center is published. And you can not edit it!"
 msgstr "این مقاله مرکز راهنمایی منتشر شده و شما نمی‌توانید آن را حذف کنید!"
 
-#: dash/lib/app/posts.php:348
+#: dash/lib/app/posts.php:365
 msgid "This post is published. And you can not edit it!"
 msgstr "این خبر منتشر شده و شما نمی‌توانید آن را حذف کنید!"
 
-#: dash/lib/app/posts.php:364 dash/lib/app/posts.php:374
+#: dash/lib/app/posts.php:381 dash/lib/app/posts.php:391
 msgid "This is not your post. And you can not edit it!"
 msgstr "این خبر شما نیست و شما نمی‌توانید آن را حذف کنید!"
 
-#: dash/lib/app/posts.php:386 dash/lib/app/posts.php:392 dash/lib/app/term.php:110
+#: dash/lib/app/posts.php:403 dash/lib/app/posts.php:409 dash/lib/app/term.php:110
 #: dash/lib/app/term.php:116
 msgid "Invalid parameter language"
 msgstr "پارامتر زبان نامعتبر است"
 
-#: dash/lib/app/posts.php:399
+#: dash/lib/app/posts.php:416
 msgid "Title of posts can not be null"
 msgstr "عنوان پست نمی تواند خالی باشد"
 
-#: dash/lib/app/posts.php:405
+#: dash/lib/app/posts.php:422
 msgid "Please set the title less than 100 character"
 msgstr "لطفا عنوان پست را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:412
+#: dash/lib/app/posts.php:429
 msgid "Please set the excerpt less than 300 character"
 msgstr "لطفا چکیده متن را کمتر از ۳۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:419
+#: dash/lib/app/posts.php:436
 msgid "Please set the subtitle less than 300 character"
 msgstr "لطفا زیر عنوان را کمتر از ۳۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:426
+#: dash/lib/app/posts.php:443
 msgid "Please set the slug less than 100 character"
 msgstr "لطفا نامک را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:448
+#: dash/lib/app/posts.php:465
 msgid "Duplicate slug"
 msgstr "نامک تکراری است"
 
-#: dash/lib/app/posts.php:456
+#: dash/lib/app/posts.php:473
 msgid "Please set the url less than 100 character"
 msgstr "لطفا آدرس را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:468
+#: dash/lib/app/posts.php:485
 msgid "This text is too large!"
 msgstr "متن خیلی طولانی است!"
 
-#: dash/lib/app/posts.php:474
+#: dash/lib/app/posts.php:491
 msgid "Please set the type less than 100 character"
 msgstr "لطفا نوع را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:495
+#: dash/lib/app/posts.php:512
 msgid "Invalid parameter special"
 msgstr "پارامتر کاربردخاص اشتباه است"
 
-#: dash/lib/app/posts.php:504
+#: dash/lib/app/posts.php:521
 msgid "Invalid parameter status"
 msgstr "پارامتر وضعیت نامعتبر است"
 
-#: dash/lib/app/posts.php:515
+#: dash/lib/app/posts.php:532
 msgid "You can not delete help center"
 msgstr "شما نمی‌توانید این مقاله مرکز راهنمایی را حذف کنید"
 
-#: dash/lib/app/posts.php:523
+#: dash/lib/app/posts.php:540
 msgid "You can not delete page"
 msgstr "شما نمی‌توانید این صفحه را حذف کنید"
 
-#: dash/lib/app/posts.php:532
+#: dash/lib/app/posts.php:549
 msgid "You can not delete post"
 msgstr "شما نمی توانید خبر را حذف کنید"
 
-#: dash/lib/app/posts.php:545
+#: dash/lib/app/posts.php:562
 msgid "This is not your help center. And you can not delete it!"
 msgstr "این مقاله شما نیست و شما نمی‌توانید آن را ویرایش کنید!"
 
-#: dash/lib/app/posts.php:553
+#: dash/lib/app/posts.php:570
 msgid "This is not your magazine. And you can not delete it!"
 msgstr "این مجله شما نیست و شما نمی‌توانید آن را حذف کنید!"
 
-#: dash/lib/app/posts.php:563
+#: dash/lib/app/posts.php:580
 msgid "This is not your post. And you can not delete it!"
 msgstr "این خبر شما نیست و شما نمی‌توانید آن را حذف کنید!"
 
-#: dash/lib/app/posts.php:581
+#: dash/lib/app/posts.php:598
 msgid "Invalid parameter parent"
 msgstr "پارامتر والد نامعتبر است"
 
-#: dash/lib/app/posts.php:588
+#: dash/lib/app/posts.php:605
 msgid "Parent post not found"
 msgstr "پست والد یافت نشد"
 
-#: dash/lib/app/posts.php:596
+#: dash/lib/app/posts.php:613
 msgid "Can not set page as parent of self!"
 msgstr "نمی‌توانید صفحه‌ای را به‌عنوان والد خودش ثبت کنید!"
 
-#: dash/lib/app/posts.php:644
+#: dash/lib/app/posts.php:661
 msgid "Invalid parameter publishdate"
 msgstr "تاریخ انتشار پست اشتباه است"
 
-#: dash/lib/app/posts.php:665
+#: dash/lib/app/posts.php:682
 msgid "Invalid publish time"
 msgstr "تاریخ انتشار نادرست"
 
-#: dash/lib/app/posts.php:695
+#: dash/lib/app/posts.php:712
 msgid "Category setting for better access is suggested"
 msgstr "تنظیم دسته‌بندی برای دسترسی مناسب‌تر توصیه می‌شود"
 
-#: dash/lib/app/posts.php:710
+#: dash/lib/app/posts.php:727
 msgid "Invalid slug"
 msgstr "نامک اشتباه است"
 
-#: dash/lib/app/posts.php:742 dash/lib/utility/pay/start.php:158
+#: dash/lib/app/posts.php:759 dash/lib/utility/pay/start.php:158
 msgid "Invalid user"
 msgstr "کاربر نامعتبر"
 
-#: dash/lib/app/posts.php:882
+#: dash/lib/app/posts.php:899
 msgid "Some :type is wrong"
 msgstr "برخی از :type اشتباه هستند"
 
-#: dash/lib/app/posts.php:1144
+#: dash/lib/app/posts.php:1161
 msgid "Post not found"
 msgstr "پست یافت نشد"
 
-#: dash/lib/app/posts.php:1169
+#: dash/lib/app/posts.php:1186
 msgid "The Featured Image removed"
 msgstr "تصویر شاخص حذف شد"
 

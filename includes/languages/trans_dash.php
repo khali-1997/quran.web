@@ -345,7 +345,7 @@ class twigTransTerms
 	echo T_("Website Contents");                                                      // Line 9
 	echo T_("News");                                                                  // Line 88
 	echo T_("Categories");                                                            // Line 87
-	echo T_("Keywords");                                                              // Line 175
+	echo T_("Keywords");                                                              // Line 191
 	echo T_("Static Pages");                                                          // Line 22
 	echo T_("Support");                                                               // Line 33
 	echo T_("Help Center Keywords");                                                  // Line 40
@@ -372,20 +372,20 @@ class twigTransTerms
 	echo T_("Use Special mode");                                                      // Line 60
 	echo T_("Please select one item");                                                // Line 28
 	echo T_("Non");                                                                   // Line 591
-	echo T_("Writer");                                                                // Line 84
-	echo T_("Change post writer");                                                    // Line 86
-	echo T_("Choose new post writer");                                                // Line 88
+	echo T_("Writer");                                                                // Line 110
+	echo T_("Change post writer");                                                    // Line 92
+	echo T_("Choose new post writer");                                                // Line 94
 	echo T_("Category");                                                              // Line 23
 	echo T_("Choose category for posts is fix url of post relative and help people find it better.");// Line 153
 	echo T_("Add new category");                                                      // Line 165
 	echo T_("Click on special tags to use this depending on your website design");    // Line 183
 	echo T_("Tag");                                                                   // Line 365
-	echo T_("Add tag to link articles");                                              // Line 173
+	echo T_("Add tag to link articles");                                              // Line 189
 	echo T_("Add");                                                                   // Line 36
-	echo T_("Allow Comments");                                                        // Line 196
-	echo T_("Publish Date");                                                          // Line 208
-	echo T_("When published");                                                        // Line 215
-	echo T_("At special date");                                                       // Line 220
+	echo T_("Allow Comments");                                                        // Line 212
+	echo T_("Publish Date");                                                          // Line 224
+	echo T_("When published");                                                        // Line 231
+	echo T_("At special date");                                                       // Line 236
 	echo T_("Publish date");                                                          // Line 45
 	echo T_("Default is now");                                                        // Line 47
 	echo T_("Publish time");                                                          // Line 55
@@ -395,19 +395,19 @@ class twigTransTerms
 	echo T_("Language");                                                              // Line 118
 	echo T_("You can publish in another language");                                   // Line 117
 	echo T_("Add to gallery");                                                        // Line 61
-	echo T_("Choose or Drop file here");                                              // Line 315
+	echo T_("Choose or Drop file here");                                              // Line 331
 	echo T_("Maximum file size");                                                     // Line 17
-	echo T_("Google");                                                                // Line 352
-	echo T_("Customize for SEO");                                                     // Line 357
-	echo T_("SEO Title");                                                             // Line 363
+	echo T_("Google");                                                                // Line 368
+	echo T_("Customize for SEO");                                                     // Line 373
+	echo T_("SEO Title");                                                             // Line 379
 	echo T_("Recommended being more than 40 character and appear at the beginning of page content");// Line 4
 	echo T_("Parent");                                                                // Line 134
 	echo T_("Choose parent for this page to create related url as tree");             // Line 133
 	echo T_("Choose Parent");                                                         // Line 136
 	echo T_("Without Parent");                                                        // Line 137
 	echo T_("Slug");                                                                  // Line 8
-	echo T_("End part of your post url.");                                            // Line 387
-	echo T_("SEO Description");                                                       // Line 394
+	echo T_("End part of your post url.");                                            // Line 403
+	echo T_("SEO Description");                                                       // Line 410
 	echo T_("If leave it empty we are generate it automatically");                    // Line 19
 	echo T_("Excerpt used for social media and search engines");                      // Line 19
 	echo T_("Gallery");                                                               // Line 223

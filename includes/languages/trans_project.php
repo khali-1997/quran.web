@@ -16,7 +16,7 @@ class twigTransTerms
 	echo T_("Get list of aya from one page word by word");                            // Line 8
 	echo T_("Parameters");                                                            // Line 16
 	echo T_("Name");                                                                  // Line 85
-	echo T_("type");                                                                  // Line 64
+	echo T_("type");                                                                  // Line 78
 	echo T_("Description");                                                           // Line 10
 	echo T_("Constraints");                                                           // Line 22
 	echo T_("You must set index between 1 and 604");                                  // Line 35
@@ -66,8 +66,8 @@ class twigTransTerms
 
 	//-----------------------------projects/SalamQuran/content_api/v6/doc/sidebar.html
 	echo T_("Sura list");                                                             // Line 3
-	echo T_("Sura");                                                                  // Line 11
-	echo T_("Page");                                                                  // Line 12
+	echo T_("Sura");                                                                  // Line 103
+	echo T_("Page");                                                                  // Line 90
 	echo T_("Page word by word");                                                     // Line 6
 	echo T_("Juz per sura");                                                          // Line 7
 	echo T_("Juz per hizb");                                                          // Line 8
@@ -150,7 +150,7 @@ class twigTransTerms
 
 	//---------------------------------projects/SalamQuran/content/search/display.html
 	echo T_("Search");                                                                // Line 65
-	echo T_("Aya");                                                                   // Line 116
+	echo T_("Aya");                                                                   // Line 75
 	echo T_("No result found");                                                       // Line 47
 	echo T_("Clear filter");                                                          // Line 48
 	echo T_("Please enter your keyword in the box above and press Enter");            // Line 56
@@ -324,229 +324,229 @@ class twigTransTerms
 
 	//---------------------------------projects/SalamQuran/content/home/list-sore.html
 	echo T_("Surahs <span class='fs08'>Chapters</span>");                             // Line 3
-	echo T_("Al-Fatihah");                                                            // Line 9
+	echo T_("Al-Fatihah");                                                            // Line 106
 	echo T_("The Opener");                                                            // Line 7
-	echo T_("Al-Baqarah");                                                            // Line 10
+	echo T_("Al-Baqarah");                                                            // Line 107
 	echo T_("The Cow");                                                               // Line 12
-	echo T_("Ali 'Imran");                                                            // Line 12
+	echo T_("Ali 'Imran");                                                            // Line 108
 	echo T_("Family of Imran");                                                       // Line 17
-	echo T_("An-Nisa");                                                               // Line 14
+	echo T_("An-Nisa");                                                               // Line 109
 	echo T_("The Women");                                                             // Line 22
-	echo T_("Al-Ma'idah");                                                            // Line 16
+	echo T_("Al-Ma'idah");                                                            // Line 110
 	echo T_("The Table Spread");                                                      // Line 27
-	echo T_("Al-An'am");                                                              // Line 18
+	echo T_("Al-An'am");                                                              // Line 111
 	echo T_("The Cattle");                                                            // Line 32
-	echo T_("Al-A'raf");                                                              // Line 20
+	echo T_("Al-A'raf");                                                              // Line 112
 	echo T_("The Heights");                                                           // Line 37
-	echo T_("Al-Anfal");                                                              // Line 22
+	echo T_("Al-Anfal");                                                              // Line 113
 	echo T_("The Spoils of War");                                                     // Line 42
-	echo T_("At-Tawbah");                                                             // Line 24
+	echo T_("At-Tawbah");                                                             // Line 114
 	echo T_("The Repentance");                                                        // Line 47
-	echo T_("Yunus");                                                                 // Line 26
+	echo T_("Yunus");                                                                 // Line 115
 	echo T_("Jonah");                                                                 // Line 52
-	echo T_("Hud");                                                                   // Line 27
-	echo T_("Yusuf");                                                                 // Line 29
+	echo T_("Hud");                                                                   // Line 116
+	echo T_("Yusuf");                                                                 // Line 117
 	echo T_("Joseph");                                                                // Line 62
-	echo T_("Ar-Ra'd");                                                               // Line 31
+	echo T_("Ar-Ra'd");                                                               // Line 118
 	echo T_("The Thunder");                                                           // Line 67
-	echo T_("Ibrahim");                                                               // Line 32
+	echo T_("Ibrahim");                                                               // Line 119
 	echo T_("Abrahim");                                                               // Line 72
-	echo T_("Al-Hijr");                                                               // Line 34
+	echo T_("Al-Hijr");                                                               // Line 120
 	echo T_("The Rocky Tract");                                                       // Line 77
-	echo T_("An-Nahl");                                                               // Line 35
+	echo T_("An-Nahl");                                                               // Line 121
 	echo T_("The Bee");                                                               // Line 82
-	echo T_("Al-Isra");                                                               // Line 37
+	echo T_("Al-Isra");                                                               // Line 122
 	echo T_("The Night Journey");                                                     // Line 87
-	echo T_("Al-Kahf");                                                               // Line 38
+	echo T_("Al-Kahf");                                                               // Line 123
 	echo T_("The Cave");                                                              // Line 92
-	echo T_("Maryam");                                                                // Line 40
+	echo T_("Maryam");                                                                // Line 124
 	echo T_("Mary");                                                                  // Line 97
-	echo T_("Taha");                                                                  // Line 41
+	echo T_("Taha");                                                                  // Line 125
 	echo T_("Ta-Ha");                                                                 // Line 102
-	echo T_("Al-Anbya");                                                              // Line 43
+	echo T_("Al-Anbya");                                                              // Line 126
 	echo T_("The Prophets");                                                          // Line 107
-	echo T_("Al-Haj");                                                                // Line 44
+	echo T_("Al-Haj");                                                                // Line 127
 	echo T_("The Pilgrimage");                                                        // Line 112
-	echo T_("Al-Mu'minun");                                                           // Line 45
+	echo T_("Al-Mu'minun");                                                           // Line 128
 	echo T_("The Believers");                                                         // Line 117
-	echo T_("An-Nur");                                                                // Line 47
+	echo T_("An-Nur");                                                                // Line 129
 	echo T_("The Light");                                                             // Line 122
-	echo T_("Al-Furqan");                                                             // Line 48
+	echo T_("Al-Furqan");                                                             // Line 130
 	echo T_("The Criterian");                                                         // Line 127
-	echo T_("Ash-Shu'ara");                                                           // Line 50
+	echo T_("Ash-Shu'ara");                                                           // Line 131
 	echo T_("The Poets");                                                             // Line 132
-	echo T_("An-Naml");                                                               // Line 51
+	echo T_("An-Naml");                                                               // Line 132
 	echo T_("The Ant");                                                               // Line 137
-	echo T_("Al-Qasas");                                                              // Line 53
+	echo T_("Al-Qasas");                                                              // Line 133
 	echo T_("The Stories");                                                           // Line 142
-	echo T_("Al-'Ankabut");                                                           // Line 54
+	echo T_("Al-'Ankabut");                                                           // Line 134
 	echo T_("The Spider");                                                            // Line 147
-	echo T_("Ar-Rum");                                                                // Line 56
+	echo T_("Ar-Rum");                                                                // Line 135
 	echo T_("The Romans");                                                            // Line 154
-	echo T_("Luqman");                                                                // Line 57
-	echo T_("As-Sajdah");                                                             // Line 58
+	echo T_("Luqman");                                                                // Line 136
+	echo T_("As-Sajdah");                                                             // Line 137
 	echo T_("The Prostration");                                                       // Line 164
-	echo T_("Al-Ahzab");                                                              // Line 59
+	echo T_("Al-Ahzab");                                                              // Line 138
 	echo T_("The Combined Forces");                                                   // Line 169
-	echo T_("Saba");                                                                  // Line 61
+	echo T_("Saba");                                                                  // Line 139
 	echo T_("Sheba");                                                                 // Line 174
-	echo T_("Fatir");                                                                 // Line 62
+	echo T_("Fatir");                                                                 // Line 140
 	echo T_("Originator");                                                            // Line 179
-	echo T_("Ya-Sin");                                                                // Line 63
+	echo T_("Ya-Sin");                                                                // Line 141
 	echo T_("Ya Sin");                                                                // Line 184
-	echo T_("As-Saffat");                                                             // Line 65
+	echo T_("As-Saffat");                                                             // Line 142
 	echo T_("Those who set the Ranks");                                               // Line 189
-	echo T_("Sad");                                                                   // Line 66
+	echo T_("Sad");                                                                   // Line 143
 	echo T_("The Letter 'Saad'");                                                     // Line 194
-	echo T_("Az-Zumar");                                                              // Line 67
+	echo T_("Az-Zumar");                                                              // Line 144
 	echo T_("The Troops");                                                            // Line 199
-	echo T_("Ghafir");                                                                // Line 69
+	echo T_("Ghafir");                                                                // Line 145
 	echo T_("The Forgiver");                                                          // Line 204
-	echo T_("Fussilat");                                                              // Line 70
+	echo T_("Fussilat");                                                              // Line 146
 	echo T_("Explained in Detail");                                                   // Line 209
-	echo T_("Ash-Shuraa");                                                            // Line 72
+	echo T_("Ash-Shuraa");                                                            // Line 147
 	echo T_("The Consultation");                                                      // Line 214
-	echo T_("Az-Zukhruf");                                                            // Line 73
+	echo T_("Az-Zukhruf");                                                            // Line 148
 	echo T_("The Ornaments of Gold");                                                 // Line 219
-	echo T_("Ad-Dukhan");                                                             // Line 74
+	echo T_("Ad-Dukhan");                                                             // Line 149
 	echo T_("The Smoke");                                                             // Line 224
-	echo T_("Al-Jathiyah");                                                           // Line 75
+	echo T_("Al-Jathiyah");                                                           // Line 150
 	echo T_("The Crouching");                                                         // Line 229
-	echo T_("Al-Ahqaf");                                                              // Line 77
+	echo T_("Al-Ahqaf");                                                              // Line 151
 	echo T_("The Wind-Curved Sandhills");                                             // Line 234
-	echo T_("Muhammad");                                                              // Line 78
-	echo T_("Al-Fath");                                                               // Line 79
+	echo T_("Muhammad");                                                              // Line 152
+	echo T_("Al-Fath");                                                               // Line 153
 	echo T_("The Victory");                                                           // Line 244
-	echo T_("Al-Hujurat");                                                            // Line 80
+	echo T_("Al-Hujurat");                                                            // Line 154
 	echo T_("The Rooms");                                                             // Line 249
-	echo T_("Qaf");                                                                   // Line 81
+	echo T_("Qaf");                                                                   // Line 155
 	echo T_("The Letter 'Qaf'");                                                      // Line 254
-	echo T_("Adh-Dhariyat");                                                          // Line 82
+	echo T_("Adh-Dhariyat");                                                          // Line 156
 	echo T_("The Winnowing Winds");                                                   // Line 259
-	echo T_("At-Tur");                                                                // Line 84
+	echo T_("At-Tur");                                                                // Line 157
 	echo T_("The Mount");                                                             // Line 264
-	echo T_("An-Najm");                                                               // Line 85
+	echo T_("An-Najm");                                                               // Line 158
 	echo T_("The Star");                                                              // Line 269
-	echo T_("Al-Qamar");                                                              // Line 86
+	echo T_("Al-Qamar");                                                              // Line 159
 	echo T_("The Moon");                                                              // Line 274
-	echo T_("Ar-Rahman");                                                             // Line 87
+	echo T_("Ar-Rahman");                                                             // Line 160
 	echo T_("The Beneficent");                                                        // Line 279
-	echo T_("Al-Waqi'ah");                                                            // Line 88
+	echo T_("Al-Waqi'ah");                                                            // Line 161
 	echo T_("The Inevitable");                                                        // Line 284
-	echo T_("Al-Hadid");                                                              // Line 89
+	echo T_("Al-Hadid");                                                              // Line 162
 	echo T_("The Iron");                                                              // Line 289
-	echo T_("Al-Mujadila");                                                           // Line 91
+	echo T_("Al-Mujadila");                                                           // Line 163
 	echo T_("The Pleading Woman");                                                    // Line 294
-	echo T_("Al-Hashr");                                                              // Line 92
+	echo T_("Al-Hashr");                                                              // Line 164
 	echo T_("The Exile");                                                             // Line 301
-	echo T_("Al-Mumtahanah");                                                         // Line 93
+	echo T_("Al-Mumtahanah");                                                         // Line 165
 	echo T_("She that is to be examined");                                            // Line 306
-	echo T_("As-Saf");                                                                // Line 94
+	echo T_("As-Saf");                                                                // Line 166
 	echo T_("The Ranks");                                                             // Line 311
-	echo T_("Al-Jumu'ah");                                                            // Line 95
+	echo T_("Al-Jumu'ah");                                                            // Line 167
 	echo T_("The Congregation, Friday");                                              // Line 316
-	echo T_("Al-Munafiqun");                                                          // Line 96
+	echo T_("Al-Munafiqun");                                                          // Line 168
 	echo T_("The Hypocrites");                                                        // Line 321
-	echo T_("At-Taghabun");                                                           // Line 97
+	echo T_("At-Taghabun");                                                           // Line 169
 	echo T_("The Mutual Disillusion");                                                // Line 326
-	echo T_("At-Talaq");                                                              // Line 98
+	echo T_("At-Talaq");                                                              // Line 170
 	echo T_("The Divorce");                                                           // Line 331
-	echo T_("At-Tahrim");                                                             // Line 99
+	echo T_("At-Tahrim");                                                             // Line 171
 	echo T_("The Prohibtiion");                                                       // Line 336
-	echo T_("Al-Mulk");                                                               // Line 101
+	echo T_("Al-Mulk");                                                               // Line 172
 	echo T_("The Sovereignty");                                                       // Line 341
-	echo T_("Al-Qalam");                                                              // Line 102
+	echo T_("Al-Qalam");                                                              // Line 173
 	echo T_("The Pen");                                                               // Line 346
-	echo T_("Al-Haqqah");                                                             // Line 103
+	echo T_("Al-Haqqah");                                                             // Line 174
 	echo T_("The Reality");                                                           // Line 351
-	echo T_("Al-Ma'arij");                                                            // Line 104
+	echo T_("Al-Ma'arij");                                                            // Line 175
 	echo T_("The Ascending Stairways");                                               // Line 356
-	echo T_("Nuh");                                                                   // Line 105
+	echo T_("Nuh");                                                                   // Line 176
 	echo T_("Noah");                                                                  // Line 361
-	echo T_("Al-Jinn");                                                               // Line 106
+	echo T_("Al-Jinn");                                                               // Line 177
 	echo T_("The Jinn");                                                              // Line 366
-	echo T_("Al-Muzzammil");                                                          // Line 107
+	echo T_("Al-Muzzammil");                                                          // Line 178
 	echo T_("The Enshrouded One");                                                    // Line 371
-	echo T_("Al-Muddaththir");                                                        // Line 108
+	echo T_("Al-Muddaththir");                                                        // Line 179
 	echo T_("The Cloaked One");                                                       // Line 376
-	echo T_("Al-Qiyamah");                                                            // Line 109
+	echo T_("Al-Qiyamah");                                                            // Line 180
 	echo T_("The Resurrection");                                                      // Line 381
-	echo T_("Al-Insan");                                                              // Line 110
+	echo T_("Al-Insan");                                                              // Line 181
 	echo T_("The Man");                                                               // Line 386
-	echo T_("Al-Mursalat");                                                           // Line 111
+	echo T_("Al-Mursalat");                                                           // Line 182
 	echo T_("The Emissaries");                                                        // Line 391
-	echo T_("An-Naba");                                                               // Line 113
+	echo T_("An-Naba");                                                               // Line 183
 	echo T_("The Tidings");                                                           // Line 396
-	echo T_("An-Nazi'at");                                                            // Line 114
+	echo T_("An-Nazi'at");                                                            // Line 184
 	echo T_("Those who drag forth");                                                  // Line 401
-	echo T_("'Abasa");                                                                // Line 115
+	echo T_("'Abasa");                                                                // Line 185
 	echo T_("He Frowned");                                                            // Line 406
-	echo T_("At-Takwir");                                                             // Line 116
+	echo T_("At-Takwir");                                                             // Line 186
 	echo T_("The Overthrowing");                                                      // Line 411
-	echo T_("Al-Infitar");                                                            // Line 117
+	echo T_("Al-Infitar");                                                            // Line 187
 	echo T_("The Cleaving");                                                          // Line 416
-	echo T_("Al-Mutaffifin");                                                         // Line 118
+	echo T_("Al-Mutaffifin");                                                         // Line 188
 	echo T_("The Defrauding");                                                        // Line 421
-	echo T_("Al-Inshiqaq");                                                           // Line 119
+	echo T_("Al-Inshiqaq");                                                           // Line 189
 	echo T_("The Sundering");                                                         // Line 426
-	echo T_("Al-Buruj");                                                              // Line 120
+	echo T_("Al-Buruj");                                                              // Line 190
 	echo T_("The Mansions of the Stars");                                             // Line 431
-	echo T_("At-Tariq");                                                              // Line 121
+	echo T_("At-Tariq");                                                              // Line 191
 	echo T_("The Nightcommer");                                                       // Line 436
-	echo T_("Al-A'la");                                                               // Line 122
+	echo T_("Al-A'la");                                                               // Line 192
 	echo T_("The Most High");                                                         // Line 443
-	echo T_("Al-Ghashiyah");                                                          // Line 123
+	echo T_("Al-Ghashiyah");                                                          // Line 193
 	echo T_("The Overwhelming");                                                      // Line 448
-	echo T_("Al-Fajr");                                                               // Line 124
+	echo T_("Al-Fajr");                                                               // Line 194
 	echo T_("The Dawn");                                                              // Line 453
-	echo T_("Al-Balad");                                                              // Line 125
+	echo T_("Al-Balad");                                                              // Line 195
 	echo T_("The City");                                                              // Line 458
-	echo T_("Ash-Shams");                                                             // Line 126
+	echo T_("Ash-Shams");                                                             // Line 196
 	echo T_("The Sun");                                                               // Line 463
-	echo T_("Al-Layl");                                                               // Line 127
+	echo T_("Al-Layl");                                                               // Line 197
 	echo T_("The Night");                                                             // Line 468
-	echo T_("Ad-Duhaa");                                                              // Line 128
+	echo T_("Ad-Duhaa");                                                              // Line 198
 	echo T_("The Morning Hours");                                                     // Line 473
-	echo T_("Ash-Sharh");                                                             // Line 129
+	echo T_("Ash-Sharh");                                                             // Line 199
 	echo T_("The Relief");                                                            // Line 478
-	echo T_("At-Tin");                                                                // Line 130
+	echo T_("At-Tin");                                                                // Line 200
 	echo T_("The Fig");                                                               // Line 483
-	echo T_("Al-'Alaq");                                                              // Line 131
+	echo T_("Al-'Alaq");                                                              // Line 201
 	echo T_("The Clot");                                                              // Line 488
-	echo T_("Al-Qadr");                                                               // Line 132
+	echo T_("Al-Qadr");                                                               // Line 202
 	echo T_("The Power");                                                             // Line 493
-	echo T_("Al-Bayyinah");                                                           // Line 133
+	echo T_("Al-Bayyinah");                                                           // Line 203
 	echo T_("The Clear Proof");                                                       // Line 498
-	echo T_("Az-Zalzalah");                                                           // Line 134
+	echo T_("Az-Zalzalah");                                                           // Line 204
 	echo T_("The Earthquake");                                                        // Line 503
-	echo T_("Al-'Adiyat");                                                            // Line 135
+	echo T_("Al-'Adiyat");                                                            // Line 205
 	echo T_("The Courser");                                                           // Line 508
-	echo T_("Al-Qari'ah");                                                            // Line 136
+	echo T_("Al-Qari'ah");                                                            // Line 206
 	echo T_("The Calamity");                                                          // Line 513
-	echo T_("At-Takathur");                                                           // Line 137
+	echo T_("At-Takathur");                                                           // Line 207
 	echo T_("The Rivalry in world increase");                                         // Line 518
-	echo T_("Al-'Asr");                                                               // Line 138
+	echo T_("Al-'Asr");                                                               // Line 208
 	echo T_("The Declining Day");                                                     // Line 523
-	echo T_("Al-Humazah");                                                            // Line 139
+	echo T_("Al-Humazah");                                                            // Line 209
 	echo T_("The Traducer");                                                          // Line 528
-	echo T_("Al-Fil");                                                                // Line 140
+	echo T_("Al-Fil");                                                                // Line 210
 	echo T_("The Elephant");                                                          // Line 533
-	echo T_("Quraysh");                                                               // Line 141
-	echo T_("Al-Ma'un");                                                              // Line 142
+	echo T_("Quraysh");                                                               // Line 211
+	echo T_("Al-Ma'un");                                                              // Line 212
 	echo T_("The Small Kindesses");                                                   // Line 543
-	echo T_("Al-Kawthar");                                                            // Line 143
+	echo T_("Al-Kawthar");                                                            // Line 213
 	echo T_("The Abundance");                                                         // Line 548
-	echo T_("Al-Kafirun");                                                            // Line 144
+	echo T_("Al-Kafirun");                                                            // Line 214
 	echo T_("The Disbelievers");                                                      // Line 553
-	echo T_("An-Nasr");                                                               // Line 145
+	echo T_("An-Nasr");                                                               // Line 215
 	echo T_("The Divine Support");                                                    // Line 558
-	echo T_("Al-Masad");                                                              // Line 146
+	echo T_("Al-Masad");                                                              // Line 216
 	echo T_("The Palm Fiber");                                                        // Line 563
-	echo T_("Al-Ikhlas");                                                             // Line 147
+	echo T_("Al-Ikhlas");                                                             // Line 217
 	echo T_("The Sincerity");                                                         // Line 568
-	echo T_("Al-Falaq");                                                              // Line 148
+	echo T_("Al-Falaq");                                                              // Line 218
 	echo T_("The Daybreak");                                                          // Line 573
-	echo T_("An-Nas");                                                                // Line 149
+	echo T_("An-Nas");                                                                // Line 219
 	echo T_("The Mankind");                                                           // Line 578
 
 	//-----------------------projects/SalamQuran/content/home/theme-translatePage.html
@@ -669,15 +669,35 @@ class twigTransTerms
 	//---------------------------------------projects/SalamQuran/content_m/layout.html
 	echo T_("Manage");                                                                // Line 6
 
-	//-----------------------------projects/SalamQuran/content_m/audiobank/layout.html
-	echo T_("Please select one item");                                                // Line 56
+	//-----------------------------------projects/SalamQuran/content_m/mag/layout.html
 	echo T_("Avatar");                                                                // Line 24
 	echo T_("Read Type");                                                             // Line 33
+	echo T_("Please select one item");                                                // Line 56
 	echo T_("filetype");                                                              // Line 43
 	echo T_("Choose country");                                                        // Line 71
 	echo T_("addr");                                                                  // Line 86
 	echo T_("quality");                                                               // Line 95
 	echo T_("Add");                                                                   // Line 103
+
+	//--------------------------projects/SalamQuran/content_m/mag/connect/display.html
+	echo T_("Select magazine");                                                       // Line 20
+	echo T_("Connect to");                                                            // Line 34
+	echo T_("Connect to sura");                                                       // Line 63
+	echo T_("Connect to aya");                                                        // Line 79
+	echo T_("Connect to page");                                                       // Line 94
+	echo T_("Select sura");                                                           // Line 105
+
+	//-----------------------------projects/SalamQuran/content_m/mag/home/display.html
+	echo T_("Magazine list");                                                         // Line 19
+	echo T_("Connect mag to quran");                                                  // Line 30
+	echo T_("Title");                                                                 // Line 77
+	echo T_("page");                                                                  // Line 79
+	echo T_("sura");                                                                  // Line 80
+	echo T_("aya");                                                                   // Line 81
+	echo T_("Hi!");                                                                   // Line 128
+	echo T_("Try to start with add new record!");                                     // Line 118
+
+	//-----------------------------projects/SalamQuran/content_m/audiobank/layout.html
 
 	//---------------------projects/SalamQuran/content_m/audiobank/manage/display.html
 	echo T_("Run again");                                                             // Line 20
@@ -689,7 +709,6 @@ class twigTransTerms
 	echo T_("file type");                                                             // Line 81
 	echo T_("Addr");                                                                  // Line 84
 	echo T_("Status");                                                                // Line 85
-	echo T_("Hi!");                                                                   // Line 128
 	echo T_("Try to start with add new audio!");                                      // Line 128
 
 	//---------------------------------projects/SalamQuran/content_m/home/display.html
