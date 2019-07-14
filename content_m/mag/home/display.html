@@ -4,18 +4,15 @@
 
 {%block pageContent%}
   <div class="f">
-
     <div class="c6 s12">{{block('BmagListPosts')}}</div>
     <div class="c6 s12">{{block('Bmagazine')}}</div>
-
-
   </div>
 {%endblock%}
 
 
 
 {%block BmagListPosts%}
-<a class="dcard x2" href='{{url.kingdom}}/cms/posts'>
+<a class="dcard x1" href='{{url.kingdom}}/cms/posts'>
  <div class="statistic blue">
   <div class="value mB10"><i class="sf-list"></i></div>
   <div class="label">{%trans "Magazine list"%}</div>
@@ -26,7 +23,7 @@
 
 
 {%block Bmagazine%}
-<a class="dcard x2" href='{{url.this}}/connect'>
+<a class="dcard x1" href='{{url.this}}/connect'>
  <div class="statistic blue">
   <div class="value mB10"><i class="sf-plug"></i></div>
   <div class="label">{%trans "Connect mag to quran"%}</div>
