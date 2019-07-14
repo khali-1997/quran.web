@@ -16,7 +16,7 @@ class twigTransTerms
 	echo T_("Get list of aya from one page word by word");                            // Line 8
 	echo T_("Parameters");                                                            // Line 16
 	echo T_("Name");                                                                  // Line 85
-	echo T_("type");                                                                  // Line 78
+	echo T_("type");                                                                  // Line 64
 	echo T_("Description");                                                           // Line 10
 	echo T_("Constraints");                                                           // Line 22
 	echo T_("You must set index between 1 and 604");                                  // Line 35
@@ -66,7 +66,7 @@ class twigTransTerms
 
 	//-----------------------------projects/SalamQuran/content_api/v6/doc/sidebar.html
 	echo T_("Sura list");                                                             // Line 3
-	echo T_("Sura");                                                                  // Line 103
+	echo T_("Sura");                                                                  // Line 91
 	echo T_("Page");                                                                  // Line 90
 	echo T_("Page word by word");                                                     // Line 6
 	echo T_("Juz per sura");                                                          // Line 7
@@ -150,7 +150,7 @@ class twigTransTerms
 
 	//---------------------------------projects/SalamQuran/content/search/display.html
 	echo T_("Search");                                                                // Line 65
-	echo T_("Aya");                                                                   // Line 75
+	echo T_("Aya");                                                                   // Line 92
 	echo T_("No result found");                                                       // Line 47
 	echo T_("Clear filter");                                                          // Line 48
 	echo T_("Please enter your keyword in the box above and press Enter");            // Line 56
@@ -681,7 +681,7 @@ class twigTransTerms
 
 	//--------------------------projects/SalamQuran/content_m/mag/connect/display.html
 	echo T_("Select magazine");                                                       // Line 20
-	echo T_("Connect to");                                                            // Line 34
+	echo T_("Connect to");                                                            // Line 79
 	echo T_("Connect to sura");                                                       // Line 63
 	echo T_("Connect to aya");                                                        // Line 79
 	echo T_("Connect to page");                                                       // Line 94
@@ -690,12 +690,11 @@ class twigTransTerms
 	//-----------------------------projects/SalamQuran/content_m/mag/home/display.html
 	echo T_("Magazine list");                                                         // Line 19
 	echo T_("Connect mag to quran");                                                  // Line 30
-	echo T_("Title");                                                                 // Line 77
-	echo T_("page");                                                                  // Line 79
-	echo T_("sura");                                                                  // Line 80
-	echo T_("aya");                                                                   // Line 81
+	echo T_("Title");                                                                 // Line 78
+	echo T_("Action");                                                                // Line 80
+	echo T_("Remove");                                                                // Line 96
 	echo T_("Hi!");                                                                   // Line 128
-	echo T_("Try to start with add new record!");                                     // Line 118
+	echo T_("Try to start with add new record!");                                     // Line 124
 
 	//-----------------------------projects/SalamQuran/content_m/audiobank/layout.html
 

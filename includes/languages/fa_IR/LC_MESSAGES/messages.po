@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SalamQuran - Persian\n"
-"POT-Creation-Date: 2019-07-14 17:44+0430\n"
-"PO-Revision-Date: 2019-07-14 17:52+0430\n"
+"POT-Creation-Date: 2019-07-14 20:51+0430\n"
+"PO-Revision-Date: 2019-07-14 20:52+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -177,7 +177,6 @@ msgid "Aya"
 msgstr "آیه"
 
 #: SalamQuran/content/home/view.php:95
-#: SalamQuran/includes/languages/trans_project.php:696
 msgid "aya"
 msgstr "آیه"
 
@@ -193,7 +192,6 @@ msgstr "صفحه"
 #: SalamQuran/content/home/view.php:100 SalamQuran/content/home/view.php:120
 #: SalamQuran/content/home/view.php:125 SalamQuran/content/home/view.php:147
 #: SalamQuran/includes/languages/trans_dash.php:592
-#: SalamQuran/includes/languages/trans_project.php:694
 #: SalamQuran/includes/lib/app/quran/aya.php:328
 #: SalamQuran/includes/lib/app/quran/page.php:420
 #: SalamQuran/includes/lib/app/quran/page.php:454
@@ -1206,7 +1204,7 @@ msgid "Code"
 msgstr "کد"
 
 #: SalamQuran/includes/languages/trans_dash.php:181
-#: SalamQuran/includes/languages/trans_project.php:711
+#: SalamQuran/includes/languages/trans_project.php:710
 #: dash/addons/content_cms/attachment/home/view.php:121
 #: dash/addons/includes/languages/trans_dash.php:43
 msgid "Status"
@@ -2119,6 +2117,7 @@ msgid "Featured Image"
 msgstr "تصویر شاخص"
 
 #: SalamQuran/includes/languages/trans_dash.php:370
+#: SalamQuran/includes/languages/trans_project.php:695
 #: dash/addons/includes/languages/trans_dash.php:71
 msgid "Remove"
 msgstr "حذف"
@@ -2426,13 +2425,13 @@ msgid "Search with new keywords."
 msgstr "با کلیدواژه‌های بهتری جستجو کنید."
 
 #: SalamQuran/includes/languages/trans_dash.php:433
-#: SalamQuran/includes/languages/trans_project.php:697
+#: SalamQuran/includes/languages/trans_project.php:696
 #: dash/addons/includes/languages/trans_dash.php:84
 msgid "Hi!"
 msgstr "سلام!"
 
 #: SalamQuran/includes/languages/trans_dash.php:434
-#: SalamQuran/includes/languages/trans_project.php:698
+#: SalamQuran/includes/languages/trans_project.php:697
 #: dash/addons/includes/languages/trans_dash.php:85
 msgid "Try to start with add new record!"
 msgstr "با افزودن رکورد جدید تلاشی برای شروع داشته باشید!"
@@ -8552,35 +8551,35 @@ msgstr "لیست مجله"
 msgid "Connect mag to quran"
 msgstr "اتصال مجله به قرآن"
 
-#: SalamQuran/includes/languages/trans_project.php:695
-msgid "sura"
-msgstr "سوره"
+#: SalamQuran/includes/languages/trans_project.php:694
+msgid "Action"
+msgstr "عملیات"
 
-#: SalamQuran/includes/languages/trans_project.php:703
+#: SalamQuran/includes/languages/trans_project.php:702
 msgid "Run again"
 msgstr "اجراء دوباره"
 
-#: SalamQuran/includes/languages/trans_project.php:704
+#: SalamQuran/includes/languages/trans_project.php:703
 msgid "Audio bank"
 msgstr "بانک صوت"
 
-#: SalamQuran/includes/languages/trans_project.php:707
+#: SalamQuran/includes/languages/trans_project.php:706
 msgid "Check audio online"
 msgstr "بررسی بر خط صوت"
 
-#: SalamQuran/includes/languages/trans_project.php:708
+#: SalamQuran/includes/languages/trans_project.php:707
 msgid "Read type"
 msgstr "نوع خواندن"
 
-#: SalamQuran/includes/languages/trans_project.php:709
+#: SalamQuran/includes/languages/trans_project.php:708
 msgid "file type"
 msgstr "نوع فایل"
 
-#: SalamQuran/includes/languages/trans_project.php:710
+#: SalamQuran/includes/languages/trans_project.php:709
 msgid "Addr"
 msgstr "آدرس"
 
-#: SalamQuran/includes/languages/trans_project.php:712
+#: SalamQuran/includes/languages/trans_project.php:711
 msgid "Try to start with add new audio!"
 msgstr "با افزودن صوت جدید تلاشی برای شروع داشته باشید!"
 
@@ -9043,37 +9042,56 @@ msgstr "ایران‌سنز"
 msgid "Invalid type"
 msgstr "نوع نامعتبر"
 
-#: SalamQuran/includes/lib/app/mag.php:30
+#: SalamQuran/includes/lib/app/mag.php:28
 msgid "Plese choose one magazine"
 msgstr "لطفا یکی از محتواها را انتخاب کنید"
 
-#: SalamQuran/includes/lib/app/mag.php:37
+#: SalamQuran/includes/lib/app/mag.php:35
 msgid "Invalid post"
 msgstr "شناسه پست اشتباه است"
 
-#: SalamQuran/includes/lib/app/mag.php:56 SalamQuran/includes/lib/app/mag.php:68
+#: SalamQuran/includes/lib/app/mag.php:54 SalamQuran/includes/lib/app/mag.php:66
 msgid "Invalid sura id"
 msgstr "شناسه سوره اشتباه است"
 
-#: SalamQuran/includes/lib/app/mag.php:78
+#: SalamQuran/includes/lib/app/mag.php:76
 msgid "This sura have :val aya"
 msgstr "این سوره :val آیه دارد"
 
-#: SalamQuran/includes/lib/app/mag.php:93
+#: SalamQuran/includes/lib/app/mag.php:91
 msgid "Invalid page number"
 msgstr "شماره صفحه اشتباه است"
 
-#: SalamQuran/includes/lib/app/mag.php:102
+#: SalamQuran/includes/lib/app/mag.php:100
 msgid "This method is not supported"
 msgstr "این متود پشتیبانی نمی‌شود"
 
-#: SalamQuran/includes/lib/app/mag.php:113
+#: SalamQuran/includes/lib/app/mag.php:111
 msgid "Duplicate connection mags to quran"
 msgstr "این اتصال قبلا صورت گرفته است"
 
-#: SalamQuran/includes/lib/app/mag.php:120
+#: SalamQuran/includes/lib/app/mag.php:118
 msgid "The magazine connect to quran"
 msgstr "این مقاله به قرآن متصل شد"
+
+#: SalamQuran/includes/lib/app/mag.php:169
+#: dash/addons/content_crm/permission/delete/view.php:34
+msgid "Id not set"
+msgstr "شناسه تنظیم نشده است"
+
+#: SalamQuran/includes/lib/app/mag.php:177
+msgid "Connection mag to quran removed"
+msgstr "اتصال مجله به قرآن حذف شد"
+
+#: SalamQuran/includes/lib/app/mag.php:182
+#: dash/addons/content_cms/comments/edit/controller.php:15
+#: dash/addons/content_cms/comments/edit/view.php:14
+#: dash/addons/content_cms/contact/edit/view.php:14
+#: dash/addons/content_cms/posts/edit/controller.php:14
+#: dash/addons/content_support/message/edit/view.php:23
+#: dash/addons/content_support/ticket/show/view.php:47 dash/lib/app/posts.php:344
+msgid "Invalid id"
+msgstr "شناسه نامعتبر"
 
 #: SalamQuran/includes/lib/app/qari.php:12
 msgid "Sahih international"
@@ -9913,15 +9931,6 @@ msgstr "فایل با موفقیت حذف شد"
 msgid "Backup Complete"
 msgstr "عملیات پشتیبان گیری کامل شد"
 
-#: dash/addons/content_cms/comments/edit/controller.php:15
-#: dash/addons/content_cms/comments/edit/view.php:14
-#: dash/addons/content_cms/contact/edit/view.php:14
-#: dash/addons/content_cms/posts/edit/controller.php:14
-#: dash/addons/content_support/message/edit/view.php:23
-#: dash/addons/content_support/ticket/show/view.php:47 dash/lib/app/posts.php:344
-msgid "Invalid id"
-msgstr "شناسه نامعتبر"
-
 #: dash/addons/content_cms/comments/edit/model.php:34
 #: dash/addons/content_cms/contact/edit/model.php:34
 msgid "Comment successfully updated"
@@ -10455,10 +10464,6 @@ msgstr "ویرایش سطح دسترسی :name"
 #: dash/addons/content_crm/permission/delete/view.php:11
 msgid "Delete a permissions"
 msgstr "حذف سطح دسترسی"
-
-#: dash/addons/content_crm/permission/delete/view.php:34
-msgid "Id not set"
-msgstr "شناسه تنظیم نشده است"
 
 #: dash/addons/content_crm/permission/view.php:12
 msgid "Set and config permission of users and allow them to do something."
@@ -17708,6 +17713,9 @@ msgstr "نام فایل غیرمجاز"
 #: dash/lib/utility/upload/check.php:91
 msgid "Exceeded file extension limit"
 msgstr "نوع فایل غیرمجاز"
+
+#~ msgid "sura"
+#~ msgstr "سوره"
 
 #~ msgid "This magazine is published. And you can not edit it!"
 #~ msgstr "این مجله منتشر شده و شما نمی‌توانید آن را ویرایش کنید!"
