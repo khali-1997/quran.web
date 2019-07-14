@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SalamQuran - Persian\n"
-"POT-Creation-Date: 2019-07-13 22:05+0430\n"
-"PO-Revision-Date: 2019-07-13 22:07+0430\n"
+"POT-Creation-Date: 2019-07-14 10:34+0430\n"
+"PO-Revision-Date: 2019-07-14 10:34+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -9743,7 +9743,7 @@ msgid "Session id not send or invalid"
 msgstr "شناسه نشست ارسال نشده است یا نادرست است"
 
 #: dash/addons/content_api/v6/session/controller.php:138
-#: dash/addons/content_su/transactions/add/model.php:80 dash/lib/app/posts.php:690
+#: dash/addons/content_su/transactions/add/model.php:80 dash/lib/app/posts.php:724
 msgid "Invalid type"
 msgstr "نوع نامعتبر"
 
@@ -9843,7 +9843,7 @@ msgstr "عملیات پشتیبان گیری کامل شد"
 #: dash/addons/content_cms/contact/edit/view.php:14
 #: dash/addons/content_cms/posts/edit/controller.php:14
 #: dash/addons/content_support/message/edit/view.php:23
-#: dash/addons/content_support/ticket/show/view.php:47 dash/lib/app/posts.php:293
+#: dash/addons/content_support/ticket/show/view.php:47 dash/lib/app/posts.php:327
 msgid "Invalid id"
 msgstr "شناسه نامعتبر"
 
@@ -15250,6 +15250,10 @@ msgstr "ویرایش مجله"
 msgid "cpChangePostCreator"
 msgstr "تغییر نویسنده مطالب"
 
+#: dash/addons/includes/languages/trans_static.php:1153
+msgid "Contributor"
+msgstr "مشارکت کننده"
+
 #: dash/lib/app/address.php:58
 msgid "Please set title less than 100 character"
 msgstr "لطفا عنوان را کمتر از ۱۰۰ حرف وارد کنید"
@@ -15352,7 +15356,7 @@ msgid "Invalid via"
 msgstr "پارامتر via اشتباه است"
 
 #: dash/lib/app/comment.php:269 dash/lib/app/comment.php:276
-#: dash/lib/app/posts.php:194 dash/lib/app/posts.php:202
+#: dash/lib/app/posts.php:228 dash/lib/app/posts.php:236
 msgid "Invalid post id"
 msgstr "شناسه پست اشتباه است"
 
@@ -15707,140 +15711,140 @@ msgstr "والد حذف شد"
 msgid "Waiting to user accept this request"
 msgstr "در انتظار تایید درخواست توسط کاربر"
 
-#: dash/lib/app/posts.php:227
+#: dash/lib/app/posts.php:261
 msgid "Duplicate file in this gallery"
 msgstr "این فایل در گالری تصاویر فعلی موجود است"
 
-#: dash/lib/app/posts.php:243
+#: dash/lib/app/posts.php:277
 msgid "Invalid gallery id"
 msgstr "شناسه گالری تصاویر اشتباه است"
 
-#: dash/lib/app/posts.php:304
+#: dash/lib/app/posts.php:338
 msgid "This help center is published. And you can not edit it!"
 msgstr "این مقاله مرکز راهنمایی منتشر شده و شما نمی‌توانید آن را حذف کنید!"
 
-#: dash/lib/app/posts.php:314
+#: dash/lib/app/posts.php:348
 msgid "This post is published. And you can not edit it!"
 msgstr "این خبر منتشر شده و شما نمی‌توانید آن را حذف کنید!"
 
-#: dash/lib/app/posts.php:330 dash/lib/app/posts.php:340
+#: dash/lib/app/posts.php:364 dash/lib/app/posts.php:374
 msgid "This is not your post. And you can not edit it!"
 msgstr "این خبر شما نیست و شما نمی‌توانید آن را حذف کنید!"
 
-#: dash/lib/app/posts.php:352 dash/lib/app/posts.php:358 dash/lib/app/term.php:110
+#: dash/lib/app/posts.php:386 dash/lib/app/posts.php:392 dash/lib/app/term.php:110
 #: dash/lib/app/term.php:116
 msgid "Invalid parameter language"
 msgstr "پارامتر زبان نامعتبر است"
 
-#: dash/lib/app/posts.php:365
+#: dash/lib/app/posts.php:399
 msgid "Title of posts can not be null"
 msgstr "عنوان پست نمی تواند خالی باشد"
 
-#: dash/lib/app/posts.php:371
+#: dash/lib/app/posts.php:405
 msgid "Please set the title less than 100 character"
 msgstr "لطفا عنوان پست را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:378
+#: dash/lib/app/posts.php:412
 msgid "Please set the excerpt less than 300 character"
 msgstr "لطفا چکیده متن را کمتر از ۳۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:385
+#: dash/lib/app/posts.php:419
 msgid "Please set the subtitle less than 300 character"
 msgstr "لطفا زیر عنوان را کمتر از ۳۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:392
+#: dash/lib/app/posts.php:426
 msgid "Please set the slug less than 100 character"
 msgstr "لطفا نامک را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:414
+#: dash/lib/app/posts.php:448
 msgid "Duplicate slug"
 msgstr "نامک تکراری است"
 
-#: dash/lib/app/posts.php:422
+#: dash/lib/app/posts.php:456
 msgid "Please set the url less than 100 character"
 msgstr "لطفا آدرس را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:434
+#: dash/lib/app/posts.php:468
 msgid "This text is too large!"
 msgstr "متن خیلی طولانی است!"
 
-#: dash/lib/app/posts.php:440
+#: dash/lib/app/posts.php:474
 msgid "Please set the type less than 100 character"
 msgstr "لطفا نوع را کمتر از ۱۰۰ حرف وارد کنید"
 
-#: dash/lib/app/posts.php:461
+#: dash/lib/app/posts.php:495
 msgid "Invalid parameter special"
 msgstr "پارامتر کاربردخاص اشتباه است"
 
-#: dash/lib/app/posts.php:470
+#: dash/lib/app/posts.php:504
 msgid "Invalid parameter status"
 msgstr "پارامتر وضعیت نامعتبر است"
 
-#: dash/lib/app/posts.php:481
+#: dash/lib/app/posts.php:515
 msgid "You can not delete help center"
 msgstr "شما نمی‌توانید این مقاله مرکز راهنمایی را حذف کنید"
 
-#: dash/lib/app/posts.php:489
+#: dash/lib/app/posts.php:523
 msgid "You can not delete page"
 msgstr "شما نمی‌توانید این صفحه را حذف کنید"
 
-#: dash/lib/app/posts.php:498
+#: dash/lib/app/posts.php:532
 msgid "You can not delete post"
 msgstr "شما نمی توانید خبر را حذف کنید"
 
-#: dash/lib/app/posts.php:511
+#: dash/lib/app/posts.php:545
 msgid "This is not your help center. And you can not delete it!"
 msgstr "این مقاله شما نیست و شما نمی‌توانید آن را ویرایش کنید!"
 
-#: dash/lib/app/posts.php:519
+#: dash/lib/app/posts.php:553
 msgid "This is not your magazine. And you can not delete it!"
 msgstr "این مجله شما نیست و شما نمی‌توانید آن را حذف کنید!"
 
-#: dash/lib/app/posts.php:529
+#: dash/lib/app/posts.php:563
 msgid "This is not your post. And you can not delete it!"
 msgstr "این خبر شما نیست و شما نمی‌توانید آن را حذف کنید!"
 
-#: dash/lib/app/posts.php:547
+#: dash/lib/app/posts.php:581
 msgid "Invalid parameter parent"
 msgstr "پارامتر والد نامعتبر است"
 
-#: dash/lib/app/posts.php:554
+#: dash/lib/app/posts.php:588
 msgid "Parent post not found"
 msgstr "پست والد یافت نشد"
 
-#: dash/lib/app/posts.php:562
+#: dash/lib/app/posts.php:596
 msgid "Can not set page as parent of self!"
 msgstr "نمی‌توانید صفحه‌ای را به‌عنوان والد خودش ثبت کنید!"
 
-#: dash/lib/app/posts.php:610
+#: dash/lib/app/posts.php:644
 msgid "Invalid parameter publishdate"
 msgstr "تاریخ انتشار پست اشتباه است"
 
-#: dash/lib/app/posts.php:631
+#: dash/lib/app/posts.php:665
 msgid "Invalid publish time"
 msgstr "تاریخ انتشار نادرست"
 
-#: dash/lib/app/posts.php:661
+#: dash/lib/app/posts.php:695
 msgid "Category setting for better access is suggested"
 msgstr "تنظیم دسته‌بندی برای دسترسی مناسب‌تر توصیه می‌شود"
 
-#: dash/lib/app/posts.php:676
+#: dash/lib/app/posts.php:710
 msgid "Invalid slug"
 msgstr "نامک اشتباه است"
 
-#: dash/lib/app/posts.php:708 dash/lib/utility/pay/start.php:158
+#: dash/lib/app/posts.php:742 dash/lib/utility/pay/start.php:158
 msgid "Invalid user"
 msgstr "کاربر نامعتبر"
 
-#: dash/lib/app/posts.php:848
+#: dash/lib/app/posts.php:882
 msgid "Some :type is wrong"
 msgstr "برخی از :type اشتباه هستند"
 
-#: dash/lib/app/posts.php:1110
+#: dash/lib/app/posts.php:1144
 msgid "Post not found"
 msgstr "پست یافت نشد"
 
-#: dash/lib/app/posts.php:1135
+#: dash/lib/app/posts.php:1169
 msgid "The Featured Image removed"
 msgstr "تصویر شاخص حذف شد"
 
@@ -16383,63 +16387,63 @@ msgstr "فایل وجود ندارد"
 msgid "Mailer Error :error"
 msgstr "خطا در ارسال‌کننده ایمیل :error"
 
-#: dash/lib/permission.php:165
+#: dash/lib/permission.php:112
 msgid "Someone have this permission!"
 msgstr "عده ای در لیست این سطح دسترسی وجود دارند!"
 
-#: dash/lib/permission.php:165
+#: dash/lib/permission.php:112
 msgid "Can not remove it."
 msgstr "نمی توانید این مورد را حذف کنید"
 
-#: dash/lib/permission.php:171
+#: dash/lib/permission.php:118
 msgid "Can not remove admin!"
 msgstr "اجازه حذف مدیر کل وجود ندارد"
 
-#: dash/lib/permission.php:196
+#: dash/lib/permission.php:143
 msgid "Permission removed"
 msgstr "سطح دسترسی حذف شد"
 
-#: dash/lib/permission.php:341
+#: dash/lib/permission.php:288
 msgid "Please set a valid name for permission"
 msgstr "لطفا نام معتبری برای سطح دسترسی انتخاب کنید"
 
-#: dash/lib/permission.php:353 dash/lib/permission.php:364
+#: dash/lib/permission.php:300 dash/lib/permission.php:311
 msgid "This key was reserved, Try another"
 msgstr "این نام قبلا رزرو شده است، نامی دیگر انتخاب کنید"
 
-#: dash/lib/permission.php:372
+#: dash/lib/permission.php:319
 msgid "Can not change admin permission"
 msgstr "امکان تغییر سطح دسترسی مدیر کل وجود ندارد"
 
-#: dash/lib/permission.php:378
+#: dash/lib/permission.php:325
 msgid "This key was not found in your permission list!"
 msgstr "این آیتم در لیست سطوح دسترسی شما یافت نشد"
 
-#: dash/lib/permission.php:385
+#: dash/lib/permission.php:332
 msgid "The title must include at least one alphabetical character"
 msgstr "عنوان باید حداقل شامل یک کاراکتر الفبایی باشد"
 
-#: dash/lib/permission.php:391
+#: dash/lib/permission.php:338
 msgid "Name too large, Try another"
 msgstr "نام بسیار طولانی است،‌ آن را تغییر دهید"
 
-#: dash/lib/permission.php:398
+#: dash/lib/permission.php:345
 msgid "Label too large, Try another"
 msgstr "برچسب بسیار طولانی است، آن را تغییر دهید"
 
-#: dash/lib/permission.php:404
+#: dash/lib/permission.php:351
 msgid "Invalid contain of permission"
 msgstr "آیتم های پرمیژن اشتباه هستند"
 
-#: dash/lib/permission.php:414
+#: dash/lib/permission.php:361
 msgid "This item is not in your permission list!"
 msgstr "این گزینه در لیست سطوح دسترسی شما وجود ندارد"
 
-#: dash/lib/permission.php:440
+#: dash/lib/permission.php:394
 msgid "Permission saved"
 msgstr "سطح دسترسی ذخیره شد"
 
-#: dash/lib/permission.php:629
+#: dash/lib/permission.php:583
 msgid "Permission denied"
 msgstr "دسترسی غیر مجاز"
 

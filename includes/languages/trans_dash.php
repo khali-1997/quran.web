@@ -244,7 +244,7 @@ class twigTransTerms
 	echo T_("Pasargad");                                                              // Line 75
 	echo T_("Saman");                                                                 // Line 81
 	echo T_("Sina");                                                                  // Line 87
-	echo T_("Post");                                                                  // Line 106
+	echo T_("Post");                                                                  // Line 93
 	echo T_("Ghavamin");                                                              // Line 99
 	echo T_("Taavon");                                                                // Line 105
 	echo T_("Shahr");                                                                 // Line 111
@@ -494,9 +494,9 @@ class twigTransTerms
 	echo T_("Visitor");                                                               // Line 112
 
 	//------------------------------------------------addons/content_cms/home/chart.js
-	echo T_("Word cloud");                                                            // Line 74
-	echo T_("Post count");                                                            // Line 95
-	echo T_("post");                                                                  // Line 118
+	echo T_("Word cloud");                                                            // Line 61
+	echo T_("Post count");                                                            // Line 82
+	echo T_("post");                                                                  // Line 105
 
 	//-----------------------------------------addons/content_cms/sitemap/display.html
 	echo T_("Create sitemap automatically by click on this page");                    // Line 6
