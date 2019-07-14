@@ -48,6 +48,10 @@ class mags
 		{
 			$q = "WHERE ". implode(' AND ', $q);
 		}
+		else
+		{
+			$q = null;
+		}
 
 		$pagination_query =
 		"

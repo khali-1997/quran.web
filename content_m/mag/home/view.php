@@ -17,14 +17,14 @@ class view
 			'order' => \dash\request::get('order'),
 		];
 
-		if(!$args['order'])
+		if(!$option['order'])
 		{
-			$args['order'] = 'DESC';
+			$option['order'] = 'DESC';
 		}
 
-		if(!$args['sort'])
+		if(!$option['sort'])
 		{
-			$args['sort'] = 'id';
+			$option['sort'] = 'id';
 		}
 
 		if(\dash\request::get('status'))
