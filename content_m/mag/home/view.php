@@ -39,9 +39,9 @@ class view
 			$filterArray['type'] = $args['type'];
 		}
 
-		if(\dash\request::get('page'))
+		if(\dash\request::get('magpage'))
 		{
-			$args['page']        = \dash\request::get('page');
+			$args['page']        = \dash\request::get('magpage');
 			$filterArray['page'] = $args['page'];
 		}
 
@@ -57,12 +57,25 @@ class view
 			$filterArray['aya'] = $args['aya'];
 		}
 
+		if(\dash\request::get('post_id'))
+		{
+			$args['post_id']        = \dash\coding::decode(\dash\request::get('post_id'));
+			$filterArray['Post'] = 1;
+		}
+
 		if(\dash\request::get('type'))
 		{
 			$args['type'] = \dash\request::get('type');
 		}
 
-		\dash\data::dataTable(\lib\app\mag::list(null, $args, $option));
+		$dataTable = \lib\app\mag::list(null, $args, $option);
+
+		\dash\data::dataTable($dataTable);
+
+		if(isset($filterArray['Post']) && isset($dataTable[0]['title']))
+		{
+			$filterArray['Post'] = $dataTable[0]['title'];
+		}
 
 		// set dataFilter
 		$dataFilter = \dash\app\sort::createFilterMsg(null, $filterArray);
