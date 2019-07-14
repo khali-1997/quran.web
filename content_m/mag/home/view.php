@@ -9,12 +9,23 @@ class view
 		$get_post_counter_args = [];
 		$filterArray           = [];
 
-		$args =
+		$args   = [];
+
+		$option =
 		[
 			'sort'  => \dash\request::get('sort'),
 			'order' => \dash\request::get('order'),
 		];
 
+		if(!$args['order'])
+		{
+			$args['order'] = 'DESC';
+		}
+
+		if(!$args['sort'])
+		{
+			$args['sort'] = 'id';
+		}
 
 		if(\dash\request::get('status'))
 		{
@@ -22,26 +33,38 @@ class view
 			$filterArray['status'] = $args['status'];
 		}
 
+		if(\dash\request::get('type'))
+		{
+			$args['type']        = \dash\request::get('type');
+			$filterArray['type'] = $args['type'];
+		}
+
+		if(\dash\request::get('page'))
+		{
+			$args['page']        = \dash\request::get('page');
+			$filterArray['page'] = $args['page'];
+		}
+
+		if(\dash\request::get('sura'))
+		{
+			$args['sura']        = \dash\request::get('sura');
+			$filterArray['sura'] = $args['sura'];
+		}
+
+		if(\dash\request::get('aya'))
+		{
+			$args['aya']        = \dash\request::get('aya');
+			$filterArray['aya'] = $args['aya'];
+		}
 
 		if(\dash\request::get('type'))
 		{
 			$args['type'] = \dash\request::get('type');
 		}
 
-		if(!$args['order'])
-		{
-			$args['order'] = 'DESC';
-		}
 
 
-		if(!$args['sort'])
-		{
-			$args['sort'] = 'id';
-		}
-
-
-
-		\dash\data::dataTable(\lib\app\mag::list(null, $args));
+		\dash\data::dataTable(\lib\app\mag::list(null, $args, $option));
 
 		// set dataFilter
 		$dataFilter = \dash\app\sort::createFilterMsg(null, $filterArray);

@@ -125,9 +125,9 @@ class mag
 	}
 
 
-	public static function list($_string = null, $_args = [])
+	public static function list($_string = null, $_args = null, $_option = null)
 	{
-		$list = \lib\db\mags::search($_string, $_args);
+		$list = \lib\db\mags::search($_string, $_args, $_option);
 		return $list;
 	}
 }

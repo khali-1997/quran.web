@@ -29,13 +29,24 @@ class mags
 	}
 
 
-	public static function search($_string = null, $_option = [])
+	public static function search($_string = null, $_where = null, $_option = null)
 	{
-		$q = null;
+		$q = [];
+
 		if(isset($_string))
 		{
 			$_string = \dash\db\safe::value($_string);
-			$q       = " WHERE posts.title LIKE '%$_string%' ";
+			$q[]     = " posts.title LIKE '%$_string%' ";
+		}
+
+		if($_where)
+		{
+			$q[] = \dash\db\config::make_where($_where);
+		}
+
+		if(!empty($q))
+		{
+			$q = "WHERE ". implode(' AND ', $q);
 		}
 
 		$pagination_query =

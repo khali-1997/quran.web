@@ -86,10 +86,10 @@
       {%for key, value in dataTable%}
       <tr>
         <td>{{value.title}}</td>
-        <td>{{value.type}}</td>
-        <td>{{value.page | fitNumber}}</td>
-        <td>{{value.sura | fitNumber}}</td>
-        <td>{{value.aya | fitNumber}}</td>
+        <td><a href="{{url.this}}?type={{value.type}}">{%set myTitle = value.type | capitalize%}{%trans myTitle%}</a></td>
+        <td><a href="{{url.this}}?page={{value.page}}">{{value.page | fitNumber}}</a></td>
+        <td><a href="{{url.this}}?sura={{value.sura}}">{{value.sura | fitNumber}}</a></td>
+        <td><a href="{{url.this}}?aya={{value.aya}}">{{value.aya | fitNumber}}</a></td>
       </tr>
       {%endfor%}
     </tbody>
@@ -101,7 +101,7 @@
 {%block htmlFilter%}
 <p class="f fs14 msg info2">
   <span class="c">{{dataFilter | raw}}</span>
-  <a class="cauto" href="{{url.here}}/posts{{moduleType}}">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
@@ -109,13 +109,13 @@
 {%block htmlFilterNoResult%}
 <p class="f fs14 msg warn2">
   <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
-  <a class="cauto" href="{{url.here}}/posts{{moduleType}}">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
 
 {%block htmlStartAddNew%}
-<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} <a href="{{url.here}}/posts/add{{moduleType}}">{%trans "Try to start with add new record!"%}</a></p>
+<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} <a href="{{url.this}}">{%trans "Try to start with add new record!"%}</a></p>
 {%endblock%}
 
 
