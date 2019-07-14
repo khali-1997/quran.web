@@ -5,6 +5,18 @@ class model
 {
 	public static function post()
 	{
+		$post          = [];
+		$post['post']  = \dash\request::post('post');
+		$post['page']  = \dash\request::post('page');
+		$post['aya']   = \dash\request::post('aya');
+		$post['surah'] = \dash\request::post('surah');
+		$post['type']  = \dash\request::post('connectType');
+
+		$add = \lib\app\mag::add($post);
+		if($add)
+		{
+			\dash\redirect::pwd();
+		}
 
 	}
 }

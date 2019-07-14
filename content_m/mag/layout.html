@@ -7,15 +7,7 @@
 
 {%endblock%}
 
-{% block iqari%}
-<label for="qari">{%trans "Qari"%}</label>
-<select name="qari" class="mB10 select ui dropdown search" id="qari">
-  <option value="" readonly>{%trans "Please select one item"%}</option>
-  {%for key, value in qariList%}
-    <option value="{{value.key}}" {%if value.key == dataRow.qari %} selected {%endif%}>{{value.value}}</option>
-  {%endfor%}
-</select>
-{% endblock %}
+
 
 
 {% block iavatar %}
