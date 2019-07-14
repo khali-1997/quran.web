@@ -70,7 +70,8 @@ class mags
 			SELECT
 				mags.id AS `mag_id`,
 				mags.*,
-				posts.title
+				posts.title,
+				posts.url
 			FROM
 				mags
 			INNER JOIN posts ON posts.id = mags.post_id

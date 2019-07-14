@@ -62,8 +62,6 @@ class view
 			$args['type'] = \dash\request::get('type');
 		}
 
-
-
 		\dash\data::dataTable(\lib\app\mag::list(null, $args, $option));
 
 		// set dataFilter

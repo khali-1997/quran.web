@@ -23,8 +23,6 @@ class mag
 		}
 
 		$post = \dash\app::request('post');
-		$post = \dash\coding::decode($post);
-
 		if(!$post)
 		{
 			\dash\notif::error(T_("Plese choose one magazine"));
@@ -120,7 +118,6 @@ class mag
 				\dash\notif::ok(T_("The magazine connect to quran"));
 				return true;
 			}
-
 		}
 	}
 
@@ -128,7 +125,39 @@ class mag
 	public static function list($_string = null, $_args = null, $_option = null)
 	{
 		$list = \lib\db\mags::search($_string, $_args, $_option);
+		if(is_array($list))
+		{
+			$list = array_map(['self', 'ready'], $list);
+		}
+
 		return $list;
+	}
+
+
+	public static function ready($_data)
+	{
+		$result = [];
+		if(!is_array($_data))
+		{
+			return $result;
+		}
+
+		foreach ($_data as $key => $value)
+		{
+			switch ($key)
+			{
+				case 'mag_id':
+				case 'post_id':
+					$result[$key] = \dash\coding::encode($value);
+					break;
+
+				default:
+					$result[$key] = $value;
+					break;
+			}
+		}
+
+		return $result;
 	}
 }
 ?>
