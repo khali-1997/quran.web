@@ -92,7 +92,7 @@
             {%if value.aya%} <a href="{{url.this}}?aya={{value.aya}}&sura={{value.sura}}">{%trans "Aya"%} <b>{{value.aya | fitNumber}}</b></a>{%endif%}
         </td>
         <td class="collapsing">
-          <a href="{{url.this}}/connect?id={{value.mag_id}}" class="badge primary">{%trans "Edit"%}</a>
+
           <div data-confirm data-data='{"action" : "remove", "id": "{{value.mag_id}}"}' class="badge danger">{%trans "Remove"%}</div>
         </td>
 

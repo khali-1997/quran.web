@@ -11,6 +11,21 @@ class mags
 		return \dash\db::insert_id();
 	}
 
+	public static function get_to_remove($_id)
+	{
+		$query  = "SELECT mags.id FROM mags WHERE mags.id = $_id LIMIT 1";
+		$result = \dash\db::get($query, 'id', true);
+		return $result;
+	}
+
+
+	public static function remove($_id)
+	{
+		$query  = "DELETE FROM mags WHERE mags.id = $_id LIMIT 1";
+		$result = \dash\db::query($query);
+		return $result;
+	}
+
 
 	public static function update()
 	{

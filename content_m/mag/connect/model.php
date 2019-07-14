@@ -15,7 +15,7 @@ class model
 		$add = \lib\app\mag::add($post);
 		if($add)
 		{
-			\dash\redirect::pwd();
+			\dash\redirect::to(\dash\url::this());
 		}
 
 	}

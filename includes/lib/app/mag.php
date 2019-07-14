@@ -159,5 +159,29 @@ class mag
 
 		return $result;
 	}
+
+
+	public static function remove($_id)
+	{
+		$id = \dash\coding::decode($_id);
+		if(!$id)
+		{
+			\dash\notif::error(T_("Id not set"));
+			return false;
+		}
+
+		$load = \lib\db\mags::get_to_remove($id);
+		if($load)
+		{
+			\lib\db\mags::remove($id);
+			\dash\notif::ok(T_("Connection mag to quran removed"));
+			return true;
+		}
+		else
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+	}
 }
 ?>
