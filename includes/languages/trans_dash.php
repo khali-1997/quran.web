@@ -406,8 +406,8 @@ class twigTransTerms
 	echo T_("Choose Parent");                                                         // Line 136
 	echo T_("Without Parent");                                                        // Line 137
 	echo T_("Slug");                                                                  // Line 8
-	echo T_("End part of your post url.");                                            // Line 403
-	echo T_("SEO Description");                                                       // Line 410
+	echo T_("End part of your post url.");                                            // Line 404
+	echo T_("SEO Description");                                                       // Line 411
 	echo T_("If leave it empty we are generate it automatically");                    // Line 19
 	echo T_("Excerpt used for social media and search engines");                      // Line 19
 	echo T_("Gallery");                                                               // Line 223
