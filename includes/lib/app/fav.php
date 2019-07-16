@@ -158,7 +158,7 @@ class fav
 
 		$update = ['desc' => $desc];
 		\lib\db\fav::update($update, $id);
-		\dash\notif::ok(T_("Desctiption saved"));
+		\dash\notif::ok(T_("Description saved"));
 		return true;
 	}
 
