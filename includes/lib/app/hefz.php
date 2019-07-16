@@ -37,8 +37,8 @@ class hefz
 
 	private static function hefz($_time)
 	{
-		// every line need 10 minutes to hefz it
-		$hefz_every_line = 10;
+		// every line need 15 minutes to hefz it
+		$hefz_every_line = 15;
 
 		// quran have 604 page
 		// every page have 15 line
