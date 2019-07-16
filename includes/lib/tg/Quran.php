@@ -108,11 +108,10 @@ class Quran
 	}
 
 
-	public static function page($_pageNumber)
+	public static function page($_pageNumber, $_from = null,  $_random = null)
 	{
 		$current = $_pageNumber;
 		bot::ok();
-
 
 		if($_pageNumber)
 		{
@@ -132,14 +131,14 @@ class Quran
 		}
 		else
 		{
+			$randomVal = mt_rand(1, 604);
 			// we dont have number show help of page
 			$msg = '';
 			$msg .= "<b>". T_('SalamQuran'). "</b>". "\n";
 			$msg .= T_('For access to specefic page of Quran please use and type one of below syntax')."\n";
-			$msg .= "<code>ص200</code>"."\n";
-			$msg .= "<code>p200</code>"."\n";
-			$msg .= "/p200"."\n";
-
+			$msg .= "<code>ص". $randomVal. "</code>"."\n";
+			$msg .= "<code>p". $randomVal. "</code>"."\n";
+			$msg .= "/p". $randomVal. "\n";
 			$msg .= "\n";
 			$msg .= bot::website();
 			bot::sendMessage($msg);
@@ -174,6 +173,11 @@ class Quran
 		// $msg .= T_('You have no survey yet!') ."\n\n";
 		$msg .= "<b>". T_('SalamQuran'). "</b> | ";
 		$msg .= T_('Page'). ' '. $current;
+		// show msg for random messages
+		if($_random)
+		{
+			$msg .= ' <code>'. T_("Random"). '</code>';
+		}
 		$msg .= "\n";
 		$msg .= $website;
 
@@ -223,20 +227,55 @@ class Quran
 
 	public static function juz($_code)
 	{
-		self::page($_code);
+		if($_code)
+		{
+			if(is_numeric($_code))
+			{
+				if($_code < 1 && $_code > 30)
+				{
+					return self::requireCode();
+				}
+			}
+			else
+			{
+				return self::page(mt_rand(1, 30), 'juz', true);
+			}
+
+		}
+		else
+		{
+			bot::ok();
+			$randomVal = mt_rand(1, 30);
+
+			// we dont have number show help of juz
+			$msg = '';
+			$msg .= "<b>". T_('SalamQuran'). "</b>". "\n";
+			$msg .= T_('For access to specefic juz of Quran please use and type one of below syntax')."\n";
+			$msg .= "<code>ج". $randomVal. "</code>"."\n";
+			$msg .= "<code>j". $randomVal. "</code>"."\n";
+			$msg .= "/j". $randomVal. "\n";
+
+			$msg .= "\n";
+			$msg .= bot::website();
+			bot::sendMessage($msg);
+			return true;
+		}
+
+
+		return self::page($_code, 'juz');
 	}
 
 
 	public static function surah($_code)
 	{
-		self::page($_code);
+		return  self::page($_code, 'surah');
 	}
 
 
 
 	public static function aya($_code)
 	{
-		self::page($_code);
+		return self::page($_code, 'aya');
 	}
 
 }
