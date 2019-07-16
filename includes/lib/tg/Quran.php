@@ -113,11 +113,6 @@ class Quran
 		$current = $_pageNumber;
 		bot::ok();
 
-		// if start with callback answer callback
-		if(bot::isCallback())
-		{
-			bot::answerCallbackQuery(T_("Request Quran Page"));
-		}
 
 		if($_pageNumber)
 		{
@@ -140,7 +135,7 @@ class Quran
 			// we dont have number show help of page
 			$msg = '';
 			$msg .= "<b>". T_('SalamQuran'). "</b>". "\n";
-			$msg .= T_('For access to specefic page of Quran please use one of below syntax')."\n";
+			$msg .= T_('For access to specefic page of Quran please use and type one of below syntax')."\n";
 			$msg .= "<code>ص200</code>"."\n";
 			$msg .= "<code>p200</code>"."\n";
 			$msg .= "/p200"."\n";
@@ -151,6 +146,11 @@ class Quran
 			return true;
 		}
 
+		// if start with callback answer callback
+		if(bot::isCallback())
+		{
+			bot::answerCallbackQuery(T_("Request for Quran page"). ' ' . $current);
+		}
 
 		$next = $current + 1;
 		if($next > 604)
