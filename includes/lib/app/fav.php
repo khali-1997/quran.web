@@ -176,7 +176,7 @@ class fav
 		if($load)
 		{
 			\lib\db\fav::remove($id);
-			\dash\notif::ok(T_("Connection mag to quran removed"));
+			\dash\notif::ok(T_("Favorites removed"));
 			return true;
 		}
 		else

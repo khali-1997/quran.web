@@ -1,0 +1,125 @@
+{%extends 'content_m/mag/layout.html'%}
+
+
+
+{%block pageContent%}
+
+  {{block('magList')}}
+{%endblock%}
+
+
+
+{%block BmagListPosts%}
+<a class="dcard x1" href='{{url.kingdom}}/cms/posts'>
+ <div class="statistic blue">
+  <div class="value mB10"><i class="sf-list"></i></div>
+  <div class="label">{%trans "Magazine list"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+{%block Bmagazine%}
+<a class="dcard x1" href='{{url.this}}/connect'>
+ <div class="statistic blue">
+  <div class="value mB10"><i class="sf-plug"></i></div>
+  <div class="label">{%trans "Connect mag to quran"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+
+
+{%block magList%}
+
+
+{%if dataTable%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+  {{block('htmlFilter')}}
+
+ {%else%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+
+ {%endif%}
+{%else%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlFilterNoResult')}}
+
+ {%else%}
+
+  {{block('htmlStartAddNew')}}
+
+ {%endif%}
+{%endif%}
+
+{%endblock%}
+
+
+
+
+{%block htmlTable%}
+  <table class="tbl1 v1 fs11">
+    <thead>
+      <tr>
+
+        <th>{%trans "Favorites"%}</th>
+        <th>{%trans "Desctiption"%}</th>
+        <th>{%trans "Action"%}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {%for key, value in dataTable%}
+      <tr>
+
+
+        <td>
+            {%if value.page%} <a href="{{url.kingdom}}/p{{value.page}}">{%trans "Page"%} <b>{{value.page | fitNumber}}</b></a>{%endif%}
+            {%if value.sura%} <a href="{{url.kingdom}}/s{{value.sura}}">{%trans "Sura"%} <b>{{value.sura | fitNumber}}</b></a>{%endif%}
+            {%if value.aya%} <a href="{{url.kingdom}}/s{{value.sura}}/{{value.aya}}">{%trans "Aya"%} <b>{{value.aya | fitNumber}}</b></a>{%endif%}
+        </td>
+        <td></td>
+        <td class="collapsing">
+          <div data-confirm data-data='{"action" : "remove", "id": "{{value.id}}"}' class="badge danger">{%trans "Remove"%}</div>
+        </td>
+
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  {%include display.pagination%}
+{%endblock%}
+
+
+{%block htmlFilter%}
+<p class="f fs14 msg info2">
+  <span class="c">{{dataFilter | raw}}</span>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlFilterNoResult%}
+<p class="f fs14 msg warn2">
+  <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlStartAddNew%}
+<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} <a href="{{url.this}}">{%trans "Try to start with add new record!"%}</a></p>
+{%endblock%}
+
+
+
