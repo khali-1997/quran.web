@@ -95,7 +95,9 @@
 		<th data-sort="{{sortLink.startjuz.order}}"><a href="{{sortLink.startjuz.link}}">{%trans "Juz"%}</a></th>
 
 		<th data-sort="{{sortLink.startpage.order}}"><a href="{{sortLink.startpage.link}}">{%trans "Page"%}</a></th>
-
+		{%if perm_su()%}
+		<th></th>
+		{%endif%}
 
 
       </tr>
@@ -129,8 +131,18 @@
 			<a href="{{url.kingdom}}/p{{value.startpage}}">{{value.startpage | fitNumber}}</a>
 			 {%if value.endpage != value.startpage%} - <a href="{{url.kingdom}}/p{{value.endpage}}">{{value.endpage | fitNumber}}</a>{%endif%}
 		</td>
-
-
+		{%if perm_su()%}
+		<th>
+			<i class="sf-star fc-mute"
+				data-ajaxify
+				data-action='{{url.kingdom}}/a/fav/add'
+				action='{{url.kingdom}}/a/fav/add'
+				href='{{url.kingdom}}/a/fav/add'
+				data-method='post'
+				data-data='{"sura" : "{{value.index}}", "type": "sura"}'>
+				</i>
+		</th>
+		{%endif%}
       </tr>
       {%endfor%}
     </tbody>
