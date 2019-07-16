@@ -56,6 +56,16 @@ class Quran
 							'callback_data'  => '/p_today',
 						],
 					],
+					[
+						[
+							'text' => T_("Random Aye"),
+							'callback_data'  => '/a_random',
+						],
+						[
+							'text' => T_("Random Page"),
+							'callback_data'  => '/p_random',
+						],
+					],
 				]
 			]
 		];
@@ -100,6 +110,7 @@ class Quran
 
 	public static function page($_pageNumber)
 	{
+		$current = $_pageNumber;
 		bot::ok();
 
 		// if start with callback answer callback
@@ -108,12 +119,39 @@ class Quran
 			bot::answerCallbackQuery(T_("Request Quran Page"));
 		}
 
-		if($_pageNumber < 1 && $_pageNumber > 604)
+		if($_pageNumber)
 		{
-			return self::requireCode();
+			if(is_numeric($_pageNumber))
+			{
+				if($_pageNumber < 1 && $_pageNumber > 604)
+				{
+					return self::requireCode();
+				}
+			}
+			else
+			{
+				// if text like today, get today page number
+				$current = 260;
+			}
+
+		}
+		else
+		{
+			// we dont have number show help of page
+			$msg = '';
+			$msg .= "<b>". T_('SalamQuran'). "</b>". "\n";
+			$msg .= T_('For access to specefic page of Quran please use one of below syntax')."\n";
+			$msg .= "<code>ص200</code>"."\n";
+			$msg .= "<code>p200</code>"."\n";
+			$msg .= "/p200"."\n";
+
+			$msg .= "\n";
+			$msg .= bot::website();
+			bot::sendMessage($msg);
+			return true;
 		}
 
-		$current = $_pageNumber;
+
 		$next = $current + 1;
 		if($next > 604)
 		{
