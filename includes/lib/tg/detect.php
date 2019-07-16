@@ -47,8 +47,8 @@ class detect
 				break;
 		}
 
-		$firstChar = substr($myCommand, 0, 1);
-		$args      = substr($myCommand, 1);
+		$firstChar = mb_substr($myCommand, 0, 1);
+		$args      = mb_substr($myCommand, 1);
 		$args      = str_replace('_', '', $args);
 		$args      = str_replace('-', '', $args);
 		$args      = trim($args);
