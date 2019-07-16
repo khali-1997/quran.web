@@ -37,12 +37,22 @@ class controller
 				$data = self::page_day();
 				break;
 
+			case 'hefz-program':
+				$data = self::hefz_program();
+				break;
+
 			default:
 				\content_api\v6::no(404);
 				break;
 		}
 
 		\content_api\v6::bye($data);
+	}
+
+
+	private static function hefz_program()
+	{
+		return \lib\app\hefz::calculator(\dash\request::get());
 	}
 
 
