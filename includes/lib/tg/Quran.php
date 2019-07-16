@@ -98,7 +98,7 @@ class Quran
 	}
 
 
-	public static function page()
+	public static function page($_pageNumber)
 	{
 		bot::ok();
 
@@ -108,22 +108,42 @@ class Quran
 			bot::answerCallbackQuery(T_("Request Quran Page"));
 		}
 
+		if($_pageNumber < 1 && $_pageNumber > 604)
+		{
+			return self::requireCode();
+		}
+
+		$current = $_pageNumber;
+		$next = $current + 1;
+		if($next > 604)
+		{
+			$next = 1;
+		}
+		$prev = $current - 1;
+		if($prev < 1)
+		{
+			$prev = 604;
+		}
+
+		$website = bot::website(). '/p'. $current;
+
+		$currentPageNum = str_pad($current, 3, "0", STR_PAD_LEFT);
+		$dlLink = 'https://dl.salamquran.com/images/v1/page'. $currentPageNum. '.png';
+
+
 		// show message to go to website
 		$msg = '';
 		// $msg .= T_('You have no survey yet!') ."\n\n";
-		$msg .= "<b>". T_('SalamQuran'). "</b>\n\n";
-		$msg .= T_('Please choose from below keyboard or type your request.');
+		$msg .= "<b>". T_('SalamQuran'). "</b>\n";
+		$msg .= T_('Page'). ' '. $current. "\t   ". '/p'. $current. "\n";
+
 		$msg .= "\n\n";
-
-		$current = 1;
-		$next = $current + 1;
-		$prev = $current - 1;
-		$website = bot::website(). '/p'. $current;
-
+		$msg .= $website;
 
 		$result =
 		[
-			'text' => $msg,
+			'photo'        => $dlLink,
+			'caption'      => $msg,
 			'reply_markup' =>
 			[
 				'inline_keyboard' =>
@@ -140,12 +160,8 @@ class Quran
 					],
 					[
 						[
-							'text' => T_("Play"),
-							'url'  => $website,
-						],
-						[
-							'text' => T_("Text"),
-							'url'  => $website,
+							'text' => T_("Iqra"),
+							'url'  => $website. '?autoplay=1',
 						],
 					],
 				]
@@ -163,7 +179,27 @@ class Quran
 			];
 		}
 
-		bot::sendMessage($result);
+		bot::sendPhoto($result);
+	}
+
+
+
+	public static function juz($_code)
+	{
+		self::page($_code);
+	}
+
+
+	public static function surah($_code)
+	{
+		self::page($_code);
+	}
+
+
+
+	public static function aya($_code)
+	{
+		self::page($_code);
 	}
 
 }
