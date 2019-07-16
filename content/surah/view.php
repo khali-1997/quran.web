@@ -25,6 +25,13 @@ class view
 		$sortLink  = \dash\app\sort::make_sortLink(\lib\app\sura::$sort_field, \dash\url::this());
 		\dash\data::sortLink($sortLink);
 
+		$myfav = \lib\app\fav::myfav(['type' => 'sura']);
+		if(is_array($myfav))
+		{
+			$myfav = array_combine(array_column($myfav, 'sura'), $myfav);
+			\dash\data::myFav($myfav);
+		}
+
 	}
 }
 ?>

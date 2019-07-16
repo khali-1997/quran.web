@@ -133,7 +133,7 @@
 		</td>
 		{%if perm_su()%}
 		<th>
-			<i class="sf-star fc-mute"
+			<i class="sf-star {%if myFav[value.index]%}fc-yellow{%else%}fc-mute{%endif%}"
 				data-ajaxify
 				data-action='{{url.kingdom}}/a/fav/add'
 				action='{{url.kingdom}}/a/fav/add'

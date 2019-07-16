@@ -13,6 +13,8 @@ class model
 		$post['aya']   = \dash\request::post('aya');
 		$post['sura'] = \dash\request::post('sura');
 		$add           = \lib\app\fav::add($post);
+
+		\dash\redirect::pwd();
 	}
 }
 ?>

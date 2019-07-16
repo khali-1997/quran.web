@@ -162,6 +162,18 @@ class fav
 		return true;
 	}
 
+	public static function myfav($_args = null, $_option = null)
+	{
+		if(!\dash\user::id())
+		{
+			return null;
+		}
+
+		$_args['user_id'] = \dash\user::id();
+
+		return self::list(null, $_args, $_option);
+	}
+
 
 	public static function list($_string = null, $_args = null, $_option = null)
 	{
