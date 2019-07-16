@@ -124,6 +124,45 @@ class fav
 	}
 
 
+	public static function edit($_args)
+	{
+		\dash\app::variable($_args);
+
+		$id = \dash\app::request('id');
+		$id = \dash\coding::decode($id);
+		if(!$id)
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+		$desc = \dash\app::request('desc');
+		if(!$desc && (string) $desc !== '0')
+		{
+			return null;
+		}
+
+		$check =
+		[
+			'id'      => $id,
+			'user_id' => \dash\user::id(),
+			'limit'   => 1
+		];
+
+		$check = \lib\db\fav::get($check);
+		if(!isset($check['id']))
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+		$update = ['desc' => $desc];
+		\lib\db\fav::update($update, $id);
+		\dash\notif::ok(T_("Desctiption saved"));
+		return true;
+	}
+
+
 	public static function list($_string = null, $_args = null, $_option = null)
 	{
 		$list = \lib\db\fav::search($_string, $_args, $_option);

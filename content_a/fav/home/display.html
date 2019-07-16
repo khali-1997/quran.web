@@ -1,39 +1,16 @@
-{%extends 'content_m/mag/layout.html'%}
+{%extends 'content_a/fav/layout.html'%}
 
 
 
 {%block pageContent%}
 
-  {{block('magList')}}
-{%endblock%}
-
-
-
-{%block BmagListPosts%}
-<a class="dcard x1" href='{{url.kingdom}}/cms/posts'>
- <div class="statistic blue">
-  <div class="value mB10"><i class="sf-list"></i></div>
-  <div class="label">{%trans "Magazine list"%}</div>
- </div>
-</a>
-{%endblock%}
-
-
-
-{%block Bmagazine%}
-<a class="dcard x1" href='{{url.this}}/connect'>
- <div class="statistic blue">
-  <div class="value mB10"><i class="sf-plug"></i></div>
-  <div class="label">{%trans "Connect mag to quran"%}</div>
- </div>
-</a>
+  {{block('favList')}}
 {%endblock%}
 
 
 
 
-
-{%block magList%}
+{%block favList%}
 
 
 {%if dataTable%}
@@ -74,6 +51,7 @@
 
         <th>{%trans "Favorites"%}</th>
         <th>{%trans "Desctiption"%}</th>
+        <th>{%trans "Date and time"%}</th>
         <th>{%trans "Action"%}</th>
       </tr>
     </thead>
@@ -88,7 +66,20 @@
             {%if value.sura%} <a href="{{url.kingdom}}/s{{value.sura}}">{%trans "Sura"%} <b>{{value.sura | fitNumber}}</b></a>{%endif%}
             {%if value.aya%} <a href="{{url.kingdom}}/s{{value.sura}}/{{value.aya}}">{%trans "Aya"%} <b>{{value.aya | fitNumber}}</b></a>{%endif%}
         </td>
-        <td></td>
+        <td>
+          <form method="post" autocomplete="off" action="{{url.this}}/add">
+            <input type="hidden" name="id" value="{{value.id}}">
+            <input type="hidden" name="mode" value="edit">
+            <div class="input">
+              <input type="text" name="desc" value="{{value.desc}}" placeholder='{%trans "Desctiption"%}' maxlength="200" minlength="1">
+              <button class="addon btn info2" type="submit">{%trans "Save"%}</button>
+            </div>
+          </form>
+
+        </td>
+        <td class="collapsing">
+          {{value.datecreated | dt('human', 'year')}}
+        </td>
         <td class="collapsing">
           <div data-confirm data-data='{"action" : "remove", "id": "{{value.id}}"}' class="badge danger">{%trans "Remove"%}</div>
         </td>
