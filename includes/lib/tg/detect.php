@@ -7,7 +7,7 @@ class detect
 {
 	public static function run($_cmd)
 	{
-		$myCommand = $_cmd['commandRaw'];
+		$myCommand = $_cmd['text'];
 		if(bot::isCallback())
 		{
 			$myCommand = substr($myCommand, 3);
@@ -32,26 +32,84 @@ class detect
 			case T_('List'):
 			case T_('list'):
 			case T_('$'):
+			case 'how':
+			case '؟':
+			case '?':
+			case T_('how'):
+			case T_('howto'):
 				// show list of survey
 				Quran::start();
 				return true;
 				break;
 
-			case 'how':
-			case 'add':
-			case T_('how'):
-			case T_('howto'):
-			case T_('Add'):
-				// show list of survey
-				Quran::howto();
-				return true;
-				break;
-
 			default:
-				return false;
+				// do nothing and continue
 				break;
 		}
 
+		$firstChar = substr($myCommand, 0, 1);
+		$args      = substr($myCommand, 1);
+		$args      = str_replace('_', '', $args);
+		$args      = str_replace('-', '', $args);
+		$args      = trim($args);
+		$args      = intval($args);
+		if(is_numeric($args))
+		{
+			// we have a number
+			switch ($firstChar)
+			{
+
+				case 'P':
+				case 'p':
+				case T_('Page'):
+				case 'ص':
+				case 'صفحه':
+				case 'page':
+					Quran::page($args);
+					return true;
+					break;
+
+				case 'J':
+				case 'j':
+				case T_('Juz'):
+				case 'ج':
+				case 'جز':
+				case 'جزء':
+				case 'juz':
+					Quran::juz($args);
+					return true;
+					break;
+
+				case 'S':
+				case 's':
+				case T_('Surah'):
+				case 'س':
+				case 'سوره':
+				case 'surah':
+				case 'sura':
+					Quran::surah($args);
+					return true;
+					break;
+
+				case 'A':
+				case 'a':
+				case T_('Aya'):
+				case 'آ':
+				case 'آیه':
+				case 'Ayah':
+				case 'ayah':
+				case 'aya':
+				case 'aye':
+					Quran::aya($args);
+					return true;
+					break;
+
+				default:
+					Quran::requireCode();
+					return true;
+					break;
+			}
+		}
 	}
 
 
