@@ -349,15 +349,14 @@ class twigTransTerms
 	echo T_("Static Pages");                                                          // Line 22
 	echo T_("Support");                                                               // Line 33
 	echo T_("Help Center Keywords");                                                  // Line 40
-	echo T_("Ticket Topics");                                                         // Line 43
 	echo T_("Comments");                                                              // Line 33
-	echo T_("All Comments");                                                          // Line 57
+	echo T_("All Comments");                                                          // Line 55
 	echo T_("Awaiting");                                                              // Line 262
-	echo T_("Approved");                                                              // Line 59
-	echo T_("Spam");                                                                  // Line 68
-	echo T_("Files");                                                                 // Line 71
-	echo T_("Library");                                                               // Line 75
-	echo T_("Add new file");                                                          // Line 78
+	echo T_("Approved");                                                              // Line 57
+	echo T_("Spam");                                                                  // Line 210
+	echo T_("Files");                                                                 // Line 69
+	echo T_("Library");                                                               // Line 73
+	echo T_("Add new file");                                                          // Line 76
 
 	//--------------------------------------------addons/content_cms/posts/layout.html
 	echo T_("Enter title here");                                                      // Line 4
@@ -392,7 +391,7 @@ class twigTransTerms
 	echo T_("Publish");                                                               // Line 90
 	echo T_("Draft");                                                                 // Line 76
 	echo T_("Deleted");                                                               // Line 85
-	echo T_("Language");                                                              // Line 118
+	echo T_("Language");                                                              // Line 259
 	echo T_("You can publish in another language");                                   // Line 117
 	echo T_("Add to gallery");                                                        // Line 61
 	echo T_("Choose or Drop file here");                                              // Line 331
@@ -457,7 +456,7 @@ class twigTransTerms
 	echo T_("Help center");                                                           // Line 43
 	echo T_("Posts");                                                                 // Line 54
 	echo T_("Page");                                                                  // Line 34
-	echo T_("Tags");                                                                  // Line 69
+	echo T_("Tags");                                                                  // Line 75
 
 	//------------------------------------addons/content_cms/contact/home/display.html
 	echo T_("Author");                                                                // Line 12
@@ -467,7 +466,7 @@ class twigTransTerms
 	echo T_("Approve");                                                               // Line 43
 	echo T_("Edit");                                                                  // Line 86
 	echo T_("Unapprove");                                                             // Line 51
-	echo T_("Trash");                                                                 // Line 55
+	echo T_("Trash");                                                                 // Line 56
 	echo T_("Created on");                                                            // Line 34
 	echo T_("No record exist!");                                                      // Line 136
 
@@ -509,37 +508,37 @@ class twigTransTerms
 	echo T_("Item");                                                                  // Line 57
 
 	//-------------------------------------------addons/content_cms/terms/display.html
-	echo T_("Tag color");                                                             // Line 73
-	echo T_("Select tag color");                                                      // Line 77
-	echo T_("Primary");                                                               // Line 80
-	echo T_("Secondary");                                                             // Line 81
-	echo T_("Success");                                                               // Line 82
-	echo T_("Danger");                                                                // Line 83
-	echo T_("Warning");                                                               // Line 84
+	echo T_("Tag color");                                                             // Line 74
+	echo T_("Select tag color");                                                      // Line 78
+	echo T_("Primary");                                                               // Line 81
+	echo T_("Secondary");                                                             // Line 82
+	echo T_("Success");                                                               // Line 83
+	echo T_("Danger");                                                                // Line 84
+	echo T_("Warning");                                                               // Line 85
 	echo T_("Info");                                                                  // Line 7
-	echo T_("Light");                                                                 // Line 86
-	echo T_("Dark");                                                                  // Line 87
-	echo T_("Pain");                                                                  // Line 88
+	echo T_("Light");                                                                 // Line 87
+	echo T_("Dark");                                                                  // Line 88
+	echo T_("Pain");                                                                  // Line 89
 	echo T_("Type");                                                                  // Line 164
-	echo T_("Used");                                                                  // Line 119
+	echo T_("Used");                                                                  // Line 117
 	echo T_("Require");                                                               // Line 67
-	echo T_("Title is used to show on website");                                      // Line 180
-	echo T_("Used for url");                                                          // Line 186
-	echo T_("Used in url for categorize addresses");                                  // Line 188
-	echo T_("Parent Category");                                                       // Line 196
+	echo T_("Title is used to show on website");                                      // Line 162
+	echo T_("Used for url");                                                          // Line 168
+	echo T_("Used in url for categorize addresses");                                  // Line 170
+	echo T_("Parent Category");                                                       // Line 178
 	echo T_("Please select one itme");                                                // Line 158
 	echo T_("Enable");                                                                // Line 234
 	echo T_("Disable");                                                               // Line 235
-	echo T_("Expired");                                                               // Line 224
-	echo T_("Filtered");                                                              // Line 226
-	echo T_("Blocked");                                                               // Line 227
-	echo T_("Violence");                                                              // Line 229
-	echo T_("Pornography");                                                           // Line 230
-	echo T_("Other");                                                                 // Line 231
-	echo T_("Excerpt");                                                               // Line 247
-	echo T_("Try to start with add new records!");                                    // Line 271
-	echo T_("Category icon");                                                         // Line 294
-	echo T_("Select category icon");                                                  // Line 298
+	echo T_("Expired");                                                               // Line 206
+	echo T_("Filtered");                                                              // Line 208
+	echo T_("Blocked");                                                               // Line 209
+	echo T_("Violence");                                                              // Line 211
+	echo T_("Pornography");                                                           // Line 212
+	echo T_("Other");                                                                 // Line 213
+	echo T_("Excerpt");                                                               // Line 229
+	echo T_("Try to start with add new records!");                                    // Line 253
+	echo T_("Category icon");                                                         // Line 276
+	echo T_("Select category icon");                                                  // Line 280
 
 	//-------------------------------------addons/content_cms/visitor/log/display.html
 	echo T_("User");                                                                  // Line 59
@@ -706,13 +705,14 @@ class twigTransTerms
 
 	//----------------------------------------------addons/content_support/layout.html
 	echo T_("Support Dashboard");                                                     // Line 8
-	echo T_("New Ticket");                                                            // Line 14
-	echo T_("Awaiting answer");                                                       // Line 20
-	echo T_("Answered");                                                              // Line 24
-	echo T_("Unsolved");                                                              // Line 33
+	echo T_("New Ticket");                                                            // Line 15
+	echo T_("Awaiting answer");                                                       // Line 21
+	echo T_("Answered");                                                              // Line 25
+	echo T_("Unsolved");                                                              // Line 34
 	echo T_("Solved");                                                                // Line 30
-	echo T_("Open tickets");                                                          // Line 47
-	echo T_("Archived");                                                              // Line 51
+	echo T_("Open tickets");                                                          // Line 48
+	echo T_("Archived");                                                              // Line 52
+	echo T_("Ticket Topics");                                                         // Line 67
 
 	//--------------------------------------addons/content_support/ticket/addForm.html
 	echo T_("Ticket Subject");                                                        // Line 176
@@ -760,6 +760,8 @@ class twigTransTerms
 
 	//----------------------------------addons/content_support/ticket/add/display.html
 	echo T_("Please log in if you need to store this ticket and track it in the future");// Line 9
+
+	//---------------------------------addons/content_support/ticket/tags/display.html
 
 	//----------------------------------addons/content_support/ticket/ticketTypes.html
 	echo T_("My tickets");                                                            // Line 7

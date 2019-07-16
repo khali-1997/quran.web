@@ -32,7 +32,7 @@ class fav
 		$desc = \dash\app::request('desc');
 		if($desc && mb_strlen($desc) > 200)
 		{
-			\dash\notif::error(T_("Plase set the desctiption less than 200 character"), 'desc');
+			\dash\notif::error(T_("Plase set the description less than 200 character"), 'desc');
 			return false;
 		}
 

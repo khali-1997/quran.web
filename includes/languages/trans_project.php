@@ -4,27 +4,47 @@ class twigTransTerms
  private function transtext()
  {
 
+	//---------------------------projects/SalamQuran/content_api/v6/apikey_header.html
+	echo T_("Required parameters");                                                   // Line 3
+	echo T_("on header");                                                             // Line 3
+	echo T_("Name");                                                                  // Line 85
+	echo T_("type");                                                                  // Line 64
+	echo T_("Description");                                                           // Line 74
+	echo T_("example");                                                               // Line 20
+	echo T_("Constraints");                                                           // Line 23
+	echo T_("Your apikey");                                                           // Line 20
+	echo T_("Required");                                                              // Line 40
+	echo T_("length");                                                                // Line 25
+	echo T_("Get from your account profile");                                         // Line 26
+
 	//-------------------------projects/SalamQuran/content_api/v6/doc/140-day-aya.html
 	echo T_("Get verse of the day");                                                  // Line 5
 	echo T_("A verse will be displayed every day");                                   // Line 8
 	echo T_("cURL");                                                                  // Line 17
-	echo T_("example");                                                               // Line 20
 	echo T_("Response");                                                              // Line 20
 
 	//------------------------projects/SalamQuran/content_api/v6/doc/105-page-wbw.html
 	echo T_("Get aya in one page word by word");                                      // Line 5
 	echo T_("Get list of aya from one page word by word");                            // Line 8
-	echo T_("Parameters");                                                            // Line 16
-	echo T_("Name");                                                                  // Line 85
-	echo T_("type");                                                                  // Line 64
-	echo T_("Description");                                                           // Line 10
-	echo T_("Constraints");                                                           // Line 22
+	echo T_("Parameters");                                                            // Line 17
 	echo T_("You must set index between 1 and 604");                                  // Line 35
-	echo T_("Required");                                                              // Line 39
+
+	//--------------------projects/SalamQuran/content_api/v6/doc/150-hefz-program.html
+	echo T_("Calculator hefz program");                                               // Line 12
+	echo T_("Send your time and get result");                                         // Line 8
+	echo T_("Minutes");                                                               // Line 16
 
 	//----------------------------projects/SalamQuran/content_api/v6/doc/104-page.html
 	echo T_("Get aya in one page");                                                   // Line 5
 	echo T_("Get list of aya from one page");                                         // Line 8
+
+	//-------------------------projects/SalamQuran/content_api/v6/doc/160-fav-add.html
+	echo T_("Add new quran favorites");                                               // Line 5
+	echo T_("Add some page, sura and aya to your favorites");                         // Line 8
+	echo T_("If type is sura or aya");                                                // Line 58
+	echo T_("Aya number in the sura");                                                // Line 73
+	echo T_("If type is aya");                                                        // Line 77
+	echo T_("If type is page");                                                       // Line 95
 
 	//------------------------projects/SalamQuran/content_api/v6/doc/121-juz-hizb.html
 	echo T_("Get juz detail per hizb detail");                                        // Line 5
@@ -44,9 +64,16 @@ class twigTransTerms
 	echo T_("Optional");                                                              // Line 78
 	echo T_("Count record to show");                                                  // Line 71
 
+	//------------------------projects/SalamQuran/content_api/v6/doc/161-fav-edit.html
+	echo T_("Update descriptio of favorites");                                        // Line 5
+	echo T_("Character");                                                             // Line 57
+
 	//-------------------------projects/SalamQuran/content_api/v6/doc/120-juz-sua.html
 	echo T_("Get juz detail per sura detail");                                        // Line 5
 	echo T_("Get all juz detail per sura detail");                                    // Line 8
+
+	//------------------------projects/SalamQuran/content_api/v6/doc/163-fav-list.html
+	echo T_("List of your favorites");                                                // Line 5
 
 	//------------------------projects/SalamQuran/content_api/v6/doc/145-page-day.html
 	echo T_("Get page of the day");                                                   // Line 5
@@ -60,20 +87,27 @@ class twigTransTerms
 	echo T_("Get aya of sura word by word");                                          // Line 5
 	echo T_("Get list of aya from one sura word by word");                            // Line 8
 
+	//----------------------projects/SalamQuran/content_api/v6/doc/162-fav-remove.html
+	echo T_("Remove a saved favorites");                                              // Line 5
+
 	//----------------------------projects/SalamQuran/content_api/v6/doc/100-ayat.html
 	echo T_("Get Aye detail");                                                        // Line 5
 	echo T_("Get details like pages, language list, translations, and more.");        // Line 10
 
 	//-----------------------------projects/SalamQuran/content_api/v6/doc/sidebar.html
 	echo T_("Sura list");                                                             // Line 3
-	echo T_("Sura");                                                                  // Line 91
-	echo T_("Page");                                                                  // Line 90
+	echo T_("Sura");                                                                  // Line 66
+	echo T_("Page");                                                                  // Line 65
 	echo T_("Page word by word");                                                     // Line 6
 	echo T_("Juz per sura");                                                          // Line 7
 	echo T_("Juz per hizb");                                                          // Line 8
 	echo T_("Quick access");                                                          // Line 9
 	echo T_("Verse of day");                                                          // Line 10
 	echo T_("Page of day");                                                           // Line 11
+	echo T_("Add favorites");                                                         // Line 13
+	echo T_("Edit favorites");                                                        // Line 14
+	echo T_("Remove favorites");                                                      // Line 15
+	echo T_("Favorites list");                                                        // Line 16
 
 	//-projects/SalamQuran/public_html/static/siftal/fonts/siftal/icons-reference.html
 
@@ -107,9 +141,9 @@ class twigTransTerms
 	echo T_("Count file");                                                            // Line 68
 	echo T_("Language");                                                              // Line 84
 	echo T_("Narrator");                                                              // Line 85
-	echo T_("Clear filters");                                                         // Line 122
-	echo T_("Result not found!");                                                     // Line 121
-	echo T_("Search with new keywords.");                                             // Line 121
+	echo T_("Clear filters");                                                         // Line 106
+	echo T_("Result not found!");                                                     // Line 105
+	echo T_("Search with new keywords.");                                             // Line 105
 	echo T_("Quran Qari");                                                            // Line 167
 	echo T_("parhizgar");                                                             // Line 133
 	echo T_("mansouri");                                                              // Line 140
@@ -150,7 +184,7 @@ class twigTransTerms
 
 	//---------------------------------projects/SalamQuran/content/search/display.html
 	echo T_("Search");                                                                // Line 65
-	echo T_("Aya");                                                                   // Line 92
+	echo T_("Aya");                                                                   // Line 67
 	echo T_("No result found");                                                       // Line 47
 	echo T_("Clear filter");                                                          // Line 48
 	echo T_("Please enter your keyword in the box above and press Enter");            // Line 56
@@ -218,7 +252,7 @@ class twigTransTerms
 	echo T_("Auto Scroll");                                                           // Line 78
 	echo T_("On");                                                                    // Line 81
 	echo T_("Off");                                                                   // Line 82
-	echo T_("Save");                                                                  // Line 107
+	echo T_("Save");                                                                  // Line 75
 
 	//------------------------------------projects/SalamQuran/content/main/header.html
 	echo T_("Quran");                                                                 // Line 14
@@ -648,6 +682,16 @@ class twigTransTerms
 
 	//-----------------------------------projects/SalamQuran/content/logo/display.html
 
+	//-----------------------------projects/SalamQuran/content/calculator/display.html
+	echo T_("The calculation program maintains");                                     // Line 7
+	echo T_("If you intend to save the Qur'an, just enter the time you have in the calculator so that the result will be announced to you.");// Line 9
+	echo T_("My time");                                                               // Line 14
+	echo T_("Calculate");                                                             // Line 19
+	echo T_("You can hefz holy quran in");                                            // Line 26
+	echo T_("Year");                                                                  // Line 30
+	echo T_("And");                                                                   // Line 34
+	echo T_("Month");                                                                 // Line 39
+
 	//------------------------------projects/SalamQuran/content/changelog/display.html
 	echo T_("Date");                                                                  // Line 9
 	echo T_("Telegram bot");                                                          // Line 19
@@ -691,9 +735,9 @@ class twigTransTerms
 	echo T_("Magazine list");                                                         // Line 19
 	echo T_("Connect mag to quran");                                                  // Line 30
 	echo T_("Title");                                                                 // Line 78
-	echo T_("Action");                                                                // Line 80
-	echo T_("Remove");                                                                // Line 96
-	echo T_("Hi!");                                                                   // Line 128
+	echo T_("Action");                                                                // Line 55
+	echo T_("Remove");                                                                // Line 84
+	echo T_("Hi!");                                                                   // Line 112
 	echo T_("Try to start with add new record!");                                     // Line 124
 
 	//-----------------------------projects/SalamQuran/content_m/audiobank/layout.html
@@ -711,6 +755,13 @@ class twigTransTerms
 	echo T_("Try to start with add new audio!");                                      // Line 128
 
 	//---------------------------------projects/SalamQuran/content_m/home/display.html
+
+	//-----------------------------------projects/SalamQuran/content_a/fav/layout.html
+
+	//-----------------------------projects/SalamQuran/content_a/fav/home/display.html
+	echo T_("Favorites");                                                             // Line 52
+	echo T_("Date and time");                                                         // Line 54
+	echo T_("No favorites added");                                                    // Line 112
 
  }
 }
