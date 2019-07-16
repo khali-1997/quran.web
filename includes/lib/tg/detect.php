@@ -7,7 +7,51 @@ class detect
 {
 	public static function run($_cmd)
 	{
-		// survey::detector($_cmd);
+		$myCommand = $_cmd['commandRaw'];
+		if(bot::isCallback())
+		{
+			$myCommand = substr($myCommand, 3);
+		}
+		elseif(bot::isInline())
+		{
+			$myCommand = substr($myCommand, 3);
+		}
+		// remove command from start
+		if(substr($myCommand, 0, 1) == '/')
+		{
+			$myCommand = substr($myCommand, 1);
+		}
+
+		// switch based on user enter
+		switch ($myCommand)
+		{
+			case 'Quran':
+			case 'quran':
+			case T_('Quran'):
+			case 'list':
+			case T_('List'):
+			case T_('list'):
+			case T_('$'):
+				// show list of survey
+				Quran::start();
+				return true;
+				break;
+
+			case 'how':
+			case 'add':
+			case T_('how'):
+			case T_('howto'):
+			case T_('Add'):
+				// show list of survey
+				Quran::howto();
+				return true;
+				break;
+
+			default:
+				return false;
+				break;
+		}
+
 	}
 
 
@@ -51,8 +95,8 @@ class detect
 
 		$result =
 		[
-			'text'                => $txt_text,
-			'reply_markup'        => $menu,
+			'text'         => $txt_text,
+			'reply_markup' => $menu,
 		];
 
 		bot::sendMessage($result);
