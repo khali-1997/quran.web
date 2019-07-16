@@ -134,10 +134,9 @@ class Quran
 		// show message to go to website
 		$msg = '';
 		// $msg .= T_('You have no survey yet!') ."\n\n";
-		$msg .= "<b>". T_('SalamQuran'). "</b>\n";
-		$msg .= T_('Page'). ' '. $current. "\t   ". '/p'. $current. "\n";
-
-		$msg .= "\n\n";
+		$msg .= "<b>". T_('SalamQuran'). "</b> | ";
+		$msg .= T_('Page'). ' '. $current;
+		$msg .= "\n";
 		$msg .= $website;
 
 		$result =

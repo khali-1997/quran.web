@@ -105,7 +105,6 @@ class detect
 					break;
 
 				default:
-					Quran::requireCode();
 					return true;
 					break;
 			}
