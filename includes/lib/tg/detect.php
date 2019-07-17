@@ -42,6 +42,15 @@ class detect
 				return true;
 				break;
 
+			case T_('pdf'):
+			case 'pdf':
+			case 'Pdf':
+			case 'PDF':
+			case 'pdf1':
+				Quran::pdf1();
+				return true;
+				break;
+
 			default:
 				// do nothing and continue
 				break;

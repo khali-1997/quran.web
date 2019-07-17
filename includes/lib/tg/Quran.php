@@ -66,6 +66,12 @@ class Quran
 							'callback_data'  => '/p_random',
 						],
 					],
+					// [
+					// 	[
+					// 		'text' => T_("PDF"),
+					// 		'callback_data'  => '/pdf1',
+					// 	],
+					// ],
 				]
 			]
 		];
@@ -590,5 +596,28 @@ class Quran
 	}
 
 
+	public static function pdf1()
+	{
+		bot::ok();
+		$msg    = T_("Full text of Quran");
+		$dlLink = 'https://dl.salamquran.com/images/pdf/v1/SalamQuran.pdf';
 
+		// if start with callback answer callback
+		if(bot::isCallback())
+		{
+			$callbackResult =
+			[
+				'text' => $msg,
+			];
+			bot::answerCallbackQuery($callbackResult);
+		}
+
+		$result =
+		[
+			'caption'     => $msg,
+			// 'thumb' => '',
+			'document' => $dlLink
+		];
+		bot::sendDocument($result);
+	}
 }
