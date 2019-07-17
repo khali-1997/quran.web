@@ -525,16 +525,30 @@ class Quran
 			'index' => $_aye
 		];
 		$myAye = \dash\curl::go('https://salamquran.com/fa/api/v6/detail/aya-day', $args);
-var_dump($myAye);
-// var_dump($myAye['result']);
+
 		if(isset($myAye['result']['text']))
 		{
 			$msg = '';
-			$msg .= $myAye['result']['text'];
+			$msg .= $myAye['result']['text']. "\n";
 
-			$msg .= "\n";
+			if(isset($myAye['result']['sura_detail']['name']))
+			{
+				// add surah name
+				$msg .= T_('Surah'). ' '. $myAye['result']['sura_detail']['name']. ' ';
+				// add surah aya number
+				if(isset($myAye['result']['aya']))
+				{
+					$msg .= T_('Aya'). ' '. $myAye['result']['aya'];
+				}
+			}
+
+			$msg .= "\n\n";
 			$msg .= "<b>". T_('SalamQuran'). "</b>". "\n";
 			$msg .= bot::website();
+			if(isset($myAye['result']['index']))
+			{
+				$msg .= '/a'. $myAye['result']['index'];
+			}
 
 			bot::sendMessage($msg);
 			return true;
