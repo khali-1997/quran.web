@@ -8,14 +8,14 @@
     <p>{%trans "Get list of quick access of some aya or sura or something else"%}</p>
     <div class="msg url">
       <i class="method">GET</i>
-      <span>{{apiURL}}<b>detail/quick-access</b></span>
+      <span>{{apiURL}}<b>nav/quick</b></span>
     </div>
 
 
 
     <h3>{%trans "cURL"%} <small>{%trans "example"%}</small></h3>
 <pre>
-curl -X GET {{apiURL}}detail/quick-access
+curl -X GET {{apiURL}}nav/quick
 </pre>
 
 <h3>{%trans "Response"%} <small>{%trans "example"%}</small></h3>
@@ -24,9 +24,29 @@ curl -X GET {{apiURL}}detail/quick-access
   "ok": true,
   "result": [
     {
-      "title": "Fatiha",
-      "desc": "fatiha alketab",
-      "url": "{{url.kingdom}}/s1"
+      "title": "فاتحه",
+      "desc": null,
+      "url": "http://salamquran.local/fa/s1"
+    },
+    {
+      "title": "الرحمان",
+      "desc": null,
+      "url": "http://salamquran.local/fa/s55"
+    },
+    {
+      "title": "ملک",
+      "desc": null,
+      "url": "http://salamquran.local/fa/s67"
+    },
+    {
+      "title": "یاسین",
+      "desc": null,
+      "url": "http://salamquran.local/fa/s36"
+    },
+    {
+      "title": "واقعه",
+      "desc": null,
+      "url": "http://salamquran.local/fa/s56"
     }
   ]
 }

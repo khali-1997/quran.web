@@ -54,10 +54,6 @@ class controller
 	}
 
 
-	private static function quick_access()
-	{
-		return \lib\app\quick_access::list();
-	}
 
 
 	private static function aya_day()
