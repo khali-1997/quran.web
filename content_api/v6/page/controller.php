@@ -8,6 +8,11 @@ class controller
 	{
 		\content_api\v6\access::check();
 
+		if(!\dash\request::is('get'))
+		{
+			\content_api\v6::no(400);
+		}
+
 		$wbw = false;
 
 		if(\dash\url::subchild() === 'wbw' || \dash\url::subchild() === 'wbw-raw')

@@ -9,6 +9,11 @@ class controller
 	{
 		\content_api\v6\access::check();
 
+		if(!\dash\request::is('get'))
+		{
+			\content_api\v6::no(400);
+		}
+
 		$subchild = \dash\url::subchild();
 
 		if(!$subchild || !in_array($subchild, ['hizb']))
