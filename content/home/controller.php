@@ -67,37 +67,5 @@ class controller
 			\dash\data::ayaDay(\lib\app\aya_day::get());
 		}
 	}
-
-
-	private static function random_quran($_type)
-	{
-		switch ($_type)
-		{
-			case 'aye':
-				$detail = \lib\app\quran::day_aya();
-				break;
-
-			case 'page':
-				$detail = \lib\app\quran::day_page();
-				break;
-
-			case 'random':
-				$detail = \lib\app\quran::random_aya();
-				break;
-
-			case 'randompage':
-				$detail = \lib\app\quran::random_page();
-				break;
-
-			default:
-				return false;
-				break;
-		}
-
-		if(isset($detail['url']))
-		{
-			\dash\redirect::to($detail['url']);
-		}
-	}
 }
 ?>
