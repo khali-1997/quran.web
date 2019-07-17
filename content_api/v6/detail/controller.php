@@ -17,9 +17,7 @@ class controller
 
 		switch ($subchild)
 		{
-			case 'juz-sura':
-				$data = self::juz_sura();
-				break;
+		;
 
 			case 'juz-hizb':
 				$data = self::juz_hizb();
@@ -76,18 +74,6 @@ class controller
 
 
 
-	private static function juz_hizb()
-	{
-		$dir = __DIR__. '/juz-hizb.json';
-		if(is_file($dir))
-		{
-			$get = \dash\file::read($dir);
-			$get = json_decode($get, true);
-			return $get;
-		}
-
-		return null;
-	}
 
 
 	private static function make_juz_hizb()

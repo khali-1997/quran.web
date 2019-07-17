@@ -1,5 +1,5 @@
 <?php
-namespace content_api\v6\juz;
+namespace content_api\v6\hizb;
 
 
 class controller
@@ -11,7 +11,7 @@ class controller
 
 		$subchild = \dash\url::subchild();
 
-		if(!$subchild || !in_array($subchild, ['hizb']))
+		if(!$subchild || !in_array($subchild, ['sura']))
 		{
 			\content_api\v6::no(404);
 		}
@@ -21,14 +21,14 @@ class controller
 			\content_api\v6::no(404);
 		}
 
-		$data = self::juz_hizb();
+		$data = self::juz_sura();
 		\content_api\v6::bye($data);
 	}
 
-
-	private static function juz_hizb()
+	private static function juz_sura()
 	{
-		$dir = __DIR__. '/juz-hizb.json';
+		$dir = __DIR__. '/juz-sura.json';
+
 		if(is_file($dir))
 		{
 			$get = \dash\file::read($dir);
