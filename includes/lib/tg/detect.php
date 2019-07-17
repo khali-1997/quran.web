@@ -53,6 +53,7 @@ class detect
 		$args      = str_replace('-', '', $args);
 		$args      = trim($args);
 		// convert fa and ar number to en
+		$args      = \dash\utility\convert::to_en_number($args);
 		// $args      = intval($args);
 		if( (is_numeric($args) && $args !== 0) || $args === 'today' || $args === '?' || $args === '؟' || $args === 'random')
 		{
