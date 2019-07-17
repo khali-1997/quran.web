@@ -4751,7 +4751,8 @@ body:before {
   display: none; }
 
 body[data-page="home"] #header .topnav h2 {
-  font-weight: 900; }
+  font-weight: 900;
+  font-size: 2em; }
 
 #header .topnav h2 {
   display: inline-block;
@@ -6105,12 +6106,13 @@ body[data-in='mag'] #header .topTitle {
   overflow: hidden; }
 
 .quote-person {
-  max-width: 500px;
   position: relative;
   margin: 5em auto;
   min-height: 150px;
   font-size: 2rem;
-  color: #333; }
+  color: #333;
+  padding: 0 10px 0 110px;
+  max-width: 600px; }
 
 .quote-person p {
   font-weight: 100; }
@@ -6119,12 +6121,12 @@ body[data-in='mag'] #header .topTitle {
 .quote-person:after {
   position: absolute;
   top: 0;
-  font-size: 350px;
+  font-size: 200px;
   color: #2fbfdf;
   font-family: Arial;
   font-weight: 700;
-  line-height: 300px;
-  left: -200px;
+  line-height: 200px;
+  left: 0;
   content: '\201c'; }
 
 .quote-person .cite {

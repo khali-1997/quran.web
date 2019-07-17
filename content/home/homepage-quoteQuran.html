@@ -1,7 +1,6 @@
-{%if ayaDay.text%}
 <section class="quoteTile">
-  <div class="cn">
     <div class="f">
+{%if ayaDay.text or 1%}
       <div class="c">
 
        <div class="quote-person Quran">
@@ -17,15 +16,14 @@
        </div>
 
       </div>
-      <div class="c3 s0 txtC">
-        {%if dl.pageImage%}
+{%endif%}
+{%if dl.pageImage%}
+      <div class="cauto s0 txtC pLR10">
         <a class="pageOfTheDay" href="{{dl.pageLink}}">
           <h2>{%trans "Page of the day"%}</h2>
           <img src="{{dl.pageImage}}" alt="{{dl.pageTitle}}">
         </a>
-        {%endif%}
       </div>
-    </div>
- </div>
-</section>
 {%endif%}
+    </div>
+</section>
