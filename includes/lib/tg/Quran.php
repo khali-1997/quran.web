@@ -509,6 +509,21 @@ class Quran
 					return self::requireCode();
 				}
 			}
+			elseif($_aye === 'today')
+			{
+				$apiUrl = bot::website(). '/api/v6/aya/day';
+				$ayaOfTheDay  = \dash\curl::go($apiUrl);
+
+				if(isset($ayaOfTheDay['result']['index']))
+				{
+					$_aye = $ayaOfTheDay['result']['index'];
+				}
+				else
+				{
+					// page of the day is not exist, show random page
+					$_aye = mt_rand(1, 6236);
+				}
+			}
 			else
 			{
 				// get random aye
@@ -534,14 +549,8 @@ class Quran
 			bot::sendMessage($msg);
 			return true;
 		}
-
-		$args  =
-		[
-			'index' => $_aye
-		];
-		$apiUrl = bot::website(). '/api/v6/aye';
-		$myAye  = \dash\curl::go($apiUrl, $args);
-
+		$apiUrl = bot::website(). '/api/v6/aya?index='. $_aye;
+		$myAye  = \dash\curl::go($apiUrl);
 		if(isset($myAye['result']['text']))
 		{
 			$msg = '';
