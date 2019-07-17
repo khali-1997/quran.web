@@ -549,6 +549,14 @@ class Quran
 			bot::sendMessage($msg);
 			return true;
 		}
+
+
+		// if start with callback answer callback
+		if(bot::isCallback())
+		{
+			bot::answerCallbackQuery(T_("Request for Quran aya"). ' ' . $_aye);
+		}
+
 		$apiUrl = bot::website(). '/api/v6/aya?index='. $_aye;
 		$myAye  = \dash\curl::go($apiUrl);
 		if(isset($myAye['result']['text']))
