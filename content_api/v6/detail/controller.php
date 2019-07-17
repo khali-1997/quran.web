@@ -56,10 +56,6 @@ class controller
 
 
 
-	private static function aya_day()
-	{
-		return \lib\app\aya_day::get();
-	}
 
 	private static function page_day()
 	{

@@ -10,14 +10,30 @@ class controller
 		\content_api\v6\access::check();
 
 		$subchild = \dash\url::subchild();
-		if($subchild)
+		if($subchild && !in_array($subchild, ['day']))
 		{
 			\content_api\v6::no(404);
 		}
 
-		$data = self::aya();
+		switch ($subchild) {
+			case 'day':
+				$data = self::aya_day();
+				break;
+
+			default:
+				$data = self::aya();
+				break;
+		}
+
 		\content_api\v6::bye($data);
 	}
+
+
+	private static function aya_day()
+	{
+		return \lib\app\aya_day::get(false);
+	}
+
 
 	private static function aya()
 	{

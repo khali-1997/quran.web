@@ -5,7 +5,7 @@ namespace lib\app;
 class aya_day
 {
 
-	public static function get()
+	public static function get($_load_wbw = true)
 	{
 		$result = self::day_aya();
 		$load   = [];
@@ -26,8 +26,13 @@ class aya_day
 				{
 					$load                = $load[0];
 					$load['sura_detail'] = \lib\app\sura::detail($load['sura']);
-					$load_word           = \lib\db\quran_word::get(['index' => $result['index']]);
-					$load['words']       = $load_word;
+
+					if($_load_wbw)
+					{
+						$load_word     = \lib\db\quran_word::get(['index' => $result['index']]);
+						$load['words'] = $load_word;
+					}
+
 					$load['date']        = date("Y-m-d");
 
 					self::temp_file($load);
