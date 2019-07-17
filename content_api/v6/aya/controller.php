@@ -42,27 +42,27 @@ class controller
 
 	private static function aya()
 	{
-		$id = \dash\request::get('id');
-		if(!$id)
+		$index = \dash\request::get('index');
+		if(!$index)
 		{
-			\dash\notif::error(T_("Parameter id is required"));
+			\dash\notif::error(T_("Parameter index is required"));
 			return false;
 		}
 
-		if(!is_numeric($id))
+		if(!is_numeric($index))
 		{
 			\dash\notif::error(T_("Id must be a number"));
 			return false;
 		}
 
-		$id = intval($id);
-		if($id < 1 || $id > 6236)
+		$index = intval($index);
+		if($index < 1 || $index > 6236)
 		{
 			\dash\notif::error(T_("Id is out of range, Id must between 1 and 6236"));
 			return false;
 		}
 
-		$load = \lib\db\quran::get(['index' => $id]);
+		$load = \lib\db\quran::get(['index' => $index]);
 		if(isset($load[0]))
 		{
 			$load                = $load[0];
