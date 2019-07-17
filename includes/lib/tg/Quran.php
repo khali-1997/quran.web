@@ -125,7 +125,7 @@ class Quran
 			else
 			{
 				// if text like today, get today page number
-				$current = 260;
+				$current = mt_rand(1, 604);
 			}
 
 		}
@@ -481,9 +481,67 @@ class Quran
 	}
 
 
-	public static function aya($_code)
+	public static function aya($_aye)
 	{
-		return self::page($_code, 'aya');
+		bot::ok();
+
+		if($_aye)
+		{
+			if(is_numeric($_aye))
+			{
+				if($_aye < 1 || $_aye > 6236)
+				{
+					return self::requireCode();
+				}
+			}
+			else
+			{
+				// get random aye
+				$_aye = mt_rand(1, 6236);
+			}
+
+		}
+		else
+		{
+			bot::ok();
+			$randomVal = mt_rand(1, 6236);
+
+			// we dont have number show help of juz
+			$msg = '';
+			$msg .= "<b>". T_('SalamQuran'). "</b>". "\n";
+			$msg .= T_('For access to specefic aya of Quran please use and type one of below syntax')."\n";
+			$msg .= "<code>آ". $randomVal. "</code>"."\n";
+			$msg .= "<code>a". $randomVal. "</code>"."\n";
+			$msg .= "/a". $randomVal. "\n";
+
+			$msg .= "\n";
+			$msg .= bot::website();
+			bot::sendMessage($msg);
+			return true;
+		}
+
+		$args  =
+		[
+			'index' => $_aye
+		];
+		$myAye = \dash\curl::go('https://salamquran.com/fa/api/v6/detail/aya-day', $args);
+var_dump($myAye);
+// var_dump($myAye['result']);
+		if(isset($myAye['result']['text']))
+		{
+			$msg = '';
+			$msg .= $myAye['result']['text'];
+
+			$msg .= "\n";
+			$msg .= "<b>". T_('SalamQuran'). "</b>". "\n";
+			$msg .= bot::website();
+
+			bot::sendMessage($msg);
+			return true;
+		}
+		return null;
 	}
+
+
 
 }
