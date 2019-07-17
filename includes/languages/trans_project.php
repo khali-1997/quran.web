@@ -10,27 +10,27 @@ class twigTransTerms
 	echo T_("Name");                                                                  // Line 85
 	echo T_("type");                                                                  // Line 64
 	echo T_("Description");                                                           // Line 74
-	echo T_("example");                                                               // Line 20
-	echo T_("Constraints");                                                           // Line 23
+	echo T_("example");                                                               // Line 54
+	echo T_("Constraints");                                                           // Line 24
 	echo T_("Your apikey");                                                           // Line 20
-	echo T_("Required");                                                              // Line 40
+	echo T_("Required");                                                              // Line 41
 	echo T_("length");                                                                // Line 25
 	echo T_("Get from your account profile");                                         // Line 26
 
 	//-------------------------projects/SalamQuran/content_api/v6/doc/140-day-aya.html
 	echo T_("Get verse of the day");                                                  // Line 5
 	echo T_("A verse will be displayed every day");                                   // Line 8
-	echo T_("cURL");                                                                  // Line 17
-	echo T_("Response");                                                              // Line 20
+	echo T_("cURL");                                                                  // Line 51
+	echo T_("Response");                                                              // Line 54
 
 	//------------------------projects/SalamQuran/content_api/v6/doc/105-page-wbw.html
 	echo T_("Get aya in one page word by word");                                      // Line 5
 	echo T_("Get list of aya from one page word by word");                            // Line 8
-	echo T_("Parameters");                                                            // Line 17
+	echo T_("Parameters");                                                            // Line 18
 	echo T_("You must set index between 1 and 604");                                  // Line 35
 
 	//--------------------projects/SalamQuran/content_api/v6/doc/150-hefz-program.html
-	echo T_("Calculator hefz program");                                               // Line 12
+	echo T_("Calculator hefz program");                                               // Line 13
 	echo T_("Send your time and get result");                                         // Line 8
 	echo T_("Minutes");                                                               // Line 16
 
@@ -91,23 +91,24 @@ class twigTransTerms
 	echo T_("Remove a saved favorites");                                              // Line 5
 
 	//----------------------------projects/SalamQuran/content_api/v6/doc/100-ayat.html
-	echo T_("Get Aye detail");                                                        // Line 5
-	echo T_("Get details like pages, language list, translations, and more.");        // Line 10
+	echo T_("Get one aya");                                                           // Line 5
+	echo T_("You must set index between 1 and 6236");                                 // Line 37
 
 	//-----------------------------projects/SalamQuran/content_api/v6/doc/sidebar.html
-	echo T_("Sura list");                                                             // Line 3
+	echo T_("Load aya");                                                              // Line 3
+	echo T_("Sura list");                                                             // Line 4
 	echo T_("Sura");                                                                  // Line 66
 	echo T_("Page");                                                                  // Line 65
-	echo T_("Page word by word");                                                     // Line 6
-	echo T_("Juz per sura");                                                          // Line 7
-	echo T_("Juz per hizb");                                                          // Line 8
-	echo T_("Quick access");                                                          // Line 9
-	echo T_("Verse of day");                                                          // Line 10
-	echo T_("Page of day");                                                           // Line 11
-	echo T_("Add favorites");                                                         // Line 13
-	echo T_("Edit favorites");                                                        // Line 14
-	echo T_("Remove favorites");                                                      // Line 15
-	echo T_("Favorites list");                                                        // Line 16
+	echo T_("Page word by word");                                                     // Line 7
+	echo T_("Juz per sura");                                                          // Line 8
+	echo T_("Juz per hizb");                                                          // Line 9
+	echo T_("Quick access");                                                          // Line 10
+	echo T_("Verse of day");                                                          // Line 11
+	echo T_("Page of day");                                                           // Line 12
+	echo T_("Add favorites");                                                         // Line 14
+	echo T_("Edit favorites");                                                        // Line 15
+	echo T_("Remove favorites");                                                      // Line 16
+	echo T_("Favorites list");                                                        // Line 17
 
 	//-projects/SalamQuran/public_html/static/siftal/fonts/siftal/icons-reference.html
 
@@ -175,12 +176,6 @@ class twigTransTerms
 	echo T_("For share via social networks");                                         // Line 56
 	echo T_("News Code");                                                             // Line 41
 	echo T_("PDF");                                                                   // Line 89
-	echo T_("Comment");                                                               // Line 132
-	echo T_("Full Name");                                                             // Line 145
-	echo T_("Mobile");                                                                // Line 28
-	echo T_("Please enter valid mobile number. `:val` is incorrect");                 // Line 152
-	echo T_("Your Message");                                                          // Line 161
-	echo T_("Send");                                                                  // Line 167
 
 	//---------------------------------projects/SalamQuran/content/search/display.html
 	echo T_("Search");                                                                // Line 65
@@ -274,6 +269,7 @@ class twigTransTerms
 	echo T_("Donating to SalamQuran is an investment in multiple causes including education, research, server cost, improve design, development of mobile apps and desktop version.");// Line 16
 	echo T_("With the right support and resources we have the potential to make lasting strides for share Quran sound.");// Line 17
 	echo T_("Quran is calling you!");                                                 // Line 17
+	echo T_("Mobile");                                                                // Line 28
 	echo T_("Amount");                                                                // Line 34
 	echo T_("Toman");                                                                 // Line 36
 	echo T_("Pay Donate");                                                            // Line 44
@@ -296,6 +292,10 @@ class twigTransTerms
 	//--------------------------------projects/SalamQuran/content/contact/display.html
 	echo T_("We do our best to improve SalamQuran's quality. So, knowing your valuable comments about bugs and problems and more importantly your precious offers will help us in this way.");// Line 8
 	echo T_("You can access the ticketing status through this link");                 // Line 10
+	echo T_("Full Name");                                                             // Line 145
+	echo T_("Please enter valid mobile number. `:val` is incorrect");                 // Line 152
+	echo T_("Your Message");                                                          // Line 161
+	echo T_("Send");                                                                  // Line 167
 	echo T_("How to contact us");                                                     // Line 41
 	echo T_("SalamQuran");                                                            // Line 45
 	echo T_("Ermile, Floor2, Yas Building");                                          // Line 48
@@ -328,6 +328,7 @@ class twigTransTerms
 	//------------------------------------projects/SalamQuran/content/mag/article.html
 	echo T_("In this section");                                                       // Line 25
 	echo T_("Short link");                                                            // Line 56
+	echo T_("Comment");                                                               // Line 132
 
 	//-----------------------------------projects/SalamQuran/content/apps/display.html
 

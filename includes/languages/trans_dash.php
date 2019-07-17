@@ -5,7 +5,7 @@ class twigTransTerms
  {
 
 	//-----------------------------------addons/content_api/v6/doc/21-get-profile.html
-	echo T_("Get profile detail");                                                    // Line 59
+	echo T_("Get profile detail");                                                    // Line 60
 	echo T_("Required parameters");                                                   // Line 18
 	echo T_("on header");                                                             // Line 18
 	echo T_("Name");                                                                  // Line 55
@@ -20,11 +20,14 @@ class twigTransTerms
 	echo T_("Response");                                                              // Line 51
 
 	//---------------------------------------addons/content_api/v6/doc/60-android.html
-	echo T_("Get android detail");                                                    // Line 83
+	echo T_("Get android detail");                                                    // Line 86
 	echo T_("Get details like pages, language list, translations, and more.");        // Line 10
 
+	//-----------------------------------------addons/content_api/v6/doc/34-posts.html
+	echo T_("Get last posts");                                                        // Line 5
+
 	//--------------------------------------addons/content_api/v6/doc/03-requests.html
-	echo T_("Requests");                                                              // Line 51
+	echo T_("Requests");                                                              // Line 52
 	echo T_("Any tool that is fluent in HTTP can communicate with the API simply by requesting the correct URI.");// Line 6
 	echo T_("Requests should be made using the HTTPS protocol so that traffic is encrypted.");// Line 6
 	echo T_("The interface responds to different methods depending on the action required.");// Line 6
@@ -54,7 +57,7 @@ class twigTransTerms
 	echo T_("It also contains metrics about the total number of objects found, pagination information, and the total content length.");// Line 69
 
 	//------------------------------------addons/content_api/v6/doc/40-user-login.html
-	echo T_("Login user");                                                            // Line 65
+	echo T_("Login user");                                                            // Line 66
 	echo T_("Login user and get new apikey for this user");                           // Line 8
 	echo T_("Your temporary token");                                                  // Line 31
 	echo T_("To get this token see");                                                 // Line 37
@@ -65,7 +68,7 @@ class twigTransTerms
 	echo T_("Min length");                                                            // Line 84
 
 	//-----------------------------------------addons/content_api/v6/doc/55-notif.html
-	echo T_("Get notification list");                                                 // Line 81
+	echo T_("Get notification list");                                                 // Line 84
 	echo T_("Get list of your notification");                                         // Line 8
 	echo T_("Get from your account profile");                                         // Line 41
 	echo T_("Parameters");                                                            // Line 45
@@ -74,7 +77,7 @@ class twigTransTerms
 	echo T_("If user not read this notif, this response is null else see read date of this notif");// Line 107
 
 	//-----------------------------addons/content_api/v6/doc/71-session-terminate.html
-	echo T_("Terminate session");                                                     // Line 89
+	echo T_("Terminate session");                                                     // Line 92
 	echo T_("Terminate one session or all session");                                  // Line 8
 	echo T_("Or");                                                                    // Line 141
 	echo T_("If type is `terminate` the id is require");                              // Line 79
@@ -90,23 +93,24 @@ class twigTransTerms
 	echo T_("twitter");                                                               // Line 215
 
 	//------------------------------------------addons/content_api/v6/doc/display.html
-	echo T_("API");                                                                   // Line 45
-	echo T_("Introduction");                                                          // Line 47
+	echo T_("API");                                                                   // Line 46
+	echo T_("Introduction");                                                          // Line 48
 	echo T_("Endpoints");                                                             // Line 3
 	echo T_("Responses");                                                             // Line 3
 	echo T_("Token");                                                                 // Line 8
 	echo T_("Sign Up User");                                                          // Line 5
-	echo T_("Update profile");                                                        // Line 61
-	echo T_("Upload avatar");                                                         // Line 63
+	echo T_("Update profile");                                                        // Line 62
+	echo T_("Upload avatar");                                                         // Line 64
 	echo T_("Verify user");                                                           // Line 5
 	echo T_("Get language list");                                                     // Line 5
-	echo T_("Get about");                                                             // Line 71
-	echo T_("Get mission");                                                           // Line 73
-	echo T_("Get vision");                                                            // Line 75
-	echo T_("Get contact");                                                           // Line 77
-	echo T_("Check new notification");                                                // Line 79
-	echo T_("Get app detail");                                                        // Line 85
-	echo T_("Session list");                                                          // Line 87
+	echo T_("Get about");                                                             // Line 72
+	echo T_("Get mission");                                                           // Line 74
+	echo T_("Get vision");                                                            // Line 76
+	echo T_("Get contact");                                                           // Line 78
+	echo T_("Get posts");                                                             // Line 80
+	echo T_("Check new notification");                                                // Line 82
+	echo T_("Get app detail");                                                        // Line 88
+	echo T_("Session list");                                                          // Line 90
 
 	//---------------------------------------addons/content_api/v6/doc/33-contact.html
 	echo T_("Get contact text");                                                      // Line 5
@@ -323,6 +327,13 @@ class twigTransTerms
 	//----------------------------------------addons/includes/html/inc_pagination.html
 	echo T_("Total");                                                                 // Line 22
 
+	//----------------------------------------addons/includes/html/inc_commentadd.html
+	echo T_("Full Name");                                                             // Line 155
+	echo T_("Please enter valid mobile number. `:val` is incorrect");                 // Line 162
+	echo T_("Your rate");                                                             // Line 29
+	echo T_("Write your comment...");                                                 // Line 46
+	echo T_("Send");                                                                  // Line 18
+
 	//----------------------------------------addons/content_pay/redirect/display.html
 
 	//--------------------------------------------addons/content_pay/home/display.html
@@ -413,7 +424,7 @@ class twigTransTerms
 	echo T_("Click to download");                                                     // Line 66
 	echo T_("Video");                                                                 // Line 236
 	echo T_("MP3");                                                                   // Line 242
-	echo T_("PDF");                                                                   // Line 88
+	echo T_("PDF");                                                                   // Line 99
 	echo T_("Without preview");                                                       // Line 246
 
 	//---------------------------------------addons/content_cms/posts/add/display.html
@@ -448,7 +459,7 @@ class twigTransTerms
 	echo T_("Please wait This operation may take a few minutes");                     // Line 13
 	echo T_("Backup now");                                                            // Line 34
 	echo T_("Sise");                                                                  // Line 36
-	echo T_("Download");                                                              // Line 88
+	echo T_("Download");                                                              // Line 99
 	echo T_("No backup was found");                                                   // Line 76
 
 	//---------------------------------------------addons/content_cms/cms/display.html
@@ -460,15 +471,15 @@ class twigTransTerms
 
 	//------------------------------------addons/content_cms/contact/home/display.html
 	echo T_("Author");                                                                // Line 12
-	echo T_("Comment");                                                               // Line 131
-	echo T_("Without name");                                                          // Line 87
-	echo T_("Visitor detail");                                                        // Line 96
-	echo T_("Approve");                                                               // Line 43
+	echo T_("Comment");                                                               // Line 142
+	echo T_("Without name");                                                          // Line 91
+	echo T_("Visitor detail");                                                        // Line 100
+	echo T_("Approve");                                                               // Line 46
 	echo T_("Edit");                                                                  // Line 86
-	echo T_("Unapprove");                                                             // Line 51
+	echo T_("Unapprove");                                                             // Line 54
 	echo T_("Trash");                                                                 // Line 56
 	echo T_("Created on");                                                            // Line 34
-	echo T_("No record exist!");                                                      // Line 136
+	echo T_("No record exist!");                                                      // Line 143
 
 	//------------------------------------addons/content_cms/contact/edit/display.html
 	echo T_("Website");                                                               // Line 106
@@ -476,6 +487,10 @@ class twigTransTerms
 	echo T_("Updated on");                                                            // Line 34
 	echo T_("Current status");                                                        // Line 36
 	echo T_("Update");                                                                // Line 83
+
+	//-----------------------------------addons/content_cms/comments/home/display.html
+
+	//-----------------------------------addons/content_cms/comments/edit/display.html
 
 	//--------------------------------------------addons/content_cms/home/wordcloud.js
 
@@ -756,7 +771,7 @@ class twigTransTerms
 	echo T_("Telegram");                                                              // Line 44
 	echo T_("Do you know you can connect your account with our Telegram bot");        // Line 426
 	echo T_("Just need to start bot in Telegram and sync your account via /sync.");   // Line 426
-	echo T_("Short link");                                                            // Line 55
+	echo T_("Short link");                                                            // Line 66
 
 	//----------------------------------addons/content_support/ticket/add/display.html
 	echo T_("Please log in if you need to store this ticket and track it in the future");// Line 9
@@ -795,11 +810,8 @@ class twigTransTerms
 
 	//----------------------------------------addons/content_support/home/article.html
 	echo T_("In this section");                                                       // Line 24
-	echo T_("For share via social networks");                                         // Line 55
-	echo T_("Full Name");                                                             // Line 144
-	echo T_("Please enter valid mobile number. `:val` is incorrect");                 // Line 151
-	echo T_("Your Message");                                                          // Line 160
-	echo T_("Send");                                                                  // Line 18
+	echo T_("For share via social networks");                                         // Line 66
+	echo T_("Your Message");                                                          // Line 171
 
 	//-------------------------------------addons/content_support/message/display.html
 	echo T_("Open new ticket!");                                                      // Line 31
