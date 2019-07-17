@@ -42,10 +42,27 @@
     </div>
 {%endif%}
 
+{{block('postSimilar')}}
+
 {{block('setPostComment')}}
+
   </div>
 {%endblock%}
 
+
+
+{%block postSimilar%}
+    {%set myPostSimilar = posts({"mode" : "similar", "post_id" : datarow.id})%}
+
+    {%if myPostSimilar%}
+      <div class="msg">
+        {%for key, value in myPostSimilar%}
+        <a href="{{url.kingdom}}/n/{{value.id}}">{{value.title}}</a>
+        <br>
+        {%endfor%}
+      </div>
+    {%endif%}
+{%endblock%}
 
 
 {%block terms%}
