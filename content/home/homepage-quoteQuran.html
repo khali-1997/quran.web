@@ -18,9 +18,9 @@
       </div>
 {%endif%}
 {%if dl.pageImage%}
-      <div class="cauto s0 txtC pLR10">
+      <div class="cauto s0 txtC pLR10 fs08 mT20">
         <a class="pageOfTheDay" href="{{dl.pageLink}}">
-          <h2>{%trans "Page of the day"%}</h2>
+          <h2>{%trans "Page of the day"%} {{dl.pageNum | fitNumber}}</h2>
           <img src="{{dl.pageImage}}" alt="{{dl.pageTitle}}">
         </a>
       </div>

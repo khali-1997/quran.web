@@ -201,6 +201,7 @@ class view
 		$imgSrc = str_pad($_page, 3, '0', STR_PAD_LEFT);
 		$imgSrc = 'https://dl.salamquran.com/images/v1/page'. $imgSrc. '.png';
 
+		\dash\data::dl_page($_page);
 		\dash\data::dl_pageLink(\dash\url::kingdom().'/p'.$_page);
 		\dash\data::dl_pageImage($imgSrc);
 		\dash\data::dl_pageTitle(T_('Download image of Quran page :val', ['val' => $_page]));
