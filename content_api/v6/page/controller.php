@@ -19,6 +19,15 @@ class controller
 
 			$wbw = true;
 		}
+		elseif(\dash\url::subchild() === 'day')
+		{
+			if(\dash\url::dir(3))
+			{
+				\content_api\v6::no(404);
+			}
+
+			\content_api\v6::bye(self::page_day());
+		}
 		else
 		{
 			if(\dash\url::subchild())
@@ -61,5 +70,14 @@ class controller
 
 		\content_api\v6::bye($page);
 	}
+
+
+	private static function page_day()
+	{
+		return \lib\app\page_day::get();
+	}
+
+
+
 }
 ?>

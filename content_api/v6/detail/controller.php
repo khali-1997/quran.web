@@ -48,19 +48,8 @@ class controller
 	}
 
 
-	private static function hefz_program()
-	{
-		return \lib\app\hefz::calculator(\dash\request::get());
-	}
 
 
-
-
-
-	private static function page_day()
-	{
-		return \lib\app\page_day::get();
-	}
 
 
 

@@ -8,7 +8,7 @@
     <p>{%trans "Send your time and get result"%}</p>
     <div class="msg url">
       <i class="method">GET</i>
-      <span>{{apiURL}}<b>detail/hefz-program</b></span>
+      <span>{{apiURL}}<b>hefz/time</b></span>
     </div>
 
 
@@ -47,7 +47,7 @@
 
     <h3>{%trans "cURL"%} <small>{%trans "example"%}</small></h3>
 <pre>
-curl -X GET {{apiURL}}detail/hefz-program?mytime=10
+curl -X GET {{apiURL}}hefz/time?mytime=10
 </pre>
 
 <h3>{%trans "Response"%} <small>{%trans "example"%}</small></h3>
