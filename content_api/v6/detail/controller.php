@@ -73,19 +73,7 @@ class controller
 	}
 
 
-	private static function juz_sura()
-	{
-		$dir = __DIR__. '/juz-sura.json';
 
-		if(is_file($dir))
-		{
-			$get = \dash\file::read($dir);
-			$get = json_decode($get, true);
-			return $get;
-		}
-
-		return null;
-	}
 
 
 	private static function juz_hizb()
