@@ -24,12 +24,15 @@
 	color: #fff;
 	display: none;
 }
+body[data-page="home"] #header .topnav h2{
+	font-weight: 900;
+}
 #header .topnav h2{
 	display: inline-block;
 	line-height: 40px;
 	height: 40px;
 	margin: 0 10px;
-	font-weight: 900;
+	font-weight: 100;
 	transition: color 0.3s;
 	color: #fff;
 	max-width: 70%;
@@ -37,6 +40,7 @@
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+	font-size: 1.6em;
 }
 #header .topnav h3{
 	display: inline-block;

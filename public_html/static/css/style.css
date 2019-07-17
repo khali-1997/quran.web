@@ -4715,6 +4715,16 @@ body:before {
   color: #b6b6b6;
   font-weight: 700; }
 
+.pageOfTheDay img {
+  border: 3px solid #2fbfdf;
+  max-width: 280px; }
+
+.pageOfTheDay:hover img {
+  border-color: #4482c1; }
+
+.pageOfTheDay:focus img {
+  border-color: #333; }
+
 #header {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -4740,19 +4750,23 @@ body:before {
   color: #fff;
   display: none; }
 
+body[data-page="home"] #header .topnav h2 {
+  font-weight: 900; }
+
 #header .topnav h2 {
   display: inline-block;
   line-height: 40px;
   height: 40px;
   margin: 0 10px;
-  font-weight: 900;
+  font-weight: 100;
   transition: color 0.3s;
   color: #fff;
   max-width: 70%;
   vertical-align: middle;
   overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis; }
+  text-overflow: ellipsis;
+  font-size: 1.6em; }
 
 #header .topnav h3 {
   display: inline-block;

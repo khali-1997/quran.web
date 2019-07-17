@@ -69,3 +69,7 @@ body:before{
 .quoteBox1 h4{display:block;color:#2fbfdf;font-weight:700;font-size:.9em}
 .quoteBox1 abbr{font-size:.7em;color:#b6b6b6;font-weight:700}
 
+
+.pageOfTheDay img{border: 3px solid #2fbfdf;max-width: 280px;}
+.pageOfTheDay:hover img{border-color:#4482c1}
+.pageOfTheDay:focus img{border-color:#333}
