@@ -6103,7 +6103,8 @@ body[data-in='mag'] #header .topTitle {
 /*quote design*/
 .quoteTile {
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  user-select: none; }
 
 .quote-person {
   position: relative;

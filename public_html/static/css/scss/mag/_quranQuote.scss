@@ -1,7 +1,7 @@
 
 // quranQuote
 /*quote design*/
-.quoteTile{position: relative;overflow: hidden;}
+.quoteTile{position: relative;overflow: hidden;user-select: none;}
 .quote-person{position:relative;margin:5em auto;min-height:150px;font-size:2rem;color: #333;padding:0 10px 0 110px;max-width: 600px;}
 .quote-person p{font-weight:100}
 /*.quote-person:before{position:absolute;top:0;font-size:350px;font-size:17em;color:#2fbfdf;font-family:Arial;font-weight:700;line-height:300px;right:-200px;content:'\201d'}*/
