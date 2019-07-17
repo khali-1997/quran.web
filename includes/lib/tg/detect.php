@@ -55,7 +55,7 @@ class detect
 		// convert fa and ar number to en
 		$args      = \dash\utility\convert::to_en_number($args);
 		// $args      = intval($args);
-		if( (is_numeric($args) && $args !== 0) || $args === 'today' || $args === '?' || $args === '؟' || $args === 'random')
+		// if( (is_numeric($args) && $args !== 0) || $args === 'today' || $args === '?' || $args === '؟' || $args === 'random')
 		{
 			// we have a number
 			switch ($firstChar)
@@ -108,7 +108,7 @@ class detect
 					break;
 
 				default:
-					return true;
+					// return true;
 					break;
 			}
 		}
