@@ -122,6 +122,21 @@ class Quran
 					return self::requireCode();
 				}
 			}
+			elseif($_pageNumber === 'today')
+			{
+				$apiUrl = bot::website(). '/api/v6/page/day';
+				$pageOfTheDay  = \dash\curl::go($apiUrl);
+
+				if(isset($pageOfTheDay['result']['page']))
+				{
+					$current = $pageOfTheDay['result']['page'];
+				}
+				else
+				{
+					// page of the day is not exist, show random page
+					$current = mt_rand(1, 604);
+				}
+			}
 			else
 			{
 				// if text like today, get today page number
@@ -524,7 +539,7 @@ class Quran
 		[
 			'index' => $_aye
 		];
-		$apiUrl = 'https://salamquran.com/'. \dash\language::current(). '/api/v6/aye';
+		$apiUrl = bot::website(). '/api/v6/aye';
 		$myAye  = \dash\curl::go($apiUrl, $args);
 
 		if(isset($myAye['result']['text']))
