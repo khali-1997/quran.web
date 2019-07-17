@@ -137,7 +137,7 @@ class detect
 				$menu['keyboard'][] =
 				[
 					T_("Website"). ' '. T_(\dash\option::config('site', 'title')),
-					T_("Latest News")
+					T_("News")
 				];
 			}
 			else

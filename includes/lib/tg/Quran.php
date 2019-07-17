@@ -524,7 +524,8 @@ class Quran
 		[
 			'index' => $_aye
 		];
-		$myAye = \dash\curl::go('https://salamquran.com/fa/api/v6/detail/aya-day', $args);
+		$apiUrl = 'https://salamquran.com/'. \dash\language::current(). '/api/v6/aye';
+		$myAye  = \dash\curl::go($apiUrl, $args);
 
 		if(isset($myAye['result']['text']))
 		{
