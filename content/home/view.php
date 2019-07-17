@@ -124,6 +124,7 @@ class view
 					$title = T_('Page'). ' '. \dash\utility\human::fitNumber($page1);
 					$desc  = T_('Quran'). ' #'. \dash\utility\human::fitNumber($page1). ' '. T_('page');
 				}
+				self::fillDownloadLink($page1);
 				break;
 
 			case 'onepage':
@@ -142,6 +143,8 @@ class view
 					{
 						$page1 = $page['page1'];
 					}
+
+					self::fillDownloadLink($page1);
 
 					$title = T_('Page'). ' '. \dash\utility\human::fitNumber($page1);
 					$desc  = T_('Quran'). ' #'. T_('page'). \dash\utility\human::fitNumber($page1);
@@ -183,6 +186,16 @@ class view
 		\dash\data::page_title($title);
 		\dash\data::page_desc($desc);
 
+	}
+
+
+	private static function fillDownloadLink($_page)
+	{
+		$dlLink = str_pad($_page, 3, '0', STR_PAD_LEFT);
+		$dlLink = 'https://dl.salamquran.com/images/v1/page'. $dlLink. '.png';
+
+		\dash\data::dl_imageLink($dlLink);
+		\dash\data::dl_imageTitle(T_('Download image of Quran page :val', ['val' => $_page]));
 	}
 }
 ?>
