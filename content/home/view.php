@@ -133,6 +133,7 @@ class view
 				{
 					$title = \dash\data::site_title();
 					$desc  = \dash\data::site_desc();
+					self::fillDownloadLink();
 				}
 				else
 				{
@@ -189,13 +190,20 @@ class view
 	}
 
 
-	private static function fillDownloadLink($_page)
+	private static function fillDownloadLink($_page = null)
 	{
-		$dlLink = str_pad($_page, 3, '0', STR_PAD_LEFT);
-		$dlLink = 'https://dl.salamquran.com/images/v1/page'. $dlLink. '.png';
+		if($_page === null)
+		{
+			// page of the day
+			$_page = mt_rand(1, 604);
+		}
 
-		\dash\data::dl_imageLink($dlLink);
-		\dash\data::dl_imageTitle(T_('Download image of Quran page :val', ['val' => $_page]));
+		$imgSrc = str_pad($_page, 3, '0', STR_PAD_LEFT);
+		$imgSrc = 'https://dl.salamquran.com/images/v1/page'. $imgSrc. '.png';
+
+		\dash\data::dl_pageLink(\dash\url::kingdom().'/p'.$_page);
+		\dash\data::dl_pageImage($imgSrc);
+		\dash\data::dl_pageTitle(T_('Download image of Quran page :val', ['val' => $_page]));
 	}
 }
 ?>
