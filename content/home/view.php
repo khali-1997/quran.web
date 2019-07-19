@@ -135,20 +135,12 @@ class view
 					$desc  = \dash\data::site_desc();
 					self::fillDownloadLink();
 
-					// $doners =
-					// [
-					// 	[
-					// 		'displayname' => 'Javad',
-					// 		'mysum' => '2000000',
-					// 		'avatar' => 'https://salamquran.com/files/1/1-7f330690719c0f7bce95011932d9b633.jpg',
-					// 	],
-					// 	[
-					// 		'displayname' => 'Javad',
-					// 		'mysum' => '2000000',
-					// 		'avatar' => 'https://salamquran.com/files/1/1-7f330690719c0f7bce95011932d9b633.jpg',
-					// 	],
-					// ];
-					// @ reza: fill last doners
+					$doners = \lib\app\donate::doners_list();
+					if(isset($doners['other']))
+					{
+						$doners = $doners['other'];
+					}
+
 					\dash\data::lastDoners($doners);
 				}
 				else
