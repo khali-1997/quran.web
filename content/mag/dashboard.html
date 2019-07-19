@@ -116,73 +116,47 @@
 {%block Col3Box%}
 
 <section class="f">
+
+{%set homePagePost = posts({"limit" : 5})%}
+{%if homePagePost%}
   <nav class="ranking c4 s12 pRa10">
     <header>
       <h2>{%trans "Most Popular"%}</h2>
     </header>
-    <a class="f" href="#">
-      <div class="cauto rank">1.</div>
-      <h3 class="c title">Title 1</h3>
+{%for key, value in homePagePost%}
+    <a class="f" href="{{url.kingdom}}/{{value.url}}">
+      <div class="cauto rank">{{key}}.</div>
+      <h3 class="c title">{{value.title}}</h3>
     </a>
-    <a class="f" href="#">
-      <div class="cauto rank">2.</div>
-      <h3 class="c title">Title2</h3>
-    </a>
-    <a class="f" href="#">
-      <div class="cauto rank">3.</div>
-      <h3 class="c title">Title3</h3>
-    </a>
-    <a class="f" href="#">
-      <div class="cauto rank">4.</div>
-      <h3 class="c title">Title4</h3>
-    </a>
-    <a class="f" href="#">
-      <div class="cauto rank">5.</div>
-      <h3 class="c title">Title5</h3>
-    </a>
+{%endfor%}
   </nav>
+{%endif%}
 
+{%if homePagePost%}
   <nav class="ranking c4 s12 pRa10">
     <header>
       <h2>{%trans "Latest News"%}</h2>
     </header>
-    <a class="f" href="#">
-      <h3 class="c title">Title 1</h3>
+{%for key, value in homePagePost%}
+    <a class="f" href="{{url.kingdom}}/{{value.url}}">
+      <h3 class="c title">{{value.title}}</h3>
     </a>
-    <a class="f" href="#">
-      <h3 class="c title">Title2</h3>
-    </a>
-    <a class="f" href="#">
-      <h3 class="c title">Title3</h3>
-    </a>
-    <a class="f" href="#">
-      <h3 class="c title">Title4</h3>
-    </a>
-    <a class="f" href="#">
-      <h3 class="c title">Title5</h3>
-    </a>
+{%endfor%}
   </nav>
+{%endif%}
 
+{%if homePagePost%}
   <nav class="ranking c4 s12 pRa10">
     <header>
       <h2>{%trans "Blog"%}</h2>
     </header>
-    <a class="f" href="#">
-      <h3 class="c title">Title 1</h3>
+{%for key, value in homePagePost%}
+    <a class="f" href="{{url.kingdom}}/{{value.url}}">
+      <h3 class="c title">{{value.title}}</h3>
     </a>
-    <a class="f" href="#">
-      <h3 class="c title">Title2</h3>
-    </a>
-    <a class="f" href="#">
-      <h3 class="c title">Title3</h3>
-    </a>
-    <a class="f" href="#">
-      <h3 class="c title">Title4</h3>
-    </a>
-    <a class="f" href="#">
-      <h3 class="c title">Title5</h3>
-    </a>
+{%endfor%}
   </nav>
+{%endif%}
 </section>
 
 {%endblock%}
