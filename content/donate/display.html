@@ -3,16 +3,21 @@
 
 {%block page%}
 
-{%if  paymentVerifyMsg %}
-<div class="msg txtC {%if paymentVerifyMsgTrue %}success{%else%}danger{%endif%}">{{ paymentVerifyMsg}}</div>
-  {%if logoLink%}
-    <div class="txtC">
-      <img  src="{{url.site}}/static/images/logo.png">
-    </div>
-  {%endif%}
+{%if paymentVerifyMsg%}
+{%if paymentVerifyMsgTrue%}
+<div class="msg success mT10">
+  <h3>{%trans "Thank You"%}</h3>
+  <div class="msg txtC">{{ paymentVerifyMsg}}</div>
+  <p>{%trans "Also you can share our project to everyone and we are say thank you."%}</p>
+</div>
+{%else%}
+<div class="msg danger mT10">
+  <h3>{%trans "Payment Failed!"%}</h3>
+</div>
+{%endif%}
 {%endif%}
 
-<div class="msg">
+<div class="msg mT10">
   <p>{%trans "Donating to SalamQuran is an investment in multiple causes including education, research, server cost, improve design, development of mobile apps and desktop version."%}</p>
   <p>{%trans "With the right support and resources we have the potential to make lasting strides for share Quran sound."%} {%trans "Quran is calling you!"%}</p>
 </div>
@@ -31,6 +36,11 @@
         <input type="tel" name="mn" id='personMob' maxlength="12">
       </div>
 
+      <label for='personUr'>{%trans "URL"%}</label>
+      <div class="input">
+        <input type="url" name="mu" id='personUr' maxlength="40">
+      </div>
+
       <label for='amount'>{%trans "Amount"%}</label>
       <div class="input">
         <input type="number" name="amount" id='amount' min='1000' max="900000000" required data-response-realtime value="1000" step="1000">
@@ -38,30 +48,25 @@
       </div>
 
   {%if lang.current == 'fa'%}
-      <div class="msg success txtB fs09" data-response="amount" data-response-call="wordifyResponse"></div>
+      <div class="msg txtB fs09" data-response="amount" data-response-call="wordifyResponse"></div>
   {%endif%}
 
-      <button class="btn primary block mT20">{%trans "Pay Donate"%}</button>
+      <button class="btn success block mT20">{%trans "Pay Donate"%}</button>
     </div>
 
   </div>
 </form>
 
-<hr>
-<h3>{%trans "Thank You"%}</h3>
-<p>{%trans "Also you can share our project to everyone and we are say thank you."%}</p>
-
-
-<hr>
+<br><br><br>
 <h3>{%trans "Have Question?"%}</h3>
 <p>{%trans "If you have any questions, please do not hesitate to <a href='contact'>contact us</a>."%} {%trans "In <a href='support'>help center</a> we are answer some frequent questions."%}</p>
 
 
-{{block('iDoners')}}
 <hr>
 <h3>{%trans "Doners"%}</h3>
-<p>{%trans "Thanks to the generous support of donors like you. see our doners"%}</p>
-{%trans "Your ongoing support is helping share Quran via SalamQuran around the world in cyberspace."%}
+<p class="pB50">{%trans "Thanks to the generous support of donors like you. see our doners"%} {%trans "Your ongoing support is helping share Quran via SalamQuran around the world in cyberspace."%}</p>
+
+{{block('iDoners')}}
 
 
 {%endblock%}
@@ -69,67 +74,56 @@
 
 
 {%block iDoners%}
+
 {%if doners.up_to_10_milion%}
-<h3>{%trans "Donate up to 10 milion"%}</h3>
-<div class="f massive">
-  {%for key, value in doners.up_to_10_milion %}
-    <div class="vcard shadow mA10 s12">
-      <img alt="{{value.displayname}}" src="{{value.avatar}}">
-      <div class="content">
-        <a class="header">{{value.displayname}}</a>
-        <div class="meta"><span>{{value.mysum | fitNumber}}</span></div>
-      </div>
-    </div>
-  {%endfor%}
+<div class="txtC pB50">
+  <h3 class="txtB fc-blue">{%trans "Gold Sponsors"%}</h3>
+  <p class="msg">{%trans "Gold Sponsors are those who have pledged $10,000 to $100,000 to SalamQuran."%}</p>
+  <div class="fs50">
+{%for key, value in doners.up_to_10_milion %}
+      <img class="avatar" alt="{{value.displayname}}" src="{{value.avatar}}" title='{{value.mysum | fitNumber}} {%trans "toman"%} {%trans "by"%} {{value.displayname}}'>
+{%endfor%}
+  </div>
 </div>
 {%endif%}
 
 
 {%if doners.up_to_1_milion%}
-<h3>{%trans "Donate up to 1 milion"%}</h3>
-<div class="f large">
-  {%for key, value in doners.up_to_1_milion %}
-  <div class="vcard shadow mA10 s12">
-    <img alt="{{value.displayname}}" src="{{value.avatar}}">
-    <div class="content">
-      <a class="header">{{value.displayname}}</a>
-      <div class="meta"><span>{{value.mysum | fitNumber}}</span></div>
-    </div>
+<div class="txtC pB50">
+  <h3 class="txtB fc-blue">{%trans "Silver Sponsors"%}</h3>
+  <p class="msg">{%trans "Silver Sponsors are those who have pledged $1,000 to $10,000 to SalamQuran."%}</p>
+  <div class="fs25">
+{%for key, value in doners.up_to_1_milion %}
+      <img class="avatar" alt="{{value.displayname}}" src="{{value.avatar}}" title='{{value.mysum | fitNumber}} {%trans "toman"%} {%trans "by"%} {{value.displayname}}'>
+{%endfor%}
   </div>
-  {%endfor%}
 </div>
 {%endif%}
 
 
 {%if doners.up_to_100_thousand%}
-<h3>{%trans "Donate up to 100 thousand"%}</h3>
-<div class="f small">
-  {%for key, value in doners.up_to_100_thousand %}
-  <div class="vcard shadow mA10 s12">
-    <img alt="{{value.displayname}}" src="{{value.avatar}}">
-    <div class="content">
-      <a class="header">{{value.displayname}}</a>
-      <div class="meta"><span>{{value.mysum | fitNumber}}</span></div>
-    </div>
+<div class="txtC pB50">
+  <h3 class="txtB fc-blue">{%trans "Bronze Sponsors"%}</h3>
+  <p class="msg">{%trans "Bronze Sponsors are those who have pledged $100 to $1,000 to SalamQuran."%}</p>
+  <div class="fs20">
+{%for key, value in doners.up_to_100_thousand %}
+      <img class="avatar" alt="{{value.displayname}}" src="{{value.avatar}}" title='{{value.mysum | fitNumber}} {%trans "toman"%} {%trans "by"%} {{value.displayname}}'>
+{%endfor%}
   </div>
-  {%endfor%}
 </div>
 {%endif%}
 
 
 
 {%if doners.other%}
-<h3>{%trans "Other doners"%}</h3>
-<div class="f mini">
-  {%for key, value in doners.other %}
-  <div class="vcard shadow mA10 s12">
-    <img alt="{{value.displayname}}" src="{{value.avatar}}">
-    <div class="content">
-      <a class="header">{{value.displayname}}</a>
-      <div class="meta"><span>{{value.mysum | fitNumber}}</span></div>
-    </div>
+<div class="txtC pB50">
+  <h3 class="txtB">{%trans "Backers"%}</h3>
+  <p class="msg">{%trans "The following Backers are individuals who have contributed various amounts of money in order to help support SalamQuran."%} {%trans "Every little bit helps, and we appreciate even the smallest contributions."%} {%trans "This list shows 100 randomly chosen backers:"%}</p>
+  <div class="fs15">
+{%for key, value in doners.other %}
+      <img class="avatar" alt="{{value.displayname}}" src="{{value.avatar}}" title='{{value.mysum | fitNumber}} {%trans "toman"%} {%trans "by"%} {{value.displayname}}'>
+{%endfor%}
   </div>
-  {%endfor%}
 </div>
 {%endif%}
 
