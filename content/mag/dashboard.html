@@ -7,8 +7,8 @@
    <div class="cn">
     <div class="wrapper" data-xhr='wrapper'>
 
-      <div class="mT25"></div>
-
+      <div class="mT10"></div>
+{{block ('topCats')}}
 {{block ('topNews')}}
 {{block ('introVideo')}}
 {{block ('newsCollection')}}
@@ -125,7 +125,7 @@
     </header>
 {%for key, value in homePagePost%}
     <a class="f" href="{{url.kingdom}}/{{value.url}}">
-      <div class="cauto rank">{{key}}.</div>
+      <div class="cauto rank">{{key + 1}}.</div>
       <h3 class="c title">{{value.title}}</h3>
     </a>
 {%endfor%}
@@ -162,3 +162,68 @@
 {%endblock%}
 
 
+
+{%block topCats%}
+<section class="f fs08 categories">
+  <div class="c m2 s4">
+    <a class="dcard x07 " href="#">
+      <div class="value">{{25 | fitNumber}}</div>
+      <h2 class="label">cat1</h2>
+    </a>
+  </div>
+  <div class="c m2 s4">
+    <a class="dcard x07 " href="#">
+      <div class="value">{{25 | fitNumber}}</div>
+      <h2 class="label">cat1</h2>
+    </a>
+  </div>
+  <div class="c m2 s4">
+    <a class="dcard x07 " href="#">
+      <div class="value">{{25 | fitNumber}}</div>
+      <h2 class="label">cat1</h2>
+    </a>
+  </div>
+  <div class="c m2 s4">
+    <a class="dcard x07 " href="#">
+      <div class="value">{{25 | fitNumber}}</div>
+      <h2 class="label">cat1</h2>
+    </a>
+  </div>
+  <div class="c m2 s4">
+    <a class="dcard x07 " href="#">
+      <div class="value">{{25 | fitNumber}}</div>
+      <h2 class="label">cat1</h2>
+    </a>
+  </div>
+  <div class="c m2 s4">
+    <a class="dcard x07 " href="#">
+      <div class="value">{{25 | fitNumber}}</div>
+      <h2 class="label">cat1</h2>
+    </a>
+  </div>
+  <div class="c m2 s4">
+    <a class="dcard x07 " href="#">
+      <div class="value">{{25 | fitNumber}}</div>
+      <h2 class="label">cat1</h2>
+    </a>
+  </div>
+  <div class="c m2 s4">
+    <a class="dcard x07 " href="#">
+      <div class="value">{{25 | fitNumber}}</div>
+      <h2 class="label">cat1</h2>
+    </a>
+  </div>
+  <div class="c m2 s4">
+    <a class="dcard x07 " href="#">
+      <div class="value">{{25 | fitNumber}}</div>
+      <h2 class="label">cat1</h2>
+    </a>
+  </div>
+  <div class="c m2 s4">
+    <a class="dcard x07 " href="#">
+      <div class="value">{{25 | fitNumber}}</div>
+      <h2 class="label">cat1</h2>
+    </a>
+  </div>
+</section>
+{%endblock%}
