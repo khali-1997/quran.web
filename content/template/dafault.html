@@ -10,26 +10,33 @@
   {{block('terms')}}
 {%endif%}
 
+ </div>
+</div>
+<div>
+ <div>
+{%include 'content/mag/block-mustReads.html'%}
+
 {%endblock%}
 
 
 
 {%block posts%}
-  <div class="postPreview">
+  <div class="postListPreview">
     <div class="postMainContent">
 
 {%if datarow.type == 'post' %}
 {%if datarow.meta.thumb%}
-     <img src="{{datarow.meta.thumb}}" alt="{{datarow.title | raw}}" class="">
+     <img src="{{datarow.meta.thumb}}" alt="{{datarow.title | raw}}">
 {%endif%}
-	<h2>{{datarow.title | raw}}</h2>
+	<h2><a href="{{datarow.url}}">{{datarow.title | raw}}</a></h2>
 {%if datarow.subtitle%}
-    <div class="txtB mB10">{{datarow.subtitle}}</div>
+    <div class="mB10 fs09">{{datarow.subtitle}}</div>
 {%endif%}
-    <p class="msg hide">{{datarow.excerpt}}</p>
+    <p class="msg">{{datarow.excerpt}}</p>
 {%endif%}
-
-    {{datarow.content | raw}}
+    <div class="mB20">
+      {{datarow.content | raw}}
+    </div>
     </div>
     {{block('imagegallery')}}
 
@@ -55,12 +62,14 @@
     {%set myPostSimilar = posts({"mode" : "similar", "post_id" : datarow.id})%}
 
     {%if myPostSimilar%}
-      <div class="msg">
+      <nav class="msg">
+        <h4 class="mB20-f">{%trans "Recommended for you"%}</h4>
+
         {%for key, value in myPostSimilar%}
-        <a href="{{url.kingdom}}/n/{{value.id}}">{{value.title}}</a>
-        <br>
+        <a class="block" href="{{url.kingdom}}/n/{{value.id}}">{{value.title}}</a>
+
         {%endfor%}
-      </div>
+      </nav>
     {%endif%}
 {%endblock%}
 
