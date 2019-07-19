@@ -6144,7 +6144,7 @@ body[data-in='mag'] #header .topTitle {
 .introVideo {
   position: relative;
   max-width: 1000px;
-  margin: 1em auto; }
+  margin: 1em auto 5rem; }
 
 .introVideo video {
   display: block;
@@ -6195,6 +6195,29 @@ body[data-in='mag'] #header .topTitle {
 
 body[data-in='mag'] .wrapper {
   padding-top: 2em; }
+
+.ranking a {
+  align-items: center;
+  min-height: 50px;
+  transition: 0.3s;
+  padding: 0 0.5rem; }
+
+.ranking a:hover {
+  background-color: rgba(0, 0, 0, 0.1); }
+
+.ranking a:focus {
+  background-color: rgba(0, 0, 0, 0.2); }
+
+.ranking .rank {
+  font-size: 2.5em;
+  font-weight: 900;
+  color: #e90606;
+  padding: 0.5rem 1rem; }
+
+.ranking .title {
+  display: block;
+  font-size: 1.4em;
+  margin: 0; }
 
 @media all and (max-height: 380px) {
   #sidebar .always footer {
