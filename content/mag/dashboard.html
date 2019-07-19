@@ -94,7 +94,7 @@
       {%for key, value in homePagePost%}
       <div class="c3 s6 pA10">
         <div class="vcard shadow">
-          <a class="newsCover" href="{{url.here}}/{{value.url}}"><img alt='siftal' src="{%if value.meta.thumb%}{{value.meta.thumb}}{%else%}{{url.static}}/images/hi.jpg{%endif%}"></a>
+          <a class="newsCover" href="{{url.here}}/{{value.url}}"><img alt='value.title' src="{%if value.meta.thumb%}{{value.meta.thumb}}{%else%}{{url.siftal}}/images/default/image.png{%endif%}"></a>
           <div class="content">
             <a class="header">{{value.title}}</a>
             <div class="desc s0">{{value.excerpt}}</div>
