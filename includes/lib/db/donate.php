@@ -23,6 +23,7 @@ class donate
 		"
 			SELECT
 				SUM(transactions.plus) AS `mysum`,
+				MAX(transactions.datecreated) AS `datecreated`,
 				transactions.user_id,
 				users.displayname,
 				users.gender,

@@ -136,7 +136,20 @@ class view
 					self::fillDownloadLink();
 
 					$doners = \lib\app\donate::doners_list();
-					if(isset($doners['other']))
+
+					if(isset($doners['up_to_10_milion']))
+					{
+						$doners = $doners['up_to_10_milion'];
+					}
+					elseif(isset($doners['up_to_1_milion']))
+					{
+						$doners = $doners['up_to_1_milion'];
+					}
+					elseif(isset($doners['up_to_100_thousand']))
+					{
+						$doners = $doners['up_to_100_thousand'];
+					}
+					elseif(isset($doners['other']))
 					{
 						$doners = $doners['other'];
 					}

@@ -81,7 +81,7 @@
   <p class="msg">{%trans "Gold Sponsors are those who have pledged $10,000 to $100,000 to SalamQuran."%}</p>
   <div class="fs25">
 {%for key, value in doners.up_to_10_milion %}
-      <img class="avatar" alt="{{value.displayname}}" src="{{value.avatar}}" title='{{value.mysum | fitNumber}} {%trans "toman"%} {%trans "by"%} {{value.displayname}}'>
+      <img class="avatar" alt="{{value.displayname}}" src="{{value.avatar}}" title='{{value.mysum | fitNumber}} {%trans "toman"%} {%trans "by"%} {{value.displayname}} | {{value.datecreated | dt("human", "year")}}'>
 {%endfor%}
   </div>
 </div>
@@ -94,7 +94,7 @@
   <p class="msg">{%trans "Silver Sponsors are those who have pledged $1,000 to $10,000 to SalamQuran."%}</p>
   <div class="fs20">
 {%for key, value in doners.up_to_1_milion %}
-      <img class="avatar" alt="{{value.displayname}}" src="{{value.avatar}}" title='{{value.mysum | fitNumber}} {%trans "toman"%} {%trans "by"%} {{value.displayname}}'>
+      <img class="avatar" alt="{{value.displayname}}" src="{{value.avatar}}" title='{{value.mysum | fitNumber}} {%trans "toman"%} {%trans "by"%} {{value.displayname}} | {{value.datecreated | dt("human", "year")}}'>
 {%endfor%}
   </div>
 </div>
@@ -107,7 +107,7 @@
   <p class="msg">{%trans "Bronze Sponsors are those who have pledged $100 to $1,000 to SalamQuran."%}</p>
   <div class="fs18">
 {%for key, value in doners.up_to_100_thousand %}
-      <img class="avatar" alt="{{value.displayname}}" src="{{value.avatar}}" title='{{value.mysum | fitNumber}} {%trans "toman"%} {%trans "by"%} {{value.displayname}}'>
+      <img class="avatar" alt="{{value.displayname}}" src="{{value.avatar}}" title='{{value.mysum | fitNumber}} {%trans "toman"%} {%trans "by"%} {{value.displayname}} | {{value.datecreated | dt("human", "year")}}'>
 {%endfor%}
   </div>
 </div>
@@ -121,7 +121,7 @@
   <p class="msg">{%trans "The following Backers are individuals who have contributed various amounts of money in order to help support SalamQuran."%} {%trans "Every little bit helps, and we appreciate even the smallest contributions."%} {%trans "This list shows 100 randomly chosen backers:"%}</p>
   <div class="fs12">
 {%for key, value in doners.other %}
-      <img class="avatar" alt="{{value.displayname}}" src="{{value.avatar}}" title='{{value.mysum | fitNumber}} {%trans "toman"%} {%trans "by"%} {{value.displayname}}'>
+      <img class="avatar" alt="{{value.displayname}}" src="{{value.avatar}}" title='{{value.mysum | fitNumber}} {%trans "toman"%} {%trans "by"%} {{value.displayname}} | {{value.datecreated | dt("human", "year")}}'>
 {%endfor%}
   </div>
 </div>
