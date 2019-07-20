@@ -77,6 +77,20 @@ class donate
 			}
 		}
 
+
+		$url = \dash\app::request('url');
+		if($url && !\dash\utility\filter::url($url))
+		{
+			\dash\notif::error(T_("Invalid url"), 'url');
+			return false;
+		}
+
+		if($url && mb_strlen($url) >= 500)
+		{
+			\dash\notif::error(T_("Please set url less than 500 character"), 'url');
+			return false;
+		}
+
 		if(isset($_args['turn_back']))
 		{
 			$turn_back = $_args['turn_back'];
@@ -95,14 +109,17 @@ class donate
 
 		$meta =
 		[
-			'turn_back' => $turn_back,
-			'amount'    => $amount,
-			'user_id'   => $user_id,
-			'auto_go'   => $auto_go,
-			// 'msg_go'    => $msg_go,
-			'auto_back' => $auto_back,
-			'final_msg' => true,
-
+			'turn_back'   => $turn_back,
+			'amount'      => $amount,
+			'user_id'     => $user_id,
+			'auto_go'     => $auto_go,
+			// 'msg_go'   => $msg_go,
+			'auto_back'   => $auto_back,
+			'final_msg'   => true,
+			'other_field' =>
+			[
+				'url' => $url
+			]
 		];
 
 		\dash\utility\pay\start::site($meta);

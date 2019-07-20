@@ -24,6 +24,17 @@ class donate
 			SELECT
 				SUM(transactions.plus) AS `mysum`,
 				MAX(transactions.datecreated) AS `datecreated`,
+				(
+					SELECT
+						MYtransactions.url
+					FROM
+						transactions AS `MYtransactions`
+					WHERE
+						MYtransactions.user_id = transactions.user_id AND
+						MYtransactions.url IS NOT NULL
+					ORDER BY MYtransactions.id DESC
+					LIMIT 1
+				) AS `url`,
 				transactions.user_id,
 				users.displayname,
 				users.gender,

@@ -10,6 +10,7 @@ class model
 		$post['name']   = \dash\request::post('name');
 		$post['mobile'] = \dash\request::post('mn');
 		$post['amount'] = \dash\request::post('amount');
+		$post['url']    = \dash\request::post('url');
 
 		\lib\app\donate::add($post);
 	}
