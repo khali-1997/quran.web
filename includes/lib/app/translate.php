@@ -4,6 +4,20 @@ namespace lib\app;
 
 class translate
 {
+	public static function aya_translate($_lang, $_sura, $_aya)
+	{
+		$table_name = self::get_default_lang_tablename($_lang);
+		if($table_name)
+		{
+			$result = \lib\db\translate::load($table_name, ['sura' => $_sura, 'aya' => $_aya]);
+			if(isset($result[0]))
+			{
+				return $result[0];
+			}
+		}
+		return null;
+	}
+
 
 	public static function current_list()
 	{
@@ -70,6 +84,28 @@ class translate
 		return $result;
 	}
 
+
+	// get
+	public static function get_default_lang_tablename($_lang = null)
+	{
+		if(!$_lang)
+		{
+			$_lang = \dash\language::current();
+		}
+
+		$get = self::get_translate($_lang);
+
+		foreach ($get as $key => $value)
+		{
+			if(isset($value['default']) && $value['default'])
+			{
+				return $value['table_name'];
+			}
+		}
+		return null;
+	}
+
+	// get fa5 for farsi
 	public static function get_default_lang_key()
 	{
 		$get = self::current_lang_translate();

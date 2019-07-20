@@ -33,6 +33,12 @@ class aya_day
 						$load['words'] = $load_word;
 					}
 
+					if(isset($load['sura']) && isset($load['aya']))
+					{
+						$translate         = \lib\app\translate::aya_translate(\dash\language::current(), $load['sura'], $load['aya']);
+						$load['translate'] = $translate;
+					}
+
 					$load['date']        = date("Y-m-d");
 
 					self::temp_file($load);
@@ -46,7 +52,7 @@ class aya_day
 
 	private static function temp_file($_save = null)
 	{
-		return self::load_file($_save, 'current-aya-day.me.json');
+		return self::load_file($_save, \dash\language::current(). '-current-aya-day.me.json');
 	}
 
 
@@ -93,7 +99,7 @@ class aya_day
 		];
 
 		$save_file[date("Y-m-d")] = $detail;
-		\dash\file::write(\lib\app\json_folder::addr('current-aya-day.me.json'), '');
+		\dash\file::write(\lib\app\json_folder::addr(\dash\language::current(). '-current-aya-day.me.json'), '');
 		self::load_file($save_file);
 		return $detail;
 
