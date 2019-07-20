@@ -4,6 +4,31 @@ namespace lib\db;
 
 class donate
 {
+	public static function last_10_donate()
+	{
+		$query =
+		"
+			SELECT
+				transactions.plus AS `mysum`,
+				transactions.datecreated AS `datecreated`,
+				transactions.user_id,
+				transactions.url,
+				users.displayname,
+				users.gender,
+				users.avatar
+			FROM
+				transactions
+			INNER JOIN users ON users.id = transactions.user_id
+			WHERE
+				transactions.verify = 1
+			ORDER BY transactions.id DESC
+			LIMIT 10
+		";
+		$result = \dash\db::get($query);
+		return $result;
+
+	}
+
 	public static function sum_from_to($_from, $_to)
 	{
 		$having = [];
@@ -53,18 +78,6 @@ class donate
 		$result = \dash\db::get($query);
 		return $result;
 
-	}
-
-
-	public static function get_id($_id)
-	{
-		if(is_numeric($_id) && intval($_id) >= 1 && intval($_id) <= 114 )
-		{
-			$_id = intval($_id);
-			return self::get(['sura' => $_id, 'limit' => 1]);
-		}
-
-		return false;
 	}
 
 }

@@ -57,6 +57,12 @@ class view
 		\dash\data::zoomInUrl(\lib\app\font_style::zoom_in_url());
 		\dash\data::zoomOutUrl(\lib\app\font_style::zoom_out_url());
 
+		if(!\dash\url::directory())
+		{
+			$doners = \lib\app\donate::last_10_donate();
+			\dash\data::lastDoners($doners);
+		}
+
 	}
 
 
@@ -65,8 +71,9 @@ class view
 		$type  = \dash\data::quranLoaded_find_by();
 		$title = null;
 		$desc  = null;
-
+		$seotitle = null;
 		$find_id = \dash\data::quranLoaded_find_id();
+
 
 		switch ($type)
 		{
@@ -128,6 +135,22 @@ class view
 				break;
 
 			case 'onepage':
+				$page  = \dash\data::quranLoaded_find_id();
+				$page1 = null;
+
+				if(isset($page['page1']))
+				{
+					$page1 = $page['page1'];
+				}
+
+				self::fillDownloadLink($page1);
+
+				$title = T_('Page'). ' '. \dash\utility\human::fitNumber($page1);
+				$desc  = T_('Quran'). ' #'. T_('page'). \dash\utility\human::fitNumber($page1);
+
+				break;
+
+			case 'sura':
 			default:
 				if(!\dash\url::directory())
 				{
@@ -135,69 +158,33 @@ class view
 					$desc  = \dash\data::site_desc();
 					self::fillDownloadLink();
 
-					$doners = \lib\app\donate::doners_list();
 
-					if(isset($doners['up_to_10_milion']))
-					{
-						$doners = $doners['up_to_10_milion'];
-					}
-					elseif(isset($doners['up_to_1_milion']))
-					{
-						$doners = $doners['up_to_1_milion'];
-					}
-					elseif(isset($doners['up_to_100_thousand']))
-					{
-						$doners = $doners['up_to_100_thousand'];
-					}
-					elseif(isset($doners['other']))
-					{
-						$doners = $doners['other'];
-					}
-
-					\dash\data::lastDoners($doners);
 				}
 				else
 				{
-					$page  = \dash\data::quranLoaded_find_id();
-					$page1 = null;
-
-					if(isset($page['page1']))
+					if(\dash\data::suraDetail())
 					{
-						$page1 = $page['page1'];
+						$title = T_('Surah'). ' '. T_(\dash\data::suraDetail_tname());
+						// add surah name
+						$desc  = T_('Quran'). ' #'. \dash\utility\human::fitNumber(\dash\data::suraDetail_index()). ' '. T_('surah');
+						// add total ayah number
+						$desc  .= ' | '. \dash\utility\human::fitNumber(\dash\data::suraDetail_ayas()). ' '. T_('ayah');
+						// add type
+						$desc  .= ' | '. T_(\dash\data::suraDetail_type());
+						// add juz
+						if(\dash\data::suraDetail_alljuz())
+						{
+							$desc  .= ' | '. T_('juz'). \dash\utility\human::fitNumber(\dash\data::suraDetail_ayas());
+						}
+
+						// add translated name
+						$desc  .= ' | '. T_(\dash\data::suraDetail_ename());
+						// add arabic name
+						$desc  .= ' | '. \dash\data::suraDetail_name();
 					}
-
-					self::fillDownloadLink($page1);
-
-					$title = T_('Page'). ' '. \dash\utility\human::fitNumber($page1);
-					$desc  = T_('Quran'). ' #'. T_('page'). \dash\utility\human::fitNumber($page1);
 				}
 
 				break;
-
-
-			case 'sura':
-				if(\dash\data::suraDetail())
-				{
-					$title = T_('Surah'). ' '. T_(\dash\data::suraDetail_tname());
-					// add surah name
-					$desc  = T_('Quran'). ' #'. \dash\utility\human::fitNumber(\dash\data::suraDetail_index()). ' '. T_('surah');
-					// add total ayah number
-					$desc  .= ' | '. \dash\utility\human::fitNumber(\dash\data::suraDetail_ayas()). ' '. T_('ayah');
-					// add type
-					$desc  .= ' | '. T_(\dash\data::suraDetail_type());
-					// add juz
-					if(\dash\data::suraDetail_alljuz())
-					{
-						$desc  .= ' | '. T_('juz'). \dash\utility\human::fitNumber(\dash\data::suraDetail_ayas());
-					}
-
-					// add translated name
-					$desc  .= ' | '. T_(\dash\data::suraDetail_ename());
-					// add arabic name
-					$desc  .= ' | '. \dash\data::suraDetail_name();
-				}
-				break;
-
 
 			// default:
 			// 	$title = \dash\data::site_title();
@@ -207,7 +194,7 @@ class view
 
 		\dash\data::page_title($title);
 		\dash\data::page_desc($desc);
-
+		\dash\data::page_seotitle($seotitle);
 	}
 
 

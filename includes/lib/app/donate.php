@@ -123,9 +123,20 @@ class donate
 		];
 
 		\dash\utility\pay\start::site($meta);
-
 	}
 
+
+	public static function last_10_donate()
+	{
+		$result = \lib\db\donate::last_10_donate();
+
+		if(is_array($result))
+		{
+			$result = array_map(['\\dash\\app', 'fix_avatar'], $result);
+		}
+
+		return $result;
+	}
 
 
 	public static function doners_list()
