@@ -4,6 +4,24 @@ namespace lib\app;
 
 class mag
 {
+	public static function subtype_list()
+	{
+		$list         = [];
+		$list['rule'] = ['title' => T_("Rule")];
+		$list['info'] = ['title' => T_("Information")];
+		return $list;
+	}
+
+	public static function get_subtype_title($_key)
+	{
+		$list = self::subtype_list();
+		if(isset($list[$_key]['title']))
+		{
+			return $list[$_key]['title'];
+		}
+		return null;
+	}
+
 
 	public static function add($_args)
 	{
@@ -43,13 +61,23 @@ class mag
 			return false;
 		}
 
+
+		$subtype = \dash\app::request('subtype');
+		if($subtype && !array_key_exists($subtype, self::subtype_list()))
+		{
+			\dash\notif::error(T_("Invalid subtype"), 'subtype');
+			return false;
+		}
+
 		$insert               = [];
-		$duplicate            = [];
 		$insert['post_id']    = \dash\coding::decode($post);
-		$duplicate['post_id'] = $insert['post_id'];
 		$insert['type']       = $type;
-		$duplicate['type']    = $insert['type'];
 		$insert['creator']    = \dash\user::id();
+		$insert['subtype']    = $subtype;
+
+		$duplicate            = [];
+		$duplicate['post_id'] = $insert['post_id'];
+		$duplicate['type']    = $insert['type'];
 
 		switch ($type)
 		{
@@ -199,6 +227,11 @@ class mag
 				case 'mag_id':
 				case 'post_id':
 					$result[$key] = \dash\coding::encode($value);
+					break;
+
+				case 'subtype':
+					$result[$key] = $value;
+					$result['subtype_title'] = self::get_subtype_title($value);
 					break;
 
 				default:

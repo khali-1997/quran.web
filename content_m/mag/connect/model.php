@@ -12,6 +12,7 @@ class model
 		$post['surah'] = \dash\request::post('surah');
 		$post['type']  = \dash\request::post('connectType');
 		$post['word']  = \dash\request::post('word');
+		$post['subtype']  = \dash\request::post('subtype');
 
 		$add = \lib\app\mag::add($post);
 		if($add)

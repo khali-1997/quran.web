@@ -15,6 +15,8 @@ class view
 		\dash\data::badge_text(T_("Back"));
 		\dash\data::badge_link(\dash\url::this());
 
+		\dash\data::listSubType(\lib\app\mag::subtype_list());
+
 		if(\dash\url::subchild() === 'word')
 		{
 			$sura = \dash\request::get('surah');

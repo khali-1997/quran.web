@@ -76,6 +76,7 @@
       <tr>
         <th></th>
         <th data-sort="{{sortLink.title.order}}"><a href='{{sortLink.title.link}}'>{%trans "Title"%}</a></th>
+        <th>{%trans "Type"%}</th>
         <th>{%trans "Connect to"%}</th>
         <th>{%trans "Action"%}</th>
       </tr>
@@ -86,6 +87,7 @@
       <tr>
         <td class="collapsing"><a href="{{url.kingdom}}/{{value.url}}" target="_blank" data-direct><i class="sf-link"></i></a></td>
         <td><a href="{{url.this}}?post_id={{value.post_id}}">{{value.title}}</a></td>
+        <td><a href="{{url.this}}?subtype={{value.subtype}}">{{value.subtype_title}}</a></td>
         <td>
             {%if value.page%} <a href="{{url.this}}?magpage={{value.page}}">{%trans "Page"%} <b>{{value.page | fitNumber}}</b></a>{%endif%}
             {%if value.sura%} <a href="{{url.this}}?sura={{value.sura}}">{%trans "Sura"%} <b>{{value.sura | fitNumber}}</b></a>{%endif%}

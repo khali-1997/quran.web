@@ -51,6 +51,12 @@ class view
 			$filterArray['sura'] = $args['sura'];
 		}
 
+		if(\dash\request::get('subtype'))
+		{
+			$args['subtype']        = \dash\request::get('subtype');
+			$filterArray['Type'] = $args['subtype'];
+		}
+
 		if(\dash\request::get('aya'))
 		{
 			$args['aya']        = \dash\request::get('aya');
