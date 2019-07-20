@@ -101,7 +101,10 @@ class aya
 
 		$quran             = [];
 
-		$first_verse = [];
+		$first_verse        = [];
+		$text_raw           = [];
+		$text_raw['text']   = [];
+		$text_raw['simple'] = [];
 
 		foreach ($load as $key => $value)
 		{
@@ -169,6 +172,9 @@ class aya
 					'audio'         => \lib\app\qari::get_aya_audio($value['sura'], $value['aya'], $_meta),
 					'translate'     => \lib\app\quran\translate::get_translation($value['sura'], $value['aya'], $_meta),
 				];
+
+				$text_raw['text'][]   = $quran[$myKey][$myArrayKey]['detail']['text'];
+				$text_raw['simple'][] = $quran[$myKey][$myArrayKey]['detail']['simple'];
 			}
 
 			if(!isset($quran[$myKey][$myArrayKey]['word']))
@@ -380,8 +386,7 @@ class aya
 		$result['find_id']           = $_id;
 		$result['mode']              = $_meta['mode'];
 		$result['translatelist']     = \lib\app\translate::current_list();
-
-		// \dash\notif::api($result);
+		$result['text_raw']          = $text_raw;
 
 
 		return $result;

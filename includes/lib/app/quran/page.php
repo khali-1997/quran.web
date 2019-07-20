@@ -100,16 +100,19 @@ class page
 			$translatePage = \lib\app\quran\translate::load($load, $_meta);
 		}
 		// use in translatepage to load aya of this aya
-		$page1_aya_list = [];
+		$page1_aya_list     = [];
 
-		$quran          = [];
-		$quran['page1'] = [];
-		$quran['page2'] = [];
+		$quran              = [];
+		$quran['page1']     = [];
+		$quran['page2']     = [];
 
+		$first_verse        = [];
+		$text_raw           = [];
+		$text_raw['text']   = [];
+		$text_raw['simple'] = [];
 
-		$first_verse = [];
-		$check_sura = 0;
-		$check_line = 0;
+		$check_sura         = 0;
+		$check_line         = 0;
 
 		foreach ($load as $key => $value)
 		{
@@ -272,6 +275,9 @@ class page
 					'audio'         => \lib\app\qari::get_aya_audio($value['sura'], $value['aya'], $_meta),
 					'translate'     => $temp_translate,
 				];
+
+				$text_raw['text'][]   = $quran[$myKey][$myArrayKey]['detail']['text'];
+				$text_raw['simple'][] = $quran[$myKey][$myArrayKey]['detail']['simple'];
 
 				if(!isset($showTranslatePage[$value['sura']. '_'. $value['aya']]))
 				{
@@ -503,13 +509,13 @@ class page
 		$quran_detail['page2']['class'] = $page2_classname;
 
 
-		$result['detail']            = $quran_detail;
-		$result['find_by']           = $mode;
-		$result['find_type']         = ['by' => $_type, 'id' => $_id];
-		$result['mode']              = $_meta['mode'];
-		$result['find_id']           = ['page1' => substr($page1_classname, 1), 'page2' => substr($page2_classname, 1)];
-		$result['translatelist']     = \lib\app\translate::current_list();
-
+		$result['detail']        = $quran_detail;
+		$result['find_by']       = $mode;
+		$result['find_type']     = ['by' => $_type, 'id' => $_id];
+		$result['mode']          = $_meta['mode'];
+		$result['find_id']       = ['page1' => substr($page1_classname, 1), 'page2' => substr($page2_classname, 1)];
+		$result['translatelist'] = \lib\app\translate::current_list();
+		$result['text_raw']      = $text_raw;
 
 		// \dash\notif::api($result);
 
@@ -544,6 +550,20 @@ class page
 			return intval($result['page']);
 		}
 		return null;
+	}
+
+
+	public static function page_start_sura_aya($_page)
+	{
+		$addr = root. 'content_api/v6/page/page.json';
+		$get  = \dash\file::read($addr);
+		$get  = json_decode($get, true);
+		if(isset($get[$_page]))
+		{
+			return $get[$_page];
+		}
+		return null;
+
 	}
 }
 ?>

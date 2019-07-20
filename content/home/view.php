@@ -62,25 +62,49 @@ class view
 			$doners = \lib\app\donate::last_10_donate();
 			\dash\data::lastDoners($doners);
 		}
+	}
 
+	private static function first_character($_type, $_len = 100)
+	{
+		$first_character = null;
+		switch ($_type)
+		{
+			case 'sura':
+			case 'page':
+			case 'juz':
+
+				$raw_text = \dash\data::quranLoaded_text_raw();
+
+				if(isset($raw_text['text']))
+				{
+					$raw_text = $raw_text['text'];
+					if(is_array($raw_text))
+					{
+						$raw_text = implode(' ', $raw_text);
+					}
+					if(is_string($raw_text))
+					{
+						$first_character = mb_substr($raw_text, 0, $_len);
+					}
+				}
+
+				break;
+
+			default:
+
+				break;
+		}
+		return (string) $first_character;
 	}
 
 
 	private static function set_best_title()
 	{
-		$type  = \dash\data::quranLoaded_find_by();
-		$title = null;
-		$desc  = null;
-		$seotitle = null;
-		$find_id = \dash\data::quranLoaded_find_id();
-
+		$type     = \dash\data::quranLoaded_find_by();
+		$find_id  = \dash\data::quranLoaded_find_id();
 
 		switch ($type)
 		{
-			case 'juz':
-				$title = T_('Juz'). ' '. \dash\utility\human::fitNumber($find_id);
-				$desc  = T_('Quran'). ' #'. \dash\utility\human::fitNumber($find_id). ' '. T_('juz');
-				break;
 
 			case 'hizb':
 				$title = T_('Hizb'). ' '. \dash\utility\human::fitNumber($find_id);
@@ -102,10 +126,6 @@ class view
 				$desc  = T_('Quran'). ' #'. \dash\utility\human::fitNumber($find_id). ' '. T_('aya');
 				break;
 
-			case 'page':
-				$title = T_('Page'). ' '. \dash\utility\human::fitNumber($find_id);
-				$desc  = T_('Quran'). ' #'. T_('page'). \dash\utility\human::fitNumber($find_id);
-				break;
 
 			case 'twopage':
 				$page  = \dash\data::quranLoaded_find_id();
@@ -134,6 +154,14 @@ class view
 				self::fillDownloadLink($page1);
 				break;
 
+			case 'juz':
+				self::seo_juz();
+				break;
+
+			case 'page':
+				self::seo_page();
+				break;
+
 			case 'onepage':
 				$page  = \dash\data::quranLoaded_find_id();
 				$page1 = null;
@@ -157,44 +185,136 @@ class view
 					$title = \dash\data::site_title();
 					$desc  = \dash\data::site_desc();
 					self::fillDownloadLink();
-
-
 				}
 				else
 				{
-					if(\dash\data::suraDetail())
-					{
-						$title = T_('Surah'). ' '. T_(\dash\data::suraDetail_tname());
-						// add surah name
-						$desc  = T_('Quran'). ' #'. \dash\utility\human::fitNumber(\dash\data::suraDetail_index()). ' '. T_('surah');
-						// add total ayah number
-						$desc  .= ' | '. \dash\utility\human::fitNumber(\dash\data::suraDetail_ayas()). ' '. T_('ayah');
-						// add type
-						$desc  .= ' | '. T_(\dash\data::suraDetail_type());
-						// add juz
-						if(\dash\data::suraDetail_alljuz())
-						{
-							$desc  .= ' | '. T_('juz'). \dash\utility\human::fitNumber(\dash\data::suraDetail_ayas());
-						}
-
-						// add translated name
-						$desc  .= ' | '. T_(\dash\data::suraDetail_ename());
-						// add arabic name
-						$desc  .= ' | '. \dash\data::suraDetail_name();
-					}
+					self::seo_sura();
+					return;
 				}
-
 				break;
 
-			// default:
-			// 	$title = \dash\data::site_title();
-			// 	$desc = \dash\data::site_desc();
-			// 	break;
 		}
+
+		// \dash\data::page_title($title);
+		// \dash\data::page_desc($desc);
+		// \dash\data::page_seotitle($seotitle);
+
+	}
+
+	private static function seo_page()
+	{
+		$find_id  = \dash\data::quranLoaded_find_id();
+		// set title
+		$title = T_('Page'). ' '. \dash\utility\human::fitNumber($find_id);
+
+		// set seotitle
+		$seotitle = T_('Page'). ' '. \dash\utility\human::fitNumber($find_id);
+		$seotitle .= ' + '. T_("audio, text, translate & download");
+
+		// set desc
+		$desc = self::first_character('page', 100). '...';
+
+		// $desc .= ' / '. T_("Juz"). 15;
+
+		$start_page = \lib\app\quran\page::page_start_sura_aya($find_id);
+		if(isset($start_page['aya']))
+		{
+			$desc .= ' / '. \dash\utility\human::fitNumber($start_page['aya']);
+		}
+
+		if(isset($start_page['sura']))
+		{
+			$desc .= ' '. T_(\lib\app\sura::detail($start_page['sura'], 'name'));
+		}
+
+		$desc .= ' / '. T_("Usmani Font, 40 Qari, 120 Translate in 40 language");
 
 		\dash\data::page_title($title);
 		\dash\data::page_desc($desc);
 		\dash\data::page_seotitle($seotitle);
+
+	}
+
+	private static function seo_juz()
+	{
+		$find_id  = \dash\data::quranLoaded_find_id();
+		// set title
+		$title = T_('Juz'). ' '. \dash\utility\human::fitNumber($find_id);
+
+		// set seotitle
+		$seotitle = T_('Juz'). ' '. \dash\utility\human::fitNumber($find_id);
+		$seotitle .= ' + '. T_("audio, text, translate & download");
+
+		// set desc
+		$desc = self::first_character('juz', 100). '...';
+
+		// $desc .= ' / '. T_("Juz"). 15;
+
+		$start_page = \lib\app\quran\page::page_start_sura_aya($find_id);
+		if(isset($start_page['aya']))
+		{
+			$desc .= ' / '. \dash\utility\human::fitNumber($start_page['aya']);
+		}
+
+		if(isset($start_page['sura']))
+		{
+			$desc .= ' '. T_(\lib\app\sura::detail($start_page['sura'], 'name'));
+		}
+
+		$desc .= ' / '. T_("Usmani Font, 40 Qari, 120 Translate in 40 language");
+
+		\dash\data::page_title($title);
+		\dash\data::page_desc($desc);
+		\dash\data::page_seotitle($seotitle);
+		j(\dash\data::page());
+	}
+
+
+	private static function seo_sura()
+	{
+		// set title
+		$title = T_("Sura"). ' '. T_(\dash\data::suraDetail_tname());
+
+		// set seotitle
+		$seotitle = T_('Surah'). ' '. T_(\dash\data::suraDetail_tname());
+		$seotitle.= ' + '. T_("audio, text, translate & download");
+
+		// set desc
+		$desc = self::first_character('sura', 100). '...';
+
+		$desc  .= ' '. \dash\utility\human::fitNumber(\dash\data::suraDetail_ayas()). ' '. T_('ayah');
+
+		$start_page = \lib\app\sura::detail(\dash\data::suraDetail_index(), 'startpage');
+		$end_page = \lib\app\sura::detail(\dash\data::suraDetail_index(), 'endpage');
+
+		$desc .= ' / '. T_("Page"). ' '. \dash\utility\human::fitNumber($start_page);
+		if(intval($start_page) !== intval($end_page))
+		{
+			$desc .= '-'. \dash\utility\human::fitNumber($end_page);
+		}
+
+		$start_juz = \lib\app\sura::detail(\dash\data::suraDetail_index(), 'startjuz');
+		$end_juz = \lib\app\sura::detail(\dash\data::suraDetail_index(), 'endjuz');
+
+		$desc .= ' / '. T_("Juz"). ' '. \dash\utility\human::fitNumber($start_juz);
+		if(intval($start_juz) !== intval($end_juz))
+		{
+			$desc .= '-'. \dash\utility\human::fitNumber($end_juz);
+		}
+
+		// add total ayah number
+		// add type
+		$desc  .= ' / '. T_(\dash\data::suraDetail_type());
+
+		// add translated name
+		$desc  .= ' / '. T_(\dash\data::suraDetail_ename());
+		// add arabic name
+		$desc  .= ' / '. \dash\data::suraDetail_name();
+		$desc .= ' / '. T_("Usmani Font, 40 Qari, 120 Translate in 40 language");
+
+		\dash\data::page_title($title);
+		\dash\data::page_seotitle($seotitle);
+		\dash\data::page_desc($desc);
 	}
 
 
