@@ -202,8 +202,17 @@ class view
 	{
 		if($_page === null)
 		{
-			// page of the day
-			$_page = mt_rand(1, 604);
+			$page_day = \lib\app\page_day::get();
+			if(isset($page_day['page']))
+			{
+				// page of the day
+				$_page = intval($page_day['page']);
+			}
+			else
+			{
+				// random page
+				$_page = mt_rand(1, 604);
+			}
 		}
 
 		$imgSrc = str_pad($_page, 3, '0', STR_PAD_LEFT);
