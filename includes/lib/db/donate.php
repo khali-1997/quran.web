@@ -31,6 +31,46 @@ class donate
 
 	public static function sum_from_to($_from, $_to)
 	{
+		$where   = [];
+		$where[] = ' transactions.verify = 1 ';
+
+		if($_from)
+		{
+			$where[] = "transactions.plus >= $_from ";
+		}
+
+		if($_to)
+		{
+			$where[] = "transactions.plus <= $_to ";
+		}
+
+		$where = implode(' AND ', $where);
+
+		$query =
+		"
+			SELECT
+				transactions.plus as `mysum`,
+				transactions.datecreated,
+				transactions.url,
+				transactions.user_id,
+				users.displayname,
+				users.gender,
+				users.avatar
+			FROM
+				transactions
+			INNER JOIN users ON users.id = transactions.user_id
+			WHERE
+				$where
+
+		";
+		$result = \dash\db::get($query);
+
+		return $result;
+
+	}
+
+	public static function sum_from_to_groupby($_from, $_to)
+	{
 		$having = [];
 		if($_from)
 		{
