@@ -16,7 +16,7 @@ class mag
 		}
 
 		$type  = \dash\app::request('type');
-		if(!in_array($type, ['aya', 'sura', 'page']))
+		if(!in_array($type, ['aya', 'sura', 'page', 'word']))
 		{
 			\dash\notif::error(T_("Invalid type"));
 			return false;
@@ -33,6 +33,13 @@ class mag
 		if(!$load_post)
 		{
 			\dash\notif::error(T_("Invalid post"));
+			return false;
+		}
+
+		$word = \dash\app::request('word');
+		if($word && !is_numeric($word))
+		{
+			\dash\notif::error(T_("Plese choose a word of this aya"), 'word');
 			return false;
 		}
 
@@ -95,6 +102,49 @@ class mag
 				$duplicate['page'] = $insert['page'];
 				break;
 
+			case 'word':
+				$surah = \dash\app::request('surah');
+				$surah = intval($surah);
+				if($surah < 1 || $surah > 114)
+				{
+					\dash\notif::error(T_("Invalid sura id"));
+					return false;
+				}
+
+				$aya       = \dash\app::request('aya');
+				$aya       = intval($aya);
+				$sura_ayas = \lib\app\sura::detail($surah, 'ayas');
+
+				if($aya < 1 || $aya > $sura_ayas)
+				{
+					\dash\notif::error(T_("This sura have :val aya", ['val' => \dash\utility\human::fitNumber($sura_ayas)]));
+					return false;
+				}
+
+				$word = intval($word);
+				// 88246 number of word in quran database `salamquran_data.1_quran_word.id`
+				if($word < 0 || $word > 88246)
+				{
+					\dash\notif::error(T_("Invalid word id"));
+					return false;
+				}
+
+				$check_word_is_ok = \lib\db\quran_word::get(['id' => $word, 'sura' => $surah, 'aya' => $aya, 'limit' => 1]);
+				if(!isset($check_word_is_ok['id']))
+				{
+					\dash\notif::error(T_("Invalid word id"));
+					return false;
+				}
+
+				$insert['sura']      = $surah;
+				$insert['aya']       = $aya
+;				$insert['word']      = $word;
+				$insert['wordtitle'] = isset($check_word_is_ok['simple']) ? $check_word_is_ok['simple'] : null;
+				$duplicate['sura']   = $insert['sura'];
+				$duplicate['aya']    = $insert['aya'];
+				$duplicate['word']   = $insert['word'];
+
+				break;
 
 			default:
 				\dash\notif::error(T_("This method is not supported"));

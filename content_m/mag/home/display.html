@@ -90,6 +90,7 @@
             {%if value.page%} <a href="{{url.this}}?magpage={{value.page}}">{%trans "Page"%} <b>{{value.page | fitNumber}}</b></a>{%endif%}
             {%if value.sura%} <a href="{{url.this}}?sura={{value.sura}}">{%trans "Sura"%} <b>{{value.sura | fitNumber}}</b></a>{%endif%}
             {%if value.aya%} <a href="{{url.this}}?aya={{value.aya}}&sura={{value.sura}}">{%trans "Aya"%} <b>{{value.aya | fitNumber}}</b></a>{%endif%}
+            {%if value.word%} <a href="{{url.this}}?aya={{value.aya}}&sura={{value.sura}}">{%trans "Word"%} <b>{{value.wordtitle}}</b></a>{%endif%}
         </td>
         <td class="collapsing">
 

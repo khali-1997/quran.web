@@ -63,17 +63,28 @@
 
 
 {% block iConnectToWord %}
-{%if requestGET.surah and requestGET.aya%}
+{%if requestGET.surah and requestGET.aya and quranWords%}
 <form method="post" autocomplete="off">
     {{block("iPostList")}}
+    <input type="hidden" name="surah" value="{{requestGET.surah}}">
+    <input type="hidden" name="aya" value="{{requestGET.aya}}">
+    <div class="msg txtC txtB info">{%trans "Surah"%} {{requestGET.surah | fitNumber}} {%trans "Aya"%} {{requestGET.aya | fitNumber}} </div>
+
     <div class="msg">
-        {{block('mySuranList')}}
-        <div class="input">
-            <label for="faya">{%trans "Aya"%}</label>
-            <input type="number" name="aya" min="1" max="282" id="faya" value="{{requestGET.aya}}">
+        {%trans "Words"%}
+        <div class="f">
+
+        {%for key, value in quranWords%}
+            {%if value.char_type == 'word'%}
+            <div class="radio3 cauto">
+                <input id="r-{{value.id}}" type="radio" name="word" value="{{value.id}}">
+                <label for="r-{{value.id}}">{{value.simple}}</label>
+            </div>
+            {%endif%}
+        {%endfor%}
         </div>
     </div>
-    <button class="btn block primary mT10" name="connectType" value="aya">{%trans "Connect to aya"%}</button>
+    <button class="btn block primary mT10" name="connectType" value="word">{%trans "Connect to word"%}</button>
 </form>
 {%else%}
 <form method="get" autocomplete="off" action="{{url.that}}/word">
