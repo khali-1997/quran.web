@@ -43,7 +43,7 @@ class mag
 		$post = \dash\app::request('post');
 		if(!$post)
 		{
-			\dash\notif::error(T_("Plese choose one magazine"));
+			\dash\notif::error(T_("Please choose one magazine"));
 			return false;
 		}
 
@@ -57,7 +57,7 @@ class mag
 		$word = \dash\app::request('word');
 		if($word && !is_numeric($word))
 		{
-			\dash\notif::error(T_("Plese choose a word of this aya"), 'word');
+			\dash\notif::error(T_("Please choose a word of this aya"), 'word');
 			return false;
 		}
 
