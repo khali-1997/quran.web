@@ -90,6 +90,14 @@ class mag
 					return false;
 				}
 				$insert['sura']    = $surah;
+				$startpage = \lib\app\sura::detail($surah, 'startpage');
+
+				if(is_numeric($startpage))
+				{
+					$insert['page']    = $startpage;
+					$duplicate['page'] = $startpage;
+				}
+
 				$duplicate['sura'] = $insert['sura'];
 				break;
 
@@ -110,6 +118,14 @@ class mag
 				{
 					\dash\notif::error(T_("This sura have :val aya", ['val' => \dash\utility\human::fitNumber($sura_ayas)]));
 					return false;
+				}
+
+				$startpage = \lib\app\sura::detail($surah, 'startpage');
+
+				if(is_numeric($startpage))
+				{
+					$insert['page']    = $startpage;
+					$duplicate['page'] = $startpage;
 				}
 
 				$insert['sura']    = $surah;
@@ -164,9 +180,17 @@ class mag
 					return false;
 				}
 
+				$startpage = \lib\app\sura::detail($surah, 'startpage');
+
+				if(is_numeric($startpage))
+				{
+					$insert['page']    = $startpage;
+					$duplicate['page'] = $startpage;
+				}
+
 				$insert['sura']      = $surah;
-				$insert['aya']       = $aya
-;				$insert['word']      = $word;
+				$insert['aya']       = $aya;
+				$insert['word']      = $word;
 				$insert['wordtitle'] = isset($check_word_is_ok['simple']) ? $check_word_is_ok['simple'] : null;
 				$duplicate['sura']   = $insert['sura'];
 				$duplicate['aya']    = $insert['aya'];
