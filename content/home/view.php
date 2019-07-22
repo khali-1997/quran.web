@@ -249,24 +249,14 @@ class view
 		// set desc
 		$desc = self::first_character('juz', 100). '...';
 
-		// $desc .= ' / '. T_("Juz"). 15;
-
-		$start_page = \lib\app\quran\page::page_start_sura_aya($find_id);
-		if(isset($start_page['aya']))
-		{
-			$desc .= ' / '. \dash\utility\human::fitNumber($start_page['aya']);
-		}
-
-		if(isset($start_page['sura']))
-		{
-			$desc .= ' '. T_(\lib\app\sura::detail($start_page['sura'], 'name'));
-		}
+		$desc .= ' / '. T_("Juz"). ' '. \dash\utility\human::fitNumber($find_id);
 
 		$desc .= ' / '. T_("Usmani Font, 40 Qari, 120 Translate in 40 language");
 
 		\dash\data::page_title($title);
 		\dash\data::page_desc($desc);
 		\dash\data::page_seotitle($seotitle);
+
 	}
 
 
