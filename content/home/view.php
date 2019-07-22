@@ -64,6 +64,18 @@ class view
 		}
 	}
 
+
+	private static function find_type_id()
+	{
+		$quranLoaded_find_type = \dash\data::quranLoaded_find_type();
+		if(isset($quranLoaded_find_type['id']))
+		{
+			return $quranLoaded_find_type['id'];
+		}
+		return null;
+	}
+
+
 	private static function first_character($_type, $_len = 100)
 	{
 		$first_character = null;
@@ -96,81 +108,38 @@ class view
 	private static function set_best_title()
 	{
 		$type     = \dash\data::quranLoaded_find_by();
-		$find_id  = \dash\data::quranLoaded_find_id();
+		$find_id  = self::find_type_id();
 
-		switch ($type)
+		$module = \dash\url::module();
+		$first = substr($module, 0, 1);
+
+		switch ($first)
 		{
-
-			case 'twopage':
-				$page  = \dash\data::quranLoaded_find_id();
-				$page1 = null;
-				$page2 = null;
-				if(isset($page['page1']))
-				{
-					$page1 = $page['page1'];
-				}
-
-				if(isset($page['page2']))
-				{
-					$page2 = $page['page2'];
-				}
-
-				if($page1 && $page2)
-				{
-					$title = T_('Pages'). ' '. \dash\utility\human::fitNumber($page1). ' '. T_(","). ' '. \dash\utility\human::fitNumber($page2);
-					$desc  = T_('Quran'). ' #' . T_('page'). ' '. \dash\utility\human::fitNumber($page1). ' - '. \dash\utility\human::fitNumber($page2);
-				}
-				elseif($page1)
-				{
-					$title = T_('Page'). ' '. \dash\utility\human::fitNumber($page1);
-					$desc  = T_('Quran'). ' #'. \dash\utility\human::fitNumber($page1). ' '. T_('page');
-				}
-				self::fillDownloadLink($page1);
-				break;
-
-			case 'onepage':
-				$page  = \dash\data::quranLoaded_find_id();
-				$page1 = null;
-
-				if(isset($page['page1']))
-				{
-					$page1 = $page['page1'];
-				}
-
-				self::fillDownloadLink($page1);
-
-				$title = T_('Page'). ' '. \dash\utility\human::fitNumber($page1);
-				$desc  = T_('Quran'). ' #'. T_('page'). \dash\utility\human::fitNumber($page1);
-
-				break;
-
-
-			case 'rub':
+			case 'r':  // rub
 				self::seo_rub();
 				break;
 
-			case 'nim':
+			case 'n':  // nim
 				self::seo_nim();
 				break;
 
-			case 'hizb':
+			case 'h':  // hizb
 				self::seo_hizb();
 				break;
 
-			case 'aya':
+			case 'a':  // aya
 				self::seo_aya();
 				break;
 
-			case 'juz':
+			case 'j':  // juz
 				self::seo_juz();
 				break;
 
-			case 'page':
+			case 'p':  // page
 				self::seo_page();
 				break;
 
-
-			case 'sura':
+			case 's':  // sura
 			default:
 				if(!\dash\url::directory())
 				{
@@ -190,7 +159,7 @@ class view
 
 	private static function seo_rub()
 	{
-		$find_id  = \dash\data::quranLoaded_find_id();
+		$find_id  = self::find_type_id();
 
 		// set title
 		$title = T_('Rub'). ' '. \dash\utility\human::fitNumber($find_id);
@@ -222,7 +191,7 @@ class view
 
 	private static function seo_nim()
 	{
-		$find_id  = \dash\data::quranLoaded_find_id();
+		$find_id  = self::find_type_id();
 		// set title
 		$title = T_('Nim'). ' '. \dash\utility\human::fitNumber($find_id);
 
@@ -253,7 +222,7 @@ class view
 
 	private static function seo_hizb()
 	{
-		$find_id  = \dash\data::quranLoaded_find_id();
+		$find_id  = self::find_type_id();
 		// set title
 		$title = T_('Hizb'). ' '. \dash\utility\human::fitNumber($find_id);
 
@@ -284,7 +253,7 @@ class view
 
 	private static function seo_aya()
 	{
-		$find_id  = \dash\data::quranLoaded_find_id();
+		$find_id  = self::find_type_id();
 
 		$aya_detail = \lib\app\quran\aya::load_one_aya($find_id);
 
@@ -330,10 +299,63 @@ class view
 		\dash\data::page_seotitle($seotitle);
 	}
 
+	private static function seo_onepage()
+	{
+		$page  = self::find_type_id();
+		$page1 = null;
+
+		if(isset($page['page1']))
+		{
+			$page1 = $page['page1'];
+		}
+
+		self::fillDownloadLink($page1);
+
+		// \dash\data::page_title($title);
+		// \dash\data::page_desc($desc);
+		// \dash\data::page_seotitle($seotitle);
+
+	}
+
+	private static function seo_twopage()
+	{
+
+		$page  = self::find_type_id();
+		$page1 = null;
+		$page2 = null;
+		if(isset($page['page1']))
+		{
+			$page1 = $page['page1'];
+		}
+
+		if(isset($page['page2']))
+		{
+			$page2 = $page['page2'];
+		}
+
+		// if($page1 && $page2)
+		// {
+		// 	$title = T_('Pages'). ' '. \dash\utility\human::fitNumber($page1). ' '. T_(","). ' '. \dash\utility\human::fitNumber($page2);
+		// 	$desc  = T_('Quran'). ' #' . T_('page'). ' '. \dash\utility\human::fitNumber($page1). ' - '. \dash\utility\human::fitNumber($page2);
+		// }
+		// elseif($page1)
+		// {
+		// 	$title = T_('Page'). ' '. \dash\utility\human::fitNumber($page1);
+		// 	$desc  = T_('Quran'). ' #'. \dash\utility\human::fitNumber($page1). ' '. T_('page');
+		// }
+
+		self::fillDownloadLink($page1);
+
+
+		// \dash\data::page_title($title);
+		// \dash\data::page_desc($desc);
+		// \dash\data::page_seotitle($seotitle);
+	}
+
 
 	private static function seo_page()
 	{
-		$find_id  = \dash\data::quranLoaded_find_id();
+		$find_id  = self::find_type_id();
 		// set title
 		$title = T_('Page'). ' '. \dash\utility\human::fitNumber($find_id);
 
@@ -367,7 +389,7 @@ class view
 
 	private static function seo_juz()
 	{
-		$find_id  = \dash\data::quranLoaded_find_id();
+		$find_id  = self::find_type_id();
 		// set title
 		$title = T_('Juz'). ' '. \dash\utility\human::fitNumber($find_id);
 

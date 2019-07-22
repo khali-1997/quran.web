@@ -26,6 +26,7 @@ class page
 			case 'juz':
 			case 'hizb':
 			case 'rub':
+			case 'nim':
 				$first_page = self::find_first_page($_type, $_id);
 				break;
 
@@ -276,8 +277,8 @@ class page
 					'translate'     => $temp_translate,
 				];
 
-				$text_raw['text'][]   = $quran[$myKey][$myArrayKey]['detail']['text'];
-				$text_raw['simple'][] = $quran[$myKey][$myArrayKey]['detail']['simple'];
+				$text_raw['text'][]   = $quran[$myPageKey][$myKey][$myArrayKey]['detail']['text'];
+				$text_raw['simple'][] = $quran[$myPageKey][$myKey][$myArrayKey]['detail']['simple'];
 
 				if(!isset($showTranslatePage[$value['sura']. '_'. $value['aya']]))
 				{
