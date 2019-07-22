@@ -164,66 +164,17 @@
 
 
 {%block topCats%}
+{%if categoryCount%}
 <section class="f fs08 categories">
+  {%for key, value in categoryCount%}
   <div class="c m2 s4">
-    <a class="dcard x07 " href="#">
-      <div class="value">{{25 | fitNumber}}</div>
-      <h2 class="label">cat1</h2>
+    <a class="dcard x07 " href="{{value.link}}">
+      <div class="value">{{value.count | fitNumber}}</div>
+      <h2 class="label">{{value.title}}</h2>
     </a>
   </div>
-  <div class="c m2 s4">
-    <a class="dcard x07 " href="#">
-      <div class="value">{{25 | fitNumber}}</div>
-      <h2 class="label">cat1</h2>
-    </a>
-  </div>
-  <div class="c m2 s4">
-    <a class="dcard x07 " href="#">
-      <div class="value">{{25 | fitNumber}}</div>
-      <h2 class="label">cat1</h2>
-    </a>
-  </div>
-  <div class="c m2 s4">
-    <a class="dcard x07 " href="#">
-      <div class="value">{{25 | fitNumber}}</div>
-      <h2 class="label">cat1</h2>
-    </a>
-  </div>
-  <div class="c m2 s4">
-    <a class="dcard x07 " href="#">
-      <div class="value">{{25 | fitNumber}}</div>
-      <h2 class="label">cat1</h2>
-    </a>
-  </div>
-  <div class="c m2 s4">
-    <a class="dcard x07 " href="#">
-      <div class="value">{{25 | fitNumber}}</div>
-      <h2 class="label">cat1</h2>
-    </a>
-  </div>
-  <div class="c m2 s4">
-    <a class="dcard x07 " href="#">
-      <div class="value">{{25 | fitNumber}}</div>
-      <h2 class="label">cat1</h2>
-    </a>
-  </div>
-  <div class="c m2 s4">
-    <a class="dcard x07 " href="#">
-      <div class="value">{{25 | fitNumber}}</div>
-      <h2 class="label">cat1</h2>
-    </a>
-  </div>
-  <div class="c m2 s4">
-    <a class="dcard x07 " href="#">
-      <div class="value">{{25 | fitNumber}}</div>
-      <h2 class="label">cat1</h2>
-    </a>
-  </div>
-  <div class="c m2 s4">
-    <a class="dcard x07 " href="#">
-      <div class="value">{{25 | fitNumber}}</div>
-      <h2 class="label">cat1</h2>
-    </a>
-  </div>
+  {%endfor%}
 </section>
+{%endif%}
+
 {%endblock%}
