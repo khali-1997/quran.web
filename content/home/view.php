@@ -6,7 +6,7 @@ class view
 	public static function config()
 	{
 		// $title = T_('Quran');
-		// $desc  = T_("Say hello to Quran!"). ' '. T_("Quran is calling you.");
+		// $desc  = T_("Say hello to Quran!"). ' '. T_("quran is calling you.");
 
 		self::set_best_title();
 
@@ -73,9 +73,8 @@ class view
 			case 'page':
 			case 'juz':
 			case 'aya':
-
+			default:
 				$raw_text = \dash\data::quranLoaded_text_raw();
-
 				if(isset($raw_text['text']))
 				{
 					$raw_text = $raw_text['text'];
@@ -88,11 +87,6 @@ class view
 						$first_character = mb_substr($raw_text, 0, $_len);
 					}
 				}
-
-				break;
-
-			default:
-
 				break;
 		}
 		return (string) $first_character;
@@ -106,22 +100,6 @@ class view
 
 		switch ($type)
 		{
-
-			case 'hizb':
-				$title = T_('Hizb'). ' '. \dash\utility\human::fitNumber($find_id);
-				$desc  = T_('Quran'). ' #'. \dash\utility\human::fitNumber($find_id). ' '. T_('hizb');
-				break;
-
-			case 'rub':
-				$title = T_('Rub'). ' '. \dash\utility\human::fitNumber($find_id);
-				$desc  = T_('Quran'). ' #'. \dash\utility\human::fitNumber($find_id). ' '. T_('rub');
-				break;
-
-			case 'nim':
-				$title = T_('Half of hizb'). ' '. \dash\utility\human::fitNumber($find_id);
-				$desc  = T_('Quran'). ' #'. \dash\utility\human::fitNumber($find_id). ' '. T_('Half of hizb');
-				break;
-
 
 			case 'twopage':
 				$page  = \dash\data::quranLoaded_find_id();
@@ -150,18 +128,6 @@ class view
 				self::fillDownloadLink($page1);
 				break;
 
-			case 'aya':
-				self::seo_aya();
-				break;
-
-			case 'juz':
-				self::seo_juz();
-				break;
-
-			case 'page':
-				self::seo_page();
-				break;
-
 			case 'onepage':
 				$page  = \dash\data::quranLoaded_find_id();
 				$page1 = null;
@@ -178,6 +144,32 @@ class view
 
 				break;
 
+
+			case 'rub':
+				self::seo_rub();
+				break;
+
+			case 'nim':
+				self::seo_nim();
+				break;
+
+			case 'hizb':
+				self::seo_hizb();
+				break;
+
+			case 'aya':
+				self::seo_aya();
+				break;
+
+			case 'juz':
+				self::seo_juz();
+				break;
+
+			case 'page':
+				self::seo_page();
+				break;
+
+
 			case 'sura':
 			default:
 				if(!\dash\url::directory())
@@ -192,11 +184,103 @@ class view
 					return;
 				}
 				break;
+		}
+	}
 
+
+	private static function seo_rub()
+	{
+		$find_id  = \dash\data::quranLoaded_find_id();
+
+		// set title
+		$title = T_('Rub'). ' '. \dash\utility\human::fitNumber($find_id);
+
+		// set seotitle
+		$seotitle = T_('rub'). ' '. \dash\utility\human::fitNumber($find_id) . ' '. T_("quran");
+		$seotitle .= ' + '. T_("audio, text, translate & download");
+
+		// set desc
+		$desc = self::first_character('rub', 100). '...';
+
+		$desc .= ' / '. T_("Juz"). ' '. \dash\utility\human::fitNumber(ceil(intval($find_id) / 4));
+
+		$rub_detail = \lib\app\rub::detail($find_id);
+
+		if(isset($rub_detail['startpage']) && isset($rub_detail['endpage']))
+		{
+			$desc .= ' / '. T_("Page"). ' '. \dash\utility\human::fitNumber($rub_detail['startpage']);
+			$desc .= '-'. \dash\utility\human::fitNumber($rub_detail['endpage']);
 		}
 
+		$desc .= ' / '. T_("Usmani Font, 40 Qari, 120 Translate in 40 language");
+
+		\dash\data::page_title($title);
+		\dash\data::page_desc($desc);
+		\dash\data::page_seotitle($seotitle);
+	}
+
+
+	private static function seo_nim()
+	{
+		$find_id  = \dash\data::quranLoaded_find_id();
+		// set title
+		$title = T_('Nim'). ' '. \dash\utility\human::fitNumber($find_id);
+
+		// set seotitle
+		$seotitle = T_('Nim'). ' '. \dash\utility\human::fitNumber($find_id) . ' '. T_("quran");
+		$seotitle .= ' + '. T_("audio, text, translate & download");
+
+		// set desc
+		$desc = self::first_character('nim', 100). '...';
+
+		$desc .= ' / '. T_("Juz"). ' '. \dash\utility\human::fitNumber(ceil(intval($find_id) / 3));
+
+		$nim_detail = \lib\app\nim::detail($find_id);
+
+		if(isset($nim_detail['startpage']) && isset($nim_detail['endpage']))
+		{
+			$desc .= ' / '. T_("Page"). ' '. \dash\utility\human::fitNumber($nim_detail['startpage']);
+			$desc .= '-'. \dash\utility\human::fitNumber($nim_detail['endpage']);
+		}
+
+		$desc .= ' / '. T_("Usmani Font, 40 Qari, 120 Translate in 40 language");
+
+		\dash\data::page_title($title);
+		\dash\data::page_desc($desc);
+		\dash\data::page_seotitle($seotitle);
+	}
+
+
+	private static function seo_hizb()
+	{
+		$find_id  = \dash\data::quranLoaded_find_id();
+		// set title
+		$title = T_('Hizb'). ' '. \dash\utility\human::fitNumber($find_id);
+
+		// set seotitle
+		$seotitle = T_('Hizb'). ' '. \dash\utility\human::fitNumber($find_id) . ' '. T_("quran");
+		$seotitle .= ' + '. T_("audio, text, translate & download");
+
+		// set desc
+		$desc = self::first_character('hizb', 100). '...';
+
+		$desc .= ' / '. T_("Juz"). ' '. \dash\utility\human::fitNumber(ceil(intval($find_id) / 2));
+
+		$hizb_detail = \lib\app\hizb::detail($find_id);
+		if(isset($hizb_detail['startpage']) && isset($hizb_detail['endpage']))
+		{
+			$desc .= ' / '. T_("Page"). ' '. \dash\utility\human::fitNumber($hizb_detail['startpage']);
+			$desc .= '-'. \dash\utility\human::fitNumber($hizb_detail['endpage']);
+		}
+
+		$desc .= ' / '. T_("Usmani Font, 40 Qari, 120 Translate in 40 language");
+
+		\dash\data::page_title($title);
+		\dash\data::page_desc($desc);
+		\dash\data::page_seotitle($seotitle);
 
 	}
+
 
 	private static function seo_aya()
 	{
@@ -204,7 +288,7 @@ class view
 
 		$aya_detail = \lib\app\quran\aya::load_one_aya($find_id);
 
-		$title = T_('Aya'). ' '. \dash\utility\human::fitNumber($find_id) . ' '. T_("Quran");
+		$title = T_('Aya'). ' '. \dash\utility\human::fitNumber($find_id) . ' '. T_("quran");
 
 		$seotitle = '';
 		if(isset($aya_detail['sura']) && isset($aya_detail['aya']))
@@ -235,7 +319,7 @@ class view
 
 		if(isset($aya_detail['index']))
 		{
-			$desc .= ' / '. T_("aya"). ' '. \dash\utility\human::fitNumber($aya_detail['index']) . ' '. T_("Quran");
+			$desc .= ' / '. T_("aya"). ' '. \dash\utility\human::fitNumber($aya_detail['index']) . ' '. T_("quran");
 		}
 
 
@@ -244,8 +328,6 @@ class view
 		\dash\data::page_title($title);
 		\dash\data::page_desc($desc);
 		\dash\data::page_seotitle($seotitle);
-
-
 	}
 
 
@@ -280,9 +362,8 @@ class view
 		\dash\data::page_title($title);
 		\dash\data::page_desc($desc);
 		\dash\data::page_seotitle($seotitle);
-
-
 	}
+
 
 	private static function seo_juz()
 	{
@@ -291,7 +372,7 @@ class view
 		$title = T_('Juz'). ' '. \dash\utility\human::fitNumber($find_id);
 
 		// set seotitle
-		$seotitle = T_('Juz'). ' '. \dash\utility\human::fitNumber($find_id). ' '. T_("Quran");
+		$seotitle = T_('Juz'). ' '. \dash\utility\human::fitNumber($find_id). ' '. T_("quran");
 		$seotitle .= ' + '. T_("audio, text, translate & download");
 
 		// set desc
@@ -309,7 +390,6 @@ class view
 		\dash\data::page_title($title);
 		\dash\data::page_desc($desc);
 		\dash\data::page_seotitle($seotitle);
-
 	}
 
 
