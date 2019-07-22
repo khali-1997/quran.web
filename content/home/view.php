@@ -72,6 +72,7 @@ class view
 			case 'sura':
 			case 'page':
 			case 'juz':
+			case 'aya':
 
 				$raw_text = \dash\data::quranLoaded_text_raw();
 
@@ -121,11 +122,6 @@ class view
 				$desc  = T_('Quran'). ' #'. \dash\utility\human::fitNumber($find_id). ' '. T_('Half of hizb');
 				break;
 
-			case 'aya':
-				$title = T_('Aya'). ' '. \dash\utility\human::fitNumber($find_id);
-				$desc  = T_('Quran'). ' #'. \dash\utility\human::fitNumber($find_id). ' '. T_('aya');
-				break;
-
 
 			case 'twopage':
 				$page  = \dash\data::quranLoaded_find_id();
@@ -152,6 +148,10 @@ class view
 					$desc  = T_('Quran'). ' #'. \dash\utility\human::fitNumber($page1). ' '. T_('page');
 				}
 				self::fillDownloadLink($page1);
+				break;
+
+			case 'aya':
+				self::seo_aya();
 				break;
 
 			case 'juz':
@@ -195,11 +195,59 @@ class view
 
 		}
 
-		// \dash\data::page_title($title);
-		// \dash\data::page_desc($desc);
-		// \dash\data::page_seotitle($seotitle);
 
 	}
+
+	private static function seo_aya()
+	{
+		$find_id  = \dash\data::quranLoaded_find_id();
+
+		$aya_detail = \lib\app\quran\aya::load_one_aya($find_id);
+
+		$title = T_('Aya'). ' '. \dash\utility\human::fitNumber($find_id) . ' '. T_("Quran");
+
+		$seotitle = '';
+		if(isset($aya_detail['sura']) && isset($aya_detail['aya']))
+		{
+			$sura_detail = \lib\app\sura::detail($aya_detail['sura']);
+
+			if(isset($sura_detail['tname']))
+			{
+
+				$seotitle .= T_('Aya'). ' '. \dash\utility\human::fitNumber($aya_detail['aya']). ' '. T_("surah"). ' '. T_($sura_detail['tname']);
+			}
+		}
+
+		$seotitle .= ' + '. T_("audio, text, translate & download");
+
+		// set desc
+		$desc = self::first_character('aya', 100). '...';
+
+		if(isset($aya_detail['page']))
+		{
+			$desc .= ' / '. T_("page"). ' '. \dash\utility\human::fitNumber($aya_detail['page']);
+		}
+
+		if(isset($aya_detail['juz']))
+		{
+			$desc .= ' / '. T_("juz"). ' '. \dash\utility\human::fitNumber($aya_detail['juz']);
+		}
+
+		if(isset($aya_detail['index']))
+		{
+			$desc .= ' / '. T_("aya"). ' '. \dash\utility\human::fitNumber($aya_detail['index']) . ' '. T_("Quran");
+		}
+
+
+		$desc .= ' / '. T_("Usmani Font, 40 Qari, 120 Translate in 40 language");
+
+		\dash\data::page_title($title);
+		\dash\data::page_desc($desc);
+		\dash\data::page_seotitle($seotitle);
+
+
+	}
+
 
 	private static function seo_page()
 	{
@@ -243,13 +291,18 @@ class view
 		$title = T_('Juz'). ' '. \dash\utility\human::fitNumber($find_id);
 
 		// set seotitle
-		$seotitle = T_('Juz'). ' '. \dash\utility\human::fitNumber($find_id);
+		$seotitle = T_('Juz'). ' '. \dash\utility\human::fitNumber($find_id). ' '. T_("Quran");
 		$seotitle .= ' + '. T_("audio, text, translate & download");
 
 		// set desc
 		$desc = self::first_character('juz', 100). '...';
 
-		$desc .= ' / '. T_("Juz"). ' '. \dash\utility\human::fitNumber($find_id);
+		$juz_detail = \lib\app\juz::detail($find_id);
+		if(isset($juz_detail['startpage']) && isset($juz_detail['endpage']))
+		{
+			$desc .= ' / '. T_("Page"). ' '. \dash\utility\human::fitNumber($juz_detail['startpage']);
+			$desc .= '-'. \dash\utility\human::fitNumber($juz_detail['endpage']);
+		}
 
 		$desc .= ' / '. T_("Usmani Font, 40 Qari, 120 Translate in 40 language");
 

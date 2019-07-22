@@ -436,5 +436,21 @@ class aya
 
 		return $quran_detail;
 	}
+
+	public static function load_one_aya($_id)
+	{
+		if(!$_id || !is_numeric($_id))
+		{
+			return false;
+		}
+
+		$get = \lib\db\quran::get(['index' => $_id]);
+		if(isset($get[0]))
+		{
+			return $get[0];
+		}
+
+		return null;
+	}
 }
 ?>
