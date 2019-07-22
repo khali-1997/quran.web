@@ -214,7 +214,7 @@ class view
 		// set desc
 		$desc = self::first_character('page', 100). '...';
 
-		// $desc .= ' / '. T_("Juz"). 15;
+		$desc .= ' / '. T_("Juz"). ' '. \dash\utility\human::fitNumber(\lib\app\quran::page_juz($find_id));
 
 		$start_page = \lib\app\quran\page::page_start_sura_aya($find_id);
 		if(isset($start_page['aya']))
@@ -232,6 +232,7 @@ class view
 		\dash\data::page_title($title);
 		\dash\data::page_desc($desc);
 		\dash\data::page_seotitle($seotitle);
+
 
 	}
 
@@ -266,7 +267,6 @@ class view
 		\dash\data::page_title($title);
 		\dash\data::page_desc($desc);
 		\dash\data::page_seotitle($seotitle);
-		j(\dash\data::page());
 	}
 
 

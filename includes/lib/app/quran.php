@@ -100,5 +100,15 @@ class quran
 	}
 
 
+	public static function page_juz($_page)
+	{
+		$get = \dash\file::read(root. 'content_api/v6/page/pagejuz.json');
+		$get = json_decode($get, true);
+		if(isset($get[$_page]))
+		{
+			return $get[$_page];
+		}
+		return null;
+	}
 }
 ?>
