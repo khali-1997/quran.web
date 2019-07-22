@@ -181,7 +181,8 @@ class view
 			$desc .= '-'. \dash\utility\human::fitNumber($rub_detail['endpage']);
 		}
 
-		$desc .= ' / '. T_("Usmani Font, 40 Qari, 120 Translate in 40 language");
+		$desc .= ' / '. T_("Uthmani font + 26 Qari Quran + 112 translations in 43 languages with interpretation and transliteration");
+
 
 		\dash\data::page_title($title);
 		\dash\data::page_desc($desc);
@@ -212,7 +213,7 @@ class view
 			$desc .= '-'. \dash\utility\human::fitNumber($nim_detail['endpage']);
 		}
 
-		$desc .= ' / '. T_("Usmani Font, 40 Qari, 120 Translate in 40 language");
+		$desc .= ' / '. T_("Uthmani font + 26 Qari Quran + 112 translations in 43 languages with interpretation and transliteration");
 
 		\dash\data::page_title($title);
 		\dash\data::page_desc($desc);
@@ -242,7 +243,7 @@ class view
 			$desc .= '-'. \dash\utility\human::fitNumber($hizb_detail['endpage']);
 		}
 
-		$desc .= ' / '. T_("Usmani Font, 40 Qari, 120 Translate in 40 language");
+		$desc .= ' / '. T_("Uthmani font + 26 Qari Quran + 112 translations in 43 languages with interpretation and transliteration");
 
 		\dash\data::page_title($title);
 		\dash\data::page_desc($desc);
@@ -291,66 +292,65 @@ class view
 			$desc .= ' / '. T_("aya"). ' '. \dash\utility\human::fitNumber($aya_detail['index']) . ' '. T_("quran");
 		}
 
-
-		$desc .= ' / '. T_("Usmani Font, 40 Qari, 120 Translate in 40 language");
+		$desc .= ' / '. T_("Uthmani font");
 
 		\dash\data::page_title($title);
 		\dash\data::page_desc($desc);
 		\dash\data::page_seotitle($seotitle);
 	}
 
-	private static function seo_onepage()
-	{
-		$page  = self::find_type_id();
-		$page1 = null;
+	// private static function seo_onepage()
+	// {
+	// 	$page  = self::find_type_id();
+	// 	$page1 = null;
 
-		if(isset($page['page1']))
-		{
-			$page1 = $page['page1'];
-		}
+	// 	if(isset($page['page1']))
+	// 	{
+	// 		$page1 = $page['page1'];
+	// 	}
 
-		self::fillDownloadLink($page1);
+	// 	self::fillDownloadLink($page1);
 
-		// \dash\data::page_title($title);
-		// \dash\data::page_desc($desc);
-		// \dash\data::page_seotitle($seotitle);
+	// 	// \dash\data::page_title($title);
+	// 	// \dash\data::page_desc($desc);
+	// 	// \dash\data::page_seotitle($seotitle);
 
-	}
+	// }
 
-	private static function seo_twopage()
-	{
+	// private static function seo_twopage()
+	// {
 
-		$page  = self::find_type_id();
-		$page1 = null;
-		$page2 = null;
-		if(isset($page['page1']))
-		{
-			$page1 = $page['page1'];
-		}
+	// 	$page  = self::find_type_id();
+	// 	$page1 = null;
+	// 	$page2 = null;
+	// 	if(isset($page['page1']))
+	// 	{
+	// 		$page1 = $page['page1'];
+	// 	}
 
-		if(isset($page['page2']))
-		{
-			$page2 = $page['page2'];
-		}
+	// 	if(isset($page['page2']))
+	// 	{
+	// 		$page2 = $page['page2'];
+	// 	}
 
-		// if($page1 && $page2)
-		// {
-		// 	$title = T_('Pages'). ' '. \dash\utility\human::fitNumber($page1). ' '. T_(","). ' '. \dash\utility\human::fitNumber($page2);
-		// 	$desc  = T_('Quran'). ' #' . T_('page'). ' '. \dash\utility\human::fitNumber($page1). ' - '. \dash\utility\human::fitNumber($page2);
-		// }
-		// elseif($page1)
-		// {
-		// 	$title = T_('Page'). ' '. \dash\utility\human::fitNumber($page1);
-		// 	$desc  = T_('Quran'). ' #'. \dash\utility\human::fitNumber($page1). ' '. T_('page');
-		// }
+	// 	// if($page1 && $page2)
+	// 	// {
+	// 	// 	$title = T_('Pages'). ' '. \dash\utility\human::fitNumber($page1). ' '. T_(","). ' '. \dash\utility\human::fitNumber($page2);
+	// 	// 	$desc  = T_('Quran'). ' #' . T_('page'). ' '. \dash\utility\human::fitNumber($page1). ' - '. \dash\utility\human::fitNumber($page2);
+	// 	// }
+	// 	// elseif($page1)
+	// 	// {
+	// 	// 	$title = T_('Page'). ' '. \dash\utility\human::fitNumber($page1);
+	// 	// 	$desc  = T_('Quran'). ' #'. \dash\utility\human::fitNumber($page1). ' '. T_('page');
+	// 	// }
 
-		self::fillDownloadLink($page1);
+	// 	self::fillDownloadLink($page1);
 
 
-		// \dash\data::page_title($title);
-		// \dash\data::page_desc($desc);
-		// \dash\data::page_seotitle($seotitle);
-	}
+	// 	// \dash\data::page_title($title);
+	// 	// \dash\data::page_desc($desc);
+	// 	// \dash\data::page_seotitle($seotitle);
+	// }
 
 
 	private static function seo_page()
@@ -379,7 +379,7 @@ class view
 			$desc .= ' '. T_(\lib\app\sura::detail($start_page['sura'], 'name'));
 		}
 
-		$desc .= ' / '. T_("Usmani Font, 40 Qari, 120 Translate in 40 language");
+		$desc .= ' / '. T_("Uthmani font + 26 Qari Quran + 112 translations in 43 languages with interpretation and transliteration");
 
 		\dash\data::page_title($title);
 		\dash\data::page_desc($desc);
@@ -407,7 +407,7 @@ class view
 			$desc .= '-'. \dash\utility\human::fitNumber($juz_detail['endpage']);
 		}
 
-		$desc .= ' / '. T_("Usmani Font, 40 Qari, 120 Translate in 40 language");
+		$desc .= ' / '. T_("Uthmani font + 26 Qari Quran + 112 translations in 43 languages with interpretation and transliteration");
 
 		\dash\data::page_title($title);
 		\dash\data::page_desc($desc);
@@ -455,7 +455,7 @@ class view
 		$desc  .= ' / '. T_(\dash\data::suraDetail_ename());
 		// add arabic name
 		$desc  .= ' / '. \dash\data::suraDetail_name();
-		$desc .= ' / '. T_("Usmani Font, 40 Qari, 120 Translate in 40 language");
+		$desc .= ' / '. T_("Uthmani font + 26 Qari Quran + 112 translations in 43 languages with interpretation and transliteration");
 
 		\dash\data::page_title($title);
 		\dash\data::page_seotitle($seotitle);

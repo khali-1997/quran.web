@@ -4,7 +4,7 @@ namespace lib\app;
 
 class qari
 {
-
+	// 26 qari
 	public static function get_by_slug($_slug, $_key = null)
 	{
 		$list =

@@ -253,7 +253,8 @@ class translate
 		return $url;
 	}
 
-
+	// 112 translate
+	// 43 language
 	public static function translate_list()
 	{
 		$image_addr = \dash\url::site(). '/static/images/qariyan/';
