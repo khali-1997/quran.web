@@ -4,6 +4,53 @@ namespace lib\app;
 
 class mag
 {
+	public static function find_by_post($_post_id)
+	{
+		$list = \lib\db\mags::find_by_post($_post_id);
+		if(!$list || !is_array($list))
+		{
+			return null;
+		}
+
+		$result = [];
+		foreach ($list as $key => $value)
+		{
+			$temp              = [];
+			$temp['link']      = \dash\url::kingdom(). '/'. $value['url'];
+			$temp['title']     = $value['title'];
+			$temp['word']      = $value['word'];
+			$temp['wordtitle'] = $value['wordtitle'];
+			$temp['type']      = $value['type'];
+			$temp['subtype']   = $value['subtype'];
+			$quran_link        = null;
+			$quran_title       = null;
+
+			if($value['sura'] && $value['aya'])
+			{
+				$quran_title = T_("Sura"). ' '. T_(\lib\app\sura::detail($value['sura'], 'name'));
+				$quran_title .= ' '. T_("Aya"). ' '. \dash\utility\human::fitNumber($value['aya']);
+				$quran_link  = 's'. $value['sura']. '/'. $value['aya'];
+			}
+			elseif($value['sura'])
+			{
+				$quran_title = T_("Sura"). ' '. T_(\lib\app\sura::detail($value['sura'], 'name'));
+				$quran_link  = 's'. $value['sura'];
+			}
+			elseif($value['page'])
+			{
+				$quran_title = T_("Page"). ' '. \dash\utility\human::fitNumber($value['page']);
+				$quran_link  = 'p'. $value['page'];
+			}
+
+			$temp['quran_link'] = \dash\url::kingdom(). '/'. $quran_link;
+			$temp['quran_title'] = T_("Quran") . ' '. $quran_title;
+
+			$result[] = $temp;
+		}
+
+		return $result;
+	}
+
 
 	public static function find($_detail)
 	{

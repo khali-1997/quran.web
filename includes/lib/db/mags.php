@@ -27,6 +27,27 @@ class mags
 	}
 
 
+
+	public static function find_by_post($_post_id)
+	{
+		$query  =
+		"
+			SELECT
+				mags.*,
+				posts.title,
+				posts.url
+			FROM
+				mags
+			INNER JOIN posts ON posts.id = mags.post_id
+			WHERE
+				posts.status = 'publish' AND
+				mags.post_id = $_post_id
+		";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
+
 	public static function get_by_page($_in)
 	{
 		$query  =

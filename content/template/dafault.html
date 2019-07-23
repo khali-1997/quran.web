@@ -40,6 +40,8 @@
     </div>
     {{block('imagegallery')}}
 
+    {{block('imagList')}}
+
     <div class="tagBox msg simple">{{tags({"format" : 'html'})}}</div>
 
 {%if datarow.type == 'post' and datarow.datemodified%}
@@ -59,7 +61,22 @@
   </div>
 {%endblock%}
 
+{%block imagList%}
+{%if datarow.maglist %}
 
+<div class="f">
+  {%for key, value in datarow.maglist%}
+    <div class="pRa5 c6 s12">
+      <div class="msg">
+        <a href="{{value.quran_link}}">{{value.quran_title}}</a>
+      </div>
+    </div>
+  {%endfor%}
+</div>
+
+{%endif%}
+
+{%endblock%}
 
 {%block postSimilar%}
     {%set myPostSimilar = posts({"mode" : "similar", "post_id" : datarow.id})%}
