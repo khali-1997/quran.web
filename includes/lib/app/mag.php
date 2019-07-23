@@ -6,7 +6,8 @@ class mag
 {
 	public static function find_by_post($_post_id)
 	{
-		$list = \lib\db\mags::find_by_post($_post_id);
+		$lang = \dash\language::current();
+		$list = \lib\db\mags::find_by_post($_post_id, $lang);
 		if(!$list || !is_array($list))
 		{
 			return null;
@@ -69,7 +70,8 @@ class mag
 
 		$page = array_map('intval', $page);
 
-		$list = \lib\db\mags::get_by_page(implode(',', $page));
+		$lang = \dash\language::current();
+		$list = \lib\db\mags::get_by_page(implode(',', $page), $lang);
 		if(!$list)
 		{
 			return null;

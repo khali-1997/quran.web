@@ -28,7 +28,7 @@ class mags
 
 
 
-	public static function find_by_post($_post_id)
+	public static function find_by_post($_post_id, $_lang)
 	{
 		$query  =
 		"
@@ -41,6 +41,7 @@ class mags
 			INNER JOIN posts ON posts.id = mags.post_id
 			WHERE
 				posts.status = 'publish' AND
+				posts.language = '$_lang' AND
 				mags.post_id = $_post_id
 		";
 		$result = \dash\db::get($query);
@@ -48,7 +49,7 @@ class mags
 	}
 
 
-	public static function get_by_page($_in)
+	public static function get_by_page($_in, $_lang)
 	{
 		$query  =
 		"
@@ -61,6 +62,7 @@ class mags
 			INNER JOIN posts ON posts.id = mags.post_id
 			WHERE
 				posts.status = 'publish' AND
+				posts.language = '$_lang' AND
 				mags.page IN ($_in)
 		";
 		$result = \dash\db::get($query);
