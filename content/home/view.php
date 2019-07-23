@@ -62,6 +62,13 @@ class view
 			$doners = \lib\app\donate::last_10_donate();
 			\dash\data::lastDoners($doners);
 		}
+		else
+		{
+			// check load mag
+			$mag_detail = \dash\data::quranLoaded_mag_detail();
+			$load_mag = \lib\app\mag::find($mag_detail);
+			\dash\data::magLoaded($load_mag);
+		}
 	}
 
 

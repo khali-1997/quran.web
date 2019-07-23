@@ -27,6 +27,26 @@ class mags
 	}
 
 
+	public static function get_by_page($_in)
+	{
+		$query  =
+		"
+			SELECT
+				mags.*,
+				posts.title,
+				posts.url
+			FROM
+				mags
+			INNER JOIN posts ON posts.id = mags.post_id
+			WHERE
+				posts.status = 'publish' AND
+				mags.page IN ($_in)
+		";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
+
 	public static function update()
 	{
 		return \dash\db\config::public_update('mags', ...func_get_args());

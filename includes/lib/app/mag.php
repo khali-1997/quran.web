@@ -4,6 +4,64 @@ namespace lib\app;
 
 class mag
 {
+
+	public static function find($_detail)
+	{
+		if(!is_array($_detail))
+		{
+			return false;
+		}
+
+		$page = array_column($_detail, 'page');
+		$page = array_unique($page);
+		$page = array_filter($page);
+		if(!$page)
+		{
+			return null;
+		}
+
+		$page = array_map('intval', $page);
+
+		$list = \lib\db\mags::get_by_page(implode(',', $page));
+		if(!$list)
+		{
+			return null;
+		}
+
+		$result = [];
+		foreach ($list as $key => $value)
+		{
+			$temp              = [];
+			$temp['link']      = \dash\url::kingdom(). '/'. $value['url'];
+			$temp['title']     = $value['title'];
+			$temp['word']      = $value['word'];
+			$temp['wordtitle'] = $value['wordtitle'];
+			$temp['type']      = $value['type'];
+			$temp['subtype']   = $value['subtype'];
+			$quran_link        = null;
+
+			if($value['sura'] && $value['aya'])
+			{
+				$quran_link = 's'. $value['sura']. '/'. $value['aya'];
+			}
+			elseif($value['sura'])
+			{
+				$quran_link = 's'. $value['sura'];
+			}
+			elseif($value['page'])
+			{
+				$quran_link = 'p'. $value['page'];
+			}
+
+			$temp['quran_link'] = \dash\url::kingdom(). '/'. $quran_link;
+
+			$result[] = $temp;
+		}
+
+		return $result;
+	}
+
+
 	public static function subtype_list()
 	{
 		$list         = [];

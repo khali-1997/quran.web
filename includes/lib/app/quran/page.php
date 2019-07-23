@@ -111,7 +111,7 @@ class page
 		$text_raw           = [];
 		$text_raw['text']   = [];
 		$text_raw['simple'] = [];
-
+		$mag_detail         = [];
 		$check_sura         = 0;
 		$check_line         = 0;
 
@@ -279,6 +279,13 @@ class page
 
 				$text_raw['text'][]   = $quran[$myPageKey][$myKey][$myArrayKey]['detail']['text'];
 				$text_raw['simple'][] = $quran[$myPageKey][$myKey][$myArrayKey]['detail']['simple'];
+
+				$mag_detail[] =
+				[
+					'page' => $quran[$myPageKey][$myKey][$myArrayKey]['detail']['page'],
+					'aya'  => $quran[$myPageKey][$myKey][$myArrayKey]['detail']['aya'],
+					'sura' => $quran[$myPageKey][$myKey][$myArrayKey]['detail']['sura'],
+				];
 
 				if(!isset($showTranslatePage[$value['sura']. '_'. $value['aya']]))
 				{
@@ -517,7 +524,7 @@ class page
 		$result['find_id']       = ['page1' => substr($page1_classname, 1), 'page2' => substr($page2_classname, 1)];
 		$result['translatelist'] = \lib\app\translate::current_list();
 		$result['text_raw']      = $text_raw;
-
+		$result['mag_detail']    = $mag_detail;
 		// \dash\notif::api($result);
 
 		return $result;

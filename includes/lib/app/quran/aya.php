@@ -99,10 +99,11 @@ class aya
 
 		\lib\app\quran\translate::load($load, $_meta);
 
-		$quran             = [];
+		$quran              = [];
 
 		$first_verse        = [];
 		$text_raw           = [];
+		$mag_detail         = [];
 		$text_raw['text']   = [];
 		$text_raw['simple'] = [];
 
@@ -175,6 +176,12 @@ class aya
 
 				$text_raw['text'][]   = $quran[$myKey][$myArrayKey]['detail']['text'];
 				$text_raw['simple'][] = $quran[$myKey][$myArrayKey]['detail']['simple'];
+				$mag_detail[] =
+				[
+					'page' => $quran[$myKey][$myArrayKey]['detail']['page'],
+					'aya'  => $quran[$myKey][$myArrayKey]['detail']['aya'],
+					'sura' => $quran[$myKey][$myArrayKey]['detail']['sura'],
+				];
 			}
 
 			if(!isset($quran[$myKey][$myArrayKey]['word']))
@@ -387,6 +394,7 @@ class aya
 		$result['mode']              = $_meta['mode'];
 		$result['translatelist']     = \lib\app\translate::current_list();
 		$result['text_raw']          = $text_raw;
+		$result['mag_detail']        = $mag_detail;
 
 
 		return $result;
