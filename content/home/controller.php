@@ -16,11 +16,6 @@ class controller
 			$url .= '/'. $child;
 		}
 
-		if(in_array($module, ['aye', 'random','page', 'randompage']) && !$child)
-		{
-			self::random_quran($module);
-		}
-
 		$meta = [];
 
 		if(\dash\request::get('t'))
