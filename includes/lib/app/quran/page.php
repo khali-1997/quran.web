@@ -35,7 +35,7 @@ class page
 				break;
 
 			case 'aya':
-				$first_page = self::find_first_page($_type, $_id, $_aya);
+				$first_page = self::find_first_page('index', $_id, $_aya);
 				break;
 
 
@@ -73,8 +73,7 @@ class page
 			}
 			else
 			{
-				// @check @reza
-				// /a1354?mode=twopage&t=fa6
+				return false;
 			}
 		}
 		else
@@ -525,7 +524,6 @@ class page
 		$result['translatelist'] = \lib\app\translate::current_list();
 		$result['text_raw']      = $text_raw;
 		$result['mag_detail']    = $mag_detail;
-		// \dash\notif::api($result);
 
 		return $result;
 	}
