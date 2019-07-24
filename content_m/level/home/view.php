@@ -12,8 +12,8 @@ class view
 
 		\dash\data::page_pictogram('coffee');
 
-		\dash\data::badge_link(\dash\url::this(). '/add?gid='. \dash\request::get('gid'));
-		\dash\data::badge_text(T_('Add new donate learnlevel'));
+		\dash\data::badge_link(\dash\url::here(). '/learn?gid='. \dash\request::get('gid'));
+		\dash\data::badge_text(T_('Back to dashboard'));
 
 		$search_string            = \dash\request::get('q');
 		if($search_string)
