@@ -1,5 +1,5 @@
 <?php
-namespace content_m\group\edit;
+namespace content_m\level\edit;
 
 
 class model
@@ -21,12 +21,11 @@ class model
 			$post['file'] = $file;
 		}
 
-		\lib\app\learngroup::edit($post, \dash\request::get('id'));
+		\lib\app\learnlevel::edit($post, \dash\request::get('id'));
 
 		if(\dash\engine\process::status())
 		{
 			\dash\redirect::to(\dash\url::here(). '/learn?gid='. \dash\request::get('gid'));
-
 			// \dash\redirect::pwd();
 		}
 

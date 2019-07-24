@@ -3,55 +3,12 @@
 
 
 {%block pageContent%}
-<div class='middle normal f justify-center'>
-
-  <div class="vcard mA10">
-    <img src="{{url.static}}/siftal/images/useful/plus1.png" alt="add new learn">
-    <div class="content"></div>
-    <div class="footer pAn">
-     <a class="btn block primary" href="{{url.this}}/add">{%trans "Add new group"%}</a>
-    </div>
-  </div>
-{%for key, value in dataTable%}
-
-{%set cardColor%}
-{%if value.status == 'enable'%}green{%else%}black{%endif%}
-{%endset%}
-
-  <a class="vcard mA10 shadow {{cardColor}}" href='{{url.here}}/learn?gid={{value.id}}'>
-    {%if value.file%}
-      <img src="{{value.file}}" alt="{{value.title}}" class="pA10-f">
-    {%endif%}
-    <div class="content">
-      <div class="header">{{value.title}}</div>
-      <div class="meta"></div>
-      <div class="footer">{{value.desc | slice(0, 70)}} ...</div>
-    </div>
-  </a>
-{%endfor%}
-
-</div>
-{%endblock%}
-
-
-
-
-
-
-
-
-
-
-
-
-
-{%block pageContent2%}
 
 {%if false%}
 <div class="f">
 
   <div class="c s6">
-    <a class="dcard {%if url.module == 'learngroup' %}active{%endif%}" href='{{url.here}}/learngroup'>
+    <a class="dcard {%if url.module == 'learnlevel' %}active{%endif%}" href='{{url.here}}/learnlevel'>
      <div class="statistic">
       <div class="value"><i class="sf-list"></i></div>
       <div class="label">{%trans "List"%}</div>
@@ -63,7 +20,7 @@
     <a class="dcard {%if url.module == 'entry' %}active{%endif%}" href='{{url.here}}/entry'>
      <div class="statistic">
       <div class="value"><i class="sf-broadcast"></i></div>
-      <div class="label">{%trans "Check learngroup online"%}</div>
+      <div class="label">{%trans "Check learnlevel online"%}</div>
      </div>
     </a>
    </div>
@@ -106,6 +63,7 @@
 <div class="cbox fs12">
   <form method="get" action='{{url.this}}'>
     <div class="input">
+      <input type="hidden" name="gid" value="{{requestGET.gid}}">
       <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" autofocus  data-pass='submit' autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
     </div>
@@ -120,7 +78,6 @@
     <thead>
       <tr>
         <th data-sort="{{sortLink.title.order}}"><a href='{{sortLink.title.link}}'>{%trans "Title"%}</a></th>
-
         <th class="s0 collapsing" data-sort="{{sortLink.sort.order}}"><a href='{{sortLink.sort.link}}'>{%trans "Sort"%}</a></th>
         <th class="s0" data-sort="{{sortLink.status.order}}"><a href='{{sortLink.status.link}}'>{%trans "Status"%}</a></th>
       </tr>
@@ -130,9 +87,7 @@
       {%for key, value in dataTable%}
       <tr {%if value.status=='disable'%} class='negative' {%else%} class='positive' {%endif%}>
         <td><a href="{{url.this}}/edit?gid={{requestGET.gid}}&id={{value.id}}"><i class="sf-edit"></i> {{value.title}}</a> <small class="s0">{{value.subtitle}}</small></td>
-
         <td class="s0">{{value.sort | fitNumber}}</td>
-
         <td class="s0 collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?gid={{requestGET.gid}}&status={{value.status}}">{%trans myStatus%}</a></td>
       </tr>
       {%endfor%}
@@ -146,7 +101,7 @@
 {%block htmlFilter%}
 <p class="f fs14 msg info2">
   <span class="c">{{dataFilter | raw}}</span>
-  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}?gid={{requestGET.gid}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
@@ -154,12 +109,12 @@
 {%block htmlFilterNoResult%}
 <p class="f fs14 msg warn2">
   <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
-  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}?gid={{requestGET.gid}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
 
 {%block htmlStartAddNew%}
-<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} <a href="{{url.this}}/add">{%trans "Try to start with add new learngroup!"%}</a></p>
+<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} <a href="{{url.this}}/add?gid={{requestGET.gid}}">{%trans "Try to start with add new learnlevel!"%}</a></p>
 {%endblock%}
 

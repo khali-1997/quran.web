@@ -10,7 +10,8 @@ class view
 		\dash\data::page_desc(' ');
 		\dash\data::page_pictogram('edit');
 
-		\dash\data::badge_link(\dash\url::this());
+		\dash\data::badge_link(\dash\url::here(). '/learn?gid='. \dash\request::get('gid'));
+
 		\dash\data::badge_text(T_('Back to group list'));
 
 		$id     = \dash\request::get('id');
