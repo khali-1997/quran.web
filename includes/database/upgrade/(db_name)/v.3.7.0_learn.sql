@@ -54,7 +54,7 @@ CREATE TABLE `lm_question` (
 `status` enum('enable', 'disable', 'awaiting', 'deleted', 'publish', 'expire')  NULL DEFAULT NULL,
 `datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`),
-CONSTRAINT `lm_exam_level_id` FOREIGN KEY (`lm_level_id`) REFERENCES `lm_level` (`id`) ON UPDATE CASCADE
+CONSTRAINT `lm_question_level_id` FOREIGN KEY (`lm_level_id`) REFERENCES `lm_level` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -66,8 +66,8 @@ CREATE TABLE `lm_answer` (
 `opt` smallint(3) NULL DEFAULT NULL,
 `datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`),
-CONSTRAINT `lm_score_question_id` FOREIGN KEY (`lm_question_id`) REFERENCES `lm_question` (`id`) ON UPDATE CASCADE,
-CONSTRAINT `lm_score_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE
+CONSTRAINT `lm_answer_question_id` FOREIGN KEY (`lm_question_id`) REFERENCES `lm_question` (`id`) ON UPDATE CASCADE,
+CONSTRAINT `lm_answer_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -82,9 +82,9 @@ CREATE TABLE `lm_star` (
 `status` enum('enable', 'disable', 'awaiting', 'deleted', 'publish', 'expire')  NULL DEFAULT NULL,
 `datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`),
-CONSTRAINT `lm_score_group_id` FOREIGN KEY (`lm_group_id`) REFERENCES `lm_group` (`id`) ON UPDATE CASCADE,
-CONSTRAINT `lm_score_level_id` FOREIGN KEY (`lm_level_id`) REFERENCES `lm_level` (`id`) ON UPDATE CASCADE,
-CONSTRAINT `lm_score_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE
+CONSTRAINT `lm_star_group_id` FOREIGN KEY (`lm_group_id`) REFERENCES `lm_group` (`id`) ON UPDATE CASCADE,
+CONSTRAINT `lm_star_level_id` FOREIGN KEY (`lm_level_id`) REFERENCES `lm_level` (`id`) ON UPDATE CASCADE,
+CONSTRAINT `lm_star_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -102,7 +102,30 @@ CREATE TABLE `lm_audio` (
 `status` enum('awaiting', 'spam', 'deleted', 'admindelete', 'approved', 'reject')  NULL DEFAULT NULL,
 `datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`),
-CONSTRAINT `lm_score_group_id` FOREIGN KEY (`lm_group_id`) REFERENCES `lm_group` (`id`) ON UPDATE CASCADE,
-CONSTRAINT `lm_score_level_id` FOREIGN KEY (`lm_level_id`) REFERENCES `lm_level` (`id`) ON UPDATE CASCADE,
-CONSTRAINT `lm_score_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE
+CONSTRAINT `lm_audio_group_id` FOREIGN KEY (`lm_group_id`) REFERENCES `lm_group` (`id`) ON UPDATE CASCADE,
+CONSTRAINT `lm_audio_level_id` FOREIGN KEY (`lm_level_id`) REFERENCES `lm_level` (`id`) ON UPDATE CASCADE,
+CONSTRAINT `lm_audio_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE,
+CONSTRAINT `lm_audio_teacher_id` FOREIGN KEY (`teacher`) REFERENCES `users` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE `lm_mistake` (
+`id` int(10) UNSIGNED NOT NULL auto_increment,
+`title` varchar(500) NULL DEFAULT NULL,
+`datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `lm_audiomistake` (
+`id` int(10) UNSIGNED NOT NULL auto_increment,
+`lm_mistake_id` int(10) UNSIGNED NOT NULL,
+`lm_audio_id` int(10) UNSIGNED NOT NULL,
+`teacher` int(10) UNSIGNED NOT NULL,
+`desc` varchar(500) NULL DEFAULT NULL,
+`datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY (`id`),
+CONSTRAINT `lm_audiomistake_group_id` FOREIGN KEY (`lm_mistake_id`) REFERENCES `lm_mistake` (`id`) ON UPDATE CASCADE,
+CONSTRAINT `lm_audiomistake_audio_id` FOREIGN KEY (`lm_audio_id`) REFERENCES `lm_audio` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
