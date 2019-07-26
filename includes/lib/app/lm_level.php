@@ -14,14 +14,12 @@ class lm_level
 		'title',
 		// 'desc',
 		'type',
-		'quran',
-		'examcaller',
+		'quranfrom',
+		'quranto',
 		// 'file',
 		// 'setting',
 		'sort',
-		'ratio1',
-		'ratio2',
-		'ratio3',
+		'ratio',
 		'unlockscore',
 		'status',
 		'datecreated',
@@ -94,20 +92,21 @@ class lm_level
 			return false;
 		}
 
+
 		if(!\dash\app::isset_request('lm_group_id')) unset($args['lm_group_id']);
 		if(!\dash\app::isset_request('title')) unset($args['title']);
 		if(!\dash\app::isset_request('desc')) unset($args['desc']);
 		if(!\dash\app::isset_request('type')) unset($args['type']);
-		if(!\dash\app::isset_request('quran')) unset($args['quran']);
-		if(!\dash\app::isset_request('examcaller')) unset($args['examcaller']);
+		if(!\dash\app::isset_request('quranfrom')) unset($args['quranfrom']);
+		if(!\dash\app::isset_request('quranto')) unset($args['quranto']);
+		if(!\dash\app::isset_request('besmellah')) unset($args['besmellah']);
 		if(!\dash\app::isset_request('file')) unset($args['file']);
 		if(!\dash\app::isset_request('setting')) unset($args['setting']);
 		if(!\dash\app::isset_request('sort')) unset($args['sort']);
-		if(!\dash\app::isset_request('ratio1')) unset($args['ratio1']);
-		if(!\dash\app::isset_request('ratio2')) unset($args['ratio2']);
-		if(!\dash\app::isset_request('ratio3')) unset($args['ratio3']);
+		if(!\dash\app::isset_request('ratio')) unset($args['ratio']);
 		if(!\dash\app::isset_request('unlockscore')) unset($args['unlockscore']);
 		if(!\dash\app::isset_request('status')) unset($args['status']);
+
 
 		if(!empty($args))
 		{
@@ -290,97 +289,82 @@ class lm_level
 			return false;
 		}
 
-		$quran = \dash\app::request('quran');
-		if($quran && mb_strlen($quran) > 150)
+		$quranfrom = \dash\app::request('quranfrom');
+		$quranfrom = \dash\utility\convert::to_en_number($quranfrom);
+		if($quranfrom && !is_numeric($quranfrom))
 		{
-			\dash\notif::error(T_("Please fill the quran less than 150 character"), 'quran');
+			\dash\notif::error(T_("Please set the quranfrom as a number"), 'quranfrom');
 			return false;
 		}
 
-
-		$examcaller = \dash\app::request('examcaller');
-		if($examcaller && mb_strlen($examcaller) != 32)
+		if($quranfrom)
 		{
-			\dash\notif::error(T_("Invalid exam detail"), 'examcaller');
+			$quranfrom = intval($quranfrom);
+			$quranfrom = abs($quranfrom);
+		}
+
+		if($quranfrom && intval($quranfrom) > 1E+4)
+		{
+			\dash\notif::error(T_("Unlock score is out of range!"), 'quranfrom');
 			return false;
 		}
 
-
-		$ratio1 = \dash\app::request('ratio1');
-		$ratio1 = \dash\utility\convert::to_en_number($ratio1);
-		if($ratio1 && !is_numeric($ratio1))
+		$quranto = \dash\app::request('quranto');
+		$quranto = \dash\utility\convert::to_en_number($quranto);
+		if($quranto && !is_numeric($quranto))
 		{
-			\dash\notif::error(T_("Please set the ratio1 as a number"), 'ratio1');
+			\dash\notif::error(T_("Please set the quranto as a number"), 'quranto');
 			return false;
 		}
 
-		if($ratio1)
+		if($quranto)
 		{
-			$ratio1 = intval($ratio1);
-			$ratio1 = abs($ratio1);
+			$quranto = intval($quranto);
+			$quranto = abs($quranto);
 		}
 
-		if($ratio1 && intval($ratio1) > 1E+4)
+		if($quranto && intval($quranto) > 1E+4)
 		{
-			\dash\notif::error(T_("Unlock score is out of range!"), 'ratio1');
+			\dash\notif::error(T_("Unlock score is out of range!"), 'quranto');
 			return false;
 		}
 
-		$ratio2 = \dash\app::request('ratio2');
-		$ratio2 = \dash\utility\convert::to_en_number($ratio2);
-		if($ratio2 && !is_numeric($ratio2))
+		$besmellah = \dash\app::request('besmellah') ? 1 : null;
+
+		$ratio = \dash\app::request('ratio');
+		$ratio = \dash\utility\convert::to_en_number($ratio);
+		if($ratio && !is_numeric($ratio))
 		{
-			\dash\notif::error(T_("Please set the ratio2 as a number"), 'ratio2');
+			\dash\notif::error(T_("Please set the ratio as a number"), 'ratio');
 			return false;
 		}
 
-		if($ratio2)
+		if($ratio)
 		{
-			$ratio2 = intval($ratio2);
-			$ratio2 = abs($ratio2);
+			$ratio = intval($ratio);
+			$ratio = abs($ratio);
 		}
 
-		if($ratio2 && intval($ratio2) > 1E+4)
+		if($ratio && intval($ratio) > 1E+4)
 		{
-			\dash\notif::error(T_("Unlock score is out of range!"), 'ratio2');
+			\dash\notif::error(T_("Unlock score is out of range!"), 'ratio');
 			return false;
 		}
 
-		$ratio3 = \dash\app::request('ratio3');
-		$ratio3 = \dash\utility\convert::to_en_number($ratio3);
-		if($ratio3 && !is_numeric($ratio3))
-		{
-			\dash\notif::error(T_("Please set the ratio3 as a number"), 'ratio3');
-			return false;
-		}
-
-		if($ratio3)
-		{
-			$ratio3 = intval($ratio3);
-			$ratio3 = abs($ratio3);
-		}
-
-		if($ratio3 && intval($ratio3) > 1E+4)
-		{
-			\dash\notif::error(T_("Unlock score is out of range!"), 'ratio3');
-			return false;
-		}
-
-		$args                  = [];
-		$args['title']         = $title;
+		$args                = [];
+		$args['title']       = $title;
 		$args['lm_group_id'] = $lm_group_id;
-		$args['status']        = $status;
-		$args['desc']          = $desc;
-		$args['file']          = $file;
-		$args['setting']       = $setting;
-		$args['sort']          = $sort;
-		$args['unlockscore']   = $unlockscore;
-		$args['type']          = $type;
-		$args['quran']         = $quran;
-		$args['examcaller']    = $examcaller;
-		$args['ratio1']        = $ratio1;
-		$args['ratio2']        = $ratio2;
-		$args['ratio3']        = $ratio3;
+		$args['status']      = $status;
+		$args['desc']        = $desc;
+		$args['file']        = $file;
+		$args['setting']     = $setting;
+		$args['sort']        = $sort;
+		$args['unlockscore'] = $unlockscore;
+		$args['type']        = $type;
+		$args['quranfrom']   = $quranfrom;
+		$args['quranto']     = $quranto;
+		$args['ratio']       = $ratio;
+		$args['besmellah']   = $besmellah;
 
 
 		return $args;
