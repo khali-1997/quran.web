@@ -1,3 +1,7 @@
+<div class="msg txtB txtC f info2 fs14">
+  <div class="c">{{dataRow.title}}</div>
+  <div class="c"><small>{%trans "Type"%}</small> {{dataRow.type_title}}</div>
+</div>
 <div class="f">
 
   <div class="c s6">
@@ -35,6 +39,18 @@
        <div class="statistic">
         <div class="value"><i class="sf-movie"></i></div>
         <div class="label">{%trans "Multimedia"%}</div>
+       </div>
+      </a>
+     </div>
+   {%endif%}
+
+
+   {%if dataRow.type == 'learn' or  dataRow.type == 'exam' %}
+    <div class="c s6">
+      <a class="dcard {%if url.child == 'exam' %}active{%endif%}" href='{{url.this}}/exam?id={{requestGET.id}}'>
+       <div class="statistic">
+        <div class="value"><i class="sf-info"></i></div>
+        <div class="label">{%trans "Exam"%}</div>
        </div>
       </a>
      </div>

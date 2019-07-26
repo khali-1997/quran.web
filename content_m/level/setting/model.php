@@ -1,5 +1,5 @@
 <?php
-namespace content_m\level\quran;
+namespace content_m\level\setting;
 
 
 class model
@@ -8,10 +8,9 @@ class model
 	{
 		$post =
 		[
-			'startaya'   => \dash\request::post('startaya'),
-			'endaya'     => \dash\request::post('endaya'),
-			'startsurah' => \dash\request::post('startsurah'),
-			'endsurah'   => \dash\request::post('endsurah'),
+			'ratio'   => \dash\request::post('ratio'),
+			'unlockscore'     => \dash\request::post('unlockscore'),
+
 		];
 
 		\lib\app\lm_level::edit($post, \dash\request::get('id'));
