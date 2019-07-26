@@ -30,5 +30,12 @@ class quran_word
 		$result = \dash\db::get($query, null, true, \lib\db\db_data_name::get());
 		return $result;
 	}
+
+	public static function get_by_id($_id)
+	{
+		$query  = "SELECT * FROM 1_quran_word WHERE 1_quran_word.id = '$_id' LIMIT 1";
+		$result = \dash\db::get($query, null, true, \lib\db\db_data_name::get());
+		return $result;
+	}
 }
 ?>

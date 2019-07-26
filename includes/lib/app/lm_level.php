@@ -138,8 +138,7 @@ class lm_level
 		if(!\dash\app::isset_request('title')) unset($args['title']);
 		if(!\dash\app::isset_request('desc')) unset($args['desc']);
 		if(!\dash\app::isset_request('type')) unset($args['type']);
-		if(!\dash\app::isset_request('quranfrom')) unset($args['quranfrom']);
-		if(!\dash\app::isset_request('quranto')) unset($args['quranto']);
+
 		if(!\dash\app::isset_request('besmellah')) unset($args['besmellah']);
 		if(!\dash\app::isset_request('file')) unset($args['file']);
 		if(!\dash\app::isset_request('setting')) unset($args['setting']);
@@ -386,8 +385,10 @@ class lm_level
 			return false;
 		}
 
-
 		$args                = [];
+
+
+
 		$args['title']       = $title;
 		$args['lm_group_id'] = $lm_group_id;
 		$args['status']      = $status;
@@ -397,8 +398,17 @@ class lm_level
 		$args['sort']        = $sort;
 		$args['unlockscore'] = $unlockscore;
 		$args['type']        = $type;
-		$args['quranfrom']   = $quranfrom;
-		$args['quranto']     = $quranto;
+
+		if(\dash\app::isset_request('startsurah') &&  \dash\app::isset_request('startaya'))
+		{
+			$args['quranfrom']   = $quranfrom;
+		}
+
+		if(\dash\app::isset_request('endsurah') &&  \dash\app::isset_request('endaya'))
+		{
+			$args['quranto']     = $quranto;
+		}
+
 		$args['ratio']       = $ratio;
 		$args['besmellah']   = $besmellah;
 
@@ -556,9 +566,29 @@ class lm_level
 					{
 						$result['type_title'] = self::type_list($value, 'title');
 					}
+					break;
+
+				case 'quranfrom':
+					$result[$key] = $value;
+
+					if(\dash\url::child() === 'quran' && $value)
+					{
+						$load_detail                = \lib\db\quran_word::get_by_id($value);
+						$result['quran_start_sura'] = (isset($load_detail['sura'])) ? $load_detail['sura'] : null;
+						$result['quran_start_aya']  = (isset($load_detail['aya'])) ? $load_detail['aya'] : null;
+					}
 
 					break;
 
+				case 'quranto':
+					$result[$key] = $value;
+					if(\dash\url::child() === 'quran' && $value)
+					{
+						$load_detail              = \lib\db\quran_word::get_by_id($value);
+						$result['quran_end_sura'] = (isset($load_detail['sura'])) ? $load_detail['sura'] : null;
+						$result['quran_end_aya']  = (isset($load_detail['aya'])) ? $load_detail['aya'] : null;
+					}
+					break;
 
 				case 'setting':
 					if($value)

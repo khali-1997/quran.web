@@ -12,6 +12,7 @@ class view
 
 		\content_m\level\main::view();
 
+		\dash\data::quranListQuick(\lib\app\sura::quick_list());
 
 	}
 }
