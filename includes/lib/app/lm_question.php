@@ -9,7 +9,7 @@ class lm_question
 {
 	public static $sort_field =
 	[
-		'lm_question_id',
+		'lm_level_id',
 		'title',
 		'desc',
 		'type',
@@ -25,6 +25,26 @@ class lm_question
 		'trueopt',
 		'status',
 	];
+
+
+	public static function site_list($_id)
+	{
+		$id = \dash\coding::decode($_id);
+		if(!$id)
+		{
+			return false;
+		}
+
+		$args =
+		[
+			'pagination' => false,
+			'lm_question.lm_level_id' => $id
+		];
+
+		$list = self::list(null, $args);
+
+		return $list;
+	}
 
 
 
@@ -53,20 +73,20 @@ class lm_question
 			$args['status']  = 'enable';
 		}
 
-		$lm_question_id = \lib\db\lm_question::insert($args);
+		$lm_level_id = \lib\db\lm_question::insert($args);
 
-		if(!$lm_question_id)
+		if(!$lm_level_id)
 		{
 			\dash\notif::error(T_("No way to insert data"), 'db');
 			return false;
 		}
 
-		$return['id'] = \dash\coding::encode($lm_question_id);
+		$return['id'] = \dash\coding::encode($lm_level_id);
 
 		if(\dash\engine\process::status())
 		{
-			\dash\log::set('addNewQuestion', ['code' => $lm_question_id]);
-			\dash\notif::ok(T_("Level group successfuly added"));
+			\dash\log::set('addNewQuestion', ['code' => $lm_level_id]);
+			\dash\notif::ok(T_("Question successfuly added"));
 		}
 
 		return $return;
@@ -93,7 +113,7 @@ class lm_question
 			return false;
 		}
 
-		if(!\dash\app::isset_request('lm_question_id')) unset($args['lm_question_id']);
+		if(!\dash\app::isset_request('lm_level_id')) unset($args['lm_level_id']);
 		if(!\dash\app::isset_request('title')) unset($args['title']);
 		if(!\dash\app::isset_request('desc')) unset($args['desc']);
 		if(!\dash\app::isset_request('type')) unset($args['type']);
@@ -207,17 +227,17 @@ class lm_question
 			return false;
 		}
 
-		$lm_question_id = \dash\app::request('lm_question_id');
-		$lm_question_id = \dash\coding::decode($lm_question_id);
-		if(!$lm_question_id && !$_id)
+		$lm_level_id = \dash\app::request('lm_level_id');
+		$lm_level_id = \dash\coding::decode($lm_level_id);
+		if(!$lm_level_id && !$_id)
 		{
 			\dash\notif::error(T_("Please set group id"));
 			return false;
 		}
 
-		if($lm_question_id)
+		if($lm_level_id)
 		{
-			$check_duplicate = \lib\db\lm_question::get(['title' => $title, 'lm_question_id' => $lm_question_id, 'limit' => 1]);
+			$check_duplicate = \lib\db\lm_question::get(['title' => $title, 'lm_level_id' => $lm_level_id, 'limit' => 1]);
 			if(isset($check_duplicate['id']))
 			{
 				if(intval($_id) === intval($check_duplicate['id']))
@@ -291,8 +311,28 @@ class lm_question
 
 		$opt1     = self::opt('opt1');
 		$opt1file = self::optfile('opt1file');
+
+		if(\dash\app::isset_request('opt1') || \dash\app::isset_request('opt1file'))
+		{
+			if(!$opt1 && !$opt1file)
+			{
+				\dash\notif::error(T_("Option 1 is required"), 'opt1');
+				return false;
+			}
+		}
+
+
 		$opt2     = self::opt('opt2');
 		$opt2file = self::optfile('opt2file');
+
+		if(\dash\app::isset_request('opt2') || \dash\app::isset_request('opt2file'))
+		{
+			if(!$opt2 && !$opt2file)
+			{
+				\dash\notif::error(T_("Option 2 is required"), 'opt1');
+				return false;
+			}
+		}
 		$opt3     = self::opt('opt3');
 		$opt3file = self::optfile('opt3file');
 		$opt4     = self::opt('opt4');
@@ -308,7 +348,7 @@ class lm_question
 		$args['opt4']        = $opt4;
 		$args['opt4file']    = $opt4file;
 		$args['title']       = $title;
-		$args['lm_question_id'] = $lm_question_id;
+		$args['lm_level_id'] = $lm_level_id;
 		$args['status']      = $status;
 		$args['type']        = $type;
 		$args['model']       = $model;
@@ -323,7 +363,7 @@ class lm_question
 		$opt = \dash\app::request($_name);
 		if($opt && mb_strlen($opt) > 300)
 		{
-			\dash\notif::error(T_("Option length is out of range"))
+			\dash\notif::error(T_("Option length is out of range"));
 		}
 
 		return $opt;
@@ -346,7 +386,7 @@ class lm_question
 			switch ($key)
 			{
 				case 'id':
-				case 'lm_question_id':
+				case 'lm_level_id':
 					if(isset($value))
 					{
 						$result[$key] = \dash\coding::encode($value);

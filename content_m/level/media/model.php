@@ -6,6 +6,7 @@ class model
 {
 	public static function post()
 	{
+		$post = [];
 
 		if(\dash\request::post('removeFile'))
 		{

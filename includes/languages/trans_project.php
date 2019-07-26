@@ -817,7 +817,7 @@ class twigTransTerms
 	//---------------------------projects/SalamQuran/content_m/group/edit/display.html
 	echo T_("Image file");                                                            // Line 49
 	echo T_("allowed extentions jpg, png. Max 1000Kb");                               // Line 50
-	echo T_("Office title");                                                          // Line 60
+	echo T_("Level title");                                                          // Line 60
 	echo T_("Enable");                                                                // Line 139
 	echo T_("Disable");                                                               // Line 143
 

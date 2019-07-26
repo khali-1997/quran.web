@@ -9072,7 +9072,7 @@ msgid "Image file"
 msgstr "تصویر"
 
 #: SalamQuran/includes/languages/trans_project.php:820
-msgid "Office title"
+msgid "Level title"
 msgstr "عنوان دفتر"
 
 #: SalamQuran/includes/languages/trans_project.php:827

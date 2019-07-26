@@ -5,17 +5,94 @@
 
 {%include 'content_m/level/pageSteps.html'%}
 
-  <div class="justify-center f">
-   <form method="post" class="c5 m6 s12" autocomplete="off">
-    <div class="cbox">
+  <div class="f">
+   <div  class="c5 m12 s12">
+   	{{block('addNewQuestion')}}
+   </div>
+   <div  class="c7 m12 s12">
+   	{{block('iListQuestion')}}
+   </div>
 
-
-      <button class="btn primary block mT20">{%trans "Save"%}</button>
-    </div>
-   </form>
   </div>
 {%endblock%}
 
+
+
+{%block addNewQuestion%}
+<form method="post"  autocomplete="off">
+	<div class="cbox">
+		{{block('ititle')}}
+		<div class="msg">
+			{{block('iopts')}}
+		</div>
+	  <button class="btn primary block mT20">{%trans "Add"%}</button>
+
+	</div>
+</form>
+{%endblock%}
+
+
+
+
+{% block ititle %}
+<label for="title">{%trans "Title"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+<div class="input">
+  <input type="text" name="title" id="title" required maxlength='150' minlength="1" pattern=".{1,150}">
+</div>
+{% endblock %}
+
+
+{% block iopts %}
+<label for="iopt1">{%trans "Option 1"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+<div class="input">
+  <input type="text" name="opt1" id="iopt1" required maxlength='150' minlength="1" pattern=".{1,150}">
+</div>
+
+<label for="iopt2">{%trans "Option 2"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+<div class="input">
+  <input type="text" name="opt2" id="iopt2" required maxlength='150' minlength="1" pattern=".{1,150}">
+</div>
+
+<label for="iopt3">{%trans "Option 3"%} <small class="fc-green">{%trans "Optional"%}</small></label>
+<div class="input">
+  <input type="text" name="opt3" id="iopt3" maxlength='150' minlength="1" pattern=".{1,150}">
+</div>
+
+<label for="iopt4">{%trans "Option 4"%} <small class="fc-green">{%trans "Optional"%}</small></label>
+<div class="input">
+  <input type="text" name="opt4" id="iopt4" maxlength='150' minlength="1" pattern=".{1,150}">
+</div>
+{% endblock %}
+
+
+{%block iListQuestion%}
+
+<div class="tblBox mLa5">
+	<table class="tbl1 v1">
+		<thead>
+			<tr>
+				<th colspan="4">{%trans "Questions"%}</th>
+			</tr>
+		</thead>
+	<tbody>
+		{%for key, value in questionList%}
+		<tr>
+			<td colspan="3" >{{(loop.index) | fitNumber}}. {{value.title}}</td>
+			<td class="">
+				<span data-confirm data-data='{"ActionType" :"remove", "id" : "{{value.id}}"}' class="btn danger xs">{%trans "Remove"%}</span>
+			</td>
+		</tr>
+		<tr>
+			<td>{{value.opt1}}</td>
+			<td>{{value.opt2}}</td>
+			<td>{{value.opt3}}</td>
+			<td>{{value.opt4}}</td>
+		</tr>
+		{%endfor%}
+	</tbody>
+	</table>
+</div>
+{%endblock%}
 
 
 

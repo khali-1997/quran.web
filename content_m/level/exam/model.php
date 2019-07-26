@@ -7,30 +7,18 @@ class model
 	public static function post()
 	{
 
-		if(\dash\request::post('removeFile'))
-		{
-			$post =	['file' => null];
-		}
-		else
-		{
-			$file = \dash\app\file::upload_quick('file1');
+		$post          = [];
+		$post['title'] = \dash\request::post('title');
+		$post['opt1']  = \dash\request::post('opt1');
+		$post['opt2']  = \dash\request::post('opt2');
+		$post['opt3']  = \dash\request::post('opt3');
+		$post['opt4']  = \dash\request::post('opt4');
+		$post['lm_level_id'] = \dash\request::get('id');
 
-			if($file)
-			{
-				$post['file'] = $file;
-			}
-			else
-			{
-				\dash\notif::error(T_("Plese upload a file"));
-				return false;
-			}
-		}
-
-		\lib\app\lm_level::edit($post, \dash\request::get('id'));
+		\lib\app\lm_question::add($post);
 
 		if(\dash\engine\process::status())
 		{
-			// \dash\redirect::to(\dash\url::this());
 			\dash\redirect::pwd();
 		}
 

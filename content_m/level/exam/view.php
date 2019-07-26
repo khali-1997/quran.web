@@ -22,8 +22,9 @@ class view
 
 		\dash\data::dataRow($result);
 
-		\dash\data::lmGroupList(\lib\app\lm_group::site_list());
-		\dash\data::typeList(\lib\app\lm_level::type_list());
+		$question_list = \lib\app\lm_question::site_list(\dash\request::get('id'));
+		\dash\data::questionList($question_list);
+
 	}
 }
 ?>
