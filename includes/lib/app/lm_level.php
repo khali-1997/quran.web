@@ -2,10 +2,10 @@
 namespace lib\app;
 
 /**
- * Class for learnlevel.
+ * Class for lm_level.
  */
 
-class learnlevel
+class lm_level
 {
 	public static $sort_field =
 	[
@@ -54,19 +54,19 @@ class learnlevel
 			$args['status']  = 'enable';
 		}
 
-		$learnlevel_id = \lib\db\learnlevel::insert($args);
+		$lm_level_id = \lib\db\lm_level::insert($args);
 
-		if(!$learnlevel_id)
+		if(!$lm_level_id)
 		{
 			\dash\notif::error(T_("No way to insert data"), 'db');
 			return false;
 		}
 
-		$return['id'] = \dash\coding::encode($learnlevel_id);
+		$return['id'] = \dash\coding::encode($lm_level_id);
 
 		if(\dash\engine\process::status())
 		{
-			\dash\log::set('addNewLevelGroup', ['code' => $learnlevel_id]);
+			\dash\log::set('addNewLevelGroup', ['code' => $lm_level_id]);
 			\dash\notif::ok(T_("Level group successfuly added"));
 		}
 
@@ -111,7 +111,7 @@ class learnlevel
 
 		if(!empty($args))
 		{
-			$update = \lib\db\learnlevel::update($args, $id);
+			$update = \lib\db\lm_level::update($args, $id);
 
 			$title = isset($args['title']) ? $args['title'] : T_("LevelGroup");
 
@@ -132,15 +132,15 @@ class learnlevel
 		$id = \dash\coding::decode($_id);
 		if(!$id)
 		{
-			\dash\notif::error(T_("learnlevel id not set"));
+			\dash\notif::error(T_("lm_level id not set"));
 			return false;
 		}
 
-		$get = \lib\db\learnlevel::get(['id' => $id, 'limit' => 1]);
+		$get = \lib\db\lm_level::get(['id' => $id, 'limit' => 1]);
 
 		if(!$get)
 		{
-			\dash\notif::error(T_("Invalid learnlevel id"));
+			\dash\notif::error(T_("Invalid lm_level id"));
 			return false;
 		}
 
@@ -175,7 +175,7 @@ class learnlevel
 			$_args['sort'] = null;
 		}
 
-		$result            = \lib\db\learnlevel::search($_string, $_args);
+		$result            = \lib\db\lm_level::search($_string, $_args);
 		$temp              = [];
 
 		foreach ($result as $key => $value)
@@ -214,7 +214,7 @@ class learnlevel
 			return false;
 		}
 
-		$check_duplicate = \lib\db\learnlevel::get(['title' => $title, 'lm_group_id' => $lm_group_id, 'limit' => 1]);
+		$check_duplicate = \lib\db\lm_level::get(['title' => $title, 'lm_group_id' => $lm_group_id, 'limit' => 1]);
 		if(isset($check_duplicate['id']))
 		{
 			if(intval($_id) === intval($check_duplicate['id']))
@@ -397,6 +397,7 @@ class learnlevel
 			switch ($key)
 			{
 				case 'id':
+				case 'lm_group_id':
 					if(isset($value))
 					{
 						$result[$key] = \dash\coding::encode($value);

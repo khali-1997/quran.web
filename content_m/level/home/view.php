@@ -7,13 +7,13 @@ class view
 	public static function config()
 	{
 		\dash\permission::access('aLearnlevelView');
-		\dash\data::page_title(T_("Donate learnlevel list"));
+		\dash\data::page_title(T_("Donate lm_level list"));
 		\dash\data::page_desc(T_('Check list and search or filter them.'). ' '. T_('Also add or edit specefic item.'));
 
 		\dash\data::page_pictogram('coffee');
 
-		\dash\data::badge_link(\dash\url::here(). '/learn?gid='. \dash\request::get('gid'));
-		\dash\data::badge_text(T_('Back to dashboard'));
+		\dash\data::badge_link(\dash\url::this(). '/add');
+		\dash\data::badge_text(T_('Add new level'));
 
 		$search_string            = \dash\request::get('q');
 		if($search_string)
@@ -21,13 +21,10 @@ class view
 			\dash\data::page_title(\dash\data::page_title(). ' | '. T_('Search for :search', ['search' => $search_string]));
 		}
 
-		$lm_group_id = \dash\coding::decode(\dash\request::get('gid'));
-
 		$args =
 		[
 			'sort'          => \dash\request::get('sort'),
 			'order'         => \dash\request::get('order'),
-			'lm_group_id' => $lm_group_id,
 		];
 
 		if(!$args['order'])
@@ -66,8 +63,8 @@ class view
 			$args['capacity'] = \dash\request::get('capacity');
 		}
 
-		$sortLink  = \dash\app\sort::make_sortLink(\lib\app\learnlevel::$sort_field, \dash\url::this());
-		$dataTable = \lib\app\learnlevel::list(\dash\request::get('q'), $args);
+		$sortLink  = \dash\app\sort::make_sortLink(\lib\app\lm_level::$sort_field, \dash\url::this());
+		$dataTable = \lib\app\lm_level::list(\dash\request::get('q'), $args);
 
 		\dash\data::sortLink($sortLink);
 		\dash\data::dataTable($dataTable);
@@ -84,5 +81,6 @@ class view
 
 
 	}
+
 }
 ?>

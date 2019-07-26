@@ -8,7 +8,7 @@
 <div class="f">
 
   <div class="c s6">
-    <a class="dcard {%if url.module == 'learnlevel' %}active{%endif%}" href='{{url.here}}/learnlevel'>
+    <a class="dcard {%if url.module == 'lm_level' %}active{%endif%}" href='{{url.here}}/lm_level'>
      <div class="statistic">
       <div class="value"><i class="sf-list"></i></div>
       <div class="label">{%trans "List"%}</div>
@@ -20,7 +20,7 @@
     <a class="dcard {%if url.module == 'entry' %}active{%endif%}" href='{{url.here}}/entry'>
      <div class="statistic">
       <div class="value"><i class="sf-broadcast"></i></div>
-      <div class="label">{%trans "Check learnlevel online"%}</div>
+      <div class="label">{%trans "Check lm_level online"%}</div>
      </div>
     </a>
    </div>
@@ -63,7 +63,7 @@
 <div class="cbox fs12">
   <form method="get" action='{{url.this}}'>
     <div class="input">
-      <input type="hidden" name="gid" value="{{requestGET.gid}}">
+
       <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" autofocus  data-pass='submit' autocomplete='off'>
       <button class="addon btn ">{%trans "Search" %}</button>
     </div>
@@ -86,9 +86,9 @@
     <tbody>
       {%for key, value in dataTable%}
       <tr {%if value.status=='disable'%} class='negative' {%else%} class='positive' {%endif%}>
-        <td><a href="{{url.this}}/edit?gid={{requestGET.gid}}&id={{value.id}}"><i class="sf-edit"></i> {{value.title}}</a> <small class="s0">{{value.subtitle}}</small></td>
+        <td><a href="{{url.this}}/edit?id={{value.id}}"><i class="sf-edit"></i> {{value.title}}</a> <small class="s0">{{value.subtitle}}</small></td>
         <td class="s0">{{value.sort | fitNumber}}</td>
-        <td class="s0 collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?gid={{requestGET.gid}}&status={{value.status}}">{%trans myStatus%}</a></td>
+        <td class="s0 collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}">{%trans myStatus%}</a></td>
       </tr>
       {%endfor%}
     </tbody>
@@ -101,7 +101,7 @@
 {%block htmlFilter%}
 <p class="f fs14 msg info2">
   <span class="c">{{dataFilter | raw}}</span>
-  <a class="cauto" href="{{url.this}}?gid={{requestGET.gid}}">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
@@ -109,12 +109,12 @@
 {%block htmlFilterNoResult%}
 <p class="f fs14 msg warn2">
   <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
-  <a class="cauto" href="{{url.this}}?gid={{requestGET.gid}}">{%trans "Clear filters"%}</a>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
 </p>
 {%endblock%}
 
 
 {%block htmlStartAddNew%}
-<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} <a href="{{url.this}}/add?gid={{requestGET.gid}}">{%trans "Try to start with add new learnlevel!"%}</a></p>
+<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} <a href="{{url.this}}/add">{%trans "Try to start with add new lm_level!"%}</a></p>
 {%endblock%}
 

@@ -20,6 +20,12 @@ class lm_group
 	];
 
 
+	public static function site_list()
+	{
+		return self::list(null, ['pagination' => false]);
+	}
+
+
 	public static function add($_args = [])
 	{
 		\dash\app::variable($_args);

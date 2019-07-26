@@ -10,9 +10,11 @@ class view
 		\dash\data::page_desc(' ');
 		\dash\data::page_pictogram('plus-circle');
 
-		\dash\data::badge_link(\dash\url::this(). '?gid='. \dash\request::get('gid'));
+		\dash\data::badge_link(\dash\url::this());
 
 		\dash\data::badge_text(T_('Back to dashboard'));
+
+		\dash\data::lmGroupList(\lib\app\lm_group::site_list());
 	}
 }
 ?>

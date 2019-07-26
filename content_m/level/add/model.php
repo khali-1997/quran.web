@@ -8,17 +8,17 @@ class model
 	{
 		$post =
 		[
-			'title'         => \dash\request::post('title'),
-			'lm_group_id' => \dash\request::get('gid'),
+			'title'       => \dash\request::post('title'),
+			'lm_group_id' => \dash\request::post('lm_group_id'),
 		];
 
-		$result = \lib\app\learnlevel::add($post);
+		$result = \lib\app\lm_level::add($post);
 
 		if(\dash\engine\process::status())
 		{
 			if(isset($result['id']))
 			{
-				\dash\redirect::to(\dash\url::this(). '/edit?gid='. \dash\request::get('gid'). '&id='.$result['id']);
+				\dash\redirect::to(\dash\url::this(). '/edit?id='.$result['id']);
 			}
 			else
 			{

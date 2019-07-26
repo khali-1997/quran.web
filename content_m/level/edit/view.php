@@ -10,11 +10,11 @@ class view
 		\dash\data::page_desc(' ');
 		\dash\data::page_pictogram('edit');
 
-		\dash\data::badge_link(\dash\url::this(). '?gid='. \dash\request::get('gid'));
+		\dash\data::badge_link(\dash\url::this());
 		\dash\data::badge_text(T_('Back to level list'));
 
 		$id     = \dash\request::get('id');
-		$result = \lib\app\learnlevel::get($id);
+		$result = \lib\app\lm_level::get($id);
 		if(!$result)
 		{
 			\dash\header::status(403, T_("Invalid level id"));
@@ -22,6 +22,7 @@ class view
 
 		\dash\data::dataRow($result);
 
+		\dash\data::lmGroupList(\lib\app\lm_group::site_list());
 	}
 }
 ?>

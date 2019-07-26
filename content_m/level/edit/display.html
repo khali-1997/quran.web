@@ -5,6 +5,7 @@
   <div class="justify-center f">
    <form method="post" class="c5 m6 s12" autocomplete="off">
     <div class="cbox">
+      {{block('iGroup')}}
       {{block('ititle')}}
 
       {{block('iSort')}}
@@ -64,6 +65,39 @@
 <label for="desc">{%trans "Description"%}</label>
 <textarea class="txt mB10" id='desc' name="desc" maxlength='1000' rows="5">{{dataRow.desc}}</textarea>
 {%endblock%}
+
+
+
+
+
+{% block iGroup %}
+{%if lmGroupList | length == 1%}
+
+<label for="lm_group_id">{%trans "Group"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+<div class="input">
+  <input type="hidden" name="lm_group_id" value="{{lmGroupList[0]['id']}}">
+  <input type="text"  id="lm_group_id" disabled class="disabled" placeholder='{%trans "Group title"%}' value="{{lmGroupList[0]['title']}}" >
+</div>
+
+{%elseif lmGroupList | length == 0%}
+
+<div class="msg warn2">
+  {%trans "No active group found!"%} <a href="{{url.here}}/group/add">{%trans "Add new group"%}</a>
+</div>
+
+{%else%}
+
+<label for="course">{%trans "Group"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+
+<select name="lm_group_id" class="mB10 select ui dropdown search" id="course">
+  <option value="" readonly>{%trans "Please select one item"%} *</option>
+  {%for key, value in lmGroupList%}
+    <option value="{{value.id}}" {%if value.id == dataRow.lm_group_id %} selected {%endif%}>{{value.title}}</option>
+  {%endfor%}
+</select>
+
+{%endif%}
+{% endblock %}
 
 
 
