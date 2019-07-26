@@ -1,0 +1,381 @@
+<?php
+namespace lib\app;
+
+/**
+ * Class for lm_question.
+ */
+
+class lm_question
+{
+	public static $sort_field =
+	[
+		'lm_question_id',
+		'title',
+		'desc',
+		'type',
+		'model',
+		'opt1',
+		'opt1file',
+		'opt2',
+		'opt2file',
+		'opt3',
+		'opt3file',
+		'opt4',
+		'opt4file',
+		'trueopt',
+		'status',
+	];
+
+
+
+	public static function add($_args = [])
+	{
+		\dash\app::variable($_args);
+
+		if(!\dash\user::id())
+		{
+			\dash\notif::error(T_("User not found"), 'user');
+			return false;
+		}
+
+		// check args
+		$args = self::check();
+
+		if($args === false || !\dash\engine\process::status())
+		{
+			return false;
+		}
+
+		$return = [];
+
+		if(!$args['status'])
+		{
+			$args['status']  = 'enable';
+		}
+
+		$lm_question_id = \lib\db\lm_question::insert($args);
+
+		if(!$lm_question_id)
+		{
+			\dash\notif::error(T_("No way to insert data"), 'db');
+			return false;
+		}
+
+		$return['id'] = \dash\coding::encode($lm_question_id);
+
+		if(\dash\engine\process::status())
+		{
+			\dash\log::set('addNewQuestion', ['code' => $lm_question_id]);
+			\dash\notif::ok(T_("Level group successfuly added"));
+		}
+
+		return $return;
+	}
+
+
+	public static function edit($_args, $_id)
+	{
+		\dash\app::variable($_args);
+
+		$result = self::get($_id);
+
+		if(!$result)
+		{
+			return false;
+		}
+
+		$id = \dash\coding::decode($_id);
+
+		$args = self::check($id);
+
+		if($args === false || !\dash\engine\process::status())
+		{
+			return false;
+		}
+
+		if(!\dash\app::isset_request('lm_question_id')) unset($args['lm_question_id']);
+		if(!\dash\app::isset_request('title')) unset($args['title']);
+		if(!\dash\app::isset_request('desc')) unset($args['desc']);
+		if(!\dash\app::isset_request('type')) unset($args['type']);
+		if(!\dash\app::isset_request('model')) unset($args['model']);
+		if(!\dash\app::isset_request('opt1')) unset($args['opt1']);
+		if(!\dash\app::isset_request('opt1file')) unset($args['opt1file']);
+		if(!\dash\app::isset_request('opt2')) unset($args['opt2']);
+		if(!\dash\app::isset_request('opt2file')) unset($args['opt2file']);
+		if(!\dash\app::isset_request('opt3')) unset($args['opt3']);
+		if(!\dash\app::isset_request('opt3file')) unset($args['opt3file']);
+		if(!\dash\app::isset_request('opt4')) unset($args['opt4']);
+		if(!\dash\app::isset_request('opt4file')) unset($args['opt4file']);
+		if(!\dash\app::isset_request('trueopt')) unset($args['trueopt']);
+		if(!\dash\app::isset_request('status')) unset($args['status']);
+
+		if(!empty($args))
+		{
+			$update = \lib\db\lm_question::update($args, $id);
+
+			$title = isset($args['title']) ? $args['title'] : T_("Question");
+
+			\dash\log::set('editQuestion', ['code' => $id]);
+
+			if(\dash\engine\process::status())
+			{
+				\dash\notif::ok(T_(":val successfully updated", ['val' => $title]));
+			}
+		}
+
+		return \dash\engine\process::status();
+	}
+
+
+	public static function get($_id)
+	{
+		$id = \dash\coding::decode($_id);
+		if(!$id)
+		{
+			\dash\notif::error(T_("lm_question id not set"));
+			return false;
+		}
+
+		$get = \lib\db\lm_question::get(['id' => $id, 'limit' => 1]);
+
+		if(!$get)
+		{
+			\dash\notif::error(T_("Invalid lm_question id"));
+			return false;
+		}
+
+		$result = self::ready($get);
+
+		return $result;
+	}
+
+
+	public static function list($_string = null, $_args = [])
+	{
+		if(!\dash\user::id())
+		{
+			return false;
+		}
+
+		$default_meta =
+		[
+			'sort'  => null,
+			'order' => null,
+		];
+
+		if(!is_array($_args))
+		{
+			$_args = [];
+		}
+
+		$_args = array_merge($default_meta, $_args);
+
+		if($_args['sort'] && !in_array($_args['sort'], self::$sort_field))
+		{
+			$_args['sort'] = null;
+		}
+
+		$result            = \lib\db\lm_question::search($_string, $_args);
+		$temp              = [];
+
+		foreach ($result as $key => $value)
+		{
+			$check = self::ready($value);
+			if($check)
+			{
+				$temp[] = $check;
+			}
+		}
+
+		return $temp;
+	}
+
+
+	private static function check($_id = null)
+	{
+
+		$title = \dash\app::request('title');
+		if(\dash\app::isset_request('title') && !$title)
+		{
+			\dash\notif::error(T_("Please fill the title"), 'title');
+			return false;
+		}
+
+		if(mb_strlen($title) > 5000)
+		{
+			\dash\notif::error(T_("Please fill the title less than 5000 character"), 'title');
+			return false;
+		}
+
+		$lm_question_id = \dash\app::request('lm_question_id');
+		$lm_question_id = \dash\coding::decode($lm_question_id);
+		if(!$lm_question_id && !$_id)
+		{
+			\dash\notif::error(T_("Please set group id"));
+			return false;
+		}
+
+		if($lm_question_id)
+		{
+			$check_duplicate = \lib\db\lm_question::get(['title' => $title, 'lm_question_id' => $lm_question_id, 'limit' => 1]);
+			if(isset($check_duplicate['id']))
+			{
+				if(intval($_id) === intval($check_duplicate['id']))
+				{
+					// no problem to edit it
+				}
+				else
+				{
+					$code = \dash\coding::encode($check_duplicate['id']);
+					$msg = T_("This title is already exist in your list");
+					$msg .= ' <a href="'. \dash\url::this(). '/edit?id='.$code. '">'. T_("Click here to edit it"). "</a>";
+					\dash\notif::error($msg, 'title');
+					return false;
+				}
+			}
+		}
+
+		$status = \dash\app::request('status');
+		if($status && !in_array($status, ['enable', 'disable', 'awaiting', 'deleted', 'publish', 'expire']))
+		{
+			\dash\notif::error(T_("Invalid status"), 'status');
+			return false;
+		}
+
+		$type = \dash\app::request('type');
+		if(!$type && \dash\app::isset_request('type'))
+		{
+			\dash\notif::error(T_("Please choose type"), 'type');
+			return false;
+		}
+
+		if($type && !in_array($type, ['level', 'public']))
+		{
+			\dash\notif::error(T_("Invalid type"), 'type');
+			return false;
+		}
+
+
+		$model = \dash\app::request('model');
+		if(!$model && \dash\app::isset_request('model'))
+		{
+			\dash\notif::error(T_("Please choose model"), 'model');
+			return false;
+		}
+
+		if($model && !in_array($model, ['text', 'audio', 'video']))
+		{
+			\dash\notif::error(T_("Invalid model"), 'model');
+			return false;
+		}
+
+
+		$trueopt = \dash\app::request('trueopt');
+		if(!$trueopt && \dash\app::isset_request('trueopt'))
+		{
+			\dash\notif::error(T_("Please choose trueopt"), 'trueopt');
+			return false;
+		}
+
+		if($trueopt)
+		{
+			$trueopt = intval($trueopt);
+			$trueopt = abs($trueopt);
+		}
+
+		if($trueopt && !in_array($trueopt, [1,2,3,4]))
+		{
+			\dash\notif::error(T_("Invalid trueopt"), 'trueopt');
+			return false;
+		}
+
+		$opt1     = self::opt('opt1');
+		$opt1file = self::optfile('opt1file');
+		$opt2     = self::opt('opt2');
+		$opt2file = self::optfile('opt2file');
+		$opt3     = self::opt('opt3');
+		$opt3file = self::optfile('opt3file');
+		$opt4     = self::opt('opt4');
+		$opt4file = self::optfile('opt4file');
+
+		$args                = [];
+		$args['opt1']        = $opt1;
+		$args['opt1file']    = $opt1file;
+		$args['opt2']        = $opt2;
+		$args['opt2file']    = $opt2file;
+		$args['opt3']        = $opt3;
+		$args['opt3file']    = $opt3file;
+		$args['opt4']        = $opt4;
+		$args['opt4file']    = $opt4file;
+		$args['title']       = $title;
+		$args['lm_question_id'] = $lm_question_id;
+		$args['status']      = $status;
+		$args['type']        = $type;
+		$args['model']       = $model;
+		$args['trueopt']     = $trueopt;
+
+		return $args;
+	}
+
+
+	private static function opt($_name)
+	{
+		$opt = \dash\app::request($_name);
+		if($opt && mb_strlen($opt) > 300)
+		{
+			\dash\notif::error(T_("Option length is out of range"))
+		}
+
+		return $opt;
+	}
+
+
+	private static function optfile($_name)
+	{
+		return \dash\app::request($_name);
+	}
+
+
+
+	public static function ready($_data)
+	{
+		$result = [];
+		foreach ($_data as $key => $value)
+		{
+
+			switch ($key)
+			{
+				case 'id':
+				case 'lm_question_id':
+					if(isset($value))
+					{
+						$result[$key] = \dash\coding::encode($value);
+					}
+					else
+					{
+						$result[$key] = null;
+					}
+					break;
+
+
+				case 'setting':
+					if($value)
+					{
+						$result[$key] = json_decode($value, true);
+					}
+					else
+					{
+						$result[$key] = $value;
+					}
+					break;
+
+				default:
+					$result[$key] = $value;
+					break;
+			}
+		}
+
+		return $result;
+	}
+}
+?>
