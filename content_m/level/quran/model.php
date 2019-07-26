@@ -12,6 +12,7 @@ class model
 			'endaya'     => \dash\request::post('endaya'),
 			'startsurah' => \dash\request::post('startsurah'),
 			'endsurah'   => \dash\request::post('endsurah'),
+			'besmellah'   => \dash\request::post('besmellah'),
 		];
 
 		\lib\app\lm_level::edit($post, \dash\request::get('id'));

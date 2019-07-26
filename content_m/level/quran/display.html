@@ -8,6 +8,8 @@
    <form method="post" class="c5 m6 s12" autocomplete="off">
     <div class="cbox">
 
+      {{block('ibesmellah')}}
+
         <h5>{%trans "Start aya"%}</h5>
        {{block('suraListStart')}}
         <label for="faya">{%trans "Aya"%}</label>
@@ -37,7 +39,13 @@
 
 
 
-
+{%block ibesmellah%}
+<div class="switch1 mB10">
+ <input type="checkbox" name="besmellah" id="besmellah" {%if dataRow.besmellah %}checked{%endif%}>
+ <label for="besmellah"></label>
+ <label for="besmellah">{%trans "Need load Besmellah?"%}</label>
+</div>
+{%endblock%}
 
 
 
