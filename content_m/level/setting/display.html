@@ -8,6 +8,7 @@
    <form method="post" class="c5 m6 s12" autocomplete="off">
     <div class="cbox">
 
+        {{block('iDesc')}}
 
         <label for="fratio">{%trans "Ratio"%}</label>
         <div class="input">
@@ -20,6 +21,7 @@
             <input type="number" name="unlockscore" min="1" max="282" id="funlockscore" value="{{dataRow.unlockscore}}">
         </div>
 
+        {{block('iStatus')}}
 
 
       {{block('isave')}}
@@ -33,3 +35,27 @@
 <button class="btn primary block mT20">{%trans "Save"%}</button>
 {%endblock%}
 
+
+
+
+
+{%block iDesc%}
+<label for="desc">{%trans "Description"%}</label>
+<textarea class="txt mB10" id='desc' name="desc" maxlength='1000' rows="5">{{dataRow.desc}}</textarea>
+{%endblock%}
+
+
+
+{%block iStatus%}
+<div class="mT15">
+ <label >{%trans "Status"%}</label>
+ <div class="radio1 green">
+  <input type="radio" id="r-enable" name="status" value="enable" {%if dataRow.status == 'enable' or not dataRow.status %} checked{%endif%}>
+  <label for="r-enable">{%trans "Enable"%}</label>
+ </div>
+ <div class="radio1 black mB25">
+  <input type="radio" id="r-disable" name="status" value="disable" {%if dataRow.status == 'disable'%} checked{%endif%} >
+  <label for="r-disable">{%trans "Disable"%}</label>
+ </div>
+</div>
+{%endblock%}
