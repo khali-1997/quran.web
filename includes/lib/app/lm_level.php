@@ -27,6 +27,47 @@ class lm_level
 	];
 
 
+	public static function type_list($_check = null, $_get_field = null)
+	{
+		$list            = [];
+		$list['quran']   = ['title' => T_("Quran")];
+		$list['learn']   = ['title' => T_("Learn")];
+		$list['exam']    = ['title' => T_("Exam")];
+		$list['reading'] = ['title' => T_("Fix reading")];
+		$list['quran']   = ['title' => T_("Quran")];
+
+		if($_check === null)
+		{
+			return $list;
+		}
+		else
+		{
+			if(array_key_exists($_check, $list))
+			{
+				if($_get_field === null)
+				{
+					return $list[$_check];
+				}
+				else
+				{
+					if(array_key_exists($_get_field, $list[$_check]))
+					{
+						return $list[$_check][$_get_field];
+					}
+					else
+					{
+						return null;
+					}
+				}
+			}
+			else
+			{
+				return false;
+			}
+		}
+	}
+
+
 	public static function add($_args = [])
 	{
 		\dash\app::variable($_args);
@@ -106,6 +147,7 @@ class lm_level
 		if(!\dash\app::isset_request('ratio')) unset($args['ratio']);
 		if(!\dash\app::isset_request('unlockscore')) unset($args['unlockscore']);
 		if(!\dash\app::isset_request('status')) unset($args['status']);
+
 
 
 		if(!empty($args))
@@ -283,11 +325,18 @@ class lm_level
 
 
 		$type = \dash\app::request('type');
-		if($type && mb_strlen($type) > 150)
+		if(!$type)
 		{
-			\dash\notif::error(T_("Please fill the type less than 150 character"), 'type');
+			\dash\notif::error(T_("Please choose type"), 'type');
 			return false;
 		}
+
+		if($type && !self::type_list($type))
+		{
+			\dash\notif::error(T_("Invalid type"), 'type');
+			return false;
+		}
+
 
 		$quranfrom = \dash\app::request('quranfrom');
 		$quranfrom = \dash\utility\convert::to_en_number($quranfrom);
@@ -391,6 +440,16 @@ class lm_level
 						$result[$key] = null;
 					}
 					break;
+
+				case 'type':
+					$result[$key] = $value;
+					if($value)
+					{
+						$result['type_title'] = self::type_list($value, 'title');
+					}
+
+					break;
+
 
 				case 'setting':
 					if($value)

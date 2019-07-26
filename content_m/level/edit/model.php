@@ -13,6 +13,7 @@ class model
 			'status'      => \dash\request::post('status'),
 			'desc'        => \dash\request::post('desc'),
 			'sort'        => \dash\request::post('sort'),
+			'type'        => \dash\request::post('type'),
 		];
 
 		$file = \dash\app\file::upload_quick('file1');

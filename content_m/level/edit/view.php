@@ -23,6 +23,7 @@ class view
 		\dash\data::dataRow($result);
 
 		\dash\data::lmGroupList(\lib\app\lm_group::site_list());
+		\dash\data::typeList(\lib\app\lm_level::type_list());
 	}
 }
 ?>

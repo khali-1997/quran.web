@@ -10,6 +10,7 @@ class model
 		[
 			'title'       => \dash\request::post('title'),
 			'lm_group_id' => \dash\request::post('lm_group_id'),
+			'type' => \dash\request::post('type'),
 		];
 
 		$result = \lib\app\lm_level::add($post);

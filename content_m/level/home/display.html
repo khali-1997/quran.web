@@ -90,7 +90,7 @@
       <tr {%if value.status=='disable'%} class='negative' {%else%} class='positive' {%endif%}>
         <td>{{value.group_title}}</td>
         <td><a href="{{url.this}}/edit?id={{value.id}}"><i class="sf-edit"></i> {{value.title}}</a> <small class="s0">{{value.subtitle}}</small></td>
-        <td>{{value.type}}</td>
+        <td>{{value.type_title}}</td>
         <td class="s0">{{value.sort | fitNumber}}</td>
         <td class="s0 collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}">{%trans myStatus%}</a></td>
       </tr>

@@ -15,6 +15,8 @@ class view
 		\dash\data::badge_text(T_('Back to dashboard'));
 
 		\dash\data::lmGroupList(\lib\app\lm_group::site_list());
+		\dash\data::typeList(\lib\app\lm_level::type_list());
+
 	}
 }
 ?>

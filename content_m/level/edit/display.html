@@ -7,9 +7,9 @@
     <div class="cbox">
       {{block('iGroup')}}
       {{block('ititle')}}
+      {{block('iTypeList')}}
 
       {{block('iSort')}}
-
 
 
 
@@ -70,6 +70,24 @@
 
 
 
+{% block iTypeList %}
+
+
+<label for="itype">{%trans "Type"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+
+<select name="type" class="mB10 select ui dropdown search" id="itype">
+  <option value="" readonly>{%trans "Please select one item"%} *</option>
+  {%for key, value in typeList%}
+    <option value="{{key}}" {%if key == dataRow.type %} selected {%endif%}>{{value.title}}</option>
+  {%endfor%}
+</select>
+
+{% endblock %}
+
+
+
+
+
 {% block iGroup %}
 {%if lmGroupList | length == 1%}
 
@@ -87,9 +105,9 @@
 
 {%else%}
 
-<label for="course">{%trans "Group"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+<label for="groupidlm">{%trans "Group"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 
-<select name="lm_group_id" class="mB10 select ui dropdown search" id="course">
+<select name="lm_group_id" class="mB10 select ui dropdown search" id="groupidlm">
   <option value="" readonly>{%trans "Please select one item"%} *</option>
   {%for key, value in lmGroupList%}
     <option value="{{value.id}}" {%if value.id == dataRow.lm_group_id %} selected {%endif%}>{{value.title}}</option>
