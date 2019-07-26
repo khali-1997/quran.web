@@ -71,22 +71,25 @@
 	<table class="tbl1 v1">
 		<thead>
 			<tr>
-				<th colspan="4">{%trans "Questions"%}</th>
+				<th colspan="2">{%trans "Questions"%}</th>
 			</tr>
 		</thead>
 	<tbody>
 		{%for key, value in questionList%}
 		<tr>
-			<td colspan="3" >{{(loop.index) | fitNumber}}. {{value.title}}</td>
+			<td colspan="" class="txtB" >{{(loop.index) | fitNumber}}. {{value.title}}</td>
 			<td class="">
+				<a href="{{url.that}}?id={{requestGET.id}}&qid={{value.id}}" class="btn primary xs">{%trans "Edit"%}</a>
 				<span data-confirm data-data='{"ActionType" :"remove", "id" : "{{value.id}}"}' class="btn danger xs">{%trans "Remove"%}</span>
 			</td>
 		</tr>
 		<tr>
-			<td>{{value.opt1}}</td>
-			<td>{{value.opt2}}</td>
-			<td>{{value.opt3}}</td>
-			<td>{{value.opt4}}</td>
+			<td colspan="2">
+			{%if value.opt1%}<div>{{1 | fitNumber}}. {{value.opt1}}</div>{%endif%}
+			{%if value.opt2%}<div>{{2 | fitNumber}}. {{value.opt2}}</div>{%endif%}
+			{%if value.opt3%}<div>{{3 | fitNumber}}. {{value.opt3}}</div>{%endif%}
+			{%if value.opt4%}<div>{{4 | fitNumber}}. {{value.opt4}}</div>{%endif%}
+			</td>
 		</tr>
 		{%endfor%}
 	</tbody>
