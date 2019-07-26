@@ -53,7 +53,7 @@
 <select name="lm_group_id" class="mB10 select ui dropdown search" id="course">
   <option value="" readonly>{%trans "Please select one item"%} *</option>
   {%for key, value in lmGroupList%}
-    <option value="{{value.id}}" {%if value.id == dataRow.lm_group_id %} selected {%endif%}>{{value.title}}</option>
+    <option value="{{value.id}}" {%if value.id == requestGET.groupid %} selected {%endif%}>{{value.title}}</option>
   {%endfor%}
 </select>
 

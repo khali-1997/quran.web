@@ -13,7 +13,7 @@ class view
 		\dash\data::page_pictogram('coffee');
 
 		\dash\data::badge_link(\dash\url::this(). '/add');
-		\dash\data::badge_text(T_('Add new donate lm_group'));
+		\dash\data::badge_text(T_('Add new group'));
 
 		$search_string            = \dash\request::get('q');
 		if($search_string)

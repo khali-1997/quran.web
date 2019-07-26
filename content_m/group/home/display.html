@@ -123,6 +123,7 @@
 
         <th class="s0 collapsing" data-sort="{{sortLink.sort.order}}"><a href='{{sortLink.sort.link}}'>{%trans "Sort"%}</a></th>
         <th class="s0" data-sort="{{sortLink.status.order}}"><a href='{{sortLink.status.link}}'>{%trans "Status"%}</a></th>
+        <th>{%trans "Action"%}</th>
       </tr>
     </thead>
 
@@ -134,6 +135,10 @@
         <td class="s0">{{value.sort | fitNumber}}</td>
 
         <td class="s0 collapsing">{%set myStatus = value.status | capitalize %}<a href="{{url.this}}?status={{value.status}}">{%trans myStatus%}</a></td>
+        <td class="collapsing">
+          <a href="{{url.here}}/level?groupid={{value.id}}" class="badge primary">{%trans "Show level"%}</a>
+          <a href="{{url.here}}/level/add?groupid={{value.id}}" class="badge success">{%trans "Add new level"%}</a>
+        </td>
       </tr>
       {%endfor%}
     </tbody>
