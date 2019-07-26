@@ -15,7 +15,7 @@ class view
 		\dash\data::badge_text(T_('Back to group list'));
 
 		$id     = \dash\request::get('id');
-		$result = \lib\app\learngroup::get($id);
+		$result = \lib\app\lm_group::get($id);
 		if(!$result)
 		{
 			\dash\header::status(403, T_("Invalid group id"));

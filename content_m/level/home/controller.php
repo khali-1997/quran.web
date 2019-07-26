@@ -11,10 +11,10 @@ class controller
 			\dash\redirect::to(\dash\url::here());
 		}
 
-		$learngroup_id = \dash\coding::decode(\dash\request::get('gid'));
-		if(!$learngroup_id)
+		$lm_group_id = \dash\coding::decode(\dash\request::get('gid'));
+		if(!$lm_group_id)
 		{
-			\dash\header::status(404, T_("Invalid learngroup id"));
+			\dash\header::status(404, T_("Invalid lm_group id"));
 		}
 
 	}

@@ -21,13 +21,13 @@ class view
 			\dash\data::page_title(\dash\data::page_title(). ' | '. T_('Search for :search', ['search' => $search_string]));
 		}
 
-		$learngroup_id = \dash\coding::decode(\dash\request::get('gid'));
+		$lm_group_id = \dash\coding::decode(\dash\request::get('gid'));
 
 		$args =
 		[
 			'sort'          => \dash\request::get('sort'),
 			'order'         => \dash\request::get('order'),
-			'learngroup_id' => $learngroup_id,
+			'lm_group_id' => $lm_group_id,
 		];
 
 		if(!$args['order'])
@@ -75,7 +75,7 @@ class view
 		$check_empty_datatable = $args;
 		unset($check_empty_datatable['sort']);
 		unset($check_empty_datatable['order']);
-		unset($check_empty_datatable['learngroup_id']);
+		unset($check_empty_datatable['lm_group_id']);
 
 		// set dataFilter
 		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $check_empty_datatable);

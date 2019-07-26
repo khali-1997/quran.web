@@ -2,19 +2,21 @@
 namespace lib\app;
 
 /**
- * Class for learngroup.
+ * Class for lm_group.
  */
 
-class learngroup
+class lm_group
 {
 	public static $sort_field =
 	[
 		'id',
 		'title',
+		'type',
+		'desc',
 		'sort',
-		'unlockscore',
 		'status',
 		'datecreated',
+		'file',
 	];
 
 
@@ -45,19 +47,19 @@ class learngroup
 
 
 
-		$learngroup_id = \lib\db\learngroup::insert($args);
+		$lm_group_id = \lib\db\lm_group::insert($args);
 
-		if(!$learngroup_id)
+		if(!$lm_group_id)
 		{
 			\dash\notif::error(T_("No way to insert data"), 'db');
 			return false;
 		}
 
-		$return['id'] = \dash\coding::encode($learngroup_id);
+		$return['id'] = \dash\coding::encode($lm_group_id);
 
 		if(\dash\engine\process::status())
 		{
-			\dash\log::set('addNewLearnGroup', ['code' => $learngroup_id]);
+			\dash\log::set('addNewLearnGroup', ['code' => $lm_group_id]);
 			\dash\notif::ok(T_("Learn group successfuly added"));
 		}
 
@@ -89,14 +91,14 @@ class learngroup
 		if(!\dash\app::isset_request('title')) unset($args['title']);
 		if(!\dash\app::isset_request('desc')) unset($args['desc']);
 		if(!\dash\app::isset_request('sort')) unset($args['sort']);
-		if(!\dash\app::isset_request('unlockscore')) unset($args['unlockscore']);
+		if(!\dash\app::isset_request('type')) unset($args['type']);
 		if(!\dash\app::isset_request('status')) unset($args['status']);
 		if(!\dash\app::isset_request('file')) unset($args['file']);
 
 
 		if(!empty($args))
 		{
-			$update = \lib\db\learngroup::update($args, $id);
+			$update = \lib\db\lm_group::update($args, $id);
 
 			$title = isset($args['title']) ? $args['title'] : T_("LearnGroup");
 
@@ -117,15 +119,15 @@ class learngroup
 		$id = \dash\coding::decode($_id);
 		if(!$id)
 		{
-			\dash\notif::error(T_("learngroup id not set"));
+			\dash\notif::error(T_("lm_group id not set"));
 			return false;
 		}
 
-		$get = \lib\db\learngroup::get(['id' => $id, 'limit' => 1]);
+		$get = \lib\db\lm_group::get(['id' => $id, 'limit' => 1]);
 
 		if(!$get)
 		{
-			\dash\notif::error(T_("Invalid learngroup id"));
+			\dash\notif::error(T_("Invalid lm_group id"));
 			return false;
 		}
 
@@ -160,7 +162,7 @@ class learngroup
 			$_args['sort'] = null;
 		}
 
-		$result            = \lib\db\learngroup::search($_string, $_args);
+		$result            = \lib\db\lm_group::search($_string, $_args);
 		$temp              = [];
 
 		foreach ($result as $key => $value)
@@ -192,7 +194,7 @@ class learngroup
 			return false;
 		}
 
-		$check_duplicate = \lib\db\learngroup::get(['title' => $title, 'limit' => 1]);
+		$check_duplicate = \lib\db\lm_group::get(['title' => $title, 'limit' => 1]);
 		if(isset($check_duplicate['id']))
 		{
 			if(intval($_id) === intval($check_duplicate['id']))
@@ -239,33 +241,22 @@ class learngroup
 			return false;
 		}
 
-		$unlockscore = \dash\app::request('unlockscore');
-		$unlockscore = \dash\utility\convert::to_en_number($unlockscore);
-		if($unlockscore && !is_numeric($unlockscore))
+		$type = \dash\app::request('type');
+
+		if($type && mb_strlen($type) > 150)
 		{
-			\dash\notif::error(T_("Please set the unlockscore as a number"), 'unlockscore');
+			\dash\notif::error(T_("Please set the type less than 150 character"), 'type');
 			return false;
 		}
 
-		if($unlockscore)
-		{
-			$unlockscore = intval($unlockscore);
-			$unlockscore = abs($unlockscore);
-		}
 
-		if($unlockscore && intval($unlockscore) > 1E+4)
-		{
-			\dash\notif::error(T_("Unlock score is out of range!"), 'unlockscore');
-			return false;
-		}
-
-		$args                = [];
-		$args['title']       = $title;
-		$args['status']      = $status;
-		$args['desc']        = $desc;
-		$args['file']        = $file;
-		$args['sort']        = $sort;
-		$args['unlockscore'] = $unlockscore;
+		$args           = [];
+		$args['title']  = $title;
+		$args['status'] = $status;
+		$args['desc']   = $desc;
+		$args['file']   = $file;
+		$args['sort']   = $sort;
+		$args['type']   = $type;
 
 		return $args;
 	}

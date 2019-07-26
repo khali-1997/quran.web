@@ -10,7 +10,7 @@ class learnlevel
 	public static $sort_field =
 	[
 		'id',
-		'learngroup_id',
+		'lm_group_id',
 		'title',
 		// 'desc',
 		'type',
@@ -94,7 +94,7 @@ class learnlevel
 			return false;
 		}
 
-		if(!\dash\app::isset_request('learngroup_id')) unset($args['learngroup_id']);
+		if(!\dash\app::isset_request('lm_group_id')) unset($args['lm_group_id']);
 		if(!\dash\app::isset_request('title')) unset($args['title']);
 		if(!\dash\app::isset_request('desc')) unset($args['desc']);
 		if(!\dash\app::isset_request('type')) unset($args['type']);
@@ -206,15 +206,15 @@ class learnlevel
 			return false;
 		}
 
-		$learngroup_id = \dash\app::request('learngroup_id');
-		$learngroup_id = \dash\coding::decode($learngroup_id);
-		if(!$learngroup_id && !$_id)
+		$lm_group_id = \dash\app::request('lm_group_id');
+		$lm_group_id = \dash\coding::decode($lm_group_id);
+		if(!$lm_group_id && !$_id)
 		{
 			\dash\notif::error(T_("Please set group id"));
 			return false;
 		}
 
-		$check_duplicate = \lib\db\learnlevel::get(['title' => $title, 'learngroup_id' => $learngroup_id, 'limit' => 1]);
+		$check_duplicate = \lib\db\learnlevel::get(['title' => $title, 'lm_group_id' => $lm_group_id, 'limit' => 1]);
 		if(isset($check_duplicate['id']))
 		{
 			if(intval($_id) === intval($check_duplicate['id']))
@@ -368,7 +368,7 @@ class learnlevel
 
 		$args                  = [];
 		$args['title']         = $title;
-		$args['learngroup_id'] = $learngroup_id;
+		$args['lm_group_id'] = $lm_group_id;
 		$args['status']        = $status;
 		$args['desc']          = $desc;
 		$args['file']          = $file;

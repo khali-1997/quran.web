@@ -11,7 +11,7 @@ class model
 			'title'      => \dash\request::post('title'),
 		];
 
-		$result = \lib\app\learngroup::add($post);
+		$result = \lib\app\lm_group::add($post);
 
 		if(\dash\engine\process::status())
 		{

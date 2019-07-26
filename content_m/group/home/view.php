@@ -7,13 +7,13 @@ class view
 	public static function config()
 	{
 		\dash\permission::access('aLearngroupView');
-		\dash\data::page_title(T_("Donate learngroup list"));
+		\dash\data::page_title(T_("Donate lm_group list"));
 		\dash\data::page_desc(T_('Check list and search or filter them.'). ' '. T_('Also add or edit specefic item.'));
 
 		\dash\data::page_pictogram('coffee');
 
 		\dash\data::badge_link(\dash\url::this(). '/add');
-		\dash\data::badge_text(T_('Add new donate learngroup'));
+		\dash\data::badge_text(T_('Add new donate lm_group'));
 
 		$search_string            = \dash\request::get('q');
 		if($search_string)
@@ -63,8 +63,8 @@ class view
 			$args['capacity'] = \dash\request::get('capacity');
 		}
 
-		$sortLink  = \dash\app\sort::make_sortLink(\lib\app\learngroup::$sort_field, \dash\url::this());
-		$dataTable = \lib\app\learngroup::list(\dash\request::get('q'), $args);
+		$sortLink  = \dash\app\sort::make_sortLink(\lib\app\lm_group::$sort_field, \dash\url::this());
+		$dataTable = \lib\app\lm_group::list(\dash\request::get('q'), $args);
 
 		\dash\data::sortLink($sortLink);
 		\dash\data::dataTable($dataTable);

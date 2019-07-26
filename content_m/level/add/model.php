@@ -9,7 +9,7 @@ class model
 		$post =
 		[
 			'title'         => \dash\request::post('title'),
-			'learngroup_id' => \dash\request::get('gid'),
+			'lm_group_id' => \dash\request::get('gid'),
 		];
 
 		$result = \lib\app\learnlevel::add($post);
