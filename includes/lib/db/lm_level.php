@@ -41,6 +41,16 @@ class lm_level
 		[
 			'public_show_field' => 'lm_level.*, lm_group.title as `group_title`',
 			'master_join'       => ' LEFT JOIN lm_group ON lm_group.id = lm_level.lm_group_id',
+			'search_field'       =>
+			"
+				(
+					lm_group.title LIKE ('%__string__%') OR
+					lm_level.title LIKE ('%__string__%')
+				)
+
+
+			",
+
 		];
 
 		if(!is_array($_args))

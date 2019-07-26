@@ -35,9 +35,23 @@ class lm_group
 	}
 
 
-	public static function search()
+		public static function search($_string, $_args)
 	{
-		$result = \dash\db\config::public_search('lm_group', ...func_get_args());
+		$default =
+		[
+
+			'search_field'       => " lm_group.title LIKE ('%__string__%')",
+		];
+
+		if(!is_array($_args))
+		{
+			$_args = [];
+		}
+
+		$_args = array_merge($default, $_args);
+
+		$result = \dash\db\config::public_search('lm_group', $_string, $_args);
+
 		return $result;
 	}
 
