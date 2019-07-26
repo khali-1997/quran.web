@@ -23,5 +23,12 @@ class quran_word
 		return false;
 	}
 
+	public static function get_first_word($_where)
+	{
+		$_where = \dash\db\config::make_where($_where);
+		$query  = "SELECT * FROM 1_quran_word WHERE $_where ORDER BY 1_quran_word.id ASC LIMIT 1";
+		$result = \dash\db::get($query, null, true, \lib\db\db_data_name::get());
+		return $result;
+	}
 }
 ?>

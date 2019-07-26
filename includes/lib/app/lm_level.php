@@ -235,7 +235,7 @@ class lm_level
 	private static function check($_id = null)
 	{
 		$title = \dash\app::request('title');
-		if(!$title)
+		if(\dash\app::isset_request('title') && !$title)
 		{
 			\dash\notif::error(T_("Please fill the title"), 'title');
 			return false;
@@ -255,20 +255,23 @@ class lm_level
 			return false;
 		}
 
-		$check_duplicate = \lib\db\lm_level::get(['title' => $title, 'lm_group_id' => $lm_group_id, 'limit' => 1]);
-		if(isset($check_duplicate['id']))
+		if($lm_group_id)
 		{
-			if(intval($_id) === intval($check_duplicate['id']))
+			$check_duplicate = \lib\db\lm_level::get(['title' => $title, 'lm_group_id' => $lm_group_id, 'limit' => 1]);
+			if(isset($check_duplicate['id']))
 			{
-				// no problem to edit it
-			}
-			else
-			{
-				$code = \dash\coding::encode($check_duplicate['id']);
-				$msg = T_("This title is already exist in your list");
-				$msg .= ' <a href="'. \dash\url::this(). '/edit?id='.$code. '">'. T_("Click here to edit it"). "</a>";
-				\dash\notif::error($msg, 'title');
-				return false;
+				if(intval($_id) === intval($check_duplicate['id']))
+				{
+					// no problem to edit it
+				}
+				else
+				{
+					$code = \dash\coding::encode($check_duplicate['id']);
+					$msg = T_("This title is already exist in your list");
+					$msg .= ' <a href="'. \dash\url::this(). '/edit?id='.$code. '">'. T_("Click here to edit it"). "</a>";
+					\dash\notif::error($msg, 'title');
+					return false;
+				}
 			}
 		}
 
@@ -325,7 +328,7 @@ class lm_level
 
 
 		$type = \dash\app::request('type');
-		if(!$type)
+		if(!$type && \dash\app::isset_request('type'))
 		{
 			\dash\notif::error(T_("Please choose type"), 'type');
 			return false;
@@ -337,45 +340,28 @@ class lm_level
 			return false;
 		}
 
+		$quranfrom = self::quran_from();
+		$quranto = self::quran_to();
 
-		$quranfrom = \dash\app::request('quranfrom');
-		$quranfrom = \dash\utility\convert::to_en_number($quranfrom);
-		if($quranfrom && !is_numeric($quranfrom))
+		if($quranfrom || $quranto)
 		{
-			\dash\notif::error(T_("Please set the quranfrom as a number"), 'quranfrom');
-			return false;
-		}
+			if(intval($quranfrom) > intval($quranto))
+			{
+				\dash\notif::error(T_("Please set quran start aya before end aya"));
+				return false;
+			}
 
-		if($quranfrom)
-		{
-			$quranfrom = intval($quranfrom);
-			$quranfrom = abs($quranfrom);
-		}
+			if($quranfrom && !$quranto)
+			{
+				\dash\notif::error(T_("Plase set end aya"));
+				return false;
+			}
 
-		if($quranfrom && intval($quranfrom) > 1E+4)
-		{
-			\dash\notif::error(T_("Unlock score is out of range!"), 'quranfrom');
-			return false;
-		}
-
-		$quranto = \dash\app::request('quranto');
-		$quranto = \dash\utility\convert::to_en_number($quranto);
-		if($quranto && !is_numeric($quranto))
-		{
-			\dash\notif::error(T_("Please set the quranto as a number"), 'quranto');
-			return false;
-		}
-
-		if($quranto)
-		{
-			$quranto = intval($quranto);
-			$quranto = abs($quranto);
-		}
-
-		if($quranto && intval($quranto) > 1E+4)
-		{
-			\dash\notif::error(T_("Unlock score is out of range!"), 'quranto');
-			return false;
+			if(!$quranfrom && $quranto)
+			{
+				\dash\notif::error(T_("Plase set start aya"));
+				return false;
+			}
 		}
 
 		$besmellah = \dash\app::request('besmellah') ? 1 : null;
@@ -400,6 +386,7 @@ class lm_level
 			return false;
 		}
 
+
 		$args                = [];
 		$args['title']       = $title;
 		$args['lm_group_id'] = $lm_group_id;
@@ -415,10 +402,132 @@ class lm_level
 		$args['ratio']       = $ratio;
 		$args['besmellah']   = $besmellah;
 
-
 		return $args;
 	}
 
+
+	private static function quran_to()
+	{
+		$endsurah = \dash\app::request('endsurah');
+
+		$endsurah = \dash\utility\convert::to_en_number($endsurah);
+		if($endsurah && !is_numeric($endsurah))
+		{
+			\dash\notif::error(T_("Please set the endsurah as a number"), 'endsurah');
+			return false;
+		}
+
+		if($endsurah)
+		{
+			$endsurah = intval($endsurah);
+			$endsurah = abs($endsurah);
+		}
+
+		if($endsurah && intval($endsurah) > 114)
+		{
+			\dash\notif::error(T_("Surah index is out of range!"), 'quranfrom');
+			return false;
+		}
+
+		$endaya   = \dash\app::request('endaya');
+		$endaya = \dash\utility\convert::to_en_number($endaya);
+		if($endaya && !is_numeric($endaya))
+		{
+			\dash\notif::error(T_("Please set the endaya as a number"), 'endaya');
+			return false;
+		}
+
+		if($endaya)
+		{
+			$endaya = intval($endaya);
+			$endaya = abs($endaya);
+		}
+
+		if($endaya && intval($endaya) > intval(\lib\app\sura::detail($endsurah, 'ayas')))
+		{
+			\dash\notif::error(T_("Aya number is out of range!"), 'endaya');
+			return false;
+		}
+
+		if($endsurah && $endaya)
+		{
+			$id = \lib\db\quran_word::get_first_word(['sura' => $endsurah, 'aya'=> $endaya]);
+			if(isset($id['id']))
+			{
+				return $id['id'];
+			}
+			else
+			{
+				\dash\notif::error(T_("Detail not found"));
+				return false;
+			}
+		}
+
+		return null;
+
+	}
+
+
+	private static function quran_from()
+	{
+		$startsurah = \dash\app::request('startsurah');
+
+		$startsurah = \dash\utility\convert::to_en_number($startsurah);
+		if($startsurah && !is_numeric($startsurah))
+		{
+			\dash\notif::error(T_("Please set the startsurah as a number"), 'startsurah');
+			return false;
+		}
+
+		if($startsurah)
+		{
+			$startsurah = intval($startsurah);
+			$startsurah = abs($startsurah);
+		}
+
+		if($startsurah && intval($startsurah) > 114)
+		{
+			\dash\notif::error(T_("Surah index is out of range!"), 'quranfrom');
+			return false;
+		}
+
+		$startaya   = \dash\app::request('startaya');
+		$startaya = \dash\utility\convert::to_en_number($startaya);
+		if($startaya && !is_numeric($startaya))
+		{
+			\dash\notif::error(T_("Please set the startaya as a number"), 'startaya');
+			return false;
+		}
+
+		if($startaya)
+		{
+			$startaya = intval($startaya);
+			$startaya = abs($startaya);
+		}
+
+		if($startaya && intval($startaya) > intval(\lib\app\sura::detail($startsurah, 'ayas')))
+		{
+			\dash\notif::error(T_("Aya number is out of range!"), 'startaya');
+			return false;
+		}
+
+		if($startsurah && $startaya)
+		{
+			$id = \lib\db\quran_word::get_first_word(['sura' => $startsurah, 'aya'=> $startaya]);
+			if(isset($id['id']))
+			{
+				return $id['id'];
+			}
+			else
+			{
+				\dash\notif::error(T_("Detail not found"));
+				return false;
+			}
+		}
+
+		return null;
+
+	}
 
 
 	public static function ready($_data)
