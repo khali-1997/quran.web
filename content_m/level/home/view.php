@@ -21,6 +21,7 @@ class view
 			\dash\data::page_title(\dash\data::page_title(). ' | '. T_('Search for :search', ['search' => $search_string]));
 		}
 
+		$filterArgs = [];
 		$args =
 		[
 			'sort'          => \dash\request::get('sort'),
@@ -40,27 +41,24 @@ class view
 
 		if(\dash\request::get('status'))
 		{
-			$args['status'] = \dash\request::get('status');
+			$args['lm_level.status'] = \dash\request::get('status');
+			$filterArgs['status'] = $args['status'];
 		}
 
 		if(\dash\request::get('type'))
 		{
-			$args['type'] = \dash\request::get('type');
+			$args['lm_level.type'] = \dash\request::get('type');
+			$filterArgs['type'] = $args['type'];
 		}
 
-		if(\dash\request::get('gender'))
-		{
-			$args['gender'] = \dash\request::get('gender');
-		}
 
-		if(\dash\request::get('position'))
+		if(\dash\request::get('groupid'))
 		{
-			$args['position'] = \dash\request::get('position');
-		}
-
-		if(\dash\request::get('capacity'))
-		{
-			$args['capacity'] = \dash\request::get('capacity');
+			$groupid = \dash\coding::decode(\dash\request::get('groupid'));
+			if($groupid)
+			{
+				$args['lm_level.lm_group_id'] = $groupid;
+			}
 		}
 
 		$sortLink  = \dash\app\sort::make_sortLink(\lib\app\lm_level::$sort_field, \dash\url::this());
@@ -69,13 +67,15 @@ class view
 		\dash\data::sortLink($sortLink);
 		\dash\data::dataTable($dataTable);
 
-		$check_empty_datatable = $args;
-		unset($check_empty_datatable['sort']);
-		unset($check_empty_datatable['order']);
-		unset($check_empty_datatable['lm_group_id']);
+
+		if(isset($args['lm_level.lm_group_id']) && isset($dataTable[0]['group_title']))
+		{
+			$filterArgs['Group'] = $dataTable[0]['group_title'];
+		}
+
 
 		// set dataFilter
-		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $check_empty_datatable);
+		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArgs);
 		\dash\data::dataFilter($dataFilter);
 
 

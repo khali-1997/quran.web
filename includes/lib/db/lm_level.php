@@ -35,9 +35,23 @@ class lm_level
 	}
 
 
-	public static function search()
+	public static function search($_string, $_args)
 	{
-		$result = \dash\db\config::public_search('lm_level', ...func_get_args());
+		$default =
+		[
+			'public_show_field' => 'lm_level.*, lm_group.title as `group_title`',
+			'master_join'       => ' LEFT JOIN lm_group ON lm_group.id = lm_level.lm_group_id',
+		];
+
+		if(!is_array($_args))
+		{
+			$_args = [];
+		}
+
+		$_args = array_merge($default, $_args);
+
+		$result = \dash\db\config::public_search('lm_level', $_string, $_args);
+
 		return $result;
 	}
 
