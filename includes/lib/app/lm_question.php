@@ -27,6 +27,23 @@ class lm_question
 	];
 
 
+	public static function remove($_id)
+	{
+		$get = self::get($_id);
+		if($get)
+		{
+			$id = \dash\coding::decode($_id);
+			\lib\db\lm_question::update(['status' => 'deleted'], $id);
+			\dash\notif::ok(T_("Question removed"));
+			return true;
+		}
+		else
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+	}
+
 	public static function site_list($_id)
 	{
 		$id = \dash\coding::decode($_id);
@@ -37,8 +54,10 @@ class lm_question
 
 		$args =
 		[
-			'pagination' => false,
-			'lm_question.lm_level_id' => $id
+			'pagination'              => false,
+			'lm_question.lm_level_id' => $id,
+			'status'                  => 'enable',
+
 		];
 
 		$list = self::list(null, $args);

@@ -6,6 +6,13 @@ class model
 {
 	public static function post()
 	{
+		if(\dash\request::post('ActionType') === 'remove' && \dash\request::post('id'))
+		{
+			\lib\app\lm_question::remove(\dash\request::post('id'));
+			\dash\redirect::pwd();
+			return;
+		}
+
 		$post                = [];
 		$post['title']       = \dash\request::post('title');
 		$post['opt1']        = \dash\request::post('opt1');
