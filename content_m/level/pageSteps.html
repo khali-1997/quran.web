@@ -23,7 +23,7 @@
     </a>
    </div>
 
-   {%if dataRow.type == 'quran' %}
+   {%if dataRow.type == 'quran' or dataRow.type == 'reading'  %}
     <div class="c s6">
       <a class="dcard {%if url.child == 'quran' %}active{%endif%}" href='{{url.this}}/quran?id={{requestGET.id}}'>
        <div class="statistic">
