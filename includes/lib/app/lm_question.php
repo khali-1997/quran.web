@@ -338,6 +338,31 @@ class lm_question
 		$opt4     = self::opt('opt4');
 		$opt4file = self::optfile('opt4file');
 
+		if(!isset($opt3) && !isset($opt3file) && ($opt4 || $opt4file))
+		{
+			\dash\notif::error(T_("Please fill out the options in order"), ['element' => ['opt3', 'opt4']]);
+			return false;
+		}
+
+		if(!isset($opt3) && !isset($opt3file) && $trueopt === 3)
+		{
+			\dash\notif::error(T_("Option 3 is empty and can not set true option on this"), 'trueopt');
+			return false;
+		}
+
+		if(!isset($opt4) && !isset($opt4file) && $trueopt === 4)
+		{
+			\dash\notif::error(T_("Option 4 is empty and can not set true option on this"), 'trueopt');
+			return false;
+		}
+
+		if(($opt1 || $opt1file || $opt2 || $opt2file) && !$trueopt && \dash\app::isset_request('trueopt'))
+		{
+			\dash\notif::error(T_("Please set the true option"), 'trueopt');
+			return false;
+		}
+
+
 		$args                = [];
 		$args['opt1']        = $opt1;
 		$args['opt1file']    = $opt1file;
@@ -366,6 +391,10 @@ class lm_question
 			\dash\notif::error(T_("Option length is out of range"));
 		}
 
+		if(!$opt && (string) $opt !== '0')
+		{
+			return null;
+		}
 		return $opt;
 	}
 

@@ -25,6 +25,7 @@
 		<div class="msg">
 			{{block('iopts')}}
 		</div>
+		{{block('iTrueOPT')}}
 	  <button class="btn primary block mT20">{%trans "Add"%}</button>
 
 	</div>
@@ -32,6 +33,27 @@
 {%endblock%}
 
 
+{% block iTrueOPT %}
+<label>{%trans "True option"%}</label>
+<div class="f">
+	<div class="radio3 mB5 pRa5 c6 s12">
+		<input type="radio" name="trueopt" value="1" id="itrueopt1">
+		<label for="itrueopt1">{%trans "Option 1"%}</label>
+	</div>
+	<div class="radio3 mB5 pRa5 c6 s12">
+		<input type="radio" name="trueopt" value="2" id="itrueopt2">
+		<label for="itrueopt2">{%trans "Option 2"%}</label>
+	</div>
+	<div class="radio3 mB5 pRa5 c6 s12">
+		<input type="radio" name="trueopt" value="3" id="itrueopt3">
+		<label for="itrueopt3">{%trans "Option 3"%}</label>
+	</div>
+	<div class="radio3 mB5 pRa5 c6 s12">
+		<input type="radio" name="trueopt" value="4" id="itrueopt4">
+		<label for="itrueopt4">{%trans "Option 4"%}</label>
+	</div>
+</div>
+{%endblock%}
 
 
 {% block ititle %}
@@ -62,11 +84,13 @@
 <div class="input">
   <input type="text" name="opt4" id="iopt4" maxlength='150' minlength="1" pattern=".{1,150}">
 </div>
+
+
 {% endblock %}
 
 
 {%block iListQuestion%}
-
+{%if questionList%}
 <div class="tblBox mLa5">
 	<table class="tbl1 v1">
 		<thead>
@@ -85,16 +109,20 @@
 		</tr>
 		<tr>
 			<td colspan="2">
-			{%if value.opt1%}<div>{{1 | fitNumber}}. {{value.opt1}}</div>{%endif%}
-			{%if value.opt2%}<div>{{2 | fitNumber}}. {{value.opt2}}</div>{%endif%}
-			{%if value.opt3%}<div>{{3 | fitNumber}}. {{value.opt3}}</div>{%endif%}
-			{%if value.opt4%}<div>{{4 | fitNumber}}. {{value.opt4}}</div>{%endif%}
+			{%if value.opt1%}<div {%if value.trueopt == 1%}class="txtB fs11 fc-green"{%endif%}>{{1 | fitNumber}}. {{value.opt1}}</div>{%endif%}
+			{%if value.opt2%}<div {%if value.trueopt == 2%}class="txtB fs11 fc-green"{%endif%}>{{2 | fitNumber}}. {{value.opt2}}</div>{%endif%}
+			{%if value.opt3%}<div {%if value.trueopt == 3%}class="txtB fs11 fc-green"{%endif%}>{{3 | fitNumber}}. {{value.opt3}}</div>{%endif%}
+			{%if value.opt4%}<div {%if value.trueopt == 4%}class="txtB fs11 fc-green"{%endif%}>{{4 | fitNumber}}. {{value.opt4}}</div>{%endif%}
 			</td>
 		</tr>
 		{%endfor%}
 	</tbody>
 	</table>
 </div>
+{%else%}
+<p class="mLa5 fs14 msg warn2">{%trans "No question added"%}</p>
+
+{%endif%}
 {%endblock%}
 
 
