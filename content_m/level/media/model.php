@@ -22,7 +22,7 @@ class model
 			}
 			else
 			{
-				\dash\notif::error(T_("Plese upload a file"));
+				\dash\notif::error(T_("Please upload a file"));
 				return false;
 			}
 		}
