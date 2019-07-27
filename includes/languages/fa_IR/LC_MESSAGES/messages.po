@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SalamQuran - Persian\n"
-"POT-Creation-Date: 2019-07-27 14:17+0430\n"
-"PO-Revision-Date: 2019-07-27 14:18+0430\n"
+"POT-Creation-Date: 2019-07-27 14:35+0430\n"
+"PO-Revision-Date: 2019-07-27 14:35+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -559,26 +559,16 @@ msgid "Add new level to learn mechanism"
 msgstr "افزودن مرحله جدید به مکانیزم آموزش"
 
 #: SalamQuran/content_m/level/edit/view.php:9
-#: SalamQuran/content_m/level/exam/view.php:9
-#: SalamQuran/content_m/level/media/view.php:9
 msgid "Edit learn level"
 msgstr "ویرایش مرحله"
 
-#: SalamQuran/content_m/level/edit/view.php:14
-#: SalamQuran/content_m/level/exam/view.php:14
-#: SalamQuran/content_m/level/main.php:10
-#: SalamQuran/content_m/level/media/view.php:14
-msgid "Back to level list"
-msgstr "بازگشت به لیست مراحل"
+#: SalamQuran/content_m/level/exam/view.php:9
+#: SalamQuran/includes/languages/trans_project.php:742
+#: SalamQuran/includes/lib/app/lm_level.php:35
+msgid "Exam"
+msgstr "آزمون"
 
-#: SalamQuran/content_m/level/edit/view.php:20
-#: SalamQuran/content_m/level/exam/view.php:20
-#: SalamQuran/content_m/level/main.php:16
-#: SalamQuran/content_m/level/media/view.php:20
-msgid "Invalid level id"
-msgstr "شناسه مرحله اشتباه است"
-
-#: SalamQuran/content_m/level/exam/view.php:40
+#: SalamQuran/content_m/level/exam/view.php:30
 #: SalamQuran/includes/lib/app/fav.php:135 SalamQuran/includes/lib/app/fav.php:155
 #: SalamQuran/includes/lib/app/fav.php:235
 #: SalamQuran/includes/lib/app/lm_question.php:42
@@ -602,9 +592,22 @@ msgstr "لیست مراحل"
 msgid "Add new level"
 msgstr "افزودن مرحله جدید"
 
+#: SalamQuran/content_m/level/main.php:10
+msgid "Back to level list"
+msgstr "بازگشت به لیست مراحل"
+
+#: SalamQuran/content_m/level/main.php:16
+msgid "Invalid level id"
+msgstr "شناسه مرحله اشتباه است"
+
 #: SalamQuran/content_m/level/media/model.php:25
 msgid "Please upload a file"
 msgstr "لطفا فایلی را بارگذاری کنید"
+
+#: SalamQuran/content_m/level/media/view.php:9
+#: SalamQuran/includes/languages/trans_project.php:870
+msgid "Multimedia"
+msgstr "چندرسانه‌ای"
 
 #: SalamQuran/content_m/level/quran/view.php:9
 msgid "Set start and end of quran to load"
@@ -9060,11 +9063,6 @@ msgstr "مکانیزم یادگیری"
 msgid "Telegram bot"
 msgstr "ربات تلگرام"
 
-#: SalamQuran/includes/languages/trans_project.php:742
-#: SalamQuran/includes/lib/app/lm_level.php:35
-msgid "Exam"
-msgstr "آزمون"
-
 #: SalamQuran/includes/languages/trans_project.php:743
 msgid "Quran Magazine"
 msgstr "مجله قرآنی"
@@ -9290,8 +9288,8 @@ msgid "Need load Besmellah?"
 msgstr "قرارگیری «بسم الله الرحمن الرحیم» در ابتدای محتوا"
 
 #: SalamQuran/includes/languages/trans_project.php:856
-msgid "Ratio"
-msgstr "نسبت"
+msgid "Ratio score"
+msgstr "نسبت امتیاز"
 
 #: SalamQuran/includes/languages/trans_project.php:857
 msgid "Unlock score"
@@ -9312,10 +9310,6 @@ msgstr "بارگذاری"
 #: SalamQuran/includes/languages/trans_project.php:866
 msgid "No active group found!"
 msgstr "هیچ گروه فعالی یافت نشد"
-
-#: SalamQuran/includes/languages/trans_project.php:870
-msgid "Multimedia"
-msgstr "چندرسانه‌ای"
 
 #: SalamQuran/includes/languages/trans_project.php:873
 msgid "Try to start with add new level!"
@@ -18891,6 +18885,9 @@ msgstr "نام فایل غیرمجاز"
 #: dash/lib/utility/upload/check.php:91
 msgid "Exceeded file extension limit"
 msgstr "نوع فایل غیرمجاز"
+
+#~ msgid "Ratio"
+#~ msgstr "نسبت"
 
 #~ msgid "Please set the quranfrom as a number"
 #~ msgstr "لطفا شناسه ابتدای آیه قرآن را به صورت عددی وارد کنید"

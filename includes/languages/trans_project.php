@@ -713,7 +713,7 @@ class twigTransTerms
 	echo T_("List");                                                                  // Line 13
 	echo T_("Detail");                                                                // Line 20
 	echo T_("Index");                                                                 // Line 84
-	echo T_("Type");                                                                  // Line 71
+	echo T_("Type");                                                                  // Line 72
 	echo T_("Start aya");                                                             // Line 13
 	echo T_("Order");                                                                 // Line 91
 	echo T_("The letter");                                                            // Line 94
@@ -772,8 +772,8 @@ class twigTransTerms
 	echo T_("Price Variation");                                                       // Line 42
 
 	//--------------------------projects/SalamQuran/content_m/mistake/add/display.html
-	echo T_("Title");                                                                 // Line 57
-	echo T_("Require");                                                               // Line 103
+	echo T_("Title");                                                                 // Line 58
+	echo T_("Require");                                                               // Line 104
 	echo T_("Mistake title");                                                         // Line 19
 	echo T_("Add");                                                                   // Line 40
 
@@ -783,12 +783,12 @@ class twigTransTerms
 	echo T_("Try to start with add new mistake!");                                    // Line 137
 
 	//-------------------------projects/SalamQuran/content_m/mistake/edit/display.html
-	echo T_("Level title");                                                           // Line 59
+	echo T_("Level title");                                                           // Line 60
 
 	//-----------------------------------projects/SalamQuran/content_m/mag/layout.html
 	echo T_("Avatar");                                                                // Line 24
 	echo T_("Read Type");                                                             // Line 33
-	echo T_("Please select one item");                                                // Line 106
+	echo T_("Please select one item");                                                // Line 107
 	echo T_("filetype");                                                              // Line 43
 	echo T_("Choose country");                                                        // Line 71
 	echo T_("addr");                                                                  // Line 86
@@ -815,18 +815,18 @@ class twigTransTerms
 	echo T_("Try to start with add new record!");                                     // Line 127
 
 	//----------------------------projects/SalamQuran/content_m/group/add/display.html
-	echo T_("Group title");                                                           // Line 92
+	echo T_("Group title");                                                           // Line 93
 
 	//---------------------------projects/SalamQuran/content_m/group/home/display.html
-	echo T_("Add new group");                                                         // Line 98
+	echo T_("Add new group");                                                         // Line 99
 	echo T_("Sort");                                                                  // Line 33
 	echo T_("Show level");                                                            // Line 117
 	echo T_("Add new level");                                                         // Line 118
 	echo T_("Try to start with add new group!");                                      // Line 146
 
 	//---------------------------projects/SalamQuran/content_m/group/edit/display.html
-	echo T_("Image file");                                                            // Line 48
-	echo T_("allowed extentions jpg, png. Max 1000Kb");                               // Line 49
+	echo T_("Image file");                                                            // Line 49
+	echo T_("allowed extentions jpg, png. Max 1000Kb");                               // Line 50
 	echo T_("Enable");                                                                // Line 63
 	echo T_("Disable");                                                               // Line 67
 
@@ -853,7 +853,7 @@ class twigTransTerms
 	echo T_("Need load Besmellah?");                                                  // Line 46
 
 	//------------------------projects/SalamQuran/content_m/level/setting/display.html
-	echo T_("Ratio");                                                                 // Line 13
+	echo T_("Ratio score");                                                           // Line 13
 	echo T_("Unlock score");                                                          // Line 19
 	echo T_("Count random question");                                                 // Line 25
 
@@ -862,8 +862,8 @@ class twigTransTerms
 	echo T_("Upload");                                                                // Line 47
 
 	//----------------------------projects/SalamQuran/content_m/level/add/display.html
-	echo T_("Group");                                                                 // Line 103
-	echo T_("No active group found!");                                                // Line 98
+	echo T_("Group");                                                                 // Line 104
+	echo T_("No active group found!");                                                // Line 99
 
 	//------------------------------projects/SalamQuran/content_m/level/pageSteps.html
 	echo T_("Edit");                                                                  // Line 119
