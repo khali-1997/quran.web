@@ -1,0 +1,1 @@
+ALTER TABLE `lm_level` ADD `questionrandcount` int(10) NULL DEFAULT NULL;

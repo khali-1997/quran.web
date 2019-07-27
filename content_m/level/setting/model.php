@@ -8,10 +8,11 @@ class model
 	{
 		$post =
 		[
-			'ratio'       => \dash\request::post('ratio'),
-			'unlockscore' => \dash\request::post('unlockscore'),
-			'desc'        => \dash\request::post('desc'),
-			'status'      => \dash\request::post('status'),
+			'ratio'             => \dash\request::post('ratio'),
+			'unlockscore'       => \dash\request::post('unlockscore'),
+			'desc'              => \dash\request::post('desc'),
+			'status'            => \dash\request::post('status'),
+			'questionrandcount' => \dash\request::post('questionrandcount'),
 		];
 
 		\lib\app\lm_level::edit($post, \dash\request::get('id'));

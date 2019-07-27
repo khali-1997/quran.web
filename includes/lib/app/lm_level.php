@@ -146,6 +146,7 @@ class lm_level
 		if(!\dash\app::isset_request('ratio')) unset($args['ratio']);
 		if(!\dash\app::isset_request('unlockscore')) unset($args['unlockscore']);
 		if(!\dash\app::isset_request('status')) unset($args['status']);
+		if(!\dash\app::isset_request('questionrandcount')) unset($args['questionrandcount']);
 
 
 
@@ -305,6 +306,27 @@ class lm_level
 			return false;
 		}
 
+		$questionrandcount = \dash\app::request('questionrandcount');
+		$questionrandcount = \dash\utility\convert::to_en_number($questionrandcount);
+		if($questionrandcount && !is_numeric($questionrandcount))
+		{
+			\dash\notif::error(T_("Please set the questionrandcount as a number"), 'questionrandcount');
+			return false;
+		}
+
+		if($questionrandcount)
+		{
+			$questionrandcount = intval($questionrandcount);
+			$questionrandcount = abs($questionrandcount);
+		}
+
+		if($questionrandcount && intval($questionrandcount) > 9999)
+		{
+			\dash\notif::error(T_("Unlock score is out of range!"), 'questionrandcount');
+			return false;
+		}
+
+
 		$unlockscore = \dash\app::request('unlockscore');
 		$unlockscore = \dash\utility\convert::to_en_number($unlockscore);
 		if($unlockscore && !is_numeric($unlockscore))
@@ -398,6 +420,7 @@ class lm_level
 		$args['sort']        = $sort;
 		$args['unlockscore'] = $unlockscore;
 		$args['type']        = $type;
+		$args['questionrandcount'] = $questionrandcount;
 
 		if(\dash\app::isset_request('startsurah') &&  \dash\app::isset_request('startaya'))
 		{
