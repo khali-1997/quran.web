@@ -48,7 +48,6 @@ class view
 		if(\dash\request::get('type'))
 		{
 			$args['lm_level.type'] = \dash\request::get('type');
-			$filterArgs['type'] = $args['lm_level.type'];
 		}
 
 
@@ -73,6 +72,10 @@ class view
 			$filterArgs['Group'] = $dataTable[0]['group_title'];
 		}
 
+		if(isset($args['lm_level.type']) && isset($dataTable[0]['type_title']))
+		{
+			$filterArgs['type'] = $dataTable[0]['type_title'];
+		}
 
 		// set dataFilter
 		$dataFilter = \dash\app\sort::createFilterMsg($search_string, $filterArgs);

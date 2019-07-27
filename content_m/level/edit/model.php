@@ -10,8 +10,6 @@ class model
 		[
 			'title'       => \dash\request::post('title'),
 			'lm_group_id' => \dash\request::post('lm_group_id'),
-			'status'      => \dash\request::post('status'),
-			'desc'        => \dash\request::post('desc'),
 			'sort'        => \dash\request::post('sort'),
 			'type'        => \dash\request::post('type'),
 		];
