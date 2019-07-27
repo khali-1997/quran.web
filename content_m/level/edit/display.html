@@ -40,6 +40,7 @@
 {%block iFile%}
 
 {%if dataRow.file%}
+<div class="btn danger mTB10 floatL sm" data-confirm data-data='{"ActionType": "removePic"}'>{%trans "Remove"%}</div>
 <div class="mediaBox mB20">
   <img src="{{dataRow.file}}" alt="{{dataRow.title}}" id="logoPreview">
 </div>

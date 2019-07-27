@@ -6,6 +6,15 @@ class model
 {
 	public static function post()
 	{
+		if(\dash\request::post('ActionType') === 'removePic')
+		{
+			$post         = [];
+			$post['file'] = null;
+			\lib\app\lm_level::edit($post, \dash\request::get('id'));
+			\dash\redirect::pwd();
+			return;
+		}
+
 		$post =
 		[
 			'title'       => \dash\request::post('title'),
