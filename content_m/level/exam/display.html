@@ -26,7 +26,19 @@
 			{{block('iopts')}}
 		</div>
 		{{block('iTrueOPT')}}
-	  <button class="btn primary block mT20">{%trans "Add"%}</button>
+
+		{%if editMode%}
+			<div class="f">
+				<div class="c8 s12">
+	  				<button class="btn primary block mT20">{%trans "Update"%}</button>
+				</div>
+				<div class="c4 s12">
+					<a href="{{url.this}}/exam?id={{requestGET.id}}" class="btn block mLa5 secondary mT20">{%trans "Cancel"%}</a>
+				</div>
+			</div>
+		{%else%}
+	  		<button class="btn success block mT20">{%trans "Add"%}</button>
+		{%endif%}
 
 	</div>
 </form>
@@ -37,19 +49,19 @@
 <label>{%trans "True option"%}</label>
 <div class="f">
 	<div class="radio3 mB5 pRa5 c6 s12">
-		<input type="radio" name="trueopt" value="1" id="itrueopt1">
+		<input type="radio" name="trueopt" value="1" id="itrueopt1" {%if questionDataRow.trueopt == 1%} checked {%endif%}>
 		<label for="itrueopt1">{%trans "Option 1"%}</label>
 	</div>
 	<div class="radio3 mB5 pRa5 c6 s12">
-		<input type="radio" name="trueopt" value="2" id="itrueopt2">
+		<input type="radio" name="trueopt" value="2" id="itrueopt2" {%if questionDataRow.trueopt == 2%} checked {%endif%}>
 		<label for="itrueopt2">{%trans "Option 2"%}</label>
 	</div>
 	<div class="radio3 mB5 pRa5 c6 s12">
-		<input type="radio" name="trueopt" value="3" id="itrueopt3">
+		<input type="radio" name="trueopt" value="3" id="itrueopt3" {%if questionDataRow.trueopt == 3%} checked {%endif%}>
 		<label for="itrueopt3">{%trans "Option 3"%}</label>
 	</div>
 	<div class="radio3 mB5 pRa5 c6 s12">
-		<input type="radio" name="trueopt" value="4" id="itrueopt4">
+		<input type="radio" name="trueopt" value="4" id="itrueopt4" {%if questionDataRow.trueopt == 4%} checked {%endif%}>
 		<label for="itrueopt4">{%trans "Option 4"%}</label>
 	</div>
 </div>
@@ -59,7 +71,7 @@
 {% block ititle %}
 <label for="title">{%trans "Title"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
-  <input type="text" name="title" id="title" required maxlength='150' minlength="1" pattern=".{1,150}">
+  <input type="text" name="title" id="title" required value="{{questionDataRow.title}}" maxlength='150' minlength="1" pattern=".{1,150}">
 </div>
 {% endblock %}
 
@@ -67,22 +79,22 @@
 {% block iopts %}
 <label for="iopt1">{%trans "Option 1"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
-  <input type="text" name="opt1" id="iopt1" required maxlength='150' minlength="1" pattern=".{1,150}">
+  <input type="text" name="opt1" value="{{questionDataRow.opt1}}" id="iopt1" required maxlength='150' minlength="1" pattern=".{1,150}">
 </div>
 
 <label for="iopt2">{%trans "Option 2"%} <small class="fc-red">* {%trans "Require"%}</small></label>
 <div class="input">
-  <input type="text" name="opt2" id="iopt2" required maxlength='150' minlength="1" pattern=".{1,150}">
+  <input type="text" name="opt2" value="{{questionDataRow.opt2}}" id="iopt2" required maxlength='150' minlength="1" pattern=".{1,150}">
 </div>
 
 <label for="iopt3">{%trans "Option 3"%} <small class="fc-green">{%trans "Optional"%}</small></label>
 <div class="input">
-  <input type="text" name="opt3" id="iopt3" maxlength='150' minlength="1" pattern=".{1,150}">
+  <input type="text" name="opt3" value="{{questionDataRow.opt3}}" id="iopt3" maxlength='150' minlength="1" pattern=".{1,150}">
 </div>
 
 <label for="iopt4">{%trans "Option 4"%} <small class="fc-green">{%trans "Optional"%}</small></label>
 <div class="input">
-  <input type="text" name="opt4" id="iopt4" maxlength='150' minlength="1" pattern=".{1,150}">
+  <input type="text" name="opt4" value="{{questionDataRow.opt4}}" id="iopt4" maxlength='150' minlength="1" pattern=".{1,150}">
 </div>
 
 
@@ -100,14 +112,16 @@
 		</thead>
 	<tbody>
 		{%for key, value in questionList%}
-		<tr>
+		<tr {%if value.id == requestGET.qid%} class="negative" {%endif%}>
 			<td colspan="" class="txtB" >{{(loop.index) | fitNumber}}. {{value.title}}</td>
 			<td class="">
+				{%if value.id != requestGET.qid%}
 				<a href="{{url.that}}?id={{requestGET.id}}&qid={{value.id}}" class="btn primary xs">{%trans "Edit"%}</a>
 				<span data-confirm data-data='{"ActionType" :"remove", "id" : "{{value.id}}"}' class="btn danger xs">{%trans "Remove"%}</span>
+				{%endif%}
 			</td>
 		</tr>
-		<tr>
+		<tr {%if value.id == requestGET.qid%} class="negative" {%endif%}>
 			<td colspan="2">
 			{%if value.opt1%}<div {%if value.trueopt == 1%}class="txtB fs11 fc-green"{%endif%}>{{1 | fitNumber}}. {{value.opt1}}</div>{%endif%}
 			{%if value.opt2%}<div {%if value.trueopt == 2%}class="txtB fs11 fc-green"{%endif%}>{{2 | fitNumber}}. {{value.opt2}}</div>{%endif%}

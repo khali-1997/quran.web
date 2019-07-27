@@ -22,12 +22,23 @@ class model
 		$post['lm_level_id'] = \dash\request::get('id');
 		$post['trueopt']     = \dash\request::post('trueopt');
 
-		\lib\app\lm_question::add($post);
-
-		if(\dash\engine\process::status())
+		if(\dash\request::get('qid'))
 		{
-			\dash\redirect::pwd();
+			\lib\app\lm_question::edit($post, \dash\request::get('qid'));
+			if(\dash\engine\process::status())
+			{
+				\dash\redirect::to(\dash\url::this(). '/exam?id='. \dash\request::get('id'));
+			}
 		}
+		else
+		{
+			\lib\app\lm_question::add($post);
+			if(\dash\engine\process::status())
+			{
+				\dash\redirect::pwd();
+			}
+		}
+
 
 	}
 }
