@@ -42,13 +42,13 @@ class view
 		if(\dash\request::get('status'))
 		{
 			$args['lm_level.status'] = \dash\request::get('status');
-			$filterArgs['status'] = $args['status'];
+			$filterArgs['status'] = $args['lm_level.status'];
 		}
 
 		if(\dash\request::get('type'))
 		{
 			$args['lm_level.type'] = \dash\request::get('type');
-			$filterArgs['type'] = $args['type'];
+			$filterArgs['type'] = $args['lm_level.type'];
 		}
 
 
