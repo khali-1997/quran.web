@@ -8,7 +8,7 @@ class view
 	{
 		\dash\data::page_title(T_("Setting"));
 		\dash\data::page_desc(' ');
-		\dash\data::page_pictogram('book');
+		\dash\data::page_pictogram('cogs');
 
 		\content_m\level\main::view();
 
