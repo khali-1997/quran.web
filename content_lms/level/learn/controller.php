@@ -1,5 +1,5 @@
 <?php
-namespace content_lms\learn\quran;
+namespace content_lms\level\learn;
 
 class controller
 {

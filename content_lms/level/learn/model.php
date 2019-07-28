@@ -1,24 +1,14 @@
 <?php
-namespace content_lms\learn\quran;
+namespace content_lms\level\learn;
 
 
 class model
 {
 	public static function post()
 	{
-		if(\dash\request::post('ActionType') === 'listenfirst')
+		if(\dash\request::post('ActionType') === 'showvideo')
 		{
-			\lib\app\lm_star::level_quran('listenfirst', \dash\request::get('id'));
-
-		}
-		elseif(\dash\request::post('ActionType') === 'listensecond')
-		{
-			\lib\app\lm_star::level_quran('listensecond', \dash\request::get('id'));
-
-		}
-		elseif(\dash\request::post('ActionType') === 'debate')
-		{
-			\lib\app\lm_star::level_quran('debate', \dash\request::get('id'));
+			\lib\app\lm_star::level_learn('showvideo', \dash\request::get('id'));
 		}
 
 		\dash\redirect::pwd();

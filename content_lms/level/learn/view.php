@@ -1,5 +1,5 @@
 <?php
-namespace content_lms\learn\quran;
+namespace content_lms\level\learn;
 
 
 class view
@@ -12,9 +12,6 @@ class view
 		$userstar = \lib\app\lm_star::user_level_star(\dash\request::get('id'));
 		\dash\data::userStar($userstar);
 
-		$quranLoaded = \lib\app\lm_level::load_quran(\dash\request::get('id'));
-		\dash\data::quranLoaded($quranLoaded);
-		// \dash\data::pageStyle('uthmani');
 
 	}
 }
