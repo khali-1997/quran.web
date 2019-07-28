@@ -14,6 +14,16 @@
 
 
 </div>
+
+{%if userStar.star%}
+<div class="cbox">
+{%trans "Your score"%}
+	{%for i in 1..userStar.star%}
+	<i class="sf-star fc-yellow"></i>
+	{%endfor%}
+</div>
+{%endif%}
+
 <div class="cbox">
 
   <div class="btn info2 xl" data-ajaxify data-data='{"ActionType":"listenfirst"}' data-method='post'>{%trans "Listen first"%}</div>

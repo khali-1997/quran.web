@@ -8,18 +8,20 @@ class model
 	{
 		if(\dash\request::post('ActionType') === 'listenfirst')
 		{
-			\dash\notif::warn(\dash\request::post('ActionType'));
+			\lib\app\lm_star::level_quran('listenfirst', \dash\request::get('id'));
 
 		}
 		elseif(\dash\request::post('ActionType') === 'listensecond')
 		{
-			\dash\notif::warn(\dash\request::post('ActionType'));
+			\lib\app\lm_star::level_quran('listensecond', \dash\request::get('id'));
 
 		}
 		elseif(\dash\request::post('ActionType') === 'debate')
 		{
-			\dash\notif::warn(\dash\request::post('ActionType'));
+			\lib\app\lm_star::level_quran('debate', \dash\request::get('id'));
 		}
+
+		\dash\redirect::pwd();
 	}
 }
 ?>
