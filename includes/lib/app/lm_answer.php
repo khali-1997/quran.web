@@ -131,6 +131,27 @@ class lm_answer
 				$star = 2;
 			}
 		}
+		else
+		{
+			$all_question = count($multi_insert);
+
+			if($trueanswer >= $all_question)
+			{
+				$star = 3;
+			}
+			elseif($trueanswer >= floor((70 * $all_question) / 100))
+			{
+				$star = 2;
+			}
+			elseif($trueanswer >= floor((50 * $all_question) / 100))
+			{
+				$star = 1;
+			}
+			else
+			{
+				$star = 0;
+			}
+		}
 
 		\lib\app\lm_star::level_learn('exam', $_level_id, $star);
 

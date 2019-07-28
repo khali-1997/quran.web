@@ -35,10 +35,17 @@ class lm_question
 			return false;
 		}
 
-		$limit = 10;
+		$limit = 100;
 		if($level_detail['type'] === 'learn')
 		{
 			$limit = 2;
+		}
+		elseif($level_detail['type'] === 'exam')
+		{
+			if(isset($level_detail['questionrandcount']))
+			{
+				$limit = intval($level_detail['questionrandcount']);
+			}
 		}
 
 		$level_id      = \dash\coding::decode($_level_id);
@@ -80,7 +87,7 @@ class lm_question
 
 		$args =
 		[
-			'pagination'              => false,
+			'pagenation'              => false,
 			'lm_question.lm_level_id' => $id,
 			'status'                  => 'enable',
 
