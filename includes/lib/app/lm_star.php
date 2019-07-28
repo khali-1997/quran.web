@@ -7,8 +7,7 @@ namespace lib\app;
 
 class lm_star
 {
-
-	public static function level_learn($_type, $_level_id)
+	public static function level_learn($_type, $_level_id, $_star = null)
 	{
 
 		if(!\dash\user::id())
@@ -24,7 +23,9 @@ class lm_star
 				$star = 1;
 				break;
 
-
+			case 'exam':
+				$star = intval($_star);
+				break;
 
 			default:
 				return false;

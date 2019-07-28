@@ -44,6 +44,11 @@ class lm_question
 		$level_id      = \dash\coding::decode($_level_id);
 		$load_question = \lib\db\lm_question::get_rand($level_id, $limit);
 
+		if(is_array($load_question))
+		{
+			$load_question = array_map(['self', 'ready'], $load_question);
+		}
+
 		return $load_question;
 	}
 

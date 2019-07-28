@@ -58,5 +58,21 @@ class lm_question
 		return $result;
 	}
 
+
+	public static function check_list($_ids, $_lm_level_id)
+	{
+		$query =
+		"
+			SELECT * FROM
+				lm_question
+			WHERE
+				lm_question.id IN ($_ids) AND
+				lm_question.lm_level_id = $_lm_level_id AND
+				lm_question.status = 'enable'
+		";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
 }
 ?>
