@@ -27,6 +27,27 @@ class lm_question
 	];
 
 
+	public static function public_load($_type, $_level_id)
+	{
+		$level_detail = \lib\app\lm_level::public_load_level($_level_id);
+		if(!isset($level_detail['type']))
+		{
+			return false;
+		}
+
+		$limit = 10;
+		if($level_detail['type'] === 'learn')
+		{
+			$limit = 2;
+		}
+
+		$level_id      = \dash\coding::decode($_level_id);
+		$load_question = \lib\db\lm_question::get_rand($level_id, $limit);
+
+		return $load_question;
+	}
+
+
 	public static function remove($_id)
 	{
 		$get = self::get($_id);

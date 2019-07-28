@@ -41,5 +41,22 @@ class lm_question
 		return $result;
 	}
 
+
+	public static function get_rand($_lm_level_id, $_limit)
+	{
+		$query =
+		"
+			SELECT * FROM lm_question
+			WHERE
+				lm_question.lm_level_id = $_lm_level_id AND
+				lm_question.status = 'enable'
+			ORDER BY RAND()
+			LIMIT $_limit
+
+		";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
 }
 ?>
