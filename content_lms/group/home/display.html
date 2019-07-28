@@ -1,0 +1,31 @@
+{%extends 'content_lms/group/layout.html'%}
+
+
+
+{%block pageContent%}
+
+<div class='middle normal f justify-center'>
+
+{%for key, value in levelList%}
+{%if  value.type %}
+  <a class="vcard mA10 shadow blue" href='{{url.here}}/level/{{value.type}}?id={{value.id}}'>
+    {%if value.file%}
+      <img src="{{value.file}}" alt="{{value.title}}" class="pA10-f">
+    {%endif%}
+    <div class="content">
+      <div class="header">{{value.title}}</div>
+      <div class="meta">{{value.type_title}}</div>
+      <div class="footer">
+        <i class="sf-star"></i>
+        <i class="sf-star"></i>
+        <i class="sf-star"></i>
+      </div>
+    </div>
+  </a>
+{%endif%}
+{%endfor%}
+
+</div>
+{%endblock%}
+
+

@@ -7,6 +7,8 @@ namespace lib\app;
 
 class lm_level
 {
+	private static $loaded_level = null;
+
 	public static $sort_field =
 	[
 		'id',
@@ -23,8 +25,69 @@ class lm_level
 		'unlockscore',
 		'status',
 		'datecreated',
-
 	];
+
+
+	public static function public_load_level($_lm_level_id)
+	{
+		if(!self::$loaded_level)
+		{
+			$load_level = self::get($_lm_level_id);
+			if(!$load_level)
+			{
+				\dash\header::status(404, T_("Invalid id"));
+				return false;
+			}
+			self::$loaded_level = $load_level;
+		}
+
+		return self::$loaded_level;
+	}
+
+
+	public static function load_quran($_lm_level_id)
+	{
+		$load_level = self::public_load_level($_lm_level_id);
+
+		if(!isset($load_level['type']) || (isset($load_level['type']) && $load_level['type'] !== 'quran'))
+		{
+			\dash\header::status(404, T_("Invalid type"));
+			return false;
+		}
+
+		if(!isset($load_level['quranfrom']) || (isset($load_level['quranfrom']) && !$load_level['quranfrom']))
+		{
+			\dash\header::status(404, T_("Invalid start quran"));
+			return false;
+		}
+
+		if(!isset($load_level['quranto']) || (isset($load_level['quranto']) && !$load_level['quranto']))
+		{
+			\dash\header::status(404, T_("Invalid start quran"));
+			return false;
+		}
+
+		$load_quran = \lib\db\quran_word::load_from_to($load_level['quranfrom'], $load_level['quranto']);
+		$quran = \lib\app\quran\page::load('aya', 0, 0, ['mode' => 'onepage'], $load_quran);
+
+		return $quran;
+
+
+	}
+
+
+	public static function public_group_list($_lm_group_id)
+	{
+		$_lm_group_id = \dash\coding::decode($_lm_group_id);
+		if(!$_lm_group_id)
+		{
+			\dash\header::status(404, T_("Invalid id"));
+			return false;
+		}
+
+
+		return self::list(null, ['lm_level.status' => 'enable', 'pagenation' => false, 'lm_level.lm_group_id' => $_lm_group_id]);
+	}
 
 
 	public static function type_list($_check = null, $_get_field = null)
@@ -364,6 +427,11 @@ class lm_level
 		$quranfrom = self::quran_from();
 		$quranto = self::quran_to();
 
+		if(!\dash\engine\process::status())
+		{
+			return false;
+		}
+
 		if($quranfrom || $quranto)
 		{
 			if(intval($quranfrom) > intval($quranto))
@@ -484,7 +552,7 @@ class lm_level
 
 		if($endsurah && $endaya)
 		{
-			$id = \lib\db\quran_word::get_first_word(['sura' => $endsurah, 'aya'=> $endaya]);
+			$id = \lib\db\quran_word::get_first_word(['sura' => $endsurah, 'aya'=> $endaya], 'DESC');
 			if(isset($id['id']))
 			{
 				return $id['id'];

@@ -1,0 +1,17 @@
+{%extends 'content_lms/group/layout.html'%}
+
+
+
+{%block pageContent%}
+<div class="cbox fs20 txtC">
+  {%if loadLevel.besmellah%}
+  {% include 'content/home/blocks/block-besmellah.html' %}
+  {%endif%}
+
+  <div class='Quran' id="iqra" data-style='uthmani' >
+    {%include 'content/home/theme-onePage.html'%}
+  </div>
+</div>
+{%endblock%}
+
+

@@ -1,0 +1,25 @@
+{%extends display.admin%}
+
+
+{%block pageContent%}
+<div class='middle normal f justify-center'>
+
+{%for key, value in groupList%}
+
+
+  <a class="vcard mA10 shadow green" href='{{url.here}}/group?id={{value.id}}'>
+    {%if value.file%}
+      <img src="{{value.file}}" alt="{{value.title}}" class="pA10-f">
+    {%endif%}
+    <div class="content">
+      <div class="header">{{value.title}}</div>
+      <div class="meta"></div>
+      <div class="footer">123 ...</div>
+    </div>
+  </a>
+{%endfor%}
+
+</div>
+{%endblock%}
+
+

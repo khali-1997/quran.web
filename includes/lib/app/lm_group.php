@@ -19,6 +19,11 @@ class lm_group
 		'file',
 	];
 
+	public static function public_list()
+	{
+		return self::list(null, ['lm_group.status' => 'enable', 'pagination' => false]);
+	}
+
 
 	public static function site_list()
 	{

@@ -5,87 +5,98 @@ namespace lib\app\quran;
 class page
 {
 
-	public static function load($_type, $_id, $_aya, $_meta)
+	public static function load($_type, $_id, $_aya, $_meta, $_war_detail = null)
 	{
 		$first_page = null;
 		$endpage   = null;
+		$mode      = $_meta['mode'];
 
-		switch ($_type)
+		if(!$_war_detail)
 		{
-			case 'sura':
-				if(!$_aya)
-				{
+			switch ($_type)
+			{
+				case 'sura':
+					if(!$_aya)
+					{
+						$first_page = self::find_first_page($_type, $_id);
+					}
+					else
+					{
+						$first_page = self::find_first_page($_type, $_id, $_aya);
+					}
+					break;
+
+				case 'juz':
+				case 'hizb':
+				case 'rub':
+				case 'nim':
 					$first_page = self::find_first_page($_type, $_id);
+					break;
+
+				case 'page':
+					$first_page = intval($_id);
+					break;
+
+				case 'aya':
+					$first_page = self::find_first_page('index', $_id, $_aya);
+					break;
+
+
+				default:
+					return false;
+					break;
+			}
+
+			$page1 = null;
+			$page2 = null;
+
+			if($first_page % 2 === 0)
+			{
+				$page1 = $first_page - 1;
+				$page2 = $first_page;
+			}
+			else
+			{
+				$page1 = $first_page;
+				$page2 = $first_page + 1;
+			}
+
+			$get_db_record_quran = [];
+
+			if($mode === 'onepage' || $mode === 'translatepage' || !$mode)
+			{
+				$get_db_record_quran['page'] = $first_page;
+			}
+			elseif($mode === 'twopage')
+			{
+				if($page1 && $page2)
+				{
+					$get_db_record_quran['1.1'] = ['= 1.1 AND', " `page` IN ($page1, $page2)"];
 				}
 				else
 				{
-					$first_page = self::find_first_page($_type, $_id, $_aya);
+					return false;
 				}
-				break;
-
-			case 'juz':
-			case 'hizb':
-			case 'rub':
-			case 'nim':
-				$first_page = self::find_first_page($_type, $_id);
-				break;
-
-			case 'page':
-				$first_page = intval($_id);
-				break;
-
-			case 'aya':
-				$first_page = self::find_first_page('index', $_id, $_aya);
-				break;
-
-
-			default:
-				return false;
-				break;
-		}
-
-		$page1 = null;
-		$page2 = null;
-
-		if($first_page % 2 === 0)
-		{
-			$page1 = $first_page - 1;
-			$page2 = $first_page;
-		}
-		else
-		{
-			$page1 = $first_page;
-			$page2 = $first_page + 1;
-		}
-
-		$mode      = $_meta['mode'];
-		$get_db_record_quran = [];
-
-		if($mode === 'onepage' || $mode === 'translatepage' || !$mode)
-		{
-			$get_db_record_quran['page'] = $first_page;
-		}
-		elseif($mode === 'twopage')
-		{
-			if($page1 && $page2)
-			{
-				$get_db_record_quran['1.1'] = ['= 1.1 AND', " `page` IN ($page1, $page2)"];
 			}
 			else
 			{
 				return false;
 			}
+
+
+			$load             = \lib\db\quran_word::get($get_db_record_quran);
+			$load_quran_aya   = \lib\db\quran::get($get_db_record_quran);
+
 		}
 		else
 		{
-			return false;
+			// quran is loade before and use in this function
+			$load = $_war_detail;
 		}
+
 
 		$page1_classname = null;
 		$page2_classname = null;
-
-		$load             = \lib\db\quran_word::get($get_db_record_quran);
-		$load_quran_aya   = \lib\db\quran::get($get_db_record_quran);
 
 		if(!$load || !is_array($load))
 		{
