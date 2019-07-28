@@ -736,6 +736,7 @@ class twigTransTerms
 	echo T_("Set title will help us answer quickly");                                 // Line 11
 	echo T_("Please write your message");                                             // Line 17
 	echo T_("Max size");                                                              // Line 27
+	echo T_("MB");                                                                    // Line 69
 	echo T_("Send notify about your answer to creator of ticket");                    // Line 36
 	echo T_("Via sms to");                                                            // Line 38
 	echo T_("Via telegram");                                                          // Line 42
@@ -1330,7 +1331,6 @@ class twigTransTerms
 	echo T_("You have another database for logs");                                    // Line 38
 	echo T_("Click for create backup from log database");                             // Line 38
 	echo T_("Auto backup");                                                           // Line 51
-	echo T_("MB");                                                                    // Line 69
 	echo T_("Start backup every");                                                    // Line 131
 	echo T_("Year");                                                                  // Line 133
 	echo T_("Month");                                                                 // Line 134

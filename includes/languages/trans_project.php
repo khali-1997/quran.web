@@ -4,6 +4,15 @@ class twigTransTerms
  private function transtext()
  {
 
+	//-------------------------------projects/SalamQuran/content_lms/group/layout.html
+	echo T_("Manage");                                                                // Line 6
+
+	//------------------------projects/SalamQuran/content_lms/level/quran/display.html
+	echo T_("Your score");                                                            // Line 20
+	echo T_("Listen first");                                                          // Line 29
+	echo T_("Listen second");                                                         // Line 30
+	echo T_("Debate");                                                                // Line 31
+
 	//---------------------------projects/SalamQuran/content_api/v6/apikey_header.html
 	echo T_("Required parameters");                                                   // Line 3
 	echo T_("on header");                                                             // Line 3
@@ -752,7 +761,6 @@ class twigTransTerms
 	//-----------------------------------projects/SalamQuran/content/page/display.html
 
 	//---------------------------------------projects/SalamQuran/content_m/layout.html
-	echo T_("Manage");                                                                // Line 6
 
 	//--------------------------------projects/SalamQuran/content_m/learn/display.html
 	echo T_("Users");                                                                 // Line 50
