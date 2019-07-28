@@ -16,9 +16,23 @@
       <div class="header">{{value.title}}</div>
       <div class="meta">{{value.type_title}}</div>
       <div class="footer">
-        <i class="sf-star"></i>
-        <i class="sf-star"></i>
-        <i class="sf-star"></i>
+        {%if value.userstar == 1%}
+          <i class="sf-star fc-yellow"></i>
+          <i class="sf-star"></i>
+          <i class="sf-star"></i>
+        {%elseif value.userstar == 2%}
+          <i class="sf-star fc-yellow"></i>
+          <i class="sf-star fc-yellow"></i>
+          <i class="sf-star"></i>
+        {%elseif value.userstar == 3%}
+          <i class="sf-star fc-yellow"></i>
+          <i class="sf-star fc-yellow"></i>
+          <i class="sf-star fc-yellow"></i>
+        {%else%}
+          <i class="sf-star"></i>
+          <i class="sf-star"></i>
+          <i class="sf-star"></i>
+        {%endif%}
       </div>
     </div>
   </a>

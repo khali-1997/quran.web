@@ -65,5 +65,36 @@ class lm_level
 		return $result;
 	}
 
+	public static function public_level_list($_group_id, $_user_id)
+	{
+		$query =
+		"
+			SELECT
+				lm_level.*,
+				(
+					SELECT
+						MAX(lm_star.star) AS `star`
+					FROM
+						lm_star
+					WHERE
+						lm_star.user_id = $_user_id AND
+						lm_star.lm_level_id = lm_level.id
+					GROUP BY
+						lm_star.user_id
+				)
+				AS `userstar`
+			FROM
+				lm_level
+			WHERE
+				lm_level.lm_group_id = $_group_id AND
+				lm_level.status = 'enable'
+			ORDER BY lm_level.sort ASC
+
+
+		";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
 }
 ?>

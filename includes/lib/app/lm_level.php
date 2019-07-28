@@ -76,8 +76,14 @@ class lm_level
 	}
 
 
-	public static function public_group_list($_lm_group_id)
+	public static function public_level_list($_lm_group_id)
 	{
+		if(!\dash\user::id())
+		{
+			\dash\notif::error(T_("User not found"));
+			return false;
+		}
+
 		$_lm_group_id = \dash\coding::decode($_lm_group_id);
 		if(!$_lm_group_id)
 		{
@@ -85,8 +91,12 @@ class lm_level
 			return false;
 		}
 
-
-		return self::list(null, ['lm_level.status' => 'enable', 'pagenation' => false, 'lm_level.lm_group_id' => $_lm_group_id]);
+		$list = \lib\db\lm_level::public_level_list($_lm_group_id, \dash\user::id());
+		if(is_array($list))
+		{
+			$list = array_map(['self', 'ready'], $list);
+		}
+		return $list;
 	}
 
 

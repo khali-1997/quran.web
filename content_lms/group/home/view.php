@@ -8,8 +8,7 @@ class view
 	{
 		\content_lms\group\main::group();
 
-		$level = \lib\app\lm_level::public_group_list(\dash\request::get('id'));
-
+		$level = \lib\app\lm_level::public_level_list(\dash\request::get('id'));
 		\dash\data::levelList($level);
 
 	}
