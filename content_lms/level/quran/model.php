@@ -6,16 +6,19 @@ class model
 {
 	public static function post()
 	{
-		if(\dash\request::post('action') === 'remove')
+		if(\dash\request::post('ActionType') === 'listenfirst')
 		{
-			$id     = \dash\request::post('id');
+			\dash\notif::warn(\dash\request::post('ActionType'));
 
-			$remove = \lib\app\group::remove($id);
+		}
+		elseif(\dash\request::post('ActionType') === 'listensecond')
+		{
+			\dash\notif::warn(\dash\request::post('ActionType'));
 
-			if($remove)
-			{
-				\dash\redirect::pwd();
-			}
+		}
+		elseif(\dash\request::post('ActionType') === 'debate')
+		{
+			\dash\notif::warn(\dash\request::post('ActionType'));
 		}
 	}
 }
