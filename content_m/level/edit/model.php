@@ -6,14 +6,6 @@ class model
 {
 	public static function post()
 	{
-		if(\dash\request::post('ActionType') === 'removePic')
-		{
-			$post         = [];
-			$post['file'] = null;
-			\lib\app\lm_level::edit($post, \dash\request::get('id'));
-			\dash\redirect::pwd();
-			return;
-		}
 
 		$post =
 		[
@@ -23,12 +15,6 @@ class model
 			'type'        => \dash\request::post('type'),
 		];
 
-		$file = \dash\app\file::upload_quick('file1');
-
-		if($file)
-		{
-			$post['file'] = $file;
-		}
 
 		\lib\app\lm_level::edit($post, \dash\request::get('id'));
 
