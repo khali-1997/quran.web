@@ -1,0 +1,50 @@
+{%extends 'content_lms/group/layout.html'%}
+
+
+
+{%block pageContent%}
+<div class="f justify-center">
+  <div class="c5">
+    <div class="cbox fs20 txtC">
+      {%if loadLevel.besmellah%}
+      {% include 'content/home/blocks/block-besmellah.html' %}
+      {%endif%}
+
+      <div class='Quran' id="iqra" data-style='uthmani' >
+        {%include 'content/home/theme-onePage.html'%}
+      </div>
+
+
+    </div>
+
+    {%if userStar.star%}
+    <div class="cbox">
+    {%trans "Your score"%}
+    	{%for i in 1..userStar.star%}
+    	<i class="sf-star fc-yellow"></i>
+    	{%endfor%}
+    </div>
+    {%endif%}
+
+    <div class="cbox">
+      <form method="post">
+
+        <h2>{%trans "Record your audio"%}</h2>
+
+
+        <label for="file1" class="block">{%trans "Your audio file"%}</label>
+        <div class="input">
+         <input type="file" accept="image/gif, image/jpeg, image/png" name="file1" id="file1" data-max="1000">
+         </label>
+        </div>
+
+        <button class="btn primary block">{%trans "Upload"%}</button>
+
+      </form>
+    </div>
+
+  </div>
+</div>
+{%endblock%}
+
+
