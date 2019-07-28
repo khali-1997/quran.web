@@ -220,6 +220,7 @@ class lm_level
 		if(!\dash\app::isset_request('unlockscore')) unset($args['unlockscore']);
 		if(!\dash\app::isset_request('status')) unset($args['status']);
 		if(!\dash\app::isset_request('questionrandcount')) unset($args['questionrandcount']);
+		if(!\dash\app::isset_request('filepic')) unset($args['filepic']);
 
 
 
@@ -358,6 +359,7 @@ class lm_level
 		$desc    = \dash\app::request('desc');
 		$file    = \dash\app::request('file');
 		$setting    = \dash\app::request('setting');
+		$filepic    = \dash\app::request('filepic');
 
 		$sort = \dash\app::request('sort');
 		$sort = \dash\utility\convert::to_en_number($sort);
@@ -485,19 +487,17 @@ class lm_level
 			return false;
 		}
 
-		$args                = [];
-
-
-
-		$args['title']       = $title;
-		$args['lm_group_id'] = $lm_group_id;
-		$args['status']      = $status;
-		$args['desc']        = $desc;
-		$args['file']        = $file;
-		$args['setting']     = $setting;
-		$args['sort']        = $sort;
-		$args['unlockscore'] = $unlockscore;
-		$args['type']        = $type;
+		$args                      = [];
+		$args['title']             = $title;
+		$args['lm_group_id']       = $lm_group_id;
+		$args['status']            = $status;
+		$args['desc']              = $desc;
+		$args['file']              = $file;
+		$args['filepic']           = $filepic;
+		$args['setting']           = $setting;
+		$args['sort']              = $sort;
+		$args['unlockscore']       = $unlockscore;
+		$args['type']              = $type;
 		$args['questionrandcount'] = $questionrandcount;
 
 		if(\dash\app::isset_request('startsurah') &&  \dash\app::isset_request('startaya'))
