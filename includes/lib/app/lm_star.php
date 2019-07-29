@@ -7,6 +7,22 @@ namespace lib\app;
 
 class lm_star
 {
+	private static function alert_start($_star)
+	{
+		if(is_numeric($_star))
+		{
+			$star = str_repeat('⭐️', $_star);
+			$text = T_("Hooray!"). "\n". $star;
+		}
+		else
+		{
+			$text = T_("Hooray!");
+		}
+
+		\dash\notif::ok($text, ['alerty' => true]);
+
+	}
+
 	public static function level_learn($_type, $_level_id, $_star = null)
 	{
 
@@ -62,7 +78,7 @@ class lm_star
 
 		if(\dash\engine\process::status())
 		{
-			\dash\notif::ok(T_("Hooray!"));
+			self::alert_start($star);
 		}
 
 		return $return;
@@ -128,7 +144,7 @@ class lm_star
 
 		if(\dash\engine\process::status())
 		{
-			\dash\notif::ok(T_("Hooray!"));
+			self::alert_start($star);
 		}
 
 		return $return;
