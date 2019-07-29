@@ -455,6 +455,12 @@ class lm_level
 				return false;
 			}
 
+			if(intval($quranto) - intval($quranfrom) > 200)
+			{
+				\dash\notif::error(T_("Maximum range of quran in learning mode is 200 character"));
+				return false;
+			}
+
 			if($quranfrom && !$quranto)
 			{
 				\dash\notif::error(T_("Plase set end aya"));

@@ -10,16 +10,14 @@
 
       {{block('ibesmellah')}}
 
-        <h5>{%trans "Start aya"%}</h5>
        {{block('suraListStart')}}
-        <label for="faya">{%trans "Aya"%}</label>
+
+        <label for="faya" class="mT20">{%trans "Start aya"%}</label>
         <div class="input">
             <input type="number" name="startaya" min="1" max="282" id="faya" value="{{dataRow.quran_start_aya}}">
         </div>
 
-        <h5>{%trans "End aya"%}</h5>
-       {{block('suraListEnd')}}
-        <label for="feaya">{%trans "Aya"%}</label>
+        <label for="feaya">{%trans "End aya"%}</label>
         <div class="input">
             <input type="number" name="endaya" min="1" max="282" id="feaya" value="{{dataRow.quran_end_aya}}">
         </div>
@@ -53,7 +51,7 @@
 
 {% block suraListStart %}
 <label for="fsura">{%trans "Surah"%}</label>
-  <select class="select" name="startsurah" id="fsura">
+  <select class="select" name="surah" id="fsura">
     <option value="">{%trans "Select sura"%}</option>
     {%for key, value in quranListQuick%}
         <option value="{{key}}" {%if dataRow.quran_start_sura == key%} selected {%endif%}>{{value}}</option>
@@ -61,16 +59,6 @@
   </select>
 {%endblock%}
 
-
-{% block suraListEnd %}
-<label for="fesura">{%trans "Surah"%}</label>
-  <select class="select" name="endsurah" id="fesura">
-    <option value="">{%trans "Select sura"%}</option>
-    {%for key, value in quranListQuick%}
-        <option value="{{key}}" {%if dataRow.quran_end_sura == key%} selected {%endif%}>{{value}}</option>
-    {%endfor%}
-  </select>
-{%endblock%}
 
 
 
