@@ -7,6 +7,7 @@
     <div class="c6 s12">{{block('bLearngroup')}}</div>
     <div class="c6 s12">{{block('bLearnleved')}}</div>
     <div class="c6 s12">{{block('bMistake')}}</div>
+    <div class="c6 s12">{{block('bBadge')}}</div>
     <div class="c6 s12">{{block('Bmagazine')}}</div>
     <div class="c6 s12">{{block('Baudiobank')}}</div>
   </div>
@@ -27,6 +28,17 @@
  <div class="statistic red">
   <div class="value mB10"><i class="sf-bolt"></i></div>
   <div class="label">{%trans "Mistake list"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+{%block bBadge%}
+<a class="dcard x2" href='{{url.here}}/badge'>
+ <div class="statistic red">
+  <div class="value mB10"><i class="sf-trophy"></i></div>
+  <div class="label">{%trans "Badge list"%}</div>
  </div>
 </a>
 {%endblock%}

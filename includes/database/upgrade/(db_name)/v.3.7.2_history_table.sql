@@ -14,3 +14,12 @@ CONSTRAINT `history_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) O
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+
+
+
+CREATE TABLE `badge` (
+`id` int(10) UNSIGNED NOT NULL auto_increment,
+`title` varchar(500) NULL DEFAULT NULL,
+`datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
