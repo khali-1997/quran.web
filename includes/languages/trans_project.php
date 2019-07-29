@@ -237,7 +237,7 @@ class twigTransTerms
 	echo T_("Change log");                                                            // Line 48
 	echo T_("Logo");                                                                  // Line 193
 	echo T_("Audio");                                                                 // Line 38
-	echo T_("Magazine");                                                              // Line 62
+	echo T_("Magazine");                                                              // Line 74
 	echo T_("Help Center");                                                           // Line 55
 	echo T_("FAQ");                                                                   // Line 56
 	echo T_("Contact");                                                               // Line 57
@@ -385,7 +385,7 @@ class twigTransTerms
 	echo T_("Juz list");                                                              // Line 169
 	echo T_("Page list");                                                             // Line 31
 	echo T_("Hizb list");                                                             // Line 41
-	echo T_("Hizb");                                                                  // Line 12
+	echo T_("Hizb");                                                                  // Line 62
 	echo T_("Half of hizb list");                                                     // Line 51
 	echo T_("Rub list");                                                              // Line 61
 
@@ -680,6 +680,7 @@ class twigTransTerms
 	echo T_("Play");                                                                  // Line 9
 	echo T_("Pause");                                                                 // Line 9
 	echo T_("Copy");                                                                  // Line 12
+	echo T_("Save history");                                                          // Line 18
 
 	//-------------------projects/SalamQuran/content/home/blocks/block-navigation.html
 	echo T_("Back to list of suras");                                                 // Line 25
@@ -752,7 +753,7 @@ class twigTransTerms
 	echo T_("Month");                                                                 // Line 39
 
 	//------------------------------projects/SalamQuran/content/changelog/display.html
-	echo T_("Date");                                                                  // Line 9
+	echo T_("Date");                                                                  // Line 65
 	echo T_("Schedule Date");                                                         // Line 11
 	echo T_("Next Version");                                                          // Line 19
 	echo T_("iOS app");                                                               // Line 20
@@ -792,10 +793,10 @@ class twigTransTerms
 	echo T_("Price Variation");                                                       // Line 42
 
 	//--------------------------projects/SalamQuran/content_m/mistake/add/display.html
-	echo T_("Title");                                                                 // Line 57
-	echo T_("Require");                                                               // Line 103
+	echo T_("Title");                                                                 // Line 19
+	echo T_("Require");                                                               // Line 19
 	echo T_("Mistake title");                                                         // Line 19
-	echo T_("Add");                                                                   // Line 40
+	echo T_("Add");                                                                   // Line 25
 
 	//-------------------------projects/SalamQuran/content_m/mistake/home/display.html
 	echo T_("Add new mistake");                                                       // Line 12
@@ -803,7 +804,7 @@ class twigTransTerms
 	echo T_("Try to start with add new mistake!");                                    // Line 137
 
 	//-------------------------projects/SalamQuran/content_m/mistake/edit/display.html
-	echo T_("Level title");                                                           // Line 59
+	echo T_("Level title");                                                           // Line 21
 
 	//-----------------------------------projects/SalamQuran/content_m/mag/layout.html
 	echo T_("Avatar");                                                                // Line 24
@@ -842,7 +843,7 @@ class twigTransTerms
 	echo T_("Sort");                                                                  // Line 32
 	echo T_("Show level");                                                            // Line 117
 	echo T_("Add new level");                                                         // Line 118
-	echo T_("Try to start with add new group!");                                      // Line 146
+	echo T_("Try to start with add new group!");                                      // Line 109
 
 	//---------------------------projects/SalamQuran/content_m/group/edit/display.html
 	echo T_("Image file");                                                            // Line 48
@@ -854,7 +855,7 @@ class twigTransTerms
 
 	//---------------------projects/SalamQuran/content_m/audiobank/manage/display.html
 	echo T_("Run again");                                                             // Line 20
-	echo T_("Audio bank");                                                            // Line 51
+	echo T_("Audio bank");                                                            // Line 63
 
 	//-----------------------projects/SalamQuran/content_m/audiobank/home/display.html
 	echo T_("Check audio online");                                                    // Line 22
@@ -864,9 +865,10 @@ class twigTransTerms
 	echo T_("Try to start with add new audio!");                                      // Line 128
 
 	//---------------------------------projects/SalamQuran/content_m/home/display.html
-	echo T_("Level list");                                                            // Line 19
-	echo T_("Mistake list");                                                          // Line 29
-	echo T_("Group list");                                                            // Line 41
+	echo T_("Level list");                                                            // Line 20
+	echo T_("Mistake list");                                                          // Line 30
+	echo T_("Badge list");                                                            // Line 41
+	echo T_("Group list");                                                            // Line 53
 
 	//--------------------------projects/SalamQuran/content_m/level/quran/display.html
 	echo T_("End aya");                                                               // Line 20
@@ -908,6 +910,23 @@ class twigTransTerms
 	echo T_("No question added");                                                     // Line 137
 
 	//---------------------------projects/SalamQuran/content_m/level/edit/display.html
+
+	//----------------------------projects/SalamQuran/content_m/badge/add/display.html
+	echo T_("Badge title");                                                           // Line 19
+
+	//---------------------------projects/SalamQuran/content_m/badge/home/display.html
+	echo T_("Add new badge");                                                         // Line 12
+	echo T_("Try to start with add new badge!");                                      // Line 137
+
+	//---------------------------projects/SalamQuran/content_m/badge/edit/display.html
+
+	//-------------------------projects/SalamQuran/content_a/history/home/display.html
+	echo T_("surah");                                                                 // Line 58
+	echo T_("aya");                                                                   // Line 59
+	echo T_("page");                                                                  // Line 60
+	echo T_("juz");                                                                   // Line 61
+	echo T_("Nim");                                                                   // Line 63
+	echo T_("rub");                                                                   // Line 64
 
 	//-----------------------------------projects/SalamQuran/content_a/fav/layout.html
 

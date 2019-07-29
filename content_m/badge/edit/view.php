@@ -6,7 +6,7 @@ class view
 {
 	public static function config()
 	{
-		\dash\data::page_title(T_("Edit learn badge"));
+		\dash\data::page_title(T_("Edit badge"));
 		\dash\data::page_desc(' ');
 		\dash\data::page_pictogram('edit');
 

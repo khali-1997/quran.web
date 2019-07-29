@@ -6,7 +6,7 @@ class view
 {
 	public static function config()
 	{
-		\dash\data::page_title(T_("Add new badge to learn mechanism"));
+		\dash\data::page_title(T_("Add new badge"));
 		\dash\data::page_desc(' ');
 		\dash\data::page_pictogram('plus-circle');
 

@@ -49,8 +49,8 @@ class badge
 
 		if(\dash\engine\process::status())
 		{
-			\dash\log::set('addNewMistake', ['code' => $badge_id]);
-			\dash\notif::ok(T_("Learn mistake successfuly added"));
+			\dash\log::set('addNewBadge', ['code' => $badge_id]);
+			\dash\notif::ok(T_("Badge successfuly added"));
 		}
 
 		return $return;
@@ -85,9 +85,9 @@ class badge
 		{
 			$update = \lib\db\badge::update($args, $id);
 
-			$title = isset($args['title']) ? $args['title'] : T_("Mistake");
+			$title = isset($args['title']) ? $args['title'] : T_("Badge");
 
-			\dash\log::set('editMistake', ['code' => $id]);
+			\dash\log::set('editBadge', ['code' => $id]);
 
 			if(\dash\engine\process::status())
 			{
