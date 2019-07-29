@@ -74,12 +74,17 @@ class view
 
 	private static function find_type_id()
 	{
+		$quranLoaded_find_type = \dash\data::quranLoaded_find_id();
+		if(is_numeric($quranLoaded_find_type))
+		{
+			return $quranLoaded_find_type;
+		}
+
 		$quranLoaded_find_type = \dash\data::quranLoaded_find_type();
 		if(isset($quranLoaded_find_type['id']))
 		{
 			return $quranLoaded_find_type['id'];
 		}
-		return null;
 	}
 
 
