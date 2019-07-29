@@ -21,7 +21,7 @@
     <tbody>
       {%for key, value in dataTable%}
       <tr>
-        <td><a href="{{url.kingdom}}/j{{value.index}}">{{value.index | fitNumber}}</a></td>
+        <td><a href="{{url.kingdom}}/n{{value.index}}">{{value.index | fitNumber}}</a></td>
         <td>
           <a href="{{url.kingdom}}/a{{value.startaya}}">{{value.startaya | fitNumber}}</a>
           -
@@ -34,9 +34,9 @@
           <div data-kerkere=".showSuraCount{{value.index}}" data-kerkere-icon>{{value.suracount | fitNumber}}</div>
         </td>
         <td>
-          <a href="{{url.kingdom}}/j{{value.startpage}}">{{value.startpage | fitNumber}}</a>
+          <a href="{{url.kingdom}}/p{{value.startpage}}">{{value.startpage | fitNumber}}</a>
           -
-          <a href="{{url.kingdom}}/j{{value.endpage}}">{{value.endpage | fitNumber}}</a>
+          <a href="{{url.kingdom}}/p{{value.endpage}}">{{value.endpage | fitNumber}}</a>
         </td>
 
       </tr>
