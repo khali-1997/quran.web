@@ -7,6 +7,7 @@ CREATE TABLE `history` (
 `juz` smallint(2) UNSIGNED NULL DEFAULT NULL,
 `rub` smallint(3) UNSIGNED NULL DEFAULT NULL,
 `nim` smallint(3) UNSIGNED NULL DEFAULT NULL,
+`hizb` smallint(3) UNSIGNED NULL DEFAULT NULL,
 `datecreated` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`),
 CONSTRAINT `history_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE
