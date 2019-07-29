@@ -47,32 +47,31 @@ class lm_level
 
 	public static function load_quran($_lm_level_id)
 	{
-		return null;
 
-		// $load_level = self::public_load_level($_lm_level_id);
+		$load_level = self::public_load_level($_lm_level_id);
 
-		// if(!isset($load_level['type']) || (isset($load_level['type']) && !in_array($load_level['type'], ['quran', 'reading'])))
-		// {
-		// 	\dash\header::status(404, T_("Invalid type"));
-		// 	return false;
-		// }
+		if(!isset($load_level['type']) || (isset($load_level['type']) && !in_array($load_level['type'], ['quran', 'reading'])))
+		{
+			\dash\header::status(404, T_("Invalid type"));
+			return false;
+		}
 
-		// if(!isset($load_level['quranfrom']) || (isset($load_level['quranfrom']) && !$load_level['quranfrom']))
-		// {
-		// 	\dash\header::status(404, T_("Invalid start quran"));
-		// 	return false;
-		// }
+		if(!isset($load_level['quranfrom']) || (isset($load_level['quranfrom']) && !$load_level['quranfrom']))
+		{
+			\dash\header::status(404, T_("Invalid start quran"));
+			return false;
+		}
 
-		// if(!isset($load_level['quranto']) || (isset($load_level['quranto']) && !$load_level['quranto']))
-		// {
-		// 	\dash\header::status(404, T_("Invalid start quran"));
-		// 	return false;
-		// }
+		if(!isset($load_level['quranto']) || (isset($load_level['quranto']) && !$load_level['quranto']))
+		{
+			\dash\header::status(404, T_("Invalid start quran"));
+			return false;
+		}
 
-		// $load_quran = \lib\db\quran_word::load_from_to($load_level['quranfrom'], $load_level['quranto']);
-		// $quran = \lib\app\quran\page::load('aya', 0, 0, ['mode' => 'onepage'], $load_quran);
+		$load_quran = \lib\db\quran_word::load_from_to($load_level['quranfrom'], $load_level['quranto']);
+		$quran = \lib\app\quran\page::load('aya', 0, 0, ['mode' => 'onepage'], $load_quran);
 
-		// return $quran;
+		return $quran;
 
 
 	}
@@ -105,12 +104,13 @@ class lm_level
 
 	public static function type_list($_check = null, $_get_field = null)
 	{
-		$list            = [];
-		$list['quran']   = ['title' => T_("Quran")];
-		$list['learn']   = ['title' => T_("Learn")];
-		$list['exam']    = ['title' => T_("Exam")];
-		$list['reading'] = ['title' => T_("Fix reading")];
-		$list['quran']   = ['title' => T_("Quran")];
+		$list               = [];
+		$list['quran']      = ['title' => T_("Quran")];
+		$list['learn']      = ['title' => T_("Learn")];
+		$list['exam']       = ['title' => T_("Exam")];
+		$list['reading']    = ['title' => T_("Fix reading")];
+		$list['quran']      = ['title' => T_("Quran")];
+		$list['quranvideo'] = ['title' => T_("Quran video")];
 
 		if($_check === null)
 		{
