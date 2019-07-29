@@ -8,7 +8,8 @@ class model
 	{
 		$post =
 		[
-			'title'      => \dash\request::post('title'),
+			'title' => \dash\request::post('title'),
+			'type'  => \dash\request::post('type'),
 		];
 
 		$result = \lib\app\lm_group::add($post);

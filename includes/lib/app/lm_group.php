@@ -19,6 +19,45 @@ class lm_group
 		'file',
 	];
 
+
+	public static function type_list($_check = null, $_get_field = null)
+	{
+		$list            = [];
+		$list['learn']   = ['title' => T_("Learn")];
+		$list['exam']    = ['title' => T_("Exam")];
+
+		if($_check === null)
+		{
+			return $list;
+		}
+		else
+		{
+			if(array_key_exists($_check, $list))
+			{
+				if($_get_field === null)
+				{
+					return $list[$_check];
+				}
+				else
+				{
+					if(array_key_exists($_get_field, $list[$_check]))
+					{
+						return $list[$_check][$_get_field];
+					}
+					else
+					{
+						return null;
+					}
+				}
+			}
+			else
+			{
+				return false;
+			}
+		}
+	}
+
+
 	public static function public_list()
 	{
 		return self::list(null, ['lm_group.status' => 'enable', 'pagination' => false]);
@@ -252,13 +291,20 @@ class lm_group
 			return false;
 		}
 
-		$type = \dash\app::request('type');
 
-		if($type && mb_strlen($type) > 150)
+		$type = \dash\app::request('type');
+		if(!$type && \dash\app::isset_request('type'))
 		{
-			\dash\notif::error(T_("Please set the type less than 150 character"), 'type');
+			\dash\notif::error(T_("Please choose type"), 'type');
 			return false;
 		}
+
+		if($type && !self::type_list($type))
+		{
+			\dash\notif::error(T_("Invalid type"), 'type');
+			return false;
+		}
+
 
 
 		$args           = [];
@@ -290,6 +336,15 @@ class lm_group
 					else
 					{
 						$result[$key] = null;
+					}
+					break;
+
+
+				case 'type':
+					$result[$key] = $value;
+					if($value)
+					{
+						$result['type_title'] = self::type_list($value, 'title');
 					}
 					break;
 

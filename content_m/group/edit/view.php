@@ -23,6 +23,9 @@ class view
 
 		\dash\data::dataRow($result);
 
+		\dash\data::typeList(\lib\app\lm_group::type_list());
+
+
 	}
 }
 ?>

@@ -6,12 +6,8 @@
    <form method="post" class="c5 m6 s12" autocomplete="off">
     <div class="cbox">
       {{block('ititle')}}
-
       {{block('iSort')}}
-
-
-
-
+      {{block('iTypeList')}}
       {{block('iDesc')}}
       {{block('iStatus')}}
       {{block('iFile')}}
@@ -20,6 +16,29 @@
    </form>
   </div>
 {%endblock%}
+
+
+
+
+
+
+
+{% block iTypeList %}
+
+
+<label for="itype">{%trans "Type"%} <small class="fc-red">* {%trans "Require"%}</small></label>
+
+<select name="type" class="mB10 select ui dropdown search" id="itype">
+  <option value="" readonly>{%trans "Please select one item"%} *</option>
+  {%for key, value in typeList%}
+    <option value="{{key}}" {%if key == dataRow.type %} selected {%endif%}>{{value.title}}</option>
+  {%endfor%}
+</select>
+
+{% endblock %}
+
+
+
 
 
 
