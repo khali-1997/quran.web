@@ -7,20 +7,22 @@ class twigTransTerms
 	//-------------------------------projects/SalamQuran/content_lms/group/layout.html
 	echo T_("Manage");                                                                // Line 6
 
-	//------------------------projects/SalamQuran/content_lms/level/quran/display.html
+	//-------------------projects/SalamQuran/content_lms/level/quranvideo/display.html
 	echo T_("Your score");                                                            // Line 13
-	echo T_("Listen first");                                                          // Line 31
-	echo T_("Listen second");                                                         // Line 32
-	echo T_("Debate");                                                                // Line 33
+	echo T_("Listen first");                                                          // Line 68
+	echo T_("Listen second");                                                         // Line 69
+	echo T_("Debate");                                                                // Line 70
+
+	//------------------------projects/SalamQuran/content_lms/level/quran/display.html
 
 	//----------------------projects/SalamQuran/content_lms/level/reading/display.html
-	echo T_("Record your audio");                                                     // Line 32
-	echo T_("Your audio file");                                                       // Line 35
+	echo T_("Record your audio");                                                     // Line 25
+	echo T_("Your audio file");                                                       // Line 28
 	echo T_("Upload");                                                                // Line 112
 
 	//------------------------projects/SalamQuran/content_lms/level/learn/display.html
 	echo T_("Save");                                                                  // Line 75
-	echo T_("Show video");                                                            // Line 69
+	echo T_("Show video");                                                            // Line 68
 
 	//-------------------------projects/SalamQuran/content_lms/level/exam/display.html
 
@@ -270,7 +272,7 @@ class twigTransTerms
 	//------------------------------------projects/SalamQuran/content/main/player.html
 	echo T_("Play Mode");                                                             // Line 27
 	echo T_("Continuously");                                                          // Line 30
-	echo T_("Surah");                                                                 // Line 66
+	echo T_("Surah");                                                                 // Line 53
 	echo T_("Juz");                                                                   // Line 95
 	echo T_("Aya Repeat");                                                            // Line 40
 	echo T_("Times");                                                                 // Line 51
@@ -733,7 +735,7 @@ class twigTransTerms
 	echo T_("Detail");                                                                // Line 20
 	echo T_("Index");                                                                 // Line 84
 	echo T_("Type");                                                                  // Line 71
-	echo T_("Start aya");                                                             // Line 13
+	echo T_("Start aya");                                                             // Line 15
 	echo T_("Order");                                                                 // Line 91
 	echo T_("The letter");                                                            // Line 94
 
@@ -822,7 +824,7 @@ class twigTransTerms
 	echo T_("Connect to sura");                                                       // Line 122
 	echo T_("Connect to aya");                                                        // Line 138
 	echo T_("Connect to page");                                                       // Line 153
-	echo T_("Select sura");                                                           // Line 68
+	echo T_("Select sura");                                                           // Line 55
 
 	//-----------------------------projects/SalamQuran/content_m/mag/home/display.html
 	echo T_("Magazine list");                                                         // Line 19
@@ -868,7 +870,7 @@ class twigTransTerms
 
 	//--------------------------projects/SalamQuran/content_m/level/quran/display.html
 	echo T_("End aya");                                                               // Line 20
-	echo T_("Need load Besmellah?");                                                  // Line 46
+	echo T_("Need load Besmellah?");                                                  // Line 44
 
 	//------------------------projects/SalamQuran/content_m/level/setting/display.html
 	echo T_("Ratio score");                                                           // Line 13
