@@ -37,6 +37,13 @@ class quran
 		return $result;
 	}
 
+	public static function get_by_index($_index)
+	{
+		$query  = "SELECT * FROM 1_quran_ayat WHERE 1_quran_ayat.index = '$_index' LIMIT 1";
+		$result = \dash\db::get($query, null, true, \lib\db\db_data_name::get());
+		return $result;
+	}
+
 
 	public static function search($_string)
 	{

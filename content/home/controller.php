@@ -5,6 +5,13 @@ class controller
 {
 	public static function routing()
 	{
+		// save history
+		if(\dash\request::is('post') && \dash\request::post('type') === 'history' && \dash\request::post('aya'))
+		{
+			\lib\app\history::save(\dash\request::post('aya'));
+			\dash\code::end();
+		}
+
 		$module = \dash\url::module();
 
 		$url    = $module;
