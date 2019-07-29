@@ -23,7 +23,7 @@
     </a>
    </div>
 
-   {%if dataRow.type == 'quran' or dataRow.type == 'reading'  %}
+   {%if false and dataRow.type == 'quran' or dataRow.type == 'reading'  %}
     <div class="c s6">
       <a class="dcard {%if url.child == 'quran' %}active{%endif%}" href='{{url.this}}/quran?id={{requestGET.id}}'>
        <div class="statistic">
@@ -34,7 +34,7 @@
      </div>
    {%endif%}
 
-   {%if dataRow.type == 'learn' or  dataRow.type == 'exam' or dataRow.type == 'reading' %}
+   {%if dataRow.type == 'learn' or  dataRow.type == 'exam' or dataRow.type == 'reading' or dataRow.type == 'quran'  %}
     <div class="c s6">
       <a class="dcard {%if url.child == 'media' %}active{%endif%}" href='{{url.this}}/media?id={{requestGET.id}}'>
        <div class="statistic">

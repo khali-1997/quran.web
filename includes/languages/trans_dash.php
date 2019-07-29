@@ -200,10 +200,10 @@ class twigTransTerms
 	echo T_("The stable base URL for all Version 6 HTTPS endpoints is");              // Line 10
 
 	//-------------------------------------------addons/includes/html/display-mvc.html
-	echo T_("You are supervisor!");                                                   // Line 98
-	echo T_("Control Panel");                                                         // Line 103
-	echo T_("JavaScript is required to use our service.");                            // Line 117
-	echo T_("Enable JavaScript in your browser or use one which supports it.");       // Line 118
+	echo T_("You are supervisor!");                                                   // Line 91
+	echo T_("Control Panel");                                                         // Line 96
+	echo T_("JavaScript is required to use our service.");                            // Line 110
+	echo T_("Enable JavaScript in your browser or use one which supports it.");       // Line 111
 
 	//------------------------------------------addons/includes/html/display-dash.html
 	echo T_("Edit your profile");                                                     // Line 71
