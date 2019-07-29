@@ -81,7 +81,7 @@
     <tbody>
       {%for key, value in dataTable%}
       <tr {%if value.status=='disable'%} class='negative' {%else%} class='positive' {%endif%}>
-        <td><span class="badge">{{value.id}}</span></td>
+        <td><a href="{{url.this}}/edit?id={{value.id}}"><span class="badge">{{value.id}}</span></a></td>
         <td>{{value.group_title}}</td>
         <td>{{value.level_title}}</td>
         <td>{{value.user_displayname}}</td>

@@ -1,5 +1,5 @@
 <?php
-namespace content_m\audio\edit;
+namespace content_m\reading\edit;
 
 
 class model
