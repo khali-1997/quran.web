@@ -5,15 +5,14 @@
 {%block pageContent%}
 <div class="f justify-center">
   <div class="c5 txtC">
-
-    {%if loadLevel.file%}
-      <iframe src="{{loadLevel.file}}"></iframe>
-      {%if false%}
-      <video width="320" height="240" controls>
-        <source src="{{loadLevel.file}}" type="video/mp4">
-      </video>
+    <div class="cbox">
+      {%if loadLevel.file%}
+        <video width="320" height="240" controls>
+          <source src="{{loadLevel.file}}" type="video/mp4">
+        </video>
       {%endif%}
-    {%endif%}
+      <p class="fs08">{{loadLevel.desc}}</p>
+    </div>
 
     {%if userStar.star%}
     <div class="cbox">
@@ -64,12 +63,11 @@
       </div>
     </form>
     {%endif%}
+    {%if perm_su()%}
     <div class="cbox">
-
       <div class="btn info2 xl" data-ajaxify data-data='{"ActionType":"showvideo"}' data-method='post'>{%trans "Show video"%}</div>
-
-
     </div>
+    {%endif%}
 
   </div>
 </div>

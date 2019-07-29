@@ -339,6 +339,13 @@ class lm_group
 					}
 					break;
 
+				case 'file':
+					if(!$value)
+					{
+						$value = \dash\app::static_logo_url();
+					}
+					$result[$key] = $value;
+					break;
 
 				case 'type':
 					$result[$key] = $value;

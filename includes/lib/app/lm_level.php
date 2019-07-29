@@ -47,30 +47,32 @@ class lm_level
 
 	public static function load_quran($_lm_level_id)
 	{
-		$load_level = self::public_load_level($_lm_level_id);
+		return null;
 
-		if(!isset($load_level['type']) || (isset($load_level['type']) && !in_array($load_level['type'], ['quran', 'reading'])))
-		{
-			\dash\header::status(404, T_("Invalid type"));
-			return false;
-		}
+		// $load_level = self::public_load_level($_lm_level_id);
 
-		if(!isset($load_level['quranfrom']) || (isset($load_level['quranfrom']) && !$load_level['quranfrom']))
-		{
-			\dash\header::status(404, T_("Invalid start quran"));
-			return false;
-		}
+		// if(!isset($load_level['type']) || (isset($load_level['type']) && !in_array($load_level['type'], ['quran', 'reading'])))
+		// {
+		// 	\dash\header::status(404, T_("Invalid type"));
+		// 	return false;
+		// }
 
-		if(!isset($load_level['quranto']) || (isset($load_level['quranto']) && !$load_level['quranto']))
-		{
-			\dash\header::status(404, T_("Invalid start quran"));
-			return false;
-		}
+		// if(!isset($load_level['quranfrom']) || (isset($load_level['quranfrom']) && !$load_level['quranfrom']))
+		// {
+		// 	\dash\header::status(404, T_("Invalid start quran"));
+		// 	return false;
+		// }
 
-		$load_quran = \lib\db\quran_word::load_from_to($load_level['quranfrom'], $load_level['quranto']);
-		$quran = \lib\app\quran\page::load('aya', 0, 0, ['mode' => 'onepage'], $load_quran);
+		// if(!isset($load_level['quranto']) || (isset($load_level['quranto']) && !$load_level['quranto']))
+		// {
+		// 	\dash\header::status(404, T_("Invalid start quran"));
+		// 	return false;
+		// }
 
-		return $quran;
+		// $load_quran = \lib\db\quran_word::load_from_to($load_level['quranfrom'], $load_level['quranto']);
+		// $quran = \lib\app\quran\page::load('aya', 0, 0, ['mode' => 'onepage'], $load_quran);
+
+		// return $quran;
 
 
 	}
@@ -96,6 +98,7 @@ class lm_level
 		{
 			$list = array_map(['self', 'ready'], $list);
 		}
+
 		return $list;
 	}
 
@@ -661,6 +664,14 @@ class lm_level
 					}
 					break;
 
+				case 'file':
+					if(!$value)
+					{
+						$value = \dash\app::static_logo_url();
+					}
+					$result[$key] = $value;
+					break;
+
 				case 'type':
 					$result[$key] = $value;
 					if($value)
@@ -709,6 +720,7 @@ class lm_level
 		}
 
 		return $result;
+
 	}
 }
 ?>

@@ -9,12 +9,12 @@
 {%for key, value in levelList%}
 {%if  value.type %}
   <a class="vcard mA10 shadow blue" href='{{url.here}}/level/{{value.type}}?id={{value.id}}'>
-    {%if value.filepic%}
-      <img src="{{value.filepic}}" alt="{{value.title}}" class="pA10-f">
-    {%endif%}
+
     <div class="content">
       <div class="header">{{value.title}}</div>
+      <div class="meta"><p>{{value.desc}}</p></div>
       <div class="meta">{{value.type_title}}</div>
+
       <div class="footer">
         {%if value.userstar == 1%}
           <i class="sf-star fc-yellow"></i>
