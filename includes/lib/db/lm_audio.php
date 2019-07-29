@@ -39,7 +39,22 @@ class lm_audio
 	{
 		$default =
 		[
+			'public_show_field' =>
+			"
+				lm_audio.*,
+				lm_group.title as `group_title`,
+				lm_level.title as `level_title`,
+				users.displayname AS `user_displayname`,
+				tusers.displayname AS `teacher_displayname`
 
+			",
+			"master_join" =>
+			"
+				LEFT JOIN lm_group ON lm_group.id = lm_audio.lm_group_id
+				LEFT JOIN lm_level ON lm_level.id = lm_audio.lm_level_id
+				LEFT JOIN users ON users.id = lm_audio.user_id
+				LEFT JOIN users AS `tusers` ON tusers.id = lm_audio.teacher
+			",
 			'search_field'       => " lm_audio.title LIKE ('%__string__%')",
 		];
 

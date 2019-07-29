@@ -4,18 +4,19 @@
 
 {%block pageContent%}
   <div class="f">
-    <div class="c6 s12">{{block('bLearngroup')}}</div>
-    <div class="c6 s12">{{block('bLearnleved')}}</div>
-    <div class="c6 s12">{{block('bMistake')}}</div>
-    <div class="c6 s12">{{block('bBadge')}}</div>
-    <div class="c6 s12">{{block('Bmagazine')}}</div>
-    <div class="c6 s12">{{block('Baudiobank')}}</div>
+    <div class="c4 s12">{{block('bLearngroup')}}</div>
+    <div class="c4 s12">{{block('bLearnleved')}}</div>
+    <div class="c4 s12">{{block('bMistake')}}</div>
+    <div class="c4 s12">{{block('bReading')}}</div>
+    <div class="c4 s12">{{block('bBadge')}}</div>
+    <div class="c4 s12">{{block('Bmagazine')}}</div>
+    <div class="c4 s12">{{block('Baudiobank')}}</div>
   </div>
 {%endblock%}
 
 {%block bLearnleved%}
-<a class="dcard x2" href='{{url.here}}/level'>
- <div class="statistic red">
+<a class="dcard x1" href='{{url.here}}/level'>
+ <div class="statistic blue">
   <div class="value mB10"><i class="sf-grid-1"></i></div>
   <div class="label">{%trans "Level list"%}</div>
  </div>
@@ -24,8 +25,8 @@
 
 
 {%block bMistake%}
-<a class="dcard x2" href='{{url.here}}/mistake'>
- <div class="statistic red">
+<a class="dcard x1" href='{{url.here}}/mistake'>
+ <div class="statistic blue">
   <div class="value mB10"><i class="sf-bolt"></i></div>
   <div class="label">{%trans "Mistake list"%}</div>
  </div>
@@ -34,9 +35,20 @@
 
 
 
+{%block bReading%}
+<a class="dcard x1" href='{{url.here}}/reading'>
+ <div class="statistic blue">
+  <div class="value mB10"><i class="sf-bullhorn"></i></div>
+  <div class="label">{%trans "User audio list"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
 {%block bBadge%}
-<a class="dcard x2" href='{{url.here}}/badge'>
- <div class="statistic red">
+<a class="dcard x1" href='{{url.here}}/badge'>
+ <div class="statistic blue">
   <div class="value mB10"><i class="sf-trophy"></i></div>
   <div class="label">{%trans "Badge list"%}</div>
  </div>
@@ -47,8 +59,8 @@
 
 
 {%block bLearngroup%}
-<a class="dcard x2" href='{{url.here}}/group'>
- <div class="statistic red">
+<a class="dcard x1" href='{{url.here}}/group'>
+ <div class="statistic blue">
   <div class="value mB10"><i class="sf-info"></i></div>
   <div class="label">{%trans "Group list"%}</div>
  </div>
@@ -57,8 +69,8 @@
 
 
 {%block Baudiobank%}
-<a class="dcard x2" href='{{url.here}}/audiobank'>
- <div class="statistic red">
+<a class="dcard x1" href='{{url.here}}/audiobank'>
+ <div class="statistic blue">
   <div class="value mB10"><i class="sf-music"></i></div>
   <div class="label">{%trans "Audio bank"%}</div>
  </div>
@@ -68,8 +80,8 @@
 
 
 {%block Bmagazine%}
-<a class="dcard x2" href='{{url.here}}/mag'>
- <div class="statistic red">
+<a class="dcard x1" href='{{url.here}}/mag'>
+ <div class="statistic blue">
   <div class="value mB10"><i class="sf-book"></i></div>
   <div class="label">{%trans "Magazine"%}</div>
  </div>
