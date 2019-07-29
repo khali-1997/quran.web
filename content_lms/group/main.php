@@ -17,6 +17,12 @@ class main
 		\dash\data::groupDataRow($result);
 
 
+		if(isset($result['title']))
+		{
+			\dash\data::page_title(T_("Learning mechanism system"). ' | '. $result['title']);
+		}
+
+
 	}
 }
 ?>
