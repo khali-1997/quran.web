@@ -4,19 +4,19 @@
 
 {%block pageContent%}
 
-<div class='middle normal f justify-center'>
+<div class='middle normal f justify-center fs12'>
 
 {%if levelList %}
 {%for key, value in levelList%}
 {%if value.type %}
-  <a class="vcard mA10 shadow blue" href='{{url.here}}/level/{{value.type}}?id={{value.id}}'>
-
+  <a class="vcard mA10 shadow {%if value.userstar == 3%}green{%elseif value.userstar%}blue{%else%}{%endif%}" href='{{url.here}}/level/{{value.type}}?id={{value.id}}' data-type='{{value.type_title}}'>
+      <img src="http://salamquran.local/files/1/1-03a302f77f01f7f3ac136e09e80cb9f3.jpg" alt="{{value.title}}">
     <div class="content">
       <div class="header">{{value.title}}</div>
-      <div class="meta"><p>{{value.desc}}</p></div>
-      <div class="meta">{{value.type_title}}</div>
-
-      <div class="footer">
+      <div class="meta">{{value.desc}}</div>
+    </div>
+    <div class="footer fs20-f">
+      <div class="fs30">
         {%if value.userstar == 1%}
           <i class="sf-star fc-yellow"></i>
           <i class="sf-star"></i>

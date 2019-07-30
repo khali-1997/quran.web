@@ -10,12 +10,12 @@
 
   <a class="vcard mA10 shadow green" href='{{url.here}}/group?id={{value.id}}'>
     {%if value.file%}
-      <img src="{{value.file}}" alt="{{value.title}}" class="pA10-f">
+      <img src="{{value.file}}" alt="{{value.title}}">
     {%endif%}
     <div class="content">
       <div class="header">{{value.title}}</div>
-      <div class="footer">{{value.desc}} | {{value.type_title}}</div>
     </div>
+    <div class="footer">{{value.desc}} | {{value.type_title}}</div>
   </a>
 {%endfor%}
 {%else%}
