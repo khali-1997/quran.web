@@ -69,6 +69,7 @@
   <input type="radio" id="r-admindelete" name="status" value="admindelete" {%if dataRow.status == 'admindelete' or not dataRow.status %} checked{%endif%}>
   <label for="r-admindelete">{%trans "admindelete"%}</label>
  </div>
+ {%endif%}
 
  <div class="radio1 green">
   <input type="radio" id="r-approved" name="status" value="approved" {%if dataRow.status == 'approved' or not dataRow.status %} checked{%endif%}>
