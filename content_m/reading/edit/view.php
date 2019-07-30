@@ -23,6 +23,16 @@ class view
 
 		\dash\data::dataRow($result);
 
+		$mistakeList = \lib\app\lm_mistake::list(null, ['pagenation' => false]);
+
+		\dash\data::mistakeList($mistakeList);
+
+		$savedMistake = \lib\app\lm_audiomistake::saved(\dash\request::get("id"));
+		if(is_array($savedMistake))
+		{
+			$savedMistake = array_column($savedMistake, 'lm_mistake_id');
+			\dash\data::savedMistake($savedMistake);
+		}
 
 	}
 }

@@ -35,7 +35,15 @@ class lm_mistake
 	}
 
 
-		public static function search($_string, $_args)
+	public static function get_by_ids($_ids)
+	{
+		$query = "SELECT * FROM lm_mistake WHERE lm_mistake.id IN ($_ids)";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
+
+	public static function search($_string, $_args)
 	{
 		$default =
 		[
