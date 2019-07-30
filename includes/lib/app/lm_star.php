@@ -150,6 +150,68 @@ class lm_star
 		return $return;
 	}
 
+	public static function set_star($_level_id, $_star = null)
+	{
+
+		if(!\dash\user::id())
+		{
+			\dash\notif::error(T_("User not found"), 'user');
+			return false;
+		}
+
+
+		$star = intval($_star);
+
+		if(!$star)
+		{
+			\dash\notif::error(T_("Please set the star"));
+			return false;
+		}
+
+		if($star < 0 || $star > 3)
+		{
+			\dash\notif::error(T_("Only 1,2,3 can set as star"));
+			return false;
+		}
+
+		$load_level = \lib\app\lm_level::get($_level_id);
+
+		if(!$load_level || !isset($load_level['lm_group_id']))
+		{
+			\dash\notif::error(T_("Invalid level"));
+			return false;
+		}
+
+		$group_id = \dash\coding::decode($load_level['lm_group_id']);
+
+		$args                = [];
+		$args['user_id']     = \dash\user::id();
+		$args['lm_group_id'] = $group_id;
+		$args['lm_level_id'] = \dash\coding::decode($_level_id);
+		$args['star']        = $star;
+		$args['score']       = 0;
+		$args['status']      = 'enable';
+		$args['datecreated']  = date("Y-m-d H:i:s");
+
+		$lm_star_id = \lib\db\lm_star::insert($args);
+
+		if(!$lm_star_id)
+		{
+			\dash\notif::error(T_("No way to insert data"), 'db');
+			return false;
+		}
+
+		$return['id'] = \dash\coding::encode($lm_star_id);
+
+		if(\dash\engine\process::status())
+		{
+			self::alert_start($star);
+		}
+
+		return $return;
+	}
+
+
 
 	public static function user_level_star($_level_id)
 	{

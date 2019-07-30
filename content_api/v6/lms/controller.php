@@ -105,13 +105,9 @@ class controller
 
 	private static function star()
 	{
-		$post         = [];
-		$post['desc'] = \dash\request::post('desc');
-		$post['page'] = \dash\request::post('page');
-		$post['aya']  = \dash\request::post('aya');
-		$post['sura'] = \dash\request::post('sura');
-		$post['type'] = \dash\request::post('type');
-		$add          = \lib\app\fav::add($post);
+		$level = \dash\request::post('id');
+		$star  = \dash\request::post('star');
+		$add   = \lib\app\lm_star::set_star($level, $star);
 		return $add;
 	}
 
