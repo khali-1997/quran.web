@@ -27,16 +27,17 @@ class lm_audio
 
 		$load_level = \lib\app\lm_level::get($_level_id);
 
-		if(!$load_level || !isset($load_level['lm_audio_id']))
+		if(!$load_level || !isset($load_level['lm_group_id']))
 		{
+			\dash\notif::error(T_("Invalid level id"));
 			return false;
 		}
 
-		$group_id = \dash\coding::decode($load_level['lm_audio_id']);
+		$group_id = \dash\coding::decode($load_level['lm_group_id']);
 
 		$args                 = [];
 		$args['user_id']      = \dash\user::id();
-		$args['lm_audio_id']  = $group_id;
+		$args['lm_group_id']  = $group_id;
 		$args['lm_level_id']  = \dash\coding::decode($_level_id);
 		$args['teacher']      = null;
 		$args['audio']        = $_file;

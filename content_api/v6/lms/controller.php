@@ -126,7 +126,7 @@ class controller
 
 		if($file)
 		{
-			\lib\app\lm_audio::add_new($file, \dash\request::get('id'));
+			$result = \lib\app\lm_audio::add_new($file, \dash\request::post('id'));
 		}
 		else
 		{
