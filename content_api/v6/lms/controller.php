@@ -22,7 +22,7 @@ class controller
 			\content_api\v6::no(404);
 		}
 
-		if(in_array($subchild, ['star', 'saveanswer', 'audio']))
+		if(in_array($subchild, ['star', 'answer', 'audio']))
 		{
 			if(!\dash\request::is('post'))
 			{
@@ -53,8 +53,8 @@ class controller
 				$data = self::star();
 				break;
 
-			case 'saveanswer':
-				$data = self::saveanswer();
+			case 'answer':
+				$data = self::answer();
 				break;
 
 			case 'audio':
@@ -111,11 +111,19 @@ class controller
 		return $add;
 	}
 
-	private static function saveanswer()
+	private static function answer()
 	{
 		$answer = \dash\request::post();
-		\lib\app\lm_answer::save_array($answer, \dash\request::get('id'));
-		return true;
+		$id = \dash\request::post('id');
+		unset($answer['id']);
+        // "z": "1",
+        // "y": "2",
+        // "C": "1",
+        // "D": "2",
+        // "B": "1"
+
+		$result = \lib\app\lm_answer::save_array($answer, $id);
+		return $result;
 
 	}
 
