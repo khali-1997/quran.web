@@ -6,11 +6,18 @@ class model
 {
 	public static function post()
 	{
+		$quality = intval(\dash\request::post('quality'));
+		if($quality)
+		{
+			$quality = (3 - $quality) +  1;
+		}
+
 		$post =
 		[
-			'teachertxt'  => \dash\request::post('answer'),
-			'status'  => \dash\request::post('status'),
-			'teacher' => \dash\user::id(),
+			'teachertxt' => \dash\request::post('answer'),
+			'status'     => \dash\request::post('status'),
+			'quality'    => $quality,
+			'teacher'    => \dash\user::id(),
 		];
 
 		$teacheraudio = \dash\app\file::upload_quick('teacheraudio');

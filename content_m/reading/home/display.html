@@ -93,7 +93,7 @@
           {%endif%}
         </td>
 
-        <td>{{value.quality}}</td>
+        <td>{%if value.quality%}{%for i in 1..value.quality%}<i class="sf-star fc-yellow"></i>{%endfor%}{%endif%}</td>
         <td>{{value.tstatus}}</td>
         <td>{{value.datecreated | dt('human', 'year')}}</td>
 

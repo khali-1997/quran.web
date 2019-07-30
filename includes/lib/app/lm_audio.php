@@ -184,7 +184,7 @@ class lm_audio
 	{
 
 		$teacher      = \dash\app::request('teacher');
-		$audio        = \dash\app::request('audio');
+
 
 		$teachertxt   = \dash\app::request('teachertxt');
 		if($teachertxt && mb_strlen($teachertxt) >= 500)
@@ -227,7 +227,7 @@ class lm_audio
 
 		$args                 = [];
 		$args['teacher']      = $teacher;
-		$args['audio']        = $audio;
+
 		$args['teachertxt']   = $teachertxt;
 		$args['teacheraudio'] = $teacheraudio;
 		$args['quality']      = $quality;
