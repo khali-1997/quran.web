@@ -6,7 +6,8 @@ class view
 {
 	public static function config()
 	{
-		\dash\data::page_title(T_("Learning mechanism system"));
+		\dash\data::page_title(T_("Learning Mechanism System"));
+		\dash\data::page_desc(T_("We can help you learn Quran and stay with Quran with our learn mechanism system"));
 
 		\dash\data::page_pictogram('info');
 
