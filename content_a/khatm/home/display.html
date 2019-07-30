@@ -1,0 +1,29 @@
+{%extends 'content_m/layout.html'%}
+
+
+
+{%block pageContent%}
+
+{%if dataTable%}
+<div class="cbox">
+  {%for key, value in dataTable%}
+  <div class="msg">
+    {{value.title}}<br>
+    {{value.niyat}}<br>
+    {{value.type}}<br>
+    {{value.range}}<br>
+    {{value.privacy}}<br>
+    {{value.repeat}}<br>
+    {{value.status}}<br>
+    {{value.sura}}<br>
+  </div>
+  {%endfor%}
+</div>
+
+{%else%}
+<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} <a href="{{url.this}}/add">{%trans "Try to start with add new khatm!"%}</a></p>
+
+{%endif%}
+
+
+{%endblock%}

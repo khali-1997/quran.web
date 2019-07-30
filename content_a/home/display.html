@@ -1,8 +1,44 @@
 {%extends display.admin%}
 
 
+
 {%block pageContent%}
-  Hi
+  <div class="f">
+    <div class="c4 s12">{{block('bHistory')}}</div>
+    {%if false%}<div class="c4 s12">{{block('bFav2')}}</div>{%endif%}
+    <div class="c4 s12">{{block('bKhatm')}}</div>
+
+  </div>
+{%endblock%}
+
+{%block bHistory%}
+<a class="dcard x1" href='{{url.here}}/history'>
+ <div class="statistic blue">
+  <div class="value mB10"><i class="sf-history"></i></div>
+  <div class="label">{%trans "History"%}</div>
+ </div>
+</a>
 {%endblock%}
 
 
+
+
+{%block bKhatm%}
+<a class="dcard x1" href='{{url.here}}/khatm'>
+ <div class="statistic blue">
+  <div class="value mB10"><i class="sf-book fc-green"></i></div>
+  <div class="label">{%trans "Khatm"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+{%block bFav%}
+<a class="dcard x1" href='{{url.here}}/fav'>
+ <div class="statistic blue">
+  <div class="value mB10"><i class="sf-star fc-yellow"></i></div>
+  <div class="label">{%trans "Favorite"%}</div>
+ </div>
+</a>
+{%endblock%}
