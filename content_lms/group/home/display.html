@@ -6,8 +6,9 @@
 
 <div class='middle normal f justify-center'>
 
+{%if levelList %}
 {%for key, value in levelList%}
-{%if  value.type %}
+{%if value.type %}
   <a class="vcard mA10 shadow blue" href='{{url.here}}/level/{{value.type}}?id={{value.id}}'>
 
     <div class="content">
@@ -38,6 +39,11 @@
   </a>
 {%endif%}
 {%endfor%}
+{%else%}
+<div class="msg fs50 txtC warn">
+  {%trans "Level not found!"%}
+</div>
+{%endif%}
 
 </div>
 {%endblock%}
