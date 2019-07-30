@@ -40,13 +40,14 @@ class controller
 				$data = self::levellist();
 				break;
 
+			case 'level':
+				$data = self::level();
+				break;
+
 			case 'userstar':
 				$data = self::userstar();
 				break;
 
-			case 'level':
-				$data = self::level();
-				break;
 
 			case 'star':
 				$data = self::star();
