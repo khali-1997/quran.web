@@ -9,6 +9,7 @@
 
       {{block('iStatus')}}
       {{block('iAnswer')}}
+      {{block('iFile')}}
 
       {{block('isave')}}
     </div>
@@ -41,6 +42,21 @@
 <button class="btn primary block mT20">{%trans "Save"%}</button>
 {%endblock%}
 
+
+
+
+{%block iFile%}
+
+{%if dataRow.teacheraudio%}
+<a href="{{dataRow.teacheraudio}}" target="_blank" data-direct class="btn block pain mTB20">{%trans "Teacher audio answer"%}</a>
+{%endif%}
+
+<label for="teacheraudio" class="block">{%trans "Your answer file"%}</label>
+<div class="input" >
+ <input type="file" accept="image/gif, image/jpeg, image/png" name="teacheraudio" id="teacheraudio" data-max="1000">
+ </label>
+</div>
+{%endblock%}
 
 
 

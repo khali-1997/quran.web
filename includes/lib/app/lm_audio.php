@@ -1,9 +1,6 @@
 <?php
 namespace lib\app;
 
-/**
- * Class for lm_audio.
- */
 
 class lm_audio
 {
@@ -11,6 +8,12 @@ class lm_audio
 	public static $sort_field =
 	[
 		'id',
+		'teacher',
+		'audio',
+		'teachertxt',
+		'teacheraudio',
+		'quality',
+		'status',
 
 	];
 
@@ -84,20 +87,22 @@ class lm_audio
 			return false;
 		}
 
-
-		if(!\dash\app::isset_request('title')) unset($args['title']);
-		if(!\dash\app::isset_request('desc')) unset($args['desc']);
-		if(!\dash\app::isset_request('sort')) unset($args['sort']);
-		if(!\dash\app::isset_request('type')) unset($args['type']);
+		if(!\dash\app::isset_request('lm_group_id')) unset($args['lm_group_id']);
+		if(!\dash\app::isset_request('lm_level_id')) unset($args['lm_level_id']);
+		if(!\dash\app::isset_request('user_id')) unset($args['user_id']);
+		if(!\dash\app::isset_request('teacher')) unset($args['teacher']);
+		if(!\dash\app::isset_request('audio')) unset($args['audio']);
+		if(!\dash\app::isset_request('teachertxt')) unset($args['teachertxt']);
+		if(!\dash\app::isset_request('teacheraudio')) unset($args['teacheraudio']);
+		if(!\dash\app::isset_request('quality')) unset($args['quality']);
 		if(!\dash\app::isset_request('status')) unset($args['status']);
-		if(!\dash\app::isset_request('file')) unset($args['file']);
-
+		if(!\dash\app::isset_request('datecreated')) unset($args['datecreated']);
 
 		if(!empty($args))
 		{
 			$update = \lib\db\lm_audio::update($args, $id);
 
-			$title = isset($args['title']) ? $args['title'] : T_("LearnAudio");
+			$title = isset($args['title']) ? $args['title'] : T_("audio");
 
 			\dash\log::set('editLearnAudio', ['code' => $id]);
 
@@ -116,7 +121,7 @@ class lm_audio
 		$id = \dash\coding::decode($_id);
 		if(!$id)
 		{
-			\dash\notif::error(T_("lm_audio id not set"));
+			\dash\notif::error(T_("audio id not set"));
 			return false;
 		}
 
@@ -124,7 +129,7 @@ class lm_audio
 
 		if(!$get)
 		{
-			\dash\notif::error(T_("Invalid lm_audio id"));
+			\dash\notif::error(T_("Invalid audio id"));
 			return false;
 		}
 
@@ -178,89 +183,55 @@ class lm_audio
 	private static function check($_id = null)
 	{
 
-		$title = \dash\app::request('title');
-		if(!$title)
+		$teacher      = \dash\app::request('teacher');
+		$audio        = \dash\app::request('audio');
+
+		$teachertxt   = \dash\app::request('teachertxt');
+		if($teachertxt && mb_strlen($teachertxt) >= 500)
 		{
-			\dash\notif::error(T_("Please fill the title"), 'title');
+			\dash\notif::error(T_("Data is out of range"), 'teachertxt');
 			return false;
 		}
 
-		if(mb_strlen($title) > 300)
+		$teacheraudio = \dash\app::request('teacheraudio');
+		if($teacheraudio && mb_strlen($teacheraudio) >= 500)
 		{
-			\dash\notif::error(T_("Please fill the title less than 300 character"), 'title');
+			\dash\notif::error(T_("Data is out of range"), 'teacheraudio');
 			return false;
 		}
 
-		$check_duplicate = \lib\db\lm_audio::get(['title' => $title, 'limit' => 1]);
-		if(isset($check_duplicate['id']))
+		$quality      = \dash\app::request('quality');
+		if($quality)
 		{
-			if(intval($_id) === intval($check_duplicate['id']))
+			if(!is_numeric($quality))
 			{
-				// no problem to edit it
+				\dash\notif::error(T_("Plase set quality as a number"));
+				return false;
 			}
-			else
+
+			$quality = intval($quality);
+			if($quality < 0 || $quality > 100)
 			{
-				$code = \dash\coding::encode($check_duplicate['id']);
-				$msg = T_("This title is already exist in your list");
-				$msg .= ' <a href="'. \dash\url::this(). '/edit?id='.$code. '">'. T_("Click here to edit it"). "</a>";
-				\dash\notif::error($msg, 'title');
+				\dash\notif::error(T_("quality is out of range"));
 				return false;
 			}
 		}
 
 		$status = \dash\app::request('status');
-		if($status && !in_array($status, ['enable', 'disable', 'awaiting', 'deleted', 'publish', 'expire']))
+		if($status && !in_array($status, ['awaiting', 'spam', 'deleted', 'admindelete', 'approved', 'reject']))
 		{
 			\dash\notif::error(T_("Invalid status"), 'status');
 			return false;
 		}
 
-		$desc    = \dash\app::request('desc');
-		$file    = \dash\app::request('file');
 
-		$sort = \dash\app::request('sort');
-		$sort = \dash\utility\convert::to_en_number($sort);
-		if($sort && !is_numeric($sort))
-		{
-			\dash\notif::error(T_("Please set the sort as a number"), 'sort');
-			return false;
-		}
-
-		if($sort)
-		{
-			$sort = intval($sort);
-			$sort = abs($sort);
-		}
-
-		if($sort && intval($sort) > 1E+4)
-		{
-			\dash\notif::error(T_("Sort is out of range!"), 'sort');
-			return false;
-		}
-
-
-		$type = \dash\app::request('type');
-		if(!$type && \dash\app::isset_request('type'))
-		{
-			\dash\notif::error(T_("Please choose type"), 'type');
-			return false;
-		}
-
-		if($type && !self::type_list($type))
-		{
-			\dash\notif::error(T_("Invalid type"), 'type');
-			return false;
-		}
-
-
-
-		$args           = [];
-		$args['title']  = $title;
-		$args['status'] = $status;
-		$args['desc']   = $desc;
-		$args['file']   = $file;
-		$args['sort']   = $sort;
-		$args['type']   = $type;
+		$args                 = [];
+		$args['teacher']      = $teacher;
+		$args['audio']        = $audio;
+		$args['teachertxt']   = $teachertxt;
+		$args['teacheraudio'] = $teacheraudio;
+		$args['quality']      = $quality;
+		$args['status']       = $status;
 
 		return $args;
 	}

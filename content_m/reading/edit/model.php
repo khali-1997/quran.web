@@ -8,15 +8,16 @@ class model
 	{
 		$post =
 		[
-			'title'           => \dash\request::post('title'),
-
+			'teachertxt'  => \dash\request::post('answer'),
+			'status'  => \dash\request::post('status'),
+			'teacher' => \dash\user::id(),
 		];
 
-		$file = \dash\app\file::upload_quick('file1');
+		$teacheraudio = \dash\app\file::upload_quick('teacheraudio');
 
-		if($file)
+ 		if($teacheraudio)
 		{
-			$post['file'] = $file;
+			$post['teacheraudio'] = $teacheraudio;
 		}
 
 		\lib\app\lm_audio::edit($post, \dash\request::get('id'));
