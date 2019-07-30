@@ -237,7 +237,7 @@ class twigTransTerms
 	echo T_("Change log");                                                            // Line 48
 	echo T_("Logo");                                                                  // Line 193
 	echo T_("Audio");                                                                 // Line 38
-	echo T_("Magazine");                                                              // Line 74
+	echo T_("Magazine");                                                              // Line 86
 	echo T_("Help Center");                                                           // Line 55
 	echo T_("FAQ");                                                                   // Line 56
 	echo T_("Contact");                                                               // Line 57
@@ -775,15 +775,39 @@ class twigTransTerms
 
 	//---------------------------------------projects/SalamQuran/content_m/layout.html
 
+	//-------------------------projects/SalamQuran/content_m/reading/home/display.html
+	echo T_("ID");                                                                    // Line 66
+	echo T_("Group");                                                                 // Line 103
+	echo T_("Level");                                                                 // Line 58
+	echo T_("User");                                                                  // Line 69
+	echo T_("Operator");                                                              // Line 70
+	echo T_("Audio file");                                                            // Line 71
+	echo T_("Answer");                                                                // Line 45
+	echo T_("Status");                                                                // Line 61
+	echo T_("Hi!");                                                                   // Line 112
+	echo T_("Try to start with add new badge!");                                      // Line 137
+
+	//-------------------------projects/SalamQuran/content_m/reading/edit/display.html
+	echo T_("Mistakes");                                                              // Line 15
+	echo T_("Title");                                                                 // Line 19
+	echo T_("Require");                                                               // Line 19
+	echo T_("Level title");                                                           // Line 21
+	echo T_("Teacher audio answer");                                                  // Line 62
+	echo T_("Your answer file");                                                      // Line 65
+	echo T_("awaiting");                                                              // Line 111
+	echo T_("spam");                                                                  // Line 116
+	echo T_("deleted");                                                               // Line 121
+	echo T_("admindelete");                                                           // Line 126
+	echo T_("approved");                                                              // Line 132
+	echo T_("reject");                                                                // Line 137
+
 	//--------------------------------projects/SalamQuran/content_m/learn/display.html
 	echo T_("Users");                                                                 // Line 50
 	echo T_("Transactions");                                                          // Line 61
 	echo T_("Referee");                                                               // Line 74
-	echo T_("Status");                                                                // Line 61
 	echo T_("Show festival");                                                         // Line 93
 	echo T_("Media supporter");                                                       // Line 126
 	echo T_("Edit group");                                                            // Line 136
-	echo T_("Level");                                                                 // Line 58
 	echo T_("Sponsers");                                                              // Line 156
 	echo T_("Setting");                                                               // Line 21
 	echo T_("No user signuped to this festival yet!");                                // Line 180
@@ -793,18 +817,14 @@ class twigTransTerms
 	echo T_("Price Variation");                                                       // Line 42
 
 	//--------------------------projects/SalamQuran/content_m/mistake/add/display.html
-	echo T_("Title");                                                                 // Line 19
-	echo T_("Require");                                                               // Line 19
 	echo T_("Mistake title");                                                         // Line 19
 	echo T_("Add");                                                                   // Line 25
 
 	//-------------------------projects/SalamQuran/content_m/mistake/home/display.html
 	echo T_("Add new mistake");                                                       // Line 12
-	echo T_("Hi!");                                                                   // Line 112
 	echo T_("Try to start with add new mistake!");                                    // Line 137
 
 	//-------------------------projects/SalamQuran/content_m/mistake/edit/display.html
-	echo T_("Level title");                                                           // Line 21
 
 	//-----------------------------------projects/SalamQuran/content_m/mag/layout.html
 	echo T_("Avatar");                                                                // Line 24
@@ -855,7 +875,7 @@ class twigTransTerms
 
 	//---------------------projects/SalamQuran/content_m/audiobank/manage/display.html
 	echo T_("Run again");                                                             // Line 20
-	echo T_("Audio bank");                                                            // Line 63
+	echo T_("Audio bank");                                                            // Line 75
 
 	//-----------------------projects/SalamQuran/content_m/audiobank/home/display.html
 	echo T_("Check audio online");                                                    // Line 22
@@ -865,10 +885,11 @@ class twigTransTerms
 	echo T_("Try to start with add new audio!");                                      // Line 128
 
 	//---------------------------------projects/SalamQuran/content_m/home/display.html
-	echo T_("Level list");                                                            // Line 20
-	echo T_("Mistake list");                                                          // Line 30
-	echo T_("Badge list");                                                            // Line 41
-	echo T_("Group list");                                                            // Line 53
+	echo T_("Level list");                                                            // Line 21
+	echo T_("Mistake list");                                                          // Line 31
+	echo T_("User audio list");                                                       // Line 42
+	echo T_("Badge list");                                                            // Line 53
+	echo T_("Group list");                                                            // Line 65
 
 	//--------------------------projects/SalamQuran/content_m/level/quran/display.html
 	echo T_("End aya");                                                               // Line 20
@@ -888,7 +909,6 @@ class twigTransTerms
 	echo T_("Picture of file");                                                       // Line 82
 
 	//----------------------------projects/SalamQuran/content_m/level/add/display.html
-	echo T_("Group");                                                                 // Line 103
 	echo T_("No active group found!");                                                // Line 98
 
 	//------------------------------projects/SalamQuran/content_m/level/pageSteps.html
@@ -916,7 +936,6 @@ class twigTransTerms
 
 	//---------------------------projects/SalamQuran/content_m/badge/home/display.html
 	echo T_("Add new badge");                                                         // Line 12
-	echo T_("Try to start with add new badge!");                                      // Line 137
 
 	//---------------------------projects/SalamQuran/content_m/badge/edit/display.html
 
