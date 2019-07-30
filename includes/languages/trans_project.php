@@ -27,28 +27,31 @@ class twigTransTerms
 	//-------------------------projects/SalamQuran/content_lms/level/exam/display.html
 
 	//---------------------------projects/SalamQuran/content_api/v6/apikey_header.html
-	echo T_("Required parameters");                                                   // Line 3
+	echo T_("Required parameters");                                                   // Line 18
 	echo T_("on header");                                                             // Line 3
 	echo T_("Name");                                                                  // Line 85
 	echo T_("type");                                                                  // Line 64
 	echo T_("Description");                                                           // Line 74
-	echo T_("example");                                                               // Line 54
+	echo T_("example");                                                               // Line 78
 	echo T_("Constraints");                                                           // Line 24
 	echo T_("Your apikey");                                                           // Line 20
-	echo T_("Required");                                                              // Line 41
+	echo T_("Required");                                                              // Line 55
 	echo T_("length");                                                                // Line 25
 	echo T_("Get from your account profile");                                         // Line 26
 
 	//-------------------------projects/SalamQuran/content_api/v6/doc/140-day-aya.html
 	echo T_("Get verse of the day");                                                  // Line 5
 	echo T_("A verse will be displayed every day");                                   // Line 8
-	echo T_("cURL");                                                                  // Line 51
-	echo T_("Response");                                                              // Line 54
+	echo T_("cURL");                                                                  // Line 65
+	echo T_("Response");                                                              // Line 78
+
+	//-----------------------projects/SalamQuran/content_api/v6/doc/170-lms-group.html
+	echo T_("List of group in lms");                                                  // Line 5
 
 	//------------------------projects/SalamQuran/content_api/v6/doc/105-page-wbw.html
 	echo T_("Get aya in one page word by word");                                      // Line 5
 	echo T_("Get list of aya from one page word by word");                            // Line 8
-	echo T_("Parameters");                                                            // Line 18
+	echo T_("Parameters");                                                            // Line 17
 	echo T_("You must set index between 1 and 604");                                  // Line 35
 
 	//--------------------projects/SalamQuran/content_api/v6/doc/150-hefz-program.html
@@ -86,6 +89,10 @@ class twigTransTerms
 	echo T_("Optional");                                                              // Line 95
 	echo T_("Count record to show");                                                  // Line 71
 
+	//-----------------------projects/SalamQuran/content_api/v6/doc/172-lms-level.html
+	echo T_("Get detail of one level");                                               // Line 5
+	echo T_("Group id");                                                              // Line 36
+
 	//------------------------projects/SalamQuran/content_api/v6/doc/161-fav-edit.html
 	echo T_("Update descriptio of favorites");                                        // Line 5
 	echo T_("Character");                                                             // Line 57
@@ -96,6 +103,17 @@ class twigTransTerms
 
 	//------------------------projects/SalamQuran/content_api/v6/doc/163-fav-list.html
 	echo T_("List of your favorites");                                                // Line 5
+
+	//--------------------projects/SalamQuran/content_api/v6/doc/173-lms-userstar.html
+	echo T_("Get star of user in one level");                                         // Line 5
+	echo T_("Level id");                                                              // Line 37
+
+	//-----------------projects/SalamQuran/content_api/v6/doc/171-lms-group-level.html
+	echo T_("Get list of level in one group");                                        // Line 5
+
+	//-----------------------projects/SalamQuran/content_api/v6/doc/175-lms-audio.html
+	echo T_("Set user audio in one level");                                           // Line 5
+	echo T_("You file location to upload");                                           // Line 50
 
 	//------------------------projects/SalamQuran/content_api/v6/doc/145-page-day.html
 	echo T_("Get page of the day");                                                   // Line 5
@@ -116,6 +134,10 @@ class twigTransTerms
 	echo T_("Get one aya");                                                           // Line 5
 	echo T_("You must set index between 1 and 6236");                                 // Line 37
 
+	//------------------------projects/SalamQuran/content_api/v6/doc/174-lms-star.html
+	echo T_("Set user star in one level");                                            // Line 5
+	echo T_("Only 1, 2, 3 can use in star");                                          // Line 53
+
 	//-----------------------------projects/SalamQuran/content_api/v6/doc/sidebar.html
 	echo T_("Load aya");                                                              // Line 3
 	echo T_("Sura list");                                                             // Line 4
@@ -131,6 +153,18 @@ class twigTransTerms
 	echo T_("Edit favorites");                                                        // Line 15
 	echo T_("Remove favorites");                                                      // Line 16
 	echo T_("Favorites list");                                                        // Line 17
+	echo T_("LMS group");                                                             // Line 18
+	echo T_("LMS group level");                                                       // Line 19
+	echo T_("LMS level");                                                             // Line 20
+	echo T_("LMS userstar");                                                          // Line 21
+	echo T_("LMS star");                                                              // Line 22
+	echo T_("LMS audio");                                                             // Line 23
+	echo T_("LMS answer");                                                            // Line 24
+
+	//----------------------projects/SalamQuran/content_api/v6/doc/176-lms-answer.html
+	echo T_("Set user answer in one level");                                          // Line 5
+	echo T_("User answer option");                                                    // Line 51
+	echo T_("Repeat the total number of questions you want answered");                // Line 52
 
 	//-projects/SalamQuran/public_html/static/siftal/fonts/siftal/icons-reference.html
 
