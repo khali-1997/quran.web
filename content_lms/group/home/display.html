@@ -10,7 +10,7 @@
 {%for key, value in levelList%}
 {%if value.type %}
   <a class="vcard mA10 shadow {%if value.userstar == 3%}green{%elseif value.userstar%}blue{%else%}{%endif%}" href='{{url.here}}/level/{{value.type}}?id={{value.id}}' data-type='{{value.type_title}}'>
-      <img src="http://salamquran.local/files/1/1-03a302f77f01f7f3ac136e09e80cb9f3.jpg" alt="{{value.title}}">
+      <img src="/files/1/1-03a302f77f01f7f3ac136e09e80cb9f3.jpg" alt="{{value.title}}">
     <div class="content">
       <div class="header">{{value.title}}</div>
       <div class="meta">{{value.desc}}</div>
