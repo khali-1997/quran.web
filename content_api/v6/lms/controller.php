@@ -36,12 +36,12 @@ class controller
 				$data = self::group();
 				break;
 
-			case 'userstar':
-				$data = self::userstar();
-				break;
-
 			case 'levellist':
 				$data = self::levellist();
+				break;
+
+			case 'userstar':
+				$data = self::userstar();
 				break;
 
 			case 'level':
