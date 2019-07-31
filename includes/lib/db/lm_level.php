@@ -56,7 +56,11 @@ class lm_level
 	{
 		$default =
 		[
-			'public_show_field' => 'lm_level.*, lm_group.title as `group_title`',
+			'public_show_field' => '
+				lm_level.*,
+				lm_group.title as `group_title`,
+				(SELECT COUNT(*) FROM lm_question WHERE lm_question.lm_level_id = lm_level.id AND lm_question.status = \'enable\') AS `question_count`
+			',
 			'master_join'       => ' LEFT JOIN lm_group ON lm_group.id = lm_level.lm_group_id',
 			'search_field'       =>
 			"
