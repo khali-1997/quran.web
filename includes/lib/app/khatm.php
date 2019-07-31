@@ -216,7 +216,7 @@ class khatm
 			return false;
 		}
 
-		$check_duplicate = \lib\db\khatm::get(['title' => $title, 'user_id' => \dash\user::id(), 'limit' => 1]);
+		$check_duplicate = \lib\db\khatm::get(['user_id' => \dash\user::id(), 'status' => ["IN", " ('awaiting') "], 'limit' => 1]);
 		if(isset($check_duplicate['id']))
 		{
 			if(intval($_id) === intval($check_duplicate['id']))
@@ -226,13 +226,19 @@ class khatm
 			else
 			{
 				$code = \dash\coding::encode($check_duplicate['id']);
-				$msg = T_("This title is already exist in your list");
-				\dash\notif::error($msg, 'title');
-				return false;
+				$msg = T_("You can't expect more than one awaiting khatm");
+				// \dash\notif::error($msg, 'title');
+				// return false;
 			}
 		}
 
 		$type = \dash\app::request('type');
+		if(!$type)
+		{
+			\dash\notif::error(T_("Plase set type"));
+			return false;
+		}
+
 		if($type && !in_array($type, ['page', 'juz']))
 		{
 			\dash\notif::error(T_("Invalid type"), 'type');
@@ -240,6 +246,12 @@ class khatm
 		}
 
 		$range = \dash\app::request('range');
+		if(!$range)
+		{
+			\dash\notif::error(T_("Plase set range"));
+			return false;
+		}
+
 		if($range && !in_array($range, ['quran', 'sura']))
 		{
 			\dash\notif::error(T_("Invalid range"), 'range');
@@ -247,6 +259,12 @@ class khatm
 		}
 
 		$privacy = \dash\app::request('privacy');
+		if(!$privacy)
+		{
+			\dash\notif::error(T_("Plase set privacy"));
+			return false;
+		}
+
 		if($privacy && !in_array($privacy, ['public', 'private']))
 		{
 			\dash\notif::error(T_("Invalid privacy"), 'privacy');
@@ -279,6 +297,11 @@ class khatm
 		{
 			\dash\notif::error(T_("Repeat is out of range!"), 'repeat');
 			return false;
+		}
+
+		if(!$repeat)
+		{
+			$repeat = 1;
 		}
 
 

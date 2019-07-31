@@ -5,10 +5,17 @@
   <div class="justify-center f">
    <form method="post" class="c5 m6 s12" autocomplete="off">
     <div class="cbox">
-      {{block('iniyat')}}
-      {{block('iRepeat')}}
+      <div class="msg">{%trans "Your intention of khatm quran"%}</div>
+        {{block('iniyat')}}
+
+
+      <div class="msg">{%trans "Read quran mode"%}</div>
+
       {{block('iType')}}
+      <div class="msg">{%trans "Range of khatm"%}</div>
       {{block('iRange')}}
+
+      {{block('iRepeat')}}
       {{block('iPrivacy')}}
 
       {{block('isave')}}
@@ -26,9 +33,9 @@
 
 
 {%block iRepeat %}
-<label for="repeat">{%trans "Repeat"%}</label>
+<label for="repeat">{%trans "Repeat whole khatm"%}</label>
 <div class="input">
-  <input type="number" name="repeat" id="repeat" max='999' min="1">
+  <input type="number" name="repeat" id="repeat" max='114' min="1" placeholder='{%trans "Between 1 and 114"%}'>
 </div>
 {%endblock%}
 
@@ -48,8 +55,8 @@
 
 <select name="type" class="mB10 select ui dropdown search" id="type">
   <option value="" readonly>{%trans "Please select one item"%}</option>
-  <option value="page"  selected>{%trans "Page"%}</option>
-  <option value="juz"  >{%trans "Juz"%}</option>
+  <option value="page">{%trans "Read quran page by page"%}</option>
+  <option value="juz"  >{%trans "Read quran juz by juz"%}</option>
 </select>
 
 {%endblock%}
@@ -61,8 +68,8 @@
 
 <select name="range" class="mB10 select ui dropdown search" id="range">
   <option value="" readonly>{%trans "Please select one item"%}</option>
-  <option value="quran"  selected>{%trans "Quran"%}</option>
-  <option value="sura"  >{%trans "Surah"%}</option>
+  <option value="quran">{%trans "The whole Quran"%}</option>
+  <option value="sura"  >{%trans "Special Surah"%}</option>
 </select>
 
 {%endblock%}
@@ -73,8 +80,8 @@
 
 <select name="privacy" class="mB10 select ui dropdown search" id="privacy">
   <option value="" readonly>{%trans "Please select one item"%}</option>
-  <option value="public"  selected>{%trans "Public"%}</option>
-  <option value="private"  >{%trans "Private"%}</option>
+  <option value="public">{%trans "Public"%} - {%trans "Everyone can see it"%}</option>
+  <option value="private"  >{%trans "Private"%} - {%trans "Only you can see it"%}</option>
 </select>
 
 {%endblock%}
@@ -82,7 +89,7 @@
 
 
 {%block isave%}
-<button class="btn primary block mT20">{%trans "Save"%}</button>
+<button class="btn success block mT20">{%trans "Add"%}</button>
 {%endblock%}
 
 
