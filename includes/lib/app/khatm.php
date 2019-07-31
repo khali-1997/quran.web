@@ -33,12 +33,6 @@ class khatm
 
 
 
-	public static function public_list()
-	{
-		return self::list(null, ['khatm.status' => 'enable', 'pagination' => false]);
-	}
-
-
 
 	public static function add($_args = [])
 	{
@@ -356,7 +350,7 @@ class khatm
 			switch ($key)
 			{
 				case 'id':
-					$title .= T_("Khatm"). ' #'. (100 + intval($value));
+					$title .= T_("Khatm"). ' #'. \dash\utility\human::fitNumber((100 + intval($value)));
 				case 'user_id':
 					if(isset($value))
 					{
@@ -400,6 +394,51 @@ class khatm
 		$result['title'] = $title;
 
 		return $result;
+	}
+
+
+
+	public static function remove($_khatm_id)
+	{
+		$khatm_id = \dash\coding::decode($_khatm_id);
+		if(!$_khatm_id)
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+		if(!\dash\user::id())
+		{
+			\dash\notif::error(T_("User not found"));
+			return false;
+		}
+
+		$check = \lib\db\khatm::get(['id' => $khatm_id, 'user_id' => \dash\user::id(), 'limit' => 1]);
+		if(!$check || !isset($check['id']))
+		{
+			\dash\notif::error(T_("This is not your data"));
+			return false;
+		}
+
+		\lib\db\khatm::update(['status' => 'deleted'], $khatm_id);
+		\dash\notif::ok(T_("Your khatm was removed"));
+		return true;
+	}
+
+
+	public static function public_list()
+	{
+		$args =
+		[
+			'user_id'    => \dash\user::id(),
+			'status'     => ["NOT IN", "('deleted')"],
+			'pagenation' => false,
+			'order'      => 'desc',
+			'sort'       => 'id',
+		];
+
+		$list = self::list(null, $args);
+		return $list;
 	}
 }
 ?>
