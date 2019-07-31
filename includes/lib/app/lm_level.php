@@ -677,9 +677,12 @@ class lm_level
 					break;
 
 				case 'file':
-					if(!$value)
+					if(\dash\url::content() !== 'm')
 					{
-						$value = \dash\app::static_logo_url();
+						if(!$value)
+						{
+							$value = \dash\app::static_logo_url();
+						}
 					}
 					$result[$key] = $value;
 					break;
