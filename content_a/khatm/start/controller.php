@@ -12,8 +12,9 @@ class controller
 		{
 			\dash\data::khatmRow($khatm);
 			\dash\open::get();
-			\dash\open::post();
 		}
+
+		\dash\open::post();
 
 	}
 }

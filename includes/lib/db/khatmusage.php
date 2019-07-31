@@ -5,6 +5,13 @@ namespace lib\db;
 class khatmusage
 {
 
+	public static function in_use($_id)
+	{
+		$query = "SELECT * FROM khatmusage WHERE khatmusage.khatm_id = $_id AND khatmusage.status IN ('done', 'reading') ";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
 	public static function insert()
 	{
 		\dash\db\config::public_insert('khatmusage', ...func_get_args());

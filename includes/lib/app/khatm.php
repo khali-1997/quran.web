@@ -72,7 +72,7 @@ class khatm
 			return false;
 		}
 
-		$check_uages = \lib\app\khatmusage::remain($_id);
+		$check_uages = \lib\app\khatmusage::check_remain($id, $load);
 		if(!$check_uages)
 		{
 			return false;
