@@ -82,6 +82,13 @@ class view
 		\dash\data::dataFilter($dataFilter);
 
 
+		$groupCount = \lib\app\lm_level::get_count_group();
+		\dash\data::groupCount($groupCount);
+
+		if(is_array($groupCount))
+		{
+			\dash\data::groupCountAll(array_sum(array_column($groupCount, 'count')));
+		}
 
 	}
 

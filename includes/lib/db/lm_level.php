@@ -4,6 +4,23 @@ namespace lib\db;
 
 class lm_level
 {
+	public static function get_count_group()
+	{
+		$query =
+		"
+			SELECT
+				COUNT(*) AS `count`,
+				lm_group.title,
+				lm_group.id
+
+			FROM
+				lm_level
+			INNER JOIN lm_group ON lm_group.id = lm_level.lm_group_id
+			GROUP BY lm_level.lm_group_id;
+		";
+		$result = \dash\db::get($query);
+		return $result;
+	}
 
 	public static function insert()
 	{

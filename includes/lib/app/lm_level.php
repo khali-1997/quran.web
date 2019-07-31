@@ -145,6 +145,17 @@ class lm_level
 	}
 
 
+	public static function get_count_group()
+	{
+		$group_count = \lib\db\lm_level::get_count_group();
+		if(is_array($group_count))
+		{
+			$group_count = array_map(['self', 'ready'], $group_count);
+		}
+		return $group_count;
+	}
+
+
 	public static function add($_args = [])
 	{
 		\dash\app::variable($_args);

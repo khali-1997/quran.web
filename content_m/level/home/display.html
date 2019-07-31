@@ -3,7 +3,7 @@
 
 
 {%block pageContent%}
-
+{{block('pageSteps')}}
 
 {%if dataTable%}
  {%if dataFilter%}
@@ -34,6 +34,24 @@
 {%endblock%}
 
 
+{%block pageSteps%}
+<div class="f">
+  <div class="c m4 s4">
+    <a class="dcard x07 {%if not requestGET.groupid %}active{%endif%}" href="{{url.this}}">
+      <div class="value">{{groupCountAll | fitNumber}}</div>
+      <div class="label">{%trans "All"%}</div>
+    </a>
+  </div>
+  {%for key, value in groupCount%}
+   <div class="c m4 s4">
+    <a class="dcard x07 {%if requestGET.groupid == value.id%}active{%endif%}" href="{{url.this}}?groupid={{value.id}}">
+      <div class="value">{{value.count | fitNumber}}</div>
+      <div class="label">{{value.title}}</div>
+    </a>
+  </div>
+  {%endfor%}
+</div>
+{%endblock%}
 
 
 {%block htmlSearchBox%}
