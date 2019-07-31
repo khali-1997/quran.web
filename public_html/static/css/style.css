@@ -6355,32 +6355,75 @@ body[data-in='mag'] .wrapper {
     font-size: 17px; } }
 /* Design for print */
 /* Design for open in iframe */
-body.iframe:before {
+body[data-iframe]:before {
   background: #fff; }
 
-.iframe header {
+[data-iframe] header {
   display: none !important; }
 
-.iframe #sidebar {
+[data-iframe] #sidebar {
   display: none !important; }
 
-.iframe .player {
+[data-iframe] .player {
   right: 0 !important;
   left: 0 !important; }
 
-.iframe #page {
+[data-iframe] #page {
   margin: 0 !important; }
 
-.iframe footer {
+[data-iframe] footer {
   display: none !important; }
 
-.iframe .shareLine {
+[data-iframe] .shareLine {
   display: none !important; }
 
-.iframe #dlapp {
+[data-iframe] #dlapp {
   display: none !important; }
 
-.iframe #nodes {
+[data-iframe] #nodes {
+  display: none !important; }
+
+body.fixframe:before {
+  background: #fff; }
+
+body.fixframe header {
+  display: none !important; }
+
+body.fixframe #sidebar {
+  display: none !important; }
+
+body.fixframe .player {
+  right: 0 !important;
+  left: 0 !important; }
+
+body.fixframe #page {
+  margin: 0 !important; }
+
+body.fixframe footer {
+  display: none !important; }
+
+body.fixframe .shareLine {
+  display: none !important; }
+
+body.fixframe #dlapp {
+  display: none !important; }
+
+body.fixframe #nodes {
+  display: none !important; }
+
+body.fixframe .quickAccess {
+  display: none !important; }
+
+body.fixframe .fullCommand {
+  display: none !important; }
+
+body.fixframe .ayeBox .ayeLinks {
+  display: none !important; }
+
+body.fixframe .quranNav {
+  display: none !important; }
+
+body.fixframe .pSettings .btn {
   display: none !important; }
 
 /*# sourceMappingURL=style.css.map */
