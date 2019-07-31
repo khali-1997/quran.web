@@ -106,11 +106,12 @@ class lm_level
 	{
 		$list               = [];
 		$list['quran']      = ['title' => T_("Quran")];
-		$list['learn']      = ['title' => T_("Learn")];
-		$list['exam']       = ['title' => T_("Exam")];
-		$list['reading']    = ['title' => T_("Fix reading")];
-		$list['quran']      = ['title' => T_("Quran")];
 		$list['quranvideo'] = ['title' => T_("Quran video")];
+		$list['reading']    = ['title' => T_("Reading quran")];
+		$list['tajvid']     = ['title' => T_("Tajvid")];
+		$list['theme']      = ['title' => T_("Theme of surah")];
+		$list['exam']       = ['title' => T_("Exam")];
+		$list['iqra']       = ['title' => T_("Fix reading")];
 
 		if($_check === null)
 		{
