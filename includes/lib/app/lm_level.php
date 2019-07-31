@@ -50,7 +50,7 @@ class lm_level
 
 		$load_level = self::public_load_level($_lm_level_id);
 
-		if(!isset($load_level['type']) || (isset($load_level['type']) && !in_array($load_level['type'], ['quran', 'reading'])))
+		if(!isset($load_level['type']) || (isset($load_level['type']) && !in_array($load_level['type'], ['quran', 'iqra'])))
 		{
 			\dash\header::status(404, T_("Invalid type"));
 			return false;
