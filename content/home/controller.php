@@ -12,16 +12,65 @@ class controller
 			\dash\code::end();
 		}
 
-		$module = \dash\url::module();
+		$module   = \dash\url::module();
+		$url      = $module;
+		$child    = \dash\url::child();
+		$subchild = \dash\url::subchild();
+		$counDir = \dash\url::dir();
+		if(is_array($counDir))
+		{
+			if(count($counDir) >= 4)
+			{
+				\dash\header::status(404);
+			}
+		}
 
-		$url    = $module;
 
-		$child  = \dash\url::child();
+		$frame = false;
+		if($subchild)
+		{
+			if($subchild === 'frame')
+			{
+				if(is_numeric($child))
+				{
+					$frame = true;
+				}
+				else
+				{
+					\dash\header::status(403);
+				}
+			}
+			else
+			{
+				\dash\header::status(403);
+			}
+		}
+
+		if($child === 'frame')
+		{
+			if($subchild)
+			{
+				\dash\header::status(403);
+			}
+			elseif($subchild != '0')
+			{
+				$child = null;
+				$frame = true;
+			}
+		}
+
+		if($frame)
+		{
+			$subchild = null;
+			\dash\open::get();
+		}
+
 
 		if($child)
 		{
 			$url .= '/'. $child;
 		}
+
 
 		$meta = [];
 
