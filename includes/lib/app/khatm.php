@@ -349,12 +349,14 @@ class khatm
 	public static function ready($_data)
 	{
 		$result = [];
+		$title = '';
 		foreach ($_data as $key => $value)
 		{
 
 			switch ($key)
 			{
 				case 'id':
+					$title .= T_("Khatm"). ' #'. (100 + intval($value));
 				case 'user_id':
 					if(isset($value))
 					{
@@ -366,12 +368,36 @@ class khatm
 					}
 					break;
 
+				case 'status':
+					$result[$key] = $value;
+					$result['t'. $key] = T_(ucfirst($value));
+					break;
+
+				case 'type':
+					$result[$key] = $value;
+					if($value === "page") $result['t'. $key] = T_("Read quran page by page");
+					if($value === "juz")  $result['t'. $key] = T_("Read quran juz by juz");
+					break;
+
+				case 'range':
+					$result[$key] = $value;
+					if($value === "quran") $result['t'. $key] = T_("The whole Quran");
+					if($value === "sura")  $result['t'. $key] = T_("Special Surah");
+					break;
+
+				case 'privacy':
+					$result[$key] = $value;
+					if($value === "public")  $result['t'. $key] = T_("Public - Everyone can see it");
+					if($value === "private") $result['t'. $key] = T_("Private - Only you can see it");
+					break;
 
 				default:
 					$result[$key] = $value;
 					break;
 			}
 		}
+
+		$result['title'] = $title;
 
 		return $result;
 	}

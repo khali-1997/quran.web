@@ -7,15 +7,17 @@
 {%if dataTable%}
 <div class="cbox">
   {%for key, value in dataTable%}
-  <div class="msg">
-    {{value.title}}<br>
-    {{value.niyat}}<br>
-    {{value.type}}<br>
-    {{value.range}}<br>
-    {{value.privacy}}<br>
-    {{value.repeat}}<br>
-    {{value.status}}<br>
-    {{value.sura}}<br>
+  <div class="msg f">
+    <div class="cauto txtB s12">{{value.title}}</div>
+    <div class="c s12">{{value.niyat}}</div>
+    <div class="c s12">{{value.ttype}}</div>
+    <div class="c s12">{{value.trange}}</div>
+    <div class="c s12">{{value.tprivacy}}</div>
+    <div class="c s12">{{value.repeat | fitNumber}}</div>
+    <div class="c s12">{{value.tstatus}}</div>
+    <div class="c s12">{{value.sura}}</div>
+    <div class="c s12"><div data-confirm data-data='{"type": "remove", "id" : "{{value.id}}"}' class="btn warn xs">{%trans "Cancel"%}</div></div>
+    <div class="c s12"><div data-confirm data-data='{"type": "start", "id" : "{{value.id}}"}' class="btn success ">{%trans "Start"%}</div></div>
   </div>
   {%endfor%}
 </div>
