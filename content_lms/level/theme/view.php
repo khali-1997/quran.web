@@ -1,5 +1,5 @@
 <?php
-namespace content_lms\level\learn;
+namespace content_lms\level\theme;
 
 
 class view

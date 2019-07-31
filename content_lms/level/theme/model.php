@@ -1,5 +1,5 @@
 <?php
-namespace content_lms\level\reading;
+namespace content_lms\level\theme;
 
 
 class model
