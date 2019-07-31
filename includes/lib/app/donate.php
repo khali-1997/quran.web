@@ -132,7 +132,7 @@ class donate
 
 		if(is_array($result))
 		{
-			$result = array_map(['\\dash\\app', 'fix_avatar'], $result);
+			$result = array_map(['\\dash\\app', 'ready'], $result);
 		}
 
 		return $result;
@@ -151,7 +151,7 @@ class donate
 		{
 			if($value)
 			{
-				$result[$key] = array_map(['\\dash\\app', 'fix_avatar'], $value);
+				$result[$key] = array_map(['\\dash\\app', 'ready'], $value);
 			}
 		}
 		return $result;

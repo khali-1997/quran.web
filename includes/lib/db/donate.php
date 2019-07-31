@@ -6,6 +6,7 @@ class donate
 {
 	public static function last_10_donate()
 	{
+		$noname = T_("Whitout name");
 		$query =
 		"
 			SELECT
@@ -18,7 +19,7 @@ class donate
 				users.avatar
 			FROM
 				transactions
-			INNER JOIN users ON users.id = transactions.user_id
+			LEFT JOIN users ON users.id = transactions.user_id
 			WHERE
 				transactions.verify = 1
 			ORDER BY transactions.id DESC
@@ -58,7 +59,7 @@ class donate
 				users.avatar
 			FROM
 				transactions
-			INNER JOIN users ON users.id = transactions.user_id
+			LEFT JOIN users ON users.id = transactions.user_id
 			WHERE
 				$where
 
