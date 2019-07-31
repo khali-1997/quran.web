@@ -32,7 +32,30 @@ class khatm
 	];
 
 
+	public static function site_start($_id)
+	{
+		if(!$_id)
+		{
+			return false;
+		}
 
+		$id = \dash\coding::decode($_id);
+
+		if(!$id)
+		{
+			return false;
+		}
+
+		$load = \lib\db\khatm::get(['id' => $id, 'limit' => 1]);
+		if(!$load || !isset($load['id']))
+		{
+			return false;
+		}
+
+
+		$load = self::ready($load);
+		return $load;
+	}
 
 	public static function add($_args = [])
 	{

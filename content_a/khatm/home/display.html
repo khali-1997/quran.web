@@ -17,7 +17,7 @@
     <div class="c s12">{{value.tstatus}}</div>
     <div class="c s12">{{value.sura}}</div>
     <div class="c s12"><div data-confirm data-data='{"type": "remove", "id" : "{{value.id}}"}' class="btn warn xs">{%trans "Cancel"%}</div></div>
-    <div class="c s12"><div data-confirm data-data='{"type": "start", "id" : "{{value.id}}"}' class="btn success ">{%trans "Start"%}</div></div>
+    <div class="c s12"><a href="{{url.this}}/start/{{value.id}}" class="btn success">{%trans "Start"%}</a></div>
   </div>
   {%endfor%}
 </div>
