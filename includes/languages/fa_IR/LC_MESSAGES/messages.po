@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SalamQuran - Persian\n"
-"POT-Creation-Date: 2019-07-31 13:46+0430\n"
-"PO-Revision-Date: 2019-07-31 13:48+0430\n"
+"POT-Creation-Date: 2019-07-31 14:27+0430\n"
+"PO-Revision-Date: 2019-07-31 14:28+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -130,7 +130,7 @@ msgid "Rub"
 msgstr "ربع حزب"
 
 #: SalamQuran/content/home/view.php:180
-#: SalamQuran/includes/languages/trans_project.php:1001
+#: SalamQuran/includes/languages/trans_project.php:997
 #: SalamQuran/includes/lib/app/quran/aya.php:349
 msgid "rub"
 msgstr "ربع حزب"
@@ -182,7 +182,7 @@ msgstr ""
 "قلم عثمان طه + ۲۶ قاری قرآن + ۱۱۲ ترجمه در ۴۳ زبان همراه با استخاره، ترجمه و تفسیر"
 
 #: SalamQuran/content/home/view.php:209 SalamQuran/content/home/view.php:212
-#: SalamQuran/includes/languages/trans_project.php:1000
+#: SalamQuran/includes/languages/trans_project.php:996
 msgid "Nim"
 msgstr "نیم حزب"
 
@@ -205,13 +205,13 @@ msgid "Aya"
 msgstr "آیه"
 
 #: SalamQuran/content/home/view.php:283
-#: SalamQuran/includes/languages/trans_project.php:996
+#: SalamQuran/includes/languages/trans_project.php:992
 msgid "surah"
 msgstr "سوره"
 
 #: SalamQuran/content/home/view.php:294
 #: SalamQuran/includes/languages/trans_dash.php:607
-#: SalamQuran/includes/languages/trans_project.php:998
+#: SalamQuran/includes/languages/trans_project.php:994
 #: SalamQuran/includes/lib/app/quran/aya.php:341
 #: SalamQuran/includes/lib/app/quran/page.php:444
 #: SalamQuran/includes/lib/app/quran/page.php:478
@@ -223,12 +223,12 @@ msgid "page"
 msgstr "صفحه"
 
 #: SalamQuran/content/home/view.php:299
-#: SalamQuran/includes/languages/trans_project.php:999
+#: SalamQuran/includes/languages/trans_project.php:995
 msgid "juz"
 msgstr "جزء"
 
 #: SalamQuran/content/home/view.php:304
-#: SalamQuran/includes/languages/trans_project.php:997
+#: SalamQuran/includes/languages/trans_project.php:993
 msgid "aya"
 msgstr "آیه"
 
@@ -580,7 +580,7 @@ msgstr "بسیار خوب. فایل ساخته شد"
 
 #: SalamQuran/content_m/badge/add/view.php:9
 #: SalamQuran/content_m/badge/home/view.php:16
-#: SalamQuran/includes/languages/trans_project.php:991
+#: SalamQuran/includes/languages/trans_project.php:987
 msgid "Add new badge"
 msgstr "افزودن نشان جدید"
 
@@ -598,7 +598,7 @@ msgid "Invalid badge id"
 msgstr "شناسه نشان اشتباه است"
 
 #: SalamQuran/content_m/badge/home/view.php:10
-#: SalamQuran/includes/languages/trans_project.php:940
+#: SalamQuran/includes/languages/trans_project.php:928
 msgid "Badge list"
 msgstr "لیست نشان‌ها"
 
@@ -631,12 +631,12 @@ msgid "Back to group list"
 msgstr "بازگشت به لیست گروه‌ها"
 
 #: SalamQuran/content_m/group/home/view.php:10
-#: SalamQuran/includes/languages/trans_project.php:941
+#: SalamQuran/includes/languages/trans_project.php:929
 msgid "Group list"
 msgstr "لیست گروه‌‌ها"
 
 #: SalamQuran/content_m/group/home/view.php:16
-#: SalamQuran/includes/languages/trans_project.php:910
+#: SalamQuran/includes/languages/trans_project.php:898
 msgid "Add new group"
 msgstr "افزودن گروه جدید"
 
@@ -660,7 +660,7 @@ msgstr "آزمون"
 #: SalamQuran/includes/lib/app/fav.php:235 SalamQuran/includes/lib/app/khatm.php:473
 #: SalamQuran/includes/lib/app/lm_level.php:38
 #: SalamQuran/includes/lib/app/lm_level.php:91
-#: SalamQuran/includes/lib/app/lm_question.php:75
+#: SalamQuran/includes/lib/app/lm_question.php:77
 #: SalamQuran/includes/lib/app/mag.php:396
 #: dash/addons/content_cms/comments/edit/controller.php:15
 #: dash/addons/content_cms/comments/edit/view.php:14
@@ -672,12 +672,12 @@ msgid "Invalid id"
 msgstr "شناسه نامعتبر"
 
 #: SalamQuran/content_m/level/home/view.php:10
-#: SalamQuran/includes/languages/trans_project.php:937
+#: SalamQuran/includes/languages/trans_project.php:925
 msgid "Level list"
 msgstr "لیست مراحل"
 
 #: SalamQuran/content_m/level/home/view.php:16
-#: SalamQuran/includes/languages/trans_project.php:914
+#: SalamQuran/includes/languages/trans_project.php:902
 msgid "Add new level"
 msgstr "افزودن مرحله جدید"
 
@@ -692,7 +692,7 @@ msgid "This method is not supported"
 msgstr "این متود پشتیبانی نمی‌شود"
 
 #: SalamQuran/content_m/level/media/view.php:9
-#: SalamQuran/includes/languages/trans_project.php:965
+#: SalamQuran/includes/languages/trans_project.php:954
 msgid "Multimedia"
 msgstr "چندرسانه‌ای"
 
@@ -701,7 +701,7 @@ msgid "Set start and end of quran to load"
 msgstr "تنظیم نقطه شروع و پایان قرآن"
 
 #: SalamQuran/content_m/level/setting/view.php:9
-#: SalamQuran/includes/languages/trans_project.php:860
+#: SalamQuran/includes/languages/trans_project.php:953
 #: dash/addons/content_api/v6/app/controller.php:234
 msgid "Setting"
 msgstr "تنظیمات"
@@ -734,12 +734,12 @@ msgid "Invalid mistake id"
 msgstr "شناسه خطا اشتباه است"
 
 #: SalamQuran/content_m/mistake/home/view.php:10
-#: SalamQuran/includes/languages/trans_project.php:938
+#: SalamQuran/includes/languages/trans_project.php:926
 msgid "Mistake list"
 msgstr "لیست خطا‌های آموزشی"
 
 #: SalamQuran/content_m/mistake/home/view.php:16
-#: SalamQuran/includes/languages/trans_project.php:872
+#: SalamQuran/includes/languages/trans_project.php:860
 msgid "Add new mistake"
 msgstr "افزودن خطای آموزشی جدید"
 
@@ -1521,7 +1521,7 @@ msgid "Code"
 msgstr "کد"
 
 #: SalamQuran/includes/languages/trans_dash.php:185
-#: SalamQuran/includes/languages/trans_project.php:834
+#: SalamQuran/includes/languages/trans_project.php:837
 #: dash/addons/includes/languages/trans_dash.php:43
 msgid "Status"
 msgstr "وضعیت"
@@ -2290,7 +2290,7 @@ msgid "Pay"
 msgstr "پرداخت"
 
 #: SalamQuran/includes/languages/trans_dash.php:343
-#: SalamQuran/includes/languages/trans_project.php:973
+#: SalamQuran/includes/languages/trans_project.php:969
 #: dash/addons/includes/languages/trans_dash.php:539
 #: dash/addons/includes/languages/trans_static.php:90
 #: dash/lib/social/telegram/commands/step_ticketAnswer.php:42
@@ -2331,7 +2331,6 @@ msgid "Day Event"
 msgstr "رویداد‌های روز"
 
 #: SalamQuran/includes/languages/trans_dash.php:352
-#: SalamQuran/includes/languages/trans_project.php:864
 #: dash/addons/includes/languages/trans_dash.php:9
 #: dash/addons/includes/languages/trans_static.php:903
 msgid "Count"
@@ -2460,7 +2459,7 @@ msgid "Featured Image"
 msgstr "تصویر شاخص"
 
 #: SalamQuran/includes/languages/trans_dash.php:380
-#: SalamQuran/includes/languages/trans_project.php:903
+#: SalamQuran/includes/languages/trans_project.php:891
 #: dash/addons/includes/languages/trans_dash.php:71
 msgid "Remove"
 msgstr "حذف"
@@ -2475,7 +2474,7 @@ msgid "Use Special mode"
 msgstr "استفاده از حالت ویژه نمایشی"
 
 #: SalamQuran/includes/languages/trans_dash.php:383
-#: SalamQuran/includes/languages/trans_project.php:880
+#: SalamQuran/includes/languages/trans_project.php:868
 #: dash/addons/includes/languages/trans_dash.php:50
 msgid "Please select one item"
 msgstr "لطفا یک گزینه را انتخاب کنید"
@@ -2535,7 +2534,7 @@ msgid "Add tag to link articles"
 msgstr "افزودن کلیدواژه برای برقرار ارتباط بین نوشته‌ها"
 
 #: SalamQuran/includes/languages/trans_dash.php:394
-#: SalamQuran/includes/languages/trans_project.php:869
+#: SalamQuran/includes/languages/trans_project.php:857
 #: dash/addons/includes/languages/trans_dash.php:173
 #: dash/addons/includes/languages/trans_static.php:147
 msgid "Add"
@@ -2688,6 +2687,7 @@ msgid "Click to download"
 msgstr "برای دانلود کلیک کنید"
 
 #: SalamQuran/includes/languages/trans_dash.php:425
+#: SalamQuran/includes/languages/trans_project.php:963
 #: dash/addons/includes/languages/trans_dash.php:67
 msgid "Video"
 msgstr "ویدیو"
@@ -2744,7 +2744,7 @@ msgid "Apply"
 msgstr "اعمال‌کردن"
 
 #: SalamQuran/includes/languages/trans_dash.php:439
-#: SalamQuran/includes/languages/trans_project.php:840
+#: SalamQuran/includes/languages/trans_project.php:843
 #: dash/addons/includes/languages/trans_dash.php:79
 #: dash/addons/includes/languages/trans_static.php:198
 msgid "Title"
@@ -2769,13 +2769,13 @@ msgid "Search with new keywords."
 msgstr "با کلیدواژه‌های بهتری جستجو کنید."
 
 #: SalamQuran/includes/languages/trans_dash.php:443
-#: SalamQuran/includes/languages/trans_project.php:835
+#: SalamQuran/includes/languages/trans_project.php:838
 #: dash/addons/includes/languages/trans_dash.php:84
 msgid "Hi!"
 msgstr "سلام!"
 
 #: SalamQuran/includes/languages/trans_dash.php:444
-#: SalamQuran/includes/languages/trans_project.php:904
+#: SalamQuran/includes/languages/trans_project.php:892
 #: dash/addons/includes/languages/trans_dash.php:85
 msgid "Try to start with add new record!"
 msgstr "با افزودن رکورد جدید تلاشی برای شروع داشته باشید!"
@@ -2786,7 +2786,7 @@ msgid "All publish posts"
 msgstr "تمامی خبرهای منتشر شده"
 
 #: SalamQuran/includes/languages/trans_dash.php:446
-#: SalamQuran/includes/languages/trans_project.php:968
+#: SalamQuran/includes/languages/trans_project.php:957
 #: dash/addons/includes/languages/trans_dash.php:631
 msgid "All"
 msgstr "همه"
@@ -2918,7 +2918,7 @@ msgid "Approve"
 msgstr "تایید"
 
 #: SalamQuran/includes/languages/trans_dash.php:479
-#: SalamQuran/includes/languages/trans_project.php:964
+#: SalamQuran/includes/languages/trans_project.php:952
 #: dash/addons/includes/languages/trans_dash.php:117
 #: dash/addons/includes/languages/trans_static.php:148
 msgid "Edit"
@@ -2971,7 +2971,7 @@ msgid "Current status"
 msgstr "وضعیت فعلی"
 
 #: SalamQuran/includes/languages/trans_dash.php:490
-#: SalamQuran/includes/languages/trans_project.php:972
+#: SalamQuran/includes/languages/trans_project.php:968
 #: dash/addons/content_su/update/view.php:21
 #: dash/addons/includes/languages/trans_dash.php:132
 #: dash/addons/includes/languages/trans_static.php:150
@@ -3162,7 +3162,7 @@ msgid "Used"
 msgstr "استفاده شده"
 
 #: SalamQuran/includes/languages/trans_dash.php:540
-#: SalamQuran/includes/languages/trans_project.php:841
+#: SalamQuran/includes/languages/trans_project.php:844
 #: dash/addons/includes/languages/trans_dash.php:174
 msgid "Require"
 msgstr "الزامی"
@@ -3193,13 +3193,13 @@ msgid "Please select one itme"
 msgstr "لطفا یک گزینه را انتخاب کنید"
 
 #: SalamQuran/includes/languages/trans_dash.php:546
-#: SalamQuran/includes/languages/trans_project.php:920
+#: SalamQuran/includes/languages/trans_project.php:908
 #: dash/addons/includes/languages/trans_dash.php:180
 msgid "Enable"
 msgstr "فعال"
 
 #: SalamQuran/includes/languages/trans_dash.php:547
-#: SalamQuran/includes/languages/trans_project.php:921
+#: SalamQuran/includes/languages/trans_project.php:909
 #: dash/addons/includes/languages/trans_dash.php:181
 msgid "Disable"
 msgstr "غیرفعال"
@@ -3255,7 +3255,7 @@ msgid "Select category icon"
 msgstr "انتخاب آیکن دسته‌بندی"
 
 #: SalamQuran/includes/languages/trans_dash.php:560
-#: SalamQuran/includes/languages/trans_project.php:830
+#: SalamQuran/includes/languages/trans_project.php:833
 #: dash/addons/includes/languages/trans_dash.php:194
 msgid "User"
 msgstr "کاربر"
@@ -3506,7 +3506,7 @@ msgid "Add tag"
 msgstr "افزودن برچسب"
 
 #: SalamQuran/includes/languages/trans_dash.php:620
-#: SalamQuran/includes/languages/trans_project.php:919
+#: SalamQuran/includes/languages/trans_project.php:907
 #: dash/addons/includes/languages/trans_dash.php:64
 msgid "allowed extentions jpg, png. Max 1000Kb"
 msgstr "پسوند مجاز JPG، PNG حداکثر ۱۰۰۰ کیلوبایت"
@@ -4201,7 +4201,6 @@ msgid "CRM"
 msgstr "مدیریت ارتباط با مشتریان"
 
 #: SalamQuran/includes/languages/trans_dash.php:828
-#: SalamQuran/includes/languages/trans_project.php:853
 #: dash/addons/includes/languages/trans_dash.php:734
 #: dash/addons/includes/languages/trans_static.php:100
 #: dash/addons/includes/languages/trans_static.php:984
@@ -4253,7 +4252,7 @@ msgid "Sub text"
 msgstr "زیرعنوان"
 
 #: SalamQuran/includes/languages/trans_dash.php:838
-#: SalamQuran/includes/languages/trans_project.php:828
+#: SalamQuran/includes/languages/trans_project.php:831
 #: dash/addons/includes/languages/trans_dash.php:744
 msgid "Group"
 msgstr "گروه"
@@ -6151,7 +6150,7 @@ msgid "Server"
 msgstr "سرور"
 
 #: SalamQuran/includes/languages/trans_dash.php:1309
-#: SalamQuran/includes/languages/trans_project.php:1029
+#: SalamQuran/includes/languages/trans_project.php:1025
 #: dash/addons/includes/languages/trans_dash.php:1219
 msgid "Date and time"
 msgstr "تاریخ و زمان"
@@ -6537,7 +6536,7 @@ msgid "Meta"
 msgstr "متا"
 
 #: SalamQuran/includes/languages/trans_dash.php:1411
-#: SalamQuran/includes/languages/trans_project.php:827
+#: SalamQuran/includes/languages/trans_project.php:830
 #: dash/addons/includes/languages/trans_dash.php:1304
 msgid "ID"
 msgstr "شناسه"
@@ -9330,435 +9329,439 @@ msgstr "پروژه تعریف و توافق اولیه برای انجام آن 
 msgid "Be patient..."
 msgstr "صبور باشید..."
 
-#: SalamQuran/includes/languages/trans_project.php:829
+#: SalamQuran/includes/languages/trans_project.php:825
+msgid "Groups"
+msgstr "گروه‌ها"
+
+#: SalamQuran/includes/languages/trans_project.php:826
+msgid "Levels"
+msgstr "مراحل"
+
+#: SalamQuran/includes/languages/trans_project.php:827
+msgid "Mistake in learn"
+msgstr "خطاهای آموزشی"
+
+#: SalamQuran/includes/languages/trans_project.php:832
 msgid "Level"
 msgstr "مرحله"
 
-#: SalamQuran/includes/languages/trans_project.php:831
+#: SalamQuran/includes/languages/trans_project.php:834
 msgid "Operator"
 msgstr "اپراتور"
 
-#: SalamQuran/includes/languages/trans_project.php:832
+#: SalamQuran/includes/languages/trans_project.php:835
 msgid "Audio file"
 msgstr "فایل صوتی"
 
-#: SalamQuran/includes/languages/trans_project.php:833
+#: SalamQuran/includes/languages/trans_project.php:836
 #: dash/lib/app/log/support_tools.php:42
 #: dash/lib/social/telegram/commands/ticket.php:101
 msgid "Answer"
 msgstr "پاسخ"
 
-#: SalamQuran/includes/languages/trans_project.php:836
+#: SalamQuran/includes/languages/trans_project.php:839
 msgid "Try to start with add new badge!"
 msgstr "با افزودن نشان جدید تلاشی برای شروع داشته باشید!"
 
-#: SalamQuran/includes/languages/trans_project.php:839
+#: SalamQuran/includes/languages/trans_project.php:842
 msgid "Mistakes"
 msgstr "اشتباهات"
 
-#: SalamQuran/includes/languages/trans_project.php:842
+#: SalamQuran/includes/languages/trans_project.php:845
 msgid "Level title"
 msgstr "عنوان مرحله"
 
-#: SalamQuran/includes/languages/trans_project.php:843
+#: SalamQuran/includes/languages/trans_project.php:846
 msgid "Teacher audio answer"
 msgstr "پاسخ صوتی استاد"
 
-#: SalamQuran/includes/languages/trans_project.php:844
+#: SalamQuran/includes/languages/trans_project.php:847
 msgid "Your answer file"
 msgstr "پاسخ صوتی شما"
 
-#: SalamQuran/includes/languages/trans_project.php:845
+#: SalamQuran/includes/languages/trans_project.php:848
 #: dash/addons/includes/languages/trans_static.php:861
 #: dash/addons/includes/languages/trans_static.php:936
 msgid "awaiting"
 msgstr "در انتظار"
 
-#: SalamQuran/includes/languages/trans_project.php:846
+#: SalamQuran/includes/languages/trans_project.php:849
 #: dash/addons/includes/languages/trans_static.php:928
 msgid "spam"
 msgstr "هرزنامه"
 
-#: SalamQuran/includes/languages/trans_project.php:847
+#: SalamQuran/includes/languages/trans_project.php:850
 #: dash/addons/includes/languages/trans_static.php:859
 msgid "deleted"
 msgstr "حذف شده"
 
-#: SalamQuran/includes/languages/trans_project.php:848
+#: SalamQuran/includes/languages/trans_project.php:851
 msgid "admindelete"
 msgstr "حذف توسط مدیر"
 
-#: SalamQuran/includes/languages/trans_project.php:849
+#: SalamQuran/includes/languages/trans_project.php:852
 #: dash/addons/includes/languages/trans_static.php:937
 msgid "approved"
 msgstr "تایید شده"
 
-#: SalamQuran/includes/languages/trans_project.php:850
+#: SalamQuran/includes/languages/trans_project.php:853
 #: dash/addons/includes/languages/trans_static.php:901
 msgid "reject"
 msgstr "رد کردن"
 
-#: SalamQuran/includes/languages/trans_project.php:854
-msgid "Transactions"
-msgstr "تراکنش‌ها"
-
-#: SalamQuran/includes/languages/trans_project.php:855
-msgid "Referee"
-msgstr "داوران"
-
 #: SalamQuran/includes/languages/trans_project.php:856
-msgid "Show festival"
-msgstr "نمایش جشنواره"
-
-#: SalamQuran/includes/languages/trans_project.php:857
-msgid "Media supporter"
-msgstr "حامی مالی"
-
-#: SalamQuran/includes/languages/trans_project.php:858
-msgid "Edit group"
-msgstr "ویرایش گروه"
-
-#: SalamQuran/includes/languages/trans_project.php:859
-msgid "Sponsers"
-msgstr "حامی"
-
-#: SalamQuran/includes/languages/trans_project.php:861
-msgid "No user signuped to this festival yet!"
-msgstr "هنوز هیچ کاربری در این جشنواره ثبت‌نام نکرده است!"
-
-#: SalamQuran/includes/languages/trans_project.php:865
-msgid "Price Variation"
-msgstr "پراکندگی قیمت"
-
-#: SalamQuran/includes/languages/trans_project.php:868
 msgid "Mistake title"
 msgstr "عنوان خطای آموزشی"
 
-#: SalamQuran/includes/languages/trans_project.php:873
+#: SalamQuran/includes/languages/trans_project.php:861
 msgid "Try to start with add new mistake!"
 msgstr "با افزودن خطای آموزشی جدید تلاشی برای شروع داشته باشید!"
 
-#: SalamQuran/includes/languages/trans_project.php:878
+#: SalamQuran/includes/languages/trans_project.php:866
 msgid "Avatar"
 msgstr "آواتار"
 
-#: SalamQuran/includes/languages/trans_project.php:879
+#: SalamQuran/includes/languages/trans_project.php:867
 msgid "Read Type"
 msgstr "نوع خواندن"
 
-#: SalamQuran/includes/languages/trans_project.php:881
+#: SalamQuran/includes/languages/trans_project.php:869
 msgid "filetype"
 msgstr "نوع فایل"
 
-#: SalamQuran/includes/languages/trans_project.php:882
+#: SalamQuran/includes/languages/trans_project.php:870
 msgid "Choose country"
 msgstr "کشور را انتخاب کنید"
 
-#: SalamQuran/includes/languages/trans_project.php:883
+#: SalamQuran/includes/languages/trans_project.php:871
 msgid "addr"
 msgstr "آدرس"
 
-#: SalamQuran/includes/languages/trans_project.php:884
+#: SalamQuran/includes/languages/trans_project.php:872
 msgid "quality"
 msgstr "کیفیت"
 
-#: SalamQuran/includes/languages/trans_project.php:887
+#: SalamQuran/includes/languages/trans_project.php:875
 msgid "Select magazine"
 msgstr "مقاله را انتخاب کنید"
 
-#: SalamQuran/includes/languages/trans_project.php:888
+#: SalamQuran/includes/languages/trans_project.php:876
 msgid "Connect to"
 msgstr "اتصال به"
 
-#: SalamQuran/includes/languages/trans_project.php:889
+#: SalamQuran/includes/languages/trans_project.php:877
 msgid "Word in aya"
 msgstr "کلمه در آیه"
 
-#: SalamQuran/includes/languages/trans_project.php:890
+#: SalamQuran/includes/languages/trans_project.php:878
 msgid "Words"
 msgstr "کلمات"
 
-#: SalamQuran/includes/languages/trans_project.php:891
+#: SalamQuran/includes/languages/trans_project.php:879
 msgid "Connect to word"
 msgstr "اتصال به کلمه"
 
-#: SalamQuran/includes/languages/trans_project.php:892
+#: SalamQuran/includes/languages/trans_project.php:880
 msgid "Show words of this aya"
 msgstr "نمایش کلمات این آیه"
 
-#: SalamQuran/includes/languages/trans_project.php:893
+#: SalamQuran/includes/languages/trans_project.php:881
 msgid "Connect to sura"
 msgstr "اتصال به سوره"
 
-#: SalamQuran/includes/languages/trans_project.php:894
+#: SalamQuran/includes/languages/trans_project.php:882
 msgid "Connect to aya"
 msgstr "اتصال به آیه"
 
-#: SalamQuran/includes/languages/trans_project.php:895
+#: SalamQuran/includes/languages/trans_project.php:883
 msgid "Connect to page"
 msgstr "اتصال به صفحه"
 
-#: SalamQuran/includes/languages/trans_project.php:896
+#: SalamQuran/includes/languages/trans_project.php:884
 msgid "Select sura"
 msgstr "انتخاب سوره"
 
-#: SalamQuran/includes/languages/trans_project.php:899
+#: SalamQuran/includes/languages/trans_project.php:887
 msgid "Magazine list"
 msgstr "لیست مجله"
 
-#: SalamQuran/includes/languages/trans_project.php:900
+#: SalamQuran/includes/languages/trans_project.php:888
 msgid "Connect mag to quran"
 msgstr "اتصال مجله به قرآن"
 
-#: SalamQuran/includes/languages/trans_project.php:901
+#: SalamQuran/includes/languages/trans_project.php:889
 msgid "Action"
 msgstr "عملیات"
 
-#: SalamQuran/includes/languages/trans_project.php:902
+#: SalamQuran/includes/languages/trans_project.php:890
 msgid "Word"
 msgstr "کلمات"
 
-#: SalamQuran/includes/languages/trans_project.php:907
+#: SalamQuran/includes/languages/trans_project.php:895
 msgid "Group title"
 msgstr "عنوان گروه"
 
-#: SalamQuran/includes/languages/trans_project.php:911
+#: SalamQuran/includes/languages/trans_project.php:899
 msgid "Level count"
 msgstr "تعداد مراحل"
 
-#: SalamQuran/includes/languages/trans_project.php:912
+#: SalamQuran/includes/languages/trans_project.php:900
 msgid "Sort"
 msgstr "مرتب‌سازی"
 
-#: SalamQuran/includes/languages/trans_project.php:913
+#: SalamQuran/includes/languages/trans_project.php:901
 msgid "Show level"
 msgstr "نمایش مرحله"
 
-#: SalamQuran/includes/languages/trans_project.php:915
+#: SalamQuran/includes/languages/trans_project.php:903
 msgid "Try to start with add new group!"
 msgstr "با افزودن گروه جدید تلاشی برای شروع داشته باشید!"
 
-#: SalamQuran/includes/languages/trans_project.php:918
+#: SalamQuran/includes/languages/trans_project.php:906
 msgid "Image file"
 msgstr "تصویر"
 
-#: SalamQuran/includes/languages/trans_project.php:926
+#: SalamQuran/includes/languages/trans_project.php:914
 msgid "Run again"
 msgstr "اجراء دوباره"
 
-#: SalamQuran/includes/languages/trans_project.php:927
+#: SalamQuran/includes/languages/trans_project.php:915
 msgid "Audio bank"
 msgstr "بانک صوت"
 
-#: SalamQuran/includes/languages/trans_project.php:930
+#: SalamQuran/includes/languages/trans_project.php:918
 msgid "Check audio online"
 msgstr "بررسی بر خط صوت"
 
-#: SalamQuran/includes/languages/trans_project.php:931
+#: SalamQuran/includes/languages/trans_project.php:919
 msgid "Read type"
 msgstr "نوع خواندن"
 
-#: SalamQuran/includes/languages/trans_project.php:932
+#: SalamQuran/includes/languages/trans_project.php:920
 msgid "file type"
 msgstr "نوع فایل"
 
-#: SalamQuran/includes/languages/trans_project.php:933
+#: SalamQuran/includes/languages/trans_project.php:921
 msgid "Addr"
 msgstr "آدرس"
 
-#: SalamQuran/includes/languages/trans_project.php:934
+#: SalamQuran/includes/languages/trans_project.php:922
 msgid "Try to start with add new audio!"
 msgstr "با افزودن صوت جدید تلاشی برای شروع داشته باشید!"
 
-#: SalamQuran/includes/languages/trans_project.php:939
+#: SalamQuran/includes/languages/trans_project.php:927
 msgid "User audio list"
 msgstr "لیست صوت‌های کاربران"
 
-#: SalamQuran/includes/languages/trans_project.php:944
+#: SalamQuran/includes/languages/trans_project.php:932
 msgid "End aya"
 msgstr "آیه پایانی"
 
-#: SalamQuran/includes/languages/trans_project.php:945
+#: SalamQuran/includes/languages/trans_project.php:933
 msgid "Need load Besmellah?"
 msgstr "قرارگیری «بسم الله الرحمن الرحیم» در ابتدای محتوا"
 
-#: SalamQuran/includes/languages/trans_project.php:948
+#: SalamQuran/includes/languages/trans_project.php:936
 msgid "Ratio score"
 msgstr "نسبت امتیاز"
 
-#: SalamQuran/includes/languages/trans_project.php:949
+#: SalamQuran/includes/languages/trans_project.php:937
 msgid "Unlock score"
 msgstr "حداقل امتیاز برای باز شدن قفل"
 
-#: SalamQuran/includes/languages/trans_project.php:950
+#: SalamQuran/includes/languages/trans_project.php:938
 msgid "Count random question"
 msgstr "تعداد سوالات تصادفی"
 
-#: SalamQuran/includes/languages/trans_project.php:953
+#: SalamQuran/includes/languages/trans_project.php:941
 msgid "Master file"
 msgstr "فایل اصلی"
 
-#: SalamQuran/includes/languages/trans_project.php:954
+#: SalamQuran/includes/languages/trans_project.php:942
 msgid "Set file url or upload file"
 msgstr "آدرس فایل را تنظیم کنید یا فایلی را بارگذاری کنید"
 
-#: SalamQuran/includes/languages/trans_project.php:955
+#: SalamQuran/includes/languages/trans_project.php:943
 msgid "View file"
 msgstr "نمایش فایل"
 
-#: SalamQuran/includes/languages/trans_project.php:956
+#: SalamQuran/includes/languages/trans_project.php:944
 msgid "Mulitmedia file"
 msgstr "فایل چندرسانه‌ای"
 
-#: SalamQuran/includes/languages/trans_project.php:957
+#: SalamQuran/includes/languages/trans_project.php:945
 msgid "File url"
 msgstr "آدرس فایل"
 
-#: SalamQuran/includes/languages/trans_project.php:958
+#: SalamQuran/includes/languages/trans_project.php:946
 msgid "Picture of file"
 msgstr "تصویر فایل"
 
-#: SalamQuran/includes/languages/trans_project.php:961
+#: SalamQuran/includes/languages/trans_project.php:949
 msgid "No active group found!"
 msgstr "هیچ گروه فعالی یافت نشد"
 
-#: SalamQuran/includes/languages/trans_project.php:969
+#: SalamQuran/includes/languages/trans_project.php:958
+msgid "Question count"
+msgstr "تعداد سوالات"
+
+#: SalamQuran/includes/languages/trans_project.php:959
+msgid "Random question"
+msgstr "تعداد سوالات تصادفی"
+
+#: SalamQuran/includes/languages/trans_project.php:960
+msgid "Besmellah"
+msgstr "بسم الله الرحمن الرحیم"
+
+#: SalamQuran/includes/languages/trans_project.php:961
+msgid "Start word"
+msgstr "کلمه شروع"
+
+#: SalamQuran/includes/languages/trans_project.php:962
+msgid "End word"
+msgstr "کلمه پایانی"
+
+#: SalamQuran/includes/languages/trans_project.php:964
+msgid "Cover"
+msgstr "کاور"
+
+#: SalamQuran/includes/languages/trans_project.php:965
 msgid "Try to start with add new level!"
 msgstr "با افزودن مرحله جدید تلاشی برای شروع داشته باشید!"
 
-#: SalamQuran/includes/languages/trans_project.php:974
+#: SalamQuran/includes/languages/trans_project.php:970
 msgid "Option 1"
 msgstr "گزینه ۱"
 
-#: SalamQuran/includes/languages/trans_project.php:975
+#: SalamQuran/includes/languages/trans_project.php:971
 msgid "1"
 msgstr "۱"
 
-#: SalamQuran/includes/languages/trans_project.php:976
+#: SalamQuran/includes/languages/trans_project.php:972
 msgid "Option 2"
 msgstr "گزینه ۲"
 
-#: SalamQuran/includes/languages/trans_project.php:977
+#: SalamQuran/includes/languages/trans_project.php:973
 msgid "2"
 msgstr "۲"
 
-#: SalamQuran/includes/languages/trans_project.php:978
+#: SalamQuran/includes/languages/trans_project.php:974
 msgid "Option 3"
 msgstr "گزینه ۳"
 
-#: SalamQuran/includes/languages/trans_project.php:979
+#: SalamQuran/includes/languages/trans_project.php:975
 msgid "3"
 msgstr "۳"
 
-#: SalamQuran/includes/languages/trans_project.php:980
+#: SalamQuran/includes/languages/trans_project.php:976
 msgid "Option 4"
 msgstr "گزینه ۴"
 
-#: SalamQuran/includes/languages/trans_project.php:981
+#: SalamQuran/includes/languages/trans_project.php:977
 msgid "4"
 msgstr "۴"
 
-#: SalamQuran/includes/languages/trans_project.php:982
+#: SalamQuran/includes/languages/trans_project.php:978
 msgid "Questions"
 msgstr "سوالات"
 
-#: SalamQuran/includes/languages/trans_project.php:983
+#: SalamQuran/includes/languages/trans_project.php:979
 msgid "No question added"
 msgstr "هیچ سوالی ثبت نشده است"
 
-#: SalamQuran/includes/languages/trans_project.php:988
+#: SalamQuran/includes/languages/trans_project.php:984
 msgid "Badge title"
 msgstr "عنوان نشان"
 
-#: SalamQuran/includes/languages/trans_project.php:1004
+#: SalamQuran/includes/languages/trans_project.php:1000
 msgid "Your intention of khatm quran"
 msgstr "نیت شما از این ختم قرآن"
 
-#: SalamQuran/includes/languages/trans_project.php:1005
+#: SalamQuran/includes/languages/trans_project.php:1001
 msgid "Repeat whole khatm"
 msgstr "تعداد دفعات تکرار کل ختم"
 
-#: SalamQuran/includes/languages/trans_project.php:1006
+#: SalamQuran/includes/languages/trans_project.php:1002
 msgid "Between 1 and 114"
 msgstr "بین ۱ و ۱۱۴"
 
-#: SalamQuran/includes/languages/trans_project.php:1007
+#: SalamQuran/includes/languages/trans_project.php:1003
 msgid "Read quran mode"
 msgstr "حالت خواندن قرآن"
 
-#: SalamQuran/includes/languages/trans_project.php:1008
+#: SalamQuran/includes/languages/trans_project.php:1004
 #: SalamQuran/includes/lib/app/khatm.php:439
 msgid "Read quran page by page"
 msgstr "خواندن قرآن به صورت صفحه به صفحه"
 
-#: SalamQuran/includes/languages/trans_project.php:1009
+#: SalamQuran/includes/languages/trans_project.php:1005
 #: SalamQuran/includes/lib/app/khatm.php:440
 msgid "Read quran juz by juz"
 msgstr "خواندن قرآن به صورت جزء به جزء"
 
-#: SalamQuran/includes/languages/trans_project.php:1010
+#: SalamQuran/includes/languages/trans_project.php:1006
 msgid "Range of khatm"
 msgstr "محدوده ختم قرآن کریم"
 
-#: SalamQuran/includes/languages/trans_project.php:1011
+#: SalamQuran/includes/languages/trans_project.php:1007
 #: SalamQuran/includes/lib/app/khatm.php:445
 msgid "The whole Quran"
 msgstr "کل قرآن"
 
-#: SalamQuran/includes/languages/trans_project.php:1012
+#: SalamQuran/includes/languages/trans_project.php:1008
 #: SalamQuran/includes/lib/app/khatm.php:446
 msgid "Special Surah"
 msgstr "سوره خاص"
 
-#: SalamQuran/includes/languages/trans_project.php:1013
+#: SalamQuran/includes/languages/trans_project.php:1009
 #: dash/addons/content_api/v6/app/controller.php:172
 msgid "Privacy"
 msgstr "حریم خصوصی"
 
-#: SalamQuran/includes/languages/trans_project.php:1014
+#: SalamQuran/includes/languages/trans_project.php:1010
 msgid "Public"
 msgstr "عمومی"
 
-#: SalamQuran/includes/languages/trans_project.php:1015
+#: SalamQuran/includes/languages/trans_project.php:1011
 msgid "Everyone can see it"
 msgstr "همه می‌توانند این را ببینند"
 
-#: SalamQuran/includes/languages/trans_project.php:1016
+#: SalamQuran/includes/languages/trans_project.php:1012
 msgid "Private"
 msgstr "خصوصی"
 
-#: SalamQuran/includes/languages/trans_project.php:1017
+#: SalamQuran/includes/languages/trans_project.php:1013
 msgid "Only you can see it"
 msgstr "تنها شما می‌توانید این را مشاهده کنید"
 
-#: SalamQuran/includes/languages/trans_project.php:1020
+#: SalamQuran/includes/languages/trans_project.php:1016
 #: dash/addons/content_api/v6/app/controller.php:338
 msgid "Start"
 msgstr "شروع"
 
-#: SalamQuran/includes/languages/trans_project.php:1023
+#: SalamQuran/includes/languages/trans_project.php:1019
 msgid "Try to start with add new khatm!"
 msgstr "با افزودن ختم جدید تلاشی برای شروع داشته باشید!"
 
-#: SalamQuran/includes/languages/trans_project.php:1028
+#: SalamQuran/includes/languages/trans_project.php:1024
 msgid "Favorites"
 msgstr "علاقه‌مندی"
 
-#: SalamQuran/includes/languages/trans_project.php:1030
+#: SalamQuran/includes/languages/trans_project.php:1026
 msgid "No favorites added"
 msgstr "هیچ موردی ثبت نشده است"
 
-#: SalamQuran/includes/languages/trans_project.php:1033
+#: SalamQuran/includes/languages/trans_project.php:1029
 msgid "History"
 msgstr "تاریخچه"
 
-#: SalamQuran/includes/languages/trans_project.php:1034
+#: SalamQuran/includes/languages/trans_project.php:1030
 #: SalamQuran/includes/lib/app/khatm.php:174
 #: SalamQuran/includes/lib/app/khatm.php:420
 msgid "Khatm"
 msgstr "ختم قرآن کریم"
 
-#: SalamQuran/includes/languages/trans_project.php:1035
+#: SalamQuran/includes/languages/trans_project.php:1031
 msgid "Favorite"
 msgstr "علاقمندی"
 
@@ -10153,7 +10156,7 @@ msgstr "لطفا کیفیت را کمتر از ۲۰۰ حرف وارد کنید"
 #: SalamQuran/includes/lib/app/lm_audio.php:224
 #: SalamQuran/includes/lib/app/lm_group.php:267
 #: SalamQuran/includes/lib/app/lm_level.php:375
-#: SalamQuran/includes/lib/app/lm_question.php:313
+#: SalamQuran/includes/lib/app/lm_question.php:315
 #: dash/addons/content_cms/comments/edit/model.php:12
 #: dash/addons/content_cms/contact/edit/model.php:12
 #: dash/addons/content_support/ticket/show/model.php:144
@@ -10178,7 +10181,7 @@ msgstr "فارسی"
 #: SalamQuran/includes/lib/app/lm_level.php:84
 #: SalamQuran/includes/lib/app/lm_level.php:165
 #: SalamQuran/includes/lib/app/lm_mistake.php:24
-#: SalamQuran/includes/lib/app/lm_question.php:109
+#: SalamQuran/includes/lib/app/lm_question.php:111
 #: SalamQuran/includes/lib/app/lm_star.php:31
 #: SalamQuran/includes/lib/app/lm_star.php:93
 #: SalamQuran/includes/lib/app/lm_star.php:158
@@ -10209,7 +10212,7 @@ msgstr "شما دسترسی لازم را برای ویرایش این بانک 
 #: SalamQuran/includes/lib/app/lm_group.php:104
 #: SalamQuran/includes/lib/app/lm_level.php:193
 #: SalamQuran/includes/lib/app/lm_mistake.php:44
-#: SalamQuran/includes/lib/app/lm_question.php:132
+#: SalamQuran/includes/lib/app/lm_question.php:134
 #: SalamQuran/includes/lib/app/lm_star.php:73
 #: SalamQuran/includes/lib/app/lm_star.php:139
 #: SalamQuran/includes/lib/app/lm_star.php:200
@@ -10230,7 +10233,7 @@ msgstr "نشان"
 #: SalamQuran/includes/lib/app/lm_group.php:159
 #: SalamQuran/includes/lib/app/lm_level.php:257
 #: SalamQuran/includes/lib/app/lm_mistake.php:94
-#: SalamQuran/includes/lib/app/lm_question.php:194
+#: SalamQuran/includes/lib/app/lm_question.php:196
 msgid ":val successfully updated"
 msgstr ":val با موفقیت به‌روزرسانی شد"
 
@@ -10242,7 +10245,7 @@ msgstr "شناسه مدال تنظیم نشده است"
 #: SalamQuran/includes/lib/app/lm_group.php:237
 #: SalamQuran/includes/lib/app/lm_level.php:334
 #: SalamQuran/includes/lib/app/lm_mistake.php:172
-#: SalamQuran/includes/lib/app/lm_question.php:272
+#: SalamQuran/includes/lib/app/lm_question.php:274
 msgid "Please fill the title"
 msgstr "لطفا عنوان را وارد کنید"
 
@@ -10258,7 +10261,7 @@ msgstr "لطفا عنوان را کمتر از  ۳۰۰ حرف وارد کنید"
 #: SalamQuran/includes/lib/app/lm_group.php:257
 #: SalamQuran/includes/lib/app/lm_level.php:364
 #: SalamQuran/includes/lib/app/lm_mistake.php:192
-#: SalamQuran/includes/lib/app/lm_question.php:302
+#: SalamQuran/includes/lib/app/lm_question.php:304
 msgid "This title is already exist in your list"
 msgstr "این عنوان در لیست شما وجود دارد"
 
@@ -10266,7 +10269,7 @@ msgstr "این عنوان در لیست شما وجود دارد"
 #: SalamQuran/includes/lib/app/lm_group.php:258
 #: SalamQuran/includes/lib/app/lm_level.php:365
 #: SalamQuran/includes/lib/app/lm_mistake.php:193
-#: SalamQuran/includes/lib/app/lm_question.php:303
+#: SalamQuran/includes/lib/app/lm_question.php:305
 msgid "Click here to edit it"
 msgstr "برای ویرایش آن اینجا کلیک کنید"
 
@@ -10303,7 +10306,7 @@ msgstr "پرداخت :price تومان"
 #: SalamQuran/includes/lib/app/lm_group.php:304
 #: SalamQuran/includes/lib/app/lm_level.php:55
 #: SalamQuran/includes/lib/app/lm_level.php:455
-#: SalamQuran/includes/lib/app/lm_question.php:326
+#: SalamQuran/includes/lib/app/lm_question.php:328
 #: SalamQuran/includes/lib/app/mag.php:146
 #: dash/addons/content_api/v6/session/controller.php:138
 #: dash/addons/content_su/transactions/add/model.php:80 dash/lib/app/posts.php:768
@@ -10563,7 +10566,7 @@ msgstr "مرتب سازی خارج از محدوده مجاز است"
 
 #: SalamQuran/includes/lib/app/lm_group.php:298
 #: SalamQuran/includes/lib/app/lm_level.php:449
-#: SalamQuran/includes/lib/app/lm_question.php:320
+#: SalamQuran/includes/lib/app/lm_question.php:322
 msgid "Please choose type"
 msgstr "لطفا نوع را انتخاب کنید"
 
@@ -10609,7 +10612,7 @@ msgid "Invalid lm_level id"
 msgstr "شناسه مرحله اشتباه است"
 
 #: SalamQuran/includes/lib/app/lm_level.php:348
-#: SalamQuran/includes/lib/app/lm_question.php:286
+#: SalamQuran/includes/lib/app/lm_question.php:288
 msgid "Please set group id"
 msgstr "لطفا شناسه گروه را تنظیم کنید"
 
@@ -10694,71 +10697,71 @@ msgstr "شناسه خطا ثبت نشده است"
 msgid "Invalid lm_mistake id"
 msgstr "شناسه خطا اشتباه است"
 
-#: SalamQuran/includes/lib/app/lm_question.php:70
+#: SalamQuran/includes/lib/app/lm_question.php:72
 msgid "Question removed"
 msgstr "سوال حذف شد"
 
-#: SalamQuran/includes/lib/app/lm_question.php:141
+#: SalamQuran/includes/lib/app/lm_question.php:143
 msgid "Question successfuly added"
 msgstr "سوال با موفقیت اضافه شد"
 
-#: SalamQuran/includes/lib/app/lm_question.php:188
+#: SalamQuran/includes/lib/app/lm_question.php:190
 msgid "Question"
 msgstr "سوال"
 
-#: SalamQuran/includes/lib/app/lm_question.php:207
+#: SalamQuran/includes/lib/app/lm_question.php:209
 msgid "lm_question id not set"
 msgstr "شناسه سوال تنظیم نشده است"
 
-#: SalamQuran/includes/lib/app/lm_question.php:215
+#: SalamQuran/includes/lib/app/lm_question.php:217
 msgid "Invalid lm_question id"
 msgstr "شناسه سوال اشتباه است"
 
-#: SalamQuran/includes/lib/app/lm_question.php:278
+#: SalamQuran/includes/lib/app/lm_question.php:280
 msgid "Please fill the title less than 5000 character"
 msgstr "لطفا عنوان را کمتر از ۵۰۰۰ حرف وارد کنید"
 
-#: SalamQuran/includes/lib/app/lm_question.php:334
+#: SalamQuran/includes/lib/app/lm_question.php:336
 msgid "Please choose model"
 msgstr "لطفا مدل را انتخاب کنید"
 
-#: SalamQuran/includes/lib/app/lm_question.php:340
+#: SalamQuran/includes/lib/app/lm_question.php:342
 msgid "Invalid model"
 msgstr "مدل اشتباه است"
 
-#: SalamQuran/includes/lib/app/lm_question.php:348
+#: SalamQuran/includes/lib/app/lm_question.php:350
 msgid "Please choose trueopt"
 msgstr "لطفا گزینه صحیح را انتخاب کنید"
 
-#: SalamQuran/includes/lib/app/lm_question.php:360
+#: SalamQuran/includes/lib/app/lm_question.php:362
 msgid "Invalid trueopt"
 msgstr "ساختار گزینه صحیح اشتباه است"
 
-#: SalamQuran/includes/lib/app/lm_question.php:371
+#: SalamQuran/includes/lib/app/lm_question.php:373
 msgid "Option 1 is required"
 msgstr "گزینه یک الزامی است"
 
-#: SalamQuran/includes/lib/app/lm_question.php:384
+#: SalamQuran/includes/lib/app/lm_question.php:386
 msgid "Option 2 is required"
 msgstr "گزینه دو الزامی است"
 
-#: SalamQuran/includes/lib/app/lm_question.php:395
+#: SalamQuran/includes/lib/app/lm_question.php:397
 msgid "Please fill out the options in order"
 msgstr "لطفا گزینه‌ها را به ترتیب پر کنید"
 
-#: SalamQuran/includes/lib/app/lm_question.php:401
+#: SalamQuran/includes/lib/app/lm_question.php:403
 msgid "Option 3 is empty and can not set true option on this"
 msgstr "گزینه ۳ خالی است و نمی‌توانید گزینه صحیح را روی این گزینه تنظیم کنید"
 
-#: SalamQuran/includes/lib/app/lm_question.php:407
+#: SalamQuran/includes/lib/app/lm_question.php:409
 msgid "Option 4 is empty and can not set true option on this"
 msgstr "گزینه ۴ خالی است و نمی‌توانید گزینه صحیح را روی این گزینه تنظیم کنید"
 
-#: SalamQuran/includes/lib/app/lm_question.php:413
+#: SalamQuran/includes/lib/app/lm_question.php:415
 msgid "Please set the true option"
 msgstr "لطفا گزینه صحیح را انتخاب کنید"
 
-#: SalamQuran/includes/lib/app/lm_question.php:443
+#: SalamQuran/includes/lib/app/lm_question.php:445
 msgid "Option length is out of range"
 msgstr "طول گزینه‌ها خارج از محدوده مجاز است"
 
@@ -19499,6 +19502,30 @@ msgstr "نام فایل غیرمجاز"
 #: dash/lib/utility/upload/check.php:91
 msgid "Exceeded file extension limit"
 msgstr "نوع فایل غیرمجاز"
+
+#~ msgid "Transactions"
+#~ msgstr "تراکنش‌ها"
+
+#~ msgid "Referee"
+#~ msgstr "داوران"
+
+#~ msgid "Show festival"
+#~ msgstr "نمایش جشنواره"
+
+#~ msgid "Media supporter"
+#~ msgstr "حامی مالی"
+
+#~ msgid "Edit group"
+#~ msgstr "ویرایش گروه"
+
+#~ msgid "Sponsers"
+#~ msgstr "حامی"
+
+#~ msgid "No user signuped to this festival yet!"
+#~ msgstr "هنوز هیچ کاربری در این جشنواره ثبت‌نام نکرده است!"
+
+#~ msgid "Price Variation"
+#~ msgstr "پراکندگی قیمت"
 
 #~ msgid "True option"
 #~ msgstr "گزینه صحیح"
