@@ -463,6 +463,7 @@ class lm_question
 	public static function ready($_data)
 	{
 		$result = [];
+		$longopt = false;
 		foreach ($_data as $key => $value)
 		{
 
@@ -477,6 +478,17 @@ class lm_question
 					else
 					{
 						$result[$key] = null;
+					}
+					break;
+
+				case 'opt1':
+				case 'opt2':
+				case 'opt3':
+				case 'opt4':
+					$result[$key] = $value;
+					if(mb_strlen($value) > 30)
+					{
+						$longopt = true;
 					}
 					break;
 
@@ -497,6 +509,8 @@ class lm_question
 					break;
 			}
 		}
+
+		$result['longopt'] = $longopt;
 
 		return $result;
 	}

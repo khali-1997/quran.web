@@ -111,7 +111,7 @@ class lm_level
 		$list['tajweed']    = ['title' => T_("Tajweed")];
 		$list['theme']      = ['title' => T_("Theme of surah")];
 		$list['exam']       = ['title' => T_("Exam")];
-		$list['iqra']       = ['title' => T_("Fix reading")];
+		$list['iqra']       = ['title' => T_("Fix qiraat")];
 
 		if($_check === null)
 		{
