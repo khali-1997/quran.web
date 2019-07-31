@@ -1,0 +1,12 @@
+/* Design for open in iframe */
+
+body.iframe:before{background:#fff;}
+.iframe header{display:none!important;}
+.iframe #sidebar{display:none!important;}
+.iframe .player{right:0!important;left:0!important;}
+.iframe #page{margin:0!important;}
+.iframe footer{display:none!important;}
+.iframe .shareLine{display:none!important;}
+.iframe #dlapp{display:none!important;}
+.iframe #nodes{display:none!important;}
+
