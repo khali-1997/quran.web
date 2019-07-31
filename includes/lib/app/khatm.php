@@ -80,8 +80,8 @@ class khatm
 
 		$desc = '';
 		$desc .= ' '. T_('Hi');
-		$desc .= ' '. T_('To take part in the conference, you must read a :val of the Holy Quran', ['val' => T_(ucfirst($load['type']))]);
-		$desc .= ' '. T_('If you want to attend the conference, click on the button below');
+		$desc .= ' '. T_('To take part in the khatm, you must read a :val of the Holy Quran', ['val' => T_(ucfirst($load['type']))]);
+		$desc .= ' '. T_('If you want to attend the khatm, click on the button below');
 		$desc .= ' '. T_('It is up to you to complete the religious responsibility');
 		$load['desc'] = $desc;
 
@@ -383,7 +383,7 @@ class khatm
 
 		if($range === 'sura' && !$sura)
 		{
-			\dash\notif::error(T_("Plase set surah"));
+			\dash\notif::error(T_("Please set surah"));
 			return false;
 		}
 
