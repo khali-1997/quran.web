@@ -3,16 +3,22 @@
 
 
 {%block pageContent%}
+
+
 <div class="f justify-center">
-  <div class="c5 txtC">
+  <div class="c9 s12">
     <div class="cbox">
-      {%if loadLevel.file%}
-        <video width="800" height="600" controls>
-          <source src="{{loadLevel.file}}" type="video/mp4">
-        </video>
-      {%endif%}
-      <p class="fs08">{{loadLevel.desc}}</p>
-    <a href="{{url.here}}/level/{{loadLevel.type}}?id={{loadLevel.id}}" class="btn block outline info">{%trans "Continue"%}</a>
+{%if loadLevel.file%}
+      <video width="100%" controls>
+        <source src="{{loadLevel.file}}" type="video/mp4">
+      </video>
+{%endif%}
+{%if loadLevel.desc%}
+      <p class="msg mT20 txtB fs11">{{loadLevel.desc}}</p>
+{%endif%}
+      <div class="txtC">
+        <a href="{{url.here}}/level/{{loadLevel.type}}?id={{loadLevel.id}}" class="btn mT10 primary lg">{%trans "Continue"%}</a>
+      </div>
     </div>
 
   </div>
