@@ -1,12 +1,14 @@
 {%extends 'content_lms/group/layout.html'%}
 
 
-
+{%block head_css%}
+ <link rel="stylesheet"       href="http://salamquran.local/static/css/style.css?1563550463"/>
+{%endblock%}
 
 
 {%block pageContent2%}
 <div class="f justify-center">
-  <div class="c5">
+  <div class="c8 s12">
     <div class="cbox fs20 txtC">
       {%if loadLevel.file%}
         <video width="320" height="240" controls>
@@ -41,7 +43,7 @@
 
 {%block pageContent%}
 <div class="f justify-center">
-  <div class="c5">
+  <div class="c8 s12">
     <div class="cbox fs20 txtC">
       {%if loadLevel.besmellah%}
       {% include 'content/home/blocks/block-besmellah.html' %}
