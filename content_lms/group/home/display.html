@@ -10,7 +10,21 @@
 {%for key, value in levelList%}
 {%if value.type %}
   <a class="vcard mA10 shadow {%if value.userstar == 3%}green{%elseif value.userstar%}blue{%else%}{%endif%}" href='{{url.here}}/level/{{value.type}}?id={{value.id}}' data-type='{{value.type_title}}'>
-      <img src="/files/1/1-03a302f77f01f7f3ac136e09e80cb9f3.jpg" alt="{{value.title}}">
+    <div>
+    {%if value.type == "quran"%}
+      <img src="{{url.static}}/images/lms/bg-level-start-txt.jpg" alt='{%trans "SalamQuran Learning Mechanism"%}'>
+    {%elseif value.type == "reading"%}
+      <img src="{{url.static}}/images/lms/bg-level-reading-txt.jpg" alt='{%trans "SalamQuran Learning Mechanism"%}'>
+    {%elseif value.type == "tajweed"%}
+      <img src="{{url.static}}/images/lms/bg-level-tajweed-txt.jpg" alt='{%trans "SalamQuran Learning Mechanism"%}'>
+    {%elseif value.type == "theme"%}
+      <img src="{{url.static}}/images/lms/bg-level-theme-txt.jpg" alt='{%trans "SalamQuran Learning Mechanism"%}'>
+    {%elseif value.type == "exam"%}
+      <img src="{{url.static}}/images/lms/bg-level-exam-txt.jpg" alt='{%trans "SalamQuran Learning Mechanism"%}'>
+    {%elseif value.type == "iqra"%}
+      <img src="{{url.static}}/images/lms/bg-level-iqra-txt.jpg" alt='{%trans "SalamQuran Learning Mechanism"%}'>
+    {%endif%}
+    </div>
     <div class="content">
       <div class="header">{{value.title}}</div>
       <div class="meta">{{value.desc}}</div>
