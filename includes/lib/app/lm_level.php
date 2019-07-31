@@ -170,6 +170,11 @@ class lm_level
 			$args['status']  = 'enable';
 		}
 
+		if($args['type'] === 'quran')
+		{
+			$args['besmellah'] = 1;
+		}
+
 		$lm_level_id = \lib\db\lm_level::insert($args);
 
 		if(!$lm_level_id)
