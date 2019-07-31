@@ -3,64 +3,50 @@
 
 
 {%block pageContent%}
-<div class="f justify-center">
-  <div class="c5 txtC">
-
-
-
-    {%if userStar.star%}
-    <div class="cbox">
-    {%trans "Your score"%}
-    	{%for i in 1..userStar.star%}
-    	<i class="sf-star fc-yellow"></i>
-    	{%endfor%}
-    </div>
-    {%endif%}
 
     {%if questionList%}
-    <form method="post">
-      <input type="hidden" name="ActionType" value="answer">
-      <div class="cbox">
+    <form method="post" class="cbox">
         {%for key, value in questionList%}
-        <div class="msg">
-          {{value.title}}
+        <div class="mB20">
+          <div class="msg info2 txtB pTB5 mB5">{{(key + 1) | fitNumber}}. {{value.title}}</div>
 
           <div class="f">
-
-            <div class="radio3 mB5 pRa5 c6 s12">
+            <div class="radio3 mB5 pRa5 {%if value.longopt%}c6 s12{%else%}c3 s6{%endif%}">
               <input type="radio" name="answer_{{value.id}}" value="1" id="ianswer1_{{value.id}}">
-              <label for="ianswer1_{{value.id}}">{{value.opt1}}</label>
+              <label class="ovh" for="ianswer1_{{value.id}}">{{value.opt1}}</label>
             </div>
 
-            <div class="radio3 mB5 pRa5 c6 s12">
+            <div class="radio3 mB5 pRa5 {%if value.longopt%}c6 s12{%else%}c3 s6{%endif%}">
               <input type="radio" name="answer_{{value.id}}" value="2" id="ianswer2_{{value.id}}">
-              <label for="ianswer2_{{value.id}}">{{value.opt2}}</label>
+              <label class="ovh" for="ianswer2_{{value.id}}">{{value.opt2}}</label>
             </div>
             {%if value.opt3%}
-            <div class="radio3 mB5 pRa5 c6 s12">
+            <div class="radio3 mB5 pRa5 {%if value.longopt%}c6 s12{%else%}c3 s6{%endif%}">
               <input type="radio" name="answer_{{value.id}}" value="3" id="ianswer3_{{value.id}}">
-              <label for="ianswer3_{{value.id}}">{{value.opt3}}</label>
+              <label class="ovh" for="ianswer3_{{value.id}}">{{value.opt3}}</label>
             </div>
             {%endif%}
             {%if value.opt4%}
-            <div class="radio3 mB5 pRa5 c6 s12">
+            <div class="radio3 mB5 {%if value.longopt%}c6 s12{%else%}c3 s6{%endif%}">
               <input type="radio" name="answer_{{value.id}}" value="4" id="ianswer4_{{value.id}}">
-              <label for="ianswer4_{{value.id}}">{{value.opt4}}</label>
+              <label class="ovh" for="ianswer4_{{value.id}}">{{value.opt4}}</label>
             </div>
             {%endif%}
 
           </div>
         </div>
+        <hr style="border-top-style:dashed;border-top-width:2px;">
 
         {%endfor%}
-      <button class="btn primary block mTB20">{%trans "Save"%}</button>
-      </div>
+        <div class="f justify-center">
+          <button class="c4 s12 btn primary mTB20 lg">{%trans "Save"%}</button>
+        </div>
     </form>
+    {%else%}
+    <p class="msg danger fs20 txtC">{%trans "We do not have question to ask from you!"%}</p>
     {%endif%}
 
 
-  </div>
-</div>
 {%endblock%}
 
 
