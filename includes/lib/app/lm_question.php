@@ -42,10 +42,12 @@ class lm_question
 		}
 		elseif($level_detail['type'] === 'exam')
 		{
-			if(isset($level_detail['questionrandcount']))
-			{
-				$limit = intval($level_detail['questionrandcount']);
-			}
+			//
+		}
+
+		if(isset($level_detail['questionrandcount']))
+		{
+			$limit = intval($level_detail['questionrandcount']);
 		}
 
 		$level_id      = \dash\coding::decode($_level_id);
