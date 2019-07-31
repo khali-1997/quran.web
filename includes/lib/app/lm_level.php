@@ -745,6 +745,14 @@ class lm_level
 			}
 		}
 
+		$xtype = $result['type'];
+		if(in_array($xtype, ['tajweed', 'reading', 'theme', 'exam']) && isset($result['file']) && $result['file'])
+		{
+			$xtype = 'video';
+		}
+
+		$result['xtype'] = $xtype;
+
 		return $result;
 
 	}

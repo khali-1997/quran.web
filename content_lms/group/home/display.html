@@ -9,7 +9,7 @@
 {%if levelList %}
 {%for key, value in levelList%}
 {%if value.type %}
-  <a class="vcard mA10 shadow {%if value.userstar == 3%}green{%elseif value.userstar%}blue{%else%}{%endif%}" href='{{url.here}}/level/{{value.type}}?id={{value.id}}' data-type='{{value.type_title}}'>
+  <a class="vcard mA10 shadow {%if value.userstar == 3%}green{%elseif value.userstar%}blue{%else%}{%endif%}" href='{{url.here}}/level/{{value.xtype}}?id={{value.id}}' data-type='{{value.type_title}}'>
     <div>
     {%if value.type == "quran"%}
       <img src="{{url.static}}/images/lms/bg-level-start-txt.jpg" alt='{%trans "SalamQuran Learning Mechanism"%}'>

@@ -1,5 +1,5 @@
 <?php
-namespace content_lms\level\tajvid;
+namespace content_lms\level\tajweed;
 
 
 class view
