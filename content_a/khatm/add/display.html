@@ -5,17 +5,24 @@
   <div class="justify-center f">
    <form method="post" class="c5 m6 s12" autocomplete="off">
     <div class="cbox">
-      <div class="msg">{%trans "Your intention of khatm quran"%}</div>
+      <div class="msg">
+        {%trans "Your intention of khatm quran"%}
         {{block('iniyat')}}
+      </div>
 
 
-      <div class="msg">{%trans "Read quran mode"%}</div>
+
 
       {{block('iType')}}
-      <div class="msg">{%trans "Range of khatm"%}</div>
-      {{block('iRange')}}
 
-      {{block('iRepeat')}}
+      {{block('iRange')}}
+      <div data-response='range' data-response-where='sura' data-response-hide class="mB10">
+        {{block('suraList')}}
+      </div>
+
+      <div class="msg">
+        {{block('iRepeat')}}
+      </div>
       {{block('iPrivacy')}}
 
       {{block('isave')}}
@@ -25,6 +32,19 @@
 {%endblock%}
 
 
+
+
+
+
+{% block suraList %}
+<label for="fsura">{%trans "Surah"%}</label>
+  <select class="select" name="sura" id="fsura">
+    <option value="">{%trans "Select sura"%}</option>
+    {%for key, value in quranListQuick%}
+        <option value="{{key}}" {%if dataRow.quran_start_sura == key%} selected {%endif%}>{{value}}</option>
+    {%endfor%}
+  </select>
+{%endblock%}
 
 
 
@@ -43,7 +63,7 @@
 
 
 {% block iniyat %}
-<label for="niyat">{%trans "Niyat"%} <small class="fc-green">{%trans "Optional"%}</small></label>
+<label for="niyat"><small class="fc-green">{%trans "Optional"%}</small></label>
 <div class="input">
   <input type="text" name="niyat" id="niyat"  value="{{dataRow.niyat}}"  maxlength='150' minlength="1" pattern=".{1,150}">
 </div>
@@ -51,7 +71,7 @@
 
 
 {%block iType%}
-<label for="type">{%trans "Type"%}</label>
+<label for="type">{%trans "Read quran mode"%}</label>
 
 <select name="type" class="mB10 select ui dropdown search" id="type">
   <option value="" readonly>{%trans "Please select one item"%}</option>
@@ -64,7 +84,7 @@
 
 
 {%block iRange%}
-<label for="range">{%trans "Range"%}</label>
+<label for="range">{%trans "Range of khatm"%}</label>
 
 <select name="range" class="mB10 select ui dropdown search" id="range">
   <option value="" readonly>{%trans "Please select one item"%}</option>

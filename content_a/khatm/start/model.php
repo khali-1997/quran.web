@@ -1,32 +1,20 @@
 <?php
-namespace content_a\khatm\add;
+namespace content_a\khatm\start;
 
 
 class model
 {
 	public static function post()
 	{
-		$post =
-		[
-			'repeat'  => \dash\request::post('repeat'),
-			'niyat'   => \dash\request::post('niyat'),
-			'status'  => \dash\request::post('status'),
-			'privacy' => \dash\request::post('privacy'),
-			'range'   => \dash\request::post('range'),
-			'type'    => \dash\request::post('type'),
-		];
-
-
-
-		\lib\app\khatm::add($post);
-
-		if(\dash\engine\process::status())
+		if(\dash\request::post('type') === 'start')
 		{
-			\dash\redirect::to(\dash\url::this());
+			\lib\app\khatmusage::start(\dash\url::subchild());
 
-			// \dash\redirect::pwd();
+			if(\dash\engine\process::status())
+			{
+				\dash\redirect::to(\dash\url::this() .'/usage');
+			}
 		}
-
 	}
 }
 ?>

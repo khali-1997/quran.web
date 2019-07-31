@@ -53,6 +53,38 @@ class khatm
 		}
 
 
+		// khatm is private
+		if($load['privacy'] === 'private')
+		{
+			// khatm for another
+			if(intval($load['user_id']) !== intval(\dash\user::id()))
+			{
+				// user not supevisor
+				if(!\dash\permission::supervisor())
+				{
+					return false;
+				}
+			}
+		}
+
+		if(!in_array($load['status'], ['awaiting', 'enable']))
+		{
+			return false;
+		}
+
+		$check_uages = \lib\app\khatmusage::remain($_id);
+		if(!$check_uages)
+		{
+			return false;
+		}
+
+		$desc = '';
+		$desc .= ' '. T_('Hi');
+		$desc .= ' '. T_('To take part in the conference, you must read a :val of the Holy Quran', ['val' => T_(ucfirst($load['type']))]);
+		$desc .= ' '. T_('If you want to attend the conference, click on the button below');
+		$desc .= ' '. T_('It is up to you to complete the religious responsibility');
+		$load['desc'] = $desc;
+
 		$load = self::ready($load);
 		return $load;
 	}
@@ -348,6 +380,18 @@ class khatm
 			\dash\notif::error(T_("Sura index is out of range!"), 'sura');
 			return false;
 		}
+
+		if($range === 'sura' && !$sura)
+		{
+			\dash\notif::error(T_("Plase set surah"));
+			return false;
+		}
+
+		if($range !== 'sura' && $sura)
+		{
+			$sura = null;
+		}
+
 
 
 		$args            = [];

@@ -5,7 +5,10 @@
   <div class="justify-center f">
    <form method="post" class="c5 m6 s12" autocomplete="off">
     <div class="cbox">
-      <div class="msg txtB txtC fs20 success">{{khatmRow.title}}</div>
+      <div class="msg txtB txtC  success">{{khatmRow.title}}</div>
+      	<p>{{khatmRow.desc}}</p>
+	    <div data-confirm data-data='{"type": "start", "id" : "{{khatmRow.id}}"}' class="btn success block outline xxl">{%trans "Start"%}</div>
+
     </div>
    </form>
   </div>

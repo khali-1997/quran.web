@@ -14,6 +14,7 @@ class view
 
 		\dash\data::badge_text(T_('Back to dashboard'));
 
+		\dash\data::quranListQuick(\lib\app\sura::quick_list());
 
 	}
 }

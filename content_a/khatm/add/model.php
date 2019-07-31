@@ -14,6 +14,7 @@ class model
 			'privacy' => \dash\request::post('privacy'),
 			'range'   => \dash\request::post('range'),
 			'type'    => \dash\request::post('type'),
+			'sura'    => \dash\request::post('sura'),
 		];
 
 
