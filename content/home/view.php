@@ -18,6 +18,11 @@ class view
 			\dash\data::bodyclass('holyQuran');
 		}
 
+		if(\dash\request::get('fixframe'))
+		{
+			\dash\data::bodyclass(\dash\data::bodyclass() . ' fixframe');
+		}
+
 		$list = \lib\app\qari::site_list();
 		\dash\data::qariList($list);
 
