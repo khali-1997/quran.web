@@ -12,7 +12,9 @@ class view
 
 		\content_m\level\main::view();
 
-		\dash\data::quranListQuick(\lib\app\sura::quick_list());
+		$sura = \lib\app\sura::list();
+
+		\dash\data::quranListQuick($sura);
 
 	}
 }
