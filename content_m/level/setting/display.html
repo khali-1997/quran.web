@@ -21,14 +21,12 @@
             <input type="number" name="unlockscore" min="1" max="282" id="funlockscore" value="{{dataRow.unlockscore}}">
         </div>
 
-        {%if dataRow.type == 'exam'%}
+        {%if dataRow.type == 'exam' or dataRow.type == 'reading' or dataRow.type == 'tajweed' or dataRow.type == 'theme' %}
           <label for="questionrandcount">{%trans "Count random question"%}</label>
           <div class="input">
               <input type="number" name="questionrandcount" min="1" max="9999" id="questionrandcount" value="{{dataRow.questionrandcount}}">
           </div>
         {%endif%}
-
-
 
         {{block('iStatus')}}
 
