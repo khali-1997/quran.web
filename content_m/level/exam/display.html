@@ -142,20 +142,26 @@
   <tbody>
     {%for key, value in questionList%}
     <tr {%if value.id == requestGET.qid%} class="negative" {%endif%}>
-      <td colspan="" class="txtB" >{{(loop.index) | fitNumber}}. {{value.title}}</td>
-      <td class="">
-        {%if value.id != requestGET.qid%}
-        <a href="{{url.that}}?id={{requestGET.id}}&qid={{value.id}}" class="btn primary xs">{%trans "Edit"%}</a>
-        <span data-confirm data-data='{"ActionType" :"remove", "id" : "{{value.id}}"}' class="btn danger xs">{%trans "Remove"%}</span>
-        {%endif%}
+      <td>
+        <p class="fs12 txtB">Q{{(loop.index) | fitNumber}}. {{value.title}}</p>
+{%if value.opt1%}
+        <div>{{1 | fitNumber}}. {{value.opt1}} {%if value.trueopt == 1%}<span class="sf-check fc-green"></span>{%endif%}</div>
+{%endif%}
+{%if value.opt2%}
+        <div>{{2 | fitNumber}}. {{value.opt2}} {%if value.trueopt == 2%}<span class="sf-check fc-green"></span>{%endif%}</div>
+{%endif%}
+{%if value.opt3%}
+        <div>{{3 | fitNumber}}. {{value.opt3}} {%if value.trueopt == 3%}<span class="sf-check fc-green"></span>{%endif%}</div>
+{%endif%}
+{%if value.opt4%}
+        <div>{{4 | fitNumber}}. {{value.opt4}} {%if value.trueopt == 4%}<span class="sf-check fc-green"></span>{%endif%}</div>
+{%endif%}
       </td>
-    </tr>
-    <tr {%if value.id == requestGET.qid%} class="negative" {%endif%}>
-      <td colspan="2">
-      {%if value.opt1%}<div {%if value.trueopt == 1%}class="txtB fs11 fc-green"{%endif%}>{{1 | fitNumber}}. {{value.opt1}}</div>{%endif%}
-      {%if value.opt2%}<div {%if value.trueopt == 2%}class="txtB fs11 fc-green"{%endif%}>{{2 | fitNumber}}. {{value.opt2}}</div>{%endif%}
-      {%if value.opt3%}<div {%if value.trueopt == 3%}class="txtB fs11 fc-green"{%endif%}>{{3 | fitNumber}}. {{value.opt3}}</div>{%endif%}
-      {%if value.opt4%}<div {%if value.trueopt == 4%}class="txtB fs11 fc-green"{%endif%}>{{4 | fitNumber}}. {{value.opt4}}</div>{%endif%}
+      <td class="collapsing">
+        {%if value.id != requestGET.qid%}
+        <a href="{{url.that}}?id={{requestGET.id}}&qid={{value.id}}" class="btn primary sm">{%trans "Edit"%}</a>
+        <span data-confirm data-data='{"ActionType" :"remove", "id" : "{{value.id}}"}' class="btn danger sm">{%trans "Remove"%}</span>
+        {%endif%}
       </td>
     </tr>
     {%endfor%}
