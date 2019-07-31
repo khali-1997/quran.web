@@ -35,10 +35,15 @@ class lm_group
 	}
 
 
-		public static function search($_string, $_args)
+	public static function search($_string, $_args)
 	{
 		$default =
 		[
+			'public_show_field' =>
+			'
+				lm_group.*,
+			 	(SELECT COUNT(*) FROM lm_level WHERE lm_level.lm_group_id = lm_group.id) as `level_count`
+			 ',
 
 			'search_field'       => " lm_group.title LIKE ('%__string__%')",
 		];
