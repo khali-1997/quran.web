@@ -2,7 +2,131 @@
 
 
 
+
+
+
+
+
 {%block pageContent%}
+
+{%include 'content_a/khatm/pageSteps.html'%}
+
+{%if dataTable%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+  {{block('htmlFilter')}}
+
+ {%else%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlTable')}}
+
+ {%endif%}
+{%else%}
+ {%if dataFilter%}
+
+  {{block('htmlSearchBox')}}
+  {{block('htmlFilterNoResult')}}
+
+ {%else%}
+
+  {{block('htmlStartAddNew')}}
+
+ {%endif%}
+{%endif%}
+
+{%endblock%}
+
+
+
+
+{%block htmlSearchBox22%}
+<div class="cbox fs12">
+  <form method="get" action='{{url.this}}'>
+    <div class="input">
+      <input type="search" name="q" placeholder='{%trans "Search"%}' id="q" value="{{requestGET.q}}" autofocus  data-pass='submit' autocomplete='off'>
+      <button class="addon btn ">{%trans "Search" %}</button>
+    </div>
+  </form>
+</div>
+{%endblock%}
+
+
+{%block htmlTable%}
+
+  <table class="tbl1 v1 cbox fs12">
+    <thead>
+      <tr>
+        <th>{%trans "Title"%}</th>
+        <th>{%trans "Type"%}</th>
+        <th>{%trans "Range"%}</th>
+        <th>{%trans "Repeat"%}</th>
+        {%if requestGET.user == 'my'%}<th>{%trans "Privacy"%}</th>{%endif%}
+        <th>{%trans "Status"%}</th>
+        <th>{%trans "Action"%}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {%for key, value in dataTable%}
+      <tr {%if value.status=='disable'%} class='negative' {%else%} class='positive' {%endif%}>
+
+        <td>
+          <div>{{value.title}}</div>
+          {%if value.mykhatm%}<div>{{value.niyat}}</div>{%endif%}
+        </td>
+
+        <td>{{value.ttype}}</td>
+        <td>{{value.trange}}</td>
+        <td>
+          <div>{{value.repeat | fitNumber}}</div>
+          {%if value.sura%}<span class="icon-surah{{value.sura}}"></span>{{value.sura | fitNumber}}{%endif%}
+        </td>
+        {%if requestGET.user == 'my'%}<td>{{value.tprivacy}}</td>{%endif%}
+        <td>{{value.tstatus}}</td>
+
+
+        <td class="collapsing">
+          {%if value.mykhatm%}
+          <div data-confirm data-data='{"type": "remove", "id" : "{{value.id}}"}' class="btn warn">{%trans "Cancel"%}</div>
+          {%endif%}
+         <a href="{{url.this}}/start/{{value.id}}" class="btn success">{%trans "Start"%}</a>
+        </td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  {%include display.pagination%}
+
+{%endblock%}
+
+
+{%block htmlFilter%}
+<p class="f fs14 msg info2">
+  <span class="c">{{dataFilter | raw}}</span>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlFilterNoResult%}
+<p class="f fs14 msg warn2">
+  <span class="c">{%trans "Result not found!"%} {%trans "Search with new keywords."%}</span>
+  <a class="cauto" href="{{url.this}}">{%trans "Clear filters"%}</a>
+</p>
+{%endblock%}
+
+
+{%block htmlStartAddNew%}
+<p class="fs14 msg success2 pTB20">{%trans "Hi!"%} <a href="{{url.this}}/add">{%trans "Try to start with add new khatm!"%}</a></p>
+{%endblock%}
+
+
+
+
+{%block pageContent22%}
 
 {%if dataTable%}
 <div class="cbox">

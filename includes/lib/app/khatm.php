@@ -419,6 +419,15 @@ class khatm
 				case 'id':
 					$title .= T_("Khatm"). ' #'. \dash\utility\human::fitNumber((100 + intval($value)));
 				case 'user_id':
+					if(intval($value) === intval(\dash\user::id()))
+					{
+						$result['mykhatm'] = true;
+					}
+					else
+					{
+						$result['mykhatm'] = false;
+					}
+
 					if(isset($value))
 					{
 						$result[$key] = \dash\coding::encode($value);
@@ -493,16 +502,34 @@ class khatm
 	}
 
 
-	public static function public_list()
+	public static function public_list($_args = [])
 	{
-		$args =
-		[
-			'user_id'    => \dash\user::id(),
-			'status'     => ["NOT IN", "('deleted')"],
-			'pagenation' => false,
-			'order'      => 'desc',
-			'sort'       => 'id',
-		];
+		if(isset($_args['my']) && $_args['my'])
+		{
+			$args =
+			[
+				'user_id'    => \dash\user::id(),
+				'status'     => ["NOT IN", "('deleted')"],
+				'pagenation' => false,
+				'order'      => 'desc',
+				'sort'       => 'id',
+			];
+
+		}
+		else
+		{
+
+			$args =
+			[
+				'status'     => ["NOT IN", "('deleted')"],
+				'privacy'    => 'public',
+				'pagenation' => false,
+				'order'      => 'desc',
+				'sort'       => 'id',
+			];
+
+		}
+
 
 		$list = self::list(null, $args);
 		return $list;
