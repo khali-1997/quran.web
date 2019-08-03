@@ -155,6 +155,7 @@ class khatmusage
 		{
 			\lib\db\khatm::update($update_khatm, $id);
 		}
+
 		return $remain;
 	}
 
@@ -184,6 +185,9 @@ class khatmusage
 		}
 
 		\lib\db\khatmusage::update(['status' => $_status], $check['id']);
+
+		self::check_remain($_id);
+
 		if($_status === 'done')
 		{
 			$msg = T_("Thank you!");

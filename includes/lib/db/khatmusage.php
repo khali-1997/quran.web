@@ -15,7 +15,7 @@ class khatmusage
 
 	public static function get_count_reserved_sura($_id)
 	{
-		$query = "SELECT COUNT(*) AS `count` FROM khatmusage WHERE khatmusage.khatm_id = $_id AND khatmusage.status IN ('reserved', 'done') ";
+		$query = "SELECT COUNT(*) AS `count` FROM khatmusage WHERE khatmusage.khatm_id = $_id AND khatmusage.status IN ('request', 'reading', 'done') ";
 		$result = \dash\db::get($query, 'count', true);
 		return $result;
 	}
