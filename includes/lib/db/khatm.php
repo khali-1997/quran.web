@@ -35,6 +35,21 @@ class khatm
 	}
 
 
+	public static function check_user_active_record($_user_id, $_range, $_type)
+	{
+		$type = null;
+
+		if($_type)
+		{
+			$type = " AND khatm.type = '$_type' ";
+		}
+
+		$query = "SELECT * FROM khatm WHERE khatm.user_id = $_user_id $type AND khatm.range = '$_range' AND khatm.status IN ('awaiting', 'running') LIMIT 1";
+		$result = \dash\db::get($query, null, true);
+		return $result;
+	}
+
+
 	public static function get_by_id($_id)
 	{
 		$query = "SELECT * FROM khatm WHERE khatm.id = $_id LIMIT 1";

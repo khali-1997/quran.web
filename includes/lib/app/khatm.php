@@ -135,6 +135,14 @@ class khatm
 
 		$args['user_id'] = \dash\user::id();
 
+		$check_duplicate = \lib\db\khatm::check_user_active_record(\dash\user::id(), $args['range'], $args['type']);
+
+		if($check_duplicate)
+		{
+			\dash\notif::error(T_("You can not have more than 1 active khatm"));
+			return false;
+		}
+
 		$khatm_id = \lib\db\khatm::insert($args);
 
 		if(!$khatm_id)
@@ -362,7 +370,7 @@ class khatm
 			$repeat = abs($repeat);
 		}
 
-		if($repeat && intval($repeat) > 114)
+		if($repeat && intval($repeat) > 40)
 		{
 			\dash\notif::error(T_("Repeat is out of range!"), 'repeat');
 			return false;
@@ -425,6 +433,7 @@ class khatm
 		if($range === 'quran')
 		{
 			$sura = null;
+			$repeat = 1;
 		}
 
 		if($range === 'sura')

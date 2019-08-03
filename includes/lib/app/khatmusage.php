@@ -20,78 +20,96 @@ class khatmusage
 			return false;
 		}
 
-		$id = \dash\coding::decode($_id);
+		$id           = \dash\coding::decode($_id);
+		$update_khatm = [];
+		$repeat       = intval($check['repeat']);
+		$new_useage   = false;
+		$sura         = null;
+		$page         = null;
+		$juz          = null;
+
 		if($check['range'] === 'quran')
 		{
-
+			if($check['type'] === 'page')
+			{
+				$page   = \lib\db\khatmusage::find_last_page($id);
+				if(!$page)
+				{
+					\dash\notif::error(T_("This khatm is complete"));
+				}
+				$repeat = $repeat * 604;
+			}
+			elseif($check['type'] === 'juz')
+			{
+				$juz    = \lib\db\khatmusage::find_last_juz($id);
+				if(!$juz)
+				{
+					\dash\notif::error(T_("This khatm is complete"));
+				}
+				$repeat = $repeat * 30;
+			}
 		}
 		elseif($check['range'] === 'sura')
 		{
-			if(!isset($check['sura']) || !isset($check['repeat']))
-			{
-				\dash\notif::error(T_("Sura or repeat not set"));
-				return false;
-			}
+			$sura = $check['sura'];
+			// $repeat = $repeat; nothing
+		}
 
-			$update_khatm = [];
-			$repeat       = intval($check['repeat']);
-			$new_useage   = false;
-			$count_done   = \lib\db\khatmusage::get_count_done_sura($id);
+		$count_done   = \lib\db\khatmusage::get_count_done_quran($id);
 
-			if(intval($count_done) >= $repeat)
+		if(intval($count_done) >= $repeat)
+		{
+			$update_khatm['status'] = 'done';
+		}
+		else
+		{
+			$count_reserved = \lib\db\khatmusage::get_count_reserved_quran($id);
+			if(intval($count_reserved) >= $repeat)
 			{
-				$update_khatm['status'] = 'done';
+				$update_khatm['status'] = 'reserved';
 			}
 			else
 			{
-				$count_reserved = \lib\db\khatmusage::get_count_reserved_sura($id);
-				if(intval($count_reserved) >= $repeat)
+				$new_useage = true;
+				if($check['status'] === 'awaiting')
 				{
-					$update_khatm['status'] = 'reserved';
-				}
-				else
-				{
-					$new_useage = true;
-					if($check['status'] === 'awaiting')
-					{
-						$update_khatm['status'] = 'running';
-					}
+					$update_khatm['status'] = 'running';
 				}
 			}
-
-
-			if($new_useage)
-			{
-				$check_duplicate_user_khatm = \lib\db\khatmusage::user_have_running_khatm(\dash\user::id());
-
-				if(isset($check_duplicate_user_khatm['khatm_id']))
-				{
-					$msg = T_("You have one not complete khatm and can not start new khatm");
-					$msg .= ' <a href="'. \dash\url::this(). '/usage/'.\dash\coding::encode($check_duplicate_user_khatm['khatm_id']). '">'. T_("Click here to complete it"). "</a>";
-					\dash\notif::error($msg);
-					return false;
-				}
-
-				$insert =
-				[
-					'user_id'     => \dash\user::id(),
-					'khatm_id'    => $id,
-					'sura'        => $check['sura'],
-					'page'        => null,
-					'juz'         => null,
-					'status'      => 'request',
-					'datecreated' => date("Y-m-d H:i:s"),
-				];
-				\lib\db\khatmusage::insert($insert);
-			}
-
-			if(!empty($update_khatm))
-			{
-				\lib\db\khatm::update($update_khatm, $id);
-			}
-
-			return true;
 		}
+
+
+		if($new_useage)
+		{
+			$check_duplicate_user_khatm = \lib\db\khatmusage::user_have_running_khatm(\dash\user::id());
+
+			if(isset($check_duplicate_user_khatm['khatm_id']))
+			{
+				$msg = T_("You have one not complete khatm and can not start new khatm");
+				$msg .= ' <a href="'. \dash\url::this(). '/usage/'.\dash\coding::encode($check_duplicate_user_khatm['khatm_id']). '">'. T_("Click here to complete it"). "</a>";
+				\dash\notif::error($msg);
+				return false;
+			}
+
+			$insert =
+			[
+				'user_id'     => \dash\user::id(),
+				'khatm_id'    => $id,
+				'sura'        => $sura,
+				'page'        => $page,
+				'juz'         => $juz,
+				'status'      => 'request',
+				'datecreated' => date("Y-m-d H:i:s"),
+			];
+			\lib\db\khatmusage::insert($insert);
+		}
+
+		if(!empty($update_khatm))
+		{
+			\lib\db\khatm::update($update_khatm, $id);
+		}
+
+		return true;
 	}
 
 
@@ -117,36 +135,45 @@ class khatmusage
 		}
 
 		$id           = \dash\coding::decode($_id);
-
 		$update_khatm = [];
 		$repeat       = intval($check['repeat']);
 		$remain       = false;
-		$count_done   = \lib\db\khatmusage::get_count_done_sura($id);
 
 		if($check['range'] === 'quran')
 		{
-
+			if($check['type'] === 'page')
+			{
+				$repeat = $repeat * 604;
+			}
+			elseif($check['type'] === 'juz')
+			{
+				$repeat = $repeat * 30;
+			}
 		}
 		elseif($check['range'] === 'sura')
 		{
-			if(intval($count_done) >= $repeat)
+			// $repeat = $repeat; nothing
+		}
+
+		$count_done   = \lib\db\khatmusage::get_count_done_quran($id);
+
+		if(intval($count_done) >= $repeat)
+		{
+			$update_khatm['status'] = 'done';
+		}
+		else
+		{
+			$count_reserved = \lib\db\khatmusage::get_count_reserved_quran($id);
+			if(intval($count_reserved) >= $repeat)
 			{
-				$update_khatm['status'] = 'done';
+				$update_khatm['status'] = 'reserved';
 			}
 			else
 			{
-				$count_reserved = \lib\db\khatmusage::get_count_reserved_sura($id);
-				if(intval($count_reserved) >= $repeat)
+				$remain = true;
+				if($check['status'] === 'awaiting')
 				{
-					$update_khatm['status'] = 'reserved';
-				}
-				else
-				{
-					$remain = true;
-					if($check['status'] === 'awaiting')
-					{
-						$update_khatm['status'] = 'running';
-					}
+					$update_khatm['status'] = 'running';
 				}
 			}
 		}
@@ -223,6 +250,14 @@ class khatmusage
 				$sura_name = T_(\lib\app\sura::detail($check['sura'], 'name'));
 				$desc .= T_("Your contribution is one time reading :val from the Holy Quran", ['val' => $sura_name]);
 				$check['sura_name'] = $sura_name;
+			}
+			elseif($check['page'])
+			{
+				$desc .= T_("Your contribution is reading page :val from the Holy Quran", ['val' => \dash\utility\human::fitNumber($check['page'])]);
+			}
+			elseif($check['juz'])
+			{
+				$desc .= T_("Your contribution is reading juz :val from the Holy Quran", ['val' => \dash\utility\human::fitNumber($check['juz'])]);
 			}
 
 			$check['desc'] = $desc;

@@ -19,15 +19,15 @@
       {{block('iRange')}}
       <div data-response='range' data-response-where='sura' data-response-hide class="mB10">
         {{block('suraList')}}
+        <div class="msg">
+          {{block('iRepeat')}}
+        </div>
       </div>
 
       <div data-response='range' data-response-where='quran' data-response-hide class="mB10">
       {{block('iType')}}
       </div>
 
-      <div class="msg">
-        {{block('iRepeat')}}
-      </div>
       {{block('iPrivacy')}}
 
       {{block('isave')}}
@@ -60,7 +60,7 @@
 {%block iRepeat %}
 <label for="repeat">{%trans "Repeat whole khatm"%}</label>
 <div class="input">
-  <input type="number" name="repeat" id="repeat" max='114' min="1" placeholder='{%trans "Between 1 and 114"%}'>
+  <input type="number" name="repeat" id="repeat" max='40' min="1" placeholder='{%trans "Between 1 and 40"%}'>
 </div>
 {%endblock%}
 
@@ -106,7 +106,7 @@
 <select name="privacy" class="mB10 select ui dropdown search" id="privacy">
   <option value="" readonly>{%trans "Please select one item"%}</option>
   <option value="public">{%trans "Public"%} - {%trans "Everyone can see it"%}</option>
-  <option value="private"  >{%trans "Private"%} - {%trans "Only you can see it"%}</option>
+  <option value="private" selected  >{%trans "Private"%} - {%trans "Only you can see it"%}</option>
 </select>
 
 {%endblock%}
