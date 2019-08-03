@@ -858,12 +858,12 @@ class twigTransTerms
 
 	//------------------------------projects/SalamQuran/content_m/khatm/pageSteps.html
 	echo T_("Add new khatm");                                                         // Line 7
-	echo T_("My khatm");                                                              // Line 17
-	echo T_("All");                                                                   // Line 27
+	echo T_("My khatm");                                                              // Line 26
+	echo T_("All");                                                                   // Line 36
 
 	//---------------------------projects/SalamQuran/content_m/khatm/home/display.html
 	echo T_("Niyat");                                                                 // Line 63
-	echo T_("Range");                                                                 // Line 65
+	echo T_("Range");                                                                 // Line 63
 	echo T_("Repeat");                                                                // Line 66
 	echo T_("Privacy");                                                               // Line 67
 	echo T_("Action");                                                                // Line 55
@@ -1031,6 +1031,12 @@ class twigTransTerms
 	echo T_("Nim");                                                                   // Line 63
 	echo T_("rub");                                                                   // Line 64
 
+	//--------------------------projects/SalamQuran/content_a/khatm/share/display.html
+	echo T_("Reading sura");                                                          // Line 81
+	echo T_("Reading page");                                                          // Line 83
+	echo T_("Reading juz");                                                           // Line 85
+	echo T_("No share was founded");                                                  // Line 124
+
 	//----------------------------projects/SalamQuran/content_a/khatm/add/display.html
 	echo T_("Between 1 and 40");                                                      // Line 63
 
@@ -1038,16 +1044,17 @@ class twigTransTerms
 	echo T_("Start reading sura");                                                    // Line 12
 	echo T_("Start reading page");                                                    // Line 14
 	echo T_("Start reading juz");                                                     // Line 16
-	echo T_("If you have finished reading your share press the green key and click Cancel if you want to quit reading this section");// Line 21
-	echo T_("My reading is complete");                                                // Line 25
-	echo T_("Leave reading");                                                         // Line 28
+	echo T_("It is up to you to complete the religious responsibility");              // Line 15
+	echo T_("If you have finished reading your share press the green key and click Cancel if you want to quit reading this section");// Line 22
+	echo T_("My reading is complete");                                                // Line 26
+	echo T_("Leave reading");                                                         // Line 29
 
 	//--------------------------projects/SalamQuran/content_a/khatm/start/display.html
 	echo T_("Hi");                                                                    // Line 10
-	echo T_("It is up to you to complete the religious responsibility");              // Line 15
 	echo T_("If you want to attend the khatm, click on the button below");            // Line 16
 
 	//------------------------------projects/SalamQuran/content_a/khatm/pageSteps.html
+	echo T_("My share");                                                              // Line 16
 
 	//---------------------------projects/SalamQuran/content_a/khatm/home/display.html
 	echo T_("Complete");                                                              // Line 66

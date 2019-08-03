@@ -471,6 +471,7 @@ class khatm
 				case 'id':
 					$title .= T_("Khatm"). ' #'. \dash\utility\human::fitNumber((100 + intval($value)));
 				case 'user_id':
+				case 'khatm_id':
 					if(intval($value) === intval(\dash\user::id()))
 					{
 						$result['mykhatm'] = true;

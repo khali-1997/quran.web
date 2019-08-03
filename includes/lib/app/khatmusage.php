@@ -299,5 +299,36 @@ class khatmusage
 
 		return false;
 	}
+
+
+	public static function my_list($_string = null, $_args = [])
+	{
+		if(!\dash\user::id())
+		{
+			return false;
+		}
+
+		$_args['user_id'] = \dash\user::id();
+
+		$result            = \lib\db\khatmusage::search(null, $_args);
+
+		$temp              = [];
+
+		foreach ($result as $key => $value)
+		{
+			$check = \lib\app\khatm::ready($value);
+			if($check)
+			{
+				$temp[] = $check;
+			}
+		}
+
+		return $temp;
+	}
+
+
+
+
+
 }
 ?>

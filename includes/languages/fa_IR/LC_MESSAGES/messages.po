@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SalamQuran - Persian\n"
-"POT-Creation-Date: 2019-08-03 20:24+0430\n"
-"PO-Revision-Date: 2019-08-03 20:24+0430\n"
+"POT-Creation-Date: 2019-08-03 21:06+0430\n"
+"PO-Revision-Date: 2019-08-03 21:06+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -458,6 +458,10 @@ msgstr "بازگشت به داشبورد"
 msgid "Khatm quran"
 msgstr "ختم قرآن"
 
+#: SalamQuran/content_a/khatm/share/view.php:9
+msgid "My share in khatm quran"
+msgstr "سهم من از ختم قرآن"
+
 #: SalamQuran/content_a/khatm/usage/view.php:9
 msgid "khatm usage"
 msgstr "شرکت در ختم قرآن"
@@ -677,7 +681,7 @@ msgstr "آزمون"
 
 #: SalamQuran/content_m/level/exam/view.php:30
 #: SalamQuran/includes/lib/app/fav.php:135 SalamQuran/includes/lib/app/fav.php:155
-#: SalamQuran/includes/lib/app/fav.php:235 SalamQuran/includes/lib/app/khatm.php:574
+#: SalamQuran/includes/lib/app/fav.php:235 SalamQuran/includes/lib/app/khatm.php:575
 #: SalamQuran/includes/lib/app/lm_level.php:38
 #: SalamQuran/includes/lib/app/lm_level.php:91
 #: SalamQuran/includes/lib/app/lm_question.php:77
@@ -2311,6 +2315,7 @@ msgstr "پرداخت"
 
 #: SalamQuran/includes/languages/trans_dash.php:343
 #: SalamQuran/includes/languages/trans_project.php:872
+#: SalamQuran/includes/languages/trans_static.php:109
 #: dash/addons/includes/languages/trans_dash.php:539
 #: dash/addons/includes/languages/trans_static.php:90
 #: dash/lib/social/telegram/commands/step_ticketAnswer.php:42
@@ -2417,6 +2422,7 @@ msgstr "دیدگاه‌ها"
 
 #: SalamQuran/includes/languages/trans_dash.php:365
 #: SalamQuran/includes/languages/trans_project.php:893
+#: SalamQuran/includes/languages/trans_static.php:100
 #: dash/addons/includes/languages/trans_dash.php:131
 #: dash/addons/includes/languages/trans_static.php:940
 msgid "Awaiting"
@@ -2593,6 +2599,7 @@ msgid "Publish time"
 msgstr "زمان انتشار"
 
 #: SalamQuran/includes/languages/trans_dash.php:402
+#: SalamQuran/includes/languages/trans_static.php:102
 #: dash/addons/includes/languages/trans_dash.php:44
 msgid "Publish"
 msgstr "انتشار"
@@ -2604,6 +2611,7 @@ msgstr "پیش‌نویس"
 
 #: SalamQuran/includes/languages/trans_dash.php:404
 #: SalamQuran/includes/languages/trans_project.php:894
+#: SalamQuran/includes/languages/trans_static.php:101
 #: dash/addons/includes/languages/trans_dash.php:46
 #: dash/addons/includes/languages/trans_static.php:1113
 msgid "Deleted"
@@ -3216,12 +3224,14 @@ msgstr "لطفا یک گزینه را انتخاب کنید"
 
 #: SalamQuran/includes/languages/trans_dash.php:546
 #: SalamQuran/includes/languages/trans_project.php:891
+#: SalamQuran/includes/languages/trans_static.php:98
 #: dash/addons/includes/languages/trans_dash.php:180
 msgid "Enable"
 msgstr "فعال"
 
 #: SalamQuran/includes/languages/trans_dash.php:547
 #: SalamQuran/includes/languages/trans_project.php:892
+#: SalamQuran/includes/languages/trans_static.php:99
 #: dash/addons/includes/languages/trans_dash.php:181
 msgid "Disable"
 msgstr "غیرفعال"
@@ -3596,7 +3606,7 @@ msgid "Contact us"
 msgstr "با ما تماس بگیرید"
 
 #: SalamQuran/includes/languages/trans_dash.php:642
-#: SalamQuran/includes/languages/trans_project.php:1046
+#: SalamQuran/includes/languages/trans_project.php:1053
 #: dash/addons/includes/languages/trans_dash.php:550
 msgid "Hi"
 msgstr "سلام"
@@ -6172,7 +6182,7 @@ msgid "Server"
 msgstr "سرور"
 
 #: SalamQuran/includes/languages/trans_dash.php:1309
-#: SalamQuran/includes/languages/trans_project.php:1061
+#: SalamQuran/includes/languages/trans_project.php:1068
 #: dash/addons/includes/languages/trans_dash.php:1219
 msgid "Date and time"
 msgstr "تاریخ و زمان"
@@ -9411,6 +9421,7 @@ msgid "Your answer file"
 msgstr "پاسخ صوتی شما"
 
 #: SalamQuran/includes/languages/trans_project.php:852
+#: SalamQuran/includes/languages/trans_static.php:85
 #: dash/addons/includes/languages/trans_static.php:861
 #: dash/addons/includes/languages/trans_static.php:936
 msgid "awaiting"
@@ -9422,6 +9433,7 @@ msgid "spam"
 msgstr "هرزنامه"
 
 #: SalamQuran/includes/languages/trans_project.php:854
+#: SalamQuran/includes/languages/trans_static.php:86
 #: dash/addons/includes/languages/trans_static.php:859
 msgid "deleted"
 msgstr "حذف شده"
@@ -9495,12 +9507,12 @@ msgid "Read quran mode"
 msgstr "حالت خواندن قرآن"
 
 #: SalamQuran/includes/languages/trans_project.php:882
-#: SalamQuran/includes/lib/app/khatm.php:504
+#: SalamQuran/includes/lib/app/khatm.php:505
 msgid "Read quran page by page"
 msgstr "خواندن قرآن به صورت صفحه به صفحه"
 
 #: SalamQuran/includes/languages/trans_project.php:883
-#: SalamQuran/includes/lib/app/khatm.php:510
+#: SalamQuran/includes/lib/app/khatm.php:511
 msgid "Read quran juz by juz"
 msgstr "خواندن قرآن به صورت جزء به جزء"
 
@@ -9509,12 +9521,12 @@ msgid "Range of khatm"
 msgstr "محدوده ختم قرآن کریم"
 
 #: SalamQuran/includes/languages/trans_project.php:885
-#: SalamQuran/includes/lib/app/khatm.php:531
+#: SalamQuran/includes/lib/app/khatm.php:532
 msgid "The whole Quran"
 msgstr "کل قرآن"
 
 #: SalamQuran/includes/languages/trans_project.php:886
-#: SalamQuran/includes/lib/app/khatm.php:532
+#: SalamQuran/includes/lib/app/khatm.php:533
 msgid "Special Surah"
 msgstr "سوره خاص"
 
@@ -9535,6 +9547,8 @@ msgid "Only you can see it"
 msgstr "تنها شما می‌توانید این را مشاهده کنید"
 
 #: SalamQuran/includes/languages/trans_project.php:895
+#: SalamQuran/includes/languages/trans_static.php:104
+#: SalamQuran/includes/languages/trans_static.php:111
 msgid "Done"
 msgstr "پایان‌یافته"
 
@@ -9799,22 +9813,42 @@ msgid "Badge title"
 msgstr "عنوان نشان"
 
 #: SalamQuran/includes/languages/trans_project.php:1035
+msgid "Reading sura"
+msgstr "تلاوت سوره"
+
+#: SalamQuran/includes/languages/trans_project.php:1036
+msgid "Reading page"
+msgstr "تلاوت صفحه"
+
+#: SalamQuran/includes/languages/trans_project.php:1037
+msgid "Reading juz"
+msgstr "تلاوت جزء"
+
+#: SalamQuran/includes/languages/trans_project.php:1038
+msgid "No share was founded"
+msgstr "هیچ سهمی یافت نشد"
+
+#: SalamQuran/includes/languages/trans_project.php:1041
 msgid "Between 1 and 40"
 msgstr "بین ۱ و ۴۰"
 
-#: SalamQuran/includes/languages/trans_project.php:1038
+#: SalamQuran/includes/languages/trans_project.php:1044
 msgid "Start reading sura"
 msgstr "شروع تلاوت سوره"
 
-#: SalamQuran/includes/languages/trans_project.php:1039
+#: SalamQuran/includes/languages/trans_project.php:1045
 msgid "Start reading page"
 msgstr "شروع تلاوت صفحه"
 
-#: SalamQuran/includes/languages/trans_project.php:1040
+#: SalamQuran/includes/languages/trans_project.php:1046
 msgid "Start reading juz"
 msgstr "شروع تلاوت جزء"
 
-#: SalamQuran/includes/languages/trans_project.php:1041
+#: SalamQuran/includes/languages/trans_project.php:1047
+msgid "It is up to you to complete the religious responsibility"
+msgstr "مسئولیت شرعی تکمیل کردن سهم شما به عهده خودتان است"
+
+#: SalamQuran/includes/languages/trans_project.php:1048
 msgid ""
 "If you have finished reading your share press the green key and click Cancel if "
 "you want to quit reading this section"
@@ -9822,53 +9856,53 @@ msgstr ""
 "اگر تلاوت سهم خود را از این ختم قرآن به پایان رسانده‌اید بر روی دکمه سبزرنگ کلیک "
 "کنید و اگر می‌خواهید از خواندن سهم خود انصراف دهید بر روی گزینه انصراف کلیک کنید"
 
-#: SalamQuran/includes/languages/trans_project.php:1042
+#: SalamQuran/includes/languages/trans_project.php:1049
 msgid "My reading is complete"
 msgstr "تلاوت سهم من از ختم قرآن به پایان رسید"
 
-#: SalamQuran/includes/languages/trans_project.php:1043
+#: SalamQuran/includes/languages/trans_project.php:1050
 msgid "Leave reading"
 msgstr "انصراف از خواندن"
 
-#: SalamQuran/includes/languages/trans_project.php:1047
-msgid "It is up to you to complete the religious responsibility"
-msgstr "مسئولیت شرعی تکمیل کردن سهم شما به عهده خودتان است"
-
-#: SalamQuran/includes/languages/trans_project.php:1048
+#: SalamQuran/includes/languages/trans_project.php:1054
 msgid "If you want to attend the khatm, click on the button below"
 msgstr "اگر می‌خواهید در این ختم شرکت کنید دکمه زیر را لمس کنید"
 
-#: SalamQuran/includes/languages/trans_project.php:1053
+#: SalamQuran/includes/languages/trans_project.php:1057
+msgid "My share"
+msgstr "سهم من"
+
+#: SalamQuran/includes/languages/trans_project.php:1060
 msgid "Complete"
 msgstr "کامل"
 
-#: SalamQuran/includes/languages/trans_project.php:1054
+#: SalamQuran/includes/languages/trans_project.php:1061
 msgid "times"
 msgstr "بار"
 
-#: SalamQuran/includes/languages/trans_project.php:1055
+#: SalamQuran/includes/languages/trans_project.php:1062
 msgid "%"
 msgstr "٪"
 
-#: SalamQuran/includes/languages/trans_project.php:1060
+#: SalamQuran/includes/languages/trans_project.php:1067
 msgid "Favorites"
 msgstr "علاقه‌مندی"
 
-#: SalamQuran/includes/languages/trans_project.php:1062
+#: SalamQuran/includes/languages/trans_project.php:1069
 msgid "No favorites added"
 msgstr "هیچ موردی ثبت نشده است"
 
-#: SalamQuran/includes/languages/trans_project.php:1065
+#: SalamQuran/includes/languages/trans_project.php:1072
 msgid "History"
 msgstr "تاریخچه"
 
-#: SalamQuran/includes/languages/trans_project.php:1066
+#: SalamQuran/includes/languages/trans_project.php:1073
 #: SalamQuran/includes/lib/app/khatm.php:201
 #: SalamQuran/includes/lib/app/khatm.php:472
 msgid "Khatm"
 msgstr "ختم قرآن کریم"
 
-#: SalamQuran/includes/languages/trans_project.php:1067
+#: SalamQuran/includes/languages/trans_project.php:1074
 msgid "Favorite"
 msgstr "علاقمندی"
 
@@ -10148,6 +10182,84 @@ msgstr "تفسیر"
 msgid "Tafsir"
 msgstr "تفسیر"
 
+#: SalamQuran/includes/languages/trans_static.php:83
+#: dash/addons/includes/languages/trans_static.php:229
+#: dash/addons/includes/languages/trans_static.php:856
+msgid "enable"
+msgstr "فعال"
+
+#: SalamQuran/includes/languages/trans_static.php:84
+#: dash/addons/includes/languages/trans_static.php:230
+#: dash/addons/includes/languages/trans_static.php:857
+msgid "disable"
+msgstr "غیرفعال"
+
+#: SalamQuran/includes/languages/trans_static.php:87
+msgid "publish"
+msgstr "منتشر شده"
+
+#: SalamQuran/includes/languages/trans_static.php:88
+#: dash/addons/includes/languages/trans_static.php:858
+msgid "expire"
+msgstr "منقضی شده"
+
+#: SalamQuran/includes/languages/trans_static.php:89
+#: SalamQuran/includes/languages/trans_static.php:96
+msgid "done"
+msgstr "پایان‌یافته"
+
+#: SalamQuran/includes/languages/trans_static.php:90
+msgid "running"
+msgstr "درحال‌اجرا"
+
+#: SalamQuran/includes/languages/trans_static.php:91
+msgid "reserved"
+msgstr "رزرو شده"
+
+#: SalamQuran/includes/languages/trans_static.php:92
+#: dash/addons/includes/languages/trans_static.php:929
+msgid "request"
+msgstr "تقاضا"
+
+#: SalamQuran/includes/languages/trans_static.php:93
+msgid "reading"
+msgstr "درحال خواندن"
+
+#: SalamQuran/includes/languages/trans_static.php:94
+#: dash/addons/includes/languages/trans_static.php:897
+#: dash/lib/social/telegram/step.php:211
+msgid "cancel"
+msgstr "رد کردن"
+
+#: SalamQuran/includes/languages/trans_static.php:95
+msgid "autocancel"
+msgstr "لغو خودکار"
+
+#: SalamQuran/includes/languages/trans_static.php:103
+msgid "Expire"
+msgstr "منقضی‌شده"
+
+#: SalamQuran/includes/languages/trans_static.php:105
+msgid "Running"
+msgstr "درحال اجرا"
+
+#: SalamQuran/includes/languages/trans_static.php:106
+#: dash/addons/includes/languages/trans_static.php:561
+msgid "Reserved"
+msgstr "رزرو شده"
+
+#: SalamQuran/includes/languages/trans_static.php:107
+msgid "Request"
+msgstr "تقاضا"
+
+#: SalamQuran/includes/languages/trans_static.php:108
+msgid "Reading"
+msgstr "درحال خواندن"
+
+#: SalamQuran/includes/languages/trans_static.php:110
+msgid "Autocancel"
+msgstr "لغو خودکار"
+
 #: SalamQuran/includes/lib/app/audiobank.php:29
 #: SalamQuran/includes/lib/app/qari.php:26
 msgid "AbdulBaset AbdulSamad"
@@ -10281,7 +10393,7 @@ msgstr "فارسی"
 #: SalamQuran/includes/lib/app/audiobank.php:304
 #: SalamQuran/includes/lib/app/badge.php:24 SalamQuran/includes/lib/app/fav.php:14
 #: SalamQuran/includes/lib/app/fav.php:21 SalamQuran/includes/lib/app/khatm.php:117
-#: SalamQuran/includes/lib/app/khatm.php:580
+#: SalamQuran/includes/lib/app/khatm.php:581
 #: SalamQuran/includes/lib/app/lm_answer.php:21
 #: SalamQuran/includes/lib/app/lm_audio.php:24
 #: SalamQuran/includes/lib/app/lm_audiomistake.php:19
@@ -10560,24 +10672,24 @@ msgstr ""
 "حداکثر تعداد دفعات تکرار ختم در این حالت ۳ بار است (ختم قرآن به صورت عمومی برای "
 "کل قرآن)"
 
-#: SalamQuran/includes/lib/app/khatm.php:538
+#: SalamQuran/includes/lib/app/khatm.php:539
 msgid "Public - Everyone can see it"
 msgstr "عمومی - همه می‌توانند این را ببینند"
 
-#: SalamQuran/includes/lib/app/khatm.php:539
+#: SalamQuran/includes/lib/app/khatm.php:540
 msgid "Private - Only you can see it"
 msgstr "خصوصی - تنها شما می‌توانید این را مشاهده کنید"
 
-#: SalamQuran/includes/lib/app/khatm.php:587
+#: SalamQuran/includes/lib/app/khatm.php:588
 #: SalamQuran/includes/lib/app/khatmusage.php:237
 msgid "This is not your data"
 msgstr "این اطلاعات مربوط به شما نیست"
 
-#: SalamQuran/includes/lib/app/khatm.php:593
+#: SalamQuran/includes/lib/app/khatm.php:594
 msgid "Can not delete this khatm"
 msgstr "نمی‌توانیم این ختم را حذف کنیم"
 
-#: SalamQuran/includes/lib/app/khatm.php:598
+#: SalamQuran/includes/lib/app/khatm.php:599
 msgid "Your khatm was removed"
 msgstr "ختم قرآن کریم حذف شد"
 
@@ -14240,16 +14352,6 @@ msgstr "سایت"
 msgid "title"
 msgstr "عنوان"
 
-#: dash/addons/includes/languages/trans_static.php:229
-#: dash/addons/includes/languages/trans_static.php:856
-msgid "enable"
-msgstr "فعال"
-
-#: dash/addons/includes/languages/trans_static.php:230
-#: dash/addons/includes/languages/trans_static.php:857
-msgid "disable"
-msgstr "غیرفعال"
-
 #: dash/addons/includes/languages/trans_static.php:231
 #: dash/lib/social/telegram/commands/ermile.php:124
 #: dash/lib/social/telegram/step.php:336
@@ -15153,10 +15255,6 @@ msgstr "ویرایش نشده"
 #: dash/addons/includes/languages/trans_static.php:560
 msgid "Use Proxy"
 msgstr "استفاده از پروکسی"
-
-#: dash/addons/includes/languages/trans_static.php:561
-msgid "Reserved"
-msgstr "رزرو شده"
 
 #: dash/addons/includes/languages/trans_static.php:562
 msgid "Temporary Redirect"
@@ -16306,10 +16404,6 @@ msgstr "زامبیا"
 msgid "zimbabwe"
 msgstr "زیمبابوه"
 
-#: dash/addons/includes/languages/trans_static.php:858
-msgid "expire"
-msgstr "منقضی شده"
-
 #: dash/addons/includes/languages/trans_static.php:862
 msgid "block"
 msgstr "قفل شده"
@@ -16450,11 +16544,6 @@ msgstr "حذف اضطراری"
 msgid "removeadmin"
 msgstr "حذف مدیریت"
 
-#: dash/addons/includes/languages/trans_static.php:897
-#: dash/lib/social/telegram/step.php:211
-msgid "cancel"
-msgstr "رد کردن"
-
 #: dash/addons/includes/languages/trans_static.php:898
 msgid "student"
 msgstr "دانش آموز"
@@ -16566,10 +16655,6 @@ msgstr "فیلترشده"
 #: dash/addons/includes/languages/trans_static.php:927
 msgid "blocked"
 msgstr "قفل شده"
-
-#: dash/addons/includes/languages/trans_static.php:929
-msgid "request"
-msgstr "تقاضا"
 
 #: dash/addons/includes/languages/trans_static.php:930
 msgid "redirect"

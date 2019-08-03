@@ -80,6 +80,35 @@ class TransStatic
 	echo T_("tafsir");
 	echo T_("Tafsir");
 
+	echo T_("enable");
+	echo T_("disable");
+	echo T_("awaiting");
+	echo T_("deleted");
+	echo T_("publish");
+	echo T_("expire");
+	echo T_("done");
+	echo T_("running");
+	echo T_("reserved");
+	echo T_("request");
+	echo T_("reading");
+	echo T_("cancel");
+	echo T_("autocancel");
+	echo T_("done");
+
+	echo T_("Enable");
+	echo T_("Disable");
+	echo T_("Awaiting");
+	echo T_("Deleted");
+	echo T_("Publish");
+	echo T_("Expire");
+	echo T_("Done");
+	echo T_("Running");
+	echo T_("Reserved");
+	echo T_("Request");
+	echo T_("Reading");
+	echo T_("Cancel");
+	echo T_("Autocancel");
+	echo T_("Done");
 	}
 }
 ?>
