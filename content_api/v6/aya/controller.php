@@ -67,6 +67,12 @@ class controller
 		{
 			$load                = $load[0];
 			$load['sura_detail'] = \lib\app\sura::detail($load['sura']);
+
+			if(isset($load['sura']) && isset($load['aya']))
+			{
+				$translate = \lib\app\translate::aya_translate(\dash\language::current(), $load['sura'], $load['aya']);
+				$load['translate'] = $translate;
+			}
 			return $load;
 		}
 		else
