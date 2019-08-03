@@ -322,7 +322,7 @@ class khatm
 
 
 		$status = \dash\app::request('status');
-		if($status && !in_array($status, ['enable', 'disable', 'awaiting', 'deleted', 'publish', 'expire', 'done']))
+		if($status && !in_array($status, ['enable', 'disable', 'awaiting', 'deleted', 'publish', 'expire', 'done', 'running']))
 		{
 			\dash\notif::error(T_("Invalid status"), 'status');
 			return false;
@@ -505,6 +505,12 @@ class khatm
 		if(!$check || !isset($check['id']))
 		{
 			\dash\notif::error(T_("This is not your data"));
+			return false;
+		}
+
+		if(isset($check['status']) && !in_array($check['status'], ['awaiting', 'running']))
+		{
+			\dash\notif::error(T_("Can not delete this khatm"));
 			return false;
 		}
 
