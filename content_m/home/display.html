@@ -9,6 +9,7 @@
     <div class="c4 s12">{{block('bLearnleved')}}</div>
     <div class="c4 s12">{{block('bMistake')}}</div>
     <div class="c4 s12">{{block('bReading')}}</div>
+    <div class="c4 s12">{{block('bKhatm')}}</div>
 
     <div class="c4 s12">{{block('Bmagazine')}}</div>
 
@@ -20,6 +21,18 @@
  <div class="statistic blue">
   <div class="value mB10"><i class="sf-grid-1"></i></div>
   <div class="label">{%trans "Level list"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+
+{%block bKhatm%}
+<a class="dcard x1" href='{{url.here}}/khatm'>
+ <div class="statistic blue">
+  <div class="value mB10"><i class="sf-bookmark-o"></i></div>
+  <div class="label">{%trans "Khatm list"%}</div>
  </div>
 </a>
 {%endblock%}

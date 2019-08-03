@@ -129,7 +129,7 @@ class khatm
 		if(\dash\engine\process::status())
 		{
 			\dash\log::set('addNewKhatm', ['code' => $khatm_id]);
-			\dash\notif::ok(T_("Learn group successfuly added"));
+			\dash\notif::ok(T_("Khatm successfuly added"));
 		}
 
 		return $return;
