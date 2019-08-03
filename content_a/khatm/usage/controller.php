@@ -1,5 +1,5 @@
 <?php
-namespace content_a\khatm\start;
+namespace content_a\khatm\usage;
 
 
 class controller
@@ -7,11 +7,11 @@ class controller
 	public static function routing()
 	{
 		$subchild = \dash\url::subchild();
-		$khatm = \lib\app\khatm::site_start($subchild);
-		if($khatm)
+		$khatmusage = \lib\app\khatmusage::usage($subchild);
+		if($khatmusage)
 		{
-			\dash\data::khatmRow($khatm);
 			\dash\open::get();
+			\dash\data::khatmUsageRow($khatmusage);
 		}
 		else
 		{

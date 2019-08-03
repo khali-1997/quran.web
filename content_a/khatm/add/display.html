@@ -15,11 +15,14 @@
 
 
 
-      {{block('iType')}}
 
       {{block('iRange')}}
       <div data-response='range' data-response-where='sura' data-response-hide class="mB10">
         {{block('suraList')}}
+      </div>
+
+      <div data-response='range' data-response-where='quran' data-response-hide class="mB10">
+      {{block('iType')}}
       </div>
 
       <div class="msg">
@@ -40,7 +43,7 @@
 
 {% block suraList %}
 <label for="fsura">{%trans "Surah"%}</label>
-  <select class="select" name="sura" id="fsura">
+  <select class="select ui dropdown search" name="sura" id="fsura">
     <option value="">{%trans "Select sura"%}</option>
     {%for key, value in quranListQuick%}
         <option value="{{key}}" {%if dataRow.quran_start_sura == key%} selected {%endif%}>{{value}}</option>

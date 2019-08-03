@@ -1,5 +1,5 @@
 <?php
-namespace content_a\khatm\start;
+namespace content_a\khatm\usage;
 
 
 class model
@@ -8,9 +8,9 @@ class model
 	{
 		if(\dash\request::post('type') === 'start')
 		{
-			$result = \lib\app\khatmusage::start(\dash\url::subchild());
+			\lib\app\khatmusage::start(\dash\url::subchild());
 
-			if($result && \dash\engine\process::status())
+			if(\dash\engine\process::status())
 			{
 				\dash\redirect::to(\dash\url::this() .'/usage/'. \dash\url::subchild());
 			}

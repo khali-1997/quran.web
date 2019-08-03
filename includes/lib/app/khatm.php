@@ -67,22 +67,27 @@ class khatm
 			}
 		}
 
-		if(!in_array($load['status'], ['awaiting', 'enable']))
-		{
-			return false;
-		}
+		// if(!in_array($load['status'], ['awaiting', 'running']))
+		// {
+		// 	return false;
+		// }
 
-		$check_uages = \lib\app\khatmusage::check_remain($id, $load);
-		if(!$check_uages)
-		{
-			return false;
-		}
+		// $check_uages = \lib\app\khatmusage::check_remain($id, $load);
+		// if(!$check_uages)
+		// {
+		// 	return false;
+		// }
 
 		$desc = '';
-		$desc .= ' '. T_('Hi');
-		$desc .= ' '. T_('To take part in the khatm, you must read a :val of the Holy Quran', ['val' => T_(ucfirst($load['type']))]);
-		$desc .= ' '. T_('If you want to attend the khatm, click on the button below');
-		$desc .= ' '. T_('It is up to you to complete the religious responsibility');
+		if($load['range'] === 'sura')
+		{
+			$desc .= ' '. T_('To take part in the khatm, you must read one time :val of the Holy Quran', ['val' => T_(\lib\app\sura::detail($load['sura'], 'name'))]);
+		}
+		elseif($load['range'] === 'quran')
+		{
+			$desc .= ' '. T_('To take part in the khatm, you must read a :val of the Holy Quran', ['val' => T_(ucfirst($load['type']))]);
+		}
+
 		$load['desc'] = $desc;
 
 		$load = self::ready($load);
@@ -399,6 +404,17 @@ class khatm
 				\dash\notif::error(T_("Maximum repeat in this mode is 3 (public khatm for whole quran)"), 'repeat');
 				return false;
 			}
+		}
+
+
+		if($range === 'quran')
+		{
+			$sura = null;
+		}
+
+		if($range === 'sura')
+		{
+			$type = null;
 		}
 
 

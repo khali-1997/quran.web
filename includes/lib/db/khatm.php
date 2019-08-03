@@ -35,7 +35,15 @@ class khatm
 	}
 
 
-		public static function search($_string, $_args)
+	public static function get_by_id($_id)
+	{
+		$query = "SELECT * FROM khatm WHERE khatm.id = $_id LIMIT 1";
+		$result = \dash\db::get($query, null, true);
+		return $result;
+	}
+
+
+	public static function search($_string, $_args)
 	{
 		$default =
 		[
