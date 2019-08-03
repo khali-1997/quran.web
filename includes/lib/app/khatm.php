@@ -458,8 +458,11 @@ class khatm
 
 	public static function ready($_data)
 	{
-		$result = [];
-		$title = '';
+		$result         = [];
+		$title          = '';
+		$count_complete = 0;
+		$repeat         = 0;
+
 		foreach ($_data as $key => $value)
 		{
 
@@ -495,8 +498,31 @@ class khatm
 				case 'type':
 					$result[$key] = $value;
 					$result['t_'. $key] = T_(ucfirst($value));
-					if($value === "page") $result['t'. $key] = T_("Read quran page by page");
-					if($value === "juz")  $result['t'. $key] = T_("Read quran juz by juz");
+
+					if($value === "page")
+					{
+						$result['t'. $key] = T_("Read quran page by page");
+						$repeat = 604;
+					}
+
+					if($value === "juz")
+					{
+						$result['t'. $key] = T_("Read quran juz by juz");
+						$repeat = 30;
+					}
+					break;
+
+				case 'count_complete':
+					$result[$key] = $value;
+					$count_complete = intval($value);
+					break;
+
+				case 'repeat':
+					$result[$key] = $value;
+					if(!$repeat)
+					{
+						$repeat = intval($value);
+					}
 					break;
 
 				case 'range':
@@ -527,6 +553,12 @@ class khatm
 			}
 		}
 
+		// count_complete
+		if($repeat)
+		{
+			$complete = floor((100* $count_complete) / $repeat);
+			$result['complete_percent'] = $complete;
+		}
 		$result['title'] = $title;
 
 		return $result;

@@ -62,7 +62,11 @@ class khatm
 	{
 		$default =
 		[
-
+			'public_show_field' =>
+			"
+				khatm.*,
+				(SELECT COUNT(*) FROM khatmusage WHERE khatmusage.khatm_id = khatm.id AND khatmusage.status = 'done') AS `count_complete`
+			",
 			'search_field'       => " khatm.title LIKE ('%__string__%')",
 		];
 

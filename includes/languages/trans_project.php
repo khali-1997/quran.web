@@ -324,7 +324,7 @@ class twigTransTerms
 	//------------------------------------projects/SalamQuran/content/main/player.html
 	echo T_("Play Mode");                                                             // Line 27
 	echo T_("Continuously");                                                          // Line 30
-	echo T_("Surah");                                                                 // Line 84
+	echo T_("Surah");                                                                 // Line 88
 	echo T_("Juz");                                                                   // Line 95
 	echo T_("Aya Repeat");                                                            // Line 40
 	echo T_("Times");                                                                 // Line 51
@@ -838,7 +838,7 @@ class twigTransTerms
 	echo T_("Operator");                                                              // Line 70
 	echo T_("Audio file");                                                            // Line 71
 	echo T_("Answer");                                                                // Line 45
-	echo T_("Status");                                                                // Line 67
+	echo T_("Status");                                                                // Line 68
 	echo T_("Hi!");                                                                   // Line 112
 	echo T_("Try to start with add new badge!");                                      // Line 137
 
@@ -865,12 +865,12 @@ class twigTransTerms
 	echo T_("Niyat");                                                                 // Line 63
 	echo T_("Range");                                                                 // Line 65
 	echo T_("Repeat");                                                                // Line 66
-	echo T_("Privacy");                                                               // Line 66
+	echo T_("Privacy");                                                               // Line 67
 	echo T_("Action");                                                                // Line 55
 	echo T_("Edit");                                                                  // Line 162
-	echo T_("Try to start with add new khatm!");                                      // Line 154
-	echo T_("Cancel");                                                                // Line 147
-	echo T_("Start");                                                                 // Line 148
+	echo T_("Try to start with add new khatm!");                                      // Line 163
+	echo T_("Cancel");                                                                // Line 156
+	echo T_("Start");                                                                 // Line 157
 
 	//---------------------------projects/SalamQuran/content_m/khatm/edit/display.html
 	echo T_("Your intention of khatm quran");                                         // Line 11
@@ -1050,7 +1050,9 @@ class twigTransTerms
 	//------------------------------projects/SalamQuran/content_a/khatm/pageSteps.html
 
 	//---------------------------projects/SalamQuran/content_a/khatm/home/display.html
+	echo T_("Complete");                                                              // Line 66
 	echo T_("times");                                                                 // Line 87
+	echo T_("%");                                                                     // Line 96
 
 	//-----------------------------------projects/SalamQuran/content_a/fav/layout.html
 

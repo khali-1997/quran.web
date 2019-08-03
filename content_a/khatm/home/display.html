@@ -61,8 +61,9 @@
       <tr>
         <th>{%trans "Khatm list"%}</th>
         <th></th>
-        <th></th>
-        <th></th>
+
+
+        <th>{%trans "Complete"%}</th>
         {%if requestGET.user == 'my'%}<th>{%trans "Privacy"%}</th>{%endif%}
         <th>{%trans "Status"%}</th>
         <th>{%trans "Action"%}</th>
@@ -78,13 +79,21 @@
           {%if value.mykhatm%}<div>{{value.niyat}}</div>{%endif%}
         </td>
 
-        <td>{{value.ttype}}</td>
+
         <td>
-          <div>{{value.trange}}</div>
-          {%if value.sura%} {%trans "Surah"%} <span class="icon-surah{{value.sura}}"></span>{{value.sura_name}}{%endif%}
+
+          {%if value.sura%}
+            {%if value.range == 'sura'%}
+              <div>{{value.repeat | fitNumber}} {%trans "times"%}</div>
+              {%trans "Surah"%} {{value.sura_name}}{%endif%}
+            {%else%}
+              {{value.trange}}
+              <div>{{value.ttype}}</div>
+          {%endif%}
         </td>
+
         <td>
-          <div>{{value.repeat | fitNumber}} {%trans "times"%}</div>
+          {% if value.complete_percent %}<b class="fc-blue">{{value.complete_percent | fitNumber}} {%trans "%"%}</b> {%endif%}
         </td>
         {%if requestGET.user == 'my'%}<td>{{value.tprivacy}}</td>{%endif%}
         <td>{{value.tstatus}}</td>
