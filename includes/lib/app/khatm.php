@@ -392,6 +392,15 @@ class khatm
 			$sura = null;
 		}
 
+		if($privacy === 'public' && $range === 'quran')
+		{
+			if(intval($repeat) > 3)
+			{
+				\dash\notif::error(T_("Maximum repeat in this mode is 3 (public khatm for whole quran)"), 'repeat');
+				return false;
+			}
+		}
+
 
 
 		$args            = [];
