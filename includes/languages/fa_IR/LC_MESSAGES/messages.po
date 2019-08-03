@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SalamQuran - Persian\n"
-"POT-Creation-Date: 2019-08-03 17:12+0430\n"
-"PO-Revision-Date: 2019-08-03 17:18+0430\n"
+"POT-Creation-Date: 2019-08-03 20:08+0430\n"
+"PO-Revision-Date: 2019-08-03 20:08+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -656,7 +656,7 @@ msgid "Back to khatm list"
 msgstr "بازگشت به لیست ختم‌ها"
 
 #: SalamQuran/content_m/khatm/edit/view.php:21
-#: SalamQuran/includes/lib/app/khatm.php:220
+#: SalamQuran/includes/lib/app/khatm.php:228
 msgid "Invalid khatm id"
 msgstr "شناسه ختم اشتباه است"
 
@@ -677,7 +677,7 @@ msgstr "آزمون"
 
 #: SalamQuran/content_m/level/exam/view.php:30
 #: SalamQuran/includes/lib/app/fav.php:135 SalamQuran/includes/lib/app/fav.php:155
-#: SalamQuran/includes/lib/app/fav.php:235 SalamQuran/includes/lib/app/khatm.php:533
+#: SalamQuran/includes/lib/app/fav.php:235 SalamQuran/includes/lib/app/khatm.php:542
 #: SalamQuran/includes/lib/app/lm_level.php:38
 #: SalamQuran/includes/lib/app/lm_level.php:91
 #: SalamQuran/includes/lib/app/lm_question.php:77
@@ -3596,7 +3596,7 @@ msgid "Contact us"
 msgstr "با ما تماس بگیرید"
 
 #: SalamQuran/includes/languages/trans_dash.php:642
-#: SalamQuran/includes/languages/trans_project.php:1045
+#: SalamQuran/includes/languages/trans_project.php:1046
 #: dash/addons/includes/languages/trans_dash.php:550
 msgid "Hi"
 msgstr "سلام"
@@ -6172,7 +6172,7 @@ msgid "Server"
 msgstr "سرور"
 
 #: SalamQuran/includes/languages/trans_dash.php:1309
-#: SalamQuran/includes/languages/trans_project.php:1058
+#: SalamQuran/includes/languages/trans_project.php:1059
 #: dash/addons/includes/languages/trans_dash.php:1219
 msgid "Date and time"
 msgstr "تاریخ و زمان"
@@ -9495,12 +9495,12 @@ msgid "Read quran mode"
 msgstr "حالت خواندن قرآن"
 
 #: SalamQuran/includes/languages/trans_project.php:882
-#: SalamQuran/includes/lib/app/khatm.php:489
+#: SalamQuran/includes/lib/app/khatm.php:498
 msgid "Read quran page by page"
 msgstr "خواندن قرآن به صورت صفحه به صفحه"
 
 #: SalamQuran/includes/languages/trans_project.php:883
-#: SalamQuran/includes/lib/app/khatm.php:490
+#: SalamQuran/includes/lib/app/khatm.php:499
 msgid "Read quran juz by juz"
 msgstr "خواندن قرآن به صورت جزء به جزء"
 
@@ -9509,12 +9509,12 @@ msgid "Range of khatm"
 msgstr "محدوده ختم قرآن کریم"
 
 #: SalamQuran/includes/languages/trans_project.php:885
-#: SalamQuran/includes/lib/app/khatm.php:496
+#: SalamQuran/includes/lib/app/khatm.php:505
 msgid "The whole Quran"
 msgstr "کل قرآن"
 
 #: SalamQuran/includes/languages/trans_project.php:886
-#: SalamQuran/includes/lib/app/khatm.php:497
+#: SalamQuran/includes/lib/app/khatm.php:506
 msgid "Special Surah"
 msgstr "سوره خاص"
 
@@ -9798,19 +9798,23 @@ msgstr "هیچ سوالی ثبت نشده است"
 msgid "Badge title"
 msgstr "عنوان نشان"
 
-#: SalamQuran/includes/languages/trans_project.php:1037
+#: SalamQuran/includes/languages/trans_project.php:1035
+msgid "Between 1 and 40"
+msgstr "بین ۱ و ۴۰"
+
+#: SalamQuran/includes/languages/trans_project.php:1038
 msgid "Start reading sura"
 msgstr "شروع تلاوت سوره"
 
-#: SalamQuran/includes/languages/trans_project.php:1038
+#: SalamQuran/includes/languages/trans_project.php:1039
 msgid "Start reading page"
 msgstr "شروع تلاوت صفحه"
 
-#: SalamQuran/includes/languages/trans_project.php:1039
+#: SalamQuran/includes/languages/trans_project.php:1040
 msgid "Start reading juz"
 msgstr "شروع تلاوت جزء"
 
-#: SalamQuran/includes/languages/trans_project.php:1040
+#: SalamQuran/includes/languages/trans_project.php:1041
 msgid ""
 "If you have finished reading your share press the green key and click Cancel if "
 "you want to quit reading this section"
@@ -9818,45 +9822,45 @@ msgstr ""
 "اگر تلاوت سهم خود را از این ختم قرآن به پایان رسانده‌اید بر روی دکمه سبزرنگ کلیک "
 "کنید و اگر می‌خواهید از خواندن سهم خود انصراف دهید بر روی گزینه انصراف کلیک کنید"
 
-#: SalamQuran/includes/languages/trans_project.php:1041
+#: SalamQuran/includes/languages/trans_project.php:1042
 msgid "My reading is complete"
 msgstr "تلاوت سهم من از ختم قرآن به پایان رسید"
 
-#: SalamQuran/includes/languages/trans_project.php:1042
+#: SalamQuran/includes/languages/trans_project.php:1043
 msgid "Leave reading"
 msgstr "انصراف از خواندن"
 
-#: SalamQuran/includes/languages/trans_project.php:1046
+#: SalamQuran/includes/languages/trans_project.php:1047
 msgid "It is up to you to complete the religious responsibility"
 msgstr "مسئولیت شرعی تکمیل کردن سهم شما به عهده خودتان است"
 
-#: SalamQuran/includes/languages/trans_project.php:1047
+#: SalamQuran/includes/languages/trans_project.php:1048
 msgid "If you want to attend the khatm, click on the button below"
 msgstr "اگر می‌خواهید در این ختم شرکت کنید دکمه زیر را لمس کنید"
 
-#: SalamQuran/includes/languages/trans_project.php:1052
+#: SalamQuran/includes/languages/trans_project.php:1053
 msgid "times"
 msgstr "بار"
 
-#: SalamQuran/includes/languages/trans_project.php:1057
+#: SalamQuran/includes/languages/trans_project.php:1058
 msgid "Favorites"
 msgstr "علاقه‌مندی"
 
-#: SalamQuran/includes/languages/trans_project.php:1059
+#: SalamQuran/includes/languages/trans_project.php:1060
 msgid "No favorites added"
 msgstr "هیچ موردی ثبت نشده است"
 
-#: SalamQuran/includes/languages/trans_project.php:1062
+#: SalamQuran/includes/languages/trans_project.php:1063
 msgid "History"
 msgstr "تاریخچه"
 
-#: SalamQuran/includes/languages/trans_project.php:1063
-#: SalamQuran/includes/lib/app/khatm.php:193
-#: SalamQuran/includes/lib/app/khatm.php:460
+#: SalamQuran/includes/languages/trans_project.php:1064
+#: SalamQuran/includes/lib/app/khatm.php:201
+#: SalamQuran/includes/lib/app/khatm.php:469
 msgid "Khatm"
 msgstr "ختم قرآن کریم"
 
-#: SalamQuran/includes/languages/trans_project.php:1064
+#: SalamQuran/includes/languages/trans_project.php:1065
 msgid "Favorite"
 msgstr "علاقمندی"
 
@@ -10247,8 +10251,8 @@ msgid "Please set quality less than 200 character"
 msgstr "لطفا کیفیت را کمتر از ۲۰۰ حرف وارد کنید"
 
 #: SalamQuran/includes/lib/app/audiobank.php:156
-#: SalamQuran/includes/lib/app/khatm.php:347
-#: SalamQuran/includes/lib/app/khatmusage.php:182
+#: SalamQuran/includes/lib/app/khatm.php:355
+#: SalamQuran/includes/lib/app/khatmusage.php:243
 #: SalamQuran/includes/lib/app/lm_audio.php:224
 #: SalamQuran/includes/lib/app/lm_group.php:267
 #: SalamQuran/includes/lib/app/lm_level.php:375
@@ -10269,7 +10273,7 @@ msgstr "فارسی"
 #: SalamQuran/includes/lib/app/audiobank.php:304
 #: SalamQuran/includes/lib/app/badge.php:24 SalamQuran/includes/lib/app/fav.php:14
 #: SalamQuran/includes/lib/app/fav.php:21 SalamQuran/includes/lib/app/khatm.php:117
-#: SalamQuran/includes/lib/app/khatm.php:539
+#: SalamQuran/includes/lib/app/khatm.php:548
 #: SalamQuran/includes/lib/app/lm_answer.php:21
 #: SalamQuran/includes/lib/app/lm_audio.php:24
 #: SalamQuran/includes/lib/app/lm_audiomistake.php:19
@@ -10302,7 +10306,7 @@ msgid "Can not access to edit audiobank"
 msgstr "شما دسترسی لازم را برای ویرایش این بانک صوت را ندارید"
 
 #: SalamQuran/includes/lib/app/badge.php:44
-#: SalamQuran/includes/lib/app/khatm.php:142
+#: SalamQuran/includes/lib/app/khatm.php:150
 #: SalamQuran/includes/lib/app/lm_answer.php:119
 #: SalamQuran/includes/lib/app/lm_audio.php:54
 #: SalamQuran/includes/lib/app/lm_group.php:104
@@ -10324,7 +10328,7 @@ msgid "Badge"
 msgstr "نشان"
 
 #: SalamQuran/includes/lib/app/badge.php:94
-#: SalamQuran/includes/lib/app/khatm.php:199
+#: SalamQuran/includes/lib/app/khatm.php:207
 #: SalamQuran/includes/lib/app/lm_audio.php:112
 #: SalamQuran/includes/lib/app/lm_group.php:159
 #: SalamQuran/includes/lib/app/lm_level.php:257
@@ -10346,7 +10350,7 @@ msgid "Please fill the title"
 msgstr "لطفا عنوان را وارد کنید"
 
 #: SalamQuran/includes/lib/app/badge.php:178
-#: SalamQuran/includes/lib/app/khatm.php:276
+#: SalamQuran/includes/lib/app/khatm.php:284
 #: SalamQuran/includes/lib/app/lm_group.php:243
 #: SalamQuran/includes/lib/app/lm_level.php:340
 #: SalamQuran/includes/lib/app/lm_mistake.php:178
@@ -10398,7 +10402,7 @@ msgstr "لطفا آدرس را با کمتر از ۵۰۰ کاراکتر تنظی
 msgid "Pay :price toman"
 msgstr "پرداخت :price تومان"
 
-#: SalamQuran/includes/lib/app/fav.php:28 SalamQuran/includes/lib/app/khatm.php:325
+#: SalamQuran/includes/lib/app/fav.php:28 SalamQuran/includes/lib/app/khatm.php:333
 #: SalamQuran/includes/lib/app/lm_group.php:304
 #: SalamQuran/includes/lib/app/lm_level.php:55
 #: SalamQuran/includes/lib/app/lm_level.php:455
@@ -10481,93 +10485,97 @@ msgstr "برای شرکت در این ختم قرآن شما باید یک با�
 msgid "To take part in the khatm, you must read a :val of the Holy Quran"
 msgstr "برای شرکت در این ختم شما باید یک :val از قرآن را بخوانید"
 
-#: SalamQuran/includes/lib/app/khatm.php:151
+#: SalamQuran/includes/lib/app/khatm.php:142
+msgid "You can not have more than 1 active khatm"
+msgstr "شما نمی‌توانید بیشتر از یک ختم فعال به صورت همزمان داشته باشید"
+
+#: SalamQuran/includes/lib/app/khatm.php:159
 msgid "Khatm successfuly added"
 msgstr "ختم قرآن با موفقیت اضافه شد"
 
-#: SalamQuran/includes/lib/app/khatm.php:212
+#: SalamQuran/includes/lib/app/khatm.php:220
 msgid "khatm id not set"
 msgstr "شناسه ختم تنظیم نشده است"
 
-#: SalamQuran/includes/lib/app/khatm.php:283
+#: SalamQuran/includes/lib/app/khatm.php:291
 msgid "Please fill the niyat less than 300 character"
 msgstr "لطفا نیت خود را کمتر از ۳۰۰ حرف وارد کنید"
 
-#: SalamQuran/includes/lib/app/khatm.php:297
+#: SalamQuran/includes/lib/app/khatm.php:305
 msgid "You can't expect more than one awaiting khatm"
 msgstr "شما نمی‌توانید بیش از یک ختم در انتظار داشته باشید"
 
-#: SalamQuran/includes/lib/app/khatm.php:306
+#: SalamQuran/includes/lib/app/khatm.php:314
 msgid "Plase set range"
 msgstr "لطفا محدوده را انتخاب کنید"
 
-#: SalamQuran/includes/lib/app/khatm.php:312
+#: SalamQuran/includes/lib/app/khatm.php:320
 msgid "Invalid range"
 msgstr "محدوده نامعتبر است"
 
-#: SalamQuran/includes/lib/app/khatm.php:319
+#: SalamQuran/includes/lib/app/khatm.php:327
 msgid "Plase set type"
 msgstr "لطفا نوع را انتخاب کنید"
 
-#: SalamQuran/includes/lib/app/khatm.php:333
+#: SalamQuran/includes/lib/app/khatm.php:341
 msgid "Plase set privacy"
 msgstr "لطفا حریم خصوصی را انتخاب کنید"
 
-#: SalamQuran/includes/lib/app/khatm.php:339
+#: SalamQuran/includes/lib/app/khatm.php:347
 msgid "Invalid privacy"
 msgstr "حریم خصوصی نامعتبر است"
 
-#: SalamQuran/includes/lib/app/khatm.php:355
+#: SalamQuran/includes/lib/app/khatm.php:363
 msgid "Please set the repeat as a number"
 msgstr "لطفا مقدار تکرار را به صورت عددی وارد کنید"
 
-#: SalamQuran/includes/lib/app/khatm.php:367
+#: SalamQuran/includes/lib/app/khatm.php:375
 msgid "Repeat is out of range!"
 msgstr "تکرار خارج از محدوده مجاز است"
 
-#: SalamQuran/includes/lib/app/khatm.php:382
+#: SalamQuran/includes/lib/app/khatm.php:390
 msgid "Please set the sura as a number"
 msgstr "لطفا شماره سوره را به صورت عددی وارد کنید"
 
-#: SalamQuran/includes/lib/app/khatm.php:394
-#: SalamQuran/includes/lib/app/khatm.php:400
+#: SalamQuran/includes/lib/app/khatm.php:402
+#: SalamQuran/includes/lib/app/khatm.php:408
 msgid "Sura index is out of range!"
 msgstr "شماره سوره خارج از محدوده مجاز است"
 
-#: SalamQuran/includes/lib/app/khatm.php:406
+#: SalamQuran/includes/lib/app/khatm.php:414
 msgid "Please set surah"
 msgstr "لطفا سوره را انتخاب کنید"
 
-#: SalamQuran/includes/lib/app/khatm.php:419
+#: SalamQuran/includes/lib/app/khatm.php:427
 msgid "Maximum repeat in this mode is 3 (public khatm for whole quran)"
 msgstr ""
 "حداکثر تعداد دفعات تکرار ختم در این حالت ۳ بار است (ختم قرآن به صورت عمومی برای "
 "کل قرآن)"
 
-#: SalamQuran/includes/lib/app/khatm.php:503
+#: SalamQuran/includes/lib/app/khatm.php:512
 msgid "Public - Everyone can see it"
 msgstr "عمومی - همه می‌توانند این را ببینند"
 
-#: SalamQuran/includes/lib/app/khatm.php:504
+#: SalamQuran/includes/lib/app/khatm.php:513
 msgid "Private - Only you can see it"
 msgstr "خصوصی - تنها شما می‌توانید این را مشاهده کنید"
 
-#: SalamQuran/includes/lib/app/khatm.php:546
-#: SalamQuran/includes/lib/app/khatmusage.php:176
+#: SalamQuran/includes/lib/app/khatm.php:555
+#: SalamQuran/includes/lib/app/khatmusage.php:237
 msgid "This is not your data"
 msgstr "این اطلاعات مربوط به شما نیست"
 
-#: SalamQuran/includes/lib/app/khatm.php:552
+#: SalamQuran/includes/lib/app/khatm.php:561
 msgid "Can not delete this khatm"
 msgstr "نمی‌توانیم این ختم را حذف کنیم"
 
-#: SalamQuran/includes/lib/app/khatm.php:557
+#: SalamQuran/includes/lib/app/khatm.php:566
 msgid "Your khatm was removed"
 msgstr "ختم قرآن کریم حذف شد"
 
 #: SalamQuran/includes/lib/app/khatmusage.php:13
-#: SalamQuran/includes/lib/app/khatmusage.php:167
-#: SalamQuran/includes/lib/app/khatmusage.php:206
+#: SalamQuran/includes/lib/app/khatmusage.php:228
+#: SalamQuran/includes/lib/app/khatmusage.php:270
 msgid "Can not start this khatm"
 msgstr "نمی‌توانید این ختم را شروع کنید"
 
@@ -10575,29 +10583,33 @@ msgstr "نمی‌توانید این ختم را شروع کنید"
 msgid "Range or repeat not set"
 msgstr "محدوده یا تعداد دفعات تکرار ختم تنظیم نشده است"
 
-#: SalamQuran/includes/lib/app/khatmusage.php:32
-msgid "Sura or repeat not set"
-msgstr "سوره یا تعداد دفعات تکرار ختم تنظیم نشده است"
-
-#: SalamQuran/includes/lib/app/khatmusage.php:69
+#: SalamQuran/includes/lib/app/khatmusage.php:96
 msgid "You have one not complete khatm and can not start new khatm"
 msgstr "شما یک ختم قرآن تکمیل نکرده دارید و نمی‌توانید ختم دیگری را شروع کنید"
 
-#: SalamQuran/includes/lib/app/khatmusage.php:70
+#: SalamQuran/includes/lib/app/khatmusage.php:97
 msgid "Click here to complete it"
 msgstr "برای تکمیل آن کلیک کنید"
 
-#: SalamQuran/includes/lib/app/khatmusage.php:189
+#: SalamQuran/includes/lib/app/khatmusage.php:253
 msgid "Thank you!"
 msgstr "سپاسگذاریم!"
 
-#: SalamQuran/includes/lib/app/khatmusage.php:193
+#: SalamQuran/includes/lib/app/khatmusage.php:257
 msgid "Your request was canceled"
 msgstr "درخواست شما لغو شد"
 
-#: SalamQuran/includes/lib/app/khatmusage.php:220
+#: SalamQuran/includes/lib/app/khatmusage.php:284
 msgid "Your contribution is one time reading :val from the Holy Quran"
 msgstr "سهم شما از این ختم قرآن یک بار تلاوت سوره :val از قرآن کریم است"
+
+#: SalamQuran/includes/lib/app/khatmusage.php:289
+msgid "Your contribution is reading page :val from the Holy Quran"
+msgstr "سهم شما از این ختم قرآن صفحه :val از قرآن کریم است"
+
+#: SalamQuran/includes/lib/app/khatmusage.php:293
+msgid "Your contribution is reading juz :val from the Holy Quran"
+msgstr "سهم شما از این ختم قرآن جزء :val از قرآن کریم است"
 
 #: SalamQuran/includes/lib/app/lm_answer.php:15
 msgid "Answer must be array"
@@ -19630,6 +19642,9 @@ msgstr "نام فایل غیرمجاز"
 #: dash/lib/utility/upload/check.php:91
 msgid "Exceeded file extension limit"
 msgstr "نوع فایل غیرمجاز"
+
+#~ msgid "Sura or repeat not set"
+#~ msgstr "سوره یا تعداد دفعات تکرار ختم تنظیم نشده است"
 
 #~ msgid "Fix reading"
 #~ msgstr "تصحیح قرائت"
