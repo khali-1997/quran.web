@@ -35,6 +35,7 @@ class khatmusage
 			LIMIT 1
 		";
 
+
 		$result = \dash\db::get($query, 'page', true);
 
 		if(!$result)
@@ -47,7 +48,7 @@ class khatmusage
 					khatmusage
 				WHERE
 					khatmusage.khatm_id = $_id AND
-					khatmusage.status IN ('request', 'reading', 'done') AND
+					khatmusage.status IN ('request', 'reading', 'done')
 				ORDER BY khatmusage.page DESC
 				LIMIT 1
 			";
@@ -55,12 +56,21 @@ class khatmusage
 			if($result)
 			{
 				$result = intval($result);
-				if($result === 604)
+				if($result >= 604)
 				{
 					return null;
 				}
+				else
+				{
+					$result = intval($result) + 1;
+				}
+			}
+			else
+			{
+				return 1;
 			}
 		}
+
 		$result = intval($result);
 		return $result;
 	}
@@ -102,7 +112,7 @@ class khatmusage
 					khatmusage
 				WHERE
 					khatmusage.khatm_id = $_id AND
-					khatmusage.status IN ('request', 'reading', 'done') AND
+					khatmusage.status IN ('request', 'reading', 'done')
 				ORDER BY khatmusage.juz DESC
 				LIMIT 1
 			";
@@ -110,10 +120,18 @@ class khatmusage
 			if($result)
 			{
 				$result = intval($result);
-				if($result === 30)
+				if($result >= 30)
 				{
 					return null;
 				}
+				else
+				{
+					$result = intval($result) + 1;
+				}
+			}
+			else
+			{
+				return 1;
 			}
 		}
 		$result = intval($result);

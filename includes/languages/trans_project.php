@@ -876,7 +876,7 @@ class twigTransTerms
 	echo T_("Your intention of khatm quran");                                         // Line 11
 	echo T_("Select sura");                                                           // Line 47
 	echo T_("Repeat whole khatm");                                                    // Line 61
-	echo T_("Between 1 and 114");                                                     // Line 63
+	echo T_("Between 1 and 114");                                                     // Line 61
 	echo T_("Read quran mode");                                                       // Line 79
 	echo T_("Please select one item");                                                // Line 107
 	echo T_("Read quran page by page");                                               // Line 83
@@ -1032,6 +1032,7 @@ class twigTransTerms
 	echo T_("rub");                                                                   // Line 64
 
 	//----------------------------projects/SalamQuran/content_a/khatm/add/display.html
+	echo T_("Between 1 and 40");                                                      // Line 63
 
 	//--------------------------projects/SalamQuran/content_a/khatm/usage/display.html
 	echo T_("Start reading sura");                                                    // Line 12

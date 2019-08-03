@@ -27,6 +27,7 @@ class khatmusage
 		$sura         = null;
 		$page         = null;
 		$juz          = null;
+		$is_complete = false;
 
 		if($check['range'] === 'quran')
 		{
@@ -35,7 +36,7 @@ class khatmusage
 				$page   = \lib\db\khatmusage::find_last_page($id);
 				if(!$page)
 				{
-					\dash\notif::error(T_("This khatm is complete"));
+					$is_complete = true;
 				}
 				$repeat = $repeat * 604;
 			}
@@ -44,7 +45,7 @@ class khatmusage
 				$juz    = \lib\db\khatmusage::find_last_juz($id);
 				if(!$juz)
 				{
-					\dash\notif::error(T_("This khatm is complete"));
+					$is_complete = true;
 				}
 				$repeat = $repeat * 30;
 			}
@@ -55,29 +56,36 @@ class khatmusage
 			// $repeat = $repeat; nothing
 		}
 
-		$count_done   = \lib\db\khatmusage::get_count_done_quran($id);
-
-		if(intval($count_done) >= $repeat)
+		if($is_complete)
 		{
 			$update_khatm['status'] = 'done';
 		}
 		else
 		{
-			$count_reserved = \lib\db\khatmusage::get_count_reserved_quran($id);
-			if(intval($count_reserved) >= $repeat)
+
+			$count_done   = \lib\db\khatmusage::get_count_done_quran($id);
+
+			if(intval($count_done) >= $repeat)
 			{
-				$update_khatm['status'] = 'reserved';
+				$update_khatm['status'] = 'done';
 			}
 			else
 			{
-				$new_useage = true;
-				if($check['status'] === 'awaiting')
+				$count_reserved = \lib\db\khatmusage::get_count_reserved_quran($id);
+				if(intval($count_reserved) >= $repeat)
 				{
-					$update_khatm['status'] = 'running';
+					$update_khatm['status'] = 'reserved';
+				}
+				else
+				{
+					$new_useage = true;
+					if($check['status'] === 'awaiting')
+					{
+						$update_khatm['status'] = 'running';
+					}
 				}
 			}
 		}
-
 
 		if($new_useage)
 		{
@@ -137,46 +145,71 @@ class khatmusage
 		$id           = \dash\coding::decode($_id);
 		$update_khatm = [];
 		$repeat       = intval($check['repeat']);
-		$remain       = false;
+		$remain   = false;
+		$sura         = null;
+		$page         = null;
+		$juz          = null;
+		$is_complete = false;
 
 		if($check['range'] === 'quran')
 		{
 			if($check['type'] === 'page')
 			{
+				$page   = \lib\db\khatmusage::find_last_page($id);
+				if(!$page)
+				{
+					$is_complete = true;
+				}
 				$repeat = $repeat * 604;
 			}
 			elseif($check['type'] === 'juz')
 			{
+				$juz    = \lib\db\khatmusage::find_last_juz($id);
+				if(!$juz)
+				{
+					$is_complete = true;
+				}
 				$repeat = $repeat * 30;
 			}
 		}
 		elseif($check['range'] === 'sura')
 		{
+			$sura = $check['sura'];
 			// $repeat = $repeat; nothing
 		}
 
-		$count_done   = \lib\db\khatmusage::get_count_done_quran($id);
-
-		if(intval($count_done) >= $repeat)
+		if($is_complete)
 		{
 			$update_khatm['status'] = 'done';
 		}
 		else
 		{
-			$count_reserved = \lib\db\khatmusage::get_count_reserved_quran($id);
-			if(intval($count_reserved) >= $repeat)
+
+			$count_done   = \lib\db\khatmusage::get_count_done_quran($id);
+
+			if(intval($count_done) >= $repeat)
 			{
-				$update_khatm['status'] = 'reserved';
+				$update_khatm['status'] = 'done';
 			}
 			else
 			{
-				$remain = true;
-				if($check['status'] === 'awaiting')
+				$count_reserved = \lib\db\khatmusage::get_count_reserved_quran($id);
+				if(intval($count_reserved) >= $repeat)
 				{
-					$update_khatm['status'] = 'running';
+					$update_khatm['status'] = 'reserved';
+				}
+				else
+				{
+					$remain = true;
+					if($check['status'] === 'awaiting')
+					{
+						$update_khatm['status'] = 'running';
+					}
 				}
 			}
 		}
+
+
 
 		if(!empty($update_khatm))
 		{
