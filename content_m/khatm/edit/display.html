@@ -2,7 +2,7 @@
 
 
 {%block pageContent%}
-{%include 'content_a/khatm/pageSteps.html'%}
+{%include 'content_m/khatm/pageSteps.html'%}
 
   <div class="justify-center f">
    <form method="post" class="c5 m6 s12" autocomplete="off">
@@ -41,7 +41,7 @@
 
 {% block suraList %}
 <label for="fsura">{%trans "Surah"%}</label>
-  <select class="select" name="sura" id="fsura">
+  <select class="select" disabled name="sura" id="fsura">
     <option value="">{%trans "Select sura"%}</option>
     {%for key, value in quranListQuick%}
         <option value="{{key}}" {%if dataRow.sura == key%} selected {%endif%}>{{value}}</option>
@@ -58,7 +58,7 @@
 {%block iRepeat %}
 <label for="repeat">{%trans "Repeat whole khatm"%}</label>
 <div class="input">
-  <input type="number" name="repeat" id="repeat" max='114' min="1"  value="{{dataRow.repeat}}" placeholder='{%trans "Between 1 and 114"%}'>
+  <input type="number" disabled name="repeat" id="repeat" max='114' min="1"  value="{{dataRow.repeat}}" placeholder='{%trans "Between 1 and 114"%}'>
 </div>
 {%endblock%}
 
@@ -76,7 +76,7 @@
 {%block iType%}
 <label for="type">{%trans "Read quran mode"%}</label>
 
-<select name="type" class="mB10 select ui dropdown search" id="type">
+<select name="type" disabled class="mB10 select ui dropdown search" id="type">
   <option value="" readonly>{%trans "Please select one item"%}</option>
   <option value="page" {%if dataRow.type == 'page'%} selected {%endif%}>{%trans "Read quran page by page"%}</option>
   <option value="juz" {%if dataRow.type == 'juz'%} selected {%endif%}  >{%trans "Read quran juz by juz"%}</option>
@@ -89,7 +89,7 @@
 {%block iRange%}
 <label for="range">{%trans "Range of khatm"%}</label>
 
-<select name="range" class="mB10 select ui dropdown search" id="range">
+<select name="range" disabled class="mB10 select ui dropdown search" id="range">
   <option value="" readonly>{%trans "Please select one item"%}</option>
   <option value="quran" {%if dataRow.range == 'quran'%} selected {%endif%} >{%trans "The whole Quran"%}</option>
   <option value="sura" {%if dataRow.range == 'sura'%} selected {%endif%}   >{%trans "Special Surah"%}</option>

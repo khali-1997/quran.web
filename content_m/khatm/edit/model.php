@@ -8,13 +8,13 @@ class model
 	{
 		$post =
 		[
-			'repeat'  => \dash\request::post('repeat'),
+			// 'repeat'  => \dash\request::post('repeat'),
 			'niyat'   => \dash\request::post('niyat'),
 			'status'  => \dash\request::post('status'),
 			'privacy' => \dash\request::post('privacy'),
-			'range'   => \dash\request::post('range'),
-			'type'    => \dash\request::post('type'),
-			'sura'    => \dash\request::post('sura'),
+			// 'range'   => \dash\request::post('range'),
+			// 'type'    => \dash\request::post('type'),
+			// 'sura'    => \dash\request::post('sura'),
 			'status'    => \dash\request::post('status'),
 		];
 
