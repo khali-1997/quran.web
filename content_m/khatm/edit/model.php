@@ -15,6 +15,7 @@ class model
 			'range'   => \dash\request::post('range'),
 			'type'    => \dash\request::post('type'),
 			'sura'    => \dash\request::post('sura'),
+			'status'    => \dash\request::post('status'),
 		];
 
 

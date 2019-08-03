@@ -26,6 +26,7 @@
         {{block('iRepeat')}}
       </div>
       {{block('iPrivacy')}}
+      {{block('iStatus')}}
 
       {{block('isave')}}
     </div>
@@ -118,16 +119,35 @@
 
 
 {%block iStatus%}
+
 <div class="mT15">
  <label >{%trans "Status"%}</label>
+ {%if false%}
  <div class="radio1 green">
   <input type="radio" id="r-enable" name="status" value="enable" {%if dataRow.status == 'enable' or not dataRow.status %} checked{%endif%}>
   <label for="r-enable">{%trans "Enable"%}</label>
  </div>
- <div class="radio1 black mB25">
+ <div class="radio1 black ">
   <input type="radio" id="r-disable" name="status" value="disable" {%if dataRow.status == 'disable'%} checked{%endif%} >
   <label for="r-disable">{%trans "Disable"%}</label>
  </div>
+ {%endif%}
+
+  <div class="radio1 yellow ">
+  <input type="radio" id="r-awaiting" name="status" value="awaiting" {%if dataRow.status == 'awaiting'%} checked{%endif%} >
+  <label for="r-awaiting">{%trans "Awaiting"%}</label>
+ </div>
+
+  <div class="radio1 red ">
+  <input type="radio" id="r-deleted" name="status" value="deleted" {%if dataRow.status == 'deleted'%} checked{%endif%} >
+  <label for="r-deleted">{%trans "Deleted"%}</label>
+ </div>
+
+  <div class="radio1 green ">
+  <input type="radio" id="r-done" name="status" value="done" {%if dataRow.status == 'done'%} checked{%endif%} >
+  <label for="r-done">{%trans "Done"%}</label>
+ </div>
+
 </div>
 {%endblock%}
 
