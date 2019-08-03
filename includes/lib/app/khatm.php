@@ -32,7 +32,7 @@ class khatm
 	];
 
 
-	public static function site_start($_id)
+	public static function check_valid($_id)
 	{
 		if(!$_id)
 		{
@@ -60,23 +60,9 @@ class khatm
 			if(intval($load['user_id']) !== intval(\dash\user::id()))
 			{
 				// user not supevisor
-				if(!\dash\permission::supervisor())
-				{
-					return false;
-				}
+				return false;
 			}
 		}
-
-		// if(!in_array($load['status'], ['awaiting', 'running']))
-		// {
-		// 	return false;
-		// }
-
-		// $check_uages = \lib\app\khatmusage::check_remain($id, $load);
-		// if(!$check_uages)
-		// {
-		// 	return false;
-		// }
 
 		$desc = '';
 		if($load['range'] === 'sura')
@@ -93,6 +79,34 @@ class khatm
 		$load = self::ready($load);
 		return $load;
 	}
+
+
+	public static function site_start($_id)
+	{
+		$load = self::check_valid($_id);
+
+		if(!$load)
+		{
+			return false;
+		}
+
+		if(!in_array($load['status'], ['awaiting', 'running']))
+		{
+			return false;
+		}
+
+		$id          = \dash\coding::decode($_id);
+
+		$check_uages = \lib\app\khatmusage::check_remain($_id, $load);
+
+		if(!$check_uages)
+		{
+			return false;
+		}
+
+		return $load;
+	}
+
 
 	public static function add($_args = [])
 	{
@@ -286,19 +300,6 @@ class khatm
 			}
 		}
 
-		$type = \dash\app::request('type');
-		if(!$type)
-		{
-			\dash\notif::error(T_("Plase set type"));
-			return false;
-		}
-
-		if($type && !in_array($type, ['page', 'juz']))
-		{
-			\dash\notif::error(T_("Invalid type"), 'type');
-			return false;
-		}
-
 		$range = \dash\app::request('range');
 		if(!$range)
 		{
@@ -311,6 +312,20 @@ class khatm
 			\dash\notif::error(T_("Invalid range"), 'range');
 			return false;
 		}
+
+		$type = \dash\app::request('type');
+		if(!$type && $range === 'quran')
+		{
+			\dash\notif::error(T_("Plase set type"));
+			return false;
+		}
+
+		if($type && !in_array($type, ['page', 'juz']))
+		{
+			\dash\notif::error(T_("Invalid type"), 'type');
+			return false;
+		}
+
 
 		$privacy = \dash\app::request('privacy');
 		if(!$privacy)
@@ -487,6 +502,14 @@ class khatm
 					$result['t_'. $key] = T_(ucfirst($value));
 					if($value === "public")  $result['t'. $key] = T_("Public - Everyone can see it");
 					if($value === "private") $result['t'. $key] = T_("Private - Only you can see it");
+					break;
+
+				case 'sura':
+					$result[$key] = $value;
+					if($value)
+					{
+						$result['sura_name'] = T_(\lib\app\sura::detail($value, 'name'));
+					}
 					break;
 
 				default:

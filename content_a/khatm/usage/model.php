@@ -12,7 +12,7 @@ class model
 
 			if(\dash\engine\process::status())
 			{
-				\dash\redirect::pwd();
+				\dash\redirect::to(\dash\url::this());
 			}
 		}
 	}

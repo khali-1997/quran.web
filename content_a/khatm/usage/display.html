@@ -7,21 +7,15 @@
     <div class="cbox">
       <div class="msg txtB txtC  success">{{khatmRow.title}}</div>
 
-      	{%if khatmUsageRow.sura%}
 	      	<p>{{khatmUsageRow.desc}}</p>
+      	{%if khatmUsageRow.sura%}
 	      	<a href="{{url.kingdom}}/s{{khatmUsageRow.sura}}" class="btn outline info block mA10">{%trans "Start reading sura"%} {{khatmUsageRow.sura_name}}</a>
-
       	{%elseif khatmUsageRow.page%}
-      		شما باید صفحه
-	      	{{khatmUsageRow.page | fitNumber}}
-	      	را بخوانید
 	      	<a href="{{url.kingdom}}/p{{khatmUsageRow.page}}" class="btn outline info block mA10">{%trans "Start reading page"%} {{khatmUsageRow.page | fitNumber}}</a>
       	{%elseif khatmUsageRow.juz%}
-      		شما باید جزء
-	      	{{khatmUsageRow.juz | fitNumber}}
 	      	<a href="{{url.kingdom}}/j{{khatmUsageRow.juz}}" class="btn outline info block mA10">{%trans "Start reading juz"%} {{khatmUsageRow.juz | fitNumber}}</a>
-	      	را بخوانید
       	{%endif%}
+
       	<br>
       	<div class="msg">
       		{%trans "If you have finished reading your share press the green key and click Cancel if you want to quit reading this section"%}

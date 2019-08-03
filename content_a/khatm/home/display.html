@@ -59,10 +59,10 @@
   <table class="tbl1 v1 cbox fs12">
     <thead>
       <tr>
-        <th>{%trans "Title"%}</th>
-        <th>{%trans "Type"%}</th>
-        <th>{%trans "Range"%}</th>
-        <th>{%trans "Repeat"%}</th>
+        <th>{%trans "Khatm list"%}</th>
+        <th></th>
+        <th></th>
+        <th></th>
         {%if requestGET.user == 'my'%}<th>{%trans "Privacy"%}</th>{%endif%}
         <th>{%trans "Status"%}</th>
         <th>{%trans "Action"%}</th>
@@ -79,10 +79,12 @@
         </td>
 
         <td>{{value.ttype}}</td>
-        <td>{{value.trange}}</td>
         <td>
-          <div>{{value.repeat | fitNumber}}</div>
-          {%if value.sura%}<span class="icon-surah{{value.sura}}"></span>{{value.sura | fitNumber}}{%endif%}
+          <div>{{value.trange}}</div>
+          {%if value.sura%} {%trans "Surah"%} <span class="icon-surah{{value.sura}}"></span>{{value.sura_name}}{%endif%}
+        </td>
+        <td>
+          <div>{{value.repeat | fitNumber}} {%trans "times"%}</div>
         </td>
         {%if requestGET.user == 'my'%}<td>{{value.tprivacy}}</td>{%endif%}
         <td>{{value.tstatus}}</td>

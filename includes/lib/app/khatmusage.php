@@ -7,7 +7,7 @@ class khatmusage
 
 	public static function start($_id)
 	{
-		$check = \lib\app\khatm::site_start($_id);
+		$check = \lib\app\khatm::check_valid($_id);
 		if(!$check)
 		{
 			\dash\notif::error(T_("Can not start this khatm"));
@@ -106,19 +106,62 @@ class khatmusage
 		return true;
 	}
 
+
 	public static function check_remain($_id)
 	{
-		if(self::remain($_id))
+		$check = \lib\app\khatm::check_valid($_id);
+
+		if(!$check)
 		{
-			return true;
+			return false;
 		}
-		return false;
+
+		$id           = \dash\coding::decode($_id);
+
+		$update_khatm = [];
+		$repeat       = intval($check['repeat']);
+		$remain       = false;
+		$count_done   = \lib\db\khatmusage::get_count_done_sura($id);
+
+		if($check['range'] === 'quran')
+		{
+
+		}
+		elseif($check['range'] === 'sura')
+		{
+			if(intval($count_done) >= $repeat)
+			{
+				$update_khatm['status'] = 'done';
+			}
+			else
+			{
+				$count_reserved = \lib\db\khatmusage::get_count_reserved_sura($id);
+				if(intval($count_reserved) >= $repeat)
+				{
+					$update_khatm['status'] = 'reserved';
+				}
+				else
+				{
+					$remain = true;
+					if($check['status'] === 'awaiting')
+					{
+						$update_khatm['status'] = 'running';
+					}
+				}
+			}
+		}
+
+		if(!empty($update_khatm))
+		{
+			\lib\db\khatm::update($update_khatm, $id);
+		}
+		return $remain;
 	}
 
 
 	public static function edit_status($_status, $_id)
 	{
-		$check = \lib\app\khatm::site_start($_id);
+		$check = \lib\app\khatm::check_valid($_id);
 		if(!$check)
 		{
 			\dash\notif::error(T_("Can not start this khatm"));
@@ -126,14 +169,7 @@ class khatmusage
 		}
 
 
-		$arg =
-		[
-			'user_id'  => \dash\user::id(),
-			'khatm_id' => \dash\coding::decode($_id),
-			'limit'    => 1,
-		];
-
-		$check = \lib\db\khatmusage::get($arg);
+		$check = \lib\db\khatmusage::get_last_record(\dash\user::id(), \dash\coding::decode($_id));
 
 		if(!isset($check['id']))
 		{
@@ -164,21 +200,15 @@ class khatmusage
 
 	public static function usage($_id)
 	{
-		$check = \lib\app\khatm::site_start($_id);
+		$check = \lib\app\khatm::check_valid($_id);
 		if(!$check)
 		{
 			\dash\notif::error(T_("Can not start this khatm"));
 			return false;
 		}
 
-		$arg =
-		[
-			'user_id'  => \dash\user::id(),
-			'khatm_id' => \dash\coding::decode($_id),
-			'limit'    => 1,
-		];
+		$check = \lib\db\khatmusage::get_last_record(\dash\user::id(), \dash\coding::decode($_id));
 
-		$check = \lib\db\khatmusage::get($arg);
 
 		if($check)
 		{

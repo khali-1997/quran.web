@@ -21,6 +21,15 @@ class khatmusage
 	}
 
 
+
+	public static function get_last_record($_user_id, $_khatm_id)
+	{
+		$query = "SELECT * FROM khatmusage WHERE khatmusage.khatm_id = $_khatm_id AND khatmusage.user_id = $_user_id ORDER BY khatmusage.id DESC LIMIT 1 ";
+		$result = \dash\db::get($query, null, true);
+		return $result;
+	}
+
+
 	public static function user_have_running_khatm($_user_id)
 	{
 		$query = "SELECT * FROM khatmusage WHERE khatmusage.user_id = $_user_id AND khatmusage.status IN ('request', 'reading') LIMIT 1";
