@@ -89,7 +89,7 @@
 
 
         <td class="collapsing">
-          {%if value.mykhatm and value.status in ['awaiting', 'running']%}
+          {%if value.mykhatm and value.status in ['awaiting']%}
           <div data-confirm data-data='{"type": "remove", "id" : "{{value.id}}"}' class="btn warn">{%trans "Cancel"%}</div>
           {%endif%}
           {%if value.status in ['awaiting', 'running']%}
