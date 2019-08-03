@@ -6,7 +6,7 @@ class view
 {
 	public static function config()
 	{
-		\dash\data::page_title(T_("Edit learn khatm"));
+		\dash\data::page_title(T_("Edit khatm"));
 		\dash\data::page_desc(' ');
 		\dash\data::page_pictogram('edit');
 

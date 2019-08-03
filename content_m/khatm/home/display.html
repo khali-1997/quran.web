@@ -73,7 +73,7 @@
 
     <tbody>
       {%for key, value in dataTable%}
-      <tr {%if value.status=='disable'%} class='negative' {%else%} class='positive' {%endif%}>
+      <tr {%if value.status=='deleted'%} class='negative' {%else%} class='positive' {%endif%}>
 
         <td>
           <div>{{value.title}}</div>
