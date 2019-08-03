@@ -115,6 +115,53 @@ class khatmusage
 		return false;
 	}
 
+
+	public static function edit_status($_status, $_id)
+	{
+		$check = \lib\app\khatm::site_start($_id);
+		if(!$check)
+		{
+			\dash\notif::error(T_("Can not start this khatm"));
+			return false;
+		}
+
+
+		$arg =
+		[
+			'user_id'  => \dash\user::id(),
+			'khatm_id' => \dash\coding::decode($_id),
+			'limit'    => 1,
+		];
+
+		$check = \lib\db\khatmusage::get($arg);
+
+		if(!isset($check['id']))
+		{
+			\dash\notif::error(T_("This is not your data"));
+			return false;
+		}
+
+		if(!in_array($_status, ['done', 'cancel']))
+		{
+			\dash\noti::error(T_("Invalid status"));
+			return false;
+		}
+
+		\lib\db\khatmusage::update(['status' => $_status], $check['id']);
+		if($_status === 'done')
+		{
+			$msg = T_("Thank you!");
+		}
+		else
+		{
+			$msg = T_("Your request was canceled");
+		}
+
+		\dash\notif::ok($msg);
+		return true;
+
+	}
+
 	public static function usage($_id)
 	{
 		$check = \lib\app\khatm::site_start($_id);

@@ -6,13 +6,13 @@ class model
 {
 	public static function post()
 	{
-		if(\dash\request::post('type') === 'start')
+		if(\dash\request::post('status'))
 		{
-			\lib\app\khatmusage::start(\dash\url::subchild());
+			\lib\app\khatmusage::edit_status(\dash\request::post('status'), \dash\url::subchild());
 
 			if(\dash\engine\process::status())
 			{
-				\dash\redirect::to(\dash\url::this() .'/usage/'. \dash\url::subchild());
+				\dash\redirect::pwd();
 			}
 		}
 	}
