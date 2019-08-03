@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SalamQuran - Persian\n"
-"POT-Creation-Date: 2019-08-03 20:08+0430\n"
-"PO-Revision-Date: 2019-08-03 20:08+0430\n"
+"POT-Creation-Date: 2019-08-03 20:24+0430\n"
+"PO-Revision-Date: 2019-08-03 20:24+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -677,7 +677,7 @@ msgstr "آزمون"
 
 #: SalamQuran/content_m/level/exam/view.php:30
 #: SalamQuran/includes/lib/app/fav.php:135 SalamQuran/includes/lib/app/fav.php:155
-#: SalamQuran/includes/lib/app/fav.php:235 SalamQuran/includes/lib/app/khatm.php:542
+#: SalamQuran/includes/lib/app/fav.php:235 SalamQuran/includes/lib/app/khatm.php:574
 #: SalamQuran/includes/lib/app/lm_level.php:38
 #: SalamQuran/includes/lib/app/lm_level.php:91
 #: SalamQuran/includes/lib/app/lm_question.php:77
@@ -6172,7 +6172,7 @@ msgid "Server"
 msgstr "سرور"
 
 #: SalamQuran/includes/languages/trans_dash.php:1309
-#: SalamQuran/includes/languages/trans_project.php:1059
+#: SalamQuran/includes/languages/trans_project.php:1061
 #: dash/addons/includes/languages/trans_dash.php:1219
 msgid "Date and time"
 msgstr "تاریخ و زمان"
@@ -9495,12 +9495,12 @@ msgid "Read quran mode"
 msgstr "حالت خواندن قرآن"
 
 #: SalamQuran/includes/languages/trans_project.php:882
-#: SalamQuran/includes/lib/app/khatm.php:498
+#: SalamQuran/includes/lib/app/khatm.php:504
 msgid "Read quran page by page"
 msgstr "خواندن قرآن به صورت صفحه به صفحه"
 
 #: SalamQuran/includes/languages/trans_project.php:883
-#: SalamQuran/includes/lib/app/khatm.php:499
+#: SalamQuran/includes/lib/app/khatm.php:510
 msgid "Read quran juz by juz"
 msgstr "خواندن قرآن به صورت جزء به جزء"
 
@@ -9509,12 +9509,12 @@ msgid "Range of khatm"
 msgstr "محدوده ختم قرآن کریم"
 
 #: SalamQuran/includes/languages/trans_project.php:885
-#: SalamQuran/includes/lib/app/khatm.php:505
+#: SalamQuran/includes/lib/app/khatm.php:531
 msgid "The whole Quran"
 msgstr "کل قرآن"
 
 #: SalamQuran/includes/languages/trans_project.php:886
-#: SalamQuran/includes/lib/app/khatm.php:506
+#: SalamQuran/includes/lib/app/khatm.php:532
 msgid "Special Surah"
 msgstr "سوره خاص"
 
@@ -9839,28 +9839,36 @@ msgid "If you want to attend the khatm, click on the button below"
 msgstr "اگر می‌خواهید در این ختم شرکت کنید دکمه زیر را لمس کنید"
 
 #: SalamQuran/includes/languages/trans_project.php:1053
+msgid "Complete"
+msgstr "کامل"
+
+#: SalamQuran/includes/languages/trans_project.php:1054
 msgid "times"
 msgstr "بار"
 
-#: SalamQuran/includes/languages/trans_project.php:1058
+#: SalamQuran/includes/languages/trans_project.php:1055
+msgid "%"
+msgstr "٪"
+
+#: SalamQuran/includes/languages/trans_project.php:1060
 msgid "Favorites"
 msgstr "علاقه‌مندی"
 
-#: SalamQuran/includes/languages/trans_project.php:1060
+#: SalamQuran/includes/languages/trans_project.php:1062
 msgid "No favorites added"
 msgstr "هیچ موردی ثبت نشده است"
 
-#: SalamQuran/includes/languages/trans_project.php:1063
+#: SalamQuran/includes/languages/trans_project.php:1065
 msgid "History"
 msgstr "تاریخچه"
 
-#: SalamQuran/includes/languages/trans_project.php:1064
+#: SalamQuran/includes/languages/trans_project.php:1066
 #: SalamQuran/includes/lib/app/khatm.php:201
-#: SalamQuran/includes/lib/app/khatm.php:469
+#: SalamQuran/includes/lib/app/khatm.php:472
 msgid "Khatm"
 msgstr "ختم قرآن کریم"
 
-#: SalamQuran/includes/languages/trans_project.php:1065
+#: SalamQuran/includes/languages/trans_project.php:1067
 msgid "Favorite"
 msgstr "علاقمندی"
 
@@ -10273,7 +10281,7 @@ msgstr "فارسی"
 #: SalamQuran/includes/lib/app/audiobank.php:304
 #: SalamQuran/includes/lib/app/badge.php:24 SalamQuran/includes/lib/app/fav.php:14
 #: SalamQuran/includes/lib/app/fav.php:21 SalamQuran/includes/lib/app/khatm.php:117
-#: SalamQuran/includes/lib/app/khatm.php:548
+#: SalamQuran/includes/lib/app/khatm.php:580
 #: SalamQuran/includes/lib/app/lm_answer.php:21
 #: SalamQuran/includes/lib/app/lm_audio.php:24
 #: SalamQuran/includes/lib/app/lm_audiomistake.php:19
@@ -10552,24 +10560,24 @@ msgstr ""
 "حداکثر تعداد دفعات تکرار ختم در این حالت ۳ بار است (ختم قرآن به صورت عمومی برای "
 "کل قرآن)"
 
-#: SalamQuran/includes/lib/app/khatm.php:512
+#: SalamQuran/includes/lib/app/khatm.php:538
 msgid "Public - Everyone can see it"
 msgstr "عمومی - همه می‌توانند این را ببینند"
 
-#: SalamQuran/includes/lib/app/khatm.php:513
+#: SalamQuran/includes/lib/app/khatm.php:539
 msgid "Private - Only you can see it"
 msgstr "خصوصی - تنها شما می‌توانید این را مشاهده کنید"
 
-#: SalamQuran/includes/lib/app/khatm.php:555
+#: SalamQuran/includes/lib/app/khatm.php:587
 #: SalamQuran/includes/lib/app/khatmusage.php:237
 msgid "This is not your data"
 msgstr "این اطلاعات مربوط به شما نیست"
 
-#: SalamQuran/includes/lib/app/khatm.php:561
+#: SalamQuran/includes/lib/app/khatm.php:593
 msgid "Can not delete this khatm"
 msgstr "نمی‌توانیم این ختم را حذف کنیم"
 
-#: SalamQuran/includes/lib/app/khatm.php:566
+#: SalamQuran/includes/lib/app/khatm.php:598
 msgid "Your khatm was removed"
 msgstr "ختم قرآن کریم حذف شد"
 
@@ -19900,9 +19908,6 @@ msgstr "نوع فایل غیرمجاز"
 
 #~ msgid "Sore"
 #~ msgstr "سوره"
-
-#~ msgid "Complete"
-#~ msgstr "کامل"
 
 #~ msgid "Remove this translate"
 #~ msgstr "حذف این ترجمه"
