@@ -36,9 +36,25 @@ class view
 			$args['sort'] = 'sort';
 		}
 
+
+
+
+		if(\dash\request::get('sura'))
+		{
+			$args['sura'] = \dash\request::get('sura');
+		}
+
+
+
 		if(\dash\request::get('status'))
 		{
 			$args['status'] = \dash\request::get('status');
+		}
+
+
+		if(\dash\request::get('range'))
+		{
+			$args['range'] = \dash\request::get('range');
 		}
 
 		if(\dash\request::get('type'))
@@ -46,20 +62,17 @@ class view
 			$args['type'] = \dash\request::get('type');
 		}
 
-		if(\dash\request::get('gender'))
+		if(\dash\request::get('repeat'))
 		{
-			$args['gender'] = \dash\request::get('gender');
+			$args['repeat'] = \dash\request::get('repeat');
 		}
 
-		if(\dash\request::get('position'))
+		if(\dash\request::get('privacy'))
 		{
-			$args['position'] = \dash\request::get('position');
+			$args['privacy'] = \dash\request::get('privacy');
 		}
 
-		if(\dash\request::get('capacity'))
-		{
-			$args['capacity'] = \dash\request::get('capacity');
-		}
+
 
 		$sortLink  = \dash\app\sort::make_sortLink(\lib\app\khatm::$sort_field, \dash\url::this());
 		$dataTable = \lib\app\khatm::list(\dash\request::get('q'), $args);

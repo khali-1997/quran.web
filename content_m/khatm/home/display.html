@@ -59,12 +59,14 @@
   <table class="tbl1 v1 cbox fs12">
     <thead>
       <tr>
-        <th>{%trans "Title"%}</th>
-        <th>{%trans "Type"%}</th>
-        <th>{%trans "Range"%}</th>
-        <th>{%trans "Repeat"%}</th>
-        {%if requestGET.user == 'my'%}<th>{%trans "Privacy"%}</th>{%endif%}
-        <th>{%trans "Status"%}</th>
+        <th data-sort='{{sortLink.title.order}}'><a href="{{sortLink.title.link}}">{%trans "Title"%}</a></th>
+        <th data-sort='{{sortLink.niyat.order}}'><a href="{{sortLink.niyat.link}}">{%trans "Niyat"%}</a></th>
+        <th data-sort='{{sortLink.type.order}}'><a href="{{sortLink.type.link}}">{%trans "Type"%}</a></th>
+        <th data-sort='{{sortLink.range.order}}'><a href="{{sortLink.range.link}}">{%trans "Range"%}</a></th>
+        <th data-sort='{{sortLink.repeat.order}}'><a href="{{sortLink.repeat.link}}">{%trans "Repeat"%}</a></th>
+        <th data-sort='{{sortLink.sura.order}}'><a href="{{sortLink.sura.link}}">{%trans "Surah"%}</a></th>
+        <th data-sort='{{sortLink.privacy.order}}'><a href="{{sortLink.privacy.link}}">{%trans "Privacy"%}</a></th>
+        <th data-sort='{{sortLink.status.order}}'><a href="{{sortLink.status.link}}">{%trans "Status"%}</a></th>
         <th>{%trans "Action"%}</th>
       </tr>
     </thead>
@@ -75,24 +77,22 @@
 
         <td>
           <div>{{value.title}}</div>
-          {%if value.mykhatm%}<div>{{value.niyat}}</div>{%endif%}
         </td>
+        <td>{{value.niyat}}</td>
 
-        <td>{{value.ttype}}</td>
-        <td>{{value.trange}}</td>
+        <td><a href="{{url.this}}?type={{value.type}}">{{value.t_type}}</a></td>
+        <td><a href="{{url.this}}?range={{value.range}}">{{value.t_range}}</a></td>
         <td>
-          <div>{{value.repeat | fitNumber}}</div>
-          {%if value.sura%}<span class="icon-surah{{value.sura}}"></span>{{value.sura | fitNumber}}{%endif%}
+          <div><a href="{{url.this}}?repeat={{value.repeat}}">{{value.repeat | fitNumber}}</a></div>
         </td>
-        {%if requestGET.user == 'my'%}<td>{{value.tprivacy}}</td>{%endif%}
-        <td>{{value.tstatus}}</td>
+        <td><a href="{{url.this}}?sura={{value.sura}}"><span class="icon-surah{{value.sura}}"></span>{{value.sura | fitNumber}}</a></td>
+        <td><a href="{{url.this}}?privacy={{value.privacy}}">{{value.t_privacy}}</a></td>
+        <td><a href="{{url.this}}?status={{value.status}}">{{value.tstatus}}</a></td>
 
 
         <td class="collapsing">
-          {%if value.mykhatm%}
-          <div data-confirm data-data='{"type": "remove", "id" : "{{value.id}}"}' class="btn warn">{%trans "Cancel"%}</div>
-          {%endif%}
-         <a href="{{url.this}}/start/{{value.id}}" class="btn success">{%trans "Start"%}</a>
+
+         <a href="{{url.this}}/edit?id={{value.id}}" class="btn info">{%trans "Edit"%}</a>
         </td>
       </tr>
       {%endfor%}

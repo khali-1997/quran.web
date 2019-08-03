@@ -445,18 +445,21 @@ class khatm
 
 				case 'type':
 					$result[$key] = $value;
+					$result['t_'. $key] = T_(ucfirst($value));
 					if($value === "page") $result['t'. $key] = T_("Read quran page by page");
 					if($value === "juz")  $result['t'. $key] = T_("Read quran juz by juz");
 					break;
 
 				case 'range':
 					$result[$key] = $value;
+					$result['t_'. $key] = T_(ucfirst($value));
 					if($value === "quran") $result['t'. $key] = T_("The whole Quran");
 					if($value === "sura")  $result['t'. $key] = T_("Special Surah");
 					break;
 
 				case 'privacy':
 					$result[$key] = $value;
+					$result['t_'. $key] = T_(ucfirst($value));
 					if($value === "public")  $result['t'. $key] = T_("Public - Everyone can see it");
 					if($value === "private") $result['t'. $key] = T_("Private - Only you can see it");
 					break;
