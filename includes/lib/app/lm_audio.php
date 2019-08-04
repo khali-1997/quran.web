@@ -62,6 +62,13 @@ class lm_audio
 			\dash\notif::ok(T_("Your audio uploaded"));
 		}
 
+		$log =
+		[
+			'audio_id' => $return['id'],
+		];
+
+		\dash\log::set('lmsNewAudio', $log);
+
 		return $return;
 	}
 
