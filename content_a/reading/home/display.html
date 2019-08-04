@@ -1,4 +1,4 @@
-{%extends 'content_m/layout.html'%}
+{%extends 'content_a/layout.html'%}
 
 
 
@@ -18,20 +18,20 @@
 {%if dataTable%}
  {%if dataFilter%}
 
-  {{block('htmlSearchBox')}}
+
   {{block('htmlTable')}}
   {{block('htmlFilter')}}
 
  {%else%}
 
-  {{block('htmlSearchBox')}}
+
   {{block('htmlTable')}}
 
  {%endif%}
 {%else%}
  {%if dataFilter%}
 
-  {{block('htmlSearchBox')}}
+
   {{block('htmlFilterNoResult')}}
 
  {%else%}
@@ -81,7 +81,7 @@
     <tbody>
       {%for key, value in dataTable%}
       <tr {%if value.status=='disable'%} class='negative' {%else%} class='positive' {%endif%}>
-        <td><a href="{{url.this}}/edit?id={{value.id}}"><span class="badge">{{value.id}}</span></a></td>
+        <td><a href="{{url.this}}/view?id={{value.id}}"><span class="badge">{{value.id}}</span></a></td>
         <td>{{value.group_title}}</td>
         <td>{{value.level_title}}</td>
         <td>{{value.user_displayname}}</td>

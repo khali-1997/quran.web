@@ -10,8 +10,19 @@
     {%endif%}
       <div class="c4 s12">{{block('bKhatm')}}</div>
       <div class="c4 s12">{{block('bLMS')}}</div>
+      <div class="c4 s12">{{block('bReading')}}</div>
 
   </div>
+{%endblock%}
+
+
+{%block bReading%}
+<a class="dcard x1" href='{{url.here}}/reading'>
+ <div class="statistic blue">
+  <div class="value mB10"><i class="sf-bullhorn"></i></div>
+  <div class="label">{%trans "My audio file"%}</div>
+ </div>
+</a>
 {%endblock%}
 
 {%block bHistory%}
