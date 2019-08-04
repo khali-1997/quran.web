@@ -836,6 +836,10 @@ class lm_level
 					{
 						$load_detail                = \lib\db\quran_word::get_by_id($value);
 						$result['quran_start_sura'] = (isset($load_detail['sura'])) ? $load_detail['sura'] : null;
+						if($result['quran_start_sura'])
+						{
+							$result['quran_sura'] = T_(\lib\app\sura::detail($result['quran_start_sura'], 'tname'));
+						}
 						$result['quran_start_aya']  = (isset($load_detail['aya'])) ? $load_detail['aya'] : null;
 					}
 
@@ -847,6 +851,10 @@ class lm_level
 					{
 						$load_detail              = \lib\db\quran_word::get_by_id($value);
 						$result['quran_end_sura'] = (isset($load_detail['sura'])) ? $load_detail['sura'] : null;
+						if($result['quran_end_sura'])
+						{
+							$result['quran_sura'] = T_(\lib\app\sura::detail($result['quran_end_sura'], 'tname'));
+						}
 						$result['quran_end_aya']  = (isset($load_detail['aya'])) ? $load_detail['aya'] : null;
 					}
 					break;

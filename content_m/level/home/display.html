@@ -91,8 +91,11 @@
             {%if value.question_count%}<span class="badge light">{%trans "Question count"%} {{value.question_count | fitNumber}}</span>{%endif%}
             {%if value.questionrandcount%}<span class="badge light">{%trans "Random question"%} {{value.questionrandcount | fitNumber}}</span>{%endif%}
             {%if value.besmellah%}<span class="badge success">{%trans "Besmellah"%}</span>{%endif%}
-            {%if value.quranfrom%}<span class="badge light">{%trans "Start word"%} {{value.quranfrom | fitNumber}}</span>{%endif%}
-            {%if value.quranto%}<span class="badge light">{%trans "End word"%} {{value.quranto | fitNumber}}</span>{%endif%}
+            {%if value.quranfrom%}
+              <span class="badge light">{%trans "Surah"%} {{value.quran_sura}}
+                 {{value.quran_start_aya | fitNumber}} - {{value.quran_end_aya | fitNumber}}
+              </span>
+            {%endif%}
 
 
             {%if value.unlockscore%}
