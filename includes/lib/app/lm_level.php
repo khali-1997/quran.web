@@ -8,6 +8,7 @@ namespace lib\app;
 class lm_level
 {
 	private static $loaded_level = null;
+	private static $sura_replace_by_1 = null;
 
 	public static $sort_field =
 	[
@@ -507,6 +508,7 @@ class lm_level
 			return false;
 		}
 
+
 		$quranfrom = self::quran_from();
 		$quranto = self::quran_to();
 
@@ -539,6 +541,41 @@ class lm_level
 			{
 				\dash\notif::error(T_("Plase set start aya"));
 				return false;
+			}
+		}
+
+		if($quranfrom && $quranto && self::$sura_replace_by_1 && $_id)
+		{
+			$saved_record = \lib\db\lm_level::get(['id' => $_id, 'limit' => 1]);
+			if(isset($saved_record['title']) && $saved_record['title'] == '1' && isset($saved_record['type']))
+			{
+				$sura_name = T_(\lib\app\sura::detail(self::$sura_replace_by_1, 'tname'));
+
+				$new_title = null;
+				switch ($saved_record['type'])
+				{
+					case 'quran':
+					case 'quranvideo':
+						$new_title = 'سوره '. $sura_name;
+						break;
+
+					case 'iqra':
+						$new_title = 'تصحیح قرائت سوره '. $sura_name;
+						break;
+
+					case 'theme':
+					case 'exam':
+					case 'reading':
+					case 'tajweed':
+					default:
+						// nothing
+						break;
+				}
+
+				if($new_title)
+				{
+					\lib\db\lm_level::update(['title' => $new_title], $saved_record['id']);
+				}
 			}
 		}
 
@@ -637,6 +674,12 @@ class lm_level
 			return false;
 		}
 
+
+		if(!self::$sura_replace_by_1)
+		{
+			self::$sura_replace_by_1 = $endsurah;
+		}
+
 		if($endsurah && $endaya)
 		{
 			$id = \lib\db\quran_word::get_first_word(['sura' => $endsurah, 'aya'=> $endaya], 'DESC');
@@ -698,6 +741,12 @@ class lm_level
 			\dash\notif::error(T_("Aya number is out of range!"), 'startaya');
 			return false;
 		}
+
+		if(!self::$sura_replace_by_1)
+		{
+			self::$sura_replace_by_1 = $startsurah;
+		}
+
 
 		if($startsurah && $startaya)
 		{
