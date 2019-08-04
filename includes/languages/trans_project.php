@@ -18,12 +18,21 @@ class twigTransTerms
 	echo T_("Group not fount!");                                                      // Line 23
 
 	//-------------------projects/SalamQuran/content_lms/level/quranvideo/display.html
-	echo T_("Your score");                                                            // Line 12
+	echo T_("Your score");                                                            // Line 19
 	echo T_("Listen first");                                                          // Line 70
 	echo T_("Listen second");                                                         // Line 71
 	echo T_("Debate");                                                                // Line 72
 
 	//------------------------projects/SalamQuran/content_lms/level/quran/display.html
+	echo T_("After reading Quran for at least 2 times, record your sound and replay it for yourself.");// Line 5
+	echo T_("Each time of play Quran have one star and recording have another star.");// Line 5
+	echo T_("Press record button then iqra");                                         // Line 14
+	echo T_("Generate your recorded sound");                                          // Line 18
+	echo T_("your recorded sound is here");                                           // Line 23
+	echo T_("I'm done");                                                              // Line 27
+	echo T_("Recording mode, iqra");                                                  // Line 51
+
+	//--------------------projects/SalamQuran/content_lms/level/quran/display-old.html
 
 	//------------------------projects/SalamQuran/content_lms/level/theme/display.html
 	echo T_("Save");                                                                  // Line 75
@@ -36,13 +45,18 @@ class twigTransTerms
 	//------------------------projects/SalamQuran/content_lms/level/video/display.html
 	echo T_("Continue");                                                              // Line 20
 
-	//-------------------------projects/SalamQuran/content_lms/level/iqra/display.html
-	echo T_("Record your audio");                                                     // Line 25
-	echo T_("Your audio file");                                                       // Line 28
-	echo T_("Upload");                                                                // Line 112
-
 	//-----------------------projects/SalamQuran/content_lms/level/result/display.html
-	echo T_("Level list");                                                            // Line 23
+	echo T_("Next");                                                                  // Line 34
+	echo T_("Repeat");                                                                // Line 66
+	echo T_("Levels");                                                                // Line 9
+	echo T_("Your audio sended to our expert");                                       // Line 65
+	echo T_("You can see result of your request below");                              // Line 69
+	echo T_("Your audio file");                                                       // Line 77
+	echo T_("Mistakes");                                                              // Line 15
+	echo T_("Teacher Answer");                                                        // Line 97
+	echo T_("Teacher Audio");                                                         // Line 104
+	echo T_("Cancel your request");                                                   // Line 113
+	echo T_("Archive your file");                                                     // Line 115
 
 	//-------------------------projects/SalamQuran/content_lms/level/exam/display.html
 	echo T_("We do not have question to ask from you!");                              // Line 46
@@ -196,6 +210,10 @@ class twigTransTerms
 	//------------------projects/SalamQuran/public_html/static/siftal/js/error_page.js
 
 	//-----------------------------projects/SalamQuran/public_html/static/js/script.js
+
+	//---projects/SalamQuran/public_html/static/js/recorder/WebAudioRecorderOgg.min.js
+
+	//---projects/SalamQuran/public_html/static/js/recorder/WebAudioRecorderMp3.min.js
 
 	//---------------------------------projects/SalamQuran/content/vision/display.html
 	echo T_("Covering all Quranic information of Muslims");                           // Line 6
@@ -742,7 +760,6 @@ class twigTransTerms
 	echo T_("Play");                                                                  // Line 9
 	echo T_("Pause");                                                                 // Line 9
 	echo T_("Copy");                                                                  // Line 12
-	echo T_("Save history");                                                          // Line 18
 
 	//-------------------projects/SalamQuran/content/home/blocks/block-navigation.html
 	echo T_("Back to list of suras");                                                 // Line 25
@@ -836,7 +853,6 @@ class twigTransTerms
 
 	//---------------------------------------projects/SalamQuran/content_m/layout.html
 	echo T_("Groups");                                                                // Line 8
-	echo T_("Levels");                                                                // Line 9
 	echo T_("Mistake in learn");                                                      // Line 10
 
 	//-------------------------projects/SalamQuran/content_m/reading/home/display.html
@@ -852,7 +868,6 @@ class twigTransTerms
 	echo T_("Try to start with add new badge!");                                      // Line 137
 
 	//-------------------------projects/SalamQuran/content_m/reading/edit/display.html
-	echo T_("Mistakes");                                                              // Line 15
 	echo T_("Title");                                                                 // Line 19
 	echo T_("Require");                                                               // Line 19
 	echo T_("Level title");                                                           // Line 21
@@ -873,10 +888,9 @@ class twigTransTerms
 	//---------------------------projects/SalamQuran/content_m/khatm/home/display.html
 	echo T_("Niyat");                                                                 // Line 63
 	echo T_("Range");                                                                 // Line 63
-	echo T_("Repeat");                                                                // Line 66
 	echo T_("Privacy");                                                               // Line 67
 	echo T_("Action");                                                                // Line 55
-	echo T_("Edit");                                                                  // Line 162
+	echo T_("Edit");                                                                  // Line 178
 	echo T_("Try to start with add new khatm!");                                      // Line 163
 	echo T_("Cancel");                                                                // Line 156
 	echo T_("Start");                                                                 // Line 157
@@ -947,7 +961,7 @@ class twigTransTerms
 	echo T_("Sort");                                                                  // Line 32
 	echo T_("Show level");                                                            // Line 119
 	echo T_("Add new level");                                                         // Line 120
-	echo T_("Try to start with add new group!");                                      // Line 109
+	echo T_("Try to start with add new group!");                                      // Line 110
 
 	//---------------------------projects/SalamQuran/content_m/group/edit/display.html
 	echo T_("Image file");                                                            // Line 48
@@ -967,6 +981,7 @@ class twigTransTerms
 	echo T_("Try to start with add new audio!");                                      // Line 128
 
 	//---------------------------------projects/SalamQuran/content_m/home/display.html
+	echo T_("Level list");                                                            // Line 23
 	echo T_("Khatm list");                                                            // Line 62
 	echo T_("Mistake list");                                                          // Line 45
 	echo T_("User audio list");                                                       // Line 56
@@ -978,7 +993,7 @@ class twigTransTerms
 
 	//------------------------projects/SalamQuran/content_m/level/setting/display.html
 	echo T_("Ratio score");                                                           // Line 13
-	echo T_("Unlock score");                                                          // Line 99
+	echo T_("Unlock score");                                                          // Line 102
 	echo T_("Count random question");                                                 // Line 25
 
 	//--------------------------projects/SalamQuran/content_m/level/media/display.html
@@ -987,6 +1002,7 @@ class twigTransTerms
 	echo T_("View file");                                                             // Line 87
 	echo T_("Mulitmedia file");                                                       // Line 90
 	echo T_("File url");                                                              // Line 100
+	echo T_("Upload");                                                                // Line 112
 	echo T_("Picture of file");                                                       // Line 82
 
 	//----------------------------projects/SalamQuran/content_m/level/add/display.html
@@ -1000,24 +1016,22 @@ class twigTransTerms
 	echo T_("Question count");                                                        // Line 91
 	echo T_("Random question");                                                       // Line 92
 	echo T_("Besmellah");                                                             // Line 93
-	echo T_("Start word");                                                            // Line 94
-	echo T_("End word");                                                              // Line 95
-	echo T_("Video");                                                                 // Line 102
-	echo T_("Cover");                                                                 // Line 105
-	echo T_("Try to start with add new level!");                                      // Line 139
+	echo T_("Video");                                                                 // Line 105
+	echo T_("Cover");                                                                 // Line 108
+	echo T_("Try to start with add new level!");                                      // Line 142
 
 	//---------------------------projects/SalamQuran/content_m/level/exam/display.html
 	echo T_("Update");                                                                // Line 33
 	echo T_("Option 1");                                                              // Line 60
-	echo T_("1");                                                                     // Line 70
-	echo T_("Option 2");                                                              // Line 77
-	echo T_("2");                                                                     // Line 87
-	echo T_("Option 3");                                                              // Line 94
-	echo T_("3");                                                                     // Line 104
-	echo T_("Option 4");                                                              // Line 111
-	echo T_("4");                                                                     // Line 121
-	echo T_("Questions");                                                             // Line 139
-	echo T_("No question added");                                                     // Line 172
+	echo T_("1");                                                                     // Line 73
+	echo T_("Option 2");                                                              // Line 80
+	echo T_("2");                                                                     // Line 93
+	echo T_("Option 3");                                                              // Line 100
+	echo T_("3");                                                                     // Line 113
+	echo T_("Option 4");                                                              // Line 120
+	echo T_("4");                                                                     // Line 133
+	echo T_("Questions");                                                             // Line 151
+	echo T_("No question added");                                                     // Line 188
 
 	//---------------------------projects/SalamQuran/content_m/level/edit/display.html
 
