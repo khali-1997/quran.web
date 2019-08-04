@@ -44,7 +44,7 @@ class aya
 			$mode = $_meta['mode'];
 		}
 
-		if(!in_array($mode, ['quran', 'default']))
+		if(!in_array($mode, ['quran', 'default', 'pagedesign']))
 		{
 			$mode = null;
 		}
@@ -92,10 +92,10 @@ class aya
 		}
 		elseif($_type === 'from_to')
 		{
-			$from_to   = explode('-', $id_raw);
-			$from_sura = intval($from_to[0]);
-			$from_aya  = intval($from_to[1]);
-			$to_aya    = intval($from_to[2]);
+
+			$from_sura = $_meta['from_to']['sura'];
+			$from_aya  = $_meta['from_to']['from_aya'];
+			$to_aya    = $_meta['from_to']['to_aya'];
 
 
 			$get_quran['3.3'] = [' = 3.3 AND', " `sura` = $from_sura  AND `aya` >= $from_aya AND `aya` <= $to_aya "];
@@ -127,7 +127,7 @@ class aya
 
 		foreach ($load as $key => $value)
 		{
-			if($mode === 'quran')
+			if($mode === 'quran' || $mode === 'pagedesign')
 			{
 				$myKey      = 'line';
 				$myArrayKey = $value['sura']. '_'. $value['line'];
@@ -414,6 +414,8 @@ class aya
 		$result['text_raw']          = $text_raw;
 		$result['mag_detail']        = $mag_detail;
 
+
+		// j($result);
 
 		return $result;
 	}

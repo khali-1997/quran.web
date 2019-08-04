@@ -24,7 +24,7 @@ class view
 			}
 			else
 			{
-				\dash\data::fromtoLink('f'. $sura. '-'. $startaya. '-'. $endaya);
+				\dash\data::fromtoLink('s'. $sura. '/'. $startaya. '-'. $endaya);
 			}
 
 		}

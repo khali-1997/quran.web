@@ -4,7 +4,10 @@
       <div class="menu">
         <div class="header">{%trans "Change Read Mode"%}</div>
 {%for key, value in readModeList%}
+{%if value.hidden%}
+{%else%}
           <a class="item" href="{{value.url}}"><i class="compact mRa5 sf-{{value.class}}"></i><span>{{value.name}}</span></a>
+{%endif%}
 {%endfor%}
       </div>
     </div>

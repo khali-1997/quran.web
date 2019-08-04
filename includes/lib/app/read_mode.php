@@ -102,6 +102,15 @@ class read_mode
 				'class'   => 'language',
 				'url'     => $master. http_build_query(array_merge($get, ['mode' => 'translatepage'])),
 			],
+			'pagedesign' =>
+			[
+				'hidden'  => true,
+				'default' => false,
+				'name'    => T_('Page design'),
+				'font'    => null,
+				'class'   => 'align-justify',
+				'url'     => $master. http_build_query(array_merge($get, ['mode' => 'pagedesign'])),
+			],
 		];
 		return $read_mode;
 	}

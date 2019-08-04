@@ -113,34 +113,6 @@ class find
 					return false;
 				}
 			}
-			elseif($first_character === 'f')
-			{
-				$from_to = explode('-', $number);
-				if(count($from_to) !== 3)
-				{
-					return false;
-				}
-
-				foreach ($from_to as $key => $value)
-				{
-					if(!is_numeric($value))
-					{
-						return false;
-					}
-				}
-
-				$from_sura = intval($from_to[0]);
-				$from_aya  = intval($from_to[1]);
-				$to_aya    = intval($from_to[2]);
-
-				if($from_sura < 1 || $from_sura > 114 || $from_aya < 1 || $from_aya > $to_aya  || $to_aya > intval(\lib\app\sura::detail($from_sura, 'ayas')))
-				{
-					return false;
-				}
-
-
-				return \lib\app\quran::load('from_to', $number, null, $_meta);
-			}
 		}
 		else
 		{
@@ -167,6 +139,37 @@ class find
 							return \lib\app\quran::load('sura',$number, $number2, $_meta);
 						}
 					}
+				}
+				elseif($first_character === 's')
+				{
+
+					$from_to = explode('-', $split[1]);
+					if(count($from_to) !== 2)
+					{
+						return false;
+					}
+
+					foreach ($from_to as $key => $value)
+					{
+						if(!is_numeric($value))
+						{
+							return false;
+						}
+					}
+					$number          = substr($split[0], 1);
+
+					$from_sura = intval($number);
+					$from_aya  = intval($from_to[0]);
+					$to_aya    = intval($from_to[1]);
+
+					if($from_sura < 1 || $from_sura > 114 || $from_aya < 1 || $from_aya > $to_aya  || $to_aya > intval(\lib\app\sura::detail($from_sura, 'ayas')))
+					{
+						return false;
+					}
+
+					$_meta['from_to'] = ['sura' => $from_sura, 'from_aya' => $from_aya, 'to_aya' => $to_aya];
+
+					return \lib\app\quran::load('from_to', null, null, $_meta);
 				}
 
 			}

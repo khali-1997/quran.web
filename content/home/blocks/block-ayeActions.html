@@ -13,9 +13,3 @@
     <input type="text" id="aya-{{myAye.detail.index}}" value="{{myAye.detail.text}}" contenteditable="true">
   </div>
 </div>
-  {%if perm_su()%}
-  <div class="c12 s3">
-    <a class="opr ayeLink" title='{%trans "Save history"%}' data-method='post' data-ajaxify data-data='{"type":"history", "aya" : "{{myAye.detail.index}}"}' action="{{url.kingdom}}/savehistory"><i class="fs08 sf-history"></i></a>
-  </div>
-  {%endif%}
-
