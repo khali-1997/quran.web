@@ -4,6 +4,26 @@ namespace lib\db;
 
 class lm_level
 {
+	public static function find_next_level($_id)
+	{
+		$query =
+		"
+			SELECT
+				*
+			FROM
+				lm_level
+			WHERE
+				lm_level.id > $_id AND
+				lm_level.status = 'enable' AND
+				lm_level.lm_group_id = (SELECT lm_level.lm_group_id FROM lm_level WHERE lm_level.id = $_id LIMIT 1)
+			ORDER BY lm_level.sort ASC, lm_level.id ASC
+			LIMIT 1
+		";
+		$result = \dash\db::get($query, null, true);
+		return $result;
+	}
+
+
 	public static function get_count_group()
 	{
 		$query =

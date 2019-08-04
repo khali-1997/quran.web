@@ -28,6 +28,26 @@ class lm_level
 		'datecreated',
 	];
 
+
+	public static function find_next_level($_lm_level_id)
+	{
+		$id = \dash\coding::decode($_lm_level_id);
+		if(!$id)
+		{
+			return false;
+		}
+
+		$get_next = \lib\db\lm_level::find_next_level($id);
+		if(!$get_next)
+		{
+			return false;
+		}
+
+		$get_next = self::ready($get_next);
+		return $get_next;
+	}
+
+
 	public static function count_listen($_lm_level_id)
 	{
 		if(!\dash\user::id())
