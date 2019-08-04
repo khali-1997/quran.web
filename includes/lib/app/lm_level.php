@@ -721,7 +721,7 @@ class lm_level
 				case 'quranfrom':
 					$result[$key] = $value;
 
-					if(\dash\url::child() === 'quran' && $value)
+					// if(\dash\url::child() === 'quran' && $value)
 					{
 						$load_detail                = \lib\db\quran_word::get_by_id($value);
 						$result['quran_start_sura'] = (isset($load_detail['sura'])) ? $load_detail['sura'] : null;
@@ -732,7 +732,7 @@ class lm_level
 
 				case 'quranto':
 					$result[$key] = $value;
-					if(\dash\url::child() === 'quran' && $value)
+					// if(\dash\url::child() === 'quran' && $value)
 					{
 						$load_detail              = \lib\db\quran_word::get_by_id($value);
 						$result['quran_end_sura'] = (isset($load_detail['sura'])) ? $load_detail['sura'] : null;
@@ -764,6 +764,16 @@ class lm_level
 		}
 
 		$result['xtype'] = $xtype;
+
+		if(isset($result['quran_start_sura']) && isset($result['quran_start_aya']) && isset($result['quran_end_aya']))
+		{
+			$iframe_link = \dash\url::kingdom();
+			$iframe_link .= '/f'. $result['quran_start_sura'];
+			$iframe_link .= '-'. $result['quran_start_aya'];
+			$iframe_link .= '-'. $result['quran_end_aya'];
+			$iframe_link .= '?fixframe=1';
+			$result['iframe_link'] = $iframe_link;
+		}
 
 		return $result;
 
