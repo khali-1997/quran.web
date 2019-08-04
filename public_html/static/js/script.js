@@ -737,7 +737,10 @@ function detectNextAye()
         // next aye is exist but next audio in this page is not exist
         // redirect to next page
         var nextAudioPage = $('.audioNextPage').attr('data-autoNext');
-        Navigate({ url: nextAudioPage });
+        if(nextAudioPage)
+        {
+        	Navigate({ url: nextAudioPage });
+        }
       }
 
     }
