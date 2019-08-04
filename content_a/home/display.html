@@ -9,6 +9,7 @@
       <div class="c4 s12">{{block('bFav2')}}</div>
     {%endif%}
       <div class="c4 s12">{{block('bKhatm')}}</div>
+      <div class="c4 s12">{{block('bLMS')}}</div>
 
   </div>
 {%endblock%}
@@ -18,6 +19,17 @@
  <div class="statistic blue">
   <div class="value mB10"><i class="sf-history"></i></div>
   <div class="label">{%trans "History"%}</div>
+ </div>
+</a>
+{%endblock%}
+
+
+
+{%block bLMS%}
+<a class="dcard x1" href='{{url.kingdom}}/lms'>
+ <div class="statistic blue">
+  <div class="value mB10"><i class="sf-info"></i></div>
+  <div class="label">{%trans "Learning mechanism system"%}</div>
  </div>
 </a>
 {%endblock%}
