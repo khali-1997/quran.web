@@ -109,6 +109,20 @@ class TransStatic
 	echo T_("Cancel");
 	echo T_("Autocancel");
 	echo T_("Done");
+
+	echo T_('spam');
+	echo T_('deleted');
+	echo T_('admindelete');
+	echo T_('approved');
+	echo T_('reject');
+	echo T_('archive');
+
+	echo T_('Spam');
+	echo T_('Deleted');
+	echo T_('Admindelete');
+	echo T_('Approved');
+	echo T_('Reject');
+	echo T_('Archive');
 	}
 }
 ?>
