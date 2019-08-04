@@ -122,11 +122,11 @@ function startRecording() {
 function stopRecording() {
 	// console.log("stopRecording() called");
 
-	// if(gumStream === undefined)
-	// {
-	// 	console.log("gumStream is undefined!");
-	// 	return false;
-	// }
+	if(gumStream === undefined)
+	{
+		console.log("gumStream is undefined!");
+		return false;
+	}
 
 	//stop microphone access
 	gumStream.getAudioTracks()[0].stop();

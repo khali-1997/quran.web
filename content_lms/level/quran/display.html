@@ -66,14 +66,14 @@
       // started
       $(this).removeClass('start');
       $('.tapeRecorder').removeClass('record');
-      $('.tapeBox').slideUp();
+      $('.tapeBox').stop( true, true).slideUp();
     }
     else
     {
       // stop
       $(this).addClass('start');
       $('.tapeRecorder').addClass('record');
-      $('.tapeBox').fadeIn('fast');
+      $('.tapeBox').stop( true, true).fadeIn('fast');
     }
   });
 </script>
@@ -289,7 +289,6 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-color: #f90000;
   color: white;
   margin: 15px auto 25px;
   cursor: pointer;
@@ -297,14 +296,9 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  background: -moz-radial-gradient(center, circle cover, #f90000 35%, #a00a0a 100%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(35%, #f90000), color-stop(100%, #a00a0a));
-  background: -webkit-radial-gradient(center, circle cover, #f90000 35%, #a00a0a 100%);
-  background: -o-radial-gradient(center, circle cover, #f90000 35%, #a00a0a 100%);
-  background: -ms-radial-gradient(center, circle cover, #f90000 35%, #a00a0a 100%);
-  background: radial-gradient(center, circle cover, #f90000 35%, #a00a0a 100%);
+  background: -webkit-radial-gradient(center, circle cover, #29bbea 35%, #104571 100%);
   background-color: #f90000;
-  box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #a00a0a;
+  box-shadow: 0px 3px 8px #aaa, inset 0px 0px 3px #a00a0a;
   font-size: 40px;
   transition: 0.3s background;
 }
@@ -314,6 +308,10 @@
 #recordBtn::before{
   content: "\e102";
   font-family: "siftal","tahoma" !important;
+}
+#recordBtn.start{
+  background: -webkit-radial-gradient(center, circle cover, #f90000 35%, #a00a0a 100%);
+  background-color: #f90000;
 }
 #recordBtn.start::before{
   content: "\e101";
