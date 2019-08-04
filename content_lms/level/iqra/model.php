@@ -19,8 +19,10 @@ class model
 		}
 
 
-
-		\dash\redirect::pwd();
+		if(\dash\engine\process::status())
+		{
+			\dash\redirect::to(\dash\url::this(). '/result?id='. \dash\request::get('id'));
+		}
 	}
 }
 ?>

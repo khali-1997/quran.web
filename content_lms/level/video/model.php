@@ -6,6 +6,12 @@ class model
 {
 	public static function post()
 	{
+		if(!\dash\user::id())
+		{
+			\dash\notif::error(T_("Please login to continue"));
+			return false;
+		}
+
 		if(\dash\request::post('ActionType') === 'showvideo')
 		{
 			\lib\app\lm_star::level_learn('showvideo', \dash\request::get('id'));
@@ -25,7 +31,11 @@ class model
 			\lib\app\lm_answer::save_array($answer, \dash\request::get('id'));
 		}
 
-		\dash\redirect::pwd();
+		if(\dash\engine\process::status())
+		{
+			\dash\redirect::to(\dash\url::this(). '/result?id='. \dash\request::get('id'));
+		}
+
 	}
 }
 ?>

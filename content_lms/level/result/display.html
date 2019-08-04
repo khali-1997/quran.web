@@ -1,0 +1,76 @@
+{%extends 'content_lms/group/layout.html'%}
+
+
+
+{%block pageContent%}
+<div class="f justify-center">
+  <div class="c5 txtC">
+    <div class="cbox">
+      {%if loadLevel.file%}
+        <video width="320" height="240" controls>
+          <source src="{{loadLevel.file}}" type="video/mp4">
+        </video>
+      {%endif%}
+      <p class="fs08">{{loadLevel.desc}}</p>
+    </div>
+
+    {%if userStar.star%}
+    <div class="cbox">
+    {%trans "Your score"%}
+    	{%for i in 1..userStar.star%}
+    	<i class="sf-star fc-yellow"></i>
+    	{%endfor%}
+    </div>
+    {%endif%}
+
+    {%if questionList%}
+    <form method="post">
+      <input type="hidden" name="ActionType" value="answer">
+      <div class="cbox">
+        {%for key, value in questionList%}
+        <div class="msg">
+          {{value.title}}
+
+          <div class="f">
+
+            <div class="radio3 mB5 pRa5 c6 s12">
+              <input type="radio" name="answer_{{value.id}}" value="1" id="ianswer1_{{value.id}}">
+              <label for="ianswer1_{{value.id}}">{{value.opt1}}</label>
+            </div>
+
+            <div class="radio3 mB5 pRa5 c6 s12">
+              <input type="radio" name="answer_{{value.id}}" value="2" id="ianswer2_{{value.id}}">
+              <label for="ianswer2_{{value.id}}">{{value.opt2}}</label>
+            </div>
+            {%if value.opt3%}
+            <div class="radio3 mB5 pRa5 c6 s12">
+              <input type="radio" name="answer_{{value.id}}" value="3" id="ianswer3_{{value.id}}">
+              <label for="ianswer3_{{value.id}}">{{value.opt3}}</label>
+            </div>
+            {%endif%}
+            {%if value.opt4%}
+            <div class="radio3 mB5 pRa5 c6 s12">
+              <input type="radio" name="answer_{{value.id}}" value="4" id="ianswer4_{{value.id}}">
+              <label for="ianswer4_{{value.id}}">{{value.opt4}}</label>
+            </div>
+            {%endif%}
+
+          </div>
+        </div>
+
+        {%endfor%}
+      <button class="btn primary block mTB20">{%trans "Save"%}</button>
+      </div>
+    </form>
+    {%endif%}
+    {%if perm_su()%}
+    <div class="cbox">
+      <div class="btn info2 xl" data-ajaxify data-data='{"ActionType":"showvideo"}' data-method='post'>{%trans "Show video"%}</div>
+    </div>
+    {%endif%}
+
+  </div>
+</div>
+{%endblock%}
+
+
