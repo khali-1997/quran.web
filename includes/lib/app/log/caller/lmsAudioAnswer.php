@@ -1,23 +1,23 @@
 <?php
 namespace lib\app\log\caller;
 
-class lmsNewAudio
+class lmsAudioAnswer
 {
 	public static function site($_args = [])
 	{
 
-		$code = isset($_args['data']['audio_id']) ? $_args['data']['audio_id'] : null;
+		$code = isset($_args['data']['level_id']) ? $_args['data']['level_id'] : null;
 
 		$result              = [];
-		$result['title']     = T_("New audio");
+		$result['title']     = T_("Answer to your request");
 		$result['icon']      = 'bullhorn';
 		$result['cat']       = T_("LMS");
 		$result['iconClass'] = 'fc-blue';
 
 		$excerpt = '';
 
-		$excerpt = T_("User add new audio");
-		$excerpt .=	'<a href="'.\dash\url::kingdom(). '/m/reading/edit?id='. $code. '">';
+		$excerpt = T_("Your audio file was checked and your request was answered");
+		$excerpt .=	'<a href="'.\dash\url::kingdom(). '/lms/level/result?id='. $code. '">';
 		$excerpt .= ' ';
 		$excerpt .= T_("Show");
 		$excerpt .= ' ';
@@ -29,10 +29,6 @@ class lmsNewAudio
 	}
 
 
-	public static function send_to()
-	{
-		return ['admin'];
-	}
 
 	public static function is_notif()
 	{
@@ -55,9 +51,8 @@ class lmsNewAudio
 		$tg_msg = '';
 		$tg_msg .= "#NewAudio";
 
-
 		$tg_msg .= "\n—————\n📬 ";
-		$tg_msg .= T_("User add new audio");
+		$tg_msg .= T_("Your audio file was checked and your request was answered");
 		$tg_msg .= "\n—————\n📬 ";
 
 		$tg_msg .= "\n⏳ ". \dash\datetime::fit(date("Y-m-d H:i:s"), true);

@@ -103,6 +103,14 @@ class lm_audio
 				\dash\coding::decode($result['lm_level_id']),
 				\dash\coding::decode($result['user_id']),
 				$quality);
+
+			$log =
+			[
+				'group_id' => $result['lm_group_id'],
+				'level_id' => $result['lm_level_id'],
+				'to'       => \dash\coding::decode($result['user_id']),
+			];
+			\dash\log::set('lmsAudioAnswer', $log);
 		}
 
 		if(!\dash\app::isset_request('lm_group_id')) unset($args['lm_group_id']);
