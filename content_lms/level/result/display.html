@@ -4,23 +4,30 @@
 
 {%block pageContent%}
 <div class="f justify-center">
-  <div class="c5 txtC">
+  <div class="c6 s12">
 
-
-    {%if userStar.star%}
-    <div class="cbox">
-    {%trans "Your score"%}
-    	{%for i in 1..userStar.star%}
-    	<i class="sf-star fc-yellow"></i>
-    	{%endfor%}
+  {%if userStar.star%}
+  <div class="cbox txtC">
+    <div class="msg">{{loadGroup.title}} / <span class="txtB fs12">{{loadLevel.title}}</span></div>
+    <div class="mB20">
+    {%for i in 1..userStar.star%}
+     <i class="sf-star fc-yellow fs50"></i>
+    {%endfor%}
     </div>
-    {%endif%}
-
-    {%if perm_su()%}
-    <div class="cbox">
-      <a href="{{url.here}}/group?id={{loadLevel.lm_group_id}}" class="btn info xl">{%trans "Level list"%}</a>
+    <div class="f">
+      <div class="c4 s12 pRa10">
+        <a class="block btn info" href="{{url.this}}/next?id={{loadLevel.id}}">{%trans "Next"%} <span class="pRa10 sf-fast-forward"></span></a>
+      </div>
+      <div class="c4 s12 pRa10">
+        <a class="block btn info" href="{{url.this}}/repeat?id={{loadLevel.id}}">{%trans "Repeat"%} <span class="pRa10 sf-repeat"></span></a>
+      </div>
+      <div class="c4 s12">
+        <a class="block btn info" href="{{url.here}}/group?id={{loadLevel.lm_group_id}}">{%trans "Levels"%} <span class="pRa10 sf-thumbnails"></span></a>
+      </div>
     </div>
-    {%endif%}
+
+  </div>
+  {%endif%}
 
   </div>
 </div>
