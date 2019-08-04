@@ -768,10 +768,10 @@ class lm_level
 		if(isset($result['quran_start_sura']) && isset($result['quran_start_aya']) && isset($result['quran_end_aya']))
 		{
 			$iframe_link = \dash\url::kingdom();
-			$iframe_link .= '/f'. $result['quran_start_sura'];
-			$iframe_link .= '-'. $result['quran_start_aya'];
+			$iframe_link .= '/s'. $result['quran_start_sura'];
+			$iframe_link .= '/'. $result['quran_start_aya'];
 			$iframe_link .= '-'. $result['quran_end_aya'];
-			$iframe_link .= '?fixframe=1';
+			$iframe_link .= '?fixframe=1&mode=pagedesign';
 			$result['iframe_link'] = $iframe_link;
 		}
 
