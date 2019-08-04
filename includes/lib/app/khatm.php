@@ -67,7 +67,7 @@ class khatm
 		$desc = '';
 		if($load['range'] === 'sura')
 		{
-			$desc .= ' '. T_('To take part in the khatm, you must read one time :val of the Holy Quran', ['val' => T_(\lib\app\sura::detail($load['sura'], 'name'))]);
+			$desc .= ' '. T_('To take part in the khatm, you must read one time :val of the Holy Quran', ['val' => T_(\lib\app\sura::detail($load['sura'], 'tname'))]);
 		}
 		elseif($load['range'] === 'quran')
 		{
@@ -544,7 +544,7 @@ class khatm
 					$result[$key] = $value;
 					if($value)
 					{
-						$result['sura_name'] = T_(\lib\app\sura::detail($value, 'name'));
+						$result['sura_name'] = T_(\lib\app\sura::detail($value, 'tname'));
 					}
 					break;
 

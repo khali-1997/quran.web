@@ -7,7 +7,7 @@ class view
 	public static function config()
 	{
 
-		\dash\data::page_title(T_("Your history list"));
+		\dash\data::page_title(T_("Your quran reading history"));
 
 
 		\dash\data::page_pictogram('history');

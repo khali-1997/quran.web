@@ -63,7 +63,7 @@
         <th>{%trans "Nim"%}</th>
         <th>{%trans "rub"%}</th>
         <th>{%trans "Date"%}</th>
-
+        <th></th>
       </tr>
     </thead>
 
@@ -71,14 +71,15 @@
       {%for key, value in dataTable%}
       <tr {%if value.status=='disable'%} class='negative' {%else%} class='positive' {%endif%}>
 
-        <td><a href="{{url.kingdom}}/s{{value.sura}}">{{value.sura | fitNumber}}</a></td>
-        <td><a href="{{url.kingdom}}/a{{value.aya}}">{{value.aya | fitNumber}}</a></td>
+        <td><a href="{{url.kingdom}}/s{{value.sura}}">{{value.sura_name}}</a></td>
+        <td><a href="{{url.kingdom}}/a{{value.index}}">{{value.aya | fitNumber}}</a></td>
         <td><a href="{{url.kingdom}}/p{{value.page}}">{{value.page | fitNumber}}</a></td>
         <td><a href="{{url.kingdom}}/j{{value.juz}}">{{value.juz | fitNumber}}</a></td>
         <td><a href="{{url.kingdom}}/h{{value.hizb}}">{{value.hizb | fitNumber}}</a></td>
         <td><a href="{{url.kingdom}}/n{{value.nim}}">{{value.nim | fitNumber}}</a></td>
         <td><a href="{{url.kingdom}}/r{{value.rub}}">{{value.rub | fitNumber}}</a></td>
-        <td>{{value.datecreated | dt('human', 'year')}}</td>
+        <td class="collapsing">{{value.datecreated | dt('human', 'year')}}</td>
+        <td class="collapsing">{{value.datecreated | dt(false)}}</td>
 
       </tr>
       {%endfor%}

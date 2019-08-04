@@ -37,13 +37,15 @@ class history
 		$insert                = [];
 		$insert['user_id']     = \dash\user::id();
 		$insert['sura']        = (isset($get['sura'])) ? $get['sura'] : null;
-		$insert['aya']         = $_aya;
+		$insert['aya']         = (isset($get['aya'])) ? $get['aya'] : null;
+		$insert['index']       = $_aya;
 		$insert['page']        = (isset($get['page'])) ? $get['page'] : null;;
 		$insert['juz']         = (isset($get['juz'])) ? $get['juz'] : null;;
 		$insert['rub']         = (isset($get['rub'])) ? $get['sura'] : null;;
 		$insert['nim']         = (isset($get['nim'])) ? $get['nim'] : null;;
 		$insert['hizb']        = (isset($get['hizb'])) ? $get['hizb'] : null;;
 		$insert['datecreated'] = date("Y-m-d H:i:s");
+		$insert['time']        = time();
 
 		\lib\db\history::insert($insert);
 
@@ -77,6 +79,9 @@ class history
 			$_args['sort'] = null;
 		}
 
+		$_args['sort'] = 'id';
+		$_args['order'] = 'DESC';
+
 		$result            = \lib\db\history::search($_string, $_args);
 		$temp              = [];
 
@@ -100,6 +105,11 @@ class history
 
 			switch ($key)
 			{
+				case 'sura':
+					$result[$key] = $value;
+					$result['sura_name'] = T_(\lib\app\sura::detail($value, 'tname'));
+					break;
+
 				case 'id':
 					if(isset($value))
 					{
