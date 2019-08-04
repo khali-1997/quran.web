@@ -2,13 +2,13 @@
 <img src="{{myUrl}}">
 <div class="content"></div>
 {%elseif myUrl ends with '.mp4' %}
-<video controls>
+<video controls class="block">
   <source src="{{myUrl}}" type="video/mp4" controls>
 </video>
 <div class="content"><a href="{{myUrl}}" target="_blank" title='{%trans "Click to download"%}'>{%trans "Video"%}</a></div>
 <div class="content"></div>
-{%elseif myUrl ends with '.mp3' %}
-<audio controls>
+{%elseif myUrl ends with '.mp3' or myUrl ends with '.wav' %}
+<audio controls class="block">
   <source src="{{myUrl}}" type="audio/mpeg">
 </audio>
 <div class="content"><a href="{{myUrl}}" target="_blank" title='{%trans "Click to download"%}'>{%trans "MP3"%}</a></div>

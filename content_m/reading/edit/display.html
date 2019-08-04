@@ -7,7 +7,11 @@
   <div class="justify-center f">
    <div class="c5 m6 s12">
     <div class="cbox">
-        <a href="{{dataRow.audio}}" data-direct target="_blank" class="btn block"><i class="sf-bullhorn"></i></a>
+      {%if dataRow.audio%}
+        {%include 'content_lms/level/exam/fileDetector.html' with {'myUrl': dataRow.audio}%}
+      {%endif%}
+
+      <hr>
 
 
       {{block('iquality')}}
@@ -106,33 +110,33 @@
 <div class="mT15 f">
  <label >{%trans "Status"%}</label>
 
- <div class="radio1 green c2">
+ <div class="radio1 green c4">
   <input type="radio" id="r-awaiting" name="status" value="awaiting" {%if dataRow.status == 'awaiting' or not dataRow.status %} checked{%endif%}>
   <label for="r-awaiting">{%trans "awaiting"%}</label>
  </div>
 
- <div class="radio1 green c2">
+ <div class="radio1 green c4">
   <input type="radio" id="r-spam" name="status" value="spam" {%if dataRow.status == 'spam' or not dataRow.status %} checked{%endif%}>
   <label for="r-spam">{%trans "spam"%}</label>
  </div>
 {%if false%}
- <div class="radio1 green c2">
+ <div class="radio1 green c4">
   <input type="radio" id="r-deleted" name="status" value="deleted" {%if dataRow.status == 'deleted' or not dataRow.status %} checked{%endif%}>
   <label for="r-deleted">{%trans "deleted"%}</label>
  </div>
+ {%endif%}
 
- <div class="radio1 green c2">
+ <div class="radio1 green c4">
   <input type="radio" id="r-admindelete" name="status" value="admindelete" {%if dataRow.status == 'admindelete' or not dataRow.status %} checked{%endif%}>
   <label for="r-admindelete">{%trans "admindelete"%}</label>
  </div>
- {%endif%}
 
- <div class="radio1 green c2">
+ <div class="radio1 green c4">
   <input type="radio" id="r-approved" name="status" value="approved" {%if dataRow.status == 'approved' or not dataRow.status %} checked{%endif%}>
   <label for="r-approved">{%trans "approved"%}</label>
  </div>
 
- <div class="radio1 green c2">
+ <div class="radio1 green c4">
   <input type="radio" id="r-reject" name="status" value="reject" {%if dataRow.status == 'reject' or not dataRow.status %} checked{%endif%}>
   <label for="r-reject">{%trans "reject"%}</label>
  </div>
