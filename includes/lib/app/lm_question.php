@@ -51,7 +51,25 @@ class lm_question
 		}
 
 		$level_id      = \dash\coding::decode($_level_id);
-		$load_question = \lib\db\lm_question::get_rand($level_id, $limit);
+
+		$session_key = 'save_rand_question_'. $_level_id;
+
+
+		if(\dash\session::get('show_lms_exam_result_'. $_level_id))
+		{
+			\dash\session::clean($session_key);
+			\dash\session::clean('show_lms_exam_result_'. $_level_id);
+		}
+
+		if(\dash\session::get($session_key))
+		{
+			$load_question = \dash\session::get($session_key);
+		}
+		else
+		{
+			$load_question = \lib\db\lm_question::get_rand($level_id, $limit);
+			\dash\session::set($session_key, $load_question);
+		}
 
 		if(is_array($load_question))
 		{

@@ -1,14 +1,12 @@
 {%extends 'content_lms/group/layout.html'%}
 
-{%block fileDetector%}
 
-
-{%endblock%}
 
 {%block pageContent%}
 
     {%if questionList%}
     <form method="post" class="cbox">
+        <input type="hidden" name="ActionType" value="answer">
         {%for key, value in questionList%}
         <div class="mB20">
           <div class="msg info2 txtB pTB5 mB5">{{(key + 1) | fitNumber}}. {{value.title}}</div>

@@ -42,6 +42,43 @@ class lm_question
 	}
 
 
+	public static function get_answer_user($_ids, $_user_id)
+	{
+		$query =
+		"
+			SELECT
+				MAX(lm_answer.id) AS `answer_id`
+			FROM
+				lm_answer
+
+			WHERE
+				lm_answer.lm_question_id IN ($_ids) AND
+				lm_answer.user_id = $_user_id
+			GROUP BY lm_answer.lm_question_id
+		";
+		$ids = \dash\db::get($query, 'answer_id');
+		if(!$ids)
+		{
+			return null;
+		}
+
+		$ids = implode(',', $ids);
+		$query =
+		"
+			SELECT
+				lm_answer.*,
+				(SELECT lm_question.trueopt FROM lm_question WHERE lm_question.id = lm_answer.lm_question_id LIMIT 1) AS `trueopt`
+			FROM
+				lm_answer
+			WHERE
+				lm_answer.id IN ($ids)
+		";
+		$result = \dash\db::get($query);
+
+		return $result;
+	}
+
+
 	public static function get_rand($_lm_level_id, $_limit)
 	{
 		$query =

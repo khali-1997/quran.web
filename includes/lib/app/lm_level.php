@@ -90,19 +90,52 @@ class lm_level
 
 	}
 
-	public static function result($_lm_level_id)
+	public static function result($_level_id)
 	{
-		$load = self::public_load_level($_lm_level_id);
+		$load = self::public_load_level($_level_id);
 		if(!$load)
 		{
 			return false;
 		}
 
 		// need to load exam result and iqra result
-		if(isset($load['type']) && $load['type'] === 'iqra')
+		if(isset($load['type']))
 		{
-			$audio_detail = \lib\app\lm_audio::get_result($load['id']);
-			$load['audio_detail'] = $audio_detail;
+			if($load['type'] === 'iqra')
+			{
+				$audio_detail = \lib\app\lm_audio::get_result($load['id']);
+				$load['audio_detail'] = $audio_detail;
+			}
+			elseif($load['type'] === 'exam')
+			{
+				$session_key = 'save_rand_question_'. $_level_id;
+
+				$loaded_question = \dash\session::get($session_key);
+				if($loaded_question && is_array($loaded_question))
+				{
+					\dash\session::set('show_lms_exam_result_'. $_level_id, true);
+					$question_id = array_column($loaded_question, 'id');
+					$show_answer = \lib\db\lm_question::get_answer_user(implode(',', $question_id), \dash\user::id());
+					if(is_array($show_answer))
+					{
+						$show_answer = array_combine(array_column($show_answer, 'lm_question_id'), $show_answer);
+
+						foreach ($loaded_question as $key => $value)
+						{
+							if(isset($show_answer[$value['id']]))
+							{
+								$loaded_question[$key]['user_answer'] = $show_answer[$value['id']];
+								if(intval($show_answer[$value['id']]['opt']) === intval($value['trueopt']))
+								{
+									$loaded_question[$key]['user_answer']['is_true'] = true;
+								}
+							}
+						}
+					}
+
+				}
+				$load['question_answer'] = $loaded_question;
+			}
 		}
 		return $load;
 	}
