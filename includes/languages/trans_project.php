@@ -49,17 +49,26 @@ class twigTransTerms
 	echo T_("Next");                                                                  // Line 34
 	echo T_("Repeat");                                                                // Line 66
 	echo T_("Levels");                                                                // Line 9
-	echo T_("Your audio sended to our expert");                                       // Line 65
-	echo T_("You can see result of your request below");                              // Line 69
-	echo T_("Your audio file");                                                       // Line 77
+	echo T_("Your audio sended to our expert");                                       // Line 68
+	echo T_("You can see result of your request below");                              // Line 72
+	echo T_("Your audio file");                                                       // Line 80
 	echo T_("Mistakes");                                                              // Line 15
-	echo T_("Teacher Answer");                                                        // Line 97
-	echo T_("Teacher Audio");                                                         // Line 104
-	echo T_("Cancel your request");                                                   // Line 113
-	echo T_("Archive your file");                                                     // Line 115
+	echo T_("Teacher Answer");                                                        // Line 100
+	echo T_("Teacher Audio");                                                         // Line 107
+	echo T_("Cancel your request");                                                   // Line 116
+	echo T_("Archive your file");                                                     // Line 118
+	echo T_("Your answer");                                                           // Line 193
+	echo T_("True option");                                                           // Line 194
+
+	//--------------------projects/SalamQuran/content_lms/level/exam/fileDetector.html
+	echo T_("Click to download");                                                     // Line 18
+	echo T_("Video");                                                                 // Line 105
+	echo T_("MP3");                                                                   // Line 14
+	echo T_("PDF");                                                                   // Line 89
+	echo T_("Without preview");                                                       // Line 18
 
 	//-------------------------projects/SalamQuran/content_lms/level/exam/display.html
-	echo T_("We do not have question to ask from you!");                              // Line 46
+	echo T_("We do not have question to ask from you!");                              // Line 59
 
 	//---------------------------projects/SalamQuran/content_api/v6/apikey_header.html
 	echo T_("Required parameters");                                                   // Line 18
@@ -278,7 +287,6 @@ class twigTransTerms
 	echo T_("For share via social networks");                                         // Line 56
 	echo T_("News Code");                                                             // Line 50
 	echo T_("Recommended for you");                                                   // Line 86
-	echo T_("PDF");                                                                   // Line 89
 
 	//------------------------------projects/SalamQuran/content/template/shareBox.html
 	echo T_("Share");                                                                 // Line 2
@@ -1016,7 +1024,6 @@ class twigTransTerms
 	echo T_("Question count");                                                        // Line 91
 	echo T_("Random question");                                                       // Line 92
 	echo T_("Besmellah");                                                             // Line 93
-	echo T_("Video");                                                                 // Line 105
 	echo T_("Cover");                                                                 // Line 108
 	echo T_("Try to start with add new level!");                                      // Line 142
 
