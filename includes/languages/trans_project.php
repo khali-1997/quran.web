@@ -6,13 +6,16 @@ class twigTransTerms
 
 	//-------------------------------------projects/SalamQuran/content_lms/layout.html
 	echo T_("Learn Mechanism system");                                                // Line 6
+	echo T_("All learn quran");                                                       // Line 8
+	echo T_("All learn tajweed");                                                     // Line 9
+	echo T_("All learn exam");                                                        // Line 10
+	echo T_("All learn theme");                                                       // Line 11
 
-	//-------------------------------projects/SalamQuran/content_lms/group/layout.html
-	echo T_("Manage");                                                                // Line 6
-
-	//-------------------------projects/SalamQuran/content_lms/group/home/display.html
+	//---------------------------projects/SalamQuran/content_lms/all/home/display.html
 	echo T_("SalamQuran Learning Mechanism");                                         // Line 25
 	echo T_("Level not found!");                                                      // Line 58
+
+	//-------------------------projects/SalamQuran/content_lms/group/home/display.html
 
 	//-------------------------------projects/SalamQuran/content_lms/home/display.html
 	echo T_("Group not fount!");                                                      // Line 23
@@ -367,7 +370,7 @@ class twigTransTerms
 
 	//------------------------------------projects/SalamQuran/content/main/header.html
 	echo T_("Quran");                                                                 // Line 43
-	echo T_("Panel");                                                                 // Line 42
+	echo T_("Panel");                                                                 // Line 6
 	echo T_("Enter to your account and use SalamQuran account features");             // Line 20
 	echo T_("The Holy Quran");                                                        // Line 27
 
@@ -860,6 +863,7 @@ class twigTransTerms
 	//-----------------------------------projects/SalamQuran/content/page/display.html
 
 	//---------------------------------------projects/SalamQuran/content_m/layout.html
+	echo T_("Manage");                                                                // Line 6
 	echo T_("Groups");                                                                // Line 8
 	echo T_("Mistake in learn");                                                      // Line 10
 
@@ -1058,6 +1062,8 @@ class twigTransTerms
 	echo T_("Nim");                                                                   // Line 63
 	echo T_("rub");                                                                   // Line 64
 
+	//---------------------------------------projects/SalamQuran/content_a/layout.html
+
 	//--------------------------projects/SalamQuran/content_a/khatm/share/display.html
 	echo T_("Reading sura");                                                          // Line 81
 	echo T_("Reading page");                                                          // Line 83
@@ -1096,9 +1102,10 @@ class twigTransTerms
 	echo T_("No favorites added");                                                    // Line 112
 
 	//---------------------------------projects/SalamQuran/content_a/home/display.html
-	echo T_("History");                                                               // Line 20
-	echo T_("Khatm");                                                                 // Line 32
-	echo T_("Favorite");                                                              // Line 43
+	echo T_("History");                                                               // Line 21
+	echo T_("Learning mechanism system");                                             // Line 32
+	echo T_("Khatm");                                                                 // Line 44
+	echo T_("Favorite");                                                              // Line 55
 
  }
 }
