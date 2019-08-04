@@ -12,7 +12,38 @@ class model
 			return false;
 		}
 
-		// j(\dash\app\file::upload_quick('file'));
+		if(\dash\url::child() === 'quran')
+		{
+			return self::quran();
+		}
+		elseif(\dash\url::child() === 'iqra')
+		{
+			return self::iqra();
+		}
+	}
+
+	private static function iqra()
+	{
+		$file = \dash\app\file::upload_quick('file');
+		if(!$file)
+		{
+			\dash\notif::error(T_("Please record your sound"));
+			return false;
+		}
+
+		\lib\app\lm_audio::add_new($file, \dash\request::get('id'));
+
+		if(\dash\engine\process::status())
+		{
+			\dash\redirect::to(\dash\url::this(). '/result?id='. \dash\request::get('id'));
+		}
+
+	}
+
+
+	private static function quran()
+	{
+
 
 		$session_key = 'lms_audio_record'. \dash\request::get('id');
 
