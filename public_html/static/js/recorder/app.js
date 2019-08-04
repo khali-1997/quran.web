@@ -145,24 +145,26 @@ function createDownloadLink(blob,encoding) {
 
 	var url = URL.createObjectURL(blob);
 	var au = document.createElement('audio');
-	var li = document.createElement('li');
-	var link = document.createElement('a');
+	var div = document.createElement('div');
+	// var link = document.createElement('a');
 
 	//add controls to the <audio> element
 	au.controls = true;
 	au.src = url;
+	au.classList = 'block';
 
-	//link the a element to the blob
-	link.href = url;
-	link.download = new Date().toISOString() + '.'+encoding;
-	link.innerHTML = link.download;
+	// //link the a element to the blob
+	// link.href = url;
+	// link.download = 'SalamQuran-lms-'+  new Date().toISOString() + '.'+encoding;
+	// link.innerHTML = link.download;
 
-	//add the new audio and a elements to the li element
-	li.appendChild(au);
-	li.appendChild(link);
-
-	//add the li element to the ordered list
-	recordingsList.appendChild(li);
+	//add the new audio and a elements to the div element
+	div.classList = 'cbox';
+	div.appendChild(au);
+	recordingsList.replaceWith(div);
+	// div.appendChild(link);
+	//add the div element to the ordered list
+	// recordingsList.replaceWith(div);
 }
 
 

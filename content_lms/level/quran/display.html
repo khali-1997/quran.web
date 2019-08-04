@@ -2,38 +2,44 @@
 
 
 {%block pageContent%}
+<p class="msg fs12 info2">{%trans "After reading Quran for at least 2 times, record your sound and replay it for yourself."%} {%trans "Each time of play Quran have one star and recording have another star."%}</p>
+
 <div class="f justify-center">
   <div class="c8 s12 pRa10">
     <iframe src="{{loadLevel.iframe_link}}" height="600" width="100%"></iframe>
   </div>
   <div class="c4 s12">
     <div class="cbox qiraatRecorder">
-
       <div id="recordBtn"></div>
-      <hr>
-      <div class="tapeRecorder">
-        <div class="reel">
-          <div class="slice"></div>
-          <div class="slice"></div>
-          <div class="slice"></div>
-          <div class="tape"></div>
-        </div>
-        <div class="reel">
-          <div class="slice"></div>
-          <div class="slice"></div>
-          <div class="slice"></div>
-          <div class="tape"></div>
-        </div>
-        <div class="mecha">
-          <div class="tape"></div>
-          <div class="tape"></div>
-          <div class="tape"></div>
-        </div>
-      </div>
-
-
     </div>
-    <div class="msg" id="recordingsList"></div>
+
+    <div id="recordingsList"></div>
+
+    <div class="tapeBox">
+      <div class="cbox">
+        <div class="tapeRecorder">
+          <div class="reel">
+            <div class="slice"></div>
+            <div class="slice"></div>
+            <div class="slice"></div>
+            <div class="tape"></div>
+          </div>
+          <div class="reel">
+            <div class="slice"></div>
+            <div class="slice"></div>
+            <div class="slice"></div>
+            <div class="tape"></div>
+          </div>
+          <div class="mecha">
+            <div class="tape"></div>
+            <div class="tape"></div>
+            <div class="tape"></div>
+          </div>
+        </div>
+        <div class="msg txtC txtB danger2">{%trans "Recording mode, iqra"%}</div>
+      </div>
+    </div>
+
   </div>
 </div>
 {%endblock%}
@@ -50,14 +56,14 @@
       // started
       $(this).removeClass('start');
       $('.tapeRecorder').removeClass('record');
-
+      $('.tapeBox').slideUp();
     }
     else
     {
       // stop
       $(this).addClass('start');
       $('.tapeRecorder').addClass('record');
-
+      $('.tapeBox').fadeIn('fast');
     }
   });
 </script>
@@ -67,13 +73,14 @@
 
 <style type="text/css">
 
+.tapeBox{display: none}
 .tapeRecorder {
   background: #aaa;
   border-radius: 8px;
   width: 220px;
   height: 140px;
   position: relative;
-  margin: 40px auto 20px;
+  margin: 40px auto;
   box-shadow:
     0 40px 50px -20px rgba(0,0,0,.3) inset,
     0 20px 40px -10px rgba(0,0,0,.3),
