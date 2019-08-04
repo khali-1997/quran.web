@@ -48,7 +48,7 @@
 <style type="text/css">
 
 .tapeRecorder {
-  background: #999;
+  background: #aaa;
   border-radius: 8px;
   width: 220px;
   height: 135px;
@@ -108,6 +108,10 @@
   top: 50%;
   margin: -15px 0 0 -15px;
   background: #252525;
+  transition: background 0.3s;
+}
+.tapeRecorder.record .reel .tape {
+  background: #de0001;
 }
 .tapeRecorder .reel:after {
   z-index: 9;
@@ -201,7 +205,10 @@
   width: 80px;
   z-index: 1;
   top: 9px;
-
+  transition: border 0.3s;
+}
+.tapeRecorder.record .mecha .tape {
+  border-color: #de0001;
 }
 .tapeRecorder.record .mecha .tape:nth-child(1) {
   animation: linear slideTape1 20s infinite;
