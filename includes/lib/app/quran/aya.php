@@ -11,8 +11,10 @@ class aya
 			return \lib\app\quran\page::load(...func_get_args());
 		}
 
+		$id_raw = $_id;
 		// load sure
 		$_id = intval($_id);
+
 		$result           = [];
 
 		$get_quran         = [];
@@ -20,6 +22,10 @@ class aya
 		if($_type === 'aya')
 		{
 			$get_quran['index'] = $_id;
+		}
+		elseif($_type === 'from_to')
+		{
+			// nothing
 		}
 		else
 		{
@@ -46,7 +52,7 @@ class aya
 		$startpage               = intval(\lib\app\sura::detail($_id, 'startpage'));
 		$endpage                 = intval(\lib\app\sura::detail($_id, 'endpage'));
 
-		$a                       = isset($_meta['a']) && is_numeric($_meta['a']) ? intval($_meta['a']) : 0;
+		// $a                       = isset($_meta['a']) && is_numeric($_meta['a']) ? intval($_meta['a']) : 0;
 
 		$pagination_current = null;
 		$pagination         = null;
@@ -84,8 +90,20 @@ class aya
 		{
 			// nothing
 		}
+		elseif($_type === 'from_to')
+		{
+			$from_to   = explode('-', $id_raw);
+			$from_sura = intval($from_to[0]);
+			$from_aya  = intval($from_to[1]);
+			$to_aya    = intval($from_to[2]);
+
+
+			$get_quran['3.3'] = [' = 3.3 AND', " `sura` = $from_sura  AND `aya` >= $from_aya AND `aya` <= $to_aya "];
+		}
+
 
 		$load           = \lib\db\quran_word::get($get_quran);
+
 
 		$load_quran_aya = \lib\db\quran::get($get_quran);
 
