@@ -9,7 +9,7 @@
   <div class="c4 s12">
     <div class="cbox qiraatRecorder">
 
-      <div class="recordBtn"></div>
+      <div id="recordBtn"></div>
       <hr>
       <div class="tapeRecorder">
         <div class="reel">
@@ -39,8 +39,10 @@
 
 
 {%block foot_js%}
+<script src="{{url.static}}/js/recorder/WebAudioRecorder.min.js"></script>
+<script src="{{url.static}}/js/recorder/app.js"></script>
 <script>
-  $('.qiraatRecorder .recordBtn').on('click', function()
+  $('.qiraatRecorder #recordBtn').on('click', function()
   {
     if($(this).hasClass('start'))
     {
@@ -111,7 +113,7 @@
     0 0 0 5px #EEE inset,
     0 0 4px 5px rgba(0,0,0,.5) inset;
 }
-.tapeRecorder .reel {
+.tapeRecorder.record .reel {
   animation: linear rollingReel 20s infinite;
 }
 .tapeRecorder .reel .tape {
@@ -264,7 +266,7 @@
 
 
 
-.recordBtn{
+#recordBtn{
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -287,14 +289,14 @@
   font-size: 40px;
   transition: 0.3s background;
 }
-.recordBtn:hover {
+#recordBtn:hover {
   background: #ff0000;
 }
-.recordBtn::before{
+#recordBtn::before{
   content: "\e102";
   font-family: "siftal","tahoma" !important;
 }
-.recordBtn.start::before{
+#recordBtn.start::before{
   content: "\e101";
 }
 
