@@ -32,7 +32,8 @@ class lm_level
 			FROM
 				lm_level
 			WHERE
-				lm_level.id > $_id AND
+				(lm_level.sort IS NULL OR lm_level.sort > (SELECT lm_level.sort FROM lm_level WHERE lm_level.id = $_id LIMIT 1)) AND
+				lm_level.id != $_id AND
 				lm_level.status = 'enable' AND
 				lm_level.lm_group_id = (SELECT lm_level.lm_group_id FROM lm_level WHERE lm_level.id = $_id LIMIT 1)
 			ORDER BY lm_level.sort ASC, lm_level.id ASC
