@@ -80,6 +80,28 @@
       $('.tapeBox').stop( true, true).fadeIn('fast');
     }
   });
+
+  function sendAudioToServer(_audioBlob)
+  {
+    var data = new FormData();
+    data.append('file', _audioBlob);
+
+    $.ajax(
+    {
+      url :  window.location.href,
+      type: 'post',
+      data: data,
+      contentType: false,
+      processData: false,
+      success: function(data)
+      {
+        console.log("boa!");
+      },
+      error: function() {
+        console.log("not so boa!");
+      }
+    });
+  }
 </script>
 
 
