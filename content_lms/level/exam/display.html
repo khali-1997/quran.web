@@ -57,6 +57,7 @@
     </form>
     {%else%}
     <p class="msg danger fs20 txtC">{%trans "We do not have question to ask from you!"%}</p>
+    <a href="{{url.here}}/group?id={{loadLevel.lm_group_id}}" class="btn block outline mT50 fs20 info ">{%trans "Back to level list"%}</a>
     {%endif%}
 
 

@@ -2,16 +2,12 @@
 namespace content_lms\level\quranvideo;
 
 
-class view
+class view  extends \content_lms\level\video\view
 {
 	public static function config()
 	{
+		parent::config();
 
-		\content_lms\level\main::view();
-
-		// $quranLoaded = \lib\app\lm_level::load_quran(\dash\request::get('id'));
-		// \dash\data::quranLoaded($quranLoaded);
-		// // \dash\data::pageStyle('uthmani');
 
 	}
 }

@@ -49,7 +49,7 @@
 
 {%if myResult.type == 'iqra' and myResult.audio_detail%}
   {{block('iqraResult')}}
-{%elseif myResult.type == 'exam'%}
+{%elseif myResult.type in ['exam', 'tajweed', 'theme']%}
   {{block('myExamResult')}}
 
 {%endif%}

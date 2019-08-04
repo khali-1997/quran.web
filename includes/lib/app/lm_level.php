@@ -118,7 +118,7 @@ class lm_level
 				$audio_detail = \lib\app\lm_audio::get_result($load['id']);
 				$load['audio_detail'] = $audio_detail;
 			}
-			elseif($load['type'] === 'exam')
+			elseif(in_array($load['type'], ['exam', 'tajweed', 'theme']))
 			{
 				$session_key = 'save_rand_question_'. $_level_id;
 
@@ -927,7 +927,12 @@ class lm_level
 		}
 
 		$xtype = isset($result['type']) ? $result['type'] : null;
-		if(in_array($xtype, ['tajweed', 'reading', 'theme', 'exam']) && isset($result['file']) && $result['file'])
+		if(in_array($xtype, ['tajweed', 'reading', 'theme']))
+		{
+			$xtype = 'video';
+		}
+
+		if(in_array($xtype, [ 'exam']) && isset($result['file']) && $result['file'])
 		{
 			$xtype = 'video';
 		}
