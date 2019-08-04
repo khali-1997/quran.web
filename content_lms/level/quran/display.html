@@ -84,7 +84,8 @@
   function sendAudioToServer(_audioBlob)
   {
     var data = new FormData();
-    data.append('file', _audioBlob);
+    data.append('file', _audioBlob, 'record.wav');
+
 
     $.ajax(
     {

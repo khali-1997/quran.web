@@ -12,6 +12,7 @@ class model
 			return false;
 		}
 
+		// j(\dash\app\file::upload_quick('file'));
 
 		$session_key = 'lms_audio_record'. \dash\request::get('id');
 
@@ -24,7 +25,7 @@ class model
 		if(\dash\request::post('check') === 'result')
 		{
 
-			$count_listen = 2; //\lib\app\lm_level::count_listen(\dash\request::get('id'));
+			$count_listen = intval(\lib\app\lm_level::count_listen(\dash\request::get('id')));
 			$star = 0;
 			if($count_listen >= 2)
 			{
