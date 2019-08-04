@@ -74,5 +74,25 @@ class lm_star
 		return $result;
 	}
 
+
+	public static function get_user_star_last($_level_id, $_user_id)
+	{
+		$query =
+		"
+			SELECT
+				lm_star.star AS `star`
+			FROM
+				lm_star
+			WHERE
+				lm_star.user_id = $_user_id AND
+				lm_star.lm_level_id = $_level_id
+			ORDER BY lm_star.id DESC
+			LIMIT 1
+		";
+		$result = \dash\db::get($query, null, true);
+
+		return $result;
+	}
+
 }
 ?>

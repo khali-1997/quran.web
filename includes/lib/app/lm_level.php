@@ -48,7 +48,7 @@ class lm_level
 	}
 
 
-	public static function count_listen($_lm_level_id)
+	public static function count_listen($_lm_level_id, $_time = null)
 	{
 		if(!\dash\user::id())
 		{
@@ -72,9 +72,12 @@ class lm_level
 			return false;
 		}
 
-		$time = time() - (60*60);
+		if(!$_time || !is_numeric($_time))
+		{
+			$_time = time() - (60*10);
+		}
 
-		$count_listen = \lib\db\history::get_count_listen(\dash\user::id(), $time, $quran_start_sura, $quran_start_aya, $quran_end_aya);
+		$count_listen = \lib\db\history::get_count_listen(\dash\user::id(), $_time, $quran_start_sura, $quran_start_aya, $quran_end_aya);
 
 		if(count($count_listen) >= intval($quran_end_aya))
 		{

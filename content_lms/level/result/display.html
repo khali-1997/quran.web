@@ -6,13 +6,28 @@
 <div class="f justify-center">
   <div class="c6 s12">
 
-  {%if userStar.star%}
+
   <div class="cbox txtC">
     <div class="msg">{{loadGroup.title}} / <span class="txtB fs12">{{loadLevel.title}}</span></div>
     <div class="mB20">
-    {%for i in 1..userStar.star%}
-     <i class="sf-star fc-yellow fs50"></i>
-    {%endfor%}
+        {%if userStar.star == 1%}
+          <i class="sf-star fs50 fc-yellow"></i>
+          <i class="sf-star fs50 fc-graylight"></i>
+          <i class="sf-star fs50 fc-graylight"></i>
+        {%elseif userStar.star == 2%}
+          <i class="sf-star fs50 fc-yellow"></i>
+          <i class="sf-star fs50 fc-yellow"></i>
+          <i class="sf-star fs50 fc-graylight"></i>
+        {%elseif userStar.star == 3%}
+          <i class="sf-star fs50 fc-yellow"></i>
+          <i class="sf-star fs50 fc-yellow"></i>
+          <i class="sf-star fs50 fc-yellow"></i>
+        {%else%}
+          <i class="sf-star fs50 fc-graylight"></i>
+          <i class="sf-star fs50 fc-graylight"></i>
+          <i class="sf-star fs50 fc-graylight"></i>
+        {%endif%}
+
     </div>
     <div class="f">
       <div class="c4 s12 pRa10">
@@ -27,7 +42,7 @@
     </div>
 
   </div>
-  {%endif%}
+
 
   </div>
 </div>

@@ -10,7 +10,8 @@ class view
 
 		$result = \lib\app\lm_level::result(\dash\request::get('id'));
 
-
+		$userstar = \lib\app\lm_star::user_level_star(\dash\request::get('id'), true);
+		\dash\data::userStar($userstar);
 	}
 }
 ?>

@@ -98,12 +98,6 @@ class lm_star
 
 		$star = intval($_star);
 
-		if(!$star)
-		{
-			\dash\notif::error(T_("Please set the star"));
-			return false;
-		}
-
 		if($star < 0 || $star > 3)
 		{
 			\dash\notif::error(T_("Only 1,2,3 can set as star"));
@@ -149,7 +143,7 @@ class lm_star
 
 
 
-	public static function user_level_star($_level_id)
+	public static function user_level_star($_level_id, $_last = false)
 	{
 		if(!\dash\user::id())
 		{
@@ -168,7 +162,14 @@ class lm_star
 
 		$level_id = \dash\coding::decode($_level_id);
 
-		$user_star = \lib\db\lm_star::get_user_star($level_id, $user_id);
+		if($_last)
+		{
+			$user_star = \lib\db\lm_star::get_user_star_last($level_id, $user_id);
+		}
+		else
+		{
+			$user_star = \lib\db\lm_star::get_user_star($level_id, $user_id);
+		}
 
 		$result = [];
 
