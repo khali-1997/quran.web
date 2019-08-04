@@ -12,14 +12,38 @@ class model
 			return false;
 		}
 
+
+		$session_key = 'lms_audio_record'. \dash\request::get('id');
+
+		if(\dash\request::post('audio') === 'record')
+		{
+			\dash\session::set($session_key, true);
+		}
+
+
 		if(\dash\request::post('check') === 'result')
 		{
-			\lib\app\lm_star::level_quran('listenfirst', \dash\request::get('id'));
-			\lib\app\lm_star::level_quran('listensecond', \dash\request::get('id'));
-			\lib\app\lm_star::level_quran('debate', \dash\request::get('id'));
-			// check star listenfirst
-			// check star listensecond
-			// check star debate
+
+			$count_listen = 2; //\lib\app\lm_level::count_listen(\dash\request::get('id'));
+			$star = 0;
+			if($count_listen >= 2)
+			{
+				$star = 2;
+			}
+			elseif($count_listen >= 1)
+			{
+				$star++;
+			}
+
+			if(\dash\session::get($session_key))
+			{
+				$star++;
+			}
+
+			if($star)
+			{
+				\lib\app\lm_star::set_star(\dash\request::get('id'), $star);
+			}
 
 			if(\dash\engine\process::status())
 			{
