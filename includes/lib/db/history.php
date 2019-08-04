@@ -14,5 +14,31 @@ class history
 	{
 		return \dash\db\config::public_search('history', ...func_get_args());
 	}
+
+
+	public static function get_count_listen($_user_id, $_time, $_sura, $_start_aya, $_end_aya)
+	{
+		$query =
+		"
+			SELECT
+				history.sura,
+				history.aya,
+				COUNT(*) AS `count`
+			FROM
+				history
+			WHERE
+				history.user_id = $_user_id AND
+				history.sura = $_sura AND
+				history.time > $_time AND
+				history.aya >= $_start_aya AND
+				history.aya <= $_end_aya
+			GROUP BY
+				history.sura, history.aya
+		";
+
+		$result = \dash\db::get($query);
+
+		return $result;
+	}
 }
 ?>

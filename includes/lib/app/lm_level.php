@@ -27,6 +27,45 @@ class lm_level
 		'datecreated',
 	];
 
+	public static function count_listen($_lm_level_id)
+	{
+		if(!\dash\user::id())
+		{
+			return false;
+		}
+
+		$load = self::public_load_level($_lm_level_id);
+		if(!$load)
+		{
+			return false;
+		}
+
+		$quran_start_sura = isset($load['quran_start_sura']) ? $load['quran_start_sura'] : null;
+		$quran_start_aya  = isset($load['quran_start_aya'])  ? $load['quran_start_aya']  : null;
+		// $quran_end_sura   = isset($load['quran_end_sura']) 	 ? $load['quran_end_sura'] 	 : return false;
+		$quran_end_aya    = isset($load['quran_end_aya']) 	 ? $load['quran_end_aya'] 	 : null;
+
+
+		if(!$quran_start_sura || !$quran_start_aya || !$quran_end_aya)
+		{
+			return false;
+		}
+
+		$time = time() - (60*60);
+
+		$count_listen = \lib\db\history::get_count_listen(\dash\user::id(), $time, $quran_start_sura, $quran_start_aya, $quran_end_aya);
+
+		if(count($count_listen) >= intval($quran_end_aya))
+		{
+			$count = array_column($count_listen, 'count');
+			$min = min($count);
+			return intval($min);
+		}
+
+		return 0;
+
+	}
+
 	public static function result($_lm_level_id)
 	{
 		$load = self::public_load_level($_lm_level_id);
