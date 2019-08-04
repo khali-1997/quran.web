@@ -27,6 +27,18 @@ class lm_level
 		'datecreated',
 	];
 
+	public static function result($_lm_level_id)
+	{
+		$load = self::public_load_level($_lm_level_id);
+		if(!$load)
+		{
+			return false;
+		}
+
+		// need to load exam result and iqra result
+		return $load;
+	}
+
 
 	public static function public_load_level($_lm_level_id)
 	{

@@ -8,9 +8,7 @@ class view
 	{
 		\content_lms\level\main::view();
 
-		$question = \lib\app\lm_question::public_load('learn', \dash\request::get('id'));
-
-		\dash\data::questionList($question);
+		$result = \lib\app\lm_level::result(\dash\request::get('id'));
 
 
 	}

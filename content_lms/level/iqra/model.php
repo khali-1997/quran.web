@@ -6,6 +6,12 @@ class model
 {
 	public static function post()
 	{
+		if(!\dash\user::id())
+		{
+			\dash\notif::error(T_("Please login to continue"));
+			return false;
+		}
+
 		$file = \dash\app\file::upload_quick('file1');
 
 		if($file)
