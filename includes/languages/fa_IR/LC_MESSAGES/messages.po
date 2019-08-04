@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SalamQuran - Persian\n"
-"POT-Creation-Date: 2019-08-04 22:29+0430\n"
-"PO-Revision-Date: 2019-08-04 22:34+0430\n"
+"POT-Creation-Date: 2019-08-04 23:06+0430\n"
+"PO-Revision-Date: 2019-08-04 23:07+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -587,7 +587,7 @@ msgstr "بازگشت به لیست صوت‌ها"
 
 #: SalamQuran/content_m/audiobank/edit/view.php:20
 #: SalamQuran/content_m/reading/edit/view.php:21
-#: SalamQuran/includes/lib/app/lm_audio.php:143
+#: SalamQuran/includes/lib/app/lm_audio.php:158
 #: SalamQuran/includes/lib/app/lm_audiomistake.php:44
 msgid "Invalid audio id"
 msgstr "شناسه صوت یافت نشد"
@@ -720,7 +720,7 @@ msgstr "آزمون"
 #: SalamQuran/content_m/level/exam/view.php:30
 #: SalamQuran/includes/lib/app/fav.php:135 SalamQuran/includes/lib/app/fav.php:155
 #: SalamQuran/includes/lib/app/fav.php:235 SalamQuran/includes/lib/app/khatm.php:575
-#: SalamQuran/includes/lib/app/lm_audio.php:365
+#: SalamQuran/includes/lib/app/lm_audio.php:380
 #: SalamQuran/includes/lib/app/lm_level.php:118
 #: SalamQuran/includes/lib/app/lm_level.php:171
 #: SalamQuran/includes/lib/app/lm_question.php:77
@@ -4855,6 +4855,8 @@ msgid "Advance result"
 msgstr "نتایج پیشرفته"
 
 #: SalamQuran/includes/languages/trans_dash.php:962
+#: SalamQuran/includes/lib/app/log/caller/lmsAudioAnswer.php:22
+#: SalamQuran/includes/lib/app/log/caller/lmsNewAudio.php:22
 #: dash/addons/includes/languages/trans_dash.php:869
 #: dash/lib/app/log/caller/su/su_phpBug.php:19
 #: dash/lib/app/log/caller/su/su_sqlError.php:20
@@ -10463,8 +10465,8 @@ msgstr "لطفا کیفیت را کمتر از ۲۰۰ حرف وارد کنید"
 #: SalamQuran/includes/lib/app/audiobank.php:156
 #: SalamQuran/includes/lib/app/khatm.php:355
 #: SalamQuran/includes/lib/app/khatmusage.php:243
-#: SalamQuran/includes/lib/app/lm_audio.php:234
-#: SalamQuran/includes/lib/app/lm_audio.php:387
+#: SalamQuran/includes/lib/app/lm_audio.php:249
+#: SalamQuran/includes/lib/app/lm_audio.php:402
 #: SalamQuran/includes/lib/app/lm_group.php:267
 #: SalamQuran/includes/lib/app/lm_level.php:455
 #: SalamQuran/includes/lib/app/lm_question.php:315
@@ -10512,7 +10514,7 @@ msgstr "نشان"
 
 #: SalamQuran/includes/lib/app/badge.php:94
 #: SalamQuran/includes/lib/app/khatm.php:207
-#: SalamQuran/includes/lib/app/lm_audio.php:122
+#: SalamQuran/includes/lib/app/lm_audio.php:137
 #: SalamQuran/includes/lib/app/lm_group.php:159
 #: SalamQuran/includes/lib/app/lm_level.php:337
 #: SalamQuran/includes/lib/app/lm_mistake.php:94
@@ -10745,7 +10747,7 @@ msgstr "خصوصی - تنها شما می‌توانید این را مشاهد�
 
 #: SalamQuran/includes/lib/app/khatm.php:588
 #: SalamQuran/includes/lib/app/khatmusage.php:237
-#: SalamQuran/includes/lib/app/lm_audio.php:395
+#: SalamQuran/includes/lib/app/lm_audio.php:410
 msgid "This is not your data"
 msgstr "این اطلاعات مربوط به شما نیست"
 
@@ -10836,28 +10838,28 @@ msgstr "پاسخ شما ذخیره شد"
 msgid "Your audio uploaded"
 msgstr "صوت شما بارگذاری شد"
 
-#: SalamQuran/includes/lib/app/lm_audio.php:116
+#: SalamQuran/includes/lib/app/lm_audio.php:131
 msgid "audio"
 msgstr "صوت"
 
-#: SalamQuran/includes/lib/app/lm_audio.php:135
+#: SalamQuran/includes/lib/app/lm_audio.php:150
 msgid "audio id not set"
 msgstr "شناسه صوت تنظیم نشده است"
 
-#: SalamQuran/includes/lib/app/lm_audio.php:203
-#: SalamQuran/includes/lib/app/lm_audio.php:210
+#: SalamQuran/includes/lib/app/lm_audio.php:218
+#: SalamQuran/includes/lib/app/lm_audio.php:225
 msgid "Data is out of range"
 msgstr "داده خارج از محدوده مجاز است"
 
-#: SalamQuran/includes/lib/app/lm_audio.php:219
+#: SalamQuran/includes/lib/app/lm_audio.php:234
 msgid "Plase set quality as a number"
 msgstr "لطفا فیلد کیفیت را به صورت عددی وارد کنید"
 
-#: SalamQuran/includes/lib/app/lm_audio.php:226
+#: SalamQuran/includes/lib/app/lm_audio.php:241
 msgid "quality is out of range"
 msgstr "کیفیت خارج از محدوده مجاز است"
 
-#: SalamQuran/includes/lib/app/lm_audio.php:371
+#: SalamQuran/includes/lib/app/lm_audio.php:386
 #: dash/addons/content_enter/home/model.php:45
 #: dash/addons/content_su/sendnotify/model.php:30 dash/lib/app/address.php:324
 #: dash/lib/app/parent/add.php:50 dash/lib/app/parent/add.php:59
@@ -10868,11 +10870,11 @@ msgstr "کیفیت خارج از محدوده مجاز است"
 msgid "User not found"
 msgstr "کاربر یافت نشد"
 
-#: SalamQuran/includes/lib/app/lm_audio.php:379
+#: SalamQuran/includes/lib/app/lm_audio.php:394
 msgid "Your file was archived"
 msgstr "فایل شما بایگانی شد"
 
-#: SalamQuran/includes/lib/app/lm_audio.php:383
+#: SalamQuran/includes/lib/app/lm_audio.php:398
 msgid "Your file was removed"
 msgstr "فایل شما حذف شد"
 
@@ -11125,6 +11127,29 @@ msgstr "تنها اعداد ۱و۲و۳ می‌تواند در امتیاز اس�
 #: SalamQuran/includes/lib/app/lm_star.php:133
 msgid "Invalid level"
 msgstr "شناسه مرحله اشتباه است"
+
+#: SalamQuran/includes/lib/app/log/caller/lmsAudioAnswer.php:12
+msgid "Answer to your request"
+msgstr "پاسخ درخواست شما"
+
+#: SalamQuran/includes/lib/app/log/caller/lmsAudioAnswer.php:14
+#: SalamQuran/includes/lib/app/log/caller/lmsNewAudio.php:14
+msgid "LMS"
+msgstr "مکانیزم آموزش"
+
+#: SalamQuran/includes/lib/app/log/caller/lmsAudioAnswer.php:19
+#: SalamQuran/includes/lib/app/log/caller/lmsAudioAnswer.php:55
+msgid "Your audio file was checked and your request was answered"
+msgstr "فایل صوتی شما بررسی شد و درخواست شما پاسخ داده شد"
+
+#: SalamQuran/includes/lib/app/log/caller/lmsNewAudio.php:12
+msgid "New audio"
+msgstr "تصحیح قرائت جدید"
+
+#: SalamQuran/includes/lib/app/log/caller/lmsNewAudio.php:19
+#: SalamQuran/includes/lib/app/log/caller/lmsNewAudio.php:60
+msgid "User add new audio"
+msgstr "کاربر صوت جدید ارسال کرده است"
 
 #: SalamQuran/includes/lib/app/mag.php:117
 msgid "Rule"
