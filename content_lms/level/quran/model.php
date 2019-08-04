@@ -25,13 +25,11 @@ class model
 	private static function iqra()
 	{
 		$file = \dash\app\file::upload_quick('file');
-		if(!$file)
+		if($file)
 		{
-			\dash\notif::error(T_("Please record your sound"));
-			return false;
+			\lib\app\lm_audio::add_new($file, \dash\request::get('id'));
 		}
 
-		\lib\app\lm_audio::add_new($file, \dash\request::get('id'));
 
 		if(\dash\engine\process::status())
 		{

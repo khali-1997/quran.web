@@ -99,6 +99,11 @@ class lm_level
 		}
 
 		// need to load exam result and iqra result
+		if(isset($load['type']) && $load['type'] === 'iqra')
+		{
+			$audio_detail = \lib\app\lm_audio::get_result($load['id']);
+			$load['audio_detail'] = $audio_detail;
+		}
 		return $load;
 	}
 

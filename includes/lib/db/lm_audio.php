@@ -4,6 +4,13 @@ namespace lib\db;
 
 class lm_audio
 {
+	public static function get_last($_id, $_user_id)
+	{
+		$query = "SELECT * FROM lm_audio WHERE lm_audio.user_id = $_user_id AND lm_audio.lm_level_id = $_id AND lm_audio.status NOT IN ('deleted', 'archive') ORDER BY lm_audio.id DESC ";
+		$result = \dash\db::get($query, null);
+		return $result;
+	}
+
 
 	public static function insert()
 	{

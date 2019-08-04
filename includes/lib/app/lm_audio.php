@@ -219,7 +219,7 @@ class lm_audio
 		}
 
 		$status = \dash\app::request('status');
-		if($status && !in_array($status, ['awaiting', 'spam', 'deleted', 'admindelete', 'approved', 'reject']))
+		if($status && !in_array($status, ['awaiting', 'spam', 'deleted', 'admindelete', 'approved', 'reject', 'archive']))
 		{
 			\dash\notif::error(T_("Invalid status"), 'status');
 			return false;
@@ -248,6 +248,9 @@ class lm_audio
 			switch ($key)
 			{
 				case 'id':
+				case 'lm_level_id':
+				case 'lm_group_id':
+				case 'user_id':
 					if(isset($value))
 					{
 						$result[$key] = \dash\coding::encode($value);
@@ -292,6 +295,80 @@ class lm_audio
 	}
 
 
+	public static function get_result($_id)
+	{
+		$id = \dash\coding::decode($_id);
+		if(!$id)
+		{
+			return false;
+		}
+
+		if(!\dash\user::id())
+		{
+			return false;
+		}
+
+		$get_mistake = [];
+
+		$get_last = \lib\db\lm_audio::get_last($id, \dash\user::id());
+
+		// if(isset($get_last['id']))
+		// {
+		// 	$get_mistake = \lib\db\lm_audiomistake::get_mistake($get_last['id']);
+		// }
+
+		$get_last = array_map(['self', 'ready'], $get_last);
+		// $get_last['mistake'] = $get_mistake;
+
+		return $get_last;
+	}
+
+
+	public static function user_change_status($_id, $_status)
+	{
+		$_status = mb_strtolower($_status);
+
+		$id = \dash\coding::decode($_id);
+		if(!$id)
+		{
+			\dash\notif::error(T_("Invalid id"));
+			return false;
+		}
+
+		if(!\dash\user::id())
+		{
+			\dash\notif::error(T_("User not found"));
+			return false;
+		}
+		$msg = null;
+
+		switch ($_status)
+		{
+			case 'archive':
+				$msg = T_("Your file was archived");
+				break;
+
+			case 'deleted':
+				$msg = T_("Your file was removed");
+				break;
+
+			default:
+				\dash\notif::error(T_("Invalid status"));
+				return false;
+				break;
+		}
+
+		$get = \lib\db\lm_audio::get(['id' => $id, 'user_id' => \dash\user::id(), 'limit' => 1]);
+		if(!isset($get['id']))
+		{
+			\dash\notif::error(T_("This is not your data"));
+			return false;
+		}
+
+		\lib\db\lm_audio::update(['status' => $_status], $get['id']);
+		\dash\notif::ok($msg);
+		return true;
+	}
 
 }
 ?>

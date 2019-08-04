@@ -46,6 +46,46 @@
 
   </div>
 </div>
+
+{%if myResult.type == 'iqra' and myResult.audio_detail%}
+  {{block('iqraResult')}}
+{%endif%}
+
+{%endblock%}
+
+
+
+{%block iqraResult%}
+<div class="f justify-center">
+  <div class="c6 s12">
+    <div class="cbox txtC">
+      <div class="msg">
+        {%trans "Your audio sended to our expert"%}
+        <br>
+      </div>
+      <table class="tbl1 v4">
+        <tbody>
+          {%for key, value in myResult.audio_detail%}
+          <tr>
+            <td>
+              <audio  class="block mB10" controls="" src="{{value.audio}}"></audio>
+            </td>
+            <td class="collapsing">
+              {%if value.status == 'awaiting'%}
+              <div class="btn danger outline" data-confirm data-data='{"status":"deleted", "audioid": "{{value.id}}"}'>{%trans "Delete"%}</div>
+              {%else%}
+              <div class="btn info outline" data-confirm data-data='{"status":"archive", "audioid": "{{value.id}}"}'>{%trans "Archive"%}</div>
+              {%endif%}
+            </td>
+          </tr>
+          {%endfor%}
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+
 {%endblock%}
 
 

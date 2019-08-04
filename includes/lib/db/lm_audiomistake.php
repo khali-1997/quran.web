@@ -34,6 +34,13 @@ class lm_audiomistake
 		return \dash\db\config::public_get_count('lm_audiomistake', ...func_get_args());
 	}
 
+	public static function get_mistake($_audio_id)
+	{
+		$query = "SELECT * FROM lm_audiomistake WHERE lm_audiomistake.lm_audio_id = $_audio_id";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
 
 	public static function remove_all($_audio_id)
 	{
