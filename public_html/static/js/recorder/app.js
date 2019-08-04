@@ -58,11 +58,9 @@ function startRecording() {
 		audioContext = new AudioContext();
 
 		//update the format
-		document.getElementById("formats").innerHTML="Format: 2 channel "+encodingTypeSelect.options[encodingTypeSelect.selectedIndex].value+" @ "+audioContext.sampleRate/1000+"kHz"
-
+		// document.getElementById("formats").innerHTML="Format: 2 channel "+encodingTypeSelect.options[encodingTypeSelect.selectedIndex].value+" @ "+audioContext.sampleRate/1000+"kHz"
 		//assign to gumStream for later use
 		gumStream = stream;
-
 		/* use the stream */
 		input = audioContext.createMediaStreamSource(stream);
 
@@ -70,13 +68,14 @@ function startRecording() {
 		//input.connect(audioContext.destination)
 
 		//get the encoding
-		encodingType = encodingTypeSelect.options[encodingTypeSelect.selectedIndex].value;
+		// encodingType = encodingTypeSelect.options[encodingTypeSelect.selectedIndex].value;
+		encodingType = 'mp3';
 
 		//disable the encoding selector
 		encodingTypeSelect.disabled = true;
 
 		recorder = new WebAudioRecorder(input, {
-		  workerDir: "js/", // must end with slash
+		  workerDir: "static/js/recorder/", // must end with slash
 		  encoding: encodingType,
 		  numChannels:2, //2 is the default, mp3 encoding supports only 2
 		  onEncoderLoading: function(recorder, encoding) {
@@ -111,7 +110,8 @@ function startRecording() {
 	  	//enable the record button if getUSerMedia() fails
     	// recordButton.disabled = false;
     	// stopButton.disabled = true;
-
+    	console.log('error on start recorder!');
+    	console.log(err);
 	});
 
 	//disable the record button
@@ -122,11 +122,11 @@ function startRecording() {
 function stopRecording() {
 	// console.log("stopRecording() called");
 
-	if(gumStream === undefined)
-	{
-		console.log("gumStream is undefined!");
-		return false;
-	}
+	// if(gumStream === undefined)
+	// {
+	// 	console.log("gumStream is undefined!");
+	// 	return false;
+	// }
 
 	//stop microphone access
 	gumStream.getAudioTracks()[0].stop();
@@ -169,5 +169,5 @@ function createDownloadLink(blob,encoding) {
 
 //helper function
 function __log(e, data) {
-	log.innerHTML += "\n" + e + " " + (data || '');
+	// log.innerHTML += "\n" + e + " " + (data || '');
 }
