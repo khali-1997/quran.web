@@ -11,9 +11,17 @@
   <div class="c4 s12">
     <div class="cbox qiraatRecorder">
       <div id="recordBtn"></div>
+      <div class="msg pA5 danger2 txtC">{%trans "Press record button then iqra"%}</div>
     </div>
 
-    <div id="recordingsList"></div>
+    <div id="waitingMsg">
+      <div class="msg txtC info2">{%trans "Generate your recorded sound"%}</div>
+    </div>
+
+    <div id="recordingsList" class="cbox">
+      <audio id="recordedAudio" class="block mB10" controls></audio>
+      <div class="txtC">{%trans "your recorded sound is here"%}</div>
+    </div>
 
     <div class="tapeBox">
       <div class="cbox">
@@ -53,6 +61,8 @@
   {
     if($(this).hasClass('start'))
     {
+      // $('#waitingMsg').slideDown('fast');
+
       // started
       $(this).removeClass('start');
       $('.tapeRecorder').removeClass('record');
@@ -73,6 +83,7 @@
 
 <style type="text/css">
 
+#waitingMsg{display: none;}
 .tapeBox{display: none}
 .tapeRecorder {
   background: #aaa;

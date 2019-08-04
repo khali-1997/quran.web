@@ -69,7 +69,7 @@ function startRecording() {
 
 		//get the encoding
 		// encodingType = encodingTypeSelect.options[encodingTypeSelect.selectedIndex].value;
-		encodingType = 'mp3';
+		encodingType = 'wav';
 
 		//disable the encoding selector
 		encodingTypeSelect.disabled = true;
@@ -144,14 +144,14 @@ function stopRecording() {
 function createDownloadLink(blob,encoding) {
 
 	var url = URL.createObjectURL(blob);
-	var au = document.createElement('audio');
-	var div = document.createElement('div');
+	// var au = document.createElement('audio');
+	// var div = document.createElement('div');
 	// var link = document.createElement('a');
 
 	//add controls to the <audio> element
-	au.controls = true;
-	au.src = url;
-	au.classList = 'block';
+	// au.controls = true;
+	// au.src = url;
+	// au.classList = 'block';
 
 	// //link the a element to the blob
 	// link.href = url;
@@ -159,12 +159,18 @@ function createDownloadLink(blob,encoding) {
 	// link.innerHTML = link.download;
 
 	//add the new audio and a elements to the div element
-	div.classList = 'cbox';
-	div.appendChild(au);
-	recordingsList.replaceWith(div);
+	// div.classList = 'cbox';
+	// div.appendChild(au);
+	// recordingsList.replaceWith(div);
+
 	// div.appendChild(link);
 	//add the div element to the ordered list
 	// recordingsList.replaceWith(div);
+
+
+	document.getElementById("recordedAudio").src = url;
+	// hide waiting sound
+	document.getElementById("waitingMsg").style.display = 'none';
 }
 
 
