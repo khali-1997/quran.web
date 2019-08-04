@@ -11,15 +11,15 @@ class lm_star
 	{
 		if(is_numeric($_star))
 		{
-			$star = str_repeat('⭐️', $_star);
-			$text = T_("Hooray!"). "\n". $star;
+			// $star = str_repeat('⭐️', $_star);
+			$text = T_("Step successfully saved");
 		}
 		else
 		{
-			$text = T_("Hooray!");
+			$text = T_("Step successfully saved");
 		}
 
-		\dash\notif::ok($text, ['alerty' => true]);
+		\dash\notif::ok($text, ['alerty' => true, 'timeout' => 1000]);
 
 	}
 
