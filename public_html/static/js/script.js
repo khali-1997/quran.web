@@ -263,6 +263,9 @@ function bindAudioTools()
   // on end
   talavatEl.onended = function()
   {
+    // at end of aye save it for user
+    saveReadAye();
+
     highlightAye('end');
     detectNextAye();
   };
@@ -739,7 +742,7 @@ function detectNextAye()
         var nextAudioPage = $('.audioNextPage').attr('data-autoNext');
         if(nextAudioPage)
         {
-        	Navigate({ url: nextAudioPage });
+          Navigate({ url: nextAudioPage });
         }
       }
 
@@ -750,11 +753,26 @@ function detectNextAye()
       var nextAudioPage = $('.audioNextPage').attr('data-autoNext');
       if(nextAudioPage)
       {
-      	Navigate({ url: nextAudioPage });
+        Navigate({ url: nextAudioPage });
       }
     }
 
     // currentAyeBox.removeClass('active');
+  }
+}
+
+
+function saveReadAye()
+{
+  var idCurrent = $('.player').attr('data-aye');
+  if(idCurrent)
+  {
+    $.ajax(
+    {
+      type: "post",
+      url: '/history',
+      data: {"aye": idCurrent}
+    });
   }
 }
 
