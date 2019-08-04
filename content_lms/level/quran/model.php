@@ -12,25 +12,21 @@ class model
 			return false;
 		}
 
-		if(\dash\request::post('ActionType') === 'listenfirst')
+		if(\dash\request::post('check') === 'result')
 		{
 			\lib\app\lm_star::level_quran('listenfirst', \dash\request::get('id'));
-
-		}
-		elseif(\dash\request::post('ActionType') === 'listensecond')
-		{
 			\lib\app\lm_star::level_quran('listensecond', \dash\request::get('id'));
-
-		}
-		elseif(\dash\request::post('ActionType') === 'debate')
-		{
 			\lib\app\lm_star::level_quran('debate', \dash\request::get('id'));
+			// check star listenfirst
+			// check star listensecond
+			// check star debate
+
+			if(\dash\engine\process::status())
+			{
+				\dash\redirect::to(\dash\url::this(). '/result?id='. \dash\request::get('id'));
+			}
 		}
 
-		if(\dash\engine\process::status())
-		{
-			\dash\redirect::to(\dash\url::this(). '/result?id='. \dash\request::get('id'));
-		}
 
 	}
 }
