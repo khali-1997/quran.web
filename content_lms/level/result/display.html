@@ -58,34 +58,71 @@
 {%block iqraResult%}
 <div class="f justify-center">
   <div class="c6 s12">
+          {%for key, value in myResult.audio_detail%}
     <div class="cbox txtC">
-      <div class="msg">
-        {%trans "Your audio sended to our expert"%}
-        <br>
-      </div>
+        {%if value.status == 'awaiting'%}
+        <div class="msg info">
+          {%trans "Your audio sended to our expert"%}
+        </div>
+        {%else%}
+        <div class="msg primary2">
+          {%trans "You can see result of your request below"%}
+        </div>
+        {%endif%}
+
       <table class="tbl1 v4">
         <tbody>
-          {%for key, value in myResult.audio_detail%}
           <tr>
+            <td class="collapsing">
+              {%trans "Your audio file"%}
+            </td>
             <td>
+
               <audio  class="block mB10" controls="" src="{{value.audio}}"></audio>
             </td>
-            <td class="collapsing">
+
+          </tr>
+          {%if value.mistake_list%}
+          <tr class="negative">
+            <td class="collapsing">{%trans "Mistakes"%}</td>
+            <td>
+              {%for k,v in value.mistake_list %}
+                <span class="badge light">{{v.title}}</span>
+              {%endfor%}
+            </td>
+          </tr>
+          {%endif%}
+          {%if value.teachertxt%}
+          <tr class="active">
+            <td class="collapsing">{%trans "Teacher Answer"%}</td>
+            <td>{{value.teachertxt}}</td>
+          </tr>
+          {%endif%}
+
+          {%if value.teacheraudio%}
+          <tr class="positive">
+            <td class="collapsing">{%trans "Teacher Audio"%}</td>
+            <td><audio  class="block mB10" controls="" src="{{value.teacheraudio}}"></audio></td>
+          </tr>
+          {%endif%}
+
+          <tr>
+            <td class="collapsing"></td>
+            <td >
               {%if value.status == 'awaiting'%}
-              <div class="btn danger outline" data-confirm data-data='{"status":"deleted", "audioid": "{{value.id}}"}'>{%trans "Delete"%}</div>
+              <div class="btn danger block outline" data-confirm data-data='{"status":"deleted", "audioid": "{{value.id}}"}'>{%trans "Cancel your request"%}</div>
               {%else%}
-              <div class="btn info outline" data-confirm data-data='{"status":"archive", "audioid": "{{value.id}}"}'>{%trans "Archive"%}</div>
+              <div class="btn info block outline" data-confirm data-data='{"status":"archive", "audioid": "{{value.id}}"}'>{%trans "Archive your file"%}</div>
               {%endif%}
             </td>
           </tr>
-          {%endfor%}
+
         </tbody>
       </table>
 
     </div>
+          {%endfor%}
   </div>
 </div>
 
 {%endblock%}
-
-

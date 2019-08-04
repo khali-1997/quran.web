@@ -88,6 +88,16 @@ class lm_audio
 			return false;
 		}
 
+		if(isset($_args['set_star']))
+		{
+			$quality = $args['quality'];
+			\lib\app\lm_star::set_star_inline(
+				\dash\coding::decode($result['lm_group_id']),
+				\dash\coding::decode($result['lm_level_id']),
+				\dash\coding::decode($result['user_id']),
+				$quality);
+		}
+
 		if(!\dash\app::isset_request('lm_group_id')) unset($args['lm_group_id']);
 		if(!\dash\app::isset_request('lm_level_id')) unset($args['lm_level_id']);
 		if(!\dash\app::isset_request('user_id')) unset($args['user_id']);
@@ -228,7 +238,6 @@ class lm_audio
 
 		$args                 = [];
 		$args['teacher']      = $teacher;
-
 		$args['teachertxt']   = $teachertxt;
 		$args['teacheraudio'] = $teacheraudio;
 		$args['quality']      = $quality;
@@ -308,17 +317,39 @@ class lm_audio
 			return false;
 		}
 
-		$get_mistake = [];
+
+		$mistake_list = [];
 
 		$get_last = \lib\db\lm_audio::get_last($id, \dash\user::id());
 
-		// if(isset($get_last['id']))
-		// {
-		// 	$get_mistake = \lib\db\lm_audiomistake::get_mistake($get_last['id']);
-		// }
+		if($get_last)
+		{
+			$ids = array_column($get_last, 'id');
+
+			$get_mistake = \lib\db\lm_audiomistake::get_mistake(implode(',', $ids));
+			if(is_array($get_mistake))
+			{
+				foreach ($get_mistake as $key => $value)
+				{
+					if(!isset($mistake_list[$value['lm_audio_id']]))
+					{
+						$mistake_list[$value['lm_audio_id']] = [];
+					}
+					$mistake_list[$value['lm_audio_id']][] = $value;
+				}
+			}
+		}
+
+		foreach ($get_last as $key => $value)
+		{
+			if(isset($mistake_list[$value['id']]))
+			{
+				$get_last[$key]['mistake_list'] = $mistake_list[$value['id']];
+			}
+		}
 
 		$get_last = array_map(['self', 'ready'], $get_last);
-		// $get_last['mistake'] = $get_mistake;
+
 
 		return $get_last;
 	}

@@ -20,10 +20,10 @@ class model
 			'teacher'    => \dash\user::id(),
 		];
 
-		$post    = \dash\request::post();
+		$all_post    = \dash\request::post();
 		$mistake = [];
 
-		foreach ($post as $key => $value)
+		foreach ($all_post as $key => $value)
 		{
 			if(substr($key, 0, 8) === 'mistake_')
 			{
@@ -45,6 +45,8 @@ class model
 		}
 
 		$post['mistake'] = $mistake;
+
+		$post['set_star'] = true;
 
 		\lib\app\lm_audio::edit($post, \dash\request::get('id'));
 

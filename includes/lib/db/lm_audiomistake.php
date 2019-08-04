@@ -34,9 +34,19 @@ class lm_audiomistake
 		return \dash\db\config::public_get_count('lm_audiomistake', ...func_get_args());
 	}
 
-	public static function get_mistake($_audio_id)
+	public static function get_mistake($_audio_ids)
 	{
-		$query = "SELECT * FROM lm_audiomistake WHERE lm_audiomistake.lm_audio_id = $_audio_id";
+		$query =
+		"
+			SELECT
+				lm_audiomistake.*,
+				lm_mistake.title
+			FROM
+				lm_audiomistake
+			INNER JOIN lm_mistake ON lm_mistake.id = lm_audiomistake.lm_mistake_id
+			WHERE
+				lm_audiomistake.lm_audio_id IN ($_audio_ids)
+		";
 		$result = \dash\db::get($query);
 		return $result;
 	}

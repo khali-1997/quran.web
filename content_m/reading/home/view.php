@@ -29,13 +29,13 @@ class view
 
 		if(!$args['order'])
 		{
-			$args['order'] = 'ASC';
+			$args['order'] = 'DESC';
 		}
 
 
 		if(!$args['sort'])
 		{
-			$args['sort'] = 'sort';
+			$args['sort'] = 'id';
 		}
 
 		if(\dash\request::get('status'))

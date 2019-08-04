@@ -85,6 +85,28 @@ class lm_star
 	}
 
 
+	public static function set_star_inline($_group_id, $_level_id, $_user_id, $_star)
+	{
+		$star = intval($_star);
+		if($star < 0 || $star > 3)
+		{
+			\dash\notif::error(T_("Only 1,2,3 can set as star"));
+			return false;
+		}
+
+
+		$args                = [];
+		$args['user_id']     = $_user_id;
+		$args['lm_group_id'] = $_group_id;
+		$args['lm_level_id'] = $_level_id;
+		$args['star']        = $star;
+		$args['score']       = 0;
+		$args['status']      = 'enable';
+		$args['datecreated']  = date("Y-m-d H:i:s");
+
+		$lm_star_id = \lib\db\lm_star::insert($args);
+
+	}
 
 	public static function set_star($_level_id, $_star = null)
 	{
