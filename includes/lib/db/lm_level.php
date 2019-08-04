@@ -4,6 +4,25 @@ namespace lib\db;
 
 class lm_level
 {
+	public static function get_by_type($_type)
+	{
+		$query =
+		"
+			SELECT
+				*
+			FROM
+				lm_level
+			WHERE
+				lm_level.status = 'enable' AND
+				lm_level.type = '$_type'
+			ORDER BY lm_level.sort ASC, lm_level.id ASC
+
+		";
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
+
 	public static function find_next_level($_id)
 	{
 		$query =

@@ -29,6 +29,18 @@ class lm_level
 	];
 
 
+	public static function all_level_type($_type)
+	{
+		$list = \lib\db\lm_level::get_by_type($_type);
+		if(is_array($list))
+		{
+			$list = array_map(['self', 'ready'], $list);
+		}
+
+		return $list;
+	}
+
+
 	public static function find_next_level($_lm_level_id)
 	{
 		$id = \dash\coding::decode($_lm_level_id);
