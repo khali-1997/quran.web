@@ -9,11 +9,11 @@
 
 	      	<p>{{khatmUsageRow.desc}}</p>
       	{%if khatmUsageRow.sura%}
-	      	<a href="{{url.kingdom}}/s{{khatmUsageRow.sura}}" class="btn outline info block mA10">{%trans "Start reading sura"%} {{khatmUsageRow.sura_name}}</a>
+	      	<a href="{{url.kingdom}}/s{{khatmUsageRow.sura}}" class="btn outline info block mB10">{%trans "Start reading sura"%} {{khatmUsageRow.sura_name}}</a>
       	{%elseif khatmUsageRow.page%}
-	      	<a href="{{url.kingdom}}/p{{khatmUsageRow.page}}" class="btn outline info block mA10">{%trans "Start reading page"%} {{khatmUsageRow.page | fitNumber}}</a>
+	      	<a href="{{url.kingdom}}/p{{khatmUsageRow.page}}" class="btn outline info block mB10">{%trans "Start reading page"%} {{khatmUsageRow.page | fitNumber}}</a>
       	{%elseif khatmUsageRow.juz%}
-	      	<a href="{{url.kingdom}}/j{{khatmUsageRow.juz}}" class="btn outline info block mA10">{%trans "Start reading juz"%} {{khatmUsageRow.juz | fitNumber}}</a>
+	      	<a href="{{url.kingdom}}/j{{khatmUsageRow.juz}}" class="btn outline info block mB10">{%trans "Start reading juz"%} {{khatmUsageRow.juz | fitNumber}}</a>
       	{%endif%}
 
         <div class="msg warn">{% trans "It is up to you to complete the religious responsibility"%}</div>
