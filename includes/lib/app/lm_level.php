@@ -79,11 +79,11 @@ class lm_level
 
 	public static function public_level_list($_lm_group_id)
 	{
-		if(!\dash\user::id())
-		{
-			\dash\notif::error(T_("User not found"));
-			return false;
-		}
+		// if(!\dash\user::id())
+		// {
+		// 	\dash\notif::error(T_("Please login to continue"));
+		// 	return false;
+		// }
 
 		$_lm_group_id = \dash\coding::decode($_lm_group_id);
 		if(!$_lm_group_id)
@@ -162,7 +162,7 @@ class lm_level
 
 		if(!\dash\user::id())
 		{
-			\dash\notif::error(T_("User not found"), 'user');
+			\dash\notif::error(T_("Please login to continue"), 'user');
 			return false;
 		}
 
@@ -287,10 +287,10 @@ class lm_level
 
 	public static function list($_string = null, $_args = [])
 	{
-		if(!\dash\user::id())
-		{
-			return false;
-		}
+		// if(!\dash\user::id())
+		// {
+		// 	return false;
+		// }
 
 		$default_meta =
 		[

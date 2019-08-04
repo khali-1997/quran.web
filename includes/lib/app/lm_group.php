@@ -76,7 +76,7 @@ class lm_group
 
 		if(!\dash\user::id())
 		{
-			\dash\notif::error(T_("User not found"), 'user');
+			\dash\notif::error(T_("Please login to continue"), 'user');
 			return false;
 		}
 
@@ -189,10 +189,10 @@ class lm_group
 
 	public static function list($_string = null, $_args = [])
 	{
-		if(!\dash\user::id())
-		{
-			return false;
-		}
+		// if(!\dash\user::id())
+		// {
+		// 	return false;
+		// }
 
 		$default_meta =
 		[

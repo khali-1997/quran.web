@@ -11,14 +11,14 @@ class fav
 
 		if(!\dash\user::id())
 		{
-			\dash\notif::error(T_("User not found"));
+			\dash\notif::error(T_("Please login to continue"));
 			return false;
 		}
 
 		$user_id = \dash\user::id();
 		if(!$user_id)
 		{
-			\dash\notif::error(T_("User not found"));
+			\dash\notif::error(T_("Please login to continue"));
 			return false;
 		}
 

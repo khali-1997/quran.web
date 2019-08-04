@@ -108,7 +108,7 @@ class lm_question
 
 		if(!\dash\user::id())
 		{
-			\dash\notif::error(T_("User not found"), 'user');
+			\dash\notif::error(T_("Please login to continue"), 'user');
 			return false;
 		}
 

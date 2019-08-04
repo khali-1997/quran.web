@@ -136,7 +136,7 @@ class mag
 
 		if(!\dash\user::id())
 		{
-			\dash\notif::error(T_("User not found"));
+			\dash\notif::error(T_("Please login to continue"));
 			return false;
 		}
 
