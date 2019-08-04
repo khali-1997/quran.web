@@ -62,6 +62,9 @@
     <div class="input">
       <input type="text" name="opt1" value="{{questionDataRow.opt1}}" id="iopt1" required maxlength='150' minlength="1" pattern=".{1,150}">
     </div>
+    <div class="input mT5">
+      <input type="file" name="opt1file">
+    </div>
   </div>
 
   <div class="c3">
@@ -78,6 +81,9 @@
   <div class="c9 pRa10">
     <div class="input">
       <input type="text" name="opt2" value="{{questionDataRow.opt2}}" id="iopt2" required maxlength='150' minlength="1" pattern=".{1,150}">
+    </div>
+    <div class="input mT5">
+      <input type="file" name="opt2file">
     </div>
   </div>
 
@@ -96,6 +102,9 @@
     <div class="input">
       <input type="text" name="opt3" value="{{questionDataRow.opt3}}" id="iopt3" maxlength='150' minlength="1" pattern=".{1,150}">
     </div>
+    <div class="input mT5">
+      <input type="file" name="opt3file">
+    </div>
   </div>
 
   <div class="c3">
@@ -112,6 +121,9 @@
   <div class="c9 pRa10">
     <div class="input">
       <input type="text" name="opt4" value="{{questionDataRow.opt4}}" id="iopt4" maxlength='150' minlength="1" pattern=".{1,150}">
+    </div>
+    <div class="input mT5">
+      <input type="file" name="opt4file">
     </div>
   </div>
 
@@ -143,18 +155,22 @@
     {%for key, value in questionList%}
     <tr {%if value.id == requestGET.qid%} class="negative" {%endif%}>
       <td>
-        <p class="fs12 txtB">Q{{(loop.index) | fitNumber}}. {{value.title}}</p>
-{%if value.opt1%}
-        <div>{{1 | fitNumber}}. {{value.opt1}} {%if value.trueopt == 1%}<span class="sf-check fc-green"></span>{%endif%}</div>
+        <p class="fs12 txtB">{{(loop.index) | fitNumber}}. {{value.title}}</p>
+
+{%if value.opt1 or value.opt1file%}
+        <div>{{1 | fitNumber}}. {{value.opt1}} {%if value.opt1file%} <a href="{{value.opt1file}}" target="_blank"><span class="sf-file"></span></a> {%endif%} {%if value.trueopt == 1%}<span class="sf-check fc-green"></span>{%endif%}</div>
 {%endif%}
-{%if value.opt2%}
-        <div>{{2 | fitNumber}}. {{value.opt2}} {%if value.trueopt == 2%}<span class="sf-check fc-green"></span>{%endif%}</div>
+
+{%if value.opt2 or value.opt2file%}
+        <div>{{2 | fitNumber}}. {{value.opt2}} {%if value.opt2file%} <a href="{{value.opt2file}}" target="_blank"><span class="sf-file"></span></a> {%endif%} {%if value.trueopt == 2%}<span class="sf-check fc-green"></span>{%endif%}</div>
 {%endif%}
-{%if value.opt3%}
-        <div>{{3 | fitNumber}}. {{value.opt3}} {%if value.trueopt == 3%}<span class="sf-check fc-green"></span>{%endif%}</div>
+
+{%if value.opt3 or value.opt3file%}
+        <div>{{3 | fitNumber}}. {{value.opt3}} {%if value.opt3file%} <a href="{{value.opt3file}}" target="_blank"><span class="sf-file"></span></a> {%endif%} {%if value.trueopt == 3%}<span class="sf-check fc-green"></span>{%endif%}</div>
 {%endif%}
-{%if value.opt4%}
-        <div>{{4 | fitNumber}}. {{value.opt4}} {%if value.trueopt == 4%}<span class="sf-check fc-green"></span>{%endif%}</div>
+
+{%if value.opt4 or value.opt4file%}
+        <div>{{4 | fitNumber}}. {{value.opt4}} {%if value.opt4file%} <a href="{{value.opt4file}}" target="_blank"><span class="sf-file"></span></a> {%endif%} {%if value.trueopt == 4%}<span class="sf-check fc-green"></span>{%endif%}</div>
 {%endif%}
       </td>
       <td class="collapsing">
