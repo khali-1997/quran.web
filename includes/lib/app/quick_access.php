@@ -11,8 +11,17 @@ class quick_access
 
 		$list[] =
 		[
+			'title' => T_('Ayatolkorsi'),
+			'desc'  => null,
+			'slug'  => 'ayatolkorsi',
+			'url'   => \dash\url::kingdom(). '/s2/255-257',
+		];
+
+		$list[] =
+		[
 			'title' => T_('Al-Fatihah'),
 			'desc'  => null,
+			'slug'  => 'fatihah',
 			'url'   => \dash\url::kingdom(). '/s1',
 		];
 
@@ -20,6 +29,7 @@ class quick_access
 		[
 			'title' => T_("Ar-Rahman"),
 			'desc'  => null,
+			'slug'  => 'rahman',
 			'url'   => \dash\url::kingdom(). '/s55',
 		];
 
@@ -27,6 +37,7 @@ class quick_access
 		[
 			'title' => T_('Al-Mulk'),
 			'desc'  => null,
+			'slug'  => 'mulk',
 			'url'   => \dash\url::kingdom(). '/s67',
 		];
 
@@ -34,6 +45,7 @@ class quick_access
 		[
 			'title' => T_('Ya-Sin'),
 			'desc'  => null,
+			'slug'  => 'yasin',
 			'url'   => \dash\url::kingdom(). '/s36',
 		];
 
@@ -41,9 +53,12 @@ class quick_access
 		[
 			'title' => T_("Al-Waqi'ah"),
 			'desc'  => null,
+			'slug'  => 'waqia',
 			'url'   => \dash\url::kingdom(). '/s56',
 		];
 		return $list;
 	}
+
+
 }
 ?>
