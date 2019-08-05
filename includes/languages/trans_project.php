@@ -976,12 +976,11 @@ class twigTransTerms
 	echo T_("Group title");                                                           // Line 92
 
 	//---------------------------projects/SalamQuran/content_m/group/home/display.html
-	echo T_("Add new group");                                                         // Line 98
-	echo T_("Level count");                                                           // Line 101
+	echo T_("Level count");                                                           // Line 67
 	echo T_("Sort");                                                                  // Line 32
-	echo T_("Show level");                                                            // Line 119
-	echo T_("Add new level");                                                         // Line 120
-	echo T_("Try to start with add new group!");                                      // Line 110
+	echo T_("Show level");                                                            // Line 92
+	echo T_("Add new level");                                                         // Line 93
+	echo T_("Try to start with add new group!");                                      // Line 121
 
 	//---------------------------projects/SalamQuran/content_m/group/edit/display.html
 	echo T_("Image file");                                                            // Line 48
@@ -1026,6 +1025,7 @@ class twigTransTerms
 
 	//----------------------------projects/SalamQuran/content_m/level/add/display.html
 	echo T_("No active group found!");                                                // Line 98
+	echo T_("Add new group");                                                         // Line 98
 
 	//------------------------------projects/SalamQuran/content_m/level/pageSteps.html
 	echo T_("Setting");                                                               // Line 21
@@ -1069,8 +1069,11 @@ class twigTransTerms
 	echo T_("juz");                                                                   // Line 61
 	echo T_("Nim");                                                                   // Line 63
 	echo T_("rub");                                                                   // Line 64
+	echo T_("No data founded");                                                       // Line 110
 
 	//---------------------------------------projects/SalamQuran/content_a/layout.html
+	echo T_("My audio file");                                                         // Line 44
+	echo T_("Learning mechanism system");                                             // Line 64
 
 	//-------------------------projects/SalamQuran/content_a/reading/home/display.html
 
@@ -1114,8 +1117,6 @@ class twigTransTerms
 	echo T_("No favorites added");                                                    // Line 112
 
 	//---------------------------------projects/SalamQuran/content_a/home/display.html
-	echo T_("My audio file");                                                         // Line 44
-	echo T_("Learning mechanism system");                                             // Line 64
 	echo T_("Favorite");                                                              // Line 87
 
 	//---------------------------projects/SalamQuran/content_a/badge/home/display.html
