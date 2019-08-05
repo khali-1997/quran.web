@@ -5,5 +5,6 @@
     <a target="_blank" title='{%trans "twitter"%}' href="https://twitter.com/home?status={{url.pwd}}" class="twitter">{{site.title}} {%trans "twitter"%}</a>
     <a target="_blank" title='{%trans "linkedin"%}' href="https://www.linkedin.com/shareArticle?mini=true&url={{url.pwd}}&title={{global.title}}&summary={{page.desc}}" class="linkedin">{{site.title}} {%trans "linkedin"%}</a>
     <a target="_blank" title='{%trans "telegram"%}' href="https://t.me/share/url?url={{url.pwd}}&text={{global.title}}" class="telegram">{{site.title}} {%trans "telegram"%}</a>
+    <a target="_blank" title='{%trans "iframe"%}' href="{{url.pwd}}{%if '?' in url.pwd%}&{%else%}?{%endif%}fixframe=1" class="iframe">{{site.title}} {%trans "iframe"%}</a>
   </div>
 </nav>
