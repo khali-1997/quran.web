@@ -104,6 +104,8 @@ class lm_star
 			\lib\badge::set('LmsFirstFullScore');
 		}
 
+
+
 		$args                = [];
 		$args['user_id']     = $_user_id;
 		$args['lm_group_id'] = $_group_id;
@@ -140,10 +142,6 @@ class lm_star
 			\lib\badge::set('LmsFirstScore');
 		}
 
-		if($star === 3)
-		{
-			\lib\badge::set('LmsFirstFullScore');
-		}
 
 		$load_level = \lib\app\lm_level::get($_level_id);
 
@@ -151,6 +149,15 @@ class lm_star
 		{
 			\dash\notif::error(T_("Invalid level"));
 			return false;
+		}
+
+		if($star === 3)
+		{
+			\lib\badge::set('LmsFirstFullScore');
+			if(isset($load_level['badge']))
+			{
+				\lib\badge::set($load_level['badge']);
+			}
 		}
 
 		$group_id = \dash\coding::decode($load_level['lm_group_id']);
