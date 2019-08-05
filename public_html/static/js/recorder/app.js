@@ -21,14 +21,14 @@ var recordButton = document.getElementById("recordBtn");
 // stopButton.addEventListener("click", stopRecording);
 
 function startRecording() {
-	// console.log("startRecording() called");
-	if(recordBtn.classList.contains("start"))
-	{
-		// stop it
-		console.log('stop recorder');
-		stopRecording();
-		return true;
-	}
+	// // console.log("startRecording() called");
+	// if(recordBtn.classList.contains("start"))
+	// {
+	// 	// stop it
+	// 	console.log('stop recorder');
+	// 	stopRecording();
+	// 	return true;
+	// }
 
 	/*
 		Simple constraints object, for more advanced features see
