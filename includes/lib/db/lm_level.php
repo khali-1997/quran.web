@@ -131,24 +131,28 @@ class lm_level
 		$user = null;
 		if($_user_id)
 		{
-			$user = "lm_star.user_id = $_user_id AND ";
+			$user =
+			"
+			,(
+				SELECT
+					MAX(lm_star.star) AS `star`
+				FROM
+					lm_star
+				WHERE
+					lm_star.user_id = $_user_id AND
+					lm_star.lm_level_id = lm_level.id
+				GROUP BY
+					lm_star.user_id
+
+				)
+				AS `userstar`
+			";
 		}
 		$query =
 		"
 			SELECT
-				lm_level.*,
-				(
-					SELECT
-						MAX(lm_star.star) AS `star`
-					FROM
-						lm_star
-					WHERE
-						$user
-						lm_star.lm_level_id = lm_level.id
-					GROUP BY
-						lm_star.user_id
-				)
-				AS `userstar`
+				lm_level.*
+				$user
 			FROM
 				lm_level
 			WHERE
