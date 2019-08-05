@@ -1,0 +1,41 @@
+{%extends display.main%}
+
+
+{%block page%}
+<table class="tbl1 v4 mT20">
+  <thead>
+    <tr>
+      <td>#</td>
+      <th></th>
+      <th>{%trans "User"%}</th>
+      <th>{%trans "Score"%}</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+
+    {%for key, value in userScoreList%}
+    <tr>
+      <td>
+        <span class="txtB fs12">
+          {{loop.index | fitNumber}}
+        </span>
+
+      </td>
+      <td class="collapsing">
+
+      </td>
+      <td>
+        <img src="{{value.avatar}}" class="avatar">
+      </td>
+      <td>
+        {{value.count | fitNumber}}
+      </td>
+    </tr>
+
+    </div>
+    {%endfor%}
+  </tbody>
+</table>
+{%endblock%}
