@@ -68,6 +68,8 @@ class badge
 		// add new badge
 		\lib\db\badgeusage::insert($insert);
 
+		self::update_user_badge();
+
 	}
 
 
@@ -89,8 +91,12 @@ class badge
 
 	private static function get_before($_caller)
 	{
-		$check = \lib\db\badgeusage::get_before($_caller, \dash\user::id());
-		if($check)
+		if(!isset($_SESSION['USER_BADGE']))
+		{
+			self::update_user_badge();
+		}
+
+		if(isset($_SESSION['USER_BADGE']) && is_array($_SESSION['USER_BADGE']) && in_array($_caller, $_SESSION['USER_BADGE']))
 		{
 			return true;
 		}
@@ -98,7 +104,13 @@ class badge
 		{
 			return false;
 		}
+	}
 
+
+	private static function update_user_badge()
+	{
+		$list                   = \lib\db\badgeusage::get_user_list(\dash\user::id());
+		$_SESSION['USER_BADGE'] = $list;
 	}
 
 

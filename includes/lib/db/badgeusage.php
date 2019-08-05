@@ -4,6 +4,13 @@ namespace lib\db;
 
 class badgeusage
 {
+	public static function get_user_list($_user_id)
+	{
+		$query = "SELECT badgeusage.badge FROM badgeusage WHERE badgeusage.user_id = $_user_id ";
+		$result = \dash\db::get($query, 'badge');
+		return $result;
+	}
+
 
 	public static function get_group_by()
 	{
