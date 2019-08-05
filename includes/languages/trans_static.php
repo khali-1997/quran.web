@@ -123,6 +123,24 @@ class TransStatic
 	echo T_('Approved');
 	echo T_('Reject');
 	echo T_('Archive');
+
+	echo T_("Manage");
+	echo T_("contentM");
+	echo T_("mAudioFileView");
+	echo T_("mAudioFileEdit");
+	echo T_("mKhatmView");
+	echo T_("mKhatmEdit");
+	echo T_("mMistakeAdd");
+	echo T_("mMistakeView");
+	echo T_("mMistakeEdit");
+	echo T_("mMagConnectAdd");
+	echo T_("mMagConnectView");
+	echo T_("mMagConnectRemove");
+	echo T_("mGroupAdd");
+	echo T_("mGroupView");
+	echo T_("mGroupEdit");
+	echo T_("mLevelView");
+	echo T_("mLevelAdd");
 	}
 }
 ?>
