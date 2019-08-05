@@ -4,7 +4,7 @@ namespace lib;
 
 class badge
 {
-	public static function list()
+	public static function list($_key = null)
 	{
 		$list                      = [];
 
@@ -18,7 +18,21 @@ class badge
 		$list['LmsFirstScore']     = ['title' => T_("Get first score in LMS"), 'class' => 'warn'];
 		$list['LmsFirstFullScore'] = ['title' => T_("Get first full score in LMS"), 'class' => 'warn'];
 
-		return $list;
+		if($_key)
+		{
+			if(isset($list[$_key]))
+			{
+				return $list[$_key];
+			}
+			else
+			{
+				return null;
+			}
+		}
+		else
+		{
+			return $list;
+		}
 	}
 
 
@@ -70,5 +84,23 @@ class badge
 		}
 
 	}
+
+
+	public static function user_list($_args)
+	{
+		$list = \lib\db\badgeusage::search(null, $_args);
+		if(!is_array($list))
+		{
+			$list = [];
+		}
+
+		foreach ($list as $key => $value)
+		{
+			$list[$key]['badge_detail'] = self::list($value['badge']);
+		}
+
+		return $list;
+	}
+
 }
 ?>

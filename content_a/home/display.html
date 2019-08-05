@@ -12,11 +12,20 @@
       <div class="c4 s12">{{block('bLMS')}}</div>
       <div class="c4 s12">{{block('bReading')}}</div>
       <div class="c4 s12">{{block('bHefzP')}}</div>
+      <div class="c4 s12">{{block('bBadge')}}</div>
 
   </div>
 {%endblock%}
 
 
+{%block bBadge%}
+<a class="dcard x1" href='{{url.here}}/badge'>
+ <div class="statistic yellow">
+  <div class="value mB10"><i class="sf-medal"></i></div>
+  <div class="label">{%trans "Badge"%}</div>
+ </div>
+</a>
+{%endblock%}
 
 
 {%block bHefzP%}

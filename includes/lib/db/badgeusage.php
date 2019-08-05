@@ -42,13 +42,9 @@ class badgeusage
 	}
 
 
-		public static function search($_string, $_args)
+	public static function search($_string, $_args)
 	{
-		$default =
-		[
-
-			'search_field'       => " badgeusage.title LIKE ('%__string__%')",
-		];
+		$default = [];
 
 		if(!is_array($_args))
 		{
