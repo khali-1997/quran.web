@@ -6383,6 +6383,12 @@ body[data-iframe]:before {
 [data-iframe] #nodes {
   display: none !important; }
 
+[data-iframe] .quranStatistics {
+  display: none !important; }
+
+[data-iframe] .magList {
+  display: none !important; }
+
 body.fixframe:before {
   background: #fff; }
 
@@ -6424,6 +6430,15 @@ body.fixframe .quranNav {
   display: none !important; }
 
 body.fixframe .pSettings .btn {
+  display: none !important; }
+
+body.fixframe .pSettings .btn {
+  display: none !important; }
+
+body.fixframe .quranStatistics {
+  display: none !important; }
+
+body.fixframe .magList {
   display: none !important; }
 
 /*# sourceMappingURL=style.css.map */

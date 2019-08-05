@@ -9,7 +9,8 @@ body[data-iframe]:before{background:#fff;}
 [data-iframe] .shareLine{display:none!important;}
 [data-iframe] #dlapp{display:none!important;}
 [data-iframe] #nodes{display:none!important;}
-
+[data-iframe] .quranStatistics{display:none!important;}
+[data-iframe] .magList{display:none!important;}
 
 
 // for fix frame
@@ -27,4 +28,6 @@ body.fixframe .fullCommand{display:none!important;}
 body.fixframe .ayeBox .ayeLinks{display:none!important;}
 body.fixframe .quranNav{display:none!important;}
 body.fixframe .pSettings .btn{display:none!important;}
-
+body.fixframe .pSettings .btn{display:none!important;}
+body.fixframe .quranStatistics{display:none!important;}
+body.fixframe .magList{display:none!important;}
