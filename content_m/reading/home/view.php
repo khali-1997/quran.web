@@ -7,6 +7,8 @@ class view
 	public static function config()
 	{
 
+		\dash\permission::access('mAudioFileView');
+
 		\dash\data::page_title(T_("Audio list"));
 		\dash\data::page_desc(T_('Check list and search or filter them.'). ' '. T_('Also add or edit specefic item.'));
 

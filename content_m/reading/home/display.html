@@ -81,7 +81,13 @@
     <tbody>
       {%for key, value in dataTable%}
       <tr {%if value.status=='disable'%} class='negative' {%else%} class='positive' {%endif%}>
-        <td><a href="{{url.this}}/edit?id={{value.id}}"><span class="badge">{{value.id}}</span></a></td>
+        <td>
+          {%if perm('mAudioFileEdit')%}
+            <a href="{{url.this}}/edit?id={{value.id}}"><span class="badge">{{value.id}}</span></a>
+          {%else%}
+            <span class="badge">{{value.id}}</span>
+          {%endif%}
+        </td>
         <td>{{value.group_title}}</td>
         <td>{{value.level_title}}</td>
         <td>{{value.user_displayname}}</td>

@@ -6,7 +6,6 @@ class view
 {
 	public static function config()
 	{
-
 		\dash\data::page_title(T_("Badge list"));
 		\dash\data::page_desc(T_('Check list and search or filter them.'). ' '. T_('Also add or edit specefic item.'));
 

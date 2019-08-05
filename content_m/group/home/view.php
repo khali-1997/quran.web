@@ -7,13 +7,18 @@ class view
 	public static function config()
 	{
 
+		\dash\permission::access('mGroupView');
+
 		\dash\data::page_title(T_("Group list"));
 		\dash\data::page_desc(T_('Check list and search or filter them.'). ' '. T_('Also add or edit specefic item.'));
 
 		\dash\data::page_pictogram('coffee');
 
-		\dash\data::badge_link(\dash\url::this(). '/add');
-		\dash\data::badge_text(T_('Add new group'));
+		if(\dash\permission::check('mGroupAdd'))
+		{
+			\dash\data::badge_link(\dash\url::this(). '/add');
+			\dash\data::badge_text(T_('Add new group'));
+		}
 
 		$search_string            = \dash\request::get('q');
 		if($search_string)

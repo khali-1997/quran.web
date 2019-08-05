@@ -6,12 +6,14 @@ class view
 {
 	public static function config()
 	{
+		\dash\permission::access('mKhatmView');
+
 		\dash\data::page_title(T_("Khatm quran"));
 		\dash\data::page_pictogram('bookmark-o');
 
 
-		// \dash\data::badge_text(T_("Add new khatm"));
-		// \dash\data::badge_link(\dash\url::this(). '/add');
+		\dash\data::badge_text(T_("Back to dashboard"));
+		\dash\data::badge_link(\dash\url::this());
 
 		$search_string            = \dash\request::get('q');
 		if($search_string)

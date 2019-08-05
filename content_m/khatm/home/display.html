@@ -67,7 +67,7 @@
         <th data-sort='{{sortLink.sura.order}}'><a href="{{sortLink.sura.link}}">{%trans "Surah"%}</a></th>
         <th data-sort='{{sortLink.privacy.order}}'><a href="{{sortLink.privacy.link}}">{%trans "Privacy"%}</a></th>
         <th data-sort='{{sortLink.status.order}}'><a href="{{sortLink.status.link}}">{%trans "Status"%}</a></th>
-        <th>{%trans "Action"%}</th>
+        {%if perm('mKhatmEdit')%}<th>{%trans "Action"%}</th>{%endif%}
       </tr>
     </thead>
 
@@ -89,11 +89,11 @@
         <td><a href="{{url.this}}?privacy={{value.privacy}}">{{value.t_privacy}}</a></td>
         <td><a href="{{url.this}}?status={{value.status}}">{{value.tstatus}}</a></td>
 
-
-        <td class="collapsing">
-
-         <a href="{{url.this}}/edit?id={{value.id}}" class="btn info">{%trans "Edit"%}</a>
-        </td>
+        {%if perm('mKhatmEdit')%}
+          <td class="collapsing">
+           <a href="{{url.this}}/edit?id={{value.id}}" class="btn info">{%trans "Edit"%}</a>
+          </td>
+        {%endif%}
       </tr>
       {%endfor%}
     </tbody>

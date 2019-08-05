@@ -2,40 +2,6 @@
 
 
 
-{%block pageContent2%}
-<div class='middle normal f justify-center'>
-
-  <div class="vcard mA10">
-    <img src="{{url.static}}/siftal/images/useful/plus1.png" alt="add new learn">
-    <div class="content"></div>
-    <div class="footer pAn">
-     <a class="btn block primary" href="{{url.this}}/add">{%trans "Add new group"%}</a>
-    </div>
-  </div>
-{%for key, value in dataTable%}
-
-{%set cardColor%}
-{%if value.status == 'enable'%}green{%else%}black{%endif%}
-{%endset%}
-
-  <a class="vcard mA10 shadow {{cardColor}}" href='{{url.here}}/learn?gid={{value.id}}'>
-    {%if value.file%}
-      <img src="{{value.file}}" alt="{{value.title}}" class="pA10-f">
-    {%endif%}
-    <div class="content">
-      <div class="header">{{value.title}}</div>
-      <div class="meta"></div>
-      <div class="footer">{{value.desc | slice(0, 70)}} ...</div>
-    </div>
-  </a>
-{%endfor%}
-
-</div>
-{%endblock%}
-
-
-
-
 
 
 
@@ -109,7 +75,14 @@
     <tbody>
       {%for key, value in dataTable%}
       <tr {%if value.status=='disable'%} class='negative' {%else%} class='positive' {%endif%}>
-        <td><a href="{{url.this}}/edit?id={{value.id}}"><i class="sf-edit"></i> {{value.title}}</a> <small class="s0">{{value.subtitle}}</small></td>
+        <td>
+          {%if perm('mGroupEdit')%}
+            <a href="{{url.this}}/edit?id={{value.id}}"><i class="sf-edit"></i> {{value.title}}</a> <small class="s0">{{value.subtitle}}</small>
+          {%else%}
+            {{value.title}}
+          {%endif%}
+
+        </td>
         <td>{{value.level_count | fitNumber}}</td>
         <td><a href="{{url.this}}?type={{value.type}}">{{value.type_title}}</a></td>
         <td class="s0">{{value.sort | fitNumber}}</td>

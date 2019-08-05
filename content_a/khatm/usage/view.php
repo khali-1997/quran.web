@@ -21,7 +21,7 @@ class view
 
 		if(\dash\data::khatmRow_privacy() === 'public')
 		{
-			\lib\badge::set('UsePublicKhatm');
+			\lib\badge::set('JoinFirstKhatm');
 		}
 	}
 }

@@ -5,13 +5,13 @@
 
 {%block pageContent%}
   <div class="f">
-    <div class="c4 s12">{{block('bLearngroup')}}</div>
-    <div class="c4 s12">{{block('bLearnleved')}}</div>
-    <div class="c4 s12">{{block('bMistake')}}</div>
-    <div class="c4 s12">{{block('bReading')}}</div>
-    <div class="c4 s12">{{block('bKhatm')}}</div>
+    {%if perm('mGroupView')%}<div class="c4 s12">{{block('bLearngroup')}}</div>{%endif%}
+    {%if perm('mLevelView')%}<div class="c4 s12">{{block('bLearnleved')}}</div>{%endif%}
+    {%if perm('mMistakeView')%}<div class="c4 s12">{{block('bMistake')}}</div>{%endif%}
+    {%if perm('mAudioFileView')%}<div class="c4 s12">{{block('bReading')}}</div>{%endif%}
+    {%if perm('mKhatmView')%}<div class="c4 s12">{{block('bKhatm')}}</div>{%endif%}
+    {%if perm('mMagConnectView') %}<div class="c4 s12">{{block('Bmagazine')}}</div>{%endif%}
 
-    <div class="c4 s12">{{block('Bmagazine')}}</div>
 
   </div>
 {%endblock%}
