@@ -6,7 +6,7 @@ class view
 {
 	public static function config()
 	{
-		\dash\permission::access('aLearngroupView');
+
 		\dash\data::page_title(T_("Group list"));
 		\dash\data::page_desc(T_('Check list and search or filter them.'). ' '. T_('Also add or edit specefic item.'));
 
