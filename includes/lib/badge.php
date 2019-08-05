@@ -72,6 +72,11 @@ class badge
 
 	}
 
+	public static function have($_caller)
+	{
+		return self::get_before($_caller);
+	}
+
 
 	public static function person_list()
 	{

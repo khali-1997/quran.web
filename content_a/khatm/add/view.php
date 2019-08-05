@@ -16,6 +16,7 @@ class view
 
 		\dash\data::quranListQuick(\lib\app\sura::quick_list());
 
+		\dash\data::haveBadge(\lib\badge::have('JoinFirstKhatm'));
 	}
 }
 ?>

@@ -105,8 +105,10 @@
 
 <select name="privacy" class="mB10 select ui dropdown search" id="privacy">
   <option value="" readonly>{%trans "Please select one item"%}</option>
+    <option value="private" selected  >{%trans "Private"%} - {%trans "Only you can see it"%}</option>
+  {%if haveBadge%}
   <option value="public">{%trans "Public"%} - {%trans "Everyone can see it"%}</option>
-  <option value="private" selected  >{%trans "Private"%} - {%trans "Only you can see it"%}</option>
+  {%endif%}
 </select>
 
 {%endblock%}
