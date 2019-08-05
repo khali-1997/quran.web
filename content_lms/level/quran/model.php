@@ -28,6 +28,7 @@ class model
 		if($file)
 		{
 			\lib\app\lm_audio::add_new($file, \dash\request::get('id'));
+			\lib\app\lm_star::set_star(\dash\request::get('id'), 0);
 		}
 
 
