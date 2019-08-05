@@ -71,7 +71,7 @@ class twigTransTerms
 	echo T_("on header");                                                             // Line 3
 	echo T_("Name");                                                                  // Line 85
 	echo T_("type");                                                                  // Line 64
-	echo T_("Description");                                                           // Line 54
+	echo T_("Description");                                                           // Line 65
 	echo T_("example");                                                               // Line 78
 	echo T_("Constraints");                                                           // Line 24
 	echo T_("Your apikey");                                                           // Line 20
@@ -259,9 +259,9 @@ class twigTransTerms
 	echo T_("Count file");                                                            // Line 68
 	echo T_("Language");                                                              // Line 84
 	echo T_("Narrator");                                                              // Line 85
-	echo T_("Clear filters");                                                         // Line 87
-	echo T_("Result not found!");                                                     // Line 86
-	echo T_("Search with new keywords.");                                             // Line 86
+	echo T_("Clear filters");                                                         // Line 98
+	echo T_("Result not found!");                                                     // Line 97
+	echo T_("Search with new keywords.");                                             // Line 97
 	echo T_("Quran Qari");                                                            // Line 167
 	echo T_("parhizgar");                                                             // Line 133
 	echo T_("mansouri");                                                              // Line 140
@@ -303,11 +303,12 @@ class twigTransTerms
 
 	//------------------------------projects/SalamQuran/content/template/shareBox.html
 	echo T_("Share");                                                                 // Line 2
-	echo T_("facebook");                                                              // Line 4
-	echo T_("twitter");                                                               // Line 5
-	echo T_("linkedin");                                                              // Line 6
-	echo T_("telegram");                                                              // Line 7
-	echo T_("iframe");                                                                // Line 8
+	echo T_("iframe to share use this page");                                         // Line 5
+	echo T_("iframe");                                                                // Line 5
+	echo T_("facebook");                                                              // Line 9
+	echo T_("twitter");                                                               // Line 10
+	echo T_("linkedin");                                                              // Line 11
+	echo T_("telegram");                                                              // Line 12
 
 	//---------------------------------projects/SalamQuran/content/search/display.html
 	echo T_("Search");                                                                // Line 50
@@ -324,7 +325,7 @@ class twigTransTerms
 	echo T_("SalamQuran app from Google play");                                       // Line 15
 	echo T_("Direct download SalamQuran android app");                                // Line 18
 	echo T_("SalamQuran App");                                                        // Line 25
-	echo T_("About");                                                                 // Line 35
+	echo T_("About");                                                                 // Line 45
 	echo T_("Mission");                                                               // Line 46
 	echo T_("Vision");                                                                // Line 47
 	echo T_("Terms of Use");                                                          // Line 48
@@ -337,7 +338,7 @@ class twigTransTerms
 	echo T_("FAQ");                                                                   // Line 58
 	echo T_("Contact");                                                               // Line 59
 	echo T_("Contribution");                                                          // Line 60
-	echo T_("Donate");                                                                // Line 36
+	echo T_("Donate");                                                                // Line 35
 	echo T_("Learn Advice");                                                          // Line 66
 	echo T_("Aye of the day");                                                        // Line 68
 	echo T_("Random aye");                                                            // Line 69
@@ -382,9 +383,10 @@ class twigTransTerms
 
 	//------------------------------------projects/SalamQuran/content/main/header.html
 	echo T_("Quran");                                                                 // Line 43
+	echo T_("Learning mechanism");                                                    // Line 39
 	echo T_("Panel");                                                                 // Line 6
-	echo T_("Enter to your account and use SalamQuran account features");             // Line 20
-	echo T_("The Holy Quran");                                                        // Line 27
+	echo T_("Enter to your account and use SalamQuran account features");             // Line 21
+	echo T_("The Holy Quran");                                                        // Line 28
 
 	//-----------------------------------projects/SalamQuran/content/main/sidebar.html
 	echo T_("Homepage");                                                              // Line 5
@@ -394,7 +396,7 @@ class twigTransTerms
 	echo T_("Telegram");                                                              // Line 21
 	echo T_("Instagram");                                                             // Line 24
 	echo T_("Linkedin");                                                              // Line 27
-	echo T_("Namaz");                                                                 // Line 39
+	echo T_("Quran Navigation");                                                      // Line 37
 
 	//---------------------------------projects/SalamQuran/content/donate/display.html
 	echo T_("Thank You");                                                             // Line 50
@@ -876,7 +878,7 @@ class twigTransTerms
 	echo T_("Month");                                                                 // Line 39
 
 	//------------------------------projects/SalamQuran/content/changelog/display.html
-	echo T_("Date");                                                                  // Line 55
+	echo T_("Date");                                                                  // Line 66
 	echo T_("Schedule Date");                                                         // Line 11
 	echo T_("Next Version");                                                          // Line 19
 	echo T_("iOS app");                                                               // Line 20
@@ -897,7 +899,7 @@ class twigTransTerms
 	//-----------------------------------projects/SalamQuran/content/page/display.html
 
 	//----------------------------------projects/SalamQuran/content/badge/display.html
-	echo T_("Badge");                                                                 // Line 53
+	echo T_("Badge");                                                                 // Line 64
 	echo T_("Person");                                                                // Line 28
 	echo T_("Nobody");                                                                // Line 30
 
@@ -917,7 +919,7 @@ class twigTransTerms
 	echo T_("Audio file");                                                            // Line 71
 	echo T_("Answer");                                                                // Line 42
 	echo T_("Status");                                                                // Line 68
-	echo T_("No audio file founded!");                                                // Line 93
+	echo T_("No audio file founded!");                                                // Line 104
 
 	//-------------------------projects/SalamQuran/content_m/reading/edit/display.html
 	echo T_("Title");                                                                 // Line 19
@@ -1045,6 +1047,8 @@ class twigTransTerms
 	echo T_("Ratio score");                                                           // Line 13
 	echo T_("Unlock score");                                                          // Line 102
 	echo T_("Count random question");                                                 // Line 25
+	echo T_("Whene user complete this level by 3 score");                             // Line 77
+	echo T_("Select badge");                                                          // Line 79
 
 	//--------------------------projects/SalamQuran/content_m/level/media/display.html
 	echo T_("Master file");                                                           // Line 35
@@ -1152,6 +1156,7 @@ class twigTransTerms
 	echo T_("Favorite");                                                              // Line 132
 
 	//---------------------------projects/SalamQuran/content_a/badge/home/display.html
+	echo T_("Your total score");                                                      // Line 50
 
  }
 }
