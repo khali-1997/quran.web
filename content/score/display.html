@@ -27,7 +27,11 @@
 
       </td>
       <td>
+        {%if perm_su()%}
+          <code>{{value.id}}</code>
+        {%endif%}
         <img src="{{value.avatar}}" class="avatar">
+         <small>{%if value.displayname%}{{value.displayname}}{%else%}{%trans "Without name"%}{%endif%}</small>
       </td>
       <td>
         {{value.count | fitNumber}}
