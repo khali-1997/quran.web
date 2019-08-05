@@ -41,6 +41,12 @@ class view
 		\dash\data::dataTable($dataTable);
 
 
+		$count = \dash\db\config::public_get_count('history', ['user_id' => \dash\user::id()]);
+
+		$count = intval($count);
+		$count = $count * 2;
+		\dash\data::myScore($count);
+
 	}
 }
 ?>

@@ -41,6 +41,17 @@
  {%endif%}
 {%endif%}
 
+
+
+{%if myScore%}
+<div class="f justify-center txtC">
+
+    <div class="msg fs50">
+      {%trans "Your total score"%}
+      {{myScore | fitNumber}}
+    </div>
+</div>
+{%endif%}
 {%endblock%}
 
 
