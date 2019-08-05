@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SalamQuran - Persian\n"
-"POT-Creation-Date: 2019-08-05 15:42+0430\n"
-"PO-Revision-Date: 2019-08-05 15:43+0430\n"
+"POT-Creation-Date: 2019-08-05 15:47+0430\n"
+"PO-Revision-Date: 2019-08-05 15:47+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -8152,7 +8152,7 @@ msgid "Surahs <span class='fs08'>Chapters</span>"
 msgstr "سوره‌ها"
 
 #: SalamQuran/includes/languages/trans_project.php:526
-#: SalamQuran/includes/lib/app/quick_access.php:14
+#: SalamQuran/includes/lib/app/quick_access.php:22
 #: SalamQuran/includes/lib/app/sura.php:124
 msgid "Al-Fatihah"
 msgstr "فاتحه"
@@ -8460,7 +8460,7 @@ msgid "Originator"
 msgstr "خالق"
 
 #: SalamQuran/includes/languages/trans_project.php:594
-#: SalamQuran/includes/lib/app/quick_access.php:35
+#: SalamQuran/includes/lib/app/quick_access.php:46
 #: SalamQuran/includes/lib/app/sura.php:159
 msgid "Ya-Sin"
 msgstr "یاسین"
@@ -8628,7 +8628,7 @@ msgid "The Moon"
 msgstr "ماه"
 
 #: SalamQuran/includes/languages/trans_project.php:631
-#: SalamQuran/includes/lib/app/quick_access.php:21
+#: SalamQuran/includes/lib/app/quick_access.php:30
 #: SalamQuran/includes/lib/app/sura.php:178
 msgid "Ar-Rahman"
 msgstr "الرحمان"
@@ -8638,7 +8638,7 @@ msgid "The Beneficent"
 msgstr "بخشنده"
 
 #: SalamQuran/includes/languages/trans_project.php:633
-#: SalamQuran/includes/lib/app/quick_access.php:42
+#: SalamQuran/includes/lib/app/quick_access.php:54
 #: SalamQuran/includes/lib/app/sura.php:179
 msgid "Al-Waqi'ah"
 msgstr "واقعه"
@@ -8738,7 +8738,7 @@ msgid "The Prohibtiion"
 msgstr "منع شدن"
 
 #: SalamQuran/includes/languages/trans_project.php:655
-#: SalamQuran/includes/lib/app/quick_access.php:28
+#: SalamQuran/includes/lib/app/quick_access.php:38
 #: SalamQuran/includes/lib/app/sura.php:190
 msgid "Al-Mulk"
 msgstr "ملک"
@@ -11465,6 +11465,10 @@ msgstr "محمد جبرئیل"
 #: SalamQuran/includes/lib/app/qari.php:25
 msgid "Mustafa Ismail"
 msgstr "مصطفی اسماعیل"
+
+#: SalamQuran/includes/lib/app/quick_access.php:14
+msgid "Ayatolkorsi"
+msgstr "آیت الکرسی"
 
 #: SalamQuran/includes/lib/app/quran/aya.php:266
 msgid "Beginning of Surah"
