@@ -8,15 +8,15 @@ class badge
 	{
 		$list                      = [];
 
-		$list['OpenMag']           = ['title' => T_("First open magazine"), 'class' => 'warn'];
-		$list['OpenAudioBank']     = ['title' => T_("First open audio bank"), 'class' => 'warn'];
-		$list['ReadFirstAya']      = ['title' => T_("Read first aya"), 'class' => 'warn'];
-		// $list['ReadFirstSura']     = ['title' => T_("Read first sura"), 'class' => 'warn'];
-		$list['AddFirstKhatm']     = ['title' => T_("Add first khatm"), 'class' => 'warn'];
-		$list['JoinFirstKhatm']    = ['title' => T_("First join khatm"), 'class' => 'warn'];
-		$list['LmsStartLevel']     = ['title' => T_("Start first level in LMS"), 'class' => 'warn'];
-		$list['LmsFirstScore']     = ['title' => T_("Get first score in LMS"), 'class' => 'warn'];
-		$list['LmsFirstFullScore'] = ['title' => T_("Get first full score in LMS"), 'class' => 'warn'];
+		$list['OpenMag']           = ['score' => 10, 'title' => T_("First open magazine"), 'class' => 'warn'];
+		$list['OpenAudioBank']     = ['score' => 20, 'title' => T_("First open audio bank"), 'class' => 'warn'];
+		$list['ReadFirstAya']      = ['score' => 30, 'title' => T_("Read first aya"), 'class' => 'warn'];
+		// $list['ReadFirstSura']     = ['score' => 2, 'title' => T_("Read first sura"), 'class' => 'warn'];
+		$list['AddFirstKhatm']     = ['score' => 40, 'title' => T_("Add first khatm"), 'class' => 'warn'];
+		$list['JoinFirstKhatm']    = ['score' => 50, 'title' => T_("First join khatm"), 'class' => 'warn'];
+		$list['LmsStartLevel']     = ['score' => 15, 'title' => T_("Start first level in LMS"), 'class' => 'warn'];
+		$list['LmsFirstScore']     = ['score' => 25, 'title' => T_("Get first score in LMS"), 'class' => 'warn'];
+		$list['LmsFirstFullScore'] = ['score' => 35, 'title' => T_("Get first full score in LMS"), 'class' => 'warn'];
 
 		if($_key)
 		{
