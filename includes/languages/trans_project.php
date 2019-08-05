@@ -6,10 +6,11 @@ class twigTransTerms
 
 	//-------------------------------------projects/SalamQuran/content_lms/layout.html
 	echo T_("Learn Mechanism system");                                                // Line 8
-	echo T_("All learn quran");                                                       // Line 8
-	echo T_("All learn tajweed");                                                     // Line 9
-	echo T_("All learn exam");                                                        // Line 10
-	echo T_("All learn theme");                                                       // Line 11
+	echo T_("Users Panel");                                                           // Line 14
+	echo T_("All learn quran");                                                       // Line 33
+	echo T_("All learn tajweed");                                                     // Line 42
+	echo T_("All learn exam");                                                        // Line 51
+	echo T_("All learn theme");                                                       // Line 60
 
 	//---------------------------projects/SalamQuran/content_lms/all/home/display.html
 	echo T_("SalamQuran Learning Mechanism");                                         // Line 25
@@ -94,7 +95,7 @@ class twigTransTerms
 	echo T_("You must set index between 1 and 604");                                  // Line 35
 
 	//--------------------projects/SalamQuran/content_api/v6/doc/150-hefz-program.html
-	echo T_("Calculator hefz program");                                               // Line 35
+	echo T_("Calculator hefz program");                                               // Line 80
 	echo T_("Send your time and get result");                                         // Line 8
 	echo T_("Minutes");                                                               // Line 16
 
@@ -113,6 +114,14 @@ class twigTransTerms
 	//------------------------projects/SalamQuran/content_api/v6/doc/121-juz-hizb.html
 	echo T_("Get juz detail per hizb detail");                                        // Line 5
 	echo T_("Get all juz detail per hizb detail");                                    // Line 8
+
+	//----------------------projects/SalamQuran/content_api/v6/doc/191-audio-edit.html
+	echo T_("Edit user audio");                                                       // Line 5
+	echo T_("Audio id");                                                              // Line 36
+	echo T_("Teacher answer text");                                                   // Line 53
+	echo T_("Your file addr to upload");                                              // Line 67
+	echo T_("Allowed status");                                                        // Line 82
+	echo T_("Get from api mistake list");                                             // Line 114
 
 	//----------------------------projects/SalamQuran/content_api/v6/doc/101-sura.html
 	echo T_("Get list of sura");                                                      // Line 5
@@ -143,6 +152,9 @@ class twigTransTerms
 	//------------------------projects/SalamQuran/content_api/v6/doc/163-fav-list.html
 	echo T_("List of your favorites");                                                // Line 5
 
+	//----------------------projects/SalamQuran/content_api/v6/doc/190-audio-list.html
+	echo T_("Get list of user audio");                                                // Line 5
+
 	//--------------------projects/SalamQuran/content_api/v6/doc/173-lms-userstar.html
 	echo T_("Get star of user in one level");                                         // Line 5
 	echo T_("Level id");                                                              // Line 37
@@ -165,6 +177,9 @@ class twigTransTerms
 	//--------------------projects/SalamQuran/content_api/v6/doc/103-sure-aya-wbw.html
 	echo T_("Get aya of sura word by word");                                          // Line 5
 	echo T_("Get list of aya from one sura word by word");                            // Line 8
+
+	//-------------------------projects/SalamQuran/content_api/v6/doc/180-mistake.html
+	echo T_("Get learn mistake list");                                                // Line 5
 
 	//----------------------projects/SalamQuran/content_api/v6/doc/162-fav-remove.html
 	echo T_("Remove a saved favorites");                                              // Line 5
@@ -199,6 +214,9 @@ class twigTransTerms
 	echo T_("LMS star");                                                              // Line 22
 	echo T_("LMS audio");                                                             // Line 23
 	echo T_("LMS answer");                                                            // Line 24
+	echo T_("Mistake list");                                                          // Line 45
+	echo T_("User audio list");                                                       // Line 56
+	echo T_("Answer to audio");                                                       // Line 27
 
 	//----------------------projects/SalamQuran/content_api/v6/doc/176-lms-answer.html
 	echo T_("Set user answer in one level");                                          // Line 5
@@ -435,9 +453,9 @@ class twigTransTerms
 
 	//---------------------------------projects/SalamQuran/content/status/display.html
 	echo T_("Users");                                                                 // Line 10
-	echo T_("History");                                                               // Line 53
+	echo T_("History");                                                               // Line 98
 	echo T_("Lesson count");                                                          // Line 47
-	echo T_("Khatm");                                                                 // Line 76
+	echo T_("Khatm");                                                                 // Line 121
 	echo T_("Khatm usage");                                                           // Line 67
 
 	//------------------------------------projects/SalamQuran/content/juz/display.html
@@ -868,12 +886,10 @@ class twigTransTerms
 
 	//------------------------projects/SalamQuran/includes/html/sidebarServiceTop.html
 	echo T_("Manage");                                                                // Line 6
-	echo T_("Users Panel");                                                           // Line 14
 
 	//---------------------------------------projects/SalamQuran/content_m/layout.html
 	echo T_("Groups");                                                                // Line 8
 	echo T_("Mistake in learn");                                                      // Line 10
-	echo T_("User audio list");                                                       // Line 56
 
 	//-------------------------projects/SalamQuran/content_m/reading/home/display.html
 	echo T_("ID");                                                                    // Line 66
@@ -1002,7 +1018,6 @@ class twigTransTerms
 	//---------------------------------projects/SalamQuran/content_m/home/display.html
 	echo T_("Level list");                                                            // Line 23
 	echo T_("Khatm list");                                                            // Line 62
-	echo T_("Mistake list");                                                          // Line 45
 	echo T_("Badge list");                                                            // Line 67
 	echo T_("Group list");                                                            // Line 79
 
@@ -1072,8 +1087,8 @@ class twigTransTerms
 	echo T_("No data founded");                                                       // Line 110
 
 	//---------------------------------------projects/SalamQuran/content_a/layout.html
-	echo T_("My audio file");                                                         // Line 44
-	echo T_("Learning mechanism system");                                             // Line 64
+	echo T_("My audio file");                                                         // Line 89
+	echo T_("Learning mechanism system");                                             // Line 109
 
 	//-------------------------projects/SalamQuran/content_a/reading/home/display.html
 
@@ -1117,7 +1132,7 @@ class twigTransTerms
 	echo T_("No favorites added");                                                    // Line 112
 
 	//---------------------------------projects/SalamQuran/content_a/home/display.html
-	echo T_("Favorite");                                                              // Line 87
+	echo T_("Favorite");                                                              // Line 132
 
 	//---------------------------projects/SalamQuran/content_a/badge/home/display.html
 
