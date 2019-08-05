@@ -6,7 +6,7 @@
 
 <div class="f justify-center">
   <div class="c8 s12 pRa10">
-    <iframe src="{{loadLevel.iframe_link}}" height="600" width="100%"></iframe>
+    <iframe src="{{loadLevel.iframe_link}}" height="500" width="100%"></iframe>
   </div>
   <div class="c4 s12">
     <div class="cbox qiraatRecorder">
@@ -66,18 +66,13 @@
     if($(this).hasClass('start'))
     {
       // $('#waitingMsg').slideDown('fast');
-
-      // started
-      $(this).removeClass('start');
-      $('.tapeRecorder').removeClass('record');
-      $('.tapeBox').stop( true, true).slideUp();
+      stopRecording();
+      stopRecordingJob();
     }
     else
     {
-      // stop
-      $(this).addClass('start');
-      $('.tapeRecorder').addClass('record');
-      $('.tapeBox').stop( true, true).fadeIn('fast');
+      startRecording();
+      startRecordingJob();
     }
   });
 
@@ -103,6 +98,24 @@
       }
     });
   }
+
+  function stopRecordingJob()
+  {
+    console.log('stop...');
+    // stop
+    $('.qiraatRecorder #recordBtn').removeClass('start');
+    $('.tapeRecorder').removeClass('record');
+    $('.tapeBox').stop( true, true).slideUp();
+  }
+
+  function startRecordingJob()
+  {
+    console.log('start...');
+    // start
+    $('.qiraatRecorder #recordBtn').addClass('start');
+    $('.tapeRecorder').addClass('record');
+    $('.tapeBox').stop( true, true).fadeIn('fast');
+  }
 </script>
 
 
@@ -111,6 +124,7 @@
 <style type="text/css">
 
 #waitingMsg{display: none;}
+#recordingsList{display: none;}
 .tapeBox{display: none}
 .tapeRecorder {
   background: #aaa;

@@ -17,7 +17,7 @@ var recordButton = document.getElementById("recordBtn");
 // var stopButton = document.getElementById("stopButton");
 
 //add events to those 2 buttons
-recordButton.addEventListener("click", startRecording);
+// recordButton.addEventListener("click", startRecording);
 // stopButton.addEventListener("click", stopRecording);
 
 function startRecording() {
@@ -43,7 +43,9 @@ function startRecording() {
 	*/
 	if(navigator.mediaDevices === undefined)
 	{
+		notifAlerty('error', 'لطفا دسترسی به میکروفون را به سلام قرآن بدهید', 'خطا در ضبط صدا');
 		console.log('navigator.mediaDevices is undefined!');
+		stopRecordingJob();
 		return false;
 	}
 	navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
@@ -124,6 +126,7 @@ function stopRecording() {
 
 	if(gumStream === undefined)
 	{
+		notifAlerty('error', 'خطا در ذخیره صوت', 'خطا');
 		console.log("gumStream is undefined!");
 		return false;
 	}
@@ -179,5 +182,6 @@ function createDownloadLink(blob,encoding) {
 
 //helper function
 function __log(e, data) {
+	console.log(e + " " + (data || ''));
 	// log.innerHTML += "\n" + e + " " + (data || '');
 }
