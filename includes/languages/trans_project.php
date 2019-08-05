@@ -7,10 +7,12 @@ class twigTransTerms
 	//-------------------------------------projects/SalamQuran/content_lms/layout.html
 	echo T_("Learn Mechanism system");                                                // Line 8
 	echo T_("Users Panel");                                                           // Line 14
-	echo T_("All learn quran");                                                       // Line 33
-	echo T_("All learn tajweed");                                                     // Line 42
-	echo T_("All learn exam");                                                        // Line 51
-	echo T_("All learn theme");                                                       // Line 60
+	echo T_("All learn quran");                                                       // Line 37
+	echo T_("All learn tajweed");                                                     // Line 49
+	echo T_("All learn exam");                                                        // Line 61
+	echo T_("All learn theme");                                                       // Line 73
+	echo T_("All learn iqra");                                                        // Line 97
+	echo T_("All learn reading");                                                     // Line 85
 
 	//---------------------------projects/SalamQuran/content_lms/all/home/display.html
 	echo T_("SalamQuran Learning Mechanism");                                         // Line 25
@@ -55,11 +57,8 @@ class twigTransTerms
 	echo T_("True option");                                                           // Line 194
 
 	//--------------------projects/SalamQuran/content_lms/level/exam/fileDetector.html
-	echo T_("Click to download");                                                     // Line 18
-	echo T_("Video");                                                                 // Line 105
-	echo T_("MP3");                                                                   // Line 14
-	echo T_("PDF");                                                                   // Line 89
-	echo T_("Without preview");                                                       // Line 18
+	echo T_("Click to download");                                                     // Line 16
+	echo T_("Download");                                                              // Line 89
 
 	//-------------------------projects/SalamQuran/content_lms/level/exam/display.html
 	echo T_("Save");                                                                  // Line 75
@@ -95,7 +94,7 @@ class twigTransTerms
 	echo T_("You must set index between 1 and 604");                                  // Line 35
 
 	//--------------------projects/SalamQuran/content_api/v6/doc/150-hefz-program.html
-	echo T_("Calculator hefz program");                                               // Line 80
+	echo T_("Calculator hefz program");                                               // Line 117
 	echo T_("Send your time and get result");                                         // Line 8
 	echo T_("Minutes");                                                               // Line 16
 
@@ -277,7 +276,6 @@ class twigTransTerms
 	echo T_("Return to audio center");                                                // Line 18
 	echo T_("Mb");                                                                    // Line 38
 	echo T_("Read");                                                                  // Line 39
-	echo T_("Download");                                                              // Line 89
 
 	//--------------------------------projects/SalamQuran/content/mission/display.html
 	echo T_("We are define below missions for SalamQuran on start of project and extend it later.");// Line 6
@@ -288,6 +286,10 @@ class twigTransTerms
 
 	//-----------------------------projects/SalamQuran/content/developers/display.html
 	echo T_("Soon");                                                                  // Line 6
+
+	//----------------------------------projects/SalamQuran/content/score/display.html
+	echo T_("User");                                                                  // Line 69
+	echo T_("Score");                                                                 // Line 11
 
 	//---------------------------------projects/SalamQuran/content/random/display.html
 	echo T_("Random aya");                                                            // Line 8
@@ -300,6 +302,7 @@ class twigTransTerms
 	echo T_("For share via social networks");                                         // Line 56
 	echo T_("News Code");                                                             // Line 50
 	echo T_("Recommended for you");                                                   // Line 86
+	echo T_("PDF");                                                                   // Line 89
 
 	//------------------------------projects/SalamQuran/content/template/shareBox.html
 	echo T_("Share");                                                                 // Line 2
@@ -457,9 +460,9 @@ class twigTransTerms
 
 	//---------------------------------projects/SalamQuran/content/status/display.html
 	echo T_("Users");                                                                 // Line 10
-	echo T_("History");                                                               // Line 98
+	echo T_("History");                                                               // Line 135
 	echo T_("Lesson count");                                                          // Line 47
-	echo T_("Khatm");                                                                 // Line 121
+	echo T_("Khatm");                                                                 // Line 158
 	echo T_("Khatm usage");                                                           // Line 67
 
 	//------------------------------------projects/SalamQuran/content/juz/display.html
@@ -914,7 +917,6 @@ class twigTransTerms
 	echo T_("ID");                                                                    // Line 66
 	echo T_("Group");                                                                 // Line 67
 	echo T_("Level");                                                                 // Line 68
-	echo T_("User");                                                                  // Line 69
 	echo T_("Operator");                                                              // Line 70
 	echo T_("Audio file");                                                            // Line 71
 	echo T_("Answer");                                                                // Line 42
@@ -961,19 +963,19 @@ class twigTransTerms
 	echo T_("Range of khatm");                                                        // Line 92
 	echo T_("The whole Quran");                                                       // Line 96
 	echo T_("Special Surah");                                                         // Line 97
-	echo T_("Public");                                                                // Line 108
-	echo T_("Everyone can see it");                                                   // Line 108
-	echo T_("Private");                                                               // Line 109
-	echo T_("Only you can see it");                                                   // Line 109
-	echo T_("Enable");                                                                // Line 128
-	echo T_("Disable");                                                               // Line 132
+	echo T_("Public");                                                                // Line 110
+	echo T_("Everyone can see it");                                                   // Line 110
+	echo T_("Private");                                                               // Line 108
+	echo T_("Only you can see it");                                                   // Line 108
+	echo T_("Enable");                                                                // Line 130
+	echo T_("Disable");                                                               // Line 134
 	echo T_("Awaiting");                                                              // Line 138
 	echo T_("Deleted");                                                               // Line 143
 	echo T_("Done");                                                                  // Line 148
 
 	//--------------------------projects/SalamQuran/content_m/mistake/add/display.html
 	echo T_("Mistake title");                                                         // Line 19
-	echo T_("Add");                                                                   // Line 117
+	echo T_("Add");                                                                   // Line 119
 
 	//-------------------------projects/SalamQuran/content_m/mistake/home/display.html
 	echo T_("Add new mistake");                                                       // Line 12
@@ -1071,6 +1073,7 @@ class twigTransTerms
 	echo T_("Question count");                                                        // Line 91
 	echo T_("Random question");                                                       // Line 92
 	echo T_("Besmellah");                                                             // Line 93
+	echo T_("Video");                                                                 // Line 105
 	echo T_("Cover");                                                                 // Line 108
 	echo T_("Try to start with add new level!");                                      // Line 142
 
@@ -1108,8 +1111,8 @@ class twigTransTerms
 	echo T_("No data founded");                                                       // Line 110
 
 	//---------------------------------------projects/SalamQuran/content_a/layout.html
-	echo T_("My audio file");                                                         // Line 89
-	echo T_("Learning mechanism system");                                             // Line 109
+	echo T_("My audio file");                                                         // Line 126
+	echo T_("Learning mechanism system");                                             // Line 146
 
 	//-------------------------projects/SalamQuran/content_a/reading/home/display.html
 
@@ -1153,7 +1156,7 @@ class twigTransTerms
 	echo T_("No favorites added");                                                    // Line 112
 
 	//---------------------------------projects/SalamQuran/content_a/home/display.html
-	echo T_("Favorite");                                                              // Line 132
+	echo T_("Favorite");                                                              // Line 169
 
 	//---------------------------projects/SalamQuran/content_a/badge/home/display.html
 	echo T_("Your total score");                                                      // Line 50
