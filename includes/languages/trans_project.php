@@ -433,6 +433,13 @@ class twigTransTerms
 	echo T_("Floor2, Yas Building");                                                  // Line 56
 	echo T_("Our location on map");                                                   // Line 70
 
+	//---------------------------------projects/SalamQuran/content/status/display.html
+	echo T_("Users");                                                                 // Line 10
+	echo T_("History");                                                               // Line 53
+	echo T_("Lesson count");                                                          // Line 47
+	echo T_("Khatm");                                                                 // Line 76
+	echo T_("Khatm usage");                                                           // Line 67
+
 	//------------------------------------projects/SalamQuran/content/juz/display.html
 	echo T_("Word count");                                                            // Line 93
 
@@ -856,6 +863,8 @@ class twigTransTerms
 
 	//----------------------------------projects/SalamQuran/content/badge/display.html
 	echo T_("Badge");                                                                 // Line 53
+	echo T_("Person");                                                                // Line 28
+	echo T_("Nobody");                                                                // Line 30
 
 	//------------------------projects/SalamQuran/includes/html/sidebarServiceTop.html
 	echo T_("Manage");                                                                // Line 6
@@ -865,7 +874,6 @@ class twigTransTerms
 	echo T_("Groups");                                                                // Line 8
 	echo T_("Mistake in learn");                                                      // Line 10
 	echo T_("User audio list");                                                       // Line 56
-	echo T_("Khatm");                                                                 // Line 76
 
 	//-------------------------projects/SalamQuran/content_m/reading/home/display.html
 	echo T_("ID");                                                                    // Line 66
@@ -1107,7 +1115,6 @@ class twigTransTerms
 
 	//---------------------------------projects/SalamQuran/content_a/home/display.html
 	echo T_("My audio file");                                                         // Line 44
-	echo T_("History");                                                               // Line 53
 	echo T_("Learning mechanism system");                                             // Line 64
 	echo T_("Favorite");                                                              // Line 87
 
