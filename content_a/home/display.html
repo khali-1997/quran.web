@@ -14,12 +14,57 @@
       <div class="c4 s12">{{block('bHefzP')}}</div>
       <div class="c4 s12">{{block('bBadge')}}</div>
 
+
+
+  </div>
+  <div class="f">
+    <div class="c3 s12">{{block('iBquran')}}</div>
+    <div class="c3 s12">{{block('iBtajweed')}}</div>
+    <div class="c3 s12">{{block('iBexam')}}</div>
+    <div class="c3 s12">{{block('iBtheme')}}</div>
   </div>
 {%endblock%}
 
 
+{%block iBquran%}
+<a class="dcard x1" href="{{url.kingdom}}/lms/all/quran">
+  <div class="statistic orange">
+    <div class="value mB10"><i class="sf-info"></i></div>
+    <div class="label">{%trans "All learn quran"%}</div>
+  </div>
+
+</a>
+{%endblock%}
+{%block iBtajweed%}
+<a class="dcard x1" href="{{url.kingdom}}/lms/all/tajweed">
+  <div class="statistic orange">
+    <div class="value mB10"><i class="sf-info"></i></div>
+    <div class="label">{%trans "All learn tajweed"%}</div>
+  </div>
+
+</a>
+{%endblock%}
+{%block iBexam%}
+<a class="dcard x1" href="{{url.kingdom}}/lms/all/exam">
+  <div class="statistic orange">
+    <div class="value mB10"><i class="sf-info"></i></div>
+    <div class="label">{%trans "All learn exam"%}</div>
+  </div>
+
+</a>
+{%endblock%}
+{%block iBtheme%}
+<a class="dcard x1" href="{{url.kingdom}}/lms/all/theme">
+  <div class="statistic orange">
+    <div class="value mB10"><i class="sf-info"></i></div>
+    <div class="label">{%trans "All learn theme"%}</div>
+  </div>
+
+</a>
+{%endblock%}
+
 {%block bBadge%}
-<a class="dcard x1" href='{{url.here}}/badge'>
+<a class="dcard x2" href='{{url.here}}/badge'>
  <div class="statistic yellow">
   <div class="value mB10"><i class="sf-medal"></i></div>
   <div class="label">{%trans "Badge"%}</div>
@@ -29,7 +74,7 @@
 
 
 {%block bHefzP%}
-<a class="dcard x1" href='{{url.kingdom}}/calculator'>
+<a class="dcard x2" href='{{url.kingdom}}/calculator'>
  <div class="statistic blue">
   <div class="value mB10"><i class="sf-calculator"></i></div>
   <div class="label">{%trans "Calculator hefz program"%}</div>
@@ -38,7 +83,7 @@
 {%endblock%}
 
 {%block bReading%}
-<a class="dcard x1" href='{{url.here}}/reading'>
+<a class="dcard x2" href='{{url.here}}/reading'>
  <div class="statistic blue">
   <div class="value mB10"><i class="sf-bullhorn"></i></div>
   <div class="label">{%trans "My audio file"%}</div>
@@ -47,7 +92,7 @@
 {%endblock%}
 
 {%block bHistory%}
-<a class="dcard x1" href='{{url.here}}/history'>
+<a class="dcard x2" href='{{url.here}}/history'>
  <div class="statistic blue">
   <div class="value mB10"><i class="sf-history"></i></div>
   <div class="label">{%trans "History"%}</div>
@@ -58,7 +103,7 @@
 
 
 {%block bLMS%}
-<a class="dcard x1" href='{{url.kingdom}}/lms'>
+<a class="dcard x2" href='{{url.kingdom}}/lms'>
  <div class="statistic blue">
   <div class="value mB10"><i class="sf-info"></i></div>
   <div class="label">{%trans "Learning mechanism system"%}</div>
@@ -70,7 +115,7 @@
 
 
 {%block bKhatm%}
-<a class="dcard x1" href='{{url.here}}/khatm'>
+<a class="dcard x2" href='{{url.here}}/khatm'>
  <div class="statistic blue">
   <div class="value mB10"><i class="sf-book fc-green"></i></div>
   <div class="label">{%trans "Khatm"%}</div>
@@ -81,7 +126,7 @@
 
 
 {%block bFav%}
-<a class="dcard x1" href='{{url.here}}/fav'>
+<a class="dcard x2" href='{{url.here}}/fav'>
  <div class="statistic blue">
   <div class="value mB10"><i class="sf-star fc-yellow"></i></div>
   <div class="label">{%trans "Favorite"%}</div>
