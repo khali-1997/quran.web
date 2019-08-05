@@ -17,6 +17,10 @@
 
     </div>
    </div>
+   {%if login.id%}
+    {{block('requestToJoin')}}
+   {%endif%}
+
 
 {%include 'content/mag/block-mustReads.html'%}
 {%include 'content/home/homepage-quoteQuran.html'%}
@@ -25,6 +29,51 @@
 
 {%endblock%}
 
+{%block requestToJoin%}
+<div class="mB20">
+
+  <div class="justify-center f txtC">
+    <div class="c5">
+      {%if tempTicketCodeURL%}
+       <div class="msg success2 txtC"><a data-direct href="{{tempTicketCodeURL}}">{%trans "You can access the ticketing status through this link"%}</a></div>
+       {%endif%}
+      <div class="msg">
+        {%trans "You can also contribute to the development of the Salam Quran magazine, Just send us your request"%}
+      </div>
+    <div class="btn outline info2 block xl" data-kerkere='.contributionMag'>{%trans "Requesting a journal contribution"%}</div>
+    <div class="contributionMag mT50" data-kerkere-content='hide'>
+
+    <form method="post" data-clear autocomplete='off'>
+     {%include display.hive%}
+      <div class="input pA5">
+       <label class="addon" for="name">{%trans "Name"%}</label>
+       <input type="text" name="name" id="name" value="{{user.displayname}}" placeholder='{%trans "Full Name"%}' maxlength='40'>
+      </div>
+      <div class="input pA5">
+       <label class="addon" for="mobile">{%trans "Mobile"%}</label>
+       <input type="tel" name="mobile" id="mobile" value="{{user.mobile}}" placeholder='98 912 333 4444' maxlength="17" autocomplete="off" data-validity='{%trans "Please enter valid mobile number. `:val` is incorrect"%}'>
+      </div>
+      <div class="input pA5">
+       <label class="addon" for="email">{%trans "Email"%}</label>
+       <input type="email" name="email" id="email" value="{{user.email}}" placeholder='mail@example.com' maxlength='40'>
+      </div>
+
+      <div class="pA5">
+       <textarea class="c txt" name="content" placeholder='{%trans "Your Message"%}' rows=4 minlength="5" maxlength="1000" data-resizable></textarea>
+      </div>
+      <div class="input pA5 mTB25">
+       <button type="submit" name="submit-contact" class="btn block success">{%trans "Send"%}</button>
+      </div>
+
+     </form>
+
+
+    </div>
+    </div>
+  </div>
+
+</div>
+{%endblock%}
 
 
 {%block topNews%}

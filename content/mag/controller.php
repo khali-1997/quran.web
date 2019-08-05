@@ -1,11 +1,8 @@
 <?php
 namespace content\mag;
 
-class controller
+class controller extends \content_support\ticket\contact_ticket\controller
 {
-	public static function routing()
-	{
 
-	}
 }
 ?>

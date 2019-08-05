@@ -346,7 +346,7 @@ class twigTransTerms
 	echo T_("System Status");                                                         // Line 74
 	echo T_("Telegram Bot");                                                          // Line 75
 	echo T_("Mobile Apps");                                                           // Line 76
-	echo T_("Email");                                                                 // Line 25
+	echo T_("Email");                                                                 // Line 57
 	echo T_("Tel");                                                                   // Line 87
 	echo T_("SMS");                                                                   // Line 83
 	echo T_("Website");                                                               // Line 85
@@ -437,7 +437,7 @@ class twigTransTerms
 
 	//--------------------------------projects/SalamQuran/content/contact/display.html
 	echo T_("We do our best to improve SalamQuran's quality. So, knowing your valuable comments about bugs and problems and more importantly your precious offers will help us in this way.");// Line 8
-	echo T_("You can access the ticketing status through this link");                 // Line 10
+	echo T_("You can access the ticketing status through this link");                 // Line 38
 	echo T_("Full Name");                                                             // Line 145
 	echo T_("Please enter valid mobile number. `:val` is incorrect");                 // Line 152
 	echo T_("Your Message");                                                          // Line 161
@@ -473,10 +473,12 @@ class twigTransTerms
 	echo T_("QIYAM");                                                                 // Line 47
 
 	//----------------------------------projects/SalamQuran/content/mag/dashboard.html
-	echo T_("News Link");                                                             // Line 106
-	echo T_("Most Popular");                                                          // Line 127
-	echo T_("Latest News");                                                           // Line 142
-	echo T_("Blog");                                                                  // Line 157
+	echo T_("You can also contribute to the development of the Salam Quran magazine, Just send us your request");// Line 41
+	echo T_("Requesting a journal contribution");                                     // Line 43
+	echo T_("News Link");                                                             // Line 155
+	echo T_("Most Popular");                                                          // Line 176
+	echo T_("Latest News");                                                           // Line 191
+	echo T_("Blog");                                                                  // Line 206
 
 	//----------------------------projects/SalamQuran/content/mag/block-mustReads.html
 	echo T_("Must Reads");                                                            // Line 5
