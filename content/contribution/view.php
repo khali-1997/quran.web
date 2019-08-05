@@ -14,4 +14,3 @@ class view extends \content_support\ticket\contact_ticket\view
 
 }
 ?>
-
