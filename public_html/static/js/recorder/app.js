@@ -180,6 +180,7 @@ function createDownloadLink(blob,encoding) {
 
 
 	lastAudioBlob = blob;
+	lastAudioURL  = url;
 }
 
 
