@@ -23,6 +23,28 @@ class lm_star
 
 	}
 
+
+	public static function get_user_group_score($_group_id)
+	{
+		$id = \dash\coding::decode($_group_id);
+		if(!$id)
+		{
+			return null;
+		}
+
+		if(!\dash\user::id())
+		{
+			return null;
+		}
+
+		$group_star = \lib\db\lm_star::group_star($id, \dash\user::id());
+		if(is_array($group_star))
+		{
+			$group_star = array_sum($group_star);
+		}
+		return intval($group_star);
+	}
+
 	public static function level_learn($_type, $_level_id, $_star = null)
 	{
 

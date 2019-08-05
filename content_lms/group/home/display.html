@@ -8,8 +8,22 @@
 
 {%if levelList %}
 {%for key, value in levelList%}
+    {%set canLoad = true%}
+
+  {%if value.unlockscore%}
+    {%if value.unlockscore <= groupScore%}
+    {%set canLoad = true%}
+    {%else%}
+    {%set canLoad = false%}
+    {%endif%}
+  {%endif%}
+
 {%if value.type %}
-  <a class="vcard mA10 shadow {%if value.userstar == 3%}green{%elseif value.userstar%}blue{%else%}{%endif%}" href='{{url.here}}/level/{{value.xtype}}?id={{value.id}}' data-type='{{value.type_title}}'>
+  {%if  canLoad%}
+    <a class="vcard mA10 shadow {%if value.userstar == 3%}green{%elseif value.userstar%}blue{%else%}{%endif%}" href='{{url.here}}/level/{{value.xtype}}?id={{value.id}}' data-type='{{value.type_title}}'>
+  {%else%}
+    <a class="vcard mA10 shadow disable {%if value.userstar == 3%}green{%elseif value.userstar%}blue{%else%}{%endif%}"  data-type='{{value.type_title}}'>
+  {%endif%}
     <div>
     {%if value.type == "quran"%}
       <img src="{{url.static}}/images/lms/bg-level-start-txt.jpg" alt='{%trans "SalamQuran Learning Mechanism"%}'>
@@ -31,22 +45,26 @@
     </div>
     <div class="footer fs20-f">
       <div class="fs30">
-        {%if value.userstar == 1%}
-          <i class="sf-star fc-yellow"></i>
-          <i class="sf-star fc-graylight"></i>
-          <i class="sf-star fc-graylight"></i>
-        {%elseif value.userstar == 2%}
-          <i class="sf-star fc-yellow"></i>
-          <i class="sf-star fc-yellow"></i>
-          <i class="sf-star fc-graylight"></i>
-        {%elseif value.userstar == 3%}
-          <i class="sf-star fc-yellow"></i>
-          <i class="sf-star fc-yellow"></i>
-          <i class="sf-star fc-yellow"></i>
+        {%if canLoad%}
+          {%if value.userstar == 1%}
+            <i class="sf-star fc-yellow"></i>
+            <i class="sf-star fc-graylight"></i>
+            <i class="sf-star fc-graylight"></i>
+          {%elseif value.userstar == 2%}
+            <i class="sf-star fc-yellow"></i>
+            <i class="sf-star fc-yellow"></i>
+            <i class="sf-star fc-graylight"></i>
+          {%elseif value.userstar == 3%}
+            <i class="sf-star fc-yellow"></i>
+            <i class="sf-star fc-yellow"></i>
+            <i class="sf-star fc-yellow"></i>
+          {%else%}
+            <i class="sf-star fc-graylight"></i>
+            <i class="sf-star fc-graylight"></i>
+            <i class="sf-star fc-graylight"></i>
+          {%endif%}
         {%else%}
-          <i class="sf-star fc-graylight"></i>
-          <i class="sf-star fc-graylight"></i>
-          <i class="sf-star fc-graylight"></i>
+          <i class="sf-lock fc-red"></i>
         {%endif%}
       </div>
     </div>

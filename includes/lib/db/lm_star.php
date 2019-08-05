@@ -5,6 +5,26 @@ namespace lib\db;
 class lm_star
 {
 
+	public static function group_star($_group_id, $_user_id)
+	{
+		$query =
+		"
+			SELECT
+				MAX(lm_star.star) AS `star`
+			FROM
+				lm_star
+			WHERE
+				lm_star.user_id = $_user_id AND
+				lm_star.lm_group_id = $_group_id
+			GROUP BY
+				lm_star.lm_level_id
+		";
+		$result = \dash\db::get($query, 'star');
+
+		return $result;
+	}
+
+
 	public static function insert()
 	{
 		\dash\db\config::public_insert('lm_star', ...func_get_args());

@@ -14,6 +14,9 @@ class view
 		\dash\data::badge_link(\dash\url::here());
 		\dash\data::badge_text(T_("Back to dashboard"));
 
+		$group_score = \lib\app\lm_star::get_user_group_score(\dash\request::get('id'));
+		\dash\data::groupScore($group_score);
+
 	}
 }
 ?>
