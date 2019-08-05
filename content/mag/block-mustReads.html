@@ -1,5 +1,5 @@
 {%set mustRead = posts({"limit" : 3, "special" : "mustread"})%}
-
+{%if mustRead%}
 <section class="f mustReads txtC">
   <div class="c12">
     <h2>{%trans "Must Reads"%}</h2>
@@ -14,3 +14,4 @@
   {%endfor%}
 
 </section>
+{%endif%}
