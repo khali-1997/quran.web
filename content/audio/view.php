@@ -8,6 +8,8 @@ class view
 	{
 		\dash\data::dlLink('https://dl.salamquran.com');
 
+		\lib\badge::set('OpenAudioBank');
+
 		if(\dash\data::loadAudioFolder())
 		{
 			\dash\data::myDisplayName('content/audio/load.html');

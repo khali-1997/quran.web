@@ -42,6 +42,7 @@ class main
 			\dash\data::badge_text(T_("Back to level list"));
 		}
 
+		\lib\badge::set('LmsStartLevel');
 
 	}
 }

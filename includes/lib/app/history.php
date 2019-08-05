@@ -49,6 +49,8 @@ class history
 
 		\lib\db\history::insert($insert);
 
+		\lib\badge::set('ReadFirstAya');
+
 		\dash\notif::ok(T_("History saved"));
 	}
 

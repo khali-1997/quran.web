@@ -94,6 +94,15 @@ class lm_star
 			return false;
 		}
 
+		if($star)
+		{
+			\lib\badge::set('LmsFirstScore');
+		}
+
+		if($star === 3)
+		{
+			\lib\badge::set('LmsFirstFullScore');
+		}
 
 		$args                = [];
 		$args['user_id']     = $_user_id;
@@ -124,6 +133,16 @@ class lm_star
 		{
 			\dash\notif::error(T_("Only 1,2,3 can set as star"));
 			return false;
+		}
+
+		if($star)
+		{
+			\lib\badge::set('LmsFirstScore');
+		}
+
+		if($star === 3)
+		{
+			\lib\badge::set('LmsFirstFullScore');
 		}
 
 		$load_level = \lib\app\lm_level::get($_level_id);

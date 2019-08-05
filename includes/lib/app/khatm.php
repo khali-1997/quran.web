@@ -159,6 +159,8 @@ class khatm
 			\dash\notif::ok(T_("Khatm successfuly added"));
 		}
 
+		\lib\badge::set('AddFirstKhatm');
+
 		return $return;
 	}
 
