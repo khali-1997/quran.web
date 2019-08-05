@@ -9,6 +9,8 @@ class view
 
 		\dash\data::page_title(T_("Your quran reading history"));
 
+		\dash\data::badge_link(\dash\url::here());
+		\dash\data::badge_text(T_('Back to dashboard'));
 
 		\dash\data::page_pictogram('history');
 

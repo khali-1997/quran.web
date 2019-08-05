@@ -11,7 +11,7 @@ class view
 		\dash\data::page_desc(' ');
 		\dash\data::page_pictogram('bookmark-o');
 
-		\dash\data::badge_link(\dash\url::this());
+		\dash\data::badge_link(\dash\url::here());
 
 		\dash\data::badge_text(T_('Back to dashboard'));
 

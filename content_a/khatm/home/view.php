@@ -9,7 +9,8 @@ class view
 		\dash\data::page_title(T_("Khatm quran"));
 		\dash\data::page_pictogram('book');
 
-
+		\dash\data::badge_link(\dash\url::here());
+		\dash\data::badge_text(T_('Back to dashboard'));
 		// \dash\data::badge_text(T_("Add new khatm"));
 		// \dash\data::badge_link(\dash\url::this(). '/add');
 

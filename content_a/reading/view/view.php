@@ -8,7 +8,7 @@ class view
 	{
 		\dash\data::page_title(T_("View audio"));
 		\dash\data::page_desc(' ');
-		\dash\data::page_pictogram('edit');
+		\dash\data::page_pictogram('bullhorn');
 
 		\dash\data::badge_link(\dash\url::this());
 
