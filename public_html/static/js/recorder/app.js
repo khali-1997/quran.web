@@ -175,7 +175,7 @@ function createDownloadLink(blob,encoding) {
 	// hide waiting sound
 	document.getElementById("waitingMsg").style.display = 'none';
 
-	sendAudioToServer(blob);
+	lastAudioBlob = blob;
 }
 
 

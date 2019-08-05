@@ -24,7 +24,7 @@
     </div>
 
     <div class="cbox">
-      <a href="{{url.pwd}}" class="btn block outline pain" data-ajaxify data-data='{"check" : "result"}' data-method='post'>{%trans "I'm done"%}</a>
+      <div href="{{url.pwd}}" class="btn block outline pain submitAudio">{%trans "I'm done"%}</div>
     </div>
 
     <div class="tapeBox">
@@ -61,6 +61,13 @@
 <script src="{{url.static}}/js/recorder/WebAudioRecorder.min.js"></script>
 <script src="{{url.static}}/js/recorder/app.js"></script>
 <script>
+  var lastAudioBlob;
+
+  $('.submitAudio').on('click', function()
+  {
+    sendAudioToServer();
+  });
+
   $('.qiraatRecorder #recordBtn').on('click', function()
   {
     if($(this).hasClass('start'))
@@ -76,10 +83,11 @@
     }
   });
 
-  function sendAudioToServer(_audioBlob)
+
+  function sendAudioToServer()
   {
     var data = new FormData();
-    data.append('file', _audioBlob, 'record.wav');
+    data.append('file', lastAudioBlob, 'record.wav');
 
 
     $.ajax(
