@@ -71,6 +71,22 @@ class badge
 	}
 
 
+	public static function person_list()
+	{
+		$count = \lib\db\badgeusage::get_group_by();
+		$list = self::list();
+		foreach ($list as $key => $value)
+		{
+			if(isset($count[$key]))
+			{
+				$list[$key]['person'] = $count[$key];
+			}
+		}
+
+		return $list;
+	}
+
+
 	private static function get_before($_caller)
 	{
 		$check = \lib\db\badgeusage::get_before($_caller, \dash\user::id());

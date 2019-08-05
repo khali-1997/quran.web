@@ -4,6 +4,13 @@ namespace lib\db;
 
 class badgeusage
 {
+
+	public static function get_group_by()
+	{
+		$query = "SELECT COUNT(*) AS `count`, badgeusage.badge FROM badgeusage GROUP BY badgeusage.badge ";
+		$result = \dash\db::get($query, ['badge', 'count']);
+		return $result;
+	}
 	public static function get_before($_caller, $_user_id)
 	{
 		$query = "SELECT * FROM badgeusage WHERE badgeusage.user_id = $_user_id AND badgeusage.badge = '$_caller' LIMIT 1 ";

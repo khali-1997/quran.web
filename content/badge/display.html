@@ -2,11 +2,12 @@
 
 
 {%block page%}
-<table class="tbl1 v4">
+<table class="tbl1 v10">
   <thead>
     <tr>
       <th>{%trans "Badge"%}</th>
       <th>{%trans "Description"%}</th>
+      <th>{%trans "Users"%}</th>
 
     </tr>
   </thead>
@@ -20,6 +21,14 @@
       </td>
       <td>
         {{value.title}}
+      </td>
+      <td>
+        {%if value.person%}
+
+        {{value.person | fitNumber}} <small>{%trans "Person"%}</small>
+        {%else%}
+        <small class="fc-mute">{%trans "Nobody"%}</small>
+        {%endif%}
       </td>
     </tr>
 
