@@ -16,10 +16,6 @@ class history
 
 	public static function save($_aya)
 	{
-		if(!\dash\user::id())
-		{
-			return false;
-		}
 
 		if(!is_numeric($_aya))
 		{
@@ -35,7 +31,7 @@ class history
 		$get = \lib\db\quran::get_by_index($_aya);
 
 		$insert                = [];
-		$insert['user_id']     = \dash\user::id();
+		$insert['user_id']     = \dash\user::id() ? \dash\user::id() : null ;
 		$insert['sura']        = (isset($get['sura'])) ? $get['sura'] : null;
 		$insert['aya']         = (isset($get['aya'])) ? $get['aya'] : null;
 		$insert['index']       = $_aya;
@@ -49,7 +45,10 @@ class history
 
 		\lib\db\history::insert($insert);
 
-		\lib\badge::set('ReadFirstAya');
+		if(\dash\user::id())
+		{
+			\lib\badge::set('ReadFirstAya');
+		}
 
 		\dash\notif::ok(T_("History saved"));
 	}
