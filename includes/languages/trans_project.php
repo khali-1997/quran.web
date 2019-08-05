@@ -498,6 +498,7 @@ class twigTransTerms
 	echo T_("Hizb");                                                                  // Line 62
 	echo T_("Half of hizb list");                                                     // Line 51
 	echo T_("Rub list");                                                              // Line 61
+	echo T_("Part of sura");                                                          // Line 73
 
 	//-----------------------------------projects/SalamQuran/content/hizb/display.html
 
