@@ -52,35 +52,31 @@ class model
 		}
 
 
-		if(\dash\request::post('check') === 'result')
+		$count_listen = intval(\lib\app\lm_level::count_listen(\dash\request::get('id')), \dash\session::get('lms_load_level'. \dash\request::get('id')));
+
+		$star = 0;
+		if($count_listen >= 2)
 		{
+			$star = 2;
+		}
+		elseif($count_listen >= 1)
+		{
+			$star++;
+		}
 
-			$count_listen = intval(\lib\app\lm_level::count_listen(\dash\request::get('id')), \dash\session::get('lms_load_level'. \dash\request::get('id')));
-
-			$star = 0;
-			if($count_listen >= 2)
-			{
-				$star = 2;
-			}
-			elseif($count_listen >= 1)
-			{
-				$star++;
-			}
-
-			if(\dash\session::get($session_key))
-			{
-				$star++;
-				\dash\session::clean($session_key);
-			}
+		if(\dash\session::get($session_key))
+		{
+			$star++;
+			\dash\session::clean($session_key);
+		}
 
 
-			\lib\app\lm_star::set_star(\dash\request::get('id'), $star);
+		\lib\app\lm_star::set_star(\dash\request::get('id'), $star);
 
 
-			if(\dash\engine\process::status())
-			{
-				\dash\redirect::to(\dash\url::this(). '/result?id='. \dash\request::get('id'));
-			}
+		if(\dash\engine\process::status())
+		{
+			\dash\redirect::to(\dash\url::this(). '/result?id='. \dash\request::get('id'));
 		}
 
 

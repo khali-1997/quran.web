@@ -5,6 +5,28 @@ namespace lib\db;
 class history
 {
 
+	public static function get_chart($_user_id)
+	{
+		$query =
+		"
+			SELECT
+
+				COUNT(*) AS `value`,
+				WEEKDAY(history.datecreated) AS `weekday`,
+				HOUR(history.datecreated) AS `hour`
+			FROM
+				history
+			WHERE
+				history.user_id = $_user_id
+			GROUP BY
+				WEEKDAY(history.datecreated),
+				HOUR(history.datecreated)
+		";
+
+		$result = \dash\db::get($query);
+		return $result;
+	}
+
 	public static function insert()
 	{
 		return \dash\db\config::public_insert('history', ...func_get_args());

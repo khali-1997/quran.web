@@ -14,6 +14,45 @@ class history
 	];
 
 
+	public static function chart()
+	{
+		if(!\dash\user::id())
+		{
+			return false;
+		}
+
+		$resutl     = \lib\db\history::get_chart(\dash\user::id());
+		$new_result = [];
+
+		$weekday =
+		[
+			0 => T_("Monday"),
+			1 => T_("Tuesday"),
+			2 => T_("Wednesday"),
+			3 => T_("Thursday"),
+			4 => T_("Friday"),
+			5 => T_("Saturday"),
+			6 => T_("Sunday")
+		];
+
+		if(is_array($resutl))
+		{
+			foreach ($resutl as $key => $value)
+			{
+				$new_result[] =
+				[
+					'value'   => intval($value['value']),
+					'weekday' => $weekday[$value['weekday']],
+					'hour'    => $value['hour'],
+				];
+			}
+		}
+
+		$new_result = json_encode($new_result, JSON_UNESCAPED_UNICODE);
+		return $new_result;
+	}
+
+
 	public static function save($_aya)
 	{
 

@@ -4,7 +4,12 @@
 
 {%block pageContent%}
   <div class="f">
-    <div class="c4 s12">{{block('bHistory')}}</div>
+    <div class="c4 s12">
+      <div class="f">
+        <div class="c6 s12">{{block('bHistory')}}</div>
+        <div class="c6 s12">{{block('bChart')}}</div>
+      </div>
+    </div>
     {%if false%}
       <div class="c4 s12">{{block('bFav2')}}</div>
     {%endif%}
@@ -109,6 +114,15 @@
 </a>
 {%endblock%}
 
+
+{%block bChart%}
+<a class="dcard x2" href='{{url.here}}/chart'>
+ <div class="statistic blue">
+  <div class="value mB10"><i class="sf-chart"></i></div>
+  <div class="label">{%trans "Chart"%}</div>
+ </div>
+</a>
+{%endblock%}
 
 {%block bHefzP%}
 <a class="dcard x2" href='{{url.kingdom}}/calculator' data-direct>
