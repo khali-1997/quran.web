@@ -356,6 +356,7 @@ class lm_level
 		if(!\dash\app::isset_request('title')) unset($args['title']);
 		if(!\dash\app::isset_request('desc')) unset($args['desc']);
 		if(!\dash\app::isset_request('type')) unset($args['type']);
+		if(!\dash\app::isset_request('badge')) unset($args['badge']);
 
 		if(!\dash\app::isset_request('besmellah')) unset($args['besmellah']);
 		if(!\dash\app::isset_request('file')) unset($args['file']);
@@ -581,6 +582,14 @@ class lm_level
 			return false;
 		}
 
+		$badge = \dash\app::request('badge');
+		if($badge && !\lib\badge::list($badge))
+		{
+			\dash\notif::error(T_("Invalid badge"));
+			return false;
+		}
+
+
 
 		$quranfrom = self::quran_from();
 		$quranto = self::quran_to();
@@ -676,6 +685,7 @@ class lm_level
 
 		$args                      = [];
 		$args['title']             = $title;
+		$args['badge']             = $badge;
 		$args['lm_group_id']       = $lm_group_id;
 		$args['status']            = $status;
 		$args['desc']              = $desc;

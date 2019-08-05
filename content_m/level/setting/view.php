@@ -12,7 +12,7 @@ class view
 
 		\content_m\level\main::view();
 
-
+		\dash\data::badgeList(\lib\badge::list());
 	}
 }
 ?>

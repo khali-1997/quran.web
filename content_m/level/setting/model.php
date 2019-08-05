@@ -12,6 +12,7 @@ class model
 			'unlockscore'       => \dash\request::post('unlockscore'),
 			'desc'              => \dash\request::post('desc'),
 			'status'            => \dash\request::post('status'),
+			'badge'            => \dash\request::post('badge'),
 			'questionrandcount' => \dash\request::post('questionrandcount'),
 		];
 

@@ -28,6 +28,8 @@
           </div>
         {%endif%}
 
+        {{block('iBadgeList')}}
+
         {{block('iStatus')}}
 
 
@@ -65,4 +67,18 @@
   <label for="r-disable">{%trans "Disable"%}</label>
  </div>
 </div>
+{%endblock%}
+
+
+
+
+
+{% block iBadgeList %}
+<label for="fbadge">{%trans "Badge"%} <small>{%trans "Whene user complete this level by 3 score"%}</small></label>
+  <select class="select ui dropdown search" name="badge" id="fbadge">
+    <option value="">{%trans "Select badge"%}</option>
+    {%for key, value in badgeList%}
+        <option value="{{key}}" {%if dataRow.badge == key%} selected {%endif%}>{{key}} - {{value.title}}</option>
+    {%endfor%}
+  </select>
 {%endblock%}
