@@ -45,25 +45,7 @@ class view
 			$args['status'] = \dash\request::get('status');
 		}
 
-		if(\dash\request::get('type'))
-		{
-			$args['type'] = \dash\request::get('type');
-		}
 
-		if(\dash\request::get('gender'))
-		{
-			$args['gender'] = \dash\request::get('gender');
-		}
-
-		if(\dash\request::get('position'))
-		{
-			$args['position'] = \dash\request::get('position');
-		}
-
-		if(\dash\request::get('capacity'))
-		{
-			$args['capacity'] = \dash\request::get('capacity');
-		}
 
 		$sortLink  = \dash\app\sort::make_sortLink(\lib\app\lm_audio::$sort_field, \dash\url::this());
 		$dataTable = \lib\app\lm_audio::list(\dash\request::get('q'), $args);
