@@ -12,7 +12,7 @@
           <div class="msg info2 txtB pTB5 mB5">{{(key + 1) | fitNumber}}. {{value.title}}</div>
 
           <div class="f">
-            <div class="radio3 mB5 pRa5 {%if value.longopt%}c6 s12{%else%}c3 s6{%endif%}">
+            <div class="radio3 mB5 pRa5 {%if value.longopt%}c6 s12{%else%}c s6{%endif%}">
               <input type="radio" name="answer_{{value.id}}" value="1" id="ianswer1_{{value.id}}">
               <label class="ovh" for="ianswer1_{{value.id}}">{{value.opt1}}</label>
               {%if value.opt1file%}
@@ -20,7 +20,7 @@
               {%endif%}
             </div>
 
-            <div class="radio3 mB5 pRa5 {%if value.longopt%}c6 s12{%else%}c3 s6{%endif%}">
+            <div class="radio3 mB5 pRa5 {%if value.longopt%}c6 s12{%else%}c s6{%endif%}">
               <input type="radio" name="answer_{{value.id}}" value="2" id="ianswer2_{{value.id}}">
               <label class="ovh" for="ianswer2_{{value.id}}">{{value.opt2}}</label>
               {%if value.opt2file%}
@@ -28,7 +28,7 @@
               {%endif%}
             </div>
             {%if value.opt3%}
-            <div class="radio3 mB5 pRa5 {%if value.longopt%}c6 s12{%else%}c3 s6{%endif%}">
+            <div class="radio3 mB5 pRa5 {%if value.longopt%}c6 s12{%else%}c s6{%endif%}">
               <input type="radio" name="answer_{{value.id}}" value="3" id="ianswer3_{{value.id}}">
               <label class="ovh" for="ianswer3_{{value.id}}">{{value.opt3}}</label>
               {%if value.opt3file%}
@@ -37,7 +37,7 @@
             </div>
             {%endif%}
             {%if value.opt4%}
-            <div class="radio3 mB5 {%if value.longopt%}c6 s12{%else%}c3 s6{%endif%}">
+            <div class="radio3 mB5 {%if value.longopt%}c6 s12{%else%}c s6{%endif%}">
               <input type="radio" name="answer_{{value.id}}" value="4" id="ianswer4_{{value.id}}">
               <label class="ovh" for="ianswer4_{{value.id}}">{{value.opt4}}</label>
               {%if value.opt4file%}
