@@ -66,6 +66,9 @@ class view
 		{
 			$doners = \lib\app\donate::last_10_donate();
 			\dash\data::lastDoners($doners);
+			// load statistics
+			$status = \lib\system::status();
+			\dash\data::sysStatus($status);
 		}
 		else
 		{
