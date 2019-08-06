@@ -66,9 +66,6 @@ class view
 		{
 			$doners = \lib\app\donate::last_10_donate();
 			\dash\data::lastDoners($doners);
-			// load statistics
-			$status = \lib\system::status();
-			\dash\data::sysStatus($status);
 		}
 		else
 		{
@@ -77,6 +74,10 @@ class view
 			$load_mag = \lib\app\mag::find($mag_detail);
 			\dash\data::magLoaded($load_mag);
 		}
+
+		// load statistics
+		$status = \lib\system::status();
+		\dash\data::sysStatus($status);
 	}
 
 
