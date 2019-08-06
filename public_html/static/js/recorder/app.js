@@ -71,7 +71,7 @@ function startRecording() {
 
 		//get the encoding
 		// encodingType = encodingTypeSelect.options[encodingTypeSelect.selectedIndex].value;
-		encodingType = 'wav';
+		encodingType = 'mp3';
 
 		//disable the encoding selector
 		encodingTypeSelect.disabled = true;

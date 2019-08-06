@@ -94,7 +94,7 @@
       data.append('file', lastAudioBlob, 'record.wav');
     }
 
-
+    notifAlerty('info', 'در حال  انتقال قرائت', 'لطفا کمی صبر کنید');
     $.ajax(
     {
       url :  window.location.href,
@@ -105,9 +105,11 @@
       success: function(data)
       {
         console.log("boa!");
+        notifAlerty('info', 'فایل شما با موفقیت ارسال شد.', 'ارسال موفق');
         Navigate({ url: '{{url.this}}/result?id={{requestGET.id}}' });
       },
       error: function() {
+        notifAlerty('info', 'خطایی در ارسال فایل رخ داده است.', 'خطا');
         console.log("not so boa!");
       }
     });
@@ -120,6 +122,8 @@
     $('.qiraatRecorder #recordBtn').removeClass('start');
     $('.tapeRecorder').removeClass('record');
     $('.tapeBox').stop( true, true).slideUp();
+    $('#waitingMsg').slideDown();
+
   }
 
   function startRecordingJob()
