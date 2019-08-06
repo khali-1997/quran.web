@@ -171,8 +171,8 @@ function createDownloadLink(blob,encoding) {
 	// recordingsList.replaceWith(div);
 
 
-
-	document.getElementById("recordedAudio").src = url;
+	var myAudioPlayer = document.getElementById("recordedAudio");
+	myAudioPlayer.src = url;
 	// hide waiting sound
 	document.getElementById("waitingMsg").style.display = 'none';
 	// show audio element

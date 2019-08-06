@@ -84,6 +84,16 @@
     }
   });
 
+  $('#recordedAudio').on('loadedmetadata', function()
+  {
+    var myAudioLen = this.duration;
+    if(myAudioLen < 5)
+    {
+      notifAlerty('info', 'فایل صوتی شما بیش از حد کوتاه است!', 'توجه');
+      lastAudioBlob = null;
+    }
+  });
+
 
   function sendAudioToServer()
   {
@@ -92,9 +102,9 @@
     if(lastAudioBlob)
     {
       data.append('file', lastAudioBlob, 'record.wav');
+      notifAlerty('info', 'در حال  انتقال قرائت', 'لطفا کمی صبر کنید');
     }
 
-    notifAlerty('info', 'در حال  انتقال قرائت', 'لطفا کمی صبر کنید');
     $.ajax(
     {
       url :  window.location.href,
@@ -104,13 +114,11 @@
       processData: false,
       success: function(data)
       {
-        console.log("boa!");
-        notifAlerty('info', 'فایل شما با موفقیت ارسال شد.', 'ارسال موفق');
+        notifAlerty('info', 'درخواست اتمام این مرحله انجام شد', 'ثبت  موفق مرحله');
         Navigate({ url: '{{url.this}}/result?id={{requestGET.id}}' });
       },
       error: function() {
-        notifAlerty('info', 'خطایی در ارسال فایل رخ داده است.', 'خطا');
-        console.log("not so boa!");
+        notifAlerty('info', 'خطایی در ثبت درخواست رخ داده است!', 'خطا');
       }
     });
   }
