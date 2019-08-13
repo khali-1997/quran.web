@@ -457,7 +457,7 @@ class page
 					}
 					else
 					{
-						$appendAutoPlay = 'autoplay=1';
+						$appendAutoPlay = '&autoplay=1';
 					}
 				}
 				else
