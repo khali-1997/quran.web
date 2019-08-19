@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SalamQuran - Persian\n"
 "POT-Creation-Date: 2019-08-19 18:45+0430\n"
-"PO-Revision-Date: 2019-08-19 18:45+0430\n"
+"PO-Revision-Date: 2019-08-19 18:48+0430\n"
 "Last-Translator: Javad <J.Evazzadeh@gmail.com>\n"
 "Language-Team: Ermile <J.Evazzadeh@gmail.com>\n"
 "Language: fa_IR\n"
@@ -6547,7 +6547,7 @@ msgstr "خوش آمدید"
 #: dash/addons/includes/languages/trans_dash.php:1348
 #: dash/addons/includes/languages/trans_static.php:38 dash/lib/app/address.php:291
 msgid ","
-msgstr " و "
+msgstr " ،"
 
 #: SalamQuran/includes/languages/trans_dash.php:1349
 #: dash/addons/includes/languages/trans_dash.php:1349
