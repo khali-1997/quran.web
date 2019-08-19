@@ -295,6 +295,7 @@ class twigTransTerms
 	//----------------------------------projects/SalamQuran/content/score/display.html
 	echo T_("User");                                                                  // Line 69
 	echo T_("Score");                                                                 // Line 11
+	echo T_("Without name");                                                          // Line 34
 
 	//---------------------------------projects/SalamQuran/content/random/display.html
 	echo T_("Random aya");                                                            // Line 8
