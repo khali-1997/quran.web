@@ -15,6 +15,7 @@ class qari
 			'foladvand'           => ['name' => T_('Mohammad mahdi foladvand'), 	'country' => 'IR'],
 			'azerbaijani'         => ['name' => T_("Azerbaijani"), 					'country' => 'AZ'],
 			'ansarian'            => ['name' => T_("Hossein Ansarian"), 			'country' => 'IR'],
+			'khalafi'             => ['name' => T_('Hannaneh Khalafi'), 			'country' => 'IR'],
 
 			'ibrahim_walk'        => ['name' => T_("Ibrahim Walk"), 'country' => 'US'],
 			'kabiri'              => ['name' => T_("kabiri"), 'country' => 'IR'],
@@ -141,6 +142,8 @@ class qari
 			// ----------------- mansouri
 			['index' => 1091, 'lang' => 'fa', 'type' => $Murattal, 'addr'  => 'mansouri-murattal-40/', 'slug'  => 'mansouri', 'name' => self::get_by_slug('mansouri', 'name'), ],
 			['index' => 1092, 'lang' => 'fa', 'type' => $Murattal, 'addr' => 'sabzali-murattal-32/', 'slug' => 'sabzali', 'name' => self::get_by_slug('sabzali', 'name'),],
+
+			['index' => 1093, 'lang' => 'fa', 'type' => $Murattal, 'addr' => 'khalafi-murattal-192/', 'slug' => 'khalafi', 'name' => self::get_by_slug('khalafi', 'name'),],
 
 			// ----------------- trnaslate - fa - qeraati
 			['index' => 1086, 'lang' => 'fa', 'type' => $Commentary, 'addr'  => 'qaraati.fa.qaraati-tafsir-16/', 'slug'  => 'qaraati', 'name' => self::get_by_slug('qaraati', 'name'), 'default_lang' => false],

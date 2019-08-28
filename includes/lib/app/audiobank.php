@@ -41,6 +41,7 @@ class audiobank
 		$list[] = [ 'key' => 'Mohsen Qaraati', 					'value' => T_('Mohsen Qaraati'),];
 		$list[] = [ 'key' => 'Mohammad mahdi fouladvand', 		'value' => T_('Mohammad mahdi fouladvand'),];
 		$list[] = [ 'key' => 'Naser makarem shirazi', 			'value' => T_('Naser makarem shirazi'),];
+		$list[] = [ 'key' => 'Hannaneh Khalafi', 			    'value' => T_('Hannaneh Khalafi'),];
 		return $list;
 	}
 
