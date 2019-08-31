@@ -74,10 +74,6 @@ class view
 			$load_mag = \lib\app\mag::find($mag_detail);
 			\dash\data::magLoaded($load_mag);
 		}
-
-		// load statistics
-		$status = \lib\system::status();
-		\dash\data::sysStatus($status);
 	}
 
 

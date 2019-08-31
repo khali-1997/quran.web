@@ -18,6 +18,10 @@ class view
 				'site' => "<a href='". \dash\url::kingdom(). "' title='". \dash\data::site_desc() ."'>". \dash\data::site_title(). "</a>"
 			]
 		));
+
+		// load statistics
+		$status = \lib\system::status();
+		\dash\data::sysStatus($status);
 	}
 }
 ?>
