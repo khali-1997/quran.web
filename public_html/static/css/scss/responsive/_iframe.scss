@@ -11,6 +11,7 @@ body[data-iframe]:before{background:#fff;}
 [data-iframe] #nodes{display:none!important;}
 [data-iframe] .quranStatistics{display:none!important;}
 [data-iframe] .magList{display:none!important;}
+[data-iframe] .mustReads{display:none!important;}
 
 
 // for fix frame
@@ -31,3 +32,4 @@ body.fixframe .pSettings .btn{display:none!important;}
 body.fixframe .pSettings .btn{display:none!important;}
 body.fixframe .quranStatistics{display:none!important;}
 body.fixframe .magList{display:none!important;}
+body.fixframe .mustReads{display:none!important;}

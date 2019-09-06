@@ -6389,6 +6389,9 @@ body[data-iframe]:before {
 [data-iframe] .magList {
   display: none !important; }
 
+[data-iframe] .mustReads {
+  display: none !important; }
+
 body.fixframe:before {
   background: #fff; }
 
@@ -6439,6 +6442,9 @@ body.fixframe .quranStatistics {
   display: none !important; }
 
 body.fixframe .magList {
+  display: none !important; }
+
+body.fixframe .mustReads {
   display: none !important; }
 
 /*# sourceMappingURL=style.css.map */
