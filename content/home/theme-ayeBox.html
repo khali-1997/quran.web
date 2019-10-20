@@ -11,7 +11,7 @@
 
   <div class='ayeBox f' id='{{myAye.detail.index}}'>
     <div class="c s12">
-     <div class='ayeLine {%if pageStyle == "uthmani"%} {{myAye.detail.class_name}}{%endif%}'>
+     <div class='{%if pageStyle == "uthmani"%} {{myAye.detail.class_name}} {%endif%} ayeLine'>
 {%for myWord in myAye.word%}
 {%include 'content/home/blocks/block-aye-words.html'%}
 {%endfor%}
