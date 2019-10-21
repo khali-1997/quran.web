@@ -24,6 +24,12 @@
       {{block('iAnswer')}}
       {{block('iFile')}}
 
+      <p>{%trans "Teacher Audio"%}</p>
+      {%if dataRow.teacheraudio%}
+        {%include 'content_lms/level/exam/fileDetector.html' with {'myUrl': dataRow.teacheraudio}%}
+      {%endif%}
+
+
       {{block('isave')}}
     </div>
    </div>
