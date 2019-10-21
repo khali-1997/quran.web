@@ -3,7 +3,7 @@
 
 		{%for key, value in quranLoaded.text.page1%}
 		<!-- load page number once for each page -->
-		  <div class='readerMode {%if pageStyle == "uthmani"%}{{quranLoaded.detail.page1.class}}{%endif%}'>
+		  <div class='{%if pageStyle == "uthmani"%}{{quranLoaded.detail.page1.class}}{%endif%} readerMode'>
 		{%for page_number, page_line in value%}
 
 		{%if page_line.detail.line_type == 'besmellah'%}
