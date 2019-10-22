@@ -5,7 +5,7 @@ class twigTransTerms
  {
 
 	//-----------------------------------addons/content_api/v6/doc/21-get-profile.html
-	echo T_("Get profile detail");                                                    // Line 60
+	echo T_("Get profile detail");                                                    // Line 34
 	echo T_("Required parameters");                                                   // Line 18
 	echo T_("on header");                                                             // Line 18
 	echo T_("Name");                                                                  // Line 55
@@ -20,14 +20,17 @@ class twigTransTerms
 	echo T_("Response");                                                              // Line 51
 
 	//---------------------------------------addons/content_api/v6/doc/60-android.html
-	echo T_("Get android detail");                                                    // Line 86
+	echo T_("Get android detail");                                                    // Line 48
 	echo T_("Get details like pages, language list, translations, and more.");        // Line 10
+
+	//--------------------------------------addons/content_api/v6/doc/35-get-post.html
+	echo T_("Get last get-post");                                                     // Line 5
 
 	//-----------------------------------------addons/content_api/v6/doc/34-posts.html
 	echo T_("Get last posts");                                                        // Line 5
 
 	//--------------------------------------addons/content_api/v6/doc/03-requests.html
-	echo T_("Requests");                                                              // Line 52
+	echo T_("Requests");                                                              // Line 30
 	echo T_("Any tool that is fluent in HTTP can communicate with the API simply by requesting the correct URI.");// Line 6
 	echo T_("Requests should be made using the HTTPS protocol so that traffic is encrypted.");// Line 6
 	echo T_("The interface responds to different methods depending on the action required.");// Line 6
@@ -57,7 +60,7 @@ class twigTransTerms
 	echo T_("It also contains metrics about the total number of objects found, pagination information, and the total content length.");// Line 69
 
 	//------------------------------------addons/content_api/v6/doc/40-user-login.html
-	echo T_("Login user");                                                            // Line 66
+	echo T_("Login user");                                                            // Line 43
 	echo T_("Login user and get new apikey for this user");                           // Line 8
 	echo T_("Your temporary token");                                                  // Line 31
 	echo T_("To get this token see");                                                 // Line 37
@@ -68,7 +71,7 @@ class twigTransTerms
 	echo T_("Min length");                                                            // Line 84
 
 	//-----------------------------------------addons/content_api/v6/doc/55-notif.html
-	echo T_("Get notification list");                                                 // Line 84
+	echo T_("Get notification list");                                                 // Line 47
 	echo T_("Get list of your notification");                                         // Line 8
 	echo T_("Get from your account profile");                                         // Line 41
 	echo T_("Parameters");                                                            // Line 45
@@ -77,7 +80,7 @@ class twigTransTerms
 	echo T_("If user not read this notif, this response is null else see read date of this notif");// Line 107
 
 	//-----------------------------addons/content_api/v6/doc/71-session-terminate.html
-	echo T_("Terminate session");                                                     // Line 92
+	echo T_("Terminate session");                                                     // Line 51
 	echo T_("Terminate one session or all session");                                  // Line 8
 	echo T_("Or");                                                                    // Line 141
 	echo T_("If type is `terminate` the id is require");                              // Line 79
@@ -93,24 +96,25 @@ class twigTransTerms
 	echo T_("twitter");                                                               // Line 215
 
 	//------------------------------------------addons/content_api/v6/doc/display.html
-	echo T_("API");                                                                   // Line 46
-	echo T_("Introduction");                                                          // Line 48
+	echo T_("API");                                                                   // Line 26
+	echo T_("Introduction");                                                          // Line 28
 	echo T_("Endpoints");                                                             // Line 3
 	echo T_("Responses");                                                             // Line 3
 	echo T_("Token");                                                                 // Line 8
 	echo T_("Sign Up User");                                                          // Line 5
-	echo T_("Update profile");                                                        // Line 62
-	echo T_("Upload avatar");                                                         // Line 64
+	echo T_("Upload avatar");                                                         // Line 35
+	echo T_("Update profile");                                                        // Line 36
+	echo T_("Get about");                                                             // Line 37
+	echo T_("Get mission");                                                           // Line 38
+	echo T_("Get vision");                                                            // Line 39
+	echo T_("Get contact");                                                           // Line 40
+	echo T_("Get posts");                                                             // Line 41
+	echo T_("Get post detail");                                                       // Line 42
 	echo T_("Verify user");                                                           // Line 5
 	echo T_("Get language list");                                                     // Line 5
-	echo T_("Get about");                                                             // Line 72
-	echo T_("Get mission");                                                           // Line 74
-	echo T_("Get vision");                                                            // Line 76
-	echo T_("Get contact");                                                           // Line 78
-	echo T_("Get posts");                                                             // Line 80
-	echo T_("Check new notification");                                                // Line 82
-	echo T_("Get app detail");                                                        // Line 88
-	echo T_("Session list");                                                          // Line 90
+	echo T_("Check new notification");                                                // Line 46
+	echo T_("Get app detail");                                                        // Line 49
+	echo T_("Session list");                                                          // Line 50
 
 	//---------------------------------------addons/content_api/v6/doc/33-contact.html
 	echo T_("Get contact text");                                                      // Line 5
@@ -206,29 +210,36 @@ class twigTransTerms
 	echo T_("Enable JavaScript in your browser or use one which supports it.");       // Line 111
 
 	//------------------------------------------addons/includes/html/display-dash.html
-	echo T_("Edit your profile");                                                     // Line 71
-	echo T_("Please login to save anything");                                         // Line 73
+	echo T_("Import");                                                                // Line 24
+	echo T_("Export");                                                                // Line 27
+	echo T_("Duplicate");                                                             // Line 30
+	echo T_("View");                                                                  // Line 82
+	echo T_("Help");                                                                  // Line 36
+	echo T_("Previous item");                                                         // Line 42
+	echo T_("Next item");                                                             // Line 43
+	echo T_("Edit your profile");                                                     // Line 125
+	echo T_("Please login to save anything");                                         // Line 127
 	echo T_("Avatar of you");                                                         // Line 10
 	echo T_("Default Avatar");                                                        // Line 12
-	echo T_("Hello");                                                                 // Line 84
-	echo T_("Hello ");                                                                // Line 86
-	echo T_("dear GUEST!");                                                           // Line 86
-	echo T_("Dashboard");                                                             // Line 46
-	echo T_("Quick Access");                                                          // Line 50
-	echo T_("Shortkey");                                                              // Line 76
-	echo T_("CMS");                                                                   // Line 61
-	echo T_("CRM Panel");                                                             // Line 65
-	echo T_("Supervisor Panel");                                                      // Line 69
-	echo T_("My Account");                                                            // Line 73
+	echo T_("Hello");                                                                 // Line 138
+	echo T_("Hello ");                                                                // Line 140
+	echo T_("dear GUEST!");                                                           // Line 140
+	echo T_("Dashboard");                                                             // Line 101
+	echo T_("Quick Access");                                                          // Line 105
+	echo T_("Shortkey");                                                              // Line 131
+	echo T_("CMS");                                                                   // Line 116
+	echo T_("CRM Panel");                                                             // Line 120
+	echo T_("Supervisor Panel");                                                      // Line 124
+	echo T_("My Account");                                                            // Line 128
 	echo T_("Help Center");                                                           // Line 37
-	echo T_("Click to toggle sidebar status");                                        // Line 130
+	echo T_("Click to toggle sidebar status");                                        // Line 184
 	echo T_("Notifications");                                                         // Line 155
 	echo T_("Account");                                                               // Line 44
 	echo T_("Logout");                                                                // Line 19
-	echo T_("You really want to go?");                                                // Line 166
-	echo T_("We are waiting for you to come back:)");                                 // Line 167
-	echo T_("Enter to have better experience");                                       // Line 178
-	echo T_("View your current location and navigate to parent of it");               // Line 189
+	echo T_("You really want to go?");                                                // Line 220
+	echo T_("We are waiting for you to come back:)");                                 // Line 221
+	echo T_("Enter to have better experience");                                       // Line 232
+	echo T_("View your current location and navigate to parent of it");               // Line 243
 
 	//----------------------------------------------addons/includes/html/inc_spay.html
 	echo T_("Please choose bank");                                                    // Line 4
@@ -399,7 +410,7 @@ class twigTransTerms
 	echo T_("Gallery");                                                               // Line 223
 	echo T_("Video");                                                                 // Line 236
 	echo T_("Audio");                                                                 // Line 248
-	echo T_("Download");                                                              // Line 99
+	echo T_("Download");                                                              // Line 37
 	echo T_("Button title");                                                          // Line 273
 	echo T_("URL");                                                                   // Line 62
 	echo T_("Open in new tab");                                                       // Line 285
@@ -638,7 +649,6 @@ class twigTransTerms
 	//---------------------------------addons/content_cms/attachment/home/display.html
 	echo T_("File Name");                                                             // Line 59
 	echo T_("Size");                                                                  // Line 61
-	echo T_("View");                                                                  // Line 82
 	echo T_("Delete");                                                                // Line 253
 	echo T_("Block");                                                                 // Line 86
 
