@@ -13,7 +13,7 @@
         <p class="fs08">{{ayaDay.translate.text}}</p>
         {%endif%}
         <div class="author f">
-         <h3 class="cite c" ><a href="{{url.kingdom}}/s{{ayaDay.sura}}">{%trans "Sura"%} {%set myNameSura = ayaDay.sura_detail.tname%}{%trans myNameSura%}</a></h3>
+         <h3 class="cite c" ><a href="{{url.kingdom}}/s{{ayaDay.sura}}">{%trans "Sura"%}&nbsp;{%set myNameSura = ayaDay.sura_detail.tname%}{%trans myNameSura%}</a></h3>
          <a class="citeRef cauto os" href="{{url.kingdom}}/s{{ayaDay.sura}}/{{ayaDay.aya}}">{%trans "Ayah"%} {{ayaDay.aya | fitNumber}}</a>
         </div>
        </div>
