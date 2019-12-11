@@ -76,7 +76,7 @@ class model
 				'type'      => $value['style'],
 				'readtype'  => $value['folder'],
 				'addr'      => $value['folder']. '/'. $value['subfolder'],
-				'quality'   => $value['quality'],
+				'quality'   => is_numeric($value['quality']) ? $value['quality'] : null,
 				'countfile' => $value['countfile'],
 				'size'      => $value['size'],
 				'status'    => 'enable',
