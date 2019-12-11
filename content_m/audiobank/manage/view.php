@@ -15,8 +15,8 @@ class view
 
 		if(is_file($addr))
 		{
-			\dash\data::dataMeJson_me(\dash\file::read($addr));
-			// \dash\data::dataMeJson_me('file exist and can not be display (site of this file is '. filesize($addr). ')');
+			// \dash\data::dataMeJson_me(\dash\file::read($addr));
+			\dash\data::dataMeJson_me('file exist and can not be display (site of this file is '. filesize($addr). ')');
 		}
 	}
 }
