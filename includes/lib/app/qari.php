@@ -103,23 +103,32 @@ class qari
 		$list =
 		[
 			// ----------------- abdoabaset
-			['index' => 1000, 'lang' => 'ar', 'type' => $Mujawwad, 'addr'  => 'abdulbasit-mujawwad-128/', 'slug'  => 'abdulbasit', 'name' => self::get_by_slug('abdulbasit', 'name'), 'default' => false],
-			['index' => 1001, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'abdulbasit-murattal-192/', 'slug'  => 'abdulbasit', 'name' => self::get_by_slug('abdulbasit', 'name'), ],
+			// ['index' => 1000, 'lang' => 'ar', 'type' => $Mujawwad, 'addr'  => 'abdulbasit-mujawwad-128/', 'slug'  => 'abdulbasit', 'name' => self::get_by_slug('abdulbasit', 'name'), 'default' => false],
+			// ['index' => 1001, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'abdulbasit-murattal-192/', 'slug'  => 'abdulbasit', 'name' => self::get_by_slug('abdulbasit', 'name'), ],
+			['index' => 1001, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'abdulbasit-murattal-32/', 'slug'  => 'abdulbasit', 'name' => self::get_by_slug('abdulbasit', 'name'), ],
+			['index' => 1000, 'lang' => 'ar', 'type' => $Mujawwad, 'addr'  => 'abdulbasit-mujawwad-32/', 'slug'  => 'abdulbasit', 'name' => self::get_by_slug('abdulbasit', 'name'), 'default' => false],
 
 			// ----------------- afasy
 			['index' => 1020, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'afasy-murattal-192/', 'slug'  => 'afasy', 'name' => self::get_by_slug('afasy', 'name'), 'default' => true],
 
 			// ----------------- husary
-			['index' => 1030, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'husary-murattal-128/', 'slug'  => 'husary', 'name' => self::get_by_slug('husary', 'name'),],
-			['index' => 1031, 'lang' => 'ar', 'type' => $Mujawwad, 'addr'  => 'husary-mujawwad-128/', 'slug'  => 'husary', 'name' => self::get_by_slug('husary', 'name'),],
-			['index' => 1032, 'lang' => 'ar', 'type' => $Muallim, 'addr'  => 'husary-muallim-128/', 'slug'  => 'husary', 'name' => self::get_by_slug('husary', 'name'), ],
+			// ['index' => 1030, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'husary-murattal-128/', 'slug'  => 'husary', 'name' => self::get_by_slug('husary', 'name'),],
+			// ['index' => 1031, 'lang' => 'ar', 'type' => $Mujawwad, 'addr'  => 'husary-mujawwad-128/', 'slug'  => 'husary', 'name' => self::get_by_slug('husary', 'name'),],
+			// ['index' => 1032, 'lang' => 'ar', 'type' => $Muallim, 'addr'  => 'husary-muallim-128/', 'slug'  => 'husary', 'name' => self::get_by_slug('husary', 'name'), ],
+			['index' => 1030, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'husary-murattal-32/', 'slug'  => 'husary', 'name' => self::get_by_slug('husary', 'name'),],
+			['index' => 1031, 'lang' => 'ar', 'type' => $Mujawwad, 'addr'  => 'husary-mujawwad-32/', 'slug'  => 'husary', 'name' => self::get_by_slug('husary', 'name'),],
+			['index' => 1032, 'lang' => 'ar', 'type' => $Muallim, 'addr'  => 'husary-muallim-16/', 'slug'  => 'husary', 'name' => self::get_by_slug('husary', 'name'), ],
 
 			// ----------------- minshawi
-			['index' => 1040, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'minshawi-murattal-128/', 'slug'  => 'minshawi', 'name' => self::get_by_slug('minshawi', 'name'),],
-			['index' => 1041, 'lang' => 'ar', 'type' => $Mujawwad, 'addr'  => 'minshawi-mujawwad-128/', 'slug'  => 'minshawi', 'name' => self::get_by_slug('minshawi', 'name'),],
+			// ['index' => 1040, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'minshawi-murattal-128/', 'slug'  => 'minshawi', 'name' => self::get_by_slug('minshawi', 'name'),],
+			// ['index' => 1041, 'lang' => 'ar', 'type' => $Mujawwad, 'addr'  => 'minshawi-mujawwad-128/', 'slug'  => 'minshawi', 'name' => self::get_by_slug('minshawi', 'name'),],
+			['index' => 1041, 'lang' => 'ar', 'type' => $Mujawwad, 'addr'  => 'minshawi-mujawwad-32/', 'slug'  => 'minshawi', 'name' => self::get_by_slug('minshawi', 'name'),],
+			['index' => 1040, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'minshawi-murattal-32/', 'slug'  => 'minshawi', 'name' => self::get_by_slug('minshawi', 'name'),],
+			['index' => 1042, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'minshawi-withchild-32/', 'slug'  => 'minshawi', 'name' => self::get_by_slug('minshawi', 'name'),],
 
 			// ----------------- rifai
-			['index' => 1050, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'rifai-murattal-192/', 'slug'  => 'rifai', 'name' => self::get_by_slug('rifai', 'name'),],
+			// ['index' => 1050, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'rifai-murattal-192/', 'slug'  => 'rifai', 'name' => self::get_by_slug('rifai', 'name'),],
+			['index' => 1050, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'rifai-murattal-32/', 'slug'  => 'rifai', 'name' => self::get_by_slug('rifai', 'name'),],
 
 			// ----------------- shatri
 			['index' => 1060, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'shatri-murattal-128/', 'slug'  => 'shatri', 'name' => self::get_by_slug('shatri', 'name'),],
