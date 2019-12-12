@@ -131,13 +131,13 @@ class qari
 			['index' => 1050, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'rifai-murattal-32/', 'slug'  => 'rifai', 'name' => self::get_by_slug('rifai', 'name'),],
 
 			// ----------------- shatri
-			['index' => 1060, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'shatri-murattal-128/', 'slug'  => 'shatri', 'name' => self::get_by_slug('shatri', 'name'),],
+			// ['index' => 1060, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'shatri-murattal-128/', 'slug'  => 'shatri', 'name' => self::get_by_slug('shatri', 'name'),],
 
 			// ----------------- shuraym
-			['index' => 1070, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'shuraym-murattal-128/', 'slug'  => 'shuraym', 'name' => self::get_by_slug('shuraym', 'name'),],
+			// ['index' => 1070, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'shuraym-murattal-128/', 'slug'  => 'shuraym', 'name' => self::get_by_slug('shuraym', 'name'),],
 
 			// ----------------- sudais
-			['index' => 1080, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'sudais-murattal-192/', 'slug'  => 'sudais', 'name' => self::get_by_slug('sudais', 'name'),],
+			// ['index' => 1080, 'lang' => 'ar', 'type' => $Murattal, 'addr'  => 'sudais-murattal-192/', 'slug'  => 'sudais', 'name' => self::get_by_slug('sudais', 'name'),],
 
 			// ----------------- trnaslate - az - balayev
 			['index' => 1081, 'lang' => 'az', 'type' => $Translate, 'addr'  => 'azerbaijani.az.balayev-translation-128/', 'slug'  => 'balayev', 'name' => self::get_by_slug('balayev', 'name'),],
