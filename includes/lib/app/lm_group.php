@@ -60,13 +60,14 @@ class lm_group
 
 	public static function public_list()
 	{
-		return self::list(null, ['lm_group.status' => 'enable', 'pagination' => false]);
+		return self::list(null, ['lm_group.status' => 'enable', 'pagenation' => false]);
 	}
 
 
 	public static function site_list()
 	{
-		return self::list(null, ['pagination' => false]);
+		$list = self::list(null, ['pagenation' => false]);
+		return $list;
 	}
 
 
