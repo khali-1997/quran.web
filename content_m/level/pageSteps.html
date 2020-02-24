@@ -24,7 +24,7 @@
    </div>
 
 
-   {%if dataRow.type == 'reading' or dataRow.type == 'tajweed' or dataRow.type == 'theme' or  dataRow.type == 'exam' or dataRow.type == 'iqra' or dataRow.type == 'quranvideo'  %}
+   {%if (dataRow.type != 'quran' and dataRow.type != 'iqra')  %}
     <div class="c s6">
       <a class="dcard {%if url.child == 'media' %}active{%endif%}" href='{{url.this}}/media?id={{requestGET.id}}'>
        <div class="statistic">
@@ -46,7 +46,7 @@
      </div>
    {%endif%}
 
-   {%if dataRow.type == 'reading' or dataRow.type == 'tajweed' or dataRow.type == 'theme' or  dataRow.type == 'exam' %}
+   {%if (dataRow.type != 'quran' and dataRow.type != 'iqra') %}
     <div class="c s6">
       <a class="dcard {%if url.child == 'exam' %}active{%endif%}" href='{{url.this}}/exam?id={{requestGET.id}}'>
        <div class="statistic">
