@@ -232,6 +232,10 @@ class lm_level
 		$list               = [];
 		$list['quran']      = ['title' => T_("Quran")];
 		$list['quranvideo'] = ['title' => T_("Quran video")];
+		$list['review']     = ['title' => T_("Review Old Lessons")];
+		$list['practice']   = ['title' => T_("Practice")];
+		$list['hefz']       = ['title' => T_("Memorize the Quran")];
+		$list['lesson']     = ['title' => T_("Lesson")];
 		$list['reading']    = ['title' => T_("Reading quran")];
 		$list['tajweed']    = ['title' => T_("Tajweed")];
 		$list['theme']      = ['title' => T_("Theme of surah")];
