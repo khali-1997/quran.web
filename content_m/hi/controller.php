@@ -44,7 +44,7 @@ class controller
 					$remove = str_replace('https://salamquran.com/', root. 'public_html/', $remove);
 					if(is_file($remove))
 					{
-						\dash\file::remove($remove);
+						\dash\file::delete($remove);
 					}
 
 				}
