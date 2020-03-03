@@ -34,20 +34,24 @@ class controller
 			exit();
 		}
 
-		foreach ($level as $key => $value)
+		if(isset($level) && is_array($level))
 		{
-			if(isset($value['file']) && substr($value['file'], 0, 23) === 'https://salamquran.com/')
+			foreach ($level as $key => $value)
 			{
-				$remove = $value['file'];
-				$remove = str_replace('https://salamquran.com/', root. 'public_html/', $remove);
-				if(is_file($remove))
+				if(isset($value['file']) && substr($value['file'], 0, 23) === 'https://salamquran.com/')
 				{
-					\dash\file::remove($remove);
-				}
+					$remove = $value['file'];
+					$remove = str_replace('https://salamquran.com/', root. 'public_html/', $remove);
+					if(is_file($remove))
+					{
+						\dash\file::remove($remove);
+					}
 
+				}
+				\dash\db::query("DELETE FROM lm_question WHERE lm_level_id = $value[id] LIMIT 1");
+				$level_id = \dash\db::query("DELETE FROM lm_level WHERE lm_level.id = $value[id] LIMIT 1");
 			}
-			\dash\db::query("DELETE FROM lm_question WHERE lm_level_id = $value[id] LIMIT 1");
-			$level_id = \dash\db::query("DELETE FROM lm_level WHERE lm_level.id = $value[id] LIMIT 1");
+
 		}
 
 		foreach ($group as $key => $value)
