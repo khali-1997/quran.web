@@ -35,7 +35,7 @@ class controller
 
 		];
 
-		\dash\notif::api($result);
+		// \dash\notif::api($result);
 
 
 	}
